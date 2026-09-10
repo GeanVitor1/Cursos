@@ -1,0 +1,21 @@
+{
+  "observacao": "Desempenho por conceito e por forma de conhecimento (dimensão). Cada conceito guarda acertos, erros, pontos ponderados pela confiança declarada e o domínio por dimensão.",
+  "dimensoes": ["reconhecimento", "associacao", "ordenacao", "preenchimento", "construcao", "aplicacao"],
+  "exemploDeFormato": {
+    "sql.select": {
+      "acertos": 7,
+      "erros": 4,
+      "pontos": 5.4,
+      "acertosConfiantes": 3,
+      "chutesCertos": 1,
+      "estado": "revisar",
+      "dimensoes": {
+        "reconhecimento": { "acertos": 3, "erros": 1, "pontos": 2.6 },
+        "preenchimento": { "acertos": 2, "erros": 2, "pontos": 1.5 },
+        "construcao": { "acertos": 2, "erros": 1, "pontos": 1.3 }
+      },
+      "dominio": { "geral": 57, "medidas": 11 }
+    }
+  },
+  "conceitos": {}
+}

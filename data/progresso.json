@@ -1,0 +1,12 @@
+{
+  "versao": 2,
+  "observacao": "Semente/backup do progresso. O progresso em uso fica no localStorage do navegador. Use a tela 'Meu progresso' para exportar e importar.",
+  "xp": 0,
+  "streak": { "atual": 0, "recorde": 0, "ultimoDia": null, "dias": [] },
+  "licoes": {},
+  "conceitos": {},
+  "agenda": {},
+  "sessoes": [],
+  "revisoes": [],
+  "configuracoes": { "tema": "claro" }
+}

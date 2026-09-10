@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-label="Arquitetura Full Stack .NET">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3f51d6"/>
+    </marker>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f51d6"/>
+      <stop offset="1" stop-color="#7b6cf0"/>
+    </linearGradient>
+  </defs>
+  <rect width="920" height="430" fill="#f5f6f9"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <rect x="345" y="18" width="230" height="58" rx="12" fill="#ffffff" stroke="#3f51d6" stroke-width="2"/>
+    <text x="460" y="44" text-anchor="middle" font-size="15" font-weight="700" fill="#161d33">React + TypeScript</text>
+    <text x="460" y="63" text-anchor="middle" font-size="12" fill="#5a6379">Interface do usuário</text>
+
+    <line x1="460" y1="76" x2="460" y2="118" stroke="#3f51d6" stroke-width="2.5" marker-end="url(#seta)"/>
+    <text x="510" y="101" font-size="12" font-weight="600" fill="#3f51d6">HTTP / JSON + JWT</text>
+
+    <rect x="345" y="120" width="230" height="58" rx="12" fill="url(#grad)"/>
+    <text x="460" y="146" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">ASP.NET Core API</text>
+    <text x="460" y="165" text-anchor="middle" font-size="12" fill="#e8eaff">Controllers, Services, DTOs</text>
+
+    <line x1="460" y1="178" x2="460" y2="220" stroke="#3f51d6" stroke-width="2.5" marker-end="url(#seta)"/>
+    <text x="516" y="203" font-size="12" font-weight="600" fill="#3f51d6">EF Core / LINQ</text>
+
+    <rect x="345" y="222" width="230" height="58" rx="12" fill="#ffffff" stroke="#3f51d6" stroke-width="2"/>
+    <text x="460" y="248" text-anchor="middle" font-size="15" font-weight="700" fill="#161d33">SQL Server</text>
+    <text x="460" y="267" text-anchor="middle" font-size="12" fill="#5a6379">Dados relacionais</text>
+
+    <line x1="460" y1="280" x2="460" y2="322" stroke="#3f51d6" stroke-width="2.5" marker-end="url(#seta)"/>
+    <text x="492" y="305" font-size="12" font-weight="600" fill="#3f51d6">cache e eventos</text>
+
+    <rect x="345" y="324" width="230" height="58" rx="12" fill="#ffffff" stroke="#3f51d6" stroke-width="2"/>
+    <text x="460" y="350" text-anchor="middle" font-size="14" font-weight="700" fill="#161d33">Redis · RabbitMQ</text>
+    <text x="460" y="369" text-anchor="middle" font-size="12" fill="#5a6379">Cache e mensageria</text>
+
+    <rect x="70" y="120" width="210" height="58" rx="12" fill="#ffffff" stroke="#c9d0de" stroke-width="1.5"/>
+    <text x="175" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#161d33">Docker</text>
+    <text x="175" y="165" text-anchor="middle" font-size="12" fill="#5a6379">Ambiente reproduzível</text>
+    <line x1="280" y1="149" x2="342" y2="149" stroke="#8a93a8" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+    <rect x="640" y="120" width="210" height="58" rx="12" fill="#ffffff" stroke="#c9d0de" stroke-width="1.5"/>
+    <text x="745" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#161d33">CI/CD</text>
+    <text x="745" y="165" text-anchor="middle" font-size="12" fill="#5a6379">GitHub Actions</text>
+    <line x1="640" y1="149" x2="578" y2="149" stroke="#8a93a8" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+    <rect x="640" y="222" width="210" height="58" rx="12" fill="#ffffff" stroke="#c9d0de" stroke-width="1.5"/>
+    <text x="745" y="248" text-anchor="middle" font-size="14" font-weight="700" fill="#161d33">Azure</text>
+    <text x="745" y="267" text-anchor="middle" font-size="12" fill="#5a6379">App Service, SQL, Insights</text>
+    <line x1="640" y1="251" x2="578" y2="251" stroke="#8a93a8" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+    <rect x="70" y="222" width="210" height="58" rx="12" fill="#ffffff" stroke="#c9d0de" stroke-width="1.5"/>
+    <text x="175" y="248" text-anchor="middle" font-size="14" font-weight="700" fill="#161d33">Testes</text>
+    <text x="175" y="267" text-anchor="middle" font-size="12" fill="#5a6379">xUnit, Moq, integração</text>
+    <line x1="280" y1="251" x2="342" y2="251" stroke="#8a93a8" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+    <text x="460" y="414" text-anchor="middle" font-size="12" fill="#8a93a8">Projeto final — Sistema Completo Full Stack</text>
+  </g>
+</svg>

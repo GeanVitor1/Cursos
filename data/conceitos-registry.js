@@ -1,0 +1,105 @@
+Plataforma.registrarRegistroConceitos({
+  observacao: 'Metadados pedagógicos dos conceitos: pré-requisitos conceituais, termos que representam o conceito no conteúdo e definição curta para o glossário. A introdução real é marcada no conteúdo com bloco { tipo: "conceito" } ou com etpa.introduz.',
+  conceitos: {
+    // SQL
+    'sql.servidor': { prerequisitos: [], termos: ['servidor'], definicao: 'O computador onde o banco de dados fica instalado e funcionando.', exemplo: 'Um servidor pode hospedar vários bancos.' },
+    'sql.banco': { prerequisitos: [], termos: ['banco de dados'], definicao: 'Um lugar organizado onde o sistema guarda informações para consultar e alterar depois.', exemplo: 'O banco mercado_aurora guarda Clientes, Produtos e Pedidos.' },
+    'sql.tabela': { prerequisitos: ['sql.banco'], termos: ['tabela'], definicao: 'A estrutura que guarda um tipo de informação, como clientes ou produtos.', exemplo: 'A tabela Clientes guarda os clientes.' },
+    'sql.coluna': { prerequisitos: ['sql.tabela'], termos: ['coluna'], definicao: 'Um campo da tabela. Define que tipo de informação todo registro possui.', exemplo: 'Nome, Email e Cidade são colunas de Clientes.' },
+    'sql.registro': { prerequisitos: ['sql.tabela'], termos: ['registro'], definicao: 'Uma linha completa dentro de uma tabela: todos os dados de um item.', exemplo: '1 | Ana | ana@email.com é um registro de cliente.' },
+    'sql.chave-primaria': { prerequisitos: ['sql.tabela'], termos: ['chave primária'], definicao: 'A coluna que identifica cada linha de forma única. Não pode repetir nem ser nula.', exemplo: 'A coluna Id de Clientes.' },
+    'sql.tipos-dados': { prerequisitos: ['sql.coluna'], termos: [], definicao: 'O tipo define que espécie de valor a coluna aceita: número, texto, dinheiro, data ou verdadeiro/falso.', exemplo: 'Preco usa DECIMAL para não perder centavos.' },
+    'sql.chave-estrangeira': { prerequisitos: ['sql.chave-primaria'], termos: ['chave estrangeira'], definicao: 'Uma coluna que aponta para a chave primária de outra tabela, criando um vínculo.', exemplo: 'ClienteId em Pedidos aponta para o Id de Clientes.' },
+    'sql.relacionamento': { prerequisitos: ['sql.chave-estrangeira'], termos: ['relacionamento'], definicao: 'O vínculo entre tabelas criado pelas chaves estrangeiras.', exemplo: 'Um cliente tem vários pedidos (1:N).' },
+    'sql.select': { prerequisitos: ['sql.tabela'], termos: ['select '], definicao: 'O comando SQL que consulta dados.', exemplo: 'SELECT Nome FROM Clientes;' },
+    'sql.from': { prerequisitos: ['sql.select'], termos: [' from ', 'from '], definicao: 'A parte da consulta que diz de qual tabela os dados vêm.', exemplo: 'SELECT Nome FROM Clientes;' },
+    'sql.colunas': { prerequisitos: ['sql.select'], termos: [], definicao: 'Escolher quais colunas aparecem no resultado, em vez de trazer todas.', exemplo: 'SELECT Nome, Email FROM Clientes;' },
+    'sql.comandos-sql': { prerequisitos: ['sql.select'], termos: ['insert', 'update', 'delete'], definicao: 'Os quatro comandos principais: SELECT consulta, INSERT insere, UPDATE altera e DELETE exclui.', exemplo: 'SELECT, INSERT, UPDATE e DELETE formam o CRUD.' },
+    'sql.where': { prerequisitos: ['sql.select'], termos: ['where '], definicao: 'A palavra-chave que define a condição que cada linha precisa satisfazer para aparecer no resultado.', exemplo: 'SELECT * FROM Clientes WHERE Ativo = 1;' },
+    'sql.operadores': { prerequisitos: ['sql.where'], termos: [], definicao: 'Símbolos de comparação usados nas condições: =, <>, >, <, >= e <=.', exemplo: 'Preco > 150' },
+    'sql.texto-aspas': { prerequisitos: ['sql.where'], termos: [], definicao: 'Valores de texto em SQL ficam entre aspas simples.', exemplo: "WHERE Cidade = 'Curitiba'" },
+    'sql.and-or': { prerequisitos: ['sql.where'], termos: [], definicao: 'AND exige que as duas condições sejam verdadeiras; OR aceita pelo menos uma.', exemplo: 'WHERE Ativo = 1 AND Cidade = \'Curitiba\'' },
+    'sql.parenteses': { prerequisitos: ['sql.and-or'], termos: [], definicao: 'Parênteses agrupam condições quando AND e OR aparecem juntos.', exemplo: 'WHERE (Status = \'Pendente\' OR Status = \'Enviado\') AND ValorTotal > 500' },
+    'sql.in': { prerequisitos: ['sql.where'], termos: [], definicao: 'Compara com uma lista de valores, no lugar de vários OR.', exemplo: "WHERE Cidade IN ('Curitiba', 'Recife')" },
+    'sql.between': { prerequisitos: ['sql.where'], termos: [], definicao: 'Verifica se um valor está dentro de um intervalo, incluindo os extremos.', exemplo: 'WHERE Preco BETWEEN 100 AND 500' },
+    'sql.not': { prerequisitos: ['sql.where'], termos: [], definicao: 'Inverte uma condição.', exemplo: "WHERE Status NOT IN ('Cancelado')" },
+    'sql.ingles': { prerequisitos: [], termos: [], definicao: 'Vocabulário de inglês aplicado a consultas e ao trabalho com dados.', exemplo: 'Retrieve all customers = busque todos os clientes.' },
+
+    // Lógica
+    'logica.total': { prerequisitos: [], termos: [], definicao: 'Somar o valor de cada item para chegar ao total do pedido.', exemplo: 'preço × quantidade, item por item.' },
+    'logica.validacao': { prerequisitos: ['logica.total'], termos: [], definicao: 'Verificar uma regra antes de alterar dados, impedindo estados inválidos.', exemplo: 'Não permitir estoque negativo.' },
+    'logica.duplicados': { prerequisitos: [], termos: [], definicao: 'Encontrar itens repetidos em uma lista, guardando o que já foi visto.', exemplo: 'Dois clientes com o mesmo e-mail.' },
+    'logica.agrupamento': { prerequisitos: [], termos: [], definicao: 'Separar os itens em grupos e contar quantos há em cada um.', exemplo: 'Quantos pedidos cada cliente fez.' },
+
+    // Terminal
+    'terminal.comandos': { prerequisitos: [], termos: [], definicao: 'Comandos de navegação em pastas: pwd, ls/dir, cd e mkdir.', exemplo: 'cd Projetos' },
+    'terminal.dotnet': { prerequisitos: ['terminal.comandos'], termos: ['dotnet '], definicao: 'Comandos para criar, compilar, executar e testar projetos .NET.', exemplo: 'dotnet run, dotnet build, dotnet test' },
+    'terminal.git': { prerequisitos: ['terminal.comandos'], termos: ['git '], definicao: 'Comandos para versionar o código: status, add, commit e push.', exemplo: 'git commit -m "Corrige cálculo"' },
+    'terminal.docker': { prerequisitos: ['terminal.comandos'], termos: ['docker '], definicao: 'Comandos para subir os serviços descritos no projeto.', exemplo: 'docker compose up' },
+    'terminal.npm': { prerequisitos: ['terminal.comandos'], termos: ['npm '], definicao: 'Comandos para instalar dependências do frontend.', exemplo: 'npm install' },
+
+    // C#
+    'csharp.classes': { prerequisitos: [], termos: ['class '], definicao: 'Um molde que descreve quais dados uma coisa tem.', exemplo: 'class Produto { ... }' },
+    'csharp.objetos': { prerequisitos: ['csharp.classes'], termos: ['new '], definicao: 'Uma cópia preenchida do molde, criada com new.', exemplo: 'Produto produto = new Produto();' },
+    'csharp.propriedades': { prerequisitos: ['csharp.classes'], termos: ['{ get; set; }'], definicao: 'Um dado do objeto, como Nome ou Preco, que pode ser lido e gravado.', exemplo: 'public string Nome { get; set; }' },
+    'csharp.tipos': { prerequisitos: [], termos: [], definicao: 'O tipo define que espécie de valor cabe: int, decimal, string, bool e DateTime.', exemplo: 'decimal preco = 100.50m;' },
+    'csharp.variaveis': { prerequisitos: [], termos: [], definicao: 'Uma caixa etiquetada que guarda um valor com um nome.', exemplo: 'int estoque = 25;' },
+    'csharp.condicoes': { prerequisitos: ['csharp.variaveis'], termos: ['if ('], definicao: 'O if executa um bloco somente quando a condição é verdadeira.', exemplo: 'if (estoque < 10) { ... }' },
+    'csharp.metodos': { prerequisitos: ['csharp.variaveis'], termos: [], definicao: 'Uma ação com nome que recebe entradas e pode devolver um resultado.', exemplo: 'decimal CalcularTotal(decimal preco, int quantidade)' },
+    'csharp.list': { prerequisitos: ['csharp.objetos'], termos: ['list<'], definicao: 'Uma coleção que guarda vários itens em sequência na mesma variável.', exemplo: 'List<Produto> produtos = new List<Produto>();' },
+    'csharp.generics': { prerequisitos: ['csharp.list'], termos: ['generic'], definicao: 'Um recurso que permite reutilizar o mesmo código para vários tipos, como List<Produto> e List<string>.', exemplo: 'List<T> — o T é o tipo dos itens.' },
+    'csharp.null': { prerequisitos: ['csharp.objetos'], termos: [], definicao: 'Ausência de valor: a variável existe, mas não aponta para nenhum objeto.', exemplo: 'Cliente? cliente = null;' },
+    'csharp.interfaces': { prerequisitos: ['csharp.classes', 'csharp.metodos'], termos: ['interface '], definicao: 'Um contrato que diz o que deve existir, sem dizer como funciona.', exemplo: 'interface INotificador { void Enviar(string mensagem); }' },
+    'csharp.construtor': { prerequisitos: ['csharp.classes'], termos: ['construtor'], definicao: 'O método chamado quando o objeto é criado; é onde as dependências são recebidas.', exemplo: 'public PedidoService(INotificador notificador) { ... }' },
+    'csharp.di': { prerequisitos: ['csharp.interfaces', 'csharp.construtor'], termos: ['injeção de dependência', 'injeção de dependencia'], definicao: 'Fornecer as dependências de fora para dentro, em vez de a classe construí-las.', exemplo: 'Receber INotificador pelo construtor.' },
+    'csharp.lambda': { prerequisitos: ['csharp.metodos'], termos: ['lambda', '=>'], definicao: 'Uma regra curta passada como valor: item => condição.', exemplo: 'p => p.Ativo' },
+    'csharp.excecoes': { prerequisitos: ['csharp.metodos'], termos: ['try', 'catch', 'exceção'], definicao: 'Erro controlado do C# que pode ser tratado com try/catch.', exemplo: 'try { ... } catch (FormatException) { ... }' },
+    'csharp.async': { prerequisitos: ['csharp.metodos'], termos: ['async', 'await'], definicao: 'Modelo para esperar operações demoradas sem travar a aplicação.', exemplo: 'await Task.Delay(1000);' },
+    'csharp.leitura': { prerequisitos: [], termos: [], definicao: 'Habilidade de entender o que um código faz antes de alterá-lo.', exemplo: 'Ler um método e prever o resultado.' },
+    'csharp.ingles': { prerequisitos: [], termos: [], definicao: 'Vocabulário de inglês aplicado a código e documentação.', exemplo: 'list, item, request.' },
+
+    // Inglês geral (CEFR)
+    'en.saudacoes': { prerequisitos: [], termos: [], definicao: 'Dizer olá, se apresentar e perguntar o nome.', exemplo: 'Hi! My name is Ana. What is your name?' },
+    'en.numeros': { prerequisitos: [], termos: [], definicao: 'Números de 0 a 100, idade e preços.', exemplo: "I'm twenty-five. It costs ten dollars." },
+    'en.familia': { prerequisitos: ['en.saudacoes'], termos: [], definicao: 'Falar sobre pessoas da família com my, your, his, her.', exemplo: 'This is my sister. Her name is Lia.' },
+    'en.rotina': { prerequisitos: [], termos: [], definicao: 'Contar a rotina no presente simples (I work, she works).', exemplo: 'I usually wake up at seven.' },
+    'en.horarios': { prerequisitos: ['en.numeros'], termos: [], definicao: 'Dizer horas, dias da semana e datas.', exemplo: 'The meeting is at nine on Monday.' },
+    'en.comida': { prerequisitos: [], termos: [], definicao: 'Pedir comida e bebida em um restaurante.', exemplo: "I'd like a coffee, please." },
+    'en.compras': { prerequisitos: ['en.numeros'], termos: [], definicao: 'Comprar, perguntar preço e pagar.', exemplo: 'How much is this? It is five dollars.' },
+    'en.lugares': { prerequisitos: [], termos: [], definicao: 'Falar de lugares, pedir direções e usar transporte.', exemplo: 'Where is the station? Go straight and turn left.' },
+    'en.perguntas': { prerequisitos: ['en.saudacoes'], termos: [], definicao: 'Fazer perguntas básicas e manter uma conversa informal.', exemplo: 'Where are you from? I am from Brazil.' },
+    'en.passado': { prerequisitos: ['en.rotina'], termos: [], definicao: 'Falar de acontecimentos no passado (worked, went, was).', exemplo: 'Yesterday I worked and then I went home.' },
+    'en.futuro': { prerequisitos: ['en.rotina'], termos: [], definicao: 'Falar de planos e decisões futuras (going to, will).', exemplo: "I'm going to travel next week." },
+    'en.viagem': { prerequisitos: ['en.lugares'], termos: [], definicao: 'Resolver situações de aeroporto e hotel em inglês.', exemplo: 'I have a reservation. Here is my passport.' },
+
+    // Inglês
+    'ingles.vocabulario': { prerequisitos: [], termos: [], definicao: 'Palavras técnicas que se repetem em documentação, tickets e mensagens.', exemplo: 'request, response, database, error.' },
+    'ingles.frases': { prerequisitos: ['ingles.vocabulario'], termos: [], definicao: 'Frases curtas do trabalho, com sujeito + verbo + complemento.', exemplo: 'The request failed.' },
+    'ingles.erros': { prerequisitos: ['ingles.vocabulario'], termos: [], definicao: 'Mensagens de erro em inglês e o que cada uma indica.', exemplo: 'Cannot connect to the database.' },
+    'ingles.leitura': { prerequisitos: ['ingles.vocabulario'], termos: [], definicao: 'Ler mensagens, issues e tickets reais e identificar o problema.', exemplo: 'Title: duplicated orders after retrying the request.' },
+
+    // LINQ
+    'linq.intro': { prerequisitos: ['csharp.lambda', 'csharp.list'], termos: ['LINQ'], definicao: 'Consultas escritas em C# para filtrar, transformar e resumir coleções.', exemplo: 'produtos.Where(p => p.Ativo).ToList()' },
+    'linq.lambda': { prerequisitos: ['csharp.lambda'], termos: [], definicao: 'A regra aplicada a cada item dentro de uma consulta LINQ.', exemplo: 'p => p.Preco > 100' },
+    'linq.where': { prerequisitos: ['linq.intro'], termos: ['where('], definicao: 'Filtra os itens: mantém apenas os que satisfazem a regra.', exemplo: 'produtos.Where(p => p.Ativo)' },
+    'linq.select': { prerequisitos: ['linq.intro'], termos: ['select('], definicao: 'Transforma cada item no formato que você precisa.', exemplo: 'produtos.Select(p => p.Nome)' },
+    'linq.first': { prerequisitos: ['linq.where', 'csharp.null'], termos: ['firstordefault', 'single('], definicao: 'Buscar um único item: First lança erro se não achar; FirstOrDefault devolve null; Single exige exatamente um.', exemplo: 'produtos.FirstOrDefault(p => p.Id == 10)' },
+
+    // EF Core
+    'ef.orm': { prerequisitos: ['sql.tabela', 'csharp.classes'], termos: ['ORM'], definicao: 'Ferramenta que traduz entre objetos C# e tabelas do banco, gerando o SQL automaticamente.', exemplo: 'Entity Framework Core.' },
+    'ef.entidade': { prerequisitos: ['ef.orm'], termos: [], definicao: 'Uma classe mapeada para uma tabela do banco.', exemplo: 'Produto ↔ tabela Produtos.' },
+    'ef.dbcontext': { prerequisitos: ['ef.orm'], termos: ['dbcontext'], definicao: 'A porta de entrada para o banco: abre a conexão e acompanha as mudanças.', exemplo: 'MercadoAuroraContext : DbContext' },
+    'ef.dbset': { prerequisitos: ['ef.dbcontext'], termos: ['dbset'], definicao: 'Uma "gaveta" de entidades de um tipo, ligada a uma tabela.', exemplo: 'DbSet<Produto> Produtos' },
+    'ef.savechanges': { prerequisitos: ['ef.dbset'], termos: ['savechanges', 'savechangesasync'], definicao: 'O método que envia ao banco tudo o que o contexto acompanha, gerando o SQL.', exemplo: 'await context.SaveChangesAsync();' },
+    'ef.consultas': { prerequisitos: ['ef.dbset', 'linq.where'], termos: ['tolistasync', 'firstordefaultasync', 'findasync'], definicao: 'Consultar o banco com LINQ: o EF traduz para SQL.', exemplo: 'context.Produtos.Where(p => p.Ativo).ToListAsync()' },
+
+    // ASP.NET
+    'aspnet.http': { prerequisitos: [], termos: ['HTTP'], definicao: 'O protocolo de comunicação da web: o cliente pede (requisição) e o servidor responde (resposta).', exemplo: 'GET /api/produtos/10' },
+    'aspnet.requisicao': { prerequisitos: ['aspnet.http'], termos: [], definicao: 'O pedido que o cliente envia ao servidor.', exemplo: 'GET /api/produtos/10' },
+    'aspnet.resposta': { prerequisitos: ['aspnet.http'], termos: [], definicao: 'O que o servidor devolve ao cliente: dados + status code.', exemplo: '200 OK com o produto em JSON.' },
+    'aspnet.status': { prerequisitos: ['aspnet.http'], termos: ['status code'], definicao: 'O número que resume o resultado: 200 OK, 201 Created, 204, 400, 404, 500.', exemplo: '404 = recurso não encontrado.' },
+    'aspnet.json': { prerequisitos: [], termos: ['JSON'], definicao: 'Formato de texto simples para troca de dados, com pares "chave": valor.', exemplo: '{ "id": 1, "nome": "Mouse" }' },
+    'aspnet.api': { prerequisitos: ['aspnet.http'], termos: ['API'], definicao: 'Um conjunto de endereços que outros programas chamam para obter ou enviar dados.', exemplo: 'API de produtos.' },
+    'aspnet.rotas': { prerequisitos: ['aspnet.api'], termos: [], definicao: 'O caminho da URL que identifica o recurso, como /produtos ou /produtos/10.', exemplo: 'app.MapGet("/produtos", ...)' }
+  }
+});

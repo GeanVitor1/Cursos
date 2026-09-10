@@ -1,0 +1,1654 @@
+{
+  "geradoEm": "2026-09-10T17:52:28.215Z",
+  "trilhas": 20,
+  "licoes": 45,
+  "etapas": 367,
+  "atividades": 241,
+  "conceitosRegistrados": 159,
+  "conceitosIntroduzidos": 81,
+  "erros": [],
+  "avisos": [],
+  "conceitos": [
+    {
+      "id": "sql.banco",
+      "nome": "Banco de dados",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 1,
+        "titulo": "Por que o sistema precisa lembrar?",
+        "pos": 1
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 6
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "sql.servidor",
+      "nome": "Servidor",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 2,
+        "titulo": "Servidor: onde o banco mora",
+        "pos": 2
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 6
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "sql.tabela",
+      "nome": "Tabelas, linhas e colunas",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 3,
+        "titulo": "Tabela: um assunto por vez",
+        "pos": 3
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 5
+      },
+      "prerequisitos": [
+        "sql.banco"
+      ]
+    },
+    {
+      "id": "sql.coluna",
+      "nome": "Coluna",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 4,
+        "titulo": "Coluna e registro: o cabeçalho e a linha",
+        "pos": 4
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 5
+      },
+      "prerequisitos": [
+        "sql.tabela"
+      ]
+    },
+    {
+      "id": "sql.registro",
+      "nome": "Registros",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 4,
+        "titulo": "Coluna e registro: o cabeçalho e a linha",
+        "pos": 4
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 6
+      },
+      "prerequisitos": [
+        "sql.tabela"
+      ]
+    },
+    {
+      "id": "sql.chave-primaria",
+      "nome": "Chave primária",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 8,
+        "titulo": "A chave primária",
+        "pos": 8
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 9
+      },
+      "prerequisitos": [
+        "sql.tabela"
+      ]
+    },
+    {
+      "id": "sql.ingles",
+      "nome": "Inglês técnico",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 12,
+        "titulo": "English corner",
+        "pos": 12
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 13,
+        "titulo": "",
+        "pos": 13
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "sql.tipos-dados",
+      "nome": "Tipos de dados",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 2,
+        "titulo": "Tipos de dados: cada coluna tem um papel",
+        "pos": 16
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 17
+      },
+      "prerequisitos": [
+        "sql.coluna"
+      ]
+    },
+    {
+      "id": "sql.chave-estrangeira",
+      "nome": "Chave estrangeira",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 4,
+        "titulo": "Chave estrangeira: ligando tabelas",
+        "pos": 18
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 19
+      },
+      "prerequisitos": [
+        "sql.chave-primaria"
+      ]
+    },
+    {
+      "id": "sql.relacionamento",
+      "nome": "Relacionamentos",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 4,
+        "titulo": "Chave estrangeira: ligando tabelas",
+        "pos": 18
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 19
+      },
+      "prerequisitos": [
+        "sql.chave-estrangeira"
+      ]
+    },
+    {
+      "id": "sql.select",
+      "nome": "SELECT",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 1,
+        "titulo": "Como conversamos com o banco",
+        "pos": 25
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 26
+      },
+      "prerequisitos": [
+        "sql.tabela"
+      ]
+    },
+    {
+      "id": "sql.from",
+      "nome": "FROM",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 1,
+        "titulo": "Como conversamos com o banco",
+        "pos": 25
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 28
+      },
+      "prerequisitos": [
+        "sql.select"
+      ]
+    },
+    {
+      "id": "sql.colunas",
+      "nome": "Seleção de colunas",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 3,
+        "titulo": "Escolhendo as colunas",
+        "pos": 27
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 29
+      },
+      "prerequisitos": [
+        "sql.select"
+      ]
+    },
+    {
+      "id": "sql.comandos-sql",
+      "nome": "Comandos SQL",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 9,
+        "titulo": "Nem só de consulta vive um banco",
+        "pos": 33
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 10,
+        "titulo": "",
+        "pos": 34
+      },
+      "prerequisitos": [
+        "sql.select"
+      ]
+    },
+    {
+      "id": "sql.where",
+      "nome": "WHERE",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 1,
+        "titulo": "Nem tudo, só o que importa",
+        "pos": 38
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 39
+      },
+      "prerequisitos": [
+        "sql.select"
+      ]
+    },
+    {
+      "id": "sql.operadores",
+      "nome": "Operadores de comparação",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 3,
+        "titulo": "Operadores de comparação",
+        "pos": 40
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 41
+      },
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "sql.texto-aspas",
+      "nome": "Textos e aspas",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 6,
+        "titulo": "Texto pede aspas simples",
+        "pos": 43
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 44
+      },
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "sql.and-or",
+      "nome": "AND e OR",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 1,
+        "titulo": "Duas condições ao mesmo tempo",
+        "pos": 51
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 52
+      },
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "sql.parenteses",
+      "nome": "Parênteses em filtros",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 6,
+        "titulo": "Cuidado com a precedência",
+        "pos": 56
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 57
+      },
+      "prerequisitos": [
+        "sql.and-or"
+      ]
+    },
+    {
+      "id": "sql.in",
+      "nome": "IN",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 1,
+        "titulo": "Três operadores que você vai usar muito",
+        "pos": 60
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 61
+      },
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "sql.between",
+      "nome": "BETWEEN",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 1,
+        "titulo": "Três operadores que você vai usar muito",
+        "pos": 60
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 61
+      },
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "sql.not",
+      "nome": "NOT",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 1,
+        "titulo": "Três operadores que você vai usar muito",
+        "pos": 60
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 61
+      },
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "csharp.classes",
+      "nome": "Classes",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 2,
+        "titulo": "Classe é o molde",
+        "pos": 80
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 81
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "csharp.propriedades",
+      "nome": "Propriedades",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 2,
+        "titulo": "Classe é o molde",
+        "pos": 80
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 81
+      },
+      "prerequisitos": [
+        "csharp.classes"
+      ]
+    },
+    {
+      "id": "csharp.tipos",
+      "nome": "Tipos de dados em C#",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 2,
+        "titulo": "Classe é o molde",
+        "pos": 80
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 86
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "csharp.objetos",
+      "nome": "Objetos",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 4,
+        "titulo": "Criando o objeto com new",
+        "pos": 82
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 83
+      },
+      "prerequisitos": [
+        "csharp.classes"
+      ]
+    },
+    {
+      "id": "csharp.variaveis",
+      "nome": "Variáveis",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 1,
+        "titulo": "Variável é uma caixa etiquetada",
+        "pos": 88
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 92
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "csharp.condicoes",
+      "nome": "Condições",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 3,
+        "titulo": "Decidindo com if",
+        "pos": 90
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 91
+      },
+      "prerequisitos": [
+        "csharp.variaveis"
+      ]
+    },
+    {
+      "id": "csharp.metodos",
+      "nome": "Métodos",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-02",
+        "etapa": 2,
+        "titulo": "Anatomia de um método",
+        "pos": 96
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-02",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 97
+      },
+      "prerequisitos": [
+        "csharp.variaveis"
+      ]
+    },
+    {
+      "id": "csharp.list",
+      "nome": "List e coleções",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-03",
+        "etapa": 2,
+        "titulo": "Declarando, adicionando e percorrendo",
+        "pos": 103
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-03",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 104
+      },
+      "prerequisitos": [
+        "csharp.objetos"
+      ]
+    },
+    {
+      "id": "csharp.generics",
+      "nome": "Generics básicos",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-03",
+        "etapa": 2,
+        "titulo": "Declarando, adicionando e percorrendo",
+        "pos": 103
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-03",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 106
+      },
+      "prerequisitos": [
+        "csharp.list"
+      ]
+    },
+    {
+      "id": "csharp.null",
+      "nome": "Null e NullReferenceException",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-04",
+        "etapa": 1,
+        "titulo": "Null não é vazio, nem zero",
+        "pos": 110
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-04",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 112
+      },
+      "prerequisitos": [
+        "csharp.objetos"
+      ]
+    },
+    {
+      "id": "csharp.excecoes",
+      "nome": "Exceções",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-04",
+        "etapa": 2,
+        "titulo": "O erro mais famoso do .NET",
+        "pos": 111
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-08",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 142
+      },
+      "prerequisitos": [
+        "csharp.metodos"
+      ]
+    },
+    {
+      "id": "csharp.interfaces",
+      "nome": "Interfaces",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-05",
+        "etapa": 2,
+        "titulo": "Interface é o contrato",
+        "pos": 118
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-05",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 119
+      },
+      "prerequisitos": [
+        "csharp.classes",
+        "csharp.metodos"
+      ]
+    },
+    {
+      "id": "csharp.construtor",
+      "nome": "Construtores",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-06",
+        "etapa": 2,
+        "titulo": "Recebendo pelo construtor",
+        "pos": 125
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-06",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 126
+      },
+      "prerequisitos": [
+        "csharp.classes"
+      ]
+    },
+    {
+      "id": "csharp.di",
+      "nome": "Injeção de dependência",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-06",
+        "etapa": 2,
+        "titulo": "Recebendo pelo construtor",
+        "pos": 125
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-06",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 126
+      },
+      "prerequisitos": [
+        "csharp.interfaces",
+        "csharp.construtor"
+      ]
+    },
+    {
+      "id": "csharp.lambda",
+      "nome": "Lambdas",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-07",
+        "etapa": 4,
+        "titulo": "A regra como argumento",
+        "pos": 134
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-07",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 135
+      },
+      "prerequisitos": [
+        "csharp.metodos"
+      ]
+    },
+    {
+      "id": "csharp.async",
+      "nome": "async e await",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-09",
+        "etapa": 1,
+        "titulo": "O problema: esperar parado",
+        "pos": 147
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-09",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 149
+      },
+      "prerequisitos": [
+        "csharp.metodos"
+      ]
+    },
+    {
+      "id": "logica.total",
+      "nome": "Total de pedido",
+      "introduzidoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 2,
+        "titulo": "Os quatro raciocínios deste treino",
+        "pos": 154
+      },
+      "praticadoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 155
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "logica.validacao",
+      "nome": "Validação de regra",
+      "introduzidoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 2,
+        "titulo": "Os quatro raciocínios deste treino",
+        "pos": 154
+      },
+      "praticadoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 157
+      },
+      "prerequisitos": [
+        "logica.total"
+      ]
+    },
+    {
+      "id": "logica.duplicados",
+      "nome": "Encontrar duplicados",
+      "introduzidoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 2,
+        "titulo": "Os quatro raciocínios deste treino",
+        "pos": 154
+      },
+      "praticadoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 159
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "logica.agrupamento",
+      "nome": "Agrupar dados",
+      "introduzidoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 2,
+        "titulo": "Os quatro raciocínios deste treino",
+        "pos": 154
+      },
+      "praticadoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 160
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "terminal.comandos",
+      "nome": "Comandos de navegação",
+      "introduzidoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 2,
+        "titulo": "Navegando em pastas",
+        "pos": 162
+      },
+      "praticadoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 163
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "terminal.dotnet",
+      "nome": "Comandos dotnet",
+      "introduzidoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 4,
+        "titulo": "Rodando um projeto .NET",
+        "pos": 164
+      },
+      "praticadoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 165
+      },
+      "prerequisitos": [
+        "terminal.comandos"
+      ]
+    },
+    {
+      "id": "terminal.git",
+      "nome": "Comandos git",
+      "introduzidoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 6,
+        "titulo": "Git, Docker e npm: três vizinhos",
+        "pos": 166
+      },
+      "praticadoEm": null,
+      "prerequisitos": [
+        "terminal.comandos"
+      ]
+    },
+    {
+      "id": "terminal.docker",
+      "nome": "Comandos docker",
+      "introduzidoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 6,
+        "titulo": "Git, Docker e npm: três vizinhos",
+        "pos": 166
+      },
+      "praticadoEm": null,
+      "prerequisitos": [
+        "terminal.comandos"
+      ]
+    },
+    {
+      "id": "terminal.npm",
+      "nome": "Comandos npm",
+      "introduzidoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 6,
+        "titulo": "Git, Docker e npm: três vizinhos",
+        "pos": 166
+      },
+      "praticadoEm": null,
+      "prerequisitos": [
+        "terminal.comandos"
+      ]
+    },
+    {
+      "id": "en.saudacoes",
+      "nome": "Saudações e apresentações",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-00",
+        "etapa": 1,
+        "titulo": "Hello! Vamos nos apresentar",
+        "pos": 168
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-00",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 169
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "en.numeros",
+      "nome": "Números, idade e preços",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-01",
+        "etapa": 1,
+        "titulo": "Numbers: de 0 a 100",
+        "pos": 174
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-01",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 175
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "en.familia",
+      "nome": "Família e pessoas",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-02",
+        "etapa": 1,
+        "titulo": "My family",
+        "pos": 180
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-02",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 181
+      },
+      "prerequisitos": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "id": "en.rotina",
+      "nome": "Rotina e present simple",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-03",
+        "etapa": 1,
+        "titulo": "My daily routine",
+        "pos": 186
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-03",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 187
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "en.horarios",
+      "nome": "Horas, dias e datas",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-04",
+        "etapa": 1,
+        "titulo": "What time is it?",
+        "pos": 192
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-04",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 193
+      },
+      "prerequisitos": [
+        "en.numeros"
+      ]
+    },
+    {
+      "id": "en.comida",
+      "nome": "Comida e restaurante",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-05",
+        "etapa": 1,
+        "titulo": "At the restaurant",
+        "pos": 198
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-05",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 199
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "en.compras",
+      "nome": "Compras e supermercado",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-06",
+        "etapa": 1,
+        "titulo": "How much is it?",
+        "pos": 204
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-06",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 205
+      },
+      "prerequisitos": [
+        "en.numeros"
+      ]
+    },
+    {
+      "id": "en.lugares",
+      "nome": "Lugares, direções e transporte",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-07",
+        "etapa": 1,
+        "titulo": "Where is the station?",
+        "pos": 210
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-07",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 211
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "en.perguntas",
+      "nome": "Perguntas básicas e conversa",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-08",
+        "etapa": 1,
+        "titulo": "Everyday questions",
+        "pos": 216
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-08",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 217
+      },
+      "prerequisitos": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "id": "en.passado",
+      "nome": "Passado simples",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-00",
+        "etapa": 1,
+        "titulo": "Talking about yesterday",
+        "pos": 233
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-00",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 234
+      },
+      "prerequisitos": [
+        "en.rotina"
+      ]
+    },
+    {
+      "id": "en.futuro",
+      "nome": "Planos e futuro",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-01",
+        "etapa": 1,
+        "titulo": "Tomorrow, next week...",
+        "pos": 239
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-01",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 240
+      },
+      "prerequisitos": [
+        "en.rotina"
+      ]
+    },
+    {
+      "id": "en.viagem",
+      "nome": "Viagem: aeroporto e hotel",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-02",
+        "etapa": 1,
+        "titulo": "At the airport and hotel",
+        "pos": 245
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-02",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 246
+      },
+      "prerequisitos": [
+        "en.lugares"
+      ]
+    },
+    {
+      "id": "ingles.vocabulario",
+      "nome": "Vocabulário técnico",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 1,
+        "titulo": "As palavras que aparecem todo dia",
+        "pos": 251
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 252
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "ingles.frases",
+      "nome": "Frases de trabalho",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 5,
+        "titulo": "Montando frases do trabalho",
+        "pos": 255
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 256
+      },
+      "prerequisitos": [
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "id": "ingles.leitura",
+      "nome": "Leitura técnica em inglês",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 5,
+        "titulo": "Montando frases do trabalho",
+        "pos": 255
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 257
+      },
+      "prerequisitos": [
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "id": "ingles.erros",
+      "nome": "Mensagens de erro em inglês",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-01",
+        "etapa": 1,
+        "titulo": "Mensagens de erro que você vai ver",
+        "pos": 258
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-01",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 259
+      },
+      "prerequisitos": [
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "id": "linq.intro",
+      "nome": "O que é LINQ",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 1,
+        "titulo": "Você já escreveu LINQ sem saber",
+        "pos": 265
+      },
+      "praticadoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 267
+      },
+      "prerequisitos": [
+        "csharp.lambda",
+        "csharp.list"
+      ]
+    },
+    {
+      "id": "linq.lambda",
+      "nome": "Lambda em consultas",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 2,
+        "titulo": "O mesmo filtro, agora com LINQ",
+        "pos": 266
+      },
+      "praticadoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 268
+      },
+      "prerequisitos": [
+        "csharp.lambda"
+      ]
+    },
+    {
+      "id": "linq.where",
+      "nome": "Where",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 2,
+        "titulo": "O mesmo filtro, agora com LINQ",
+        "pos": 266
+      },
+      "praticadoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 268
+      },
+      "prerequisitos": [
+        "linq.intro"
+      ]
+    },
+    {
+      "id": "linq.select",
+      "nome": "Select",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-02",
+        "etapa": 1,
+        "titulo": "Where escolhe linhas. Select escolhe o formato",
+        "pos": 277
+      },
+      "praticadoEm": {
+        "trilha": "linq",
+        "licao": "linq-02",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 278
+      },
+      "prerequisitos": [
+        "linq.intro"
+      ]
+    },
+    {
+      "id": "linq.first",
+      "nome": "First, FirstOrDefault e Single",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-03",
+        "etapa": 1,
+        "titulo": "Buscando um produto específico",
+        "pos": 282
+      },
+      "praticadoEm": {
+        "trilha": "linq",
+        "licao": "linq-03",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 283
+      },
+      "prerequisitos": [
+        "linq.where",
+        "csharp.null"
+      ]
+    },
+    {
+      "id": "ef.orm",
+      "nome": "ORM",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-00",
+        "etapa": 2,
+        "titulo": "ORM: o tradutor entre C# e o banco",
+        "pos": 289
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 290
+      },
+      "prerequisitos": [
+        "sql.tabela",
+        "csharp.classes"
+      ]
+    },
+    {
+      "id": "ef.entidade",
+      "nome": "Entidades",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-00",
+        "etapa": 2,
+        "titulo": "ORM: o tradutor entre C# e o banco",
+        "pos": 289
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 290
+      },
+      "prerequisitos": [
+        "ef.orm"
+      ]
+    },
+    {
+      "id": "ef.dbcontext",
+      "nome": "DbContext",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-01",
+        "etapa": 1,
+        "titulo": "A porta de entrada para o banco",
+        "pos": 294
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-01",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 296
+      },
+      "prerequisitos": [
+        "ef.orm"
+      ]
+    },
+    {
+      "id": "ef.dbset",
+      "nome": "DbSet",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-01",
+        "etapa": 2,
+        "titulo": "DbSet: uma gaveta para cada tipo de coisa",
+        "pos": 295
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-01",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 296
+      },
+      "prerequisitos": [
+        "ef.dbcontext"
+      ]
+    },
+    {
+      "id": "ef.savechanges",
+      "nome": "SaveChanges",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-02",
+        "etapa": 3,
+        "titulo": "SaveChanges: agora sim, o INSERT",
+        "pos": 304
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 305
+      },
+      "prerequisitos": [
+        "ef.dbset"
+      ]
+    },
+    {
+      "id": "ef.consultas",
+      "nome": "Consultas com EF",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-03",
+        "etapa": 1,
+        "titulo": "LINQ no DbSet vira SQL",
+        "pos": 310
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-03",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 311
+      },
+      "prerequisitos": [
+        "ef.dbset",
+        "linq.where"
+      ]
+    },
+    {
+      "id": "aspnet.http",
+      "nome": "HTTP",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 1,
+        "titulo": "Duas partes conversando",
+        "pos": 317
+      },
+      "praticadoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 319
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "aspnet.requisicao",
+      "nome": "Request (requisição)",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 1,
+        "titulo": "Duas partes conversando",
+        "pos": 317
+      },
+      "praticadoEm": null,
+      "prerequisitos": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "id": "aspnet.resposta",
+      "nome": "Response (resposta)",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 1,
+        "titulo": "Duas partes conversando",
+        "pos": 317
+      },
+      "praticadoEm": null,
+      "prerequisitos": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "id": "aspnet.api",
+      "nome": "API e endpoints",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 1,
+        "titulo": "Duas partes conversando",
+        "pos": 317
+      },
+      "praticadoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 332
+      },
+      "prerequisitos": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "id": "aspnet.status",
+      "nome": "Status codes",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 4,
+        "titulo": "A resposta conta o que aconteceu",
+        "pos": 320
+      },
+      "praticadoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 321
+      },
+      "prerequisitos": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "id": "aspnet.json",
+      "nome": "JSON",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-01",
+        "etapa": 1,
+        "titulo": "Um formato que todo mundo entende",
+        "pos": 324
+      },
+      "praticadoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-01",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 325
+      },
+      "prerequisitos": []
+    },
+    {
+      "id": "aspnet.rotas",
+      "nome": "Rotas",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-02",
+        "etapa": 1,
+        "titulo": "O que é um endpoint",
+        "pos": 329
+      },
+      "praticadoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 332
+      },
+      "prerequisitos": [
+        "aspnet.api"
+      ]
+    }
+  ]
+}
