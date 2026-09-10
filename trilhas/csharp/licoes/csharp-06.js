@@ -17,7 +17,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'O problema continua',
       blocos: [
-        { tipo: 'texto', texto: 'Na etapa anterior, a interface permitiu trocar o provedor. Mas o service ainda **decide** qual implementação usar, com `new`:' },
+        { tipo: 'texto', texto: 'Na etapa anterior, a interface permitiu trocar o provedor. Mas a classe `PedidoService` (o service, uma classe que executa uma regra do sistema) ainda **decide** qual implementação usar, com `new`:' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'public class PedidoService\n{\n    public void FinalizarPedido(Pedido pedido)\n    {\n        INotificador notificador = new EmailNotificador();\n        notificador.Enviar("Pedido confirmado");\n    }\n}' },
         { tipo: 'lista', itens: [
           'Para **testar**, seria preciso enviar e-mail de verdade (ou mudar o código).',
@@ -107,13 +107,13 @@ Plataforma.registrarLicao({
         opcoes: [
           'Receber `INotificador` pelo construtor e usar uma implementação falsa no teste',
           'Colocar um if para não enviar e-mail quando estiver testando',
-          'Trocar EmailNotificador por um método estático',
+          'Criar o EmailNotificador com `new` dentro do PedidoService',
           'Remover o envio de e-mail do sistema'
         ],
         correta: 0,
         feedbackErro: {
-          1: 'Espalhar condições de teste dentro do código de produção é um anti-padrão: o teste contamina a regra.',
-          2: 'Método estático dificulta trocar a implementação depois.',
+          1: 'Espalhar condições de teste dentro do código de produção contamina a regra: o código passa a se comportar diferente só por causa do teste.',
+          2: 'Criar com `new` dentro do PedidoService é justamente o que prende a classe ao EmailNotificador e impede o teste.',
           3: 'O e-mail é requisito do sistema; o que falta é poder substituí-lo no teste.'
         },
         dicas: ['O teste precisa de uma versão "de mentira" do notificador.', 'Como entregar essa versão de fora para o service?'],
@@ -147,7 +147,7 @@ Plataforma.registrarLicao({
           'Fica possível trocar a implementação sem reescrever a classe',
           'Fica possível testar com uma implementação falsa'
         ],
-        palavrasChave: ['new', 'constru', 'criar', 'trocar', 'substitu', 'test', 'falsa', 'falso', 'simular', 'mock', 'recebe', 'injet', 'fora'],
+        palavrasChave: ['new', 'constru', 'criar', 'trocar', 'substitu', 'test', 'falsa', 'falso', 'simular', 'implementa', 'recebe', 'injet', 'fora'],
         exemplo: 'Sem DI, o PedidoService cria um EmailNotificador com new e fica preso a ele. Com DI, o service recebe um INotificador pelo construtor: posso entregar um notificador de SMS em produção ou um notificador falso no teste, sem alterar o service.',
         dicas: ['Comece pelo problema: quem construía a dependência?', 'Depois diga o que muda: trocar e testar.'],
         explicacao: 'Entender o problema é mais importante do que decorar o nome. DI é apenas a técnica de fornecer dependências de fora.',

@@ -49,7 +49,7 @@ Plataforma.registrarLicao({
         ],
         correta: 0,
         feedbackErro: {
-          1: '"Pelo menos uma" é o comportamento do OR, não do AND.',
+          1: 'O AND exige que as duas condições sejam verdadeiras.',
           2: 'Se as duas fossem falsas, nenhuma linha passaria em qualquer critério.',
           3: 'Nenhuma condição é ignorada: o banco avalia todas.'
         },
@@ -149,8 +149,9 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: '-- O banco lê assim:\nWHERE Ativo = 1\n   OR (Cidade = \'Pendente\' AND ValorTotal > 500)'
+          codigo: '-- O banco lê assim:\nSELECT *\nFROM Clientes\nWHERE Ativo = 1\n  AND (Cidade = \'Curitiba\' OR Cidade = \'Recife\');'
         },
+        { tipo: 'nota', tom: 'info', texto: 'Linhas que começam com `--` são comentários: o banco ignora.' },
         { tipo: 'texto', texto: 'Para deixar a intenção explícita, use parênteses. Eles eliminam qualquer dúvida — inclusive para quem revisa seu código:' },
         {
           tipo: 'codigo',
@@ -214,17 +215,17 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql04-a6',
         tipo: 'write-code',
-        enunciado: 'The manager wants all orders that are either **pending** or **shipped**, with a total value above 500.',
+        enunciado: 'Retrieve all orders where (**Status** = \'Pendente\' or **Status** = \'Enviado\') and **ValorTotal** > 500.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
           'select * from pedidos where (status = \'pendente\' or status = \'enviado\') and valortotal > 500',
           'select * from pedidos where valortotal > 500 and (status = \'pendente\' or status = \'enviado\')'
         ],
         dicas: [
-          'pending = Pendente, shipped = Enviado, orders = Pedidos.',
+          'orders = pedidos.',
           'Use parênteses no OR e combine com AND ValorTotal > 500.'
         ],
-        explicacao: 'Traduzindo: pedidos com status Pendente ou Enviado E ValorTotal > 500. Os parênteses garantem que o AND se aplique ao grupo inteiro.',
+        explicacao: 'Traduzindo: "retrieve all orders where (Status = Pendente or Status = Enviado) and ValorTotal > 500" = retorne todos os pedidos com Status Pendente ou Enviado E ValorTotal > 500. Os parênteses garantem que o AND se aplique ao grupo inteiro.',
         conceitos: ['sql.and-or', 'sql.parenteses', 'sql.ingles'],
         desafio: true
       }

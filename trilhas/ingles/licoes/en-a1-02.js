@@ -19,11 +19,25 @@ Plataforma.registrarLicao({
       introduz: ['en.familia'],
       blocos: [
         { tipo: 'vocab', titulo: 'Família', pares: [
+          ['my family', 'minha família'],
           ['mother / mom', 'mãe'],
           ['father / dad', 'pai'],
           ['sister', 'irmã'],
           ['brother', 'irmão'],
           ['son / daughter', 'filho / filha']
+        ] },
+        { tipo: 'vocab', titulo: 'Possessivos e apresentação', pares: [
+          ['my / your', 'meu, minha / seu, sua'],
+          ['his / her', 'dele / dela'],
+          ['This is...', 'Este é... / Esta é...'],
+          ['Who is this?', 'Quem é esta pessoa?'],
+          ['She is... / He is...', 'Ela é... / Ele é...'],
+          ['How old is she?', 'Quantos anos ela tem?']
+        ] },
+        { tipo: 'vocab', titulo: 'Respondendo com sim ou não', pares: [
+          ['Yes. / No.', 'Sim. / Não.'],
+          ['I have two brothers.', 'Eu tenho dois irmãos.'],
+          ['too', 'também']
         ] },
         { tipo: 'ingles', frase: 'This is my sister. Her name is Lia.', traducao: 'Esta é a minha irmã. O nome dela é Lia.' },
         { tipo: 'nota', tom: 'info', texto: '`my` = meu/minha · `your` = seu/sua · `his` = dele · `her` = dela. Use `her` para falar de uma mulher e `his` para um homem.' }
@@ -96,12 +110,12 @@ Plataforma.registrarLicao({
         cena: 'Um colega mostra uma foto no celular.',
         interlocutor: 'Sara',
         turnos: [
-          { fala: 'Who is this in the photo?', opcoes: ['She is my sister, Lia.', 'It is on Monday.', 'I am twenty years old.'], correta: 0 },
-          { fala: 'How old is she?', opcoes: ['She is ten years old.', 'Her name is Lia.', 'Nice to meet you.'], correta: 0 },
-          { fala: 'She is cute! Is she your only sister?', opcoes: ['No, I have two brothers too.', 'Yes, she is my mother.', 'It costs ten dollars.'], correta: 0 }
+          { fala: 'Who is this?', opcoes: ['She is my sister, Lia.', 'My name is Lia.', 'Nice to meet you.'], correta: 0 },
+          { fala: 'How old is she?', opcoes: ['She is ten years old.', 'Her name is Lia.', "I'm fine, thanks."], correta: 0 },
+          { fala: 'Is she your sister?', opcoes: ['Yes, she is. And this is my brother, Tom.', 'No, I have two brothers too.', 'My name is Ana.'], correta: 0 }
         ],
         dicas: ['Who is this? pede uma pessoa.', 'How old is she? pede idade.'],
-        explicacao: 'Você praticou perguntas sobre pessoas (Who is this?), idade (How old) e respostas com possessivos.',
+        explicacao: 'Você praticou perguntas sobre pessoas (Who is this?), idade (How old is she?) e respostas com possessivos.',
         conceitos: ['en.familia'],
         desafio: true
       }
@@ -113,7 +127,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         habilidade: 'writing',
         dimensao: 'construcao',
-        enunciado: 'Apresente uma pessoa da sua família: use This is my... e the name.',
+        enunciado: 'Apresente uma pessoa da sua família: use This is my... e o possessivo (Her/His).',
         esqueleto: 'This is my ... . Her/His name is ...',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();

@@ -1,0 +1,6566 @@
+{
+  "geradoEm": "2026-09-10T18:53:26.570Z",
+  "regra": "Estados de conteúdo: NAO_ENSINADO → INTRODUZIDO → PRATICADO → PRONTO_PARA_AVALIACAO. MASTERED é calculado em tempo real pelo motor (confiança + dimensões + revisão espaçada), não pelo conteúdo estático.",
+  "conceitos": [
+    {
+      "id": "sql.banco",
+      "nome": "Banco de dados",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 1,
+        "titulo": "Por que o sistema precisa lembrar?",
+        "pos": 1
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 6
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 14,
+        "titulo": "",
+        "pos": 14
+      },
+      "praticas": 2,
+      "dimensoes": [
+        "associacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "sql.servidor",
+      "nome": "Servidor",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 2,
+        "titulo": "Servidor: onde o banco mora",
+        "pos": 2
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 6
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 14,
+        "titulo": "",
+        "pos": 14
+      },
+      "praticas": 2,
+      "dimensoes": [
+        "associacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "sql.tabela",
+      "nome": "Tabelas, linhas e colunas",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 3,
+        "titulo": "Tabela: um assunto por vez",
+        "pos": 3
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 5
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 69
+      },
+      "praticas": 4,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.banco"
+      ]
+    },
+    {
+      "id": "sql.coluna",
+      "nome": "Coluna",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 4,
+        "titulo": "Coluna e registro: o cabeçalho e a linha",
+        "pos": 4
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 5
+      },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [
+        "reconhecimento"
+      ],
+      "estado": "PRATICADO",
+      "prerequisitos": [
+        "sql.tabela"
+      ]
+    },
+    {
+      "id": "sql.registro",
+      "nome": "Registros",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 4,
+        "titulo": "Coluna e registro: o cabeçalho e a linha",
+        "pos": 4
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 6
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.tabela"
+      ]
+    },
+    {
+      "id": "sql.chave-primaria",
+      "nome": "Chave primária",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 8,
+        "titulo": "A chave primária",
+        "pos": 8
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 9
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 70
+      },
+      "praticas": 3,
+      "dimensoes": [
+        "reconhecimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.tabela"
+      ]
+    },
+    {
+      "id": "sql.ingles",
+      "nome": "Inglês técnico",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 12,
+        "titulo": "English corner",
+        "pos": 12
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 13,
+        "titulo": "",
+        "pos": 13
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 13,
+        "titulo": "",
+        "pos": 37
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "sql.tipos-dados",
+      "nome": "Tipos de dados",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 2,
+        "titulo": "Tipos de dados: cada coluna tem um papel",
+        "pos": 16
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 17
+      },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [],
+      "estado": "PRATICADO",
+      "prerequisitos": [
+        "sql.coluna"
+      ]
+    },
+    {
+      "id": "sql.chave-estrangeira",
+      "nome": "Chave estrangeira",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 4,
+        "titulo": "Chave estrangeira: ligando tabelas",
+        "pos": 18
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 19
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 23
+      },
+      "praticas": 4,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.chave-primaria"
+      ]
+    },
+    {
+      "id": "sql.relacionamento",
+      "nome": "Relacionamentos",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 4,
+        "titulo": "Chave estrangeira: ligando tabelas",
+        "pos": 18
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 19
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 23
+      },
+      "praticas": 2,
+      "dimensoes": [],
+      "estado": "PRATICADO",
+      "prerequisitos": [
+        "sql.chave-estrangeira"
+      ]
+    },
+    {
+      "id": "sql.select",
+      "nome": "SELECT",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 1,
+        "titulo": "Como conversamos com o banco",
+        "pos": 25
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 26
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 13,
+        "titulo": "",
+        "pos": 37
+      },
+      "praticas": 7,
+      "dimensoes": [
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.tabela"
+      ]
+    },
+    {
+      "id": "sql.from",
+      "nome": "FROM",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 1,
+        "titulo": "Como conversamos com o banco",
+        "pos": 25
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 28
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 72
+      },
+      "praticas": 4,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.select"
+      ]
+    },
+    {
+      "id": "sql.colunas",
+      "nome": "Seleção de colunas",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 3,
+        "titulo": "Escolhendo as colunas",
+        "pos": 27
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 29
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [],
+      "estado": "PRATICADO",
+      "prerequisitos": [
+        "sql.select"
+      ]
+    },
+    {
+      "id": "sql.comandos-sql",
+      "nome": "Comandos SQL",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 9,
+        "titulo": "Nem só de consulta vive um banco",
+        "pos": 33
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 10,
+        "titulo": "",
+        "pos": 34
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 71
+      },
+      "praticas": 1,
+      "dimensoes": [],
+      "estado": "PRATICADO",
+      "prerequisitos": [
+        "sql.select"
+      ]
+    },
+    {
+      "id": "sql.where",
+      "nome": "WHERE",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 1,
+        "titulo": "Nem tudo, só o que importa",
+        "pos": 38
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 39
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 13,
+        "titulo": "",
+        "pos": 50
+      },
+      "praticas": 8,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.select"
+      ]
+    },
+    {
+      "id": "sql.operadores",
+      "nome": "Operadores de comparação",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 3,
+        "titulo": "Operadores de comparação",
+        "pos": 40
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 41
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 73
+      },
+      "praticas": 4,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "sql.texto-aspas",
+      "nome": "Textos e aspas",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 6,
+        "titulo": "Texto pede aspas simples",
+        "pos": 43
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 44
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 10,
+        "titulo": "",
+        "pos": 77
+      },
+      "praticas": 3,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "sql.and-or",
+      "nome": "AND e OR",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 1,
+        "titulo": "Duas condições ao mesmo tempo",
+        "pos": 51
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 52
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 59
+      },
+      "praticas": 7,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "sql.parenteses",
+      "nome": "Parênteses em filtros",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 6,
+        "titulo": "Cuidado com a precedência",
+        "pos": 56
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 57
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 59
+      },
+      "praticas": 3,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.and-or"
+      ]
+    },
+    {
+      "id": "sql.in",
+      "nome": "IN",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 1,
+        "titulo": "Três operadores que você vai usar muito",
+        "pos": 60
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 61
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 66
+      },
+      "praticas": 4,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "sql.between",
+      "nome": "BETWEEN",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 1,
+        "titulo": "Três operadores que você vai usar muito",
+        "pos": 60
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 61
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 67
+      },
+      "praticas": 5,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "sql.not",
+      "nome": "NOT",
+      "introduzidoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 1,
+        "titulo": "Três operadores que você vai usar muito",
+        "pos": 60
+      },
+      "praticadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 61
+      },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 66
+      },
+      "praticas": 4,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.where"
+      ]
+    },
+    {
+      "id": "csharp.classes",
+      "nome": "Classes",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 2,
+        "titulo": "Classe é o molde",
+        "pos": 80
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 81
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 87
+      },
+      "praticas": 6,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "csharp.propriedades",
+      "nome": "Propriedades",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 2,
+        "titulo": "Classe é o molde",
+        "pos": 80
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 81
+      },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "ordenacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.classes"
+      ]
+    },
+    {
+      "id": "csharp.tipos",
+      "nome": "Tipos de dados em C#",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 2,
+        "titulo": "Classe é o molde",
+        "pos": 80
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 86
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 94
+      },
+      "praticas": 3,
+      "dimensoes": [
+        "construcao",
+        "associacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "csharp.objetos",
+      "nome": "Objetos",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 4,
+        "titulo": "Criando o objeto com new",
+        "pos": 82
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 83
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 87
+      },
+      "praticas": 4,
+      "dimensoes": [
+        "associacao",
+        "preenchimento",
+        "ordenacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.classes"
+      ]
+    },
+    {
+      "id": "csharp.variaveis",
+      "nome": "Variáveis",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 1,
+        "titulo": "Variável é uma caixa etiquetada",
+        "pos": 88
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 92
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 94
+      },
+      "praticas": 3,
+      "dimensoes": [
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "csharp.condicoes",
+      "nome": "Condições",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 3,
+        "titulo": "Decidindo com if",
+        "pos": 90
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 91
+      },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.variaveis"
+      ]
+    },
+    {
+      "id": "csharp.metodos",
+      "nome": "Métodos",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-02",
+        "etapa": 2,
+        "titulo": "Anatomia de um método",
+        "pos": 96
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-02",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 97
+      },
+      "avaliadoEm": null,
+      "praticas": 7,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.variaveis"
+      ]
+    },
+    {
+      "id": "csharp.list",
+      "nome": "List e coleções",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-03",
+        "etapa": 2,
+        "titulo": "Declarando, adicionando e percorrendo",
+        "pos": 103
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-03",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 104
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-03",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 109
+      },
+      "praticas": 6,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "ordenacao",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.objetos"
+      ]
+    },
+    {
+      "id": "csharp.generics",
+      "nome": "Generics básicos",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-03",
+        "etapa": 2,
+        "titulo": "Declarando, adicionando e percorrendo",
+        "pos": 103
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-03",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 106
+      },
+      "avaliadoEm": null,
+      "praticas": 3,
+      "dimensoes": [
+        "preenchimento",
+        "construcao",
+        "reconhecimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.list"
+      ]
+    },
+    {
+      "id": "csharp.null",
+      "nome": "Null e NullReferenceException",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-04",
+        "etapa": 1,
+        "titulo": "Null não é vazio, nem zero",
+        "pos": 110
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-04",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 112
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-04",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 116
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.objetos"
+      ]
+    },
+    {
+      "id": "csharp.excecoes",
+      "nome": "Exceções",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-04",
+        "etapa": 2,
+        "titulo": "O erro mais famoso do .NET",
+        "pos": 111
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-08",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 142
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-08",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 144
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao",
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.metodos"
+      ]
+    },
+    {
+      "id": "csharp.interfaces",
+      "nome": "Interfaces",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-05",
+        "etapa": 2,
+        "titulo": "Interface é o contrato",
+        "pos": 118
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-05",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 119
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-05",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 122
+      },
+      "praticas": 6,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.classes",
+        "csharp.metodos"
+      ]
+    },
+    {
+      "id": "csharp.construtor",
+      "nome": "Construtores",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-06",
+        "etapa": 2,
+        "titulo": "Recebendo pelo construtor",
+        "pos": 125
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-06",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 126
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.classes"
+      ]
+    },
+    {
+      "id": "csharp.di",
+      "nome": "Injeção de dependência",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-06",
+        "etapa": 2,
+        "titulo": "Recebendo pelo construtor",
+        "pos": 125
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-06",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 126
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-06",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 128
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.interfaces",
+        "csharp.construtor"
+      ]
+    },
+    {
+      "id": "csharp.lambda",
+      "nome": "Lambdas",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-07",
+        "etapa": 4,
+        "titulo": "A regra como argumento",
+        "pos": 134
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-07",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 135
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-07",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 139
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.metodos"
+      ]
+    },
+    {
+      "id": "csharp.async",
+      "nome": "async e await",
+      "introduzidoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-09",
+        "etapa": 1,
+        "titulo": "O problema: esperar parado",
+        "pos": 147
+      },
+      "praticadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-09",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 149
+      },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-09",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 152
+      },
+      "praticas": 6,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.metodos",
+        "csharp.generics"
+      ]
+    },
+    {
+      "id": "logica.total",
+      "nome": "Total de pedido",
+      "introduzidoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 2,
+        "titulo": "Os quatro raciocínios deste treino",
+        "pos": 154
+      },
+      "praticadoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 155
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "reconhecimento",
+        "ordenacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "logica.validacao",
+      "nome": "Validação de regra",
+      "introduzidoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 2,
+        "titulo": "Os quatro raciocínios deste treino",
+        "pos": 154
+      },
+      "praticadoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 157
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "reconhecimento",
+        "ordenacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "logica.total"
+      ]
+    },
+    {
+      "id": "logica.duplicados",
+      "nome": "Encontrar duplicados",
+      "introduzidoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 2,
+        "titulo": "Os quatro raciocínios deste treino",
+        "pos": 154
+      },
+      "praticadoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 159
+      },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [
+        "aplicacao"
+      ],
+      "estado": "PRATICADO",
+      "prerequisitos": []
+    },
+    {
+      "id": "logica.agrupamento",
+      "nome": "Agrupar dados",
+      "introduzidoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 2,
+        "titulo": "Os quatro raciocínios deste treino",
+        "pos": 154
+      },
+      "praticadoEm": {
+        "trilha": "logica",
+        "licao": "logica-00",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 160
+      },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [
+        "aplicacao"
+      ],
+      "estado": "PRATICADO",
+      "prerequisitos": []
+    },
+    {
+      "id": "terminal.comandos",
+      "nome": "Comandos de navegação",
+      "introduzidoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 2,
+        "titulo": "Navegando em pastas",
+        "pos": 162
+      },
+      "praticadoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 163
+      },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [
+        "associacao"
+      ],
+      "estado": "PRATICADO",
+      "prerequisitos": []
+    },
+    {
+      "id": "terminal.dotnet",
+      "nome": "Comandos dotnet",
+      "introduzidoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 4,
+        "titulo": "Rodando um projeto .NET",
+        "pos": 164
+      },
+      "praticadoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 165
+      },
+      "avaliadoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 167
+      },
+      "praticas": 2,
+      "dimensoes": [
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "terminal.comandos"
+      ]
+    },
+    {
+      "id": "terminal.git",
+      "nome": "Comandos git",
+      "introduzidoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 6,
+        "titulo": "Git, Docker e npm: três vizinhos",
+        "pos": 166
+      },
+      "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
+      "prerequisitos": [
+        "terminal.comandos"
+      ]
+    },
+    {
+      "id": "terminal.docker",
+      "nome": "Comandos docker",
+      "introduzidoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 6,
+        "titulo": "Git, Docker e npm: três vizinhos",
+        "pos": 166
+      },
+      "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
+      "prerequisitos": [
+        "terminal.comandos"
+      ]
+    },
+    {
+      "id": "terminal.npm",
+      "nome": "Comandos npm",
+      "introduzidoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 6,
+        "titulo": "Git, Docker e npm: três vizinhos",
+        "pos": 166
+      },
+      "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
+      "prerequisitos": [
+        "terminal.comandos"
+      ]
+    },
+    {
+      "id": "en.saudacoes",
+      "nome": "Saudações e apresentações",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-00",
+        "etapa": 1,
+        "titulo": "Hello! Vamos nos apresentar",
+        "pos": 168
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-00",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 169
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 172
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "en.numeros",
+      "nome": "Números, idade e preços",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-01",
+        "etapa": 1,
+        "titulo": "Numbers: de 0 a 100",
+        "pos": 174
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-01",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 175
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-checkpoint",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 226
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "en.familia",
+      "nome": "Família e pessoas",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-02",
+        "etapa": 1,
+        "titulo": "My family",
+        "pos": 180
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-02",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 181
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-02",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 184
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "id": "en.rotina",
+      "nome": "Rotina e present simple",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-03",
+        "etapa": 1,
+        "titulo": "My daily routine",
+        "pos": 186
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-03",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 187
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-03",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 191
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "ordenacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "en.horarios",
+      "nome": "Horas, dias e datas",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-04",
+        "etapa": 1,
+        "titulo": "What time is it?",
+        "pos": 192
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-04",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 193
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-checkpoint",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 228
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.numeros"
+      ]
+    },
+    {
+      "id": "en.comida",
+      "nome": "Comida e restaurante",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-05",
+        "etapa": 1,
+        "titulo": "At the restaurant",
+        "pos": 198
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-05",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 199
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-05",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 201
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "aplicacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "en.compras",
+      "nome": "Compras e supermercado",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-06",
+        "etapa": 1,
+        "titulo": "How much is it?",
+        "pos": 204
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-06",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 205
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-06",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 206
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "aplicacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.numeros"
+      ]
+    },
+    {
+      "id": "en.lugares",
+      "nome": "Lugares, direções e transporte",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-07",
+        "etapa": 1,
+        "titulo": "Where is the station?",
+        "pos": 210
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-07",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 211
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-07",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 213
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "aplicacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "en.perguntas",
+      "nome": "Perguntas básicas e conversa",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-08",
+        "etapa": 1,
+        "titulo": "Everyday questions",
+        "pos": 216
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-08",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 217
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-08",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 220
+      },
+      "praticas": 6,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "ordenacao",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "id": "en.passado",
+      "nome": "Passado simples",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-00",
+        "etapa": 1,
+        "titulo": "Talking about yesterday",
+        "pos": 233
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-00",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 234
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 237
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.rotina"
+      ]
+    },
+    {
+      "id": "en.futuro",
+      "nome": "Planos e futuro",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-01",
+        "etapa": 1,
+        "titulo": "Tomorrow, next week...",
+        "pos": 239
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-01",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 240
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-01",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 243
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.rotina"
+      ]
+    },
+    {
+      "id": "en.viagem",
+      "nome": "Viagem: aeroporto e hotel",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-02",
+        "etapa": 1,
+        "titulo": "At the airport and hotel",
+        "pos": 245
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-02",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 246
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 248
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.lugares"
+      ]
+    },
+    {
+      "id": "ingles.vocabulario",
+      "nome": "Vocabulário técnico",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 1,
+        "titulo": "As palavras que aparecem todo dia",
+        "pos": 251
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 252
+      },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "ingles.frases",
+      "nome": "Frases de trabalho",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 5,
+        "titulo": "Montando frases do trabalho",
+        "pos": 255
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 256
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "ordenacao"
+      ],
+      "estado": "PRATICADO",
+      "prerequisitos": [
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "id": "ingles.leitura",
+      "nome": "Leitura técnica em inglês",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 5,
+        "titulo": "Montando frases do trabalho",
+        "pos": 255
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-00",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 257
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-01",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 262
+      },
+      "praticas": 3,
+      "dimensoes": [
+        "reconhecimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "id": "ingles.erros",
+      "nome": "Mensagens de erro em inglês",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-01",
+        "etapa": 1,
+        "titulo": "Mensagens de erro que você vai ver",
+        "pos": 258
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-01",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 259
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-01",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 264
+      },
+      "praticas": 3,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "id": "linq.intro",
+      "nome": "O que é LINQ",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 1,
+        "titulo": "Você já escreveu LINQ sem saber",
+        "pos": 265
+      },
+      "praticadoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 267
+      },
+      "avaliadoEm": null,
+      "praticas": 3,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.lambda",
+        "csharp.list"
+      ]
+    },
+    {
+      "id": "linq.lambda",
+      "nome": "Lambda em consultas",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 2,
+        "titulo": "O mesmo filtro, agora com LINQ",
+        "pos": 266
+      },
+      "praticadoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 268
+      },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "csharp.lambda"
+      ]
+    },
+    {
+      "id": "linq.where",
+      "nome": "Where",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 2,
+        "titulo": "O mesmo filtro, agora com LINQ",
+        "pos": 266
+      },
+      "praticadoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 268
+      },
+      "avaliadoEm": {
+        "trilha": "linq",
+        "licao": "linq-01",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 276
+      },
+      "praticas": 13,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "linq.intro"
+      ]
+    },
+    {
+      "id": "linq.tolist",
+      "nome": "ToList",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 2,
+        "titulo": "O mesmo filtro, agora com LINQ",
+        "pos": 266
+      },
+      "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
+      "prerequisitos": [
+        "linq.intro"
+      ]
+    },
+    {
+      "id": "linq.select",
+      "nome": "Select",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-02",
+        "etapa": 1,
+        "titulo": "Where escolhe linhas. Select escolhe o formato",
+        "pos": 277
+      },
+      "praticadoEm": {
+        "trilha": "linq",
+        "licao": "linq-02",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 278
+      },
+      "avaliadoEm": {
+        "trilha": "linq",
+        "licao": "linq-02",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 281
+      },
+      "praticas": 4,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "linq.intro"
+      ]
+    },
+    {
+      "id": "linq.first",
+      "nome": "First, FirstOrDefault e Single",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-03",
+        "etapa": 1,
+        "titulo": "Buscando um produto específico",
+        "pos": 282
+      },
+      "praticadoEm": {
+        "trilha": "linq",
+        "licao": "linq-03",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 283
+      },
+      "avaliadoEm": {
+        "trilha": "linq",
+        "licao": "linq-03",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 285
+      },
+      "praticas": 9,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "linq.where",
+        "csharp.null"
+      ]
+    },
+    {
+      "id": "ef.orm",
+      "nome": "ORM",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-00",
+        "etapa": 2,
+        "titulo": "ORM: o tradutor entre C# e o banco",
+        "pos": 289
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 290
+      },
+      "avaliadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-00",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 293
+      },
+      "praticas": 4,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "ordenacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "sql.tabela",
+        "csharp.classes"
+      ]
+    },
+    {
+      "id": "ef.entidade",
+      "nome": "Entidades",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-00",
+        "etapa": 2,
+        "titulo": "ORM: o tradutor entre C# e o banco",
+        "pos": 289
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 290
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "ef.orm"
+      ]
+    },
+    {
+      "id": "ef.dbcontext",
+      "nome": "DbContext",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-01",
+        "etapa": 1,
+        "titulo": "A porta de entrada para o banco",
+        "pos": 294
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-01",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 296
+      },
+      "avaliadoEm": null,
+      "praticas": 3,
+      "dimensoes": [
+        "associacao",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "ef.orm",
+        "csharp.construtor",
+        "csharp.di"
+      ]
+    },
+    {
+      "id": "ef.dbset",
+      "nome": "DbSet",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-01",
+        "etapa": 2,
+        "titulo": "DbSet: uma gaveta para cada tipo de coisa",
+        "pos": 295
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-01",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 296
+      },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "ef.dbcontext"
+      ]
+    },
+    {
+      "id": "ef.savechanges",
+      "nome": "SaveChanges",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-02",
+        "etapa": 3,
+        "titulo": "SaveChanges: agora sim, o INSERT",
+        "pos": 304
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 305
+      },
+      "avaliadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-02",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 309
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "ordenacao",
+        "reconhecimento",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "ef.dbset",
+        "csharp.async"
+      ]
+    },
+    {
+      "id": "ef.consultas",
+      "nome": "Consultas com EF",
+      "introduzidoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-03",
+        "etapa": 1,
+        "titulo": "LINQ no DbSet vira SQL",
+        "pos": 310
+      },
+      "praticadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-03",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 312
+      },
+      "avaliadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-03",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 315
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "ef.dbset",
+        "linq.where",
+        "csharp.async",
+        "linq.first"
+      ]
+    },
+    {
+      "id": "aspnet.http",
+      "nome": "HTTP",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 1,
+        "titulo": "Duas partes conversando",
+        "pos": 317
+      },
+      "praticadoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 319
+      },
+      "avaliadoEm": null,
+      "praticas": 3,
+      "dimensoes": [
+        "associacao",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "aspnet.requisicao",
+      "nome": "Request (requisição)",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 1,
+        "titulo": "Duas partes conversando",
+        "pos": 317
+      },
+      "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
+      "prerequisitos": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "id": "aspnet.resposta",
+      "nome": "Response (resposta)",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 1,
+        "titulo": "Duas partes conversando",
+        "pos": 317
+      },
+      "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
+      "prerequisitos": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "id": "aspnet.api",
+      "nome": "API e endpoints",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 1,
+        "titulo": "Duas partes conversando",
+        "pos": 317
+      },
+      "praticadoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 333
+      },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "ordenacao",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "id": "aspnet.status",
+      "nome": "Status codes",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 4,
+        "titulo": "A resposta conta o que aconteceu",
+        "pos": 320
+      },
+      "praticadoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 321
+      },
+      "avaliadoEm": null,
+      "praticas": 4,
+      "dimensoes": [
+        "reconhecimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "id": "aspnet.json",
+      "nome": "JSON",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-01",
+        "etapa": 1,
+        "titulo": "Um formato que todo mundo entende",
+        "pos": 325
+      },
+      "praticadoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-01",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 326
+      },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "aspnet.rotas",
+      "nome": "Rotas",
+      "introduzidoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-02",
+        "etapa": 1,
+        "titulo": "O que é um endpoint",
+        "pos": 330
+      },
+      "praticadoEm": {
+        "trilha": "aspnet",
+        "licao": "aspnet-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 333
+      },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [
+        "reconhecimento"
+      ],
+      "estado": "PRATICADO",
+      "prerequisitos": [
+        "aspnet.api"
+      ]
+    }
+  ],
+  "blocosDeEnsino": [
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 1,
+      "ensina": [
+        "sql.banco"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 1,
+      "ensina": [
+        "sql.banco"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 2,
+      "ensina": [
+        "sql.servidor"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 2,
+      "ensina": [
+        "sql.servidor"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 3,
+      "ensina": [
+        "sql.tabela"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 3,
+      "ensina": [
+        "sql.tabela"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 4,
+      "ensina": [
+        "sql.coluna",
+        "sql.registro"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 4,
+      "ensina": [
+        "sql.coluna"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 4,
+      "ensina": [
+        "sql.registro"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 8,
+      "ensina": [
+        "sql.chave-primaria"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 8,
+      "ensina": [
+        "sql.chave-primaria"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 12,
+      "ensina": [
+        "sql.ingles"
+      ]
+    },
+    {
+      "licao": "sql-01",
+      "trilha": "sql",
+      "etapa": 2,
+      "ensina": [
+        "sql.tipos-dados"
+      ]
+    },
+    {
+      "licao": "sql-01",
+      "trilha": "sql",
+      "etapa": 4,
+      "ensina": [
+        "sql.chave-estrangeira",
+        "sql.relacionamento"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 1,
+      "ensina": [
+        "sql.select",
+        "sql.from"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 1,
+      "ensina": [
+        "sql.select"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 1,
+      "ensina": [
+        "sql.from"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 3,
+      "ensina": [
+        "sql.colunas"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 9,
+      "ensina": [
+        "sql.comandos-sql"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 1,
+      "ensina": [
+        "sql.where"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 1,
+      "ensina": [
+        "sql.where"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 3,
+      "ensina": [
+        "sql.operadores"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 6,
+      "ensina": [
+        "sql.texto-aspas"
+      ]
+    },
+    {
+      "licao": "sql-04",
+      "trilha": "sql",
+      "etapa": 1,
+      "ensina": [
+        "sql.and-or"
+      ]
+    },
+    {
+      "licao": "sql-04",
+      "trilha": "sql",
+      "etapa": 6,
+      "ensina": [
+        "sql.parenteses"
+      ]
+    },
+    {
+      "licao": "sql-05",
+      "trilha": "sql",
+      "etapa": 1,
+      "ensina": [
+        "sql.in",
+        "sql.between",
+        "sql.not"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "trilha": "csharp",
+      "etapa": 2,
+      "ensina": [
+        "csharp.classes",
+        "csharp.propriedades",
+        "csharp.tipos"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "trilha": "csharp",
+      "etapa": 4,
+      "ensina": [
+        "csharp.objetos"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "trilha": "csharp",
+      "etapa": 4,
+      "ensina": [
+        "csharp.objetos"
+      ]
+    },
+    {
+      "licao": "csharp-01",
+      "trilha": "csharp",
+      "etapa": 1,
+      "ensina": [
+        "csharp.variaveis",
+        "csharp.tipos"
+      ]
+    },
+    {
+      "licao": "csharp-01",
+      "trilha": "csharp",
+      "etapa": 3,
+      "ensina": [
+        "csharp.condicoes"
+      ]
+    },
+    {
+      "licao": "csharp-02",
+      "trilha": "csharp",
+      "etapa": 2,
+      "ensina": [
+        "csharp.metodos"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "trilha": "csharp",
+      "etapa": 2,
+      "ensina": [
+        "csharp.list",
+        "csharp.generics"
+      ]
+    },
+    {
+      "licao": "csharp-04",
+      "trilha": "csharp",
+      "etapa": 1,
+      "ensina": [
+        "csharp.null"
+      ]
+    },
+    {
+      "licao": "csharp-04",
+      "trilha": "csharp",
+      "etapa": 1,
+      "ensina": [
+        "csharp.null"
+      ]
+    },
+    {
+      "licao": "csharp-04",
+      "trilha": "csharp",
+      "etapa": 2,
+      "ensina": [
+        "csharp.excecoes"
+      ]
+    },
+    {
+      "licao": "csharp-04",
+      "trilha": "csharp",
+      "etapa": 2,
+      "ensina": [
+        "csharp.excecoes"
+      ]
+    },
+    {
+      "licao": "csharp-05",
+      "trilha": "csharp",
+      "etapa": 2,
+      "ensina": [
+        "csharp.interfaces"
+      ]
+    },
+    {
+      "licao": "csharp-05",
+      "trilha": "csharp",
+      "etapa": 2,
+      "ensina": [
+        "csharp.interfaces"
+      ]
+    },
+    {
+      "licao": "csharp-06",
+      "trilha": "csharp",
+      "etapa": 2,
+      "ensina": [
+        "csharp.construtor",
+        "csharp.di"
+      ]
+    },
+    {
+      "licao": "csharp-07",
+      "trilha": "csharp",
+      "etapa": 4,
+      "ensina": [
+        "csharp.lambda"
+      ]
+    },
+    {
+      "licao": "csharp-07",
+      "trilha": "csharp",
+      "etapa": 4,
+      "ensina": [
+        "csharp.lambda"
+      ]
+    },
+    {
+      "licao": "csharp-08",
+      "trilha": "csharp",
+      "etapa": 1,
+      "ensina": [
+        "csharp.excecoes"
+      ]
+    },
+    {
+      "licao": "csharp-09",
+      "trilha": "csharp",
+      "etapa": 1,
+      "ensina": [
+        "csharp.async"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 2,
+      "ensina": [
+        "logica.total",
+        "logica.validacao",
+        "logica.duplicados",
+        "logica.agrupamento"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 2,
+      "ensina": [
+        "logica.total"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 2,
+      "ensina": [
+        "logica.validacao"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 2,
+      "ensina": [
+        "logica.duplicados"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 2,
+      "ensina": [
+        "logica.agrupamento"
+      ]
+    },
+    {
+      "licao": "terminal-00",
+      "trilha": "terminal",
+      "etapa": 2,
+      "ensina": [
+        "terminal.comandos"
+      ]
+    },
+    {
+      "licao": "terminal-00",
+      "trilha": "terminal",
+      "etapa": 4,
+      "ensina": [
+        "terminal.dotnet"
+      ]
+    },
+    {
+      "licao": "terminal-00",
+      "trilha": "terminal",
+      "etapa": 6,
+      "ensina": [
+        "terminal.git",
+        "terminal.docker",
+        "terminal.npm"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.numeros"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.familia"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.rotina"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.horarios"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.comida"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.compras"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.lugares"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.perguntas"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.passado"
+      ]
+    },
+    {
+      "licao": "en-a2-01",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.futuro"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.viagem"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "trilha": "ingles",
+      "etapa": 5,
+      "ensina": [
+        "ingles.frases",
+        "ingles.leitura"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "ingles.erros"
+      ]
+    },
+    {
+      "licao": "linq-00",
+      "trilha": "linq",
+      "etapa": 1,
+      "ensina": [
+        "linq.intro"
+      ]
+    },
+    {
+      "licao": "linq-00",
+      "trilha": "linq",
+      "etapa": 2,
+      "ensina": [
+        "linq.lambda",
+        "linq.where",
+        "linq.tolist"
+      ]
+    },
+    {
+      "licao": "linq-00",
+      "trilha": "linq",
+      "etapa": 2,
+      "ensina": [
+        "linq.tolist"
+      ]
+    },
+    {
+      "licao": "linq-00",
+      "trilha": "linq",
+      "etapa": 2,
+      "ensina": [
+        "linq.intro"
+      ]
+    },
+    {
+      "licao": "linq-00",
+      "trilha": "linq",
+      "etapa": 2,
+      "ensina": [
+        "linq.where"
+      ]
+    },
+    {
+      "licao": "linq-02",
+      "trilha": "linq",
+      "etapa": 1,
+      "ensina": [
+        "linq.select"
+      ]
+    },
+    {
+      "licao": "linq-03",
+      "trilha": "linq",
+      "etapa": 1,
+      "ensina": [
+        "linq.first"
+      ]
+    },
+    {
+      "licao": "linq-03",
+      "trilha": "linq",
+      "etapa": 1,
+      "ensina": [
+        "linq.first"
+      ]
+    },
+    {
+      "licao": "ef-00",
+      "trilha": "entity-framework",
+      "etapa": 2,
+      "ensina": [
+        "ef.orm",
+        "ef.entidade"
+      ]
+    },
+    {
+      "licao": "ef-01",
+      "trilha": "entity-framework",
+      "etapa": 1,
+      "ensina": [
+        "ef.dbcontext"
+      ]
+    },
+    {
+      "licao": "ef-01",
+      "trilha": "entity-framework",
+      "etapa": 1,
+      "ensina": [
+        "ef.dbcontext"
+      ]
+    },
+    {
+      "licao": "ef-01",
+      "trilha": "entity-framework",
+      "etapa": 2,
+      "ensina": [
+        "ef.dbset"
+      ]
+    },
+    {
+      "licao": "ef-01",
+      "trilha": "entity-framework",
+      "etapa": 2,
+      "ensina": [
+        "ef.dbset"
+      ]
+    },
+    {
+      "licao": "ef-02",
+      "trilha": "entity-framework",
+      "etapa": 3,
+      "ensina": [
+        "ef.savechanges"
+      ]
+    },
+    {
+      "licao": "ef-02",
+      "trilha": "entity-framework",
+      "etapa": 3,
+      "ensina": [
+        "ef.savechanges"
+      ]
+    },
+    {
+      "licao": "ef-03",
+      "trilha": "entity-framework",
+      "etapa": 1,
+      "ensina": [
+        "ef.consultas"
+      ]
+    },
+    {
+      "licao": "ef-03",
+      "trilha": "entity-framework",
+      "etapa": 1,
+      "ensina": [
+        "ef.consultas"
+      ]
+    },
+    {
+      "licao": "aspnet-00",
+      "trilha": "aspnet",
+      "etapa": 1,
+      "ensina": [
+        "aspnet.http",
+        "aspnet.requisicao",
+        "aspnet.resposta",
+        "aspnet.api"
+      ]
+    },
+    {
+      "licao": "aspnet-00",
+      "trilha": "aspnet",
+      "etapa": 1,
+      "ensina": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "licao": "aspnet-00",
+      "trilha": "aspnet",
+      "etapa": 1,
+      "ensina": [
+        "aspnet.requisicao"
+      ]
+    },
+    {
+      "licao": "aspnet-00",
+      "trilha": "aspnet",
+      "etapa": 1,
+      "ensina": [
+        "aspnet.resposta"
+      ]
+    },
+    {
+      "licao": "aspnet-00",
+      "trilha": "aspnet",
+      "etapa": 1,
+      "ensina": [
+        "aspnet.api"
+      ]
+    },
+    {
+      "licao": "aspnet-00",
+      "trilha": "aspnet",
+      "etapa": 4,
+      "ensina": [
+        "aspnet.status"
+      ]
+    },
+    {
+      "licao": "aspnet-01",
+      "trilha": "aspnet",
+      "etapa": 1,
+      "ensina": [
+        "aspnet.json"
+      ]
+    },
+    {
+      "licao": "aspnet-01",
+      "trilha": "aspnet",
+      "etapa": 1,
+      "ensina": [
+        "aspnet.json"
+      ]
+    },
+    {
+      "licao": "aspnet-02",
+      "trilha": "aspnet",
+      "etapa": 1,
+      "ensina": [
+        "aspnet.rotas"
+      ]
+    }
+  ],
+  "atividades": [
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 5,
+      "id": "sql00-a0",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.coluna",
+        "sql.tabela"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 6,
+      "id": "sql00-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.servidor",
+        "sql.banco",
+        "sql.tabela",
+        "sql.registro"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 7,
+      "id": "sql00-a2",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.registro",
+        "sql.tabela"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 9,
+      "id": "sql00-a3",
+      "tipo": "true-false",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.chave-primaria",
+        "sql.tabela"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 11,
+      "id": "sql00-a4",
+      "tipo": "find-error",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.chave-primaria"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 13,
+      "id": "sql00-a6",
+      "tipo": "translate",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.ingles"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "trilha": "sql",
+      "etapa": 14,
+      "id": "sql00-a5",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "sql.banco",
+        "sql.servidor"
+      ]
+    },
+    {
+      "licao": "sql-01",
+      "trilha": "sql",
+      "etapa": 3,
+      "id": "sql01-a1",
+      "tipo": "match-pairs",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.tipos-dados"
+      ]
+    },
+    {
+      "licao": "sql-01",
+      "trilha": "sql",
+      "etapa": 5,
+      "id": "sql01-a2",
+      "tipo": "multiple-choice",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.chave-estrangeira",
+        "sql.relacionamento"
+      ]
+    },
+    {
+      "licao": "sql-01",
+      "trilha": "sql",
+      "etapa": 7,
+      "id": "sql01-a3",
+      "tipo": "true-false",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.chave-estrangeira",
+        "sql.chave-primaria"
+      ]
+    },
+    {
+      "licao": "sql-01",
+      "trilha": "sql",
+      "etapa": 9,
+      "id": "sql01-a4",
+      "tipo": "scenario",
+      "dimensao": null,
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "sql.relacionamento",
+        "sql.chave-estrangeira"
+      ]
+    },
+    {
+      "licao": "sql-01",
+      "trilha": "sql",
+      "etapa": 10,
+      "id": "sql01-a5",
+      "tipo": "find-error",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.chave-estrangeira"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 2,
+      "id": "sql02-a1",
+      "tipo": "multiple-choice",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.select"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 4,
+      "id": "sql02-a2",
+      "tipo": "fill-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.select",
+        "sql.from"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 5,
+      "id": "sql02-a3",
+      "tipo": "interpret-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.colunas"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 7,
+      "id": "sql02-a4",
+      "tipo": "order-blocks",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.select",
+        "sql.from"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 8,
+      "id": "sql02-a5",
+      "tipo": "predict-output",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.select",
+        "sql.colunas"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 10,
+      "id": "sql02-a6",
+      "tipo": "match-pairs",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.comandos-sql"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 12,
+      "id": "sql02-a7",
+      "tipo": "write-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.select",
+        "sql.from"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "trilha": "sql",
+      "etapa": 13,
+      "id": "sql02-a8",
+      "tipo": "write-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "sql.select",
+        "sql.ingles"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 2,
+      "id": "sql03-a1",
+      "tipo": "multiple-choice",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.where"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 4,
+      "id": "sql03-a2",
+      "tipo": "predict-output",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.where",
+        "sql.operadores"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 5,
+      "id": "sql03-a3",
+      "tipo": "fill-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.where",
+        "sql.operadores"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 7,
+      "id": "sql03-a4",
+      "tipo": "multiple-choice",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.texto-aspas",
+        "sql.where"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 8,
+      "id": "sql03-a5",
+      "tipo": "find-error",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.from",
+        "sql.where"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 9,
+      "id": "sql03-a6",
+      "tipo": "true-false",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.texto-aspas",
+        "sql.operadores"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 11,
+      "id": "sql03-a7",
+      "tipo": "write-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.where",
+        "sql.operadores"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 12,
+      "id": "sql03-a8",
+      "tipo": "predict-output",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.where",
+        "sql.texto-aspas"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "trilha": "sql",
+      "etapa": 13,
+      "id": "sql03-a9",
+      "tipo": "write-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "sql.where",
+        "sql.ingles"
+      ]
+    },
+    {
+      "licao": "sql-04",
+      "trilha": "sql",
+      "etapa": 2,
+      "id": "sql04-a1",
+      "tipo": "multiple-choice",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.and-or"
+      ]
+    },
+    {
+      "licao": "sql-04",
+      "trilha": "sql",
+      "etapa": 4,
+      "id": "sql04-a2",
+      "tipo": "predict-output",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.and-or"
+      ]
+    },
+    {
+      "licao": "sql-04",
+      "trilha": "sql",
+      "etapa": 5,
+      "id": "sql04-a3",
+      "tipo": "fill-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.and-or"
+      ]
+    },
+    {
+      "licao": "sql-04",
+      "trilha": "sql",
+      "etapa": 7,
+      "id": "sql04-a4",
+      "tipo": "order-blocks",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.parenteses",
+        "sql.and-or"
+      ]
+    },
+    {
+      "licao": "sql-04",
+      "trilha": "sql",
+      "etapa": 8,
+      "id": "sql04-a5",
+      "tipo": "find-error",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.parenteses"
+      ]
+    },
+    {
+      "licao": "sql-04",
+      "trilha": "sql",
+      "etapa": 9,
+      "id": "sql04-a6",
+      "tipo": "write-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "sql.and-or",
+        "sql.parenteses",
+        "sql.ingles"
+      ]
+    },
+    {
+      "licao": "sql-05",
+      "trilha": "sql",
+      "etapa": 2,
+      "id": "sql05-a1",
+      "tipo": "match-pairs",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.in",
+        "sql.between",
+        "sql.not",
+        "sql.and-or"
+      ]
+    },
+    {
+      "licao": "sql-05",
+      "trilha": "sql",
+      "etapa": 3,
+      "id": "sql05-a2",
+      "tipo": "fill-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.in"
+      ]
+    },
+    {
+      "licao": "sql-05",
+      "trilha": "sql",
+      "etapa": 4,
+      "id": "sql05-a3",
+      "tipo": "predict-output",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.between"
+      ]
+    },
+    {
+      "licao": "sql-05",
+      "trilha": "sql",
+      "etapa": 5,
+      "id": "sql05-a4",
+      "tipo": "true-false",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.in",
+        "sql.between",
+        "sql.not"
+      ]
+    },
+    {
+      "licao": "sql-05",
+      "trilha": "sql",
+      "etapa": 6,
+      "id": "sql05-a5",
+      "tipo": "write-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "sql.between",
+        "sql.and-or"
+      ]
+    },
+    {
+      "licao": "sql-05",
+      "trilha": "sql",
+      "etapa": 7,
+      "id": "sql05-a6",
+      "tipo": "scenario",
+      "dimensao": null,
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "sql.not",
+        "sql.in"
+      ]
+    },
+    {
+      "licao": "sql-05",
+      "trilha": "sql",
+      "etapa": 8,
+      "id": "sql05-a7",
+      "tipo": "write-code",
+      "dimensao": null,
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "sql.not",
+        "sql.between",
+        "sql.ingles"
+      ]
+    },
+    {
+      "licao": "sql-checkpoint-fundamentos",
+      "trilha": "sql",
+      "etapa": 2,
+      "id": "cp-a1",
+      "tipo": "multiple-choice",
+      "dimensao": null,
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "sql.banco",
+        "sql.servidor",
+        "sql.tabela"
+      ]
+    },
+    {
+      "licao": "sql-checkpoint-fundamentos",
+      "trilha": "sql",
+      "etapa": 3,
+      "id": "cp-a2",
+      "tipo": "true-false",
+      "dimensao": null,
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "sql.chave-primaria",
+        "sql.chave-estrangeira",
+        "sql.relacionamento"
+      ]
+    },
+    {
+      "licao": "sql-checkpoint-fundamentos",
+      "trilha": "sql",
+      "etapa": 4,
+      "id": "cp-a3",
+      "tipo": "match-pairs",
+      "dimensao": null,
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "sql.comandos-sql"
+      ]
+    },
+    {
+      "licao": "sql-checkpoint-fundamentos",
+      "trilha": "sql",
+      "etapa": 5,
+      "id": "cp-a4",
+      "tipo": "order-blocks",
+      "dimensao": null,
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "sql.select",
+        "sql.from"
+      ]
+    },
+    {
+      "licao": "sql-checkpoint-fundamentos",
+      "trilha": "sql",
+      "etapa": 6,
+      "id": "cp-a5",
+      "tipo": "fill-code",
+      "dimensao": null,
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "sql.where",
+        "sql.operadores"
+      ]
+    },
+    {
+      "licao": "sql-checkpoint-fundamentos",
+      "trilha": "sql",
+      "etapa": 7,
+      "id": "cp-a6",
+      "tipo": "find-error",
+      "dimensao": null,
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "sql.from",
+        "sql.where"
+      ]
+    },
+    {
+      "licao": "sql-checkpoint-fundamentos",
+      "trilha": "sql",
+      "etapa": 8,
+      "id": "cp-a7",
+      "tipo": "predict-output",
+      "dimensao": null,
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "sql.and-or",
+        "sql.parenteses"
+      ]
+    },
+    {
+      "licao": "sql-checkpoint-fundamentos",
+      "trilha": "sql",
+      "etapa": 9,
+      "id": "cp-a8",
+      "tipo": "multiple-choice",
+      "dimensao": null,
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "sql.select",
+        "sql.where",
+        "sql.ingles"
+      ]
+    },
+    {
+      "licao": "sql-checkpoint-fundamentos",
+      "trilha": "sql",
+      "etapa": 10,
+      "id": "cp-a9",
+      "tipo": "write-code",
+      "dimensao": null,
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "sql.select",
+        "sql.where",
+        "sql.texto-aspas"
+      ]
+    },
+    {
+      "licao": "sql-checkpoint-fundamentos",
+      "trilha": "sql",
+      "etapa": 11,
+      "id": "cp-a10",
+      "tipo": "scenario",
+      "dimensao": null,
+      "prova": true,
+      "desafio": true,
+      "exige": [
+        "sql.where",
+        "sql.chave-estrangeira"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "trilha": "csharp",
+      "etapa": 3,
+      "id": "cs00-a1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.classes",
+        "csharp.propriedades"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "trilha": "csharp",
+      "etapa": 5,
+      "id": "cs00-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.classes",
+        "csharp.objetos",
+        "csharp.propriedades"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "trilha": "csharp",
+      "etapa": 6,
+      "id": "cs00-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.objetos",
+        "csharp.propriedades"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "trilha": "csharp",
+      "etapa": 7,
+      "id": "cs00-a4",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.objetos",
+        "csharp.propriedades"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "trilha": "csharp",
+      "etapa": 8,
+      "id": "cs00-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.classes",
+        "csharp.propriedades",
+        "csharp.tipos"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "trilha": "csharp",
+      "etapa": 9,
+      "id": "cs00-a6",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "csharp.classes",
+        "csharp.objetos"
+      ]
+    },
+    {
+      "licao": "csharp-01",
+      "trilha": "csharp",
+      "etapa": 2,
+      "id": "cs01-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.tipos"
+      ]
+    },
+    {
+      "licao": "csharp-01",
+      "trilha": "csharp",
+      "etapa": 4,
+      "id": "cs01-a2",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.condicoes"
+      ]
+    },
+    {
+      "licao": "csharp-01",
+      "trilha": "csharp",
+      "etapa": 5,
+      "id": "cs01-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.condicoes",
+        "csharp.variaveis"
+      ]
+    },
+    {
+      "licao": "csharp-01",
+      "trilha": "csharp",
+      "etapa": 6,
+      "id": "cs01-a4",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.condicoes",
+        "csharp.variaveis"
+      ]
+    },
+    {
+      "licao": "csharp-01",
+      "trilha": "csharp",
+      "etapa": 7,
+      "id": "cs01-a5",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "csharp.tipos",
+        "csharp.variaveis"
+      ]
+    },
+    {
+      "licao": "csharp-02",
+      "trilha": "csharp",
+      "etapa": 3,
+      "id": "cs02-a1",
+      "tipo": "interpret-code",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.metodos",
+        "csharp.condicoes"
+      ]
+    },
+    {
+      "licao": "csharp-02",
+      "trilha": "csharp",
+      "etapa": 4,
+      "id": "cs02-a2",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.metodos"
+      ]
+    },
+    {
+      "licao": "csharp-02",
+      "trilha": "csharp",
+      "etapa": 5,
+      "id": "cs02-a3",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.metodos"
+      ]
+    },
+    {
+      "licao": "csharp-02",
+      "trilha": "csharp",
+      "etapa": 6,
+      "id": "cs02-a4",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.metodos"
+      ]
+    },
+    {
+      "licao": "csharp-02",
+      "trilha": "csharp",
+      "etapa": 7,
+      "id": "cs02-a5",
+      "tipo": "explain",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.metodos"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "trilha": "csharp",
+      "etapa": 3,
+      "id": "cs03-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.list"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "trilha": "csharp",
+      "etapa": 4,
+      "id": "cs03-a2",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.list"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "trilha": "csharp",
+      "etapa": 5,
+      "id": "cs03-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.list",
+        "csharp.generics"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "trilha": "csharp",
+      "etapa": 6,
+      "id": "cs03-a4",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.list"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "trilha": "csharp",
+      "etapa": 7,
+      "id": "cs03-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.list",
+        "csharp.generics"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "trilha": "csharp",
+      "etapa": 8,
+      "id": "cs03-a6",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "csharp.list",
+        "csharp.classes"
+      ]
+    },
+    {
+      "licao": "csharp-04",
+      "trilha": "csharp",
+      "etapa": 3,
+      "id": "cs04-a1",
+      "tipo": "find-error",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.null"
+      ]
+    },
+    {
+      "licao": "csharp-04",
+      "trilha": "csharp",
+      "etapa": 5,
+      "id": "cs04-a2",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.null"
+      ]
+    },
+    {
+      "licao": "csharp-04",
+      "trilha": "csharp",
+      "etapa": 6,
+      "id": "cs04-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.null",
+        "csharp.condicoes"
+      ]
+    },
+    {
+      "licao": "csharp-04",
+      "trilha": "csharp",
+      "etapa": 7,
+      "id": "cs04-a4",
+      "tipo": "code-review",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "csharp.null"
+      ]
+    },
+    {
+      "licao": "csharp-05",
+      "trilha": "csharp",
+      "etapa": 3,
+      "id": "cs05-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.interfaces"
+      ]
+    },
+    {
+      "licao": "csharp-05",
+      "trilha": "csharp",
+      "etapa": 4,
+      "id": "cs05-a2",
+      "tipo": "interpret-code",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.interfaces",
+        "csharp.metodos"
+      ]
+    },
+    {
+      "licao": "csharp-05",
+      "trilha": "csharp",
+      "etapa": 5,
+      "id": "cs05-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.interfaces"
+      ]
+    },
+    {
+      "licao": "csharp-05",
+      "trilha": "csharp",
+      "etapa": 6,
+      "id": "cs05-a4",
+      "tipo": "code-review",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "csharp.interfaces"
+      ]
+    },
+    {
+      "licao": "csharp-05",
+      "trilha": "csharp",
+      "etapa": 7,
+      "id": "cs05-a5",
+      "tipo": "explain",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.interfaces"
+      ]
+    },
+    {
+      "licao": "csharp-06",
+      "trilha": "csharp",
+      "etapa": 3,
+      "id": "cs06-a1",
+      "tipo": "interpret-code",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.di",
+        "csharp.construtor"
+      ]
+    },
+    {
+      "licao": "csharp-06",
+      "trilha": "csharp",
+      "etapa": 4,
+      "id": "cs06-a2",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.construtor",
+        "csharp.di"
+      ]
+    },
+    {
+      "licao": "csharp-06",
+      "trilha": "csharp",
+      "etapa": 5,
+      "id": "cs06-a3",
+      "tipo": "code-review",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "csharp.di",
+        "csharp.interfaces"
+      ]
+    },
+    {
+      "licao": "csharp-06",
+      "trilha": "csharp",
+      "etapa": 7,
+      "id": "cs06-a4",
+      "tipo": "explain",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.di"
+      ]
+    },
+    {
+      "licao": "csharp-07",
+      "trilha": "csharp",
+      "etapa": 2,
+      "id": "cs07-a1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.generics"
+      ]
+    },
+    {
+      "licao": "csharp-07",
+      "trilha": "csharp",
+      "etapa": 5,
+      "id": "cs07-a2",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.lambda"
+      ]
+    },
+    {
+      "licao": "csharp-07",
+      "trilha": "csharp",
+      "etapa": 6,
+      "id": "cs07-a3",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.lambda"
+      ]
+    },
+    {
+      "licao": "csharp-07",
+      "trilha": "csharp",
+      "etapa": 7,
+      "id": "cs07-a4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.lambda"
+      ]
+    },
+    {
+      "licao": "csharp-07",
+      "trilha": "csharp",
+      "etapa": 8,
+      "id": "cs07-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.lambda",
+        "csharp.metodos"
+      ]
+    },
+    {
+      "licao": "csharp-07",
+      "trilha": "csharp",
+      "etapa": 9,
+      "id": "cs07-a6",
+      "tipo": "explain",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "csharp.lambda"
+      ]
+    },
+    {
+      "licao": "csharp-08",
+      "trilha": "csharp",
+      "etapa": 3,
+      "id": "cs08-a1",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.excecoes"
+      ]
+    },
+    {
+      "licao": "csharp-08",
+      "trilha": "csharp",
+      "etapa": 4,
+      "id": "cs08-a2",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.excecoes"
+      ]
+    },
+    {
+      "licao": "csharp-08",
+      "trilha": "csharp",
+      "etapa": 5,
+      "id": "cs08-a3",
+      "tipo": "code-review",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "csharp.excecoes"
+      ]
+    },
+    {
+      "licao": "csharp-08",
+      "trilha": "csharp",
+      "etapa": 6,
+      "id": "cs08-a4",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.excecoes"
+      ]
+    },
+    {
+      "licao": "csharp-08",
+      "trilha": "csharp",
+      "etapa": 7,
+      "id": "cs08-a5",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "csharp.excecoes"
+      ]
+    },
+    {
+      "licao": "csharp-09",
+      "trilha": "csharp",
+      "etapa": 3,
+      "id": "cs09-a1",
+      "tipo": "interpret-code",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.async"
+      ]
+    },
+    {
+      "licao": "csharp-09",
+      "trilha": "csharp",
+      "etapa": 4,
+      "id": "cs09-a2",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.async"
+      ]
+    },
+    {
+      "licao": "csharp-09",
+      "trilha": "csharp",
+      "etapa": 5,
+      "id": "cs09-a3",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "csharp.async"
+      ]
+    },
+    {
+      "licao": "csharp-09",
+      "trilha": "csharp",
+      "etapa": 6,
+      "id": "cs09-a4",
+      "tipo": "explain",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "csharp.async"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 3,
+      "id": "lg00-a1",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "logica.total"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 4,
+      "id": "lg00-a2",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "logica.total"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 5,
+      "id": "lg00-a3",
+      "tipo": "find-error",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "logica.validacao"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 6,
+      "id": "lg00-a4",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "logica.validacao"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 7,
+      "id": "lg00-a5",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "logica.duplicados"
+      ]
+    },
+    {
+      "licao": "logica-00",
+      "trilha": "logica",
+      "etapa": 8,
+      "id": "lg00-a6",
+      "tipo": "multiple-choice",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "logica.agrupamento"
+      ]
+    },
+    {
+      "licao": "terminal-00",
+      "trilha": "terminal",
+      "etapa": 3,
+      "id": "term00-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "terminal.comandos"
+      ]
+    },
+    {
+      "licao": "terminal-00",
+      "trilha": "terminal",
+      "etapa": 5,
+      "id": "term00-a2",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "terminal.dotnet"
+      ]
+    },
+    {
+      "licao": "terminal-00",
+      "trilha": "terminal",
+      "etapa": 7,
+      "id": "term00-a3",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "terminal.dotnet"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a1-00-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a1-00-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a1-00-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a1-00-a4",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a1-00-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a1-01-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.numeros"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a1-01-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.numeros"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a1-01-a3",
+      "tipo": "listening",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.numeros"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a1-01-a4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.numeros"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a1-01-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.numeros"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a1-02-a1",
+      "tipo": "choose-image",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.familia"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a1-02-a2",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.familia"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a1-02-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.familia"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a1-02-a4",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.familia"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a1-02-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.familia"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a1-03-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.rotina"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a1-03-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.rotina"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a1-03-a3",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.rotina"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a1-03-a4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.rotina"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a1-03-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.rotina"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a1-04-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.horarios"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a1-04-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.horarios"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a1-04-a3",
+      "tipo": "listening",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.horarios"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a1-04-a4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.horarios"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a1-04-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.horarios"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a1-05-a1",
+      "tipo": "choose-image",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.comida"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a1-05-a2",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.comida"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a1-05-a3",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.comida"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a1-05-a4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.comida"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a1-05-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.comida"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a1-06-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.compras"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a1-06-a2",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.compras"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a1-06-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.compras"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a1-06-a4",
+      "tipo": "reading",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.compras"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a1-06-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.compras"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a1-07-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.lugares"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a1-07-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.lugares"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a1-07-a3",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.lugares"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a1-07-a4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.lugares"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a1-07-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.lugares"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a1-08-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.perguntas"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a1-08-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.perguntas"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a1-08-a3",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.perguntas"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a1-08-a4",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.perguntas"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a1-08-a5",
+      "tipo": "reading",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.perguntas"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-a1-08-a6",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.perguntas"
+      ]
+    },
+    {
+      "licao": "en-a1-checkpoint",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a1-cp1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "licao": "en-a1-checkpoint",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a1-cp2",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.familia"
+      ]
+    },
+    {
+      "licao": "en-a1-checkpoint",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a1-cp3",
+      "tipo": "listening",
+      "dimensao": "preenchimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.numeros"
+      ]
+    },
+    {
+      "licao": "en-a1-checkpoint",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a1-cp4",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.rotina"
+      ]
+    },
+    {
+      "licao": "en-a1-checkpoint",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a1-cp5",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.horarios"
+      ]
+    },
+    {
+      "licao": "en-a1-checkpoint",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-a1-cp6",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": true,
+      "desafio": true,
+      "exige": [
+        "en.comida"
+      ]
+    },
+    {
+      "licao": "en-a1-checkpoint",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-a1-cp7",
+      "tipo": "reading",
+      "dimensao": "reconhecimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.compras"
+      ]
+    },
+    {
+      "licao": "en-a1-checkpoint",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-a1-cp8",
+      "tipo": "multiple-choice",
+      "dimensao": "aplicacao",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.lugares",
+        "en.perguntas"
+      ]
+    },
+    {
+      "licao": "en-a1-checkpoint",
+      "trilha": "ingles",
+      "etapa": 10,
+      "id": "en-a1-cp9",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": true,
+      "desafio": true,
+      "exige": [
+        "en.saudacoes",
+        "en.numeros"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a2-00-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.passado"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a2-00-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.passado"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a2-00-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.passado"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a2-00-a4",
+      "tipo": "reading",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.passado"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a2-00-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.passado"
+      ]
+    },
+    {
+      "licao": "en-a2-01",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a2-01-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.futuro"
+      ]
+    },
+    {
+      "licao": "en-a2-01",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a2-01-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.futuro"
+      ]
+    },
+    {
+      "licao": "en-a2-01",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a2-01-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.futuro"
+      ]
+    },
+    {
+      "licao": "en-a2-01",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a2-01-a4",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.futuro"
+      ]
+    },
+    {
+      "licao": "en-a2-01",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a2-01-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.futuro"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a2-02-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.viagem"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a2-02-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.viagem"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a2-02-a3",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.viagem"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a2-02-a4",
+      "tipo": "reading",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.viagem"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a2-02-a5",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.viagem"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en00-a1",
+      "tipo": "translate",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en00-a2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en00-a3",
+      "tipo": "translate",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en00-a4",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.frases"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en00-a5",
+      "tipo": "reading",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.leitura",
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en01-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.erros"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en01-a2",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.erros",
+        "ingles.vocabulario"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en01-a3",
+      "tipo": "reading",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "ingles.leitura"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en01-a4",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.frases"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en01-a5",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "ingles.leitura",
+        "ingles.erros"
+      ]
+    },
+    {
+      "licao": "linq-00",
+      "trilha": "linq",
+      "etapa": 3,
+      "id": "lq00-a1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.intro"
+      ]
+    },
+    {
+      "licao": "linq-00",
+      "trilha": "linq",
+      "etapa": 4,
+      "id": "lq00-a2",
+      "tipo": "interpret-code",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.intro",
+        "linq.where",
+        "linq.lambda"
+      ]
+    },
+    {
+      "licao": "linq-00",
+      "trilha": "linq",
+      "etapa": 5,
+      "id": "lq00-a3",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.intro",
+        "linq.where"
+      ]
+    },
+    {
+      "licao": "linq-00",
+      "trilha": "linq",
+      "etapa": 6,
+      "id": "lq00-a4",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.where"
+      ]
+    },
+    {
+      "licao": "linq-01",
+      "trilha": "linq",
+      "etapa": 2,
+      "id": "lq01-viz",
+      "tipo": "visualizer",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.where",
+        "linq.lambda"
+      ]
+    },
+    {
+      "licao": "linq-01",
+      "trilha": "linq",
+      "etapa": 3,
+      "id": "lq01-a1",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.where",
+        "linq.lambda"
+      ]
+    },
+    {
+      "licao": "linq-01",
+      "trilha": "linq",
+      "etapa": 4,
+      "id": "lq01-a2",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.where"
+      ]
+    },
+    {
+      "licao": "linq-01",
+      "trilha": "linq",
+      "etapa": 5,
+      "id": "lq01-a3",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.where",
+        "linq.lambda"
+      ]
+    },
+    {
+      "licao": "linq-01",
+      "trilha": "linq",
+      "etapa": 6,
+      "id": "lq01-a4",
+      "tipo": "explain",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "linq.where"
+      ]
+    },
+    {
+      "licao": "linq-02",
+      "trilha": "linq",
+      "etapa": 2,
+      "id": "lq02-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.select",
+        "linq.where"
+      ]
+    },
+    {
+      "licao": "linq-02",
+      "trilha": "linq",
+      "etapa": 3,
+      "id": "lq02-a2",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.select",
+        "linq.where"
+      ]
+    },
+    {
+      "licao": "linq-02",
+      "trilha": "linq",
+      "etapa": 4,
+      "id": "lq02-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.select",
+        "linq.lambda"
+      ]
+    },
+    {
+      "licao": "linq-02",
+      "trilha": "linq",
+      "etapa": 5,
+      "id": "lq02-a4",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "linq.select",
+        "linq.where"
+      ]
+    },
+    {
+      "licao": "linq-03",
+      "trilha": "linq",
+      "etapa": 2,
+      "id": "lq03-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.first"
+      ]
+    },
+    {
+      "licao": "linq-03",
+      "trilha": "linq",
+      "etapa": 3,
+      "id": "lq03-a2",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.first"
+      ]
+    },
+    {
+      "licao": "linq-03",
+      "trilha": "linq",
+      "etapa": 4,
+      "id": "lq03-a3",
+      "tipo": "find-error",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "linq.first",
+        "csharp.null"
+      ]
+    },
+    {
+      "licao": "linq-03",
+      "trilha": "linq",
+      "etapa": 5,
+      "id": "lq03-a4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "linq.first"
+      ]
+    },
+    {
+      "licao": "linq-03",
+      "trilha": "linq",
+      "etapa": 6,
+      "id": "lq03-a5",
+      "tipo": "explain",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "linq.first"
+      ]
+    },
+    {
+      "licao": "ef-00",
+      "trilha": "entity-framework",
+      "etapa": 3,
+      "id": "ef00-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.orm",
+        "ef.entidade"
+      ]
+    },
+    {
+      "licao": "ef-00",
+      "trilha": "entity-framework",
+      "etapa": 4,
+      "id": "ef00-a2",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.orm"
+      ]
+    },
+    {
+      "licao": "ef-00",
+      "trilha": "entity-framework",
+      "etapa": 5,
+      "id": "ef00-a3",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.orm"
+      ]
+    },
+    {
+      "licao": "ef-00",
+      "trilha": "entity-framework",
+      "etapa": 6,
+      "id": "ef00-a4",
+      "tipo": "explain",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "ef.orm"
+      ]
+    },
+    {
+      "licao": "ef-01",
+      "trilha": "entity-framework",
+      "etapa": 3,
+      "id": "ef01-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.dbcontext",
+        "ef.dbset"
+      ]
+    },
+    {
+      "licao": "ef-01",
+      "trilha": "entity-framework",
+      "etapa": 5,
+      "id": "ef01-a2",
+      "tipo": "interpret-code",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.dbset",
+        "ef.entidade"
+      ]
+    },
+    {
+      "licao": "ef-01",
+      "trilha": "entity-framework",
+      "etapa": 6,
+      "id": "ef01-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.dbcontext",
+        "ef.dbset"
+      ]
+    },
+    {
+      "licao": "ef-01",
+      "trilha": "entity-framework",
+      "etapa": 7,
+      "id": "ef01-a4",
+      "tipo": "multiple-choice",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.dbset",
+        "linq.where"
+      ]
+    },
+    {
+      "licao": "ef-01",
+      "trilha": "entity-framework",
+      "etapa": 8,
+      "id": "ef01-a5",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.dbcontext",
+        "csharp.di"
+      ]
+    },
+    {
+      "licao": "ef-02",
+      "trilha": "entity-framework",
+      "etapa": 4,
+      "id": "ef02-a1",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.savechanges"
+      ]
+    },
+    {
+      "licao": "ef-02",
+      "trilha": "entity-framework",
+      "etapa": 5,
+      "id": "ef02-a2",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.savechanges",
+        "ef.dbset"
+      ]
+    },
+    {
+      "licao": "ef-02",
+      "trilha": "entity-framework",
+      "etapa": 6,
+      "id": "ef02-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.savechanges"
+      ]
+    },
+    {
+      "licao": "ef-02",
+      "trilha": "entity-framework",
+      "etapa": 7,
+      "id": "ef02-a4",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.savechanges",
+        "csharp.async"
+      ]
+    },
+    {
+      "licao": "ef-02",
+      "trilha": "entity-framework",
+      "etapa": 8,
+      "id": "ef02-a5",
+      "tipo": "code-review",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "ef.savechanges"
+      ]
+    },
+    {
+      "licao": "ef-03",
+      "trilha": "entity-framework",
+      "etapa": 3,
+      "id": "ef03-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.consultas",
+        "sql.select"
+      ]
+    },
+    {
+      "licao": "ef-03",
+      "trilha": "entity-framework",
+      "etapa": 4,
+      "id": "ef03-a2",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.consultas",
+        "linq.first"
+      ]
+    },
+    {
+      "licao": "ef-03",
+      "trilha": "entity-framework",
+      "etapa": 5,
+      "id": "ef03-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ef.consultas",
+        "linq.first",
+        "csharp.async"
+      ]
+    },
+    {
+      "licao": "ef-03",
+      "trilha": "entity-framework",
+      "etapa": 6,
+      "id": "ef03-a4",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "ef.consultas",
+        "linq.where"
+      ]
+    },
+    {
+      "licao": "ef-03",
+      "trilha": "entity-framework",
+      "etapa": 7,
+      "id": "ef03-a5",
+      "tipo": "code-review",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "ef.consultas",
+        "linq.first"
+      ]
+    },
+    {
+      "licao": "aspnet-00",
+      "trilha": "aspnet",
+      "etapa": 3,
+      "id": "api00-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "licao": "aspnet-00",
+      "trilha": "aspnet",
+      "etapa": 5,
+      "id": "api00-a2",
+      "tipo": "predict-output",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.status"
+      ]
+    },
+    {
+      "licao": "aspnet-00",
+      "trilha": "aspnet",
+      "etapa": 7,
+      "id": "api00-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "licao": "aspnet-00",
+      "trilha": "aspnet",
+      "etapa": 8,
+      "id": "api00-a4",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.status",
+        "aspnet.http"
+      ]
+    },
+    {
+      "licao": "aspnet-01",
+      "trilha": "aspnet",
+      "etapa": 2,
+      "id": "api01-a1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.json"
+      ]
+    },
+    {
+      "licao": "aspnet-01",
+      "trilha": "aspnet",
+      "etapa": 3,
+      "id": "api01-a2",
+      "tipo": "interpret-code",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.json"
+      ]
+    },
+    {
+      "licao": "aspnet-01",
+      "trilha": "aspnet",
+      "etapa": 4,
+      "id": "api01-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.json"
+      ]
+    },
+    {
+      "licao": "aspnet-01",
+      "trilha": "aspnet",
+      "etapa": 5,
+      "id": "api01-a4",
+      "tipo": "multiple-choice",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.json",
+        "csharp.classes"
+      ]
+    },
+    {
+      "licao": "aspnet-02",
+      "trilha": "aspnet",
+      "etapa": 4,
+      "id": "api02-a1",
+      "tipo": "interpret-code",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.api",
+        "aspnet.rotas",
+        "linq.first"
+      ]
+    },
+    {
+      "licao": "aspnet-02",
+      "trilha": "aspnet",
+      "etapa": 5,
+      "id": "api02-a2",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.api"
+      ]
+    },
+    {
+      "licao": "aspnet-02",
+      "trilha": "aspnet",
+      "etapa": 6,
+      "id": "api02-a3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.api",
+        "aspnet.json"
+      ]
+    },
+    {
+      "licao": "aspnet-02",
+      "trilha": "aspnet",
+      "etapa": 7,
+      "id": "api02-a4",
+      "tipo": "write-code",
+      "dimensao": "construcao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.api",
+        "aspnet.status"
+      ]
+    },
+    {
+      "licao": "aspnet-02",
+      "trilha": "aspnet",
+      "etapa": 8,
+      "id": "api02-a5",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "aspnet.status",
+        "aspnet.api"
+      ]
+    }
+  ]
+}

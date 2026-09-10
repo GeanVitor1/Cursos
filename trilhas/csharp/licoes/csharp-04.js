@@ -19,14 +19,14 @@ Plataforma.registrarLicao({
       introduz: ['csharp.null'],
       blocos: [
         { tipo: 'texto', texto: 'Todo cliente tem um telefone? Nem sempre. Como representar "ainda não informado" quando a coluna é de texto?' },
-        { tipo: 'conceito', id: 'csharp.null', titulo: 'Null', texto: 'Ausência de valor: a variável existe, mas não aponta para nenhum objeto ou texto. É diferente de "" (texto vazio) e de 0 (número zero).', exemplo: 'Cliente? cliente = null;' },
+        { tipo: 'conceito', id: 'csharp.null', titulo: 'Null', texto: 'Ausência de valor: a variável existe, mas não aponta para nenhum objeto ou texto. É diferente de "" (texto vazio) e de 0 (número zero).', exemplo: 'Cliente cliente = null;' },
         { tipo: 'texto', texto: 'Em C#, `null` significa **ausência de valor**: a variável existe, mas não aponta para nenhum objeto ou texto. É diferente de `""` (texto vazio) e de `0` (número zero).' },
         { tipo: 'tabela', titulo: 'Três situações diferentes', colunas: ['Valor', 'Significa'], linhas: [
           ['""', 'Um texto que existe, mas está vazio'],
           ['0', 'Um número que existe e vale zero'],
           ['null', 'Nenhum valor: nada foi informado']
         ] },
-        { tipo: 'nota', tom: 'info', texto: 'Bancos de dados têm o mesmo conceito (`NULL`). Quando o EF Core lê uma coluna vazia, ele traz `null` para o C#.' }
+        { tipo: 'nota', tom: 'info', texto: 'Bancos de dados têm o mesmo conceito (`NULL`). Quando as ferramentas de banco leem uma coluna vazia, elas trazem `null` para o C#.' }
       ]
     },
     {
@@ -38,7 +38,7 @@ Plataforma.registrarLicao({
         { tipo: 'conceito', id: 'csharp.excecoes', titulo: 'Exceção', texto: 'Um erro que interrompe o programa quando algo inesperado acontece. Pode ser tratada depois com try/catch (você verá em uma próxima etapa).', exemplo: 'NullReferenceException' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'Cliente cliente = null;\n\n// Lança NullReferenceException\nConsole.WriteLine(cliente.Nome);' },
         { tipo: 'diagrama', arte: 'cliente ──► null\n              │\n   cliente.Nome ──► ✖ nada para acessar\n              ▼\n   NullReferenceException' },
-        { tipo: 'nota', tom: 'atencao', texto: 'A mensagem do erro não diz onde o null nasceu — só onde ele explodiu. Por isso, ler **stack trace** é uma habilidade da trilha de debug e logs.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'A mensagem do erro não diz onde o null nasceu — só onde ele apareceu. Por isso, ler os **detalhes do erro** é uma habilidade importante na **investigação de erro**.' }
       ]
     },
     {
@@ -64,7 +64,7 @@ Plataforma.registrarLicao({
           3: 'A verificação é feita tarde demais: primeiro acessa, depois checa.'
         },
         dicas: ['Leia da esquerda para a direita: o que é cliente antes do if?', 'Você pode verificar o Nome de algo que não existe?'],
-        explicacao: 'Antes de acessar `cliente.Nome`, é preciso verificar `cliente != null`. O if correto testaria o próprio cliente, não a propriedade.',
+        explicacao: 'Antes de acessar `cliente.Nome`, é preciso verificar `cliente != null`. O if correto verificaria o próprio cliente, não a propriedade.',
         conceitos: ['csharp.null']
       }
     },
@@ -116,7 +116,7 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete para exibir o nome do cliente apenas se o cliente existir.',
         codigo: 'if (cliente {{1}} null)\n{\n    Console.WriteLine(cliente.Nome);\n}',
-        lacunas: [['!=', '!==']],
+        lacunas: [['!=']],
         dicas: ['Queremos entrar no bloco quando o cliente existe.', '"Diferente de" em C# é composto por dois caracteres.'],
         explicacao: '`cliente != null` é a verificação clássica: só acessa o objeto quando ele existe.',
         conceitos: ['csharp.null', 'csharp.condicoes']
@@ -129,7 +129,7 @@ Plataforma.registrarLicao({
         tipo: 'code-review',
         dimensao: 'aplicacao',
         enunciado: 'Você está revisando a alteração de um colega. Onde está o risco?',
-        ticket: { numero: '#4821', titulo: 'Melhoria no relatório de clientes', corpo: 'Adicionada a exibição do telefone do cliente no relatório. Em produção, alguns relatórios quebraram com NullReferenceException.' },
+        ticket: { numero: '#4821', titulo: 'Melhoria no relatório de clientes', corpo: 'Adicionada a exibição do telefone do cliente no relatório. Em produção (o ambiente real, onde os clientes usam o sistema), alguns relatórios quebraram com NullReferenceException.' },
         autor: 'colega de time',
         diff: [
           ' public string GerarLinha(Cliente cliente)',
@@ -140,13 +140,13 @@ Plataforma.registrarLicao({
         opcoes: [
           '`cliente.Telefone` pode ser null e acessar `.Length` quebra; falta verificar ou usar `?.`',
           'O método deveria estar em outra classe',
-          'Falta um `else` para clientes sem nome',
+          'Falta verificar se o telefone é vazio antes de usar',
           'O retorno deveria ser um número'
         ],
         correta: 0,
         feedbackErro: {
           1: 'Mover o método para outra classe não evita acessar um valor null.',
-          2: 'O nome é o dado menos provável de faltar; o problema apontado no ticket é o telefone.',
+          2: 'Verificar se o texto é vazio não protege contra um valor null; é preciso verificar a ausência ou usar `?.`.',
           3: 'O relatório exibe texto; o tipo está adequado.'
         },
         dicas: ['O ticket fala de NullReferenceException em produção.', 'Qual chamada acontece sem verificação?'],

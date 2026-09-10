@@ -21,7 +21,7 @@ Plataforma.registrarLicao({
         { tipo: 'texto', texto: 'Sua aplicação precisa de uma porta de entrada para conversar com o banco. No Entity Framework, existe um objeto responsável por essa conversa: ele abre a conexão, acompanha as mudanças e envia os comandos.' },
         { tipo: 'destaque', texto: 'Esse objeto é chamado de **DbContext**.' },
         { tipo: 'conceito', id: 'ef.dbcontext', titulo: 'DbContext', texto: 'A porta de entrada para o banco: abre a conexão, acompanha as mudanças e envia os comandos.', exemplo: 'MercadoAuroraContext : DbContext' },
-        { tipo: 'diagrama', arte: 'Sua aplicação (services, controllers)\n        │\n        ▼\n     DbContext  ◄── a porta de entrada\n        │\n        ▼\n   Banco de dados (Mercado Aurora)' },
+        { tipo: 'diagrama', arte: 'Sua aplicação (camada de dados)\n        │\n        ▼\n     DbContext  ◄── a porta de entrada\n        │\n        ▼\n   Banco de dados (Mercado Aurora)' },
         { tipo: 'nota', tom: 'info', texto: 'Analogia útil: pense no DbContext como a **porta e o balcão** de uma loja. É por ele que você pede, entrega e consulta. Sem a porta, ninguém entra.' }
       ]
     },
@@ -34,6 +34,7 @@ Plataforma.registrarLicao({
         { tipo: 'conceito', id: 'ef.dbset', titulo: 'DbSet', texto: 'Uma "gaveta" de entidades de um tipo, ligada a uma tabela do banco.', exemplo: 'public DbSet<Produto> Produtos { get; set; }' },
         { tipo: 'diagrama', arte: 'MercadoAuroraContext (DbContext)\n┌──────────────────────────────────────┐\n│  DbSet<Produto>  Produtos   ──► tabela Produtos │\n│  DbSet<Cliente>  Clientes   ──► tabela Clientes │\n│  DbSet<Pedido>   Pedidos    ──► tabela Pedidos  │\n└──────────────────────────────────────┘' },
         { tipo: 'texto', texto: 'Com a gaveta nas mãos, você não escreve `SELECT * FROM Produtos`. Você pergunta ao DbSet:' },
+        { tipo: 'nota', tom: 'info', texto: 'Antes de usar, guarde o nome: o objeto `context` é o seu DbContext — a porta de entrada do banco. É por ele que você chega aos DbSets.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'context.Produtos' },
         { tipo: 'nota', tom: 'atencao', texto: '`context.Produtos` é um `DbSet<Produto>`: parece uma lista de produtos, mas por baixo conversa com a tabela. É nele que você aplica LINQ.' }
       ]
@@ -68,7 +69,7 @@ Plataforma.registrarLicao({
           ['construtor', 'recebe opções', 'O padrão de injeção de dependência que você já estudou.'],
           ['DbSet<X>', 'gaveta', 'Uma propriedade por tabela que você quer acessar.']
         ] },
-        { tipo: 'nota', tom: 'info', texto: 'Você não precisa entender `DbContextOptions` e `base(options)` agora. É apenas a configuração que diz ao contexto onde o banco está — vamos detalhar mais adiante.' },
+        { tipo: 'nota', tom: 'info', texto: '`DbContextOptions` e `base(options)` são apenas configuração: você não precisa entender esta linha agora. Ela diz ao contexto onde o banco está — vamos detalhar mais adiante.' },
         { tipo: 'nota', tom: 'info', texto: 'O nome termina com **Context** por convenção. O `Produtos` no plural acompanha o nome da tabela.' }
       ]
     },
@@ -123,19 +124,18 @@ Plataforma.registrarLicao({
         opcoes: [
           'context.Produtos.Where(p => p.Ativo)',
           'context.Clientes.Where(p => p.Ativo)',
-          'context.Pedidos.Select(p => p.Ativo)',
-          'context.Database.Where(p => p.Ativo)'
+          'context.Produtos.Select(p => p.Ativo)',
+          'produtos.Where(p => p.Ativo)'
         ],
         correta: 0,
         feedbackErro: {
           1: 'Clientes guarda clientes, não produtos.',
-          2: 'Pedidos guarda pedidos; e Select transforma, não filtra.',
-          3: 'Database não é uma coleção de entidades.'
+          2: 'Select transforma, não filtra.',
+          3: '`produtos` é uma lista em memória; a consulta deve partir da gaveta `context.Produtos`.'
         },
         dicas: ['Cada DbSet guarda um tipo de entidade.', 'Produtos estão em context.Produtos.'],
-        explicacao: 'O DbSet é o ponto de partida das consultas. O LINQ que você aprendeu vale exatamente igual aqui. Na próxima lição você verá como executar essa consulta e materializar o resultado.',
-        conceitos: ['ef.dbset', 'linq.where'],
-        desafio: true
+        explicacao: 'O DbSet é o ponto de partida das consultas. O LINQ que você aprendeu vale exatamente igual aqui. Na próxima lição você verá como executar essa consulta e transformar o resultado em uma lista.',
+        conceitos: ['ef.dbset', 'linq.where']
       }
     },
     {
@@ -159,9 +159,8 @@ Plataforma.registrarLicao({
           3: 'LINQ funciona com qualquer contexto; o problema é o acompanhamento entre eles.'
         },
         dicas: ['O DbContext "conhece" os objetos que carregou.', 'Se o objeto veio de outro contexto, o atual não o reconhece.'],
-        explicacao: 'Um fluxo de trabalho normalmente usa um DbContext por operação. É por isso que o registro em injeção de dependência usa `AddScoped` — assunto que você verá na trilha de ASP.NET.',
-        conceitos: ['ef.dbcontext', 'csharp.di'],
-        desafio: true
+        explicacao: 'Um fluxo de trabalho normalmente usa um DbContext por operação. É por isso que o registro do contexto na inicialização da aplicação precisa ser pensado — assunto de ASP.NET, veremos depois.',
+        conceitos: ['ef.dbcontext', 'csharp.di']
       }
     }
   ]

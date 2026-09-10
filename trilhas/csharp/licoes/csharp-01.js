@@ -27,7 +27,9 @@ Plataforma.registrarLicao({
           ['bool', 'verdadeiro ou falso', 'true / false'],
           ['DateTime', 'data e hora', 'DateTime.Now']
         ], legenda: 'Os mesmos conceitos do banco (INT, DECIMAL, VARCHAR, BIT) têm um tipo correspondente em C#.' },
-        { tipo: 'nota', tom: 'info', texto: 'Você também verá `var` no código. `var` não é "sem tipo": é o compilador descobrindo o tipo pelo valor. `var preco = 100.50m;` continua sendo decimal.' }
+        { tipo: 'nota', tom: 'info', texto: 'Você também verá `var` no código. `var` não é "sem tipo": é o compilador descobrindo o tipo pelo valor. `var preco = 100.50m;` continua sendo decimal.' },
+        { tipo: 'nota', tom: 'info', texto: '`Now` significa **agora**: `DateTime.Now` devolve a data e a hora deste instante.' },
+        { tipo: 'nota', tom: 'info', texto: 'Todo texto tem tamanho: `nome.Length` devolve quantos caracteres ele tem.' }
       ]
     },
     {
@@ -62,7 +64,11 @@ Plataforma.registrarLicao({
           ['{ }', 'chaves', 'Delimitam o bloco de código que será executado quando a condição for verdadeira.']
         ] },
         { tipo: 'texto', texto: 'A condição `estoque < 10` é um `bool`: ou é verdadeira, ou é falsa. Os operadores são parecidos com SQL: `>`, `<`, `>=`, `<=`, `==` (igual) e `!=` (diferente).' },
-        { tipo: 'nota', tom: 'atencao', texto: 'Em C#, igualdade é `==` (dois sinais). Em SQL é `=` (um sinal). Alternar entre os dois é um erro clássico — e você vai ver os dois no mesmo projeto.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'Em C#, igualdade é `==` (dois sinais). Em SQL é `=` (um sinal). Alternar entre os dois é um erro clássico — e você vai ver os dois no mesmo projeto.' },
+        { tipo: 'glossario', titulo: 'Operadores matemáticos', itens: [
+          ['+', 'somar ou juntar textos', 'Soma números ou junta textos (concatenação).'],
+          ['*', 'multiplicar', 'Multiplica dois valores, como em `preco * 0.9m`.']
+        ] }
       ]
     },
     {

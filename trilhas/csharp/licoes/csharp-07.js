@@ -21,7 +21,7 @@ Plataforma.registrarLicao({
         { tipo: 'destaque', texto: '**Generic** é um recurso que permite escrever código uma vez e reutilizá-lo para vários tipos, sem perder a segurança de tipos.' },
         { tipo: 'texto', texto: 'Em `List<T>`, o `T` é um espaço reservado ("algum tipo"). Quando você escreve `List<Produto>`, o T vira Produto. É por isso que a lista aceita produtos e recusa textos.' },
         { tipo: 'diagrama', arte: 'List<T>  (molde genérico)\n   │\n   ├── List<Produto>  → aceita produtos\n   ├── List<string>   → aceita textos\n   └── List<int>      → aceita inteiros' },
-        { tipo: 'nota', tom: 'info', texto: 'Você vai reencontrar generics em `Func<T, bool>`, em `Task<T>` e nas consultas ao banco que verá mais adiante. O conceito é sempre o mesmo.' }
+        { tipo: 'nota', tom: 'info', texto: 'Você vai reencontrar generics em `Func<T, bool>`, em `Task<T>` e nas consultas ao banco que verá mais adiante. O conceito é sempre o mesmo. Você não precisa entender `Func` e `Task` agora — vamos ver em detalhe nas próximas lições.' }
       ]
     },
     {
@@ -127,7 +127,7 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete a lambda que mantém apenas clientes ativos.',
         codigo: 'List<Cliente> ativos = Filtrar(clientes, c {{1}} c.{{2}});',
-        lacunas: [['=>'], ['ativo', 'Ativo']],
+        lacunas: [['=>'], ['Ativo']],
         dicas: ['A seta da lambda é formada por dois caracteres.', 'A propriedade de ativo fica em maiúscula no código.'],
         explicacao: '`c => c.Ativo` — o item temporário é `c`, a condição é a propriedade Ativo. Essa forma é a mesma que você vai usar para filtrar dados mais adiante.',
         conceitos: ['csharp.lambda']

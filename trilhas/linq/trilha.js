@@ -3,7 +3,7 @@ Plataforma.registrarTrilha({
   nome: 'LINQ',
   curto: 'LINQ',
   sigla: 'LQ',
-  descricao: 'Consultando coleções e o banco com C#: Where, Select, FirstOrDefault e a diferença entre IQueryable e IEnumerable — construído depois de lambdas, nunca antes.',
+  descricao: 'Consultando coleções com C#: Where, Select e FirstOrDefault — construído depois de lambdas, nunca antes.',
   fase: 2,
   status: 'disponivel',
   prerequisitos: [{ trilha: 'csharp', min: 100 }, { trilha: 'sql', min: 100 }],
@@ -23,10 +23,10 @@ Plataforma.registrarTrilha({
       id: 'iniciante',
       nome: 'Iniciante',
       etapas: [
-        { titulo: 'Any, All e Contains', duracao: 40 },
-        { titulo: 'OrderBy e ThenBy', duracao: 35 },
-        { titulo: 'GroupBy', duracao: 45 },
-        { titulo: 'Sum, Count, Min, Max, Average', duracao: 40 },
+        { titulo: 'Any, All e Contains (em breve)', duracao: 40 },
+        { titulo: 'OrderBy e ThenBy (em breve)', duracao: 35 },
+        { titulo: 'GroupBy (em breve)', duracao: 45 },
+        { titulo: 'Sum, Count, Min, Max, Average (em breve)', duracao: 40 },
         { titulo: 'Checkpoint — Iniciante', duracao: 40, tipo: 'prova' }
       ]
     },
@@ -34,10 +34,10 @@ Plataforma.registrarTrilha({
       id: 'intermediario',
       nome: 'Intermediário',
       etapas: [
-        { titulo: 'IQueryable vs IEnumerable (a diferença que importa)', duracao: 50 },
-        { titulo: 'Projeções com Select e objetos anônimos', duracao: 40 },
-        { titulo: 'Join em LINQ', duracao: 50 },
-        { titulo: 'Deferred execution: quando a query roda', duracao: 45 },
+        { titulo: 'IQueryable vs IEnumerable: a diferença que importa (em breve)', duracao: 50 },
+        { titulo: 'Projeções com Select e objetos anônimos (em breve)', duracao: 40 },
+        { titulo: 'Join em LINQ (em breve)', duracao: 50 },
+        { titulo: 'Deferred execution: quando a query roda (em breve)', duracao: 45 },
         { titulo: 'Checkpoint — Intermediário', duracao: 45, tipo: 'prova' }
       ]
     },
@@ -45,9 +45,9 @@ Plataforma.registrarTrilha({
       id: 'profissional',
       nome: 'Profissional',
       etapas: [
-        { titulo: 'LINQ + EF Core: consultas de negócio', duracao: 55 },
-        { titulo: 'Evitando consultas lentas e N+1', duracao: 55 },
-        { titulo: 'Compondo relatórios reais', duracao: 60 },
+        { titulo: 'LINQ + EF Core: consultas de negócio (em breve)', duracao: 55 },
+        { titulo: 'Evitando consultas lentas e N+1 (em breve)', duracao: 55 },
+        { titulo: 'Compondo relatórios reais (em breve)', duracao: 60 },
         { titulo: 'Checkpoint final — LINQ Profissional', duracao: 45, tipo: 'prova' }
       ]
     }

@@ -25,7 +25,31 @@ Plataforma.registrarLicao({
           ['go → went', 'ir → fui'],
           ['have → had', 'ter → tive'],
           ['buy → bought', 'comprar → comprei'],
-          ['see → saw', 'ver → vi']
+          ['see → saw', 'ver → vi'],
+          ['take → took', 'pegar / tirar → peguei / tirei'],
+          ['watch → watched', 'assistir → assisti'],
+          ['rain → rained', 'chover → choveu'],
+          ['stay → stayed', 'ficar → fiquei']
+        ] },
+        { tipo: 'vocab', titulo: 'O verbo to be no passado', pares: [
+          ['I was / he was / she was', 'eu era, eu estava / ele era / ela era'],
+          ['you were / we were / they were', 'você era / nós éramos / eles eram']
+        ] },
+        { tipo: 'vocab', titulo: 'Marcadores de tempo', pares: [
+          ['yesterday / today / tomorrow', 'ontem / hoje / amanhã'],
+          ['last week / last weekend', 'semana passada / fim de semana passado'],
+          ['two days ago', 'dois dias atrás'],
+          ['then', 'depois / em seguida']
+        ] },
+        { tipo: 'vocab', titulo: 'Palavras de um fim de semana', pares: [
+          ['the beach', 'a praia'],
+          ['photos', 'fotos'],
+          ['a lot of', 'muitos / muitas'],
+          ['parents', 'pais (pai e mãe)'],
+          ['house / home', 'casa / lar'],
+          ['together', 'juntos'],
+          ['a movie', 'um filme'],
+          ['so', 'então / por isso']
         ] },
         { tipo: 'lista', itens: [
           '`I was` / `he was` / `she was` / `it was`',
@@ -33,7 +57,8 @@ Plataforma.registrarLicao({
           'Marcadores: `yesterday`, `last week`, `last weekend`, `two days ago`'
         ] },
         { tipo: 'ingles', frase: 'Yesterday I went to the supermarket and bought some fruit.', traducao: 'Ontem eu fui ao supermercado e comprei frutas.' },
-        { tipo: 'nota', tom: 'info', texto: 'Não misture: `yesterday I go` está errado. Se a frase tem marcador de passado, o verbo também fica no passado.' }
+        { tipo: 'ingles', frase: 'Last weekend I was at my parents\' house. On Saturday we watched a movie.', traducao: 'No fim de semana passado eu estava na casa dos meus pais. No sábado nós assistimos a um filme.' },
+        { tipo: 'nota', tom: 'info', texto: 'Atenção: `yesterday I go` está errado. Se a frase tem marcador de passado, o verbo também fica no passado.' }
       ]
     },
     {

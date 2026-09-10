@@ -25,10 +25,14 @@ Plataforma.registrarLicao({
           ['hotel / restaurant', 'hotel / restaurante']
         ] },
         { tipo: 'vocab', titulo: 'Direções e transporte', pares: [
+          ['Where is...?', 'Onde fica...?'],
           ['go straight', 'siga em frente'],
           ['turn left / turn right', 'vire à esquerda / à direita'],
           ['on foot / by bus / by train', 'a pé / de ônibus / de trem'],
-          ['next to / near', 'ao lado de / perto de']
+          ['next to / near', 'ao lado de / perto de'],
+          ['Is it far?', 'É longe?'],
+          ['minute / walk', 'minuto / caminhada'],
+          ['It costs...', 'Custa...']
         ] },
         { tipo: 'ingles', frase: 'Go straight and turn left. The bank is next to the supermarket.', traducao: 'Siga em frente e vire à esquerda. O banco fica ao lado do supermercado.' },
         { tipo: 'nota', tom: 'info', texto: '`Where is...?` (Onde fica...?) é a pergunta-chave. Responda com `go straight`, `turn left` ou `turn right` e diga o ponto de referência.' }
@@ -86,7 +90,7 @@ Plataforma.registrarLicao({
         turnos: [
           { fala: 'Hi! Can I help you?', opcoes: ['Yes, where is the train station?', 'I would like a coffee.', 'My name is Ana.'], correta: 0 },
           { fala: 'Go straight and turn left. It is near the hospital.', opcoes: ['Thank you! Is it far?', 'She is my sister.', 'It costs twenty dollars.'], correta: 0 },
-          { fala: 'No, it is a five-minute walk.', opcoes: ['Great, thank you very much!', 'On Monday at nine.', "I'm twenty years old."], correta: 0 }
+          { fala: 'No, it is a five-minute walk.', opcoes: ['Great, thank you!', 'On Monday at nine.', "I'm twenty years old."], correta: 0 }
         ],
         dicas: ['Where is...? pergunta o lugar.', '"Is it far?" pergunta se é longe.'],
         explicacao: 'Perguntar onde fica, entender a direção e agradecer: você consegue se localizar em inglês.',

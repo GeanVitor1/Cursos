@@ -27,18 +27,19 @@ Plataforma.registrarLicao({
     {
       tipo: 'conteudo',
       titulo: 'O mesmo filtro, agora com LINQ',
-      introduz: ['linq.lambda', 'linq.where'],
+      introduz: ['linq.lambda', 'linq.where', 'linq.tolist'],
       blocos: [
+        { tipo: 'conceito', id: 'linq.tolist', titulo: 'ToList', texto: 'Transforma o resultado de uma consulta em uma lista de verdade.', exemplo: 'produtos.Where(p => p.Ativo).ToList()' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> ativos = produtos.Where(p => p.Ativo).ToList();' },
         { tipo: 'conceito', id: 'linq.intro', titulo: 'LINQ', texto: 'Recurso do C# para escrever consultas que filtram, transformam e resumem coleções com nomes claros.', exemplo: 'produtos.Where(p => p.Ativo).ToList()' },
         { tipo: 'diagrama', arte: 'produtos.Where(p => p.Ativo).ToList()\n   │          │              └─ transforma em lista\n   │          └─ mantém apenas os que passam na regra\n   └─ coleção original (não é alterada)' },
         { tipo: 'lista', itens: [
           '`Where` filtra (as regras que você já conhece do SQL: WHERE!).',
           'A lambda `p => p.Ativo` é a mesma ideia da etapa de C#.',
-          '`ToList()` transforma o resultado em uma lista concreta.'
+          '`ToList()` transforma o resultado em uma lista de verdade.'
         ] },
         { tipo: 'conceito', id: 'linq.where', titulo: 'Where', texto: 'O método do LINQ que filtra: mantém apenas os itens que satisfazem a regra.', exemplo: 'produtos.Where(p => p.Preco > 100)' },
-        { tipo: 'trabalho', texto: 'LINQ aparece em praticamente todo código .NET: filtrar produtos, ordenar pedidos, somar valores, projetar relatórios. E é a mesma linguagem usada nas consultas de banco com Entity Framework.', fonte: '💼 Em uma vaga .NET' }
+        { tipo: 'trabalho', texto: 'LINQ aparece em praticamente todo código .NET: filtrar produtos, ordenar pedidos, somar valores, projetar relatórios. E é a mesma linguagem usada nas consultas de banco com ferramentas de acesso a banco.', fonte: '💼 Em uma vaga .NET' }
       ]
     },
     {
@@ -52,16 +53,16 @@ Plataforma.registrarLicao({
           'Escrever consultas em C# de forma padronizada, no lugar de laços manuais repetidos',
           'Substituir o banco de dados',
           'Melhorar a aparência do código sem mudar o comportamento',
-          'Permitir que o C# execute código SQL dentro do HTML'
+          'Executar código de outra linguagem dentro do C#'
         ],
         correta: 0,
         feedbackErro: {
-          1: 'LINQ não substitui o banco: ele consulta coleções e, com EF, gera SQL.',
+          1: 'LINQ não substitui o banco: ele consulta coleções e, com ferramentas de acesso a banco, gera SQL.',
           2: 'A padronização melhora manutenção e reduz erros, não apenas aparência.',
-          3: 'LINQ é C#, não SQL em HTML.'
+          3: 'LINQ é C# consultando coleções; não executa código de outra linguagem.'
         },
         dicas: ['Pense no método Filtrar que você escreveu à mão.', 'O LINQ dá nome a esse padrão.'],
-        explicacao: 'LINQ padroniza consultas sobre coleções e, junto com o EF Core, é traduzido para SQL.',
+        explicacao: 'LINQ padroniza consultas sobre coleções e, com ferramentas de acesso a banco, é traduzido para SQL.',
         conceitos: ['linq.intro']
       }
     },
@@ -84,7 +85,7 @@ Plataforma.registrarLicao({
         correta: 0,
         feedbackErro: {
           1: 'O Where descarta os que não passam na regra.',
-          2: 'Where filtra; somar seria outra operação (Sum).',
+          2: 'Where filtra; somar seria outra operação de cálculo.',
           3: 'O operador é `>`, não `<`.'
         },
         dicas: ['Where = filtro.', 'Leia a lambda `p => p.Preco > 500`.'],
@@ -103,9 +104,9 @@ Plataforma.registrarLicao({
           ['produtos', 'Coleção original'],
           ['Where', 'Filtra os itens'],
           ['p => p.Ativo', 'Regra aplicada a cada item'],
-          ['ToList()', 'Materializa o resultado em uma lista']
+          ['ToList()', 'Transforma o resultado em uma lista']
         ],
-        dicas: ['A coleção vem antes do ponto.', 'ToList transforma o resultado em lista concreta.'],
+        dicas: ['A coleção vem antes do ponto.', 'ToList transforma o resultado em uma lista.'],
         explicacao: 'Origem → filtro → resultado. Essa leitura vai se repetir em toda consulta LINQ.',
         conceitos: ['linq.intro', 'linq.where']
       }

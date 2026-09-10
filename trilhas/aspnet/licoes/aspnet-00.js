@@ -26,7 +26,7 @@ Plataforma.registrarLicao({
         { tipo: 'texto', texto: 'O servidor que expõe esses endereços é a sua **API** (Application Programming Interface — interface de programação de aplicações): um conjunto de endereços que outros programas chamam para obter ou enviar dados.' },
         { tipo: 'conceito', id: 'aspnet.api', titulo: 'API', texto: 'Um conjunto de endereços que outros programas chamam para obter ou enviar dados.', exemplo: 'A API de produtos responde em /api/produtos.' },
         { tipo: 'diagrama', arte: 'CLIENTE                              SERVIDOR (sua API)\n   │                                      │\n   │  GET /api/produtos/10   ──────────►  │\n   │                                      │ consulta o banco\n   │  ◄──────────  200 OK + dados         │\n   │                                      │' },
-        { tipo: 'trabalho', texto: 'Quando o frontend "não carrega os dados", o problema pode estar no cliente, na API ou no banco. Entender requisição e resposta é o primeiro passo para investigar.', fonte: '💼 No trabalho' }
+        { tipo: 'trabalho', texto: 'Quando a interface do usuário (a tela) "não carrega os dados", o problema pode estar no cliente, na API ou no banco. Entender requisição e resposta é o primeiro passo para investigar.', fonte: '💼 No trabalho' }
       ]
     },
     {
@@ -41,7 +41,8 @@ Plataforma.registrarLicao({
           ['DELETE', 'Excluir', 'DELETE']
         ] },
         { tipo: 'texto', texto: 'O **endereço** (URL — Uniform Resource Locator, o endereço de um recurso na web) aponta para o recurso. Em `/api/produtos/10`, a parte `/api/produtos` identifica a coleção e `10` identifica um produto.' },
-        { tipo: 'codigo', linguagem: 'http', codigo: 'GET /api/produtos/10 HTTP/1.1\nHost: minhaloja.com' }
+        { tipo: 'codigo', linguagem: 'http', codigo: 'GET /api/produtos/10 HTTP/1.1\nHost: minhaloja.com' },
+        { tipo: 'nota', tom: 'info', texto: 'A primeira linha e os cabeçalhos (como `Host:`) fazem parte da requisição. Você não precisa decorá-los agora — basta reconhecer o método e o endereço.' }
       ]
     },
     {
@@ -99,13 +100,22 @@ Plataforma.registrarLicao({
       }
     },
     {
+      tipo: 'conteudo',
+      titulo: 'O corpo da requisição',
+      blocos: [
+        { tipo: 'texto', texto: 'Nas requisições GET, o cliente só pede dados. Para **criar** ou **atualizar**, ele também envia informações — e essas informações viajam no **corpo** da requisição. É o caso do POST: o endereço é `/api/produtos` e o corpo leva os dados do novo produto.' },
+        { tipo: 'futuro', conceitos: ['aspnet.json'], titulo: 'Prévia: o formato do corpo', texto: 'No exemplo abaixo, o corpo está em **JSON** — um texto com pares "chave": valor. Você vai estudá-lo na próxima lição; por enquanto, basta saber que o corpo leva os dados enviados, como no POST.' },
+        { tipo: 'codigo', linguagem: 'http', codigo: 'POST /api/produtos\nCorpo:\n{\n  "nome": "Mouse",\n  "preco": 100.00\n}' }
+      ]
+    },
+    {
       tipo: 'atividade',
       atividade: {
         id: 'api00-a3',
         tipo: 'fill-code',
         dimensao: 'preenchimento',
         enunciado: 'Complete a requisição para criar um novo produto.',
-        codigo: '{{1}} /api/produtos\nCorpo: { "nome": "Mouse", "preco": 100.00 }',
+        codigo: '{{1}} /api/produtos\nCorpo: um corpo com nome e preço do produto',
         lacunas: [['post', 'POST']],
         dicas: ['Criar registro usa o método de inserção.', 'São quatro letras maiúsculas.'],
         explicacao: 'POST é o método que envia dados no corpo da requisição para criar um recurso.',
@@ -118,7 +128,7 @@ Plataforma.registrarLicao({
         id: 'api00-a4',
         tipo: 'scenario',
         dimensao: 'aplicacao',
-        cena: 'O frontend envia um formulário de cadastro com preço negativo. A API recebe o POST e grava o produto mesmo assim. O cliente reclama que o catálogo exibe dados impossíveis.',
+        cena: 'O aplicativo cliente envia um cadastro com preço negativo. A API recebe o POST e grava o produto mesmo assim. O cliente reclama que o catálogo exibe dados impossíveis.',
         enunciado: 'Qual é o problema e como a API deveria responder?',
         opcoes: [
           'A API deveria validar os dados e responder 400, informando qual campo é inválido',
@@ -130,12 +140,11 @@ Plataforma.registrarLicao({
         feedbackErro: {
           1: 'Não foi falha inesperada: os dados são inválidos. O status certo é 400.',
           2: 'Toda requisição precisa de resposta; silêncio deixa o cliente travado.',
-          3: 'Corrigir depois significa dado inválido em produção.'
+          3: 'Corrigir depois significa dado inválido no ambiente real.'
         },
         dicas: ['O cliente enviou algo inválido.', 'Existe status para requisição inválida.'],
         explicacao: 'Validar na entrada e responder 400 é mais barato e mais seguro do que consertar dados corrompidos depois. Você vai implementar isso na trilha.',
-        conceitos: ['aspnet.status', 'aspnet.http'],
-        desafio: true
+        conceitos: ['aspnet.status', 'aspnet.http']
       }
     }
   ]

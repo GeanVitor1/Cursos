@@ -9,7 +9,7 @@ Plataforma.registrarLicao({
   objetivos: [
     'Diferenciar Where (linhas) de Select (formato)',
     'Projetar apenas as colunas necessárias',
-    'Reconhecer objetos anônimos'
+    'Transformar cada item em um valor simples'
   ],
   conceitos: ['linq.select', 'linq.where', 'sql.colunas'],
   etapas: [
@@ -56,7 +56,7 @@ Plataforma.registrarLicao({
           { tipo: 'codigo', linguagem: 'csharp', codigo: 'var nomes = produtos\n    .Where(p => p.Ativo)\n    .Select(p => p.Nome)\n    .ToList();' },
           { tipo: 'tabela', titulo: 'Produtos', colunas: ['Nome', 'Ativo'], linhas: [['Mouse', 'true'], ['Monitor', 'false'], ['Teclado', 'true']] }
         ],
-        opcoes: ['["Mouse", "Teclado"]', '["Mouse", "Monitor", "Teclado"]', '["Monitor"]', 'Os três produtos completos'],
+        opcoes: ['Mouse e Teclado', 'Mouse, Monitor e Teclado', 'Apenas Monitor', 'Os três produtos completos'],
         correta: 0,
         feedbackErro: {
           1: 'O Where remove Monitor antes do Select.',
@@ -96,7 +96,7 @@ Plataforma.registrarLicao({
         },
         respostasAceitas: ['produtos.Where(p => p.Ativo).Select(p => p.Nome).ToList()'],
         dicas: ['Filtre com Where e projete com Select.', 'A ordem é filtro primeiro, formato depois.'],
-        explicacao: 'Where + Select + ToList: uma das combinações mais frequentes de LINQ, e que vira uma consulta SQL eficiente quando usada com EF Core.',
+        explicacao: 'Where + Select + ToList: uma das combinações mais frequentes de LINQ, e que vira uma consulta SQL eficiente quando usada com ferramentas de banco.',
         conceitos: ['linq.select', 'linq.where'],
         desafio: true
       }

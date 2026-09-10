@@ -22,7 +22,24 @@ Plataforma.registrarLicao({
           ['breakfast / lunch / dinner', 'café da manhã / almoço / jantar'],
           ['water / coffee / juice', 'água / café / suco'],
           ['bread / rice / chicken', 'pão / arroz / frango'],
-          ['the menu / the bill', 'o cardápio / a conta']
+          ['sandwich / apple', 'sanduíche / maçã'],
+          ['the menu / the bill', 'o cardápio / a conta'],
+          ['the table', 'a mesa']
+        ] },
+        { tipo: 'vocab', titulo: 'Pedindo e respondendo no restaurante', pares: [
+          ['I would like... / I want...', 'Eu gostaria... / Eu quero...'],
+          ['Can I have...?', 'Posso ter...?'],
+          ['Are you ready to order?', 'Você está pronto para fazer o pedido?'],
+          ['Sure.', 'Claro.'],
+          ['Anything to drink?', 'Algo para beber?'],
+          ['Anything else?', 'Mais alguma coisa?'],
+          ["No, that's all.", 'Não, é só isso.'],
+          ['Great!', 'Ótimo!'],
+          ['Perfect.', 'Perfeito.'],
+          ['Here is your food.', 'Aqui está sua comida.'],
+          ['food', 'comida'],
+          ['Enjoy!', 'Bom apetite! / Aproveite!'],
+          ['Thank you.', 'Obrigado(a).']
         ] },
         { tipo: 'ingles', frase: "I'd like a coffee and a sandwich, please.", traducao: 'Eu gostaria de um café e um sanduíche, por favor.' },
         { tipo: 'lista', itens: [
@@ -30,7 +47,7 @@ Plataforma.registrarLicao({
           '`Can I have...?` = Posso ter...? — também comum.',
           'Sempre feche o pedido com **please**.'
         ] },
-        { tipo: 'nota', tom: 'info', texto: '`I\'d` é a contração de `I would`. Soa mais natural do que "I want", que pode parecer ríspido.' }
+        { tipo: 'nota', tom: 'info', texto: '`I\'d` é a contração de `I would`. Soa mais natural do que `I want`, que pode parecer ríspido.' }
       ]
     },
     {

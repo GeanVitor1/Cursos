@@ -1,5 +1,5 @@
 Plataforma.registrarRegistroConceitos({
-  observacao: 'Metadados pedagógicos dos conceitos: pré-requisitos conceituais, termos que representam o conceito no conteúdo e definição curta para o glossário. A introdução real é marcada no conteúdo com bloco { tipo: "conceito" } ou com etpa.introduz.',
+  observacao: 'Metadados pedagógicos dos conceitos: pré-requisitos conceituais, termos que representam o conceito no conteúdo e definição curta para o glossário. A introdução real é marcada no conteúdo com bloco { tipo: "conceito" } ou com etapa.introduz.',
   conceitos: {
     // SQL
     'sql.servidor': { prerequisitos: [], termos: ['servidor'], definicao: 'O computador onde o banco de dados fica instalado e funcionando.', exemplo: 'Um servidor pode hospedar vários bancos.' },
@@ -7,7 +7,7 @@ Plataforma.registrarRegistroConceitos({
     'sql.tabela': { prerequisitos: ['sql.banco'], termos: ['tabela'], definicao: 'A estrutura que guarda um tipo de informação, como clientes ou produtos.', exemplo: 'A tabela Clientes guarda os clientes.' },
     'sql.coluna': { prerequisitos: ['sql.tabela'], termos: ['coluna'], definicao: 'Um campo da tabela. Define que tipo de informação todo registro possui.', exemplo: 'Nome, Email e Cidade são colunas de Clientes.' },
     'sql.registro': { prerequisitos: ['sql.tabela'], termos: ['registro'], definicao: 'Uma linha completa dentro de uma tabela: todos os dados de um item.', exemplo: '1 | Ana | ana@email.com é um registro de cliente.' },
-    'sql.chave-primaria': { prerequisitos: ['sql.tabela'], termos: ['chave primária'], definicao: 'A coluna que identifica cada linha de forma única. Não pode repetir nem ser nula.', exemplo: 'A coluna Id de Clientes.' },
+    'sql.chave-primaria': { prerequisitos: ['sql.tabela'], termos: ['chave primária'], definicao: 'A coluna que identifica cada linha de forma única. Não pode repetir nem ficar vazia.', exemplo: 'A coluna Id de Clientes.' },
     'sql.tipos-dados': { prerequisitos: ['sql.coluna'], termos: [], definicao: 'O tipo define que espécie de valor a coluna aceita: número, texto, dinheiro, data ou verdadeiro/falso.', exemplo: 'Preco usa DECIMAL para não perder centavos.' },
     'sql.chave-estrangeira': { prerequisitos: ['sql.chave-primaria'], termos: ['chave estrangeira'], definicao: 'Uma coluna que aponta para a chave primária de outra tabela, criando um vínculo.', exemplo: 'ClienteId em Pedidos aponta para o Id de Clientes.' },
     'sql.relacionamento': { prerequisitos: ['sql.chave-estrangeira'], termos: ['relacionamento'], definicao: 'O vínculo entre tabelas criado pelas chaves estrangeiras.', exemplo: 'Um cliente tem vários pedidos (1:N).' },
@@ -41,20 +41,20 @@ Plataforma.registrarRegistroConceitos({
     // C#
     'csharp.classes': { prerequisitos: [], termos: ['class '], definicao: 'Um molde que descreve quais dados uma coisa tem.', exemplo: 'class Produto { ... }' },
     'csharp.objetos': { prerequisitos: ['csharp.classes'], termos: ['new '], definicao: 'Uma cópia preenchida do molde, criada com new.', exemplo: 'Produto produto = new Produto();' },
-    'csharp.propriedades': { prerequisitos: ['csharp.classes'], termos: ['{ get; set; }'], definicao: 'Um dado do objeto, como Nome ou Preco, que pode ser lido e gravado.', exemplo: 'public string Nome { get; set; }' },
+    'csharp.propriedades': { prerequisitos: ['csharp.classes'], termos: ['{ get; set; }', '.length'], definicao: 'Um dado do objeto, como Nome ou Preco, que pode ser lido e gravado.', exemplo: 'public string Nome { get; set; }' },
     'csharp.tipos': { prerequisitos: [], termos: [], definicao: 'O tipo define que espécie de valor cabe: int, decimal, string, bool e DateTime.', exemplo: 'decimal preco = 100.50m;' },
     'csharp.variaveis': { prerequisitos: [], termos: [], definicao: 'Uma caixa etiquetada que guarda um valor com um nome.', exemplo: 'int estoque = 25;' },
     'csharp.condicoes': { prerequisitos: ['csharp.variaveis'], termos: ['if ('], definicao: 'O if executa um bloco somente quando a condição é verdadeira.', exemplo: 'if (estoque < 10) { ... }' },
-    'csharp.metodos': { prerequisitos: ['csharp.variaveis'], termos: [], definicao: 'Uma ação com nome que recebe entradas e pode devolver um resultado.', exemplo: 'decimal CalcularTotal(decimal preco, int quantidade)' },
-    'csharp.list': { prerequisitos: ['csharp.objetos'], termos: ['list<'], definicao: 'Uma coleção que guarda vários itens em sequência na mesma variável.', exemplo: 'List<Produto> produtos = new List<Produto>();' },
+    'csharp.metodos': { prerequisitos: ['csharp.variaveis'], termos: ['return', 'void'], definicao: 'Uma ação com nome que recebe entradas e pode devolver um resultado.', exemplo: 'decimal CalcularTotal(decimal preco, int quantidade)' },
+    'csharp.list': { prerequisitos: ['csharp.objetos'], termos: ['list<', 'foreach'], definicao: 'Uma coleção que guarda vários itens em sequência na mesma variável.', exemplo: 'List<Produto> produtos = new List<Produto>();' },
     'csharp.generics': { prerequisitos: ['csharp.list'], termos: ['generic'], definicao: 'Um recurso que permite reutilizar o mesmo código para vários tipos, como List<Produto> e List<string>.', exemplo: 'List<T> — o T é o tipo dos itens.' },
-    'csharp.null': { prerequisitos: ['csharp.objetos'], termos: [], definicao: 'Ausência de valor: a variável existe, mas não aponta para nenhum objeto.', exemplo: 'Cliente? cliente = null;' },
+    'csharp.null': { prerequisitos: ['csharp.objetos'], termos: ['??', '?.'], definicao: 'Ausência de valor: a variável existe, mas não aponta para nenhum objeto.', exemplo: 'Cliente? cliente = null;' },
     'csharp.interfaces': { prerequisitos: ['csharp.classes', 'csharp.metodos'], termos: ['interface '], definicao: 'Um contrato que diz o que deve existir, sem dizer como funciona.', exemplo: 'interface INotificador { void Enviar(string mensagem); }' },
     'csharp.construtor': { prerequisitos: ['csharp.classes'], termos: ['construtor'], definicao: 'O método chamado quando o objeto é criado; é onde as dependências são recebidas.', exemplo: 'public PedidoService(INotificador notificador) { ... }' },
     'csharp.di': { prerequisitos: ['csharp.interfaces', 'csharp.construtor'], termos: ['injeção de dependência', 'injeção de dependencia'], definicao: 'Fornecer as dependências de fora para dentro, em vez de a classe construí-las.', exemplo: 'Receber INotificador pelo construtor.' },
     'csharp.lambda': { prerequisitos: ['csharp.metodos'], termos: ['lambda', '=>'], definicao: 'Uma regra curta passada como valor: item => condição.', exemplo: 'p => p.Ativo' },
-    'csharp.excecoes': { prerequisitos: ['csharp.metodos'], termos: ['try', 'catch', 'exceção'], definicao: 'Erro controlado do C# que pode ser tratado com try/catch.', exemplo: 'try { ... } catch (FormatException) { ... }' },
-    'csharp.async': { prerequisitos: ['csharp.metodos'], termos: ['async', 'await'], definicao: 'Modelo para esperar operações demoradas sem travar a aplicação.', exemplo: 'await Task.Delay(1000);' },
+    'csharp.excecoes': { prerequisitos: ['csharp.metodos'], termos: ['try', 'catch', 'throw', 'finally', 'exceção'], definicao: 'Erro controlado do C# que pode ser tratado com try/catch.', exemplo: 'try { ... } catch (FormatException) { ... }' },
+    'csharp.async': { prerequisitos: ['csharp.metodos', 'csharp.generics'], termos: ['async', 'await'], definicao: 'Modelo para esperar operações demoradas sem travar a aplicação.', exemplo: 'await Task.Delay(1000);' },
     'csharp.leitura': { prerequisitos: [], termos: [], definicao: 'Habilidade de entender o que um código faz antes de alterá-lo.', exemplo: 'Ler um método e prever o resultado.' },
     'csharp.ingles': { prerequisitos: [], termos: [], definicao: 'Vocabulário de inglês aplicado a código e documentação.', exemplo: 'list, item, request.' },
 
@@ -83,15 +83,16 @@ Plataforma.registrarRegistroConceitos({
     'linq.lambda': { prerequisitos: ['csharp.lambda'], termos: [], definicao: 'A regra aplicada a cada item dentro de uma consulta LINQ.', exemplo: 'p => p.Preco > 100' },
     'linq.where': { prerequisitos: ['linq.intro'], termos: ['where('], definicao: 'Filtra os itens: mantém apenas os que satisfazem a regra.', exemplo: 'produtos.Where(p => p.Ativo)' },
     'linq.select': { prerequisitos: ['linq.intro'], termos: ['select('], definicao: 'Transforma cada item no formato que você precisa.', exemplo: 'produtos.Select(p => p.Nome)' },
+    'linq.tolist': { prerequisitos: ['linq.intro'], termos: ['tolist'], definicao: 'Transforma o resultado de uma consulta em uma lista de verdade.', exemplo: 'produtos.Where(p => p.Ativo).ToList()' },
     'linq.first': { prerequisitos: ['linq.where', 'csharp.null'], termos: ['firstordefault', 'single('], definicao: 'Buscar um único item: First lança erro se não achar; FirstOrDefault devolve null; Single exige exatamente um.', exemplo: 'produtos.FirstOrDefault(p => p.Id == 10)' },
 
     // EF Core
     'ef.orm': { prerequisitos: ['sql.tabela', 'csharp.classes'], termos: ['ORM'], definicao: 'Ferramenta que traduz entre objetos C# e tabelas do banco, gerando o SQL automaticamente.', exemplo: 'Entity Framework Core.' },
     'ef.entidade': { prerequisitos: ['ef.orm'], termos: [], definicao: 'Uma classe mapeada para uma tabela do banco.', exemplo: 'Produto ↔ tabela Produtos.' },
-    'ef.dbcontext': { prerequisitos: ['ef.orm'], termos: ['dbcontext'], definicao: 'A porta de entrada para o banco: abre a conexão e acompanha as mudanças.', exemplo: 'MercadoAuroraContext : DbContext' },
+    'ef.dbcontext': { prerequisitos: ['ef.orm', 'csharp.construtor', 'csharp.di'], termos: ['dbcontext'], definicao: 'A porta de entrada para o banco: abre a conexão e acompanha as mudanças.', exemplo: 'MercadoAuroraContext : DbContext' },
     'ef.dbset': { prerequisitos: ['ef.dbcontext'], termos: ['dbset'], definicao: 'Uma "gaveta" de entidades de um tipo, ligada a uma tabela.', exemplo: 'DbSet<Produto> Produtos' },
-    'ef.savechanges': { prerequisitos: ['ef.dbset'], termos: ['savechanges', 'savechangesasync'], definicao: 'O método que envia ao banco tudo o que o contexto acompanha, gerando o SQL.', exemplo: 'await context.SaveChangesAsync();' },
-    'ef.consultas': { prerequisitos: ['ef.dbset', 'linq.where'], termos: ['tolistasync', 'firstordefaultasync', 'findasync'], definicao: 'Consultar o banco com LINQ: o EF traduz para SQL.', exemplo: 'context.Produtos.Where(p => p.Ativo).ToListAsync()' },
+    'ef.savechanges': { prerequisitos: ['ef.dbset', 'csharp.async'], termos: ['savechanges', 'savechangesasync'], definicao: 'O método que envia ao banco tudo o que o contexto acompanha, gerando o SQL.', exemplo: 'await context.SaveChangesAsync();' },
+    'ef.consultas': { prerequisitos: ['ef.dbset', 'linq.where', 'csharp.async', 'linq.first'], termos: ['tolistasync', 'firstordefaultasync', 'findasync'], definicao: 'Consultar o banco com LINQ: o EF traduz para SQL.', exemplo: 'context.Produtos.Where(p => p.Ativo).ToListAsync()' },
 
     // ASP.NET
     'aspnet.http': { prerequisitos: [], termos: ['HTTP'], definicao: 'O protocolo de comunicação da web: o cliente pede (requisição) e o servidor responde (resposta).', exemplo: 'GET /api/produtos/10' },

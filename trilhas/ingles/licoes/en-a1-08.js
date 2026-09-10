@@ -29,10 +29,14 @@ Plataforma.registrarLicao({
           ['Where are you from?', 'De onde você é?'],
           ['What do you do?', 'O que você faz (trabalho)?'],
           ['How is the weather?', 'Como está o tempo?'],
-          ['What about you?', 'E você?']
+          ['What about you?', 'E você?'],
+          ['I am a developer.', 'Eu sou desenvolvedor(a).'],
+          ['here', 'aqui'],
+          ['week / month', 'semana / mês'],
+          ['now', 'agora']
         ] },
         { tipo: 'ingles', frase: "Where are you from? — I'm from Brazil. What about you?", traducao: 'De onde você é? — Sou do Brasil. E você?' },
-        { tipo: 'nota', tom: 'info', texto: '`What do you do?` pergunta a profissão — não confunda com `What are you doing?`, que pergunta o que você está fazendo agora.' }
+        { tipo: 'nota', tom: 'info', texto: '`What do you do?` pergunta a profissão. A resposta é `I am a...` — por exemplo, `I am a developer.`' }
       ]
     },
     {
@@ -69,7 +73,7 @@ Plataforma.registrarLicao({
           ['When', 'Quando'],
           ['Who', 'Quem']
         ],
-        dicas: ['Where lembra "warehouse"? Não! É onde.', 'When lembra tempo/when.'],
+        dicas: ['Where começa a pergunta de lugar.', 'When lembra tempo (quando).'],
         explicacao: 'Dominar essas palavras é a base para fazer qualquer pergunta.',
         conceitos: ['en.perguntas']
       }

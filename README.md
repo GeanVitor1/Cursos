@@ -187,20 +187,44 @@ Nomes de conceitos usam o formato `trilha.conceito` (ex.: `sql.where`).
 
 ```powershell
 node ferramentas/validar-dados.js        # estrutura, referências e registro
-node ferramentas/linter-pedagogico.js    # ordem de ensino (falha se houver erro)
+node ferramentas/linter-pedagogico.js    # ordem de ensino dos conceitos (falha se houver erro)
+node ferramentas/linter-ingles.js        # vocabulário de inglês palavra a palavra (inclui distratores)
+node ferramentas/linter-simbolos.js      # símbolos/APIs de código antes da explicação
+node ferramentas/validar-tudo.js         # roda os quatro validadores em sequência
 ```
 
 O **linter pedagógico** percorre as trilhas na ordem real do aluno e impede que um conceito seja
 praticado, cobrado ou mencionado antes de ser ensinado. Ele usa os marcos explícitos do conteúdo
-(`{ tipo: 'conceito' }` e `introduz: [...]`) e os pré-requisitos de `data/conceitos-registry.js`.
+(`{ tipo: 'conceito' }` e `introduz: [...]`), os pré-requisitos de `data/conceitos-registry.js` e o
+léxico de termos em português (`data/termos-portugues.js`), que cobre jargão como "compilador",
+"consulta", "filtro", "service", "produção", "endpoint", "performance" e termos de trilhas futuras.
 O resultado completo fica em `AUDITORIA_SEQUENCIAL.md`, com a tabela de evidências
-(introdução → primeira prática) de cada conceito.
+(introdução → primeira prática → primeira avaliação) e o estado de cada conceito
+(`INTRODUZIDO`, `PRATICADO`, `PRONTO_PARA_AVALIACAO`). A matriz completa, com `ensina` de cada
+etapa e `exige` de cada atividade, fica em `ferramentas/matriz-pedagogica.json`.
 
-Regras aplicadas pelo linter:
+O **linter de inglês** constrói o léxico em ordem (blocos `vocab`, `ingles`, `glossario` e
+`introduzVocab`) e verifica TODA string em inglês exibida ao aluno — enunciado, alternativas
+erradas, áudio, diálogos, leituras, dicas citadas e feedback — **nas 45 lições, não só na trilha
+de inglês**. Ele usa `data/ingles-lexico.js` (nomes próprios, contrações, identificadores de
+código e palavras portuguesas) e grava `ferramentas/matriz-ingles.json`
+(palavra → lição que ensinou → primeiro uso em atividade).
+
+O **linter de símbolos** usa `data/simbolos-codigo.js` (105 símbolos, palavras-chave e APIs com
+a lição em que são explicados) e garante que `foreach`, `=>`, `await`, `Where`, `SaveChanges`,
+`Results.Ok`, `TOP` etc. não apareçam em blocos de código antes da explicação.
+
+Regras aplicadas pelos linters:
 
 - atividade/prova/desafio usando conceito não introduzido → **erro**;
 - conteúdo mencionando conceito não introduzido → **aviso**;
 - desafio ou prova cobrando conceito não praticado → **erro**;
 - pré-requisito conceitual não introduzido antes → **erro**;
 - `retoma` apontando para conceito ainda não ensinado → **erro**;
+- palavra de inglês usada antes de ensinada (inclusive em alternativa errada) → **erro**;
+- símbolo/keyword de código usado antes de explicado → **erro**;
 - siglas e símbolos (`ORM`, `API`, `HTTP`, `DbSet`, `=>`, `ToListAsync`…) fora de ordem → erro.
+
+O teste de nivelamento (`data/nivelamento-ingles.js`) é a única exceção: como ele existe para
+descobrir o nível do aluno, usa conteúdo progressivo por definição e não passa pelo linter de
+inglês.

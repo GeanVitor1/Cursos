@@ -89,7 +89,7 @@ Plataforma.registrarLicao({
           2: 'Ramificação é branch.',
           3: 'Erro é error.'
         },
-        dicas: ['É o que se faz quando a aplicação vai para o servidor.', 'A palavra aparece em "deploy to production".'],
+        dicas: ['É o que se faz quando a aplicação vai para o servidor.', 'Pense em publicar uma nova versão.'],
         explicacao: 'Deploy = implantação: colocar a aplicação no ambiente onde ela vai rodar.',
         conceitos: ['ingles.vocabulario']
       }
@@ -107,7 +107,18 @@ Plataforma.registrarLicao({
           ['review', 'revisar'],
           ['merge', 'mesclar / juntar alterações'],
           ['fix', 'corrigir'],
-          ['retry', 'tentar novamente']
+          ['retry', 'tentar novamente'],
+          ['down', 'fora do ar / caído'],
+          ['change', 'mudança / alteração']
+        ] },
+        { tipo: 'vocab', titulo: 'Palavras das mensagens do time', pares: [
+          ['Hey', 'Oi (informal)'],
+          ['chat', 'bate-papo / conversa online'],
+          ['connection', 'conexão'],
+          ['wrong', 'errado / errada'],
+          ['config (configuration)', 'configuração'],
+          ['please', 'por favor'],
+          ['can you...?', 'você pode...?']
         ] },
         { tipo: 'nota', tom: 'atencao', texto: 'Em inglês, o adjetivo costuma vir antes do substantivo: **database error** = erro de banco; **pull request** = pedido de integração. Ler na ordem literal ajuda no começo.' }
       ]
@@ -131,7 +142,7 @@ Plataforma.registrarLicao({
         id: 'en00-a5',
         tipo: 'reading',
         dimensao: 'reconhecimento',
-        titulo: 'Mensagem do time no chat',
+        titulo: 'Mensagem do time',
         enunciado: 'Leia a mensagem e responda.',
         texto: 'Hey, the deploy failed because the database connection is wrong. Can you review the config?',
         pergunta: 'O que o colega está pedindo?',

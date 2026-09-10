@@ -11,7 +11,7 @@ Plataforma.registrarLicao({
     'Consultar com SELECT, colunas e FROM',
     'Filtrar com WHERE, operadores, AND, OR, IN e BETWEEN'
   ],
-  conceitos: ['sql.banco', 'sql.tabela', 'sql.chave-primaria', 'sql.chave-estrangeira', 'sql.select', 'sql.from', 'sql.where', 'sql.and-or', 'sql.parenteses', 'sql.in', 'sql.between', 'sql.not', 'sql.ingles'],
+  conceitos: ['sql.banco', 'sql.servidor', 'sql.tabela', 'sql.colunas', 'sql.chave-primaria', 'sql.chave-estrangeira', 'sql.relacionamento', 'sql.select', 'sql.from', 'sql.where', 'sql.operadores', 'sql.texto-aspas', 'sql.and-or', 'sql.parenteses', 'sql.in', 'sql.between', 'sql.comandos-sql', 'sql.ingles'],
   etapas: [
     {
       tipo: 'conteudo',
@@ -21,7 +21,7 @@ Plataforma.registrarLicao({
         {
           tipo: 'lista',
           itens: [
-            'Leia cada cenário com calma, como se fosse um ticket real.',
+            'Leia cada cenário com calma, como se fosse um chamado real.',
             'Pode usar dicas — o resultado continua contando.',
             'Ao final, você verá seu domínio conceito por conceito.'
           ]
@@ -54,7 +54,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'cp-a2',
         tipo: 'true-false',
-        enunciado: 'Avalie as afirmações sobre integridade.',
+        enunciado: 'Avalie as afirmações sobre chaves e relacionamentos.',
         afirmacoes: [
           { texto: 'Uma chave primária pode se repetir em registros diferentes.', correta: false },
           { texto: 'Uma chave estrangeira aponta para a chave primária de outra tabela.', correta: true },
@@ -64,7 +64,7 @@ Plataforma.registrarLicao({
           'Chave primária identifica de forma única.',
           'No relacionamento 1:N, o N fica na tabela que aponta.'
         ],
-        explicacao: 'Esses três conceitos são a base da modelagem. Se algum falhou, volte à Etapa 1.',
+        explicacao: 'Esses três conceitos são a base dos relacionamentos entre as tabelas. Se algum falhou, volte à Etapa 1.',
         conceitos: ['sql.chave-primaria', 'sql.chave-estrangeira', 'sql.relacionamento']
       }
     },
@@ -84,7 +84,7 @@ Plataforma.registrarLicao({
           'UPDATE vem de atualizar.',
           'INSERT lembra inserir.'
         ],
-        explicacao: 'O quarteto do CRUD. Em APIs, ele se conecta a GET, POST, PUT/PATCH e DELETE.',
+        explicacao: 'O quarteto do CRUD: SELECT consulta, INSERT insere, UPDATE altera e DELETE exclui.',
         conceitos: ['sql.comandos-sql']
       }
     },
@@ -131,7 +131,7 @@ Plataforma.registrarLicao({
         opcoes: [
           'A palavra FROM antes de Produtos',
           'Aspas simples em torno de 100',
-          'A palavra ORDER antes de WHERE',
+          'A palavra SELECT ausente',
           'Nada — a consulta está correta'
         ],
         correta: 0,
@@ -183,7 +183,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'cp-a8',
         tipo: 'multiple-choice',
-        ingles: { frase: 'Retrieve the name of all active customers.' },
+        ingles: { frase: 'Retrieve the name of all customers where Ativo = 1.' },
         enunciado: 'Qual consulta atende ao pedido em inglês?',
         opcoes: [
           'SELECT Nome FROM Clientes WHERE Ativo = 1;',
@@ -193,10 +193,10 @@ Plataforma.registrarLicao({
         ],
         correta: 0,
         dicas: [
-          'active customers = clientes ativos.',
-          'Retrieve the name = retorne o nome.'
+          'name = nome; customers = clientes.',
+          'Retrieve = retorne; where Ativo = 1 filtra os clientes ativos.'
         ],
-        explicacao: '"Retrieve the name of all active customers" = retorne o nome de todos os clientes ativos. Consulta: `SELECT Nome FROM Clientes WHERE Ativo = 1;`.',
+        explicacao: '"Retrieve the name of all customers where Ativo = 1" = retorne o nome de todos os clientes ativos. Consulta: `SELECT Nome FROM Clientes WHERE Ativo = 1;`.',
         conceitos: ['sql.select', 'sql.where', 'sql.ingles']
       }
     },
@@ -222,20 +222,20 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'cp-a10',
         tipo: 'scenario',
-        cena: 'Ticket #183: o cliente de Id 183 não consegue visualizar os pedidos dele no aplicativo. O suporte já confirmou que o cliente existe e que o cadastro está ativo. A tabela Pedidos guarda ClienteId como chave estrangeira.',
+        cena: 'Chamado 183: o cliente de Id 183 não consegue visualizar os pedidos dele no aplicativo. O suporte já confirmou que o cliente existe e que o cadastro está ativo. A tabela Pedidos guarda ClienteId como chave estrangeira.',
         enunciado: 'Qual seria sua primeira consulta para investigar?',
         opcoes: [
           'SELECT * FROM Pedidos WHERE ClienteId = 183;',
           'SELECT * FROM Clientes;',
-          'DELETE FROM Pedidos WHERE ClienteId = 183;',
-          'UPDATE Clientes SET Ativo = 1;'
+          'SELECT * FROM Produtos WHERE Id = 183;',
+          'SELECT * FROM Pedidos WHERE Id = 183;'
         ],
         correta: 0,
         dicas: [
           'Investigar é consultar dados, nunca alterar antes de entender.',
           'Você quer saber se existem pedidos vinculados ao cliente 183.'
         ],
-        explicacao: 'O primeiro passo de qualquer investigação é consultar: existem pedidos para o ClienteId 183? Se não existirem, o problema está na gravação. Se existirem, o problema está na consulta exibida pelo app. Nunca comece por DELETE ou UPDATE.',
+        explicacao: 'O primeiro passo de qualquer investigação é consultar: existem pedidos para o ClienteId 183? Se não existirem, o problema está na gravação. Se existirem, o problema está na consulta exibida pelo aplicativo. Nunca comece por DELETE ou UPDATE.',
         conceitos: ['sql.where', 'sql.chave-estrangeira'],
         desafio: true
       }

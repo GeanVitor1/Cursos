@@ -40,6 +40,11 @@ Plataforma.registrarLicao({
           'O catch declara **qual tipo** de exceção ele trata — o ideal é ser específico.'
         ] },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'catch (Exception)\n{\n    // não faça isso: engole qualquer erro\n}' },
+        { tipo: 'nota', tom: 'info', texto: '`Exception` representa **qualquer** erro; `FormatException` é um tipo específico de erro. Por isso, `catch (Exception)` captura tudo.' },
+        { tipo: 'glossario', titulo: 'Palavras do tratamento de erro', itens: [
+          ['throw', 'lança uma exceção', 'Avisa o programa que algo deu errado, interrompendo aquele fluxo.'],
+          ['finally', 'executa sempre', 'Bloco que executa sempre, com ou sem erro.']
+        ] },
         { tipo: 'destaque', texto: 'Capturar tudo e não fazer nada é pior do que não tratar: o erro desaparece da tela e reaparece como bug misterioso em produção.' }
       ]
     },
@@ -86,7 +91,7 @@ Plataforma.registrarLicao({
         tipo: 'code-review',
         dimensao: 'aplicacao',
         enunciado: 'O time recebeu tickets de "preço errado" que ninguém consegue explicar. Encontre o problema na revisão.',
-        ticket: { numero: '#5390', titulo: 'Preços gravados como zero', corpo: 'Alguns pedidos foram salvos com preço 0. O time não encontra erro nos logs.' },
+        ticket: { numero: '#5390', titulo: 'Preços gravados como zero', corpo: 'Alguns pedidos foram salvos com preço 0. O time não encontra nenhum erro registrado.' },
         autor: 'colega de time',
         diff: [
           '+ public decimal LerPreco(string texto)',
@@ -113,8 +118,8 @@ Plataforma.registrarLicao({
           2: 'Um método de leitura precisa devolver o preço; void pioraria.',
           3: 'É permitido retornar dentro do try.'
         },
-        dicas: ['O log não mostra erro nenhum. Por quê?', 'Onde o erro está sendo silenciado?'],
-        explicacao: 'Catch genérico devolvendo 0 transforma um erro visível em um dado incorreto e silencioso. A correção é registrar o erro (log) e devolver falha para quem chamou, ou tratar apenas FormatException.',
+        dicas: ['Nenhum erro aparece registrado. Por quê?', 'Onde o erro está sendo silenciado?'],
+        explicacao: 'Catch genérico devolvendo 0 transforma um erro visível em um dado incorreto e silencioso. A correção é registrar o problema em um arquivo de histórico e devolver falha para quem chamou, ou tratar apenas FormatException.',
         conceitos: ['csharp.excecoes'],
         desafio: true
       }
@@ -143,10 +148,10 @@ Plataforma.registrarLicao({
         id: 'cs08-a5',
         tipo: 'scenario',
         dimensao: 'aplicacao',
-        cena: 'Uma aplicação precisa registrar um pedido. O banco pode ficar indisponível por alguns segundos durante a operação. Se falhar, o cliente precisa saber e o time precisa ser avisado pelo log.',
+        cena: 'Uma aplicação precisa registrar um pedido. O banco pode ficar indisponível por alguns segundos durante a operação. Se falhar, o cliente precisa saber e o time precisa ser avisado pelo registro do erro.',
         enunciado: 'Qual conduta é a mais profissional?',
         opcoes: [
-          'Tratar a falha, registrar no log com detalhes e devolver um erro claro para quem chamou',
+          'Tratar a falha, registrar o problema em um arquivo de histórico e devolver um erro claro para quem chamou',
           'Ignorar a falha e devolver sucesso',
           'Devolver valores zerados para a operação continuar',
           'Descobrir a causa olhando o banco manualmente depois'
@@ -155,7 +160,7 @@ Plataforma.registrarLicao({
         feedbackErro: {
           1: 'Devolver sucesso quando nada foi salvo engana o cliente e cria retrabalho.',
           2: 'Dados zerados corrompem o sistema e escondem a causa.',
-          3: 'Log estruturado existe exatamente para isso: investigar sem adivinhação.'
+          3: 'Registrar o problema em um arquivo de histórico existe exatamente para isso: investigar sem adivinhação.'
         },
         dicas: ['Pense no cliente e no time de suporte.', 'O erro precisa ser visível e registrado.'],
         explicacao: 'Profissionalmente, erro tratado = mensagem clara + registro + sem corrupção de dados. É o que você vai implementar na trilha de ASP.NET.',

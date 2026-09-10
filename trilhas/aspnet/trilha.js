@@ -3,7 +3,7 @@ Plataforma.registrarTrilha({
   nome: 'ASP.NET Core & Web API',
   curto: 'ASP.NET',
   sigla: 'API',
-  descricao: 'Construindo APIs REST reais: HTTP, JSON, Minimal APIs, controllers, DTOs, services, injeção de dependência, validação, erros e logging.',
+  descricao: 'Construindo APIs com rotas, JSON e respostas: os fundamentos da web e a sua primeira API em C#.',
   fase: 3,
   status: 'disponivel',
   prerequisitos: [

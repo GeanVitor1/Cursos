@@ -1,11 +1,17 @@
 {
-  "geradoEm": "2026-09-10T17:59:12.865Z",
+  "geradoEm": "2026-09-10T18:53:26.570Z",
   "trilhas": 20,
   "licoes": 45,
   "etapas": 367,
   "atividades": 241,
-  "conceitosRegistrados": 159,
-  "conceitosIntroduzidos": 81,
+  "conceitosRegistrados": 160,
+  "conceitosIntroduzidos": 82,
+  "estados": {
+    "NAO_ENSINADO": 0,
+    "INTRODUZIDO": 6,
+    "PRATICADO": 10,
+    "PRONTO_PARA_AVALIACAO": 66
+  },
   "erros": [],
   "avisos": [],
   "conceitos": [
@@ -26,6 +32,19 @@
         "titulo": "",
         "pos": 6
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 14,
+        "titulo": "",
+        "pos": 14
+      },
+      "praticas": 2,
+      "dimensoes": [
+        "associacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -45,6 +64,19 @@
         "titulo": "",
         "pos": 6
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-00",
+        "etapa": 14,
+        "titulo": "",
+        "pos": 14
+      },
+      "praticas": 2,
+      "dimensoes": [
+        "associacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -64,6 +96,19 @@
         "titulo": "",
         "pos": 5
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 69
+      },
+      "praticas": 4,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.banco"
       ]
@@ -85,6 +130,12 @@
         "titulo": "",
         "pos": 5
       },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [
+        "reconhecimento"
+      ],
+      "estado": "PRATICADO",
       "prerequisitos": [
         "sql.tabela"
       ]
@@ -106,6 +157,13 @@
         "titulo": "",
         "pos": 6
       },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.tabela"
       ]
@@ -127,6 +185,18 @@
         "titulo": "",
         "pos": 9
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 70
+      },
+      "praticas": 3,
+      "dimensoes": [
+        "reconhecimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.tabela"
       ]
@@ -148,6 +218,18 @@
         "titulo": "",
         "pos": 13
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 13,
+        "titulo": "",
+        "pos": 37
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -167,6 +249,10 @@
         "titulo": "",
         "pos": 17
       },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [],
+      "estado": "PRATICADO",
       "prerequisitos": [
         "sql.coluna"
       ]
@@ -188,6 +274,16 @@
         "titulo": "",
         "pos": 19
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 23
+      },
+      "praticas": 4,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.chave-primaria"
       ]
@@ -209,6 +305,16 @@
         "titulo": "",
         "pos": 19
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-01",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 23
+      },
+      "praticas": 2,
+      "dimensoes": [],
+      "estado": "PRATICADO",
       "prerequisitos": [
         "sql.chave-estrangeira"
       ]
@@ -230,6 +336,18 @@
         "titulo": "",
         "pos": 26
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-02",
+        "etapa": 13,
+        "titulo": "",
+        "pos": 37
+      },
+      "praticas": 7,
+      "dimensoes": [
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.tabela"
       ]
@@ -251,6 +369,16 @@
         "titulo": "",
         "pos": 28
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 72
+      },
+      "praticas": 4,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.select"
       ]
@@ -272,6 +400,10 @@
         "titulo": "",
         "pos": 29
       },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [],
+      "estado": "PRATICADO",
       "prerequisitos": [
         "sql.select"
       ]
@@ -293,6 +425,16 @@
         "titulo": "",
         "pos": 34
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 71
+      },
+      "praticas": 1,
+      "dimensoes": [],
+      "estado": "PRATICADO",
       "prerequisitos": [
         "sql.select"
       ]
@@ -314,6 +456,16 @@
         "titulo": "",
         "pos": 39
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-03",
+        "etapa": 13,
+        "titulo": "",
+        "pos": 50
+      },
+      "praticas": 8,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.select"
       ]
@@ -335,6 +487,16 @@
         "titulo": "",
         "pos": 41
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 73
+      },
+      "praticas": 4,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.where"
       ]
@@ -356,6 +518,16 @@
         "titulo": "",
         "pos": 44
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-checkpoint-fundamentos",
+        "etapa": 10,
+        "titulo": "",
+        "pos": 77
+      },
+      "praticas": 3,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.where"
       ]
@@ -377,6 +549,16 @@
         "titulo": "",
         "pos": 52
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 59
+      },
+      "praticas": 7,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.where"
       ]
@@ -398,6 +580,16 @@
         "titulo": "",
         "pos": 57
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-04",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 59
+      },
+      "praticas": 3,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.and-or"
       ]
@@ -419,6 +611,16 @@
         "titulo": "",
         "pos": 61
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 66
+      },
+      "praticas": 4,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.where"
       ]
@@ -440,6 +642,16 @@
         "titulo": "",
         "pos": 61
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 67
+      },
+      "praticas": 5,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.where"
       ]
@@ -461,6 +673,16 @@
         "titulo": "",
         "pos": 61
       },
+      "avaliadoEm": {
+        "trilha": "sql",
+        "licao": "sql-05",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 66
+      },
+      "praticas": 4,
+      "dimensoes": [],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.where"
       ]
@@ -482,6 +704,21 @@
         "titulo": "",
         "pos": 81
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 87
+      },
+      "praticas": 6,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -501,6 +738,16 @@
         "titulo": "",
         "pos": 81
       },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "ordenacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.classes"
       ]
@@ -522,6 +769,20 @@
         "titulo": "",
         "pos": 86
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 94
+      },
+      "praticas": 3,
+      "dimensoes": [
+        "construcao",
+        "associacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -541,6 +802,21 @@
         "titulo": "",
         "pos": 83
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-00",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 87
+      },
+      "praticas": 4,
+      "dimensoes": [
+        "associacao",
+        "preenchimento",
+        "ordenacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.classes"
       ]
@@ -562,6 +838,20 @@
         "titulo": "",
         "pos": 92
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-01",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 94
+      },
+      "praticas": 3,
+      "dimensoes": [
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -581,6 +871,14 @@
         "titulo": "",
         "pos": 91
       },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.variaveis"
       ]
@@ -602,6 +900,14 @@
         "titulo": "",
         "pos": 97
       },
+      "avaliadoEm": null,
+      "praticas": 7,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.variaveis"
       ]
@@ -623,6 +929,23 @@
         "titulo": "",
         "pos": 104
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-03",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 109
+      },
+      "praticas": 6,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "ordenacao",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.objetos"
       ]
@@ -644,6 +967,14 @@
         "titulo": "",
         "pos": 106
       },
+      "avaliadoEm": null,
+      "praticas": 3,
+      "dimensoes": [
+        "preenchimento",
+        "construcao",
+        "reconhecimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.list"
       ]
@@ -665,6 +996,20 @@
         "titulo": "",
         "pos": 112
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-04",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 116
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.objetos"
       ]
@@ -686,6 +1031,21 @@
         "titulo": "",
         "pos": 142
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-08",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 144
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao",
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.metodos"
       ]
@@ -707,6 +1067,22 @@
         "titulo": "",
         "pos": 119
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-05",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 122
+      },
+      "praticas": 6,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.classes",
         "csharp.metodos"
@@ -729,6 +1105,13 @@
         "titulo": "",
         "pos": 126
       },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.classes"
       ]
@@ -750,6 +1133,21 @@
         "titulo": "",
         "pos": 126
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-06",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 128
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.interfaces",
         "csharp.construtor"
@@ -772,6 +1170,21 @@
         "titulo": "",
         "pos": 135
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-07",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 139
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.metodos"
       ]
@@ -793,8 +1206,23 @@
         "titulo": "",
         "pos": 149
       },
+      "avaliadoEm": {
+        "trilha": "csharp",
+        "licao": "csharp-09",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 152
+      },
+      "praticas": 6,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
-        "csharp.metodos"
+        "csharp.metodos",
+        "csharp.generics"
       ]
     },
     {
@@ -814,6 +1242,13 @@
         "titulo": "",
         "pos": 155
       },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "reconhecimento",
+        "ordenacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -833,6 +1268,13 @@
         "titulo": "",
         "pos": 157
       },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "reconhecimento",
+        "ordenacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "logica.total"
       ]
@@ -854,6 +1296,12 @@
         "titulo": "",
         "pos": 159
       },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [
+        "aplicacao"
+      ],
+      "estado": "PRATICADO",
       "prerequisitos": []
     },
     {
@@ -873,6 +1321,12 @@
         "titulo": "",
         "pos": 160
       },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [
+        "aplicacao"
+      ],
+      "estado": "PRATICADO",
       "prerequisitos": []
     },
     {
@@ -892,6 +1346,12 @@
         "titulo": "",
         "pos": 163
       },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [
+        "associacao"
+      ],
+      "estado": "PRATICADO",
       "prerequisitos": []
     },
     {
@@ -911,6 +1371,19 @@
         "titulo": "",
         "pos": 165
       },
+      "avaliadoEm": {
+        "trilha": "terminal",
+        "licao": "terminal-00",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 167
+      },
+      "praticas": 2,
+      "dimensoes": [
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "terminal.comandos"
       ]
@@ -926,6 +1399,10 @@
         "pos": 166
       },
       "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
       "prerequisitos": [
         "terminal.comandos"
       ]
@@ -941,6 +1418,10 @@
         "pos": 166
       },
       "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
       "prerequisitos": [
         "terminal.comandos"
       ]
@@ -956,6 +1437,10 @@
         "pos": 166
       },
       "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
       "prerequisitos": [
         "terminal.comandos"
       ]
@@ -977,6 +1462,22 @@
         "titulo": "",
         "pos": 169
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 172
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -996,6 +1497,21 @@
         "titulo": "",
         "pos": 175
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-checkpoint",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 226
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -1015,6 +1531,21 @@
         "titulo": "",
         "pos": 181
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-02",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 184
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "en.saudacoes"
       ]
@@ -1036,6 +1567,22 @@
         "titulo": "",
         "pos": 187
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-03",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 191
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "ordenacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -1055,6 +1602,21 @@
         "titulo": "",
         "pos": 193
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-checkpoint",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 228
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "en.numeros"
       ]
@@ -1076,6 +1638,21 @@
         "titulo": "",
         "pos": 199
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-05",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 201
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "aplicacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -1095,6 +1672,21 @@
         "titulo": "",
         "pos": 205
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-06",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 206
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "aplicacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "en.numeros"
       ]
@@ -1116,6 +1708,22 @@
         "titulo": "",
         "pos": 211
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-07",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 213
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "aplicacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -1135,6 +1743,22 @@
         "titulo": "",
         "pos": 217
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a1-08",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 220
+      },
+      "praticas": 6,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "ordenacao",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "en.saudacoes"
       ]
@@ -1156,6 +1780,21 @@
         "titulo": "",
         "pos": 234
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 237
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "en.rotina"
       ]
@@ -1177,6 +1816,22 @@
         "titulo": "",
         "pos": 240
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-01",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 243
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "en.rotina"
       ]
@@ -1198,6 +1853,21 @@
         "titulo": "",
         "pos": 246
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-a2-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 248
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "en.lugares"
       ]
@@ -1219,6 +1889,13 @@
         "titulo": "",
         "pos": 252
       },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -1238,6 +1915,12 @@
         "titulo": "",
         "pos": 256
       },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "ordenacao"
+      ],
+      "estado": "PRATICADO",
       "prerequisitos": [
         "ingles.vocabulario"
       ]
@@ -1259,6 +1942,19 @@
         "titulo": "",
         "pos": 257
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-01",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 262
+      },
+      "praticas": 3,
+      "dimensoes": [
+        "reconhecimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "ingles.vocabulario"
       ]
@@ -1280,6 +1976,20 @@
         "titulo": "",
         "pos": 259
       },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-01",
+        "etapa": 7,
+        "titulo": "",
+        "pos": 264
+      },
+      "praticas": 3,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "ingles.vocabulario"
       ]
@@ -1301,6 +2011,13 @@
         "titulo": "",
         "pos": 267
       },
+      "avaliadoEm": null,
+      "praticas": 3,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.lambda",
         "csharp.list"
@@ -1323,6 +2040,14 @@
         "titulo": "",
         "pos": 268
       },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "csharp.lambda"
       ]
@@ -1344,6 +2069,41 @@
         "titulo": "",
         "pos": 268
       },
+      "avaliadoEm": {
+        "trilha": "linq",
+        "licao": "linq-01",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 276
+      },
+      "praticas": 13,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "linq.intro"
+      ]
+    },
+    {
+      "id": "linq.tolist",
+      "nome": "ToList",
+      "introduzidoEm": {
+        "trilha": "linq",
+        "licao": "linq-00",
+        "etapa": 2,
+        "titulo": "O mesmo filtro, agora com LINQ",
+        "pos": 266
+      },
+      "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
       "prerequisitos": [
         "linq.intro"
       ]
@@ -1365,6 +2125,21 @@
         "titulo": "",
         "pos": 278
       },
+      "avaliadoEm": {
+        "trilha": "linq",
+        "licao": "linq-02",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 281
+      },
+      "praticas": 4,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "linq.intro"
       ]
@@ -1386,6 +2161,22 @@
         "titulo": "",
         "pos": 283
       },
+      "avaliadoEm": {
+        "trilha": "linq",
+        "licao": "linq-03",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 285
+      },
+      "praticas": 9,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "linq.where",
         "csharp.null"
@@ -1408,6 +2199,21 @@
         "titulo": "",
         "pos": 290
       },
+      "avaliadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-00",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 293
+      },
+      "praticas": 4,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "ordenacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "sql.tabela",
         "csharp.classes"
@@ -1430,6 +2236,13 @@
         "titulo": "",
         "pos": 290
       },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "ef.orm"
       ]
@@ -1451,8 +2264,18 @@
         "titulo": "",
         "pos": 296
       },
+      "avaliadoEm": null,
+      "praticas": 3,
+      "dimensoes": [
+        "associacao",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
-        "ef.orm"
+        "ef.orm",
+        "csharp.construtor",
+        "csharp.di"
       ]
     },
     {
@@ -1472,6 +2295,15 @@
         "titulo": "",
         "pos": 296
       },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "ef.dbcontext"
       ]
@@ -1493,8 +2325,25 @@
         "titulo": "",
         "pos": 305
       },
+      "avaliadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-02",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 309
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "ordenacao",
+        "reconhecimento",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
-        "ef.dbset"
+        "ef.dbset",
+        "csharp.async"
       ]
     },
     {
@@ -1510,13 +2359,31 @@
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-03",
-        "etapa": 2,
+        "etapa": 3,
         "titulo": "",
-        "pos": 311
+        "pos": 312
       },
+      "avaliadoEm": {
+        "trilha": "entity-framework",
+        "licao": "ef-03",
+        "etapa": 6,
+        "titulo": "",
+        "pos": 315
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "ef.dbset",
-        "linq.where"
+        "linq.where",
+        "csharp.async",
+        "linq.first"
       ]
     },
     {
@@ -1536,6 +2403,14 @@
         "titulo": "",
         "pos": 319
       },
+      "avaliadoEm": null,
+      "praticas": 3,
+      "dimensoes": [
+        "associacao",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -1549,6 +2424,10 @@
         "pos": 317
       },
       "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
       "prerequisitos": [
         "aspnet.http"
       ]
@@ -1564,6 +2443,10 @@
         "pos": 317
       },
       "praticadoEm": null,
+      "avaliadoEm": null,
+      "praticas": 0,
+      "dimensoes": [],
+      "estado": "INTRODUZIDO",
       "prerequisitos": [
         "aspnet.http"
       ]
@@ -1583,8 +2466,18 @@
         "licao": "aspnet-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 332
+        "pos": 333
       },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "ordenacao",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "aspnet.http"
       ]
@@ -1606,6 +2499,14 @@
         "titulo": "",
         "pos": 321
       },
+      "avaliadoEm": null,
+      "praticas": 4,
+      "dimensoes": [
+        "reconhecimento",
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "aspnet.http"
       ]
@@ -1618,15 +2519,24 @@
         "licao": "aspnet-01",
         "etapa": 1,
         "titulo": "Um formato que todo mundo entende",
-        "pos": 324
+        "pos": 325
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 325
+        "pos": 326
       },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": []
     },
     {
@@ -1637,15 +2547,21 @@
         "licao": "aspnet-02",
         "etapa": 1,
         "titulo": "O que é um endpoint",
-        "pos": 329
+        "pos": 330
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 332
+        "pos": 333
       },
+      "avaliadoEm": null,
+      "praticas": 1,
+      "dimensoes": [
+        "reconhecimento"
+      ],
+      "estado": "PRATICADO",
       "prerequisitos": [
         "aspnet.api"
       ]

@@ -19,10 +19,10 @@ Plataforma.registrarLicao({
       titulo: 'Por que o sistema precisa lembrar?',
       introduz: ['sql.banco'],
       blocos: [
-        { tipo: 'texto', texto: 'Todo sistema que você vai construir precisa **lembrar das informações**: clientes, produtos, pedidos, pagamentos. Se a aplicação desligar, os dados não podem desaparecer.' },
+        { tipo: 'texto', texto: 'Todo sistema que você vai construir precisa **lembrar das informações**: clientes, produtos, pedidos, itens de pedido. Se a aplicação desligar, os dados não podem desaparecer.' },
         { tipo: 'texto', texto: 'Uma forma simples de enxergar isso: pense na **agenda de contatos** do celular. Cada pessoa tem nome, telefone e e-mail. Tudo fica organizado e você consegue encontrar qualquer contato rapidamente.' },
-        { tipo: 'conceito', id: 'sql.banco', titulo: 'Banco de dados', texto: 'Um lugar organizado onde o sistema guarda informações para poder consultá-las e alterá-las depois.', exemplo: 'O banco mercado_aurora guarda Clientes, Produtos e Pedidos.' },
-        { tipo: 'nota', tom: 'info', texto: 'Nesta trilha você vai usar um banco fictício de uma loja chamada **Mercado Aurora**. Ele terá clientes, produtos, pedidos e pagamentos.' }
+        { tipo: 'conceito', id: 'sql.banco', titulo: 'Banco de dados', texto: 'Um lugar organizado onde o sistema guarda informações para poder fazer consultas (pedidos de informação ao banco) e alterá-las depois.', exemplo: 'O banco mercado_aurora guarda Clientes, Produtos e Pedidos.' },
+        { tipo: 'nota', tom: 'info', texto: 'Nesta trilha você vai usar um banco fictício de uma loja chamada **Mercado Aurora**. Ele terá clientes, produtos, pedidos e itens de pedido.' }
       ]
     },
     {
@@ -32,7 +32,7 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'O banco de dados não existe "no ar". Ele fica instalado em um computador preparado para ficar ligado o tempo todo, atendendo às aplicações. Esse computador é o **servidor**.' },
         { tipo: 'conceito', id: 'sql.servidor', titulo: 'Servidor', texto: 'O computador onde o banco de dados fica instalado e funcionando.', exemplo: 'Um servidor pode hospedar vários bancos.' },
-        { tipo: 'diagrama', arte: 'SERVIDOR (um computador ligado 24h)\n┌──────────────────────────────────┐\n│  BANCO DE DADOS: mercado_aurora  │\n│                                  │\n│   ┌───────────┐  ┌───────────┐   │\n│   │ Clientes  │  │ Produtos  │   │\n│   └───────────┘  └───────────┘   │\n└──────────────────────────────────┘', legenda: 'Um servidor pode hospedar vários bancos. Cada banco tem várias tabelas.' }
+        { tipo: 'diagrama', arte: 'SERVIDOR (um computador ligado o tempo todo)\n┌──────────────────────────────────┐\n│  BANCO DE DADOS: mercado_aurora  │\n│                                  │\n│   ┌───────────┐  ┌───────────┐   │\n│   │ Clientes  │  │ Produtos  │   │\n│   └───────────┘  └───────────┘   │\n└──────────────────────────────────┘', legenda: 'Um servidor pode hospedar vários bancos. Cada banco tem várias tabelas.' }
       ]
     },
     {
@@ -147,7 +147,7 @@ Plataforma.registrarLicao({
           { texto: 'A chave primária serve para identificar cada linha de forma única.', correta: true, explicacao: 'É exatamente o papel da chave primária.' }
         ],
         dicas: ['Releia a definição de chave primária: ela é única por registro.', 'Se dois registros tivessem o mesmo Id, como o sistema saberia qual é qual?'],
-        explicacao: 'A chave primária é um contrato: não pode repetir e não pode ser nula. É o que garante que cada registro seja localizável.',
+        explicacao: 'A chave primária é um contrato: não pode repetir e não pode ficar vazia. É o que garante que cada registro seja localizável.',
         conceitos: ['sql.chave-primaria', 'sql.tabela']
       }
     },
@@ -156,8 +156,8 @@ Plataforma.registrarLicao({
       titulo: 'Por que não uma planilha?',
       blocos: [
         { tipo: 'texto', texto: 'Planilhas funcionam para analisar dados, mas não para sustentar um sistema. Veja a diferença em um fluxo real:' },
-        { tipo: 'diagrama', arte: 'Aplicação (e-commerce)\n        │  "salve este pedido"\n        ▼\n  Banco de dados\n        │  resposta rápida e consistente\n        ▼\nAplicação mostra confirmação' },
-        { tipo: 'lista', itens: ['**Vários usuários ao mesmo tempo**: o banco controla quem grava o quê, sem sobrescrever.', '**Dados sempre válidos**: o banco impede pedidos vinculados a clientes que não existem.', '**Consultas rápidas**: mesmo com milhões de registros, uma busca por Id é quase instantânea.', '**Segurança**: usuários e aplicações têm permissões diferentes.'] }
+        { tipo: 'diagrama', arte: 'Aplicação (loja virtual)\n        │  "salve este pedido"\n        ▼\n  Banco de dados\n        │  resposta rápida e consistente\n        ▼\nAplicação mostra confirmação' },
+        { tipo: 'lista', itens: ['**Vários usuários ao mesmo tempo**: o banco controla quem grava o quê, sem sobrescrever.', '**Dados sempre válidos**: o banco impede pedidos vinculados a clientes que não existem.', '**Consultas rápidas** (pedidos de informação ao banco): mesmo com milhões de registros, uma busca por Id é quase instantânea.', '**Segurança**: usuários e aplicações têm permissões diferentes.'] }
       ]
     },
     {
@@ -194,7 +194,7 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Vocabulário que aparece em toda documentação e em conversas de trabalho:' },
         { tipo: 'vocab', titulo: 'Database vocabulary', pares: [['database', 'banco de dados'], ['server', 'servidor'], ['table', 'tabela'], ['row', 'linha (registro)'], ['column', 'coluna (campo)'], ['primary key', 'chave primária']] },
-        { tipo: 'ingles', frase: 'The customers table has three columns.', traducao: 'A tabela de clientes tem três colunas.' }
+        { tipo: 'ingles', frase: 'The customers table has Id, Nome, Email, Cidade and Ativo columns.', traducao: 'A tabela de clientes tem as colunas Id, Nome, Email, Cidade e Ativo.' }
       ]
     },
     {

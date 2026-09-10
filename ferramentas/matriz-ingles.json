@@ -1,0 +1,3542 @@
+{
+  "geradoEm": "2026-09-10T18:53:26.659Z",
+  "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback.",
+  "palavras": [
+    {
+      "palavra": "a",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "about",
+      "introduzidaEm": "en-a1-08",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "accept",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "actual",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "add",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-03",
+        "atividade": "cs03-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "address",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "after",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "afternoon",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "ago",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "airport",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "all",
+      "introduzidaEm": "sql-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a8",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "also",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a5",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "am",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "an",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "ana",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "and",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a8",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "another",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "anything",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "app",
+      "introduzidaEm": "aspnet-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "aspnet-02",
+        "atividade": "api02-a2",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "apple",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "application",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "are",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "args",
+      "introduzidaEm": "aspnet-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "at",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "ativo",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-01",
+        "atividade": "sql01-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "bag",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "bags",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "bank",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "be",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "beach",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "because",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "bed",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "bill",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "board",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "boarding",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "bool",
+      "introduzidaEm": "csharp-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-00",
+        "atividade": "cs00-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "bought",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "branch",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "brazil",
+      "introduzidaEm": "en-a1-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-08",
+        "atividade": "en-a1-08-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "bread",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "breakfast",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "brother",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "brothers",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "bruno",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "bug",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "build",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "builder",
+      "introduzidaEm": "aspnet-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "aspnet-02",
+        "atividade": "api02-a2",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "bus",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a5",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "buy",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "by",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "call",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "calling",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "can",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "cannot",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "card",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "cash",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "cd",
+      "introduzidaEm": "terminal-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "terminal-00",
+        "atividade": "term00-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "change",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "chat",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "cheap",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "check",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "chicken",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-checkpoint",
+        "atividade": "en-a1-cp6",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "cidade",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "city",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "class",
+      "introduzidaEm": "csharp-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "classe",
+      "introduzidaEm": "csharp-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-05",
+        "atividade": "cs05-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "clear",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "client",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "coffee",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "column",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-00",
+        "atividade": "sql00-a6",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "columns",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "come",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "concreta",
+      "introduzidaEm": "csharp-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-05",
+        "atividade": "cs05-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "config",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "configuration",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "connect",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "connection",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "construtor",
+      "introduzidaEm": "csharp-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-06",
+        "atividade": "cs06-a2",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "core",
+      "introduzidaEm": "ef-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ef-00",
+        "atividade": "ef00-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "costs",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "could",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "count",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-03",
+        "atividade": "cs03-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "create",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "createbuilder",
+      "introduzidaEm": "aspnet-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "credit",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "customer",
+      "introduzidaEm": "sql-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a8",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "customers",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a8",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "dad",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "database",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "daughter",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "day",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "days",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "dbcontext",
+      "introduzidaEm": "ef-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ef-01",
+        "atividade": "ef01-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "dbcontextoptions",
+      "introduzidaEm": "ef-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "dbset",
+      "introduzidaEm": "ef-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ef-01",
+        "atividade": "ef01-a2",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "de",
+      "introduzidaEm": "csharp-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-06",
+        "atividade": "cs06-a2",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "decimal",
+      "introduzidaEm": "csharp-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-00",
+        "atividade": "cs00-a3",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "dependência",
+      "introduzidaEm": "csharp-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-06",
+        "atividade": "cs06-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "deploy",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "developer",
+      "introduzidaEm": "en-a1-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-08",
+        "atividade": "en-a1-08-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "dinner",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "dir",
+      "introduzidaEm": "terminal-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "do",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "does",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "dollar",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "dollars",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "double",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "down",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "drink",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "duplicated",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "ef",
+      "introduzidaEm": "ef-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ef-00",
+        "atividade": "ef00-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "eight",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a5",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "eighteen",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "eighty",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "eleven",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "else",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "email",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "enjoy",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-checkpoint",
+        "atividade": "en-a1-cp6",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "entidade",
+      "introduzidaEm": "ef-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ef-01",
+        "atividade": "ef01-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "error",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "evening",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "every",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "exceção",
+      "introduzidaEm": "csharp-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-08",
+        "atividade": "cs08-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "exist",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "expected",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "expensive",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "expired",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "failed",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a4",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "family",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "far",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "father",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "fifteen",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "fifty",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "file",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "final",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "finally",
+      "introduzidaEm": "csharp-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-08",
+        "atividade": "cs08-a4",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "fine",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "fitting",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "five",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "fix",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "flight",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "food",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-checkpoint",
+        "atividade": "en-a1-cp6",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "foot",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a5",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "for",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "foreach",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-03",
+        "atividade": "cs03-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "formatexception",
+      "introduzidaEm": "csharp-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-08",
+        "atividade": "cs08-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "forty",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "found",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "four",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "fourteen",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "friday",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "from",
+      "introduzidaEm": "sql-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a7",
+        "etapa": 12
+      }
+    },
+    {
+      "palavra": "fruit",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "gate",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "get",
+      "introduzidaEm": "csharp-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-00",
+        "atividade": "cs00-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "go",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "going",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "good",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "great",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "had",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "half",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "has",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "hat",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "have",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "he",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "hello",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "help",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "her",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "here",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-08",
+        "atividade": "en-a1-08-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "hey",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "hi",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "his",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "home",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "hospital",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "hotel",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "house",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "how",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "hundred",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "i",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "i'd",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "i'm",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "id",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-01",
+        "atividade": "sql01-a3",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "in",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "included",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "injeção",
+      "introduzidaEm": "csharp-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "inotificador",
+      "introduzidaEm": "csharp-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-05",
+        "atividade": "cs05-a4",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "instance",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "int",
+      "introduzidaEm": "csharp-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-00",
+        "atividade": "cs00-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "interface",
+      "introduzidaEm": "csharp-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-05",
+        "atividade": "cs05-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "is",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "issue",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "it",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "it's",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "item",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-03",
+        "atividade": "cs03-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "jacket",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a5",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "jeans",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "juice",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-checkpoint",
+        "atividade": "en-a1-cp6",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "key",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "lançar",
+      "introduzidaEm": "csharp-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-08",
+        "atividade": "cs08-a4",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "last",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "later",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "left",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "let",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "let's",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "lia",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "like",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "list",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-checkpoint",
+        "atividade": "en-a1-cp7",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "lot",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "ls",
+      "introduzidaEm": "terminal-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "terminal-00",
+        "atividade": "term00-a3",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "luggage",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "lunch",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "m",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "many",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "mapeamento",
+      "introduzidaEm": "ef-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ef-00",
+        "atividade": "ef00-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "mapget",
+      "introduzidaEm": "aspnet-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "aspnet-02",
+        "atividade": "api02-a3",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "mappost",
+      "introduzidaEm": "aspnet-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "meet",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "meeting",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "menu",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "merge",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "minute",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "mom",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "monday",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "month",
+      "introduzidaEm": "en-a1-08",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "morning",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "mother",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "mouse",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-07",
+        "atividade": "cs07-a2",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "movie",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "much",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "my",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "método",
+      "introduzidaEm": "csharp-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-02",
+        "atividade": "cs02-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "name",
+      "introduzidaEm": "sql-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a8",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "near",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "new",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-03",
+        "atividade": "cs03-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "next",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "nice",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "night",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "nine",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "nineteen",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "ninety",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "no",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "nome",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-01",
+        "atividade": "sql01-a2",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "not",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "notificador",
+      "introduzidaEm": "csharp-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-06",
+        "atividade": "cs06-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "now",
+      "introduzidaEm": "en-a1-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-08",
+        "atividade": "en-a1-08-a5",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "null",
+      "introduzidaEm": "csharp-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-04",
+        "atividade": "cs04-a2",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "number",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "o'clock",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "object",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "of",
+      "introduzidaEm": "sql-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a8",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "oh",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "old",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "on",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "one",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "order",
+      "introduzidaEm": "sql-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "orders",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "orm",
+      "introduzidaEm": "ef-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ef-00",
+        "atividade": "ef00-a2",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "over",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "parents",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "parse",
+      "introduzidaEm": "csharp-08",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "parâmetro",
+      "introduzidaEm": "csharp-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-05",
+        "atividade": "cs05-a2",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "pass",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "passport",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "past",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "path",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "pay",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "perfect",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-checkpoint",
+        "atividade": "en-a1-cp6",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "pharmacy",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "phone",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "photo",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "photos",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "please",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "preco",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-07",
+        "atividade": "cs07-a2",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "primary",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "processed",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "produto",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-03",
+        "atividade": "cs03-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "produtos",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-03",
+        "atividade": "cs03-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "public",
+      "introduzidaEm": "csharp-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-00",
+        "atividade": "cs00-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "pwd",
+      "introduzidaEm": "terminal-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "quarter",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "rain",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "rained",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "readonly",
+      "introduzidaEm": "csharp-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "ready",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "reference",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "remove",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "linq-01",
+        "atividade": "lq01-viz",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "reproduce",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "request",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "reservation",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "resource",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "response",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "restaurant",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "retorno",
+      "introduzidaEm": "csharp-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-02",
+        "atividade": "cs02-a1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "retrieve",
+      "introduzidaEm": "sql-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a8",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "retry",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "retrying",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "return",
+      "introduzidaEm": "csharp-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-02",
+        "atividade": "cs02-a2",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "returns",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "review",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "rice",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "right",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "room",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "row",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-00",
+        "atividade": "sql00-a6",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "run",
+      "introduzidaEm": "aspnet-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "aspnet-02",
+        "atividade": "api02-a2",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "sale",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "sandwich",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "saturday",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "saw",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "seat",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "see",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "send",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "sent",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "server",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-00",
+        "atividade": "sql00-a6",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "set",
+      "introduzidaEm": "csharp-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-00",
+        "atividade": "cs00-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "seven",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "seventeen",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "seventy",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "she",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "she's",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "shirt",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "shopping",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-checkpoint",
+        "atividade": "en-a1-cp7",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "single",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "linq-03",
+        "atividade": "lq03-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "sister",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "six",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "sixteen",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "sixty",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "size",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "sleep",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "so",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "some",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "son",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "starts",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "station",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "stay",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "stayed",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "steps",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "straight",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "string",
+      "introduzidaEm": "csharp-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-00",
+        "atividade": "cs00-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "studied",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "study",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "sunday",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "supermarket",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "sure",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "t",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "table",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-00",
+        "atividade": "sql00-a6",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "take",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "ten",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "texto",
+      "introduzidaEm": "csharp-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-08",
+        "atividade": "cs08-a2",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "thank",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "thanks",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "that",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "that's",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "the",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-02",
+        "atividade": "sql02-a8",
+        "etapa": 13
+      }
+    },
+    {
+      "palavra": "then",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a5",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "there",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "they",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "thirteen",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "thirty",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "this",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "three",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "throw",
+      "introduzidaEm": "csharp-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-08",
+        "atividade": "cs08-a4",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "thursday",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "time",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-checkpoint",
+        "atividade": "en-a1-cp8",
+        "etapa": 9
+      }
+    },
+    {
+      "palavra": "timeout",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "title",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "to",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "today",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "together",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "tomorrow",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "tonight",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "too",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "took",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "total",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-checkpoint",
+        "atividade": "en-a1-cp7",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "train",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "travel",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "try",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "tuesday",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "turn",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "twelve",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "twenty",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "twice",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "two",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "unavailable",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-01",
+        "atividade": "en01-a4",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "under",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "up",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "us",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "usually",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "valor",
+      "introduzidaEm": "csharp-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-00",
+        "atividade": "cs00-a2",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "var",
+      "introduzidaEm": "aspnet-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "visit",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "void",
+      "introduzidaEm": "csharp-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-08",
+        "atividade": "cs08-a3",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "wait",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "waiting",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "wake",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "walk",
+      "introduzidaEm": "en-a1-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-07",
+        "atividade": "en-a1-07-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "want",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "was",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "watch",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "watched",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "water",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "we",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "weather",
+      "introduzidaEm": "en-a1-08",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "wednesday",
+      "introduzidaEm": "en-a1-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-04",
+        "atividade": "en-a1-04-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "week",
+      "introduzidaEm": "en-a1-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-08",
+        "atividade": "en-a1-08-a5",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "weekend",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "welcome",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-02",
+        "atividade": "en-a2-02-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "went",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "were",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "what",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "when",
+      "introduzidaEm": "en-a1-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-08",
+        "atividade": "en-a1-08-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "where",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "while",
+      "introduzidaEm": "ingles-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "who",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "why",
+      "introduzidaEm": "en-a1-08",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "will",
+      "introduzidaEm": "en-a2-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-01",
+        "atividade": "en-a2-01-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "with",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "work",
+      "introduzidaEm": "en-a1-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-03",
+        "atividade": "en-a1-03-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "worked",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-a5",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "works",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "would",
+      "introduzidaEm": "en-a1-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-a2",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "wrong",
+      "introduzidaEm": "ingles-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-00",
+        "atividade": "en00-a5",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "x",
+      "introduzidaEm": "ef-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "years",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "yes",
+      "introduzidaEm": "en-a1-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-02",
+        "atividade": "en-a1-02-a4",
+        "etapa": 5
+      }
+    },
+    {
+      "palavra": "yesterday",
+      "introduzidaEm": "en-a2-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a2-00",
+        "atividade": "en-a2-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "you",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-l1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "your",
+      "introduzidaEm": "en-a1-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-00",
+        "atividade": "en-a1-00-a3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "zero",
+      "introduzidaEm": "en-a1-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-a3",
+        "etapa": 4
+      }
+    }
+  ]
+}

@@ -18,7 +18,7 @@ Plataforma.registrarLicao({
       titulo: 'Buscando um produto específico',
       introduz: ['linq.first'],
       blocos: [
-        { tipo: 'conceito', id: 'linq.first', titulo: 'Primeiro item', texto: 'Métodos para buscar um único item: First lança erro se não achar; FirstOrDefault devolve null; Single exige exatamente um.', exemplo: 'produtos.FirstOrDefault(p => p.Id == 10)' },
+        { tipo: 'conceito', id: 'linq.first', titulo: 'Primeiro item', texto: 'Métodos para buscar um único item: First lança erro se não achar; FirstOrDefault devolve null (default = predefinido/ausente); Single exige exatamente um (single = único).', exemplo: 'produtos.FirstOrDefault(p => p.Id == 10)' },
         { tipo: 'texto', texto: 'Muitas operações querem **um** item: o produto de Id 10, o cliente com aquele e-mail. Além do filtro, é preciso dizer o que fazer quando nada é encontrado — e essa escolha muda o comportamento da aplicação.' },
         { tipo: 'tabela', titulo: 'Os métodos e o que fazem quando não encontram', colunas: ['Método', 'Não encontrou', 'Mais de um'], linhas: [
           ['First', 'lança exceção', 'pega o primeiro'],
@@ -26,7 +26,7 @@ Plataforma.registrarLicao({
           ['Single', 'lança exceção', 'lança exceção'],
           ['SingleOrDefault', 'devolve null', 'lança exceção']
         ], legenda: 'Regra de ouro: buscas por Id usam FirstOrDefault; quando o dado é único por contrato, Single.' },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: 'Produto? produto = produtos\n    .FirstOrDefault(p => p.Id == 10);\n\nif (produto == null)\n{\n    return NotFound();\n}' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'Produto? produto = produtos\n    .FirstOrDefault(p => p.Id == 10);\n\nif (produto == null)\n{\n    return null;\n}' },
         { tipo: 'nota', tom: 'atencao', texto: 'O `Produto?` (com interrogação) avisa que a variável pode ser null — exatamente o conceito da etapa de C# sobre null.' }
       ]
     },
@@ -43,7 +43,7 @@ Plataforma.registrarLicao({
           ['Single', 'Lança exceção e recusa mais de um resultado'],
           ['SingleOrDefault', 'Devolve null e recusa mais de um resultado']
         ],
-        dicas: ['"OrDefault" indica uma alternativa ao erro.', 'Single exige exatamente um item.'],
+        dicas: ['"OrDefault" (default = predefinido/ausente) indica uma alternativa ao erro.', 'Single exige exatamente um item.'],
         explicacao: 'Esse quadro aparece em entrevistas e em revisões de código. Escolher o método errado derruba a aplicação em produção.',
         conceitos: ['linq.first']
       }
@@ -71,7 +71,7 @@ Plataforma.registrarLicao({
           3: 'First sem condição pegaria o primeiro; com condição, exige que algum item passe.'
         },
         dicas: ['First não tem "OrDefault" no nome.', 'Se ninguém passa no filtro, o que sobra?'],
-        explicacao: 'First lança um erro (uma exceção) quando a sequência está vazia. Em uma aplicação, isso vira erro 500 se não for tratado.',
+        explicacao: 'First lança um erro (uma exceção) quando a sequência está vazia. Em uma aplicação, isso vira um erro não tratado (uma exceção).',
         conceitos: ['linq.first']
       }
     },
@@ -81,12 +81,12 @@ Plataforma.registrarLicao({
         id: 'lq03-a3',
         tipo: 'find-error',
         dimensao: 'reconhecimento',
-        enunciado: 'A aplicação começou a retornar erro 500 quando alguém consulta um Id que não existe. Qual é a correção adequada?',
+        enunciado: 'A aplicação começou a retornar um erro não tratado quando alguém consulta um Id que não existe. Qual é a correção adequada?',
         contexto: [
-          { tipo: 'codigo', linguagem: 'csharp', codigo: 'Produto produto = produtos.First(p => p.Id == id);\nreturn Ok(produto);' }
+          { tipo: 'codigo', linguagem: 'csharp', codigo: 'Produto produto = produtos.First(p => p.Id == id);\nreturn produto;' }
         ],
         opcoes: [
-          'Usar FirstOrDefault e tratar o null antes de responder (ex.: retornar 404)',
+          'Usar FirstOrDefault e tratar o null antes de responder (ex.: responder que não encontrou)',
           'Trocar para Single',
           'Envolver tudo em try/catch vazio',
           'Remover o filtro para nunca ficar vazio'
@@ -98,7 +98,7 @@ Plataforma.registrarLicao({
           3: 'Sem filtro, a busca retorna o produto errado.'
         },
         dicas: ['A busca pode não encontrar nada — isso é normal.', 'Existe um método que devolve null em vez de explodir.'],
-        explicacao: '`FirstOrDefault` devolve null; o código verifica e responde 404. Tratar ausência faz parte da regra, não é exceção.',
+        explicacao: '`FirstOrDefault` devolve null; o código verifica e responde de forma clara que não encontrou. Tratar ausência faz parte da regra, não é exceção.',
         conceitos: ['linq.first', 'csharp.null'],
         desafio: true
       }
@@ -128,10 +128,10 @@ Plataforma.registrarLicao({
         criterios: [
           'First lança exceção quando não encontra',
           'FirstOrDefault devolve null',
-          'Com o null, a aplicação trata o caso e responde algo claro (ex.: 404)'
+          'Com o null, a aplicação trata o caso e responde algo claro (ex.: mensagem de não encontrado)'
         ],
-        palavrasChave: ['exce', 'lança', 'lanca', 'erro', 'null', '404', 'trat', 'verific', 'encontra', 'vazio'],
-        exemplo: 'Porque First lança exceção quando o Id não existe, o que viraria um erro 500. Com FirstOrDefault o resultado é null, e a aplicação verifica esse null e responde 404, que é o comportamento correto.',
+        palavrasChave: ['exce', 'lança', 'lanca', 'erro', 'null', 'trat', 'verific', 'encontra', 'vazio'],
+        exemplo: 'Porque First lança exceção quando o Id não existe, o que viraria um erro não tratado. Com FirstOrDefault o resultado é null, e a aplicação verifica esse null e responde de forma clara que não encontrou, que é o comportamento correto.',
         dicas: ['Compare o que cada método faz quando não encontra.', 'Pense na resposta que o cliente da aplicação recebe.'],
         explicacao: 'Escolher entre First e FirstOrDefault é uma decisão de tratamento de ausência — e isso é regra de negócio.',
         conceitos: ['linq.first'],

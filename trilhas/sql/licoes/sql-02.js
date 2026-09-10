@@ -31,6 +31,7 @@ Plataforma.registrarLicao({
           linguagem: 'sql',
           codigo: 'SELECT * FROM Clientes;'
         },
+        { tipo: 'nota', tom: 'info', texto: 'O ponto e vírgula (`;`) indica o fim do comando. O banco executa tudo até ele.' },
         { tipo: 'nota', tom: 'info', texto: 'O `*` (asterisco) é um atalho para "todas as colunas". Você vai entender melhor na próxima tela.' },
         {
           tipo: 'tabela',
@@ -118,7 +119,8 @@ Plataforma.registrarLicao({
             colunas: ['Nome', 'Email'],
             linhas: [
               ['Ana Souza', 'ana@email.com'],
-              ['Bruno Lima', 'bruno@email.com']
+              ['Bruno Lima', 'bruno@email.com'],
+              ['Carla Dias', 'carla@email.com']
             ]
           }
         ],
@@ -197,10 +199,10 @@ Plataforma.registrarLicao({
         ],
         correta: 0,
         dicas: [
-          'A consulta pede a coluna Nome, sem filtro nenhum.',
-          'Sem WHERE, todos os registros entram no resultado.'
+          'A consulta pede a coluna Nome, sem nenhuma condição.',
+          'Sem uma condição, todos os registros entram no resultado.'
         ],
-        explicacao: 'Sem filtro, o SELECT devolve todas as linhas — e apenas a coluna pedida. Na próxima lição você vai aprender a escolher quais linhas aparecem.',
+        explicacao: 'Sem uma condição, o SELECT devolve todas as linhas — e apenas a coluna pedida. Na próxima lição você vai aprender a escolher quais linhas aparecem.',
         conceitos: ['sql.select', 'sql.colunas']
       }
     },
@@ -221,7 +223,7 @@ Plataforma.registrarLicao({
             ['DELETE', 'Exclui registros']
           ]
         },
-        { tipo: 'nota', tom: 'atencao', texto: 'UPDATE e DELETE sem filtro alteram a tabela inteira. É o erro clássico de quem está começando — e também de quem está com pressa.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'UPDATE e DELETE sem condição alteram a tabela inteira. É o erro clássico de quem está começando — e também de quem está com pressa.' }
       ]
     },
     {
@@ -249,7 +251,21 @@ Plataforma.registrarLicao({
       titulo: 'English corner',
       blocos: [
         { tipo: 'ingles', frase: 'Retrieve all customers.', traducao: 'Recupere/retorne todos os clientes.' },
-        { tipo: 'texto', texto: 'Nas próximas etapas, o inglês aparece sem tradução — você já terá vocabulário suficiente para entender.' }
+        {
+          tipo: 'vocab',
+          titulo: 'Work vocabulary',
+          pares: [
+            ['retrieve', 'recuperar / retornar'],
+            ['customer', 'cliente'],
+            ['all', 'todos'],
+            ['name', 'nome'],
+            ['email', 'e-mail'],
+            ['order', 'pedido'],
+            ['of', 'de (dentro da frase)'],
+            ['from', 'de / do']
+          ]
+        },
+        { tipo: 'texto', texto: 'Nas próximas etapas, o inglês aparece em pedidos curtos — as dicas ajudam com as palavras novas.' }
       ]
     },
     {
@@ -264,7 +280,7 @@ Plataforma.registrarLicao({
           'Comece com SELECT, liste as colunas e use FROM Produtos.',
           'Estrutura: SELECT colunas FROM tabela;'
         ],
-        explicacao: 'Consulta completa: `SELECT Nome, Preco FROM Produtos;`. Sem filtro, ela retorna todos os produtos.',
+        explicacao: 'Consulta completa: `SELECT Nome, Preco FROM Produtos;`. Sem uma condição, ela retorna todos os produtos.',
         conceitos: ['sql.select', 'sql.from']
       }
     },
@@ -273,14 +289,14 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql02-a8',
         tipo: 'write-code',
-        enunciado: 'The support team asks for a list with the **name** and **email** of every customer.',
+        enunciado: 'Retrieve the **name** and **email** of all customers.',
         placeholder: 'SELECT ...',
         respostasAceitas: ['select nome, email from clientes'],
         dicas: [
-          'customer = cliente.',
+          'customer = cliente. name = nome; email = e-mail.',
           'A tabela em português é Clientes. Colunas: Nome e Email.'
         ],
-        explicacao: 'Traduzindo o pedido: "a list with the name and email of every customer" = uma lista com o nome e o e-mail de todos os clientes. Consulta: `SELECT Nome, Email FROM Clientes;`.',
+        explicacao: 'Traduzindo o pedido: "retrieve the name and email of all customers" = retorne o nome e o e-mail de todos os clientes. Consulta: `SELECT Nome, Email FROM Clientes;`.',
         conceitos: ['sql.select', 'sql.ingles'],
         desafio: true
       }

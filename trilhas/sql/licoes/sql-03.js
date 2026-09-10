@@ -79,7 +79,8 @@ Plataforma.registrarLicao({
             ['<=', 'menor ou igual a', 'Preco <= 500']
           ]
         },
-        { tipo: 'nota', tom: 'atencao', texto: 'Em SQL, igualdade é `=`. O `==` é do C#. Trocar os dois é um dos erros mais comuns de quem alterna entre C# e SQL.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'Em SQL, igualdade é `=`. O `==` é do C#. Trocar os dois é um dos erros mais comuns de quem alterna entre C# e SQL.' },
+        { tipo: 'nota', tom: 'info', texto: 'R$ = reais (dinheiro no Brasil).' }
       ]
     },
     {
@@ -186,7 +187,7 @@ Plataforma.registrarLicao({
         opcoes: [
           'A palavra FROM antes de Produtos',
           'Aspas em torno do número 10',
-          'A cláusula ORDER BY',
+          'O FROM deveria vir depois do WHERE',
           'O ponto e vírgula no final'
         ],
         correta: 0,
@@ -221,14 +222,14 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Diferente e nulos',
       blocos: [
-        { tipo: 'texto', texto: 'Para excluir um valor específico do resultado, use `<>` (ou `!=`, que vários bancos aceitam):' },
+        { tipo: 'texto', texto: 'Para excluir um valor específico do resultado, use `<>`:' },
         {
           tipo: 'codigo',
           linguagem: 'sql',
           codigo: 'SELECT *\nFROM Pedidos\nWHERE Status <> \'Pago\';',
           legenda: 'Retorna os pedidos que ainda não foram pagos.'
         },
-        { tipo: 'nota', tom: 'info', texto: 'Valores `NULL` são um assunto à parte: `NULL` não é "vazio" e nem "zero". Vamos tratá-los na trilha Iniciante.' }
+        { tipo: 'futuro', conceitos: [], texto: 'Valores vazios (NULL) serão vistos depois.' }
       ]
     },
     {
@@ -285,7 +286,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql03-a9',
         tipo: 'write-code',
-        enunciado: 'The support team asks: **retrieve all customers from São Paulo.**',
+        enunciado: 'Retrieve all customers from São Paulo.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
           'select * from clientes where cidade = \'sao paulo\'',

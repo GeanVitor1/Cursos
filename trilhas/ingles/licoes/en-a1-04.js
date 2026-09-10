@@ -19,18 +19,25 @@ Plataforma.registrarLicao({
       introduz: ['en.horarios'],
       blocos: [
         { tipo: 'vocab', titulo: 'Dizendo as horas', pares: [
-          ["It's seven o'clock.", 'São sete horas em ponto.'],
-          ["It's seven thirty.", 'São sete e trinta.'],
-          ["It's half past seven.", 'São sete e meia.'],
-          ["It's a quarter to eight.", 'São quinze para as oito.']
+          ['What time is it?', 'Que horas são?'],
+          ['It\'s seven o\'clock.', 'São sete horas em ponto.'],
+          ['It\'s seven thirty.', 'São sete e trinta.'],
+          ['It\'s half past seven.', 'São sete e meia.'],
+          ['It\'s a quarter to eight.', 'São quinze para as oito.']
         ] },
         { tipo: 'vocab', titulo: 'Dias da semana', pares: [
           ['Monday, Tuesday, Wednesday', 'segunda, terça, quarta'],
           ['Thursday, Friday', 'quinta, sexta'],
           ['Saturday, Sunday', 'sábado, domingo']
         ] },
+        { tipo: 'vocab', titulo: 'Compromissos', pares: [
+          ['the meeting', 'a reunião'],
+          ['the class starts', 'a aula começa'],
+          ['at', 'às (antes de horas)'],
+          ['on', 'na, no (antes de dias)']
+        ] },
         { tipo: 'ingles', frase: 'The meeting is at nine on Monday.', traducao: 'A reunião é às nove na segunda-feira.' },
-        { tipo: 'nota', tom: 'atencao', texto: 'Use **at** para horas (`at 9 o\'clock`) e **on** para dias (`on Monday`). Datas usam **on**: `on March 10`.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'Use **at** para horas (`at 9 o\'clock`) e **on** para dias (`on Monday`).' }
       ]
     },
     {

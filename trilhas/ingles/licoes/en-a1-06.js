@@ -20,13 +20,31 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'vocab', titulo: 'Compras', pares: [
           ['How much is this?', 'Quanto custa isto?'],
+          ['How many...?', 'Quantos / quantas...?'],
           ["It's twenty dollars.", 'São vinte dólares.'],
           ['expensive / cheap', 'caro / barato'],
-          ['cash / credit card', 'dinheiro / cartão de crédito']
+          ['cash / credit card', 'dinheiro / cartão de crédito'],
+          ['$ = dollar', 'símbolo do dólar']
+        ] },
+        { tipo: 'vocab', titulo: 'Frases da loja', pares: [
+          ['Can I help you?', 'Posso ajudar?'],
+          ['Where is...?', 'Onde fica...?'],
+          ['Can I pay by card?', 'Posso pagar com cartão?'],
+          ['by card', 'com cartão'],
+          ['Do you have this in another size?', 'Você tem isto em outro tamanho?'],
+          ['try it on', 'experimentar (a roupa)'],
+          ['the fitting room', 'o provador'],
+          ['over there', 'ali / lá'],
+          ['jacket / jeans / hat', 'jaqueta / calça jeans / chapéu'],
+          ['sale', 'promoção'],
+          ['We accept cash.', 'Nós aceitamos dinheiro.'],
+          ['a bag', 'uma bolsa / uma sacola'],
+          ['shopping list', 'lista de compras'],
+          ['total', 'total']
         ] },
         { tipo: 'ingles', frase: "How much is this T-shirt? — It's twenty dollars.", traducao: 'Quanto custa esta camiseta? — São vinte dólares.' },
         { tipo: 'nota', tom: 'atencao', texto: 'Use **How much** para preço (coisas incontáveis) e **How many** para quantidade (coisas contáveis): How many apples?' },
-        { tipo: 'nota', tom: 'info', texto: 'Em lojas, `Can I pay by card?` (Posso pagar com cartão?) e `Do you have this in another size?` (Tem em outro tamanho?) são frases do dia a dia.' }
+        { tipo: 'nota', tom: 'info', texto: 'O símbolo `$` significa dólar: `$15` = quinze dólares. Em lojas, `Can I pay by card?` (Posso pagar com cartão?) é muito comum.' }
       ]
     },
     {
@@ -56,7 +74,7 @@ Plataforma.registrarLicao({
         cena: 'Você está em uma loja de roupas em outro país.',
         interlocutor: 'Shop assistant',
         turnos: [
-          { fala: 'Hi! Can I help you?', opcoes: ["Yes, how much is this T-shirt?", 'I am from Brazil.', 'I go to bed at ten.'], correta: 0 },
+          { fala: 'Hi! Can I help you?', opcoes: ["Yes, how much is this T-shirt?", 'I am twenty years old.', 'I go to bed at ten.'], correta: 0 },
           { fala: 'It is twenty dollars. Do you want to try it on?', opcoes: ['Yes, please. Where is the fitting room?', 'No, I am twenty years old.', 'On Monday at nine.'], correta: 0 },
           { fala: 'It is over there. How would you like to pay?', opcoes: ['By card, please.', 'I usually wake up at seven.', 'My name is Ana.'], correta: 0 }
         ],

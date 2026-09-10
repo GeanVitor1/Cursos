@@ -29,6 +29,7 @@ Plataforma.registrarLicao({
         { tipo: 'texto', texto: 'O `Add` avisa ao contexto: "acompanhe este objeto, ele é novo". A partir daí o objeto fica na memória **na fila de gravação**.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'context.Produtos.Add(produto);' },
         { tipo: 'diagrama', arte: 'DbContext acompanha:\n\nProduto "Mouse"   → estado: Added (novo, aguardando gravação)\n\nBanco continua sem o registro. O Add NÃO grava.' },
+        { tipo: 'nota', tom: 'info', texto: '`Added` significa "adicionado": o objeto está na fila do contexto, mas ainda não foi gravado no banco.' },
         { tipo: 'nota', tom: 'atencao', texto: 'Erro comum: chamar `Add` e achar que já salvou. O banco só muda quando você manda salvar — e a próxima tela mostra como.' }
       ]
     },
@@ -40,8 +41,10 @@ Plataforma.registrarLicao({
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'await context.SaveChangesAsync();' },
         { tipo: 'conceito', id: 'ef.savechanges', titulo: 'SaveChanges', texto: 'O método que envia ao banco tudo o que o contexto acompanha, gerando o SQL necessário.', exemplo: 'await context.SaveChangesAsync();' },
         { tipo: 'texto', texto: 'O `SaveChangesAsync` percorre tudo que o contexto acompanha, descobre o que precisa ser gravado e **executa o SQL correspondente**.' },
+        { tipo: 'nota', tom: 'info', texto: '`SaveChanges` é a versão que espera de forma bloqueante. `SaveChangesAsync` é a versão assíncrona: espera sem travar a aplicação — você estudou isso em C# com `async` e `await`.' },
         { tipo: 'diagrama', arte: 'context.Produtos.Add(produto)\n        │\n        ▼\nawait context.SaveChangesAsync()\n        │\n        ▼  EF gera e executa:\nINSERT INTO Produtos (Nome, Preco, Estoque)\nVALUES (\'Mouse\', 100.00, 25);\n        │\n        ▼\nBanco grava e devolve o Id gerado' },
         { tipo: 'codigo', linguagem: 'sql', codigo: '-- SQL executado pelo EF (aproximadamente)\nINSERT INTO Produtos (Nome, Preco, Estoque)\nVALUES (\'Mouse\', 100.00, 25);' },
+        { tipo: 'nota', tom: 'info', texto: 'Leia a forma do comando: `INSERT INTO Produtos (Nome, Preco, Estoque)` = "insira dentro de Produtos, nas colunas Nome, Preco e Estoque"; `VALUES (\'Mouse\', 100.00, 25)` = "os valores". É essa ordem que você vai reconhecer na atividade.' },
         { tipo: 'texto', texto: 'Depois da gravação, o EF atualiza o objeto em memória com o Id que o banco gerou:' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'Console.WriteLine(produto.Id); // ex.: 1' },
         { tipo: 'trabalho', texto: 'Entender esse ciclo permite investigar bugs reais: "salvei mas não aparece no banco" quase sempre é SaveChanges esquecido ou falha silenciosa.', fonte: '💼 Em produção' }
@@ -151,7 +154,7 @@ Plataforma.registrarLicao({
         correta: 0,
         feedbackErro: {
           1: 'O produto já chegou criado por parâmetro; criar de novo seria erro.',
-          2: 'Métodos de criação normalmente devolvem o objeto criado para a aplicação responder 201.',
+          2: 'Métodos de criação normalmente devolvem o objeto criado para montar a resposta de criação.',
           3: 'O método já é público.'
         },
         dicas: ['Em que momento o SQL INSERT seria executado?', 'Qual chamada está ausente no método?'],

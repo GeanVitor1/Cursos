@@ -29,10 +29,18 @@ Plataforma.registrarLicao({
           ['My name is Ana.', 'Meu nome é Ana.'],
           ['I am Ana.', 'Eu sou a Ana.'],
           ['Nice to meet you.', 'Prazer em conhecer você.'],
+          ['Nice to meet you too.', 'Prazer em conhecer você também.'],
           ['What is your name?', 'Qual é o seu nome?']
         ] },
+        { tipo: 'vocab', titulo: 'Perguntando como a pessoa está', pares: [
+          ['How are you?', 'Como você está?'],
+          ["I'm fine, thanks.", 'Estou bem, obrigado(a).'],
+          ['And you?', 'E você?'],
+          ["I'm fine too.", 'Eu também estou bem.']
+        ] },
         { tipo: 'ingles', frase: 'Hello! My name is Ana. Nice to meet you.', traducao: 'Olá! Meu nome é Ana. Prazer em conhecer você.' },
-        { tipo: 'nota', tom: 'info', texto: '`my` = meu/minha; `your` = seu/sua. Repare que o inglês não muda a palavra conforme o gênero.' }
+        { tipo: 'ingles', frase: "Ana: Hi! How are you? — Bruno: I'm fine, thanks. And you?", traducao: 'Ana: Oi! Como você está? — Bruno: Estou bem, obrigado. E você?' },
+        { tipo: 'nota', tom: 'info', texto: '`my` = meu/minha; `your` = seu/sua. `I\'m` é a contração de `I am`. Repare que o inglês não muda a palavra conforme o gênero.' }
       ]
     },
     {
@@ -46,7 +54,7 @@ Plataforma.registrarLicao({
         audio: 'Hello, my name is Ana. Nice to meet you.',
         opcoes: [
           'Hello, my name is Ana. Nice to meet you.',
-          'Good night, my name is Ana. See you tomorrow.',
+          'Hi, my name is Ana. Nice to meet you too.',
           'Hello, my name is Lia. Nice to meet you.'
         ],
         correta: 0,
@@ -100,11 +108,11 @@ Plataforma.registrarLicao({
         cena: 'Você chegou a um curso novo e alguém se aproxima.',
         interlocutor: 'Alex',
         turnos: [
-          { fala: 'Hi! How are you?', opcoes: ["I'm fine, thanks. And you?", 'At seven o\'clock.', 'My name is table.'], correta: 0 },
-          { fala: "I'm good! What is your name?", opcoes: ['Yes, please.', 'My name is Ana.', 'Nice to meet you too.'], correta: 1 },
-          { fala: 'Nice to meet you, Ana!', opcoes: ['Nice to meet you too.', "I'm going to travel.", 'Twenty dollars.'], correta: 0 }
+          { fala: 'Hi! How are you?', opcoes: ["I'm fine, thanks. And you?", 'My name is Ana.', 'Good morning, Ana.'], correta: 0 },
+          { fala: "I'm fine too! What is your name?", opcoes: ['My name is Ana.', "I'm fine, thanks. And you?", 'Good evening.'], correta: 0 },
+          { fala: 'Nice to meet you, Ana!', opcoes: ['Nice to meet you too.', 'Good morning, Ana.', "I'm fine, thanks."], correta: 0 }
         ],
-        dicas: ['Responda à pergunta feita, sem mudar de assunto.', 'A última fala devolve o cumprimento.'],
+        dicas: ['Responda à pergunta feita, sem mudar de assunto.', 'A última fala devolve o cumprimento: Nice to meet you too.'],
         explicacao: 'How are you? → I\'m fine, thanks. What is your name? → My name is... Nice to meet you → Nice to meet you too. Esse é o roteiro básico de toda apresentação.',
         conceitos: ['en.saudacoes'],
         desafio: true

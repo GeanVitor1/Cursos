@@ -92,6 +92,7 @@ Plataforma.registrarConceitos({
   'linq.lambda': 'Lambda em consultas',
   'linq.where': 'Where',
   'linq.select': 'Select',
+  'linq.tolist': 'ToList',
   'linq.first': 'First, FirstOrDefault e Single',
   'linq.agregacao': 'Sum, Count, Min e Max',
   'linq.iqueryable': 'IQueryable e IEnumerable',

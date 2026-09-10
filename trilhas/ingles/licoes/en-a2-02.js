@@ -23,13 +23,21 @@ Plataforma.registrarLicao({
           ['boarding pass', 'cartão de embarque'],
           ['luggage / bags', 'bagagem'],
           ['flight', 'voo'],
-          ['check-in', 'check-in / despachar']
+          ['check-in', 'check-in / despachar'],
+          ['gate', 'portão de embarque'],
+          ['seat', 'assento'],
+          ['boarding / to board', 'embarque / embarcar'],
+          ['Now boarding / Final call', 'embarque agora / última chamada']
         ] },
         { tipo: 'vocab', titulo: 'Hotel', pares: [
           ['I have a reservation.', 'Tenho uma reserva.'],
           ['a single / double room', 'quarto de solteiro / casal'],
           ['the room key', 'a chave do quarto'],
-          ['breakfast is included', 'o café da manhã está incluso']
+          ['breakfast is included', 'o café da manhã está incluso'],
+          ['Welcome.', 'Bem-vindo(a).'],
+          ['under the name', 'no nome de'],
+          ['Could I...?', 'Eu poderia...? (pedido educado)'],
+          ['What time is breakfast?', 'A que horas é o café da manhã?']
         ] },
         { tipo: 'ingles', frase: 'I have a reservation. Here is my passport.', traducao: 'Tenho uma reserva. Aqui está meu passaporte.' },
         { tipo: 'nota', tom: 'info', texto: 'Em aeroportos, avisos usam frases curtas: `Now boarding`, `Final call`, `Gate 12`. Reconhecer as palavras-chave evita perder o voo.' }

@@ -22,11 +22,20 @@ Plataforma.registrarLicao({
         { tipo: 'vocab', titulo: 'Ações da rotina', pares: [
           ['wake up / get up', 'acordar / levantar'],
           ['have breakfast', 'tomar café da manhã'],
+          ['have lunch', 'almoçar'],
           ['go to work / study', 'ir ao trabalho / estudar'],
           ['come home', 'voltar para casa'],
           ['go to bed / sleep', 'ir para a cama / dormir']
         ] },
+        { tipo: 'vocab', titulo: 'Palavras da rotina', pares: [
+          ['with', 'com'],
+          ['in the morning / in the afternoon', 'de manhã / de tarde'],
+          ['in the evening / at night', 'à noite'],
+          ['every day', 'todos os dias'],
+          ['We / They', 'nós / eles, elas']
+        ] },
         { tipo: 'ingles', frase: 'I usually wake up at seven and have breakfast.', traducao: 'Eu geralmente acordo às sete e tomo café da manhã.' },
+        { tipo: 'ingles', frase: 'I usually work in the morning and study at night.', traducao: 'Eu geralmente trabalho de manhã e estudo à noite.' },
         { tipo: 'lista', itens: [
           '`I work` / `I study` — sem mudança no verbo.',
           '`You work` / `We work` / `They work` — também sem mudança.',
@@ -96,10 +105,10 @@ Plataforma.registrarLicao({
         habilidade: 'gramatica',
         dimensao: 'preenchimento',
         enunciado: 'Complete com a forma correta do verbo no present simple.',
-        codigo: 'She {{1}} at a bank. (work)\nThey {{2}} English every day. (study)',
+        codigo: 'She {{1}} in the morning. (work)\nThey {{2}} English every day. (study)',
         lacunas: [['works'], ['study']],
         dicas: ['She é terceira pessoa: o verbo muda.', 'They não leva -s.'],
-        explicacao: 'She works / They study. A única mudança do present simple é o -s (ou -es) em he/she/it.',
+        explicacao: 'She works / They study. A única mudança do present simple é o -s (ou -es) em he/she.',
         conceitos: ['en.rotina']
       }
     },

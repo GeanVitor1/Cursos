@@ -51,7 +51,23 @@ Plataforma.registrarLicao({
           ],
           legenda: 'Cada banco tem pequenas variações de nome, mas a ideia é sempre essa.'
         },
-        { tipo: 'destaque', texto: 'Valores de dinheiro usam `DECIMAL`, nunca `FLOAT`. Ponto flutuante acumula erro de arredondamento — e ninguém quer isso no valor de um pedido.' }
+        { tipo: 'nota', tom: 'info', texto: 'Nos bancos, datas usam ano-mês-dia (2026-02-15) e decimais usam ponto (199.90 = R$ 199,90).' },
+        { tipo: 'destaque', texto: 'Valores de dinheiro usam `DECIMAL`, nunca `FLOAT` (ponto flutuante, perde precisão). Esse tipo acumula erro de arredondamento — e ninguém quer isso no valor de um pedido.' },
+        { tipo: 'texto', texto: 'Veja como esses tipos aparecem na tabela **Produtos** do Mercado Aurora:' },
+        {
+          tipo: 'tabela',
+          titulo: 'Estrutura da tabela Produtos',
+          colunas: ['Coluna', 'Tipo', 'O que guarda'],
+          linhas: [
+            ['Id', 'INT', 'identificador único de cada produto'],
+            ['Nome', 'VARCHAR', 'nome do produto'],
+            ['Preco', 'DECIMAL', 'preço com centavos'],
+            ['Estoque', 'INT', 'quantidade disponível'],
+            ['CriadoEm', 'DATETIME', 'data e hora do cadastro'],
+            ['Ativo', 'BIT', '1 = ativo, 0 = inativo']
+          ],
+          legenda: 'A atividade a seguir conecta exatamente estas colunas aos tipos.'
+        }
       ]
     },
     {
@@ -96,7 +112,7 @@ Plataforma.registrarLicao({
         {
           tipo: 'diagrama',
           arte: 'Clientes                    Pedidos\n┌──────────┐              ┌──────────────┐\n│ Id (PK)  │◄─────────────│ ClienteId(FK)│\n│ Nome     │   1 : N      │ Id (PK)      │\n│ Email    │              │ ValorTotal   │\n└──────────┘              └──────────────┘',
-          legenda: 'Um cliente pode ter vários pedidos. É o relacionamento um-para-muitos (1:N).'
+          legenda: 'Um cliente pode ter vários pedidos. No diagrama, PK = chave primária e FK = chave estrangeira; ClienteId (FK) aponta para o Id (PK) de Clientes. É o relacionamento um-para-muitos (1:N).'
         }
       ]
     },
@@ -172,7 +188,20 @@ Plataforma.registrarLicao({
             ['ItensPedido', 'produtos de cada pedido', 'PedidoId → Pedidos, ProdutoId → Produtos']
           ]
         },
-        { tipo: 'nota', tom: 'sucesso', texto: 'Na próxima etapa você escreve sua **primeira consulta SQL** nesse banco. Antes disso, um desafio de modelagem.' }
+        {
+          tipo: 'tabela',
+          titulo: 'Colunas de ItensPedido',
+          colunas: ['Coluna', 'Tipo', 'O que guarda'],
+          linhas: [
+            ['Id', 'INT', 'identificador de cada item'],
+            ['PedidoId', 'INT', 'pedido ao qual o item pertence'],
+            ['ProdutoId', 'INT', 'produto vendido'],
+            ['Quantidade', 'INT', 'quantidade comprada'],
+            ['PrecoUnitario', 'DECIMAL', 'preço de uma unidade']
+          ],
+          legenda: 'PedidoId e ProdutoId são chaves estrangeiras: ligam o item ao pedido e ao produto.'
+        },
+        { tipo: 'nota', tom: 'sucesso', texto: 'Na próxima etapa você escreve sua **primeira consulta SQL** nesse banco. Antes disso, um desafio de criar as tabelas.' }
       ]
     },
     {

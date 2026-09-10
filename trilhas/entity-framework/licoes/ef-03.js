@@ -23,7 +23,22 @@ Plataforma.registrarLicao({
         { tipo: 'conceito', id: 'ef.consultas', titulo: 'Consultas com EF', texto: 'Escrever LINQ no DbSet; o EF traduz para SQL e executa no banco.', exemplo: 'context.Produtos.Where(p => p.Ativo).ToListAsync()' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> ativos = await context.Produtos\n    .Where(p => p.Ativo)\n    .ToListAsync();' },
         { tipo: 'diagrama', arte: 'LINQ (C#)                          SQL enviado ao banco\n\ncontext.Produtos                    SELECT Id, Nome, Preco, Estoque, Ativo\n  .Where(p => p.Ativo)      ──────►  FROM Produtos\n  .ToListAsync()                     WHERE Ativo = 1;' },
-        { tipo: 'nota', tom: 'info', texto: 'O `ToListAsync` só aparece no EF: ele executa a consulta no banco e materializa o resultado como lista. Em listas comuns usávamos `ToList`.' }
+        { tipo: 'nota', tom: 'info', texto: 'O `ToListAsync` só aparece no EF: ele executa a consulta no banco e transforma o resultado em lista. Em listas comuns usávamos `ToList`.' }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Find, FirstOrDefault ou ToList?',
+      blocos: [
+        { tipo: 'tabela', titulo: 'Quando usar cada um', colunas: ['Situação', 'Método', 'Por quê'], linhas: [
+          ['Buscar por Id', 'FindAsync(id)', 'É a chave primária; o contexto ainda aproveita o que já tem em memória'],
+          ['Buscar por outra coluna', 'FirstOrDefaultAsync(regra)', 'Filtro por qualquer propriedade'],
+          ['Listar vários', 'Where(...).ToListAsync()', 'Vários itens, com filtro'],
+          ['Listar todos', 'ToListAsync()', 'Cuidado: pode trazer uma tabela inteira']
+        ], legenda: 'A escolha do método se reflete no SQL gerado — e no custo da consulta.' },
+        { tipo: 'nota', tom: 'info', texto: 'Você vai ver `TOP 1` no SQL gerado: `SELECT TOP 1` significa "traga apenas o primeiro registro". Em outros bancos aparece como `LIMIT 1`. É o "pegar o primeiro" traduzido para SQL.' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: '// Buscar por Id\nProduto? produto = await context.Produtos.FindAsync(10);\n\n// Buscar por outra coluna\nCliente? cliente = await context.Clientes\n    .FirstOrDefaultAsync(c => c.Email == "ana@email.com");' },
+        { tipo: 'trabalho', texto: 'Em code review, uma das primeiras verificações é se a consulta busca só o necessário. `ToListAsync()` sem filtro em uma tabela grande é um problema de desempenho real.', fonte: '💼 Em um code review' }
       ]
     },
     {
@@ -58,33 +73,18 @@ Plataforma.registrarLicao({
           'SELECT TOP 1 ... FROM Produtos WHERE Id = 10 (aproximadamente)',
           'SELECT * FROM Produtos (todos)',
           'INSERT INTO Produtos ...',
-          'SELECT COUNT(*) FROM Produtos'
+          'SELECT Nome FROM Produtos;'
         ],
         correta: 0,
         feedbackErro: {
           1: 'FirstOrDefault busca um item específico; o filtro por Id vai para o WHERE.',
           2: 'Não há inserção em uma consulta.',
-          3: 'A consulta busca um registro, não a contagem.'
+          3: 'A consulta busca um registro pelo Id; essa alternativa traria todos os nomes, sem filtro.'
         },
         dicas: ['FirstOrDefaultAsync = um item.', 'A condição da lambda vira o WHERE.'],
         explicacao: 'O filtro `p => p.Id == 10` vira `WHERE Id = 10`, e o "pegar o primeiro" vira `TOP 1` (ou `LIMIT 1`, conforme o banco).',
         conceitos: ['ef.consultas', 'linq.first']
       }
-    },
-    {
-      tipo: 'conteudo',
-      titulo: 'Find, FirstOrDefault ou ToList?',
-      blocos: [
-        { tipo: 'tabela', titulo: 'Quando usar cada um', colunas: ['Situação', 'Método', 'Por quê'], linhas: [
-          ['Buscar por Id', 'FindAsync(id)', 'É a chave primária; o contexto ainda aproveita o que já tem em memória'],
-          ['Buscar por outra coluna', 'FirstOrDefaultAsync(regra)', 'Filtro por qualquer propriedade'],
-          ['Listar vários', 'Where(...).ToListAsync()', 'Vários itens, com filtro'],
-          ['Listar todos', 'ToListAsync()', 'Cuidado: pode trazer uma tabela inteira']
-        ], legenda: 'A escolha do método se reflete no SQL gerado — e no custo da consulta.' },
-        { tipo: 'nota', tom: 'info', texto: 'Você vai ver `TOP 1` no SQL gerado: em SQL Server, `SELECT TOP 1` significa "traga apenas o primeiro registro". Em outros bancos aparece como `LIMIT 1`. É o "pegar o primeiro" traduzido para SQL.' },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: '// Buscar por Id\nProduto? produto = await context.Produtos.FindAsync(10);\n\n// Buscar por outra coluna\nCliente? cliente = await context.Clientes\n    .FirstOrDefaultAsync(c => c.Email == "ana@email.com");' },
-        { tipo: 'trabalho', texto: 'Em code review, uma das primeiras verificações é se a consulta busca só o necessário. `ToListAsync()` sem filtro em uma tabela grande é um problema de performance real.', fonte: '💼 Em um code review' }
-      ]
     },
     {
       tipo: 'atividade',
@@ -113,7 +113,7 @@ Plataforma.registrarLicao({
           return t.indexOf('context.produtos') !== -1 && t.indexOf('.where(') !== -1 && t.indexOf('.tolistasync()') !== -1 && t.indexOf('await') !== -1;
         },
         respostasAceitas: ['await context.Produtos.Where(p => p.Ativo).ToListAsync();'],
-        dicas: ['Comece por `context.Produtos`.', 'Filtre com Where e materialize com `await ...ToListAsync()`.'],
+        dicas: ['Comece por `context.Produtos`.', 'Filtre com Where e transforme em lista com `await ...ToListAsync()`.'],
         explicacao: 'Essa linha gera `SELECT ... FROM Produtos WHERE Ativo = 1` — o LINQ de memória e o SQL agora são a mesma ideia.',
         conceitos: ['ef.consultas', 'linq.where'],
         desafio: true
@@ -125,8 +125,8 @@ Plataforma.registrarLicao({
         id: 'ef03-a5',
         tipo: 'code-review',
         dimensao: 'aplicacao',
-        enunciado: 'A busca por produto em "/produtos/10" está lenta e às vezes devolve erro quando o produto não existe. Avalie a alteração.',
-        ticket: { numero: '#5602', titulo: 'Busca de produto lenta e instável', corpo: 'A listagem por Id demora em tabelas grandes e retorna erro 500 quando o Id não existe.' },
+        enunciado: 'A busca do produto por Id está lenta e às vezes devolve erro quando o produto não existe. Avalie a alteração.',
+        ticket: { numero: '#5602', titulo: 'Busca de produto lenta e instável', corpo: 'A listagem por Id demora em tabelas grandes e retorna um erro não tratado quando o Id não existe.' },
         autor: 'colega de time',
         diff: [
           '+ public async Task<Produto> BuscarAsync(int id)',

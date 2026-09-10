@@ -19,8 +19,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'retoma', conceito: 'sql.tabela', texto: 'Você já sabe criar tabelas e consultar com SQL. Agora imagine fazer essa ponte **à mão**, para cada operação da aplicação.' },
         { tipo: 'texto', texto: 'Você já sabe que a tabela Produtos guarda os dados e que a classe Produto representa o produto em C#. O problema é fazer a ponte entre os dois.' },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: '// Jeito manual: abrir conexão, escrever SQL e converter linha por linha\nvar comando = new SqlCommand(\n    "INSERT INTO Produtos (Nome, Preco, Estoque) VALUES (@n, @p, @e)", conexao);\ncomando.Parameters.AddWithValue("@n", produto.Nome);\ncomando.Parameters.AddWithValue("@p", produto.Preco);\ncomando.Parameters.AddWithValue("@e", produto.Estoque);\nawait comando.ExecuteNonQueryAsync();' },
-        { tipo: 'nota', tom: 'info', texto: 'Você não precisa entender cada linha deste código agora. O objetivo aqui é só perceber o tamanho e a repetição do trabalho manual.' },
+        { tipo: 'codigo', linguagem: 'texto', codigo: '// Jeito manual: cada operação exige uma sequência longa de passos\n//\n// 1. Abrir a conexão com o banco\n// 2. Montar o comando SQL:\n//    INSERT INTO Produtos (Nome, Preco, Estoque) VALUES (...)\n// 3. Preencher os parâmetros com os valores do objeto produto\n// 4. Executar o comando e converter o que o banco devolver' },
+        { tipo: 'nota', tom: 'info', texto: 'No comando acima, `INSERT INTO Produtos (Nome, Preco, Estoque) VALUES (...)` se lê assim: **insira dentro** de Produtos, nas colunas Nome, Preco e Estoque, os **valores** correspondentes. É tudo escrito à mão, coluna por coluna.' },
+        { tipo: 'nota', tom: 'info', texto: 'Você não precisa entender cada linha desta sequência agora. O objetivo aqui é só perceber o tamanho e a repetição do trabalho manual.' },
         { tipo: 'texto', texto: 'Para **cada operação** (inserir, buscar, atualizar, excluir) você repete esse tipo de código. E ao ler dados, precisa criar o objeto e preencher campo por campo, na ordem certa.' },
         { tipo: 'lista', itens: [
           'Muito código repetitivo por operação.',
@@ -37,7 +38,7 @@ Plataforma.registrarLicao({
       introduz: ['ef.orm', 'ef.entidade'],
       blocos: [
         { tipo: 'texto', texto: '**ORM** significa Object-Relational Mapper (mapeador objeto-relacional) — mas o nome importa menos do que a função: ele **traduz** entre objetos C# e tabelas do banco. Ele mantém um **mapeamento**: a classe Produto corresponde à tabela Produtos; cada propriedade corresponde a uma coluna.' },
-        { tipo: 'diagrama', arte: 'C#                                    SQL Server\n\nProduto                               Produtos\n├── Id        (int)      ◄──────►     ├── Id        INT\n├── Nome      (string)   ◄──────►     ├── Nome      VARCHAR\n├── Preco     (decimal)  ◄──────►     ├── Preco     DECIMAL\n└── Estoque   (int)      ◄──────►     └── Estoque   INT' },
+        { tipo: 'diagrama', arte: 'C#                                    Banco de dados\n\nProduto                               Produtos\n├── Id        (int)      ◄──────►     ├── Id        INT\n├── Nome      (string)   ◄──────►     ├── Nome      VARCHAR\n├── Preco     (decimal)  ◄──────►     ├── Preco     DECIMAL\n└── Estoque   (int)      ◄──────►     └── Estoque   INT' },
         { tipo: 'texto', texto: 'Você escreve C# e o ORM gera o SQL correspondente. O objeto Produto que você já sabe criar é chamado de **entidade** — a classe mapeada para uma tabela.' },
         { tipo: 'glossario', titulo: 'Vocabulário essencial', itens: [
           ['ORM', 'mapeador objeto-relacional', 'Tradutor entre objetos C# e tabelas do banco.'],
@@ -82,7 +83,7 @@ Plataforma.registrarLicao({
         correta: 0,
         feedbackErro: {
           1: 'O banco continua existindo; o ORM só conversa com ele por você.',
-          2: 'O ORM pode gerar SQL ótimo, mas performance depende de como é usado — nada é mágica.',
+          2: 'O ORM pode gerar SQL ótimo, mas o desempenho depende de como é usado — nada é mágica.',
           3: 'Sem noção de SQL, você não consegue investigar o que o ORM gera nem resolver lentidão.'
         },
         dicas: ['Pense no código repetitivo de conversão que você acabou de ver.', 'O ORM não substitui o banco.'],

@@ -40,8 +40,12 @@ Plataforma.registrarLicao({
         { tipo: 'glossario', titulo: 'Decifrando o código', itens: [
           ['var', 'tipo inferido', 'O compilador descobre o tipo pelo valor. Você já viu isso na trilha de C#.'],
           ['builder / CreateBuilder', 'preparação da aplicação', 'O objeto que reúne as configurações antes de a aplicação iniciar. É preparação padrão: você não precisa decorar agora.'],
+          ['Build()', 'montar a aplicação', 'Monta a aplicação com tudo o que foi configurado no builder.'],
+          ['args', 'argumentos de inicialização', 'Argumentos passados ao executar a aplicação. Não precisa entender agora.'],
           ['() => produtos', 'lambda sem parâmetros', 'Os parênteses vazios significam que esta função não recebe nada; ela apenas devolve a lista.'],
+          ['(int id) => ...', 'lambda com parâmetro', 'Significa "para o id informado, faça...". O valor vem do parâmetro da rota, como o `{id}` visto acima.'],
           ['MapGet', 'mapear um GET', 'Liga o método GET + rota ao código que responde.'],
+          ['MapPost', 'mapear um POST', 'Liga o método POST + rota ao código que cria um recurso.'],
           ['app.Run()', 'iniciar', 'Coloca a API no ar para receber requisições.']
         ] },
         { tipo: 'nota', tom: 'atencao', texto: 'Neste exemplo os produtos estão em memória para você focar na API. Na versão profissional, a lista viria do `context.Produtos` do Entity Framework — exatamente o que você aprendeu na trilha anterior.' }
@@ -57,7 +61,8 @@ Plataforma.registrarLicao({
           ['Results.NotFound()', 'O recurso pedido não existe (404)'],
           ['Results.Created(endereco, dados)', 'Um novo recurso foi criado (201)'],
           ['Results.BadRequest(erro)', 'O cliente enviou dados inválidos (400)']
-        ], legenda: 'Use o status certo: ele é um contrato com quem consome a API.' }
+        ], legenda: 'Use o status certo: ele é um contrato com quem consome a API.' },
+        { tipo: 'nota', tom: 'info', texto: 'Nos próximos exemplos: `produto is null` verifica se o produto não existe; e `condição ? A : B` devolve A quando a condição é verdadeira e B quando é falsa (operador condicional). Leia como "se não existe, NotFound; senão, Ok".' }
       ]
     },
     {
@@ -135,8 +140,7 @@ Plataforma.registrarLicao({
         respostasAceitas: ['app.MapPost("/produtos", (Produto produto) => { produtos.Add(produto); return Results.Created("/produtos", produto); });'],
         dicas: ['Adicione o produto na lista com `produtos.Add(produto)`.', 'O status correto para criação é 201, via `Results.Created`. O primeiro argumento é o endereço do recurso criado.'],
         explicacao: 'POST cria o recurso e responde 201 Created, normalmente com a localização do novo recurso. É a tradução exata do INSERT.',
-        conceitos: ['aspnet.api', 'aspnet.status'],
-        desafio: true
+        conceitos: ['aspnet.api', 'aspnet.status']
       }
     },
     {
@@ -145,7 +149,7 @@ Plataforma.registrarLicao({
         id: 'api02-a5',
         tipo: 'scenario',
         dimensao: 'aplicacao',
-        cena: 'O frontend chama `GET /produtos/10` e recebe 200 com corpo vazio. O banco não tem o produto 10. O time discute se o correto seria 404.',
+        cena: 'O aplicativo cliente chama `GET /produtos/10` e recebe 200 com corpo vazio. O banco não tem o produto 10. O time discute se o correto seria 404.',
         enunciado: 'Qual análise está correta?',
         opcoes: [
           'Devolver 200 com corpo vazio é enganoso; o correto é 404, pois o recurso não existe',
@@ -161,8 +165,7 @@ Plataforma.registrarLicao({
         },
         dicas: ['O status deve comunicar o que aconteceu.', 'Existe um código específico para recurso inexistente.'],
         explicacao: 'Status code é contrato com o cliente. 404 comunica "não existe" sem ambiguidade — foi exatamente o que você viu no endpoint com FirstOrDefault.',
-        conceitos: ['aspnet.status', 'aspnet.api'],
-        desafio: true
+        conceitos: ['aspnet.status', 'aspnet.api']
       }
     }
   ]

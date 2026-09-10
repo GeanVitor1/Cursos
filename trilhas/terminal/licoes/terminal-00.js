@@ -18,7 +18,7 @@ Plataforma.registrarLicao({
       titulo: 'Por que o terminal aparece em toda vaga',
       blocos: [
         { tipo: 'texto', texto: 'O terminal é uma forma de conversar com o computador por comandos em vez de cliques. Ele aparece quando você precisa rodar, testar, versionar ou publicar um projeto — e é muito mais rápido que navegar por pastas.' },
-        { tipo: 'trabalho', texto: 'Criar projeto, rodar testes, subir container e enviar código: tudo isso acontece no terminal, em qualquer equipe .NET.', fonte: '💼 No trabalho' },
+        { tipo: 'trabalho', texto: 'Criar projeto, rodar testes, subir os serviços e enviar código: tudo isso acontece no terminal, em qualquer equipe .NET.', fonte: '💼 No trabalho' },
         { tipo: 'nota', tom: 'info', texto: 'No Windows, você pode usar o **PowerShell** (já vem instalado) ou o **Windows Terminal**. Os comandos abaixo funcionam nos dois. No Linux/macOS, use o terminal padrão.' }
       ]
     },
@@ -27,7 +27,7 @@ Plataforma.registrarLicao({
       titulo: 'Navegando em pastas',
       introduz: ['terminal.comandos'],
       blocos: [
-        { tipo: 'codigo', linguagem: 'bash', codigo: 'pwd              # mostra a pasta atual\nls               # lista o conteúdo (dir no Windows)\ncd Projetos      # entra na pasta Projetos\ncd ..            # volta uma pasta\nmkdir MinhaApi   # cria uma pasta' },
+        { tipo: 'codigo', linguagem: 'texto', codigo: 'pwd              # mostra a pasta atual\nls               # lista o conteúdo (dir no Windows)\ncd Projetos      # entra na pasta Projetos\ncd ..            # volta uma pasta\nmkdir MeuProjeto # cria uma pasta' },
         { tipo: 'glossario', titulo: 'Decifrando os comandos', itens: [
           ['pwd', 'print working directory', 'Mostra onde você está.'],
           ['ls / dir', 'list', 'Lista arquivos e pastas.'],
@@ -46,7 +46,7 @@ Plataforma.registrarLicao({
         pares: [
           ['cd Projetos', 'Entrar na pasta Projetos'],
           ['ls', 'Listar o conteúdo da pasta'],
-          ['mkdir MinhaApi', 'Criar uma pasta'],
+          ['mkdir MeuProjeto', 'Criar uma pasta'],
           ['cd ..', 'Voltar para a pasta anterior']
         ],
         dicas: ['cd vem de "change directory".', 'mkdir lembra "make directory".'],
@@ -62,7 +62,7 @@ Plataforma.registrarLicao({
         { tipo: 'texto', texto: 'O comando `dotnet` é a porta de entrada para projetos .NET. Você não precisa decorar todos agora — comece pelos essenciais:' },
         { tipo: 'tabela', titulo: 'Comandos dotnet mais usados', colunas: ['Comando', 'Para que serve'], linhas: [
           ['dotnet --version', 'Mostra a versão do SDK instalada'],
-          ['dotnet new webapi -n MinhaApi', 'Cria um projeto web'],
+          ['dotnet new webapi -n MeuProjeto', 'Cria um projeto de serviço web (-n = nome do projeto; webapi = modelo de projeto para um serviço web; você verá APIs na trilha de ASP.NET)'],
           ['dotnet run', 'Compila e executa o projeto atual'],
           ['dotnet build', 'Compila sem executar (confere se o projeto está correto)'],
           ['dotnet test', 'Executa os testes automatizados']
@@ -90,10 +90,10 @@ Plataforma.registrarLicao({
       titulo: 'Git, Docker e npm: três vizinhos',
       introduz: ['terminal.git', 'terminal.docker', 'terminal.npm'],
       blocos: [
-        { tipo: 'codigo', linguagem: 'bash', codigo: 'git status\n git add .\ngit commit -m "Corrige cálculo do total"\ngit push' },
-        { tipo: 'texto', texto: 'Esses quatro comandos Git você usa dezenas de vezes por semana. A trilha de Git vai aprofundar esse fluxo de colaboração.' },
-        { tipo: 'codigo', linguagem: 'bash', codigo: 'docker compose up     # sobe os serviços descritos no projeto\nnpm install           # instala dependências do frontend' },
-        { tipo: 'nota', tom: 'info', texto: '`docker compose up` e `npm install` só aparecem quando as trilhas de Docker e Frontend chegarem. Anote o significado para reconhecê-los quando virem.' }
+        { tipo: 'codigo', linguagem: 'texto', codigo: 'git status        # ver o que mudou\ngit add .         # preparar tudo o que mudou (. = todos os arquivos)\ngit commit -m "Corrige cálculo do total"   # gravar com uma mensagem (-m = mensagem)\ngit push          # enviar para o servidor' },
+        { tipo: 'texto', texto: 'Esses quatro comandos Git você usa dezenas de vezes por semana. Eles são uma **prévia**: a trilha de Git vai aprofundar esse fluxo de colaboração.' },
+        { tipo: 'codigo', linguagem: 'texto', codigo: 'docker compose up     # sobe um serviço em um container (Docker = ferramenta de containers; container = pacote pronto com a aplicação e tudo o que ela precisa)\nnpm install           # instala as dependências da parte visual (frontend); npm = gerenciador de pacotes do frontend' },
+        { tipo: 'nota', tom: 'info', texto: '`docker compose up` e `npm install` são apenas **preview**: você vai estudá-los nas trilhas de Docker e de Frontend (a parte visual). Anote o significado para reconhecê-los quando virem.' }
       ]
     },
     {
@@ -102,7 +102,7 @@ Plataforma.registrarLicao({
         id: 'term00-a3',
         tipo: 'scenario',
         dimensao: 'aplicacao',
-        cena: 'Você acabou de clonar um projeto .NET. O líder pediu para rodar a aplicação e os testes antes de começar a alterar o código.',
+        cena: 'Um projeto .NET já está no seu computador. O líder pediu para rodar a aplicação e os testes antes de começar a alterar o código.',
         enunciado: 'Quais comandos você usa?',
         opcoes: [
           'dotnet run para executar e dotnet test para os testes',

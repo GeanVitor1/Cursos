@@ -29,7 +29,7 @@ Plataforma.registrarLicao({
           itens: [
             '`IN` substitui vários OR encadeados.',
             '`BETWEEN a AND b` equivale a `>= a AND <= b`.',
-            '`NOT` inverte qualquer condição: `NOT IN`, `NOT LIKE`, `NOT EXISTS`.'
+            '`NOT` inverte qualquer condição: aqui você verá `NOT IN`.'
           ]
         },
         { tipo: 'nota', tom: 'info', texto: '`BETWEEN` **inclui** os dois extremos. `Preco BETWEEN 100 AND 500` traz também os produtos de exatamente 100 e de exatamente 500.' }
@@ -182,7 +182,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql05-a7',
         tipo: 'write-code',
-        enunciado: 'The support team asks for all orders that are **not cancelled**, with a total between 100 and 1000.',
+        enunciado: 'Retrieve all orders where **Status** <> \'Cancelado\' and **ValorTotal** between 100 and 1000.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
           'select * from pedidos where status <> \'cancelado\' and valortotal between 100 and 1000',
@@ -190,10 +190,10 @@ Plataforma.registrarLicao({
           'select * from pedidos where status not in (\'cancelado\') and valortotal between 100 and 1000'
         ],
         dicas: [
-          'not cancelled = não cancelado.',
+          'orders = pedidos. <> = diferente de.',
           'between 100 and 1000 = intervalo inclusivo.'
         ],
-        explicacao: 'Traduzindo: pedidos com status diferente de Cancelado E ValorTotal no intervalo. Você combinou tradução de inglês, operador de diferença e BETWEEN.',
+        explicacao: 'Traduzindo: "retrieve all orders where Status <> Cancelado and ValorTotal between 100 and 1000" = retorne todos os pedidos com Status diferente de Cancelado E ValorTotal no intervalo de 100 a 1000. Você combinou inglês, operador de diferença e BETWEEN.',
         conceitos: ['sql.not', 'sql.between', 'sql.ingles'],
         desafio: true
       }

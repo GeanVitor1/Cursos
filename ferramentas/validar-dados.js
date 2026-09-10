@@ -16,6 +16,9 @@ let entrevistas = [];
 let habilidades = null;
 let registroConceitos = null;
 let nivelamento = null;
+let lexicoIngles = null;
+let simbolosCodigo = null;
+let termosPortugues = null;
 
 function erro(mensagem) { erros.push(mensagem); }
 function aviso(mensagem) { avisos.push(mensagem); }
@@ -30,7 +33,10 @@ global.Plataforma = {
   registrarEntrevistas(lista) { entrevistas = lista; },
   registrarHabilidades(mapa) { habilidades = mapa; },
   registrarRegistroConceitos(mapa) { registroConceitos = mapa; },
-  registrarNivelamento(dados) { nivelamento = dados; }
+  registrarNivelamento(dados) { nivelamento = dados; },
+  registrarLexicoIngles(config) { lexicoIngles = config; },
+  registrarSimbolosCodigo(config) { simbolosCodigo = config; },
+  registrarTermosPortugues(config) { termosPortugues = config; }
 };
 
 function carregar(caminho) {
@@ -166,6 +172,9 @@ carregar('../data/conceitos.js');
 carregar('../data/conceitos-registry.js');
 carregar('../data/habilidades.js');
 carregar('../data/nivelamento-ingles.js');
+carregar('../data/ingles-lexico.js');
+carregar('../data/simbolos-codigo.js');
+carregar('../data/termos-portugues.js');
 
 if (!manifesto) {
   erro('Manifesto não registrado');
@@ -302,6 +311,39 @@ if (nivelamento) {
       if (!porNivel[n]) erro('Nivelamento sem questões do nível ' + n);
     });
   }
+}
+
+if (!lexicoIngles) {
+  erro('Léxico de inglês não registrado em data/ingles-lexico.js');
+} else {
+  ['nomesProprios', 'expressoes', 'palavrasPortuguesas', 'expressoesPortuguesas'].forEach(function (campo) {
+    if (!Array.isArray(lexicoIngles[campo])) erro('Léxico de inglês: campo ' + campo + ' deve ser lista');
+  });
+  if (!lexicoIngles.contracoes || typeof lexicoIngles.contracoes !== 'object') erro('Léxico de inglês: contracoes deve ser objeto');
+}
+
+if (!simbolosCodigo) {
+  erro('Registro de símbolos não encontrado em data/simbolos-codigo.js');
+} else {
+  const simbolos = simbolosCodigo.simbolos || {};
+  Object.keys(simbolos).forEach(function (chave) {
+    if (chave.indexOf(':') === -1) erro('Símbolo sem grupo (formato grupo:simbolo): ' + chave);
+    const info = simbolos[chave];
+    if (!info.nome) erro('Símbolo sem nome: ' + chave);
+    if (!info.licao) erro('Símbolo sem lição de introdução: ' + chave);
+    else if (!licoes[info.licao]) erro('Símbolo ' + chave + ' aponta para lição inexistente: ' + info.licao);
+  });
+}
+
+if (!termosPortugues) {
+  erro('Léxico de termos em português não encontrado em data/termos-portugues.js');
+} else {
+  const termos = termosPortugues.termos || {};
+  Object.keys(termos).forEach(function (termo) {
+    const info = termos[termo] || {};
+    if (!info.nome) erro('Termo sem nome: ' + termo);
+    if (info.licao && !licoes[info.licao]) erro('Termo ' + termo + ' aponta para lição inexistente: ' + info.licao);
+  });
 }
 
 console.log('Trilhas carregadas: ' + Object.keys(trilhas).length + ' de ' + ((manifesto && manifesto.trilhas) || []).length);

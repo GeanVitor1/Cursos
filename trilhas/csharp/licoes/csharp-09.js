@@ -29,7 +29,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'As três peças: async, Task e await',
       blocos: [
-        { tipo: 'texto', texto: 'Vamos começar com uma operação demorada simples: `Task.Delay`, que apenas espera um tempo antes de continuar.' },
+        { tipo: 'texto', texto: 'Vamos começar com uma operação demorada simples: `Task.Delay`, que apenas espera um tempo antes de continuar (`Delay` = atraso/espera).' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'public async Task<string> ObterConfirmacaoAsync()\n{\n    await Task.Delay(1000); // espera 1 segundo, sem travar\n    return "Pedido confirmado";\n}' },
         { tipo: 'diagrama', arte: 'public async Task<string> ObterConfirmacaoAsync()\n   │       │               │\n   │       │               └─ nome termina em Async (convenção)\n   │       └─ Task<string> = "operação que devolverá um texto no futuro"\n   └─ async avisa: este método pode aguardar operações demoradas' },
         { tipo: 'lista', itens: [
@@ -39,6 +39,7 @@ Plataforma.registrarLicao({
           '`await` espera o resultado **sem bloquear** a aplicação.'
         ] },
         { tipo: 'nota', tom: 'atencao', texto: 'Métodos assíncronos sem resultado usam só `Task`; métodos com resultado usam `Task<string>`, `Task<Produto>` etc.' },
+        { tipo: 'nota', tom: 'atencao', texto: '`await` só pode ser usado dentro de um método marcado com `async`.' },
         { tipo: 'futuro', conceitos: ['ef.dbcontext', 'ef.dbset', 'ef.consultas'], texto: 'Guardou a ideia de `async` e `await`? Na trilha de Entity Framework você vai ver `await context.Produtos.ToListAsync()`: é exatamente este mesmo mecanismo aplicado a consultas no banco. Lá explicaremos `context`, `DbSet` e `ToListAsync` com calma.' }
       ]
     },

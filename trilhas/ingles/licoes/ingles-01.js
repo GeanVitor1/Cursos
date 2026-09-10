@@ -26,6 +26,24 @@ Plataforma.registrarLicao({
           ['404 Not Found', 'recurso não encontrado', 'O endereço pedido não existe ou o dado não foi encontrado.'],
           ['Timeout expired', 'tempo esgotado', 'A operação demorou demais e foi interrompida.']
         ] },
+        { tipo: 'vocab', titulo: 'Palavras das mensagens de erro', pares: [
+          ['connect / connection', 'conectar / conexão'],
+          ['cannot', 'não consegue'],
+          ['object', 'objeto'],
+          ['instance', 'instância'],
+          ['reference', 'referência'],
+          ['set', 'definido'],
+          ['resource', 'recurso'],
+          ['does not exist', 'não existe'],
+          ['while', 'enquanto'],
+          ['waiting / wait', 'esperando / esperar'],
+          ['server', 'servidor'],
+          ['a / an', 'um / uma'],
+          ['for', 'por / para'],
+          ['timeout', 'tempo esgotado'],
+          ['expired', 'expirou'],
+          ['file / path', 'arquivo / caminho']
+        ] },
         { tipo: 'ingles', frase: 'Cannot connect to the database.', traducao: 'Não é possível conectar ao banco de dados.' }
       ]
     },
@@ -82,6 +100,19 @@ Plataforma.registrarLicao({
           ['processed twice', 'processados duas vezes', 'Twice = duas vezes.'],
           ['retrying', 'tentando novamente', 'Retry = tentar de novo.'],
           ['Expected / Actual', 'esperado / real', 'O que deveria acontecer e o que acontece de fato.']
+        ] },
+        { tipo: 'vocab', titulo: 'Palavras de um ticket', pares: [
+          ['Title', 'título'],
+          ['Steps to reproduce', 'passos para reproduzir'],
+          ['Create an order', 'criar um pedido'],
+          ['after', 'depois de'],
+          ['duplicated', 'duplicado'],
+          ['application', 'aplicação'],
+          ['returns', 'retorna'],
+          ['client', 'cliente'],
+          ['calling / to call', 'chamando / chamar'],
+          ['wrong address', 'endereço errado'],
+          ['bug', 'defeito / erro no sistema']
         ] },
         { tipo: 'nota', tom: 'info', texto: '"Steps to reproduce" são os passos para reproduzir o bug. Sem eles, a investigação fica muito mais difícil — e aprender a lê-los é metade do trabalho.' }
       ]

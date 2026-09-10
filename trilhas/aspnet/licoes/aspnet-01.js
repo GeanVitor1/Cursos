@@ -18,7 +18,7 @@ Plataforma.registrarLicao({
       titulo: 'Um formato que todo mundo entende',
       introduz: ['aspnet.json'],
       blocos: [
-        { tipo: 'texto', texto: 'O frontend é JavaScript, a API é C#, o app é Java. Como eles conversam? Com um formato de texto simples e universal: **JSON** (JavaScript Object Notation — notação de objetos JavaScript).' },
+        { tipo: 'texto', texto: 'A tela pode ser escrita em outra linguagem; a API é escrita em C#. Os dois lados trocam **JSON**, um formato de texto simples e universal.' },
         { tipo: 'conceito', id: 'aspnet.json', titulo: 'JSON', texto: 'Formato de texto para troca de dados, com pares "chave": valor. Textos usam aspas duplas; números e true/false não.', exemplo: '{ "id": 1, "nome": "Mouse" }' },
         { tipo: 'codigo', linguagem: 'json', codigo: '{\n  "id": 1,\n  "nome": "Mouse",\n  "preco": 100.00,\n  "ativo": true\n}' },
         { tipo: 'lista', itens: [
@@ -96,17 +96,17 @@ Plataforma.registrarLicao({
         id: 'api01-a4',
         tipo: 'multiple-choice',
         dimensao: 'aplicacao',
-        enunciado: 'Em uma API ASP.NET, o JSON que aparece na resposta normalmente é produzido a partir de quê?',
+        enunciado: 'Em uma API feita com **ASP.NET** (framework da Microsoft para construir aplicações web com .NET), o JSON que aparece na resposta normalmente é produzido a partir de quê?',
         opcoes: [
           'De um objeto C# que o ASP.NET converte automaticamente em JSON',
           'De um arquivo de texto escrito manualmente a cada pedido',
-          'Do HTML da página',
+          'Do navegador do cliente, que monta o JSON sozinho',
           'Do próprio banco de dados, sem passar pelo C#'
         ],
         correta: 0,
         feedbackErro: {
           1: 'Escrever JSON manualmente seria repetitivo e sujeito a erro de sintaxe.',
-          2: 'HTML é formato de página; a API devolve dados.',
+          2: 'O navegador consome o JSON da resposta; quem monta o JSON é a API.',
           3: 'O banco devolve linhas; o C# monta o objeto e a API converte.'
         },
         dicas: ['Você cria classes como Produto justamente para representar esses dados.', 'O ASP.NET converte o objeto para JSON automaticamente.'],

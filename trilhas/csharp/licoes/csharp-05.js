@@ -17,7 +17,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'O problema: código preso a uma escolha',
       blocos: [
-        { tipo: 'texto', texto: 'Veja como um service de pedidos costuma começar. Ele mesmo decide como enviar o e-mail de confirmação:' },
+        { tipo: 'texto', texto: 'Veja como uma classe de pedidos costuma começar. Ela mesma decide como enviar o e-mail de confirmação:' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'public class PedidoService\n{\n    public void FinalizarPedido(Pedido pedido)\n    {\n        EmailService email = new EmailService();\n        email.Enviar("Pedido confirmado");\n    }\n}' },
         { tipo: 'texto', texto: 'Funciona. Mas surgem três perguntas:' },
         { tipo: 'lista', itens: [
@@ -60,7 +60,7 @@ Plataforma.registrarLicao({
           ['Trocar a implementação', 'Mudança sem reescrever quem usa']
         ],
         dicas: ['A interface não executa nada; ela promete.', 'A classe concreta é quem tem o código de verdade.'],
-        explicacao: 'Quem usa a interface não se importa com a implementação. Essa separação é o coração de um código testável.',
+        explicacao: 'Quem usa a interface não se importa com a implementação. Essa separação é o coração de um código testável (fácil de testar e de trocar depois).',
         conceitos: ['csharp.interfaces']
       }
     },
@@ -126,7 +126,7 @@ Plataforma.registrarLicao({
           ' }'
         ],
         opcoes: [
-          'O service ainda cria a implementação com `new`; o ideal é receber o INotificador pronto de fora',
+          'O PedidoService ainda cria a implementação com `new`; o ideal é receber o INotificador pronto de fora',
           'A interface não pode ter método Enviar',
           'Falta tratar o caso em que o envio falha',
           'O método FinalizarPedido deveria devolver uma string'
@@ -137,7 +137,7 @@ Plataforma.registrarLicao({
           2: 'O ticket fala de dificuldade para testar e trocar, não de falha no envio.',
           3: 'O problema apontado no ticket é a dificuldade de testar/trocar, não o retorno.'
         },
-        dicas: ['Trocar `EmailService` por `INotificador` já foi um avanço...', '...mas quem ainda decide qual implementação usar?', 'O `new` escondido mantém o acoplamento.'],
+        dicas: ['Trocar `EmailService` por `INotificador` já foi um avanço...', '...mas quem ainda decide qual implementação usar?', 'O `new` escondido mantém a classe presa ao EmailNotificador.'],
         explicacao: 'A interface só resolve o problema quando a escolha da implementação sai de dentro da classe. A solução para isso é a próxima etapa.',
         conceitos: ['csharp.interfaces'],
         desafio: true

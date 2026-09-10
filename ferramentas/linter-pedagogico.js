@@ -4,6 +4,7 @@ const path = require('path');
 const RAIZ = path.resolve(__dirname, '..');
 const APP = path.join(RAIZ, 'app');
 const RELATORIO_JSON = path.join(__dirname, 'relatorio-pedagogico.json');
+const MATRIZ_JSON = path.join(__dirname, 'matriz-pedagogica.json');
 const RELATORIO_MD = path.join(RAIZ, 'AUDITORIA_SEQUENCIAL.md');
 const MANUAL = '<!-- MANUAL -->';
 
@@ -12,6 +13,7 @@ const trilhas = {};
 const licoes = {};
 const conceitos = {};
 let registro = { conceitos: {} };
+let termosPortugues = { termos: {} };
 
 global.Plataforma = {
   registrarManifesto(m) { manifesto = m; },
@@ -19,6 +21,7 @@ global.Plataforma = {
   registrarLicao(l) { licoes[l.id] = l; },
   registrarConceitos(mapa) { Object.assign(conceitos, mapa); },
   registrarRegistroConceitos(mapa) { registro = mapa; },
+  registrarTermosPortugues(mapa) { termosPortugues = mapa || { termos: {} }; },
   registrarHabilidades() {},
   registrarCertificacoes() {},
   registrarProjetos() {},
@@ -44,6 +47,7 @@ function carregar(rel) {
 carregar('../data/manifest.js');
 carregar('../data/conceitos.js');
 carregar('../data/conceitos-registry.js');
+carregar('../data/termos-portugues.js');
 (manifesto && manifesto.trilhas || []).forEach(function (t) {
   carregar(t.arquivo);
   (t.licoes || []).forEach(carregar);
@@ -103,6 +107,11 @@ function termosDoConceito(id) {
 const conhecidos = {};
 const introduzidoEm = {};
 const praticadoEm = {};
+const avaliadoEm = {};
+const praticasPorConceito = {};
+const dimensoesPorConceito = {};
+const matrizAtividades = [];
+const matrizEnsino = [];
 const primeiraUso = {};
 let contadorPosicoes = 0;
 
@@ -133,9 +142,11 @@ ordemTrilhas.forEach(function (tid) {
 });
 
 const licoesReferenciadas = {};
-posicoes.forEach(function (p) {
+const ordemLicao = {};
+posicoes.forEach(function (p, indice) {
   if (licoesReferenciadas[p.licao.id]) erro('Lição referenciada mais de uma vez: ' + p.licao.id, p.trilha);
   licoesReferenciadas[p.licao.id] = true;
+  ordemLicao[p.licao.id] = indice;
 });
 Object.keys(licoes).forEach(function (id) {
   if (!licoesReferenciadas[id]) aviso('Lição carregada mas não usada em nenhuma trilha: ' + id, 'projeto');
@@ -195,11 +206,38 @@ function escanear(valor, onde, ehAtividade, arquivo) {
   });
 }
 
+function escanearTermos(valor, onde, ehAtividade, arquivo, indiceAtual) {
+  const termos = termosPortugues.termos || {};
+  const chaves = Object.keys(termos);
+  if (!chaves.length) return;
+  const textos = [];
+  coletarStrings(valor, textos);
+  const juntos = textos.join('\n');
+  chaves.forEach(function (termo) {
+    const info = termos[termo];
+    if (info.licao) {
+      const idx = ordemLicao[info.licao];
+      if (idx === undefined) {
+        erro('Termo aponta para lição inexistente: ' + termo + ' -> ' + info.licao, onde, { termo: termo, arquivo: arquivo });
+        return;
+      }
+      if (idx <= indiceAtual) return;
+    }
+    if (!contemTermo(juntos, termo)) return;
+    const extra = { termo: termo, nome: info.nome || termo, introducao: info.licao || 'nunca', arquivo: arquivo };
+    if (ehAtividade) {
+      erro('Termo antes de ensinar (atividade): ' + termo + ' -> "' + String(juntos).slice(0, 60) + '"', onde, extra);
+    } else {
+      aviso('Termo antes de ensinar (conteúdo): ' + termo + ' -> "' + String(juntos).slice(0, 60) + '"', onde, extra);
+    }
+  });
+}
+
 function posicaoLegivel(p, indiceEtapa) {
   return p.trilha + ' / ' + p.licao.id + ' / etapa ' + (indiceEtapa + 1);
 }
 
-posicoes.forEach(function (p) {
+posicoes.forEach(function (p, indiceLicao) {
   const licao = p.licao;
   const arquivo = 'trilhas/' + p.trilha + '/licoes/' + licao.id + '.js';
   const ehProva = licao.tipo === 'prova';
@@ -208,11 +246,15 @@ posicoes.forEach(function (p) {
     const onde = { trilha: p.trilha, licao: licao.id, etapa: indiceEtapa + 1, titulo: etapa.titulo || '', pos: contadorPosicoes };
     if (etapa.introduz) {
       (etapa.introduz || []).forEach(function (id) { marcarIntroducao(id, onde, { arquivo: arquivo }); });
+      if ((etapa.introduz || []).length) {
+        matrizEnsino.push({ licao: licao.id, trilha: p.trilha, etapa: indiceEtapa + 1, ensina: etapa.introduz.slice() });
+      }
     }
     if (etapa.tipo === 'conteudo') {
       (etapa.blocos || []).forEach(function (bloco) {
         if (bloco && bloco.tipo === 'conceito') {
           marcarIntroducao(bloco.id, onde, { arquivo: arquivo });
+          matrizEnsino.push({ licao: licao.id, trilha: p.trilha, etapa: indiceEtapa + 1, ensina: [bloco.id] });
         }
       });
       (etapa.blocos || []).forEach(function (bloco) {
@@ -230,10 +272,22 @@ posicoes.forEach(function (p) {
           });
         }
         escanear(bloco, onde, false, arquivo);
+        escanearTermos(bloco, onde, false, arquivo, indiceLicao);
       });
     } else if (etapa.tipo === 'atividade') {
       const atv = etapa.atividade || {};
       if (!conceitos[atv.tipo] && !atv.tipo) return;
+      matrizAtividades.push({
+        licao: licao.id,
+        trilha: p.trilha,
+        etapa: indiceEtapa + 1,
+        id: atv.id,
+        tipo: atv.tipo,
+        dimensao: atv.dimensao || null,
+        prova: ehProva,
+        desafio: !!atv.desafio,
+        exige: (atv.conceitos || []).slice()
+      });
       (atv.conceitos || []).forEach(function (id) {
         if (!conhecidos[id]) {
           const info = registro.conceitos[id] || {};
@@ -252,11 +306,18 @@ posicoes.forEach(function (p) {
         }
       });
       escanear(atv, onde, true, arquivo);
-      if (!ehProva) {
-        (atv.conceitos || []).forEach(function (id) {
-          if (!praticadoEm[id]) praticadoEm[id] = onde;
-        });
-      }
+      escanearTermos(atv, onde, true, arquivo, indiceLicao);
+      (atv.conceitos || []).forEach(function (id) {
+        if (!praticadoEm[id]) praticadoEm[id] = onde;
+        if (!ehProva) {
+          praticasPorConceito[id] = (praticasPorConceito[id] || 0) + 1;
+          if (atv.dimensao) {
+            dimensoesPorConceito[id] = dimensoesPorConceito[id] || {};
+            dimensoesPorConceito[id][atv.dimensao] = true;
+          }
+        }
+        if (!avaliadoEm[id] && (atv.desafio || ehProva)) avaliadoEm[id] = onde;
+      });
     } else {
       erro('Tipo de etapa desconhecido: ' + etapa.tipo, onde, { arquivo: arquivo });
     }
@@ -270,6 +331,34 @@ Object.keys(conceitos).forEach(function (id) {
 });
 
 const conceitosPublicados = Object.keys(conhecidos);
+function estadoDoConceito(id) {
+  if (!introduzidoEm[id]) return 'NAO_ENSINADO';
+  if (!praticadoEm[id]) return 'INTRODUZIDO';
+  const dimensoes = Object.keys(dimensoesPorConceito[id] || {});
+  if (dimensoes.length >= 2 || (praticasPorConceito[id] || 0) >= 3) return 'PRONTO_PARA_AVALIACAO';
+  return 'PRATICADO';
+}
+const estadosConteudo = {
+  NAO_ENSINADO: 0,
+  INTRODUZIDO: 0,
+  PRATICADO: 0,
+  PRONTO_PARA_AVALIACAO: 0
+};
+const conceitosMatriz = conceitosPublicados.map(function (id) {
+  const estado = estadoDoConceito(id);
+  estadosConteudo[estado] += 1;
+  return {
+    id: id,
+    nome: conceitos[id],
+    introduzidoEm: introduzidoEm[id] || null,
+    praticadoEm: praticadoEm[id] || null,
+    avaliadoEm: avaliadoEm[id] || null,
+    praticas: praticasPorConceito[id] || 0,
+    dimensoes: Object.keys(dimensoesPorConceito[id] || {}),
+    estado: estado,
+    prerequisitos: (registro.conceitos[id] || {}).prerequisitos || []
+  };
+});
 const resumoRelatorio = {
   geradoEm: new Date().toISOString(),
   trilhas: ordemTrilhas.length,
@@ -280,20 +369,22 @@ const resumoRelatorio = {
   }, 0),
   conceitosRegistrados: Object.keys(conceitos).length,
   conceitosIntroduzidos: conceitosPublicados.length,
+  estados: estadosConteudo,
   erros: erros.filter(function (e) { return e.tipo === 'erro'; }),
   avisos: erros.filter(function (e) { return e.tipo === 'aviso'; }),
-  conceitos: conceitosPublicados.map(function (id) {
-    return {
-      id: id,
-      nome: conceitos[id],
-      introduzidoEm: introduzidoEm[id] || null,
-      praticadoEm: praticadoEm[id] || null,
-      prerequisitos: (registro.conceitos[id] || {}).prerequisitos || []
-    };
-  })
+  conceitos: conceitosMatriz
 };
 
 fs.writeFileSync(RELATORIO_JSON, JSON.stringify(resumoRelatorio, null, 2));
+
+const matrizPedagogica = {
+  geradoEm: resumoRelatorio.geradoEm,
+  regra: 'Estados de conteúdo: NAO_ENSINADO → INTRODUZIDO → PRATICADO → PRONTO_PARA_AVALIACAO. MASTERED é calculado em tempo real pelo motor (confiança + dimensões + revisão espaçada), não pelo conteúdo estático.',
+  conceitos: resumoRelatorio.conceitos,
+  blocosDeEnsino: matrizEnsino,
+  atividades: matrizAtividades
+};
+fs.writeFileSync(MATRIZ_JSON, JSON.stringify(matrizPedagogica, null, 2));
 
 // ----- Relatório markdown -----
 let manual = '';
@@ -315,13 +406,13 @@ linhas.push('- Conceitos registrados: **' + resumoRelatorio.conceitosRegistrados
 linhas.push('- Conceitos com introdução marcada: **' + resumoRelatorio.conceitosIntroduzidos + '**');
 linhas.push('- Erros: **' + resumoRelatorio.erros.length + '** · Avisos: **' + resumoRelatorio.avisos.length + '**');
 linhas.push('');
-linhas.push('## Evidência por conceito (introdução → prática)');
-linhas.push('');
-linhas.push('| Conceito | Introdução | Primeira prática | Pré-requisitos |');
-linhas.push('| --- | --- | --- | --- |');
-resumoRelatorio.conceitos.forEach(function (c) {
-  linhas.push('| ' + c.nome + ' (`' + c.id + '`) | ' + (c.introduzidoEm ? 'etapa ' + c.introduzidoEm.etapa + ' · ' + c.introduzidoEm.licao : '—') + ' | ' + (c.praticadoEm ? c.praticadoEm.licao + ' etapa ' + c.praticadoEm.etapa : '—') + ' | ' + (c.prerequisitos.join(', ') || '—') + ' |');
-});
+  linhas.push('## Evidência por conceito (introdução → prática → avaliação)');
+  linhas.push('');
+  linhas.push('| Conceito | Introdução | Primeira prática | Primeira avaliação | Estado no conteúdo | Pré-requisitos |');
+  linhas.push('| --- | --- | --- | --- | --- | --- |');
+  resumoRelatorio.conceitos.forEach(function (c) {
+    linhas.push('| ' + c.nome + ' (`' + c.id + '`) | ' + (c.introduzidoEm ? 'etapa ' + c.introduzidoEm.etapa + ' · ' + c.introduzidoEm.licao : '—') + ' | ' + (c.praticadoEm ? c.praticadoEm.licao + ' etapa ' + c.praticadoEm.etapa : '—') + ' | ' + (c.avaliadoEm ? c.avaliadoEm.licao + ' etapa ' + c.avaliadoEm.etapa : '—') + ' | ' + c.estado + ' | ' + (c.prerequisitos.join(', ') || '—') + ' |');
+  });
 linhas.push('');
 if (resumoRelatorio.erros.length) {
   linhas.push('## ❌ Erros encontrados');
@@ -346,6 +437,7 @@ fs.writeFileSync(RELATORIO_MD, linhas.join('\n'));
 
 console.log('Trilhas: ' + resumoRelatorio.trilhas + ' | Lições: ' + resumoRelatorio.licoes + ' | Etapas: ' + resumoRelatorio.etapas + ' | Atividades: ' + resumoRelatorio.atividades);
 console.log('Conceitos com introdução marcada: ' + resumoRelatorio.conceitosIntroduzidos + ' de ' + resumoRelatorio.conceitosRegistrados);
+console.log('Estados: ' + Object.keys(estadosConteudo).map(function (k) { return k + '=' + estadosConteudo[k]; }).join(' | '));
 console.log('Erros: ' + resumoRelatorio.erros.length + ' | Avisos: ' + resumoRelatorio.avisos.length);
 if (resumoRelatorio.erros.length) {
   console.log('\n❌ ERROS:');

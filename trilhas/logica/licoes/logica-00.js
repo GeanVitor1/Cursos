@@ -63,7 +63,7 @@ Plataforma.registrarLicao({
         id: 'lg00-a2',
         tipo: 'order-blocks',
         dimensao: 'ordenacao',
-        enunciado: 'Ordene os passos do algoritmo que calcula o total de um pedido.',
+        enunciado: 'Ordene os passos do algoritmo — a sequência de passos para resolver um problema — que calcula o total de um pedido.',
         blocos: [
           'total = 0',
           'para cada item do pedido:',
@@ -87,13 +87,13 @@ Plataforma.registrarLicao({
         ],
         opcoes: [
           'Falta validar se a quantidade é maior que o estoque antes de gravar; assim o estoque pode ficar negativo',
-          'O método deveria ser estático',
+          'A validação deveria vir depois de gravar',
           'Falta um Console.WriteLine',
           'O tipo int não aceita subtração'
         ],
         correta: 0,
         feedbackErro: {
-          1: 'Estático não impede estoque negativo.',
+          1: 'Gravar primeiro é o que permite o estoque negativo; a validação precisa vir antes.',
           2: 'Escrever na tela não valida a regra.',
           3: 'int aceita subtração; o problema é a falta de verificação.'
         },
@@ -166,7 +166,7 @@ Plataforma.registrarLicao({
           3: 'A média não mostra quantos por cliente.'
         },
         dicas: ['"Quantos por cliente" = agrupar por cliente e contar.', 'É o mesmo raciocínio de agrupar e contar linhas em uma tabela.'],
-        explicacao: 'Agrupar e contar é um dos raciocínios mais usados em relatórios — e no SQL vira um agrupamento com contagem.',
+        explicacao: 'Agrupar e contar é um dos raciocínios mais usados em relatórios — em um banco de dados, isso vira uma contagem por grupo (você verá mais adiante na trilha de SQL).',
         conceitos: ['logica.agrupamento']
       }
     }

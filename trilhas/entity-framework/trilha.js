@@ -3,7 +3,7 @@ Plataforma.registrarTrilha({
   nome: 'Entity Framework Core',
   curto: 'EF Core',
   sigla: 'EF',
-  descricao: 'Seu C# conversando com o banco: entidades, DbContext, DbSet, SaveChanges e o SQL gerado — sempre mostrando o que acontece por baixo.',
+  descricao: 'Seu C# conversando com o banco de dados: como um objeto vira registro, como consultar e como gravar — sempre mostrando o SQL que acontece por baixo.',
   fase: 2,
   status: 'disponivel',
   prerequisitos: [{ trilha: 'sql', min: 100 }, { trilha: 'csharp', min: 100 }, { trilha: 'linq', min: 100 }],
@@ -23,11 +23,11 @@ Plataforma.registrarTrilha({
       id: 'iniciante',
       nome: 'Iniciante',
       etapas: [
-        { titulo: 'Primeira migration', duracao: 50 },
-        { titulo: 'Criando o banco de verdade', duracao: 40 },
-        { titulo: 'Atualizando registros', duracao: 40 },
-        { titulo: 'Excluindo registros', duracao: 35 },
-        { titulo: 'Connection string e configuração', duracao: 40 },
+        { titulo: 'Primeira migration (em breve)', duracao: 50 },
+        { titulo: 'Criando o banco de verdade (em breve)', duracao: 40 },
+        { titulo: 'Atualizando registros (em breve)', duracao: 40 },
+        { titulo: 'Excluindo registros (em breve)', duracao: 35 },
+        { titulo: 'Connection string e configuração (em breve)', duracao: 40 },
         { titulo: 'Checkpoint — Iniciante', duracao: 45, tipo: 'prova' }
       ]
     },
@@ -35,11 +35,11 @@ Plataforma.registrarTrilha({
       id: 'relacionamentos',
       nome: 'Relacionamentos',
       etapas: [
-        { titulo: 'One-to-Many na prática', duracao: 55 },
-        { titulo: 'Include e ThenInclude', duracao: 50 },
-        { titulo: 'One-to-One', duracao: 40 },
-        { titulo: 'Many-to-Many', duracao: 55 },
-        { titulo: 'Fluent API vs Data Annotations', duracao: 50 },
+        { titulo: 'One-to-Many na prática (em breve)', duracao: 55 },
+        { titulo: 'Include e ThenInclude (em breve)', duracao: 50 },
+        { titulo: 'One-to-One (em breve)', duracao: 40 },
+        { titulo: 'Many-to-Many (em breve)', duracao: 55 },
+        { titulo: 'Fluent API vs Data Annotations (em breve)', duracao: 50 },
         { titulo: 'Checkpoint — Relacionamentos', duracao: 45, tipo: 'prova' }
       ]
     },
@@ -47,11 +47,11 @@ Plataforma.registrarTrilha({
       id: 'intermediario',
       nome: 'Intermediário',
       etapas: [
-        { titulo: 'Tracking e AsNoTracking', duracao: 45 },
-        { titulo: 'O SQL que o EF gera por baixo', duracao: 50 },
-        { titulo: 'Projeções com Select e DTOs', duracao: 45 },
-        { titulo: 'Paginação de resultados', duracao: 40 },
-        { titulo: 'Transações no EF Core', duracao: 45 },
+        { titulo: 'Tracking e AsNoTracking (em breve)', duracao: 45 },
+        { titulo: 'O SQL que o EF gera por baixo (em breve)', duracao: 50 },
+        { titulo: 'Projeções com Select e DTOs (em breve)', duracao: 45 },
+        { titulo: 'Paginação de resultados (em breve)', duracao: 40 },
+        { titulo: 'Transações no EF Core (em breve)', duracao: 45 },
         { titulo: 'Checkpoint — Intermediário', duracao: 45, tipo: 'prova' }
       ]
     },
@@ -59,19 +59,19 @@ Plataforma.registrarTrilha({
       id: 'avancado',
       nome: 'Avançado',
       etapas: [
-        { titulo: 'Performance: N+1, split queries, compiled queries', duracao: 60 },
-        { titulo: 'Migrations profissionais e ambientes', duracao: 55 },
-        { titulo: 'Concorrência e rowversion', duracao: 50 },
-        { titulo: 'Global query filters e soft delete', duracao: 45 },
-        { titulo: 'Interceptors e auditoria', duracao: 50 }
+        { titulo: 'Performance: N+1, split queries, compiled queries (em breve)', duracao: 60 },
+        { titulo: 'Migrations profissionais e ambientes (em breve)', duracao: 55 },
+        { titulo: 'Concorrência e rowversion (em breve)', duracao: 50 },
+        { titulo: 'Global query filters e soft delete (em breve)', duracao: 45 },
+        { titulo: 'Interceptors e auditoria (em breve)', duracao: 50 }
       ]
     },
     {
       id: 'profissional',
       nome: 'Profissional',
       etapas: [
-        { titulo: 'Repository + Unit of Work: quando faz sentido', duracao: 60 },
-        { titulo: 'EF Core em produção: diagnóstico e cuidados', duracao: 60 },
+        { titulo: 'Repository + Unit of Work: quando faz sentido (em breve)', duracao: 60 },
+        { titulo: 'EF Core em produção: diagnóstico e cuidados (em breve)', duracao: 60 },
         { titulo: 'Checkpoint final — EF Profissional', duracao: 50, tipo: 'prova' }
       ]
     }

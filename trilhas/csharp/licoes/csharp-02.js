@@ -28,13 +28,15 @@ Plataforma.registrarLicao({
       titulo: 'Anatomia de um método',
       introduz: ['csharp.metodos'],
       blocos: [
+        { tipo: 'nota', tom: 'info', texto: 'Duas palavras-chave aparecem no código a seguir: `return` devolve o resultado para quem chamou; `void` indica que o método não devolve nada.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'public decimal CalcularTotal(decimal preco, int quantidade)\n{\n    decimal total = preco * quantidade;\n    return total;\n}' },
         { tipo: 'diagrama', arte: 'public decimal CalcularTotal(decimal preco, int quantidade)\n  │       │            │                    │\n  │       │            │                    └─ parâmetros (entradas)\n  │       │            └─ nome da ação\n  │       └─ tipo do retorno (o que devolve)\n  └─ quem pode usar' },
         { tipo: 'glossario', titulo: 'Decifrando a assinatura', itens: [
           ['método', 'ação', 'Bloco de código com nome que executa uma tarefa.'],
           ['parâmetro', 'entrada', 'Valor que o método precisa receber para trabalhar.'],
           ['retorno', 'saída', 'Resultado que o método devolve para quem chamou.'],
-          ['void', 'sem retorno', 'Usado quando o método executa algo, mas não devolve valor.']
+          ['return', 'devolve o resultado', 'Palavra-chave que entrega o valor do método para quem chamou.'],
+          ['void', 'não devolve nada', 'Usado quando o método executa algo, mas não devolve valor.']
         ] },
         { tipo: 'texto', texto: 'Chamamos o método assim: `decimal total = CalcularTotal(100.00m, 3);` — o resultado (300.00) é devolvido e guardado em `total`.' }
       ]
@@ -95,7 +97,7 @@ Plataforma.registrarLicao({
         },
         respostasAceitas: ['public decimal CalcularTotal(decimal preco, int quantidade) { return preco * quantidade; }'],
         dicas: ['A assinatura já está no esqueleto; falta o corpo.', 'O corpo pode ser uma única linha: `return preco * quantidade;`'],
-        explicacao: 'Métodos pequenos e com uma responsabilidade clara são a base do código que outros conseguem ler. Esse é o caminho até o `Service` de uma aplicação real.',
+        explicacao: 'Métodos pequenos e com uma responsabilidade clara são a base do código que outros conseguem ler. Esse é o caminho até os métodos de uma aplicação real.',
         conceitos: ['csharp.metodos']
       }
     },

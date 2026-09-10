@@ -23,14 +23,20 @@ Plataforma.registrarLicao({
           ["I'm going to travel next week.", 'Vou viajar na próxima semana.'],
           ["She's going to study tonight.", 'Ela vai estudar hoje à noite.'],
           ['I will call you tomorrow.', 'Eu vou te ligar amanhã.'],
-          ["It will rain later.", 'Vai chover mais tarde.']
+          ["It will rain later.", 'Vai chover mais tarde.'],
+          ['send → sent', 'enviar → enviei'],
+          ['a photo', 'uma foto'],
+          ['visit', 'visitar'],
+          ['the city', 'a cidade'],
+          ["Let's...", 'Vamos... (convite)'],
+          ['also', 'também']
         ] },
         { tipo: 'lista', itens: [
           '`going to` = plano: I am going to + verbo.',
           '`will` = decisão/promessa/previsão: I will + verbo.',
           'Marcadores: `tomorrow`, `next week`, `next month`, `tonight`.'
         ] },
-        { tipo: 'nota', tom: 'atencao', texto: 'A contração é muito comum na fala: `I\'m going to` → `I\'m gonna`, `I will` → `I\'ll`.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'A contração é muito comum na fala: `I am` → `I\'m` e `I will` → `I\'ll`.' }
       ]
     },
     {
@@ -99,7 +105,7 @@ Plataforma.registrarLicao({
         interlocutor: 'Leo',
         turnos: [
           { fala: 'What are you going to do this weekend?', opcoes: ["I'm going to visit my parents.", 'I went to the beach.', 'It is twenty dollars.'], correta: 0 },
-          { fala: 'Nice! Are you going to travel?', opcoes: ["No, I'm staying in the city.", 'Yes, I am twenty years old.', 'On Monday at nine.'], correta: 0 },
+          { fala: 'Nice! Are you going to travel?', opcoes: ["No, I'm going to stay in the city.", 'Yes, I am twenty years old.', 'On Monday at nine.'], correta: 0 },
           { fala: "Let's have lunch on Sunday. I will call you.", opcoes: ['Great! See you on Sunday.', 'I usually wake up at seven.', 'My name is Ana.'], correta: 0 }
         ],
         dicas: ['A pergunta é sobre planos futuros.', '"Let\'s" é um convite.'],

@@ -19,15 +19,26 @@ Plataforma.registrarLicao({
       introduz: ['en.numeros'],
       blocos: [
         { tipo: 'vocab', titulo: 'Números essenciais', pares: [
-          ['one, two, three', '1, 2, 3'],
+          ['zero / oh', '0 (oh é usado em telefones)'],
+          ['one, two, three, four, five', '1, 2, 3, 4, 5'],
+          ['six, seven, eight, nine, ten', '6, 7, 8, 9, 10'],
           ['eleven, twelve, thirteen', '11, 12, 13'],
-          ['twenty, thirty, forty', '20, 30, 40'],
+          ['fourteen, fifteen, sixteen', '14, 15, 16'],
+          ['seventeen, eighteen, nineteen, twenty', '17, 18, 19, 20'],
+          ['thirty, forty, fifty', '30, 40, 50'],
+          ['sixty, seventy, eighty, ninety', '60, 70, 80, 90'],
           ['one hundred', '100']
         ] },
+        { tipo: 'vocab', titulo: 'Falando de idade e telefone', pares: [
+          ['to be (am / is / are)', 'ser / estar (eu sou, ele é, eles são)'],
+          ['years old', 'anos de idade'],
+          ['my phone number', 'meu número de telefone'],
+          ['double five', 'cinco repetido (55)']
+        ] },
         { tipo: 'ingles', frase: "I'm twenty-five years old.", traducao: 'Eu tenho vinte e cinco anos.' },
-        { tipo: 'texto', texto: 'Em inglês, **idade usa o verbo to be**: `I am 25` ou `I am 25 years old` — nunca "I have 25 years", que é o jeito do português.' },
+        { tipo: 'texto', texto: 'Em inglês, **idade usa o verbo to be**: `I am 25` ou `I am 25 years old` — diferente do português, que usaria o verbo "ter".' },
         { tipo: 'ingles', frase: 'My phone number is 555-0134.', traducao: 'Meu telefone é 555-0134.' },
-        { tipo: 'nota', tom: 'info', texto: 'Em telefones, o `0` costuma ser lido como "oh" e números repetidos como "double 5".' }
+        { tipo: 'nota', tom: 'info', texto: 'Em telefones, o `0` costuma ser lido como "oh" e números repetidos como "double 5" (em vez de "five five").' }
       ]
     },
     {
@@ -92,8 +103,8 @@ Plataforma.registrarLicao({
         enunciado: 'Complete a frase sobre idade.',
         codigo: "I {{1}} twenty-five years {{2}}.",
         lacunas: [['am'], ['old']],
-        dicas: ['Idade em inglês usa o verbo to be.', 'A expressão completa é years ___.'],
-        explicacao: 'I am 25 years old. Use `am/is/are` + idade, e não "have".',
+        dicas: ['Idade em inglês usa o verbo to be (am / is / are).', 'A expressão completa é years ___.'],
+        explicacao: 'I am 25 years old. Use `am/is/are` + idade, e não o verbo "ter".',
         conceitos: ['en.numeros']
       }
     },
@@ -111,7 +122,7 @@ Plataforma.registrarLicao({
           return /\bi am\b/.test(t) && /\byears old\b/.test(t) && /\d/.test(t);
         },
         respostasAceitas: ['I am 30 years old.'],
-        dicas: ['Use I am + número + years old.', 'Não use "have".'],
+        dicas: ['Use I am + número + years old.', 'Nada do verbo "ter" nesta frase.'],
         explicacao: 'I am 30 years old. Agora você consegue falar de idade como um nativo.',
         conceitos: ['en.numeros']
       }

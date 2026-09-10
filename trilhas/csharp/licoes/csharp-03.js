@@ -29,8 +29,14 @@ Plataforma.registrarLicao({
       introduz: ['csharp.list', 'csharp.generics'],
       blocos: [
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> produtos = new List<Produto>();\n\nprodutos.Add(new Produto { Nome = "Mouse", Preco = 100.00m });\nprodutos.Add(new Produto { Nome = "Teclado", Preco = 200.00m });\n\nConsole.WriteLine(produtos.Count); // 2' },
+        { tipo: 'nota', tom: 'info', texto: 'O trecho `new Produto { Nome = "Mouse", Preco = 100.00m }` é um **inicializador de objeto**: cria o objeto e já preenche as propriedades de uma vez.' },
         { tipo: 'texto', texto: 'O `<Produto>` entre `<` e `>` diz que **tipo** de item a lista aceita. Isso é um **generic**: o mesmo `List` funciona para qualquer tipo, mas cada lista fica restrita a um. `List<int>` aceita inteiros; `List<Produto>` aceita produtos; `List<int>` não aceita produto.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'foreach (Produto produto in produtos)\n{\n    Console.WriteLine(produto.Nome);\n}' },
+        { tipo: 'nota', tom: 'info', texto: '`foreach (Produto produto in produtos)` lê-se "para cada Produto `produto` na lista `produtos`": o bloco repete uma vez para cada item.' },
+        { tipo: 'glossario', titulo: 'Criar e percorrer', itens: [
+          ['new Produto { Nome = "Mouse", Preco = 100.00m }', 'inicializador de objeto', 'Cria o objeto e já preenche as propriedades de uma vez.'],
+          ['foreach (Produto produto in produtos)', 'para cada item', 'Percorre a lista, repetindo o bloco para cada item.']
+        ] },
         { tipo: 'glossario', titulo: 'Métodos e propriedades da List', itens: [
           ['Add(item)', 'adiciona', 'Coloca um item no fim da lista.'],
           ['Count', 'contagem', 'Quantidade de itens na lista.'],
@@ -88,7 +94,7 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete para criar uma lista de produtos e adicionar um item.',
         codigo: 'List<{{1}}> produtos = new List<Produto>();\nprodutos.{{2}}(new Produto { Nome = "Webcam" });',
-        lacunas: [['produto', 'Produto'], ['add', 'Add']],
+        lacunas: [['Produto'], ['Add']],
         dicas: ['O tipo entre < > é o mesmo da variável declarada.', 'O método de adicionar começa com A maiúsculo.'],
         explicacao: 'A lista precisa saber que tipo guarda: `List<Produto>`. E `Add` insere o item.',
         conceitos: ['csharp.list', 'csharp.generics']
@@ -128,7 +134,7 @@ Plataforma.registrarLicao({
         },
         respostasAceitas: ['List<Produto> produtos = new List<Produto>(); produtos.Add(new Produto { Nome = "Monitor" });'],
         dicas: ['Declare com `List<Produto> produtos = new List<Produto>();`.', 'Adicione com `produtos.Add(...)`.'],
-        explicacao: 'Você acabou de reproduzir o padrão que vai aparecer em services e controllers: preparar uma coleção e inserir itens nela.',
+        explicacao: 'Você acabou de reproduzir o padrão que vai aparecer em outras partes do sistema: preparar uma coleção e inserir itens nela.',
         conceitos: ['csharp.list', 'csharp.generics']
       }
     },
@@ -138,8 +144,8 @@ Plataforma.registrarLicao({
         id: 'cs03-a6',
         tipo: 'scenario',
         dimensao: 'aplicacao',
-        cena: 'A aplicação de produtos precisa devolver o catálogo completo na resposta. O service consulta o banco e recebe vários produtos.',
-        enunciado: 'Qual estrutura o service deve devolver para representar o catálogo?',
+        cena: 'A aplicação de produtos precisa devolver o catálogo completo na resposta. A aplicação consulta o banco e recebe vários produtos.',
+        enunciado: 'Qual estrutura a aplicação deve devolver para representar o catálogo?',
         opcoes: [
           'Uma List<Produto>, porque abriga vários produtos mantendo a ordem',
           'Uma string com todos os nomes separados por vírgula',
