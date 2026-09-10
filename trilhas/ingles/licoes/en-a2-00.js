@@ -3,7 +3,7 @@ Plataforma.registrarLicao({
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Contando o que aconteceu: passado simples',
-  subtitulo: 'English A2 Â· Unidade 1',
+  subtitulo: 'English A2 · Unidade 1',
   duracaoMin: 40,
   xp: 30,
   objetivos: [
@@ -18,14 +18,14 @@ Plataforma.registrarLicao({
       titulo: 'Talking about yesterday',
       introduz: ['en.passado'],
       blocos: [
-        { tipo: 'texto', texto: 'Para contar o que aconteceu, o inglÃªs usa o **passado simples**. Verbos regulares ganham **-ed**; alguns verbos muito comuns sÃ£o irregulares e tÃªm forma prÃ³pria.' },
+        { tipo: 'texto', texto: 'Para contar o que aconteceu, o inglês usa o **passado simples**. Verbos regulares ganham **-ed**; alguns verbos muito comuns são irregulares e têm forma própria.' },
         { tipo: 'vocab', titulo: 'Regulares e irregulares', pares: [
-          ['work â†’ worked', 'trabalhar â†’ trabalhei'],
-          ['study â†’ studied', 'estudar â†’ estudei'],
-          ['go â†’ went', 'ir â†’ fui'],
-          ['have â†’ had', 'ter â†’ tive'],
-          ['buy â†’ bought', 'comprar â†’ comprei'],
-          ['see â†’ saw', 'ver â†’ vi']
+          ['work → worked', 'trabalhar → trabalhei'],
+          ['study → studied', 'estudar → estudei'],
+          ['go → went', 'ir → fui'],
+          ['have → had', 'ter → tive'],
+          ['buy → bought', 'comprar → comprei'],
+          ['see → saw', 'ver → vi']
         ] },
         { tipo: 'lista', itens: [
           '`I was` / `he was` / `she was` / `it was`',
@@ -33,7 +33,7 @@ Plataforma.registrarLicao({
           'Marcadores: `yesterday`, `last week`, `last weekend`, `two days ago`'
         ] },
         { tipo: 'ingles', frase: 'Yesterday I went to the supermarket and bought some fruit.', traducao: 'Ontem eu fui ao supermercado e comprei frutas.' },
-        { tipo: 'nota', tom: 'info', texto: 'NÃ£o misture: `yesterday I go` estÃ¡ errado. Se a frase tem marcador de passado, o verbo tambÃ©m fica no passado.' }
+        { tipo: 'nota', tom: 'info', texto: 'Não misture: `yesterday I go` está errado. Se a frase tem marcador de passado, o verbo também fica no passado.' }
       ]
     },
     {
@@ -43,15 +43,15 @@ Plataforma.registrarLicao({
         tipo: 'listening',
         habilidade: 'listening',
         dimensao: 'reconhecimento',
-        enunciado: 'OuÃ§a o relato e escolha o que aconteceu.',
+        enunciado: 'Ouça o relato e escolha o que aconteceu.',
         audio: 'Yesterday I went to the supermarket and bought some fruit.',
         opcoes: [
           'Ontem fui ao supermercado e comprei frutas.',
           'Hoje vou ao supermercado comprar frutas.',
-          'Ontem fui Ã  farmÃ¡cia e comprei remÃ©dio.'
+          'Ontem fui à farmácia e comprei remédio.'
         ],
         correta: 0,
-        dicas: ['Went Ã© o passado de go.', 'Bought Ã© o passado de buy.'],
+        dicas: ['Went é o passado de go.', 'Bought é o passado de buy.'],
         explicacao: 'went + bought. Dois verbos irregulares em uma frase de passado.',
         conceitos: ['en.passado']
       }
@@ -70,8 +70,8 @@ Plataforma.registrarLicao({
           ['buy', 'bought'],
           ['see', 'saw']
         ],
-        dicas: ['Went Ã© o passado mais famoso do inglÃªs.', 'Bought nÃ£o segue a regra -ed.'],
-        explicacao: 'Esses quatro irregulares aparecem em quase toda histÃ³ria do dia a dia.',
+        dicas: ['Went é o passado mais famoso do inglês.', 'Bought não segue a regra -ed.'],
+        explicacao: 'Esses quatro irregulares aparecem em quase toda história do dia a dia.',
         conceitos: ['en.passado']
       }
     },
@@ -85,7 +85,7 @@ Plataforma.registrarLicao({
         enunciado: 'Complete o relato no passado.',
         codigo: 'Last weekend I {{1}} to the beach. (go)\nI {{2}} a lot of photos. (take)',
         lacunas: [['went'], ['took']],
-        dicas: ['Go Ã© irregular: went.', 'Take Ã© irregular: took.'],
+        dicas: ['Go é irregular: went.', 'Take é irregular: took.'],
         explicacao: 'went + took. O marcador "last weekend" pede o passado em toda a frase.',
         conceitos: ['en.passado']
       }
@@ -100,16 +100,16 @@ Plataforma.registrarLicao({
         titulo: 'Weekend message',
         enunciado: 'Leia a mensagem e responda.',
         texto: 'Hi! Last weekend I was at my parents\' house. On Saturday we had lunch together and watched a movie. On Sunday it rained, so we stayed home.',
-        pergunta: 'O que eles fizeram no sÃ¡bado?',
+        pergunta: 'O que eles fizeram no sábado?',
         opcoes: [
-          'AlmoÃ§aram juntos e assistiram a um filme',
+          'Almoçaram juntos e assistiram a um filme',
           'Ficaram em casa por causa da chuva',
-          'Foram Ã  praia',
+          'Foram à praia',
           'Trabalharam o fim de semana inteiro'
         ],
         correta: 0,
         dicas: ['Procure "On Saturday".', 'Had lunch e watched a movie.'],
-        explicacao: 'had + watched: passado regular e irregular no mesmo relato. A chuva foi no domingo, nÃ£o no sÃ¡bado.',
+        explicacao: 'had + watched: passado regular e irregular no mesmo relato. A chuva foi no domingo, não no sábado.',
         conceitos: ['en.passado'],
         desafio: true
       }
@@ -121,7 +121,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         habilidade: 'writing',
         dimensao: 'construcao',
-        enunciado: 'Escreva duas frases sobre o que vocÃª fez ontem.',
+        enunciado: 'Escreva duas frases sobre o que você fez ontem.',
         esqueleto: 'Yesterday I ... . Then I ... .',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
@@ -129,7 +129,7 @@ Plataforma.registrarLicao({
         },
         respostasAceitas: ['Yesterday I worked. Then I went home.'],
         dicas: ['Use o marcador yesterday.', 'Use verbos no passado (worked, went, had...).'],
-        explicacao: 'Yesterday I worked. Then I went home. â€” contar o prÃ³prio dia Ã© a prÃ¡tica mais natural do passado simples.',
+        explicacao: 'Yesterday I worked. Then I went home. — contar o próprio dia é a prática mais natural do passado simples.',
         conceitos: ['en.passado']
       }
     }

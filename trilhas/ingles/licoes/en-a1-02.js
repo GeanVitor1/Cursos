@@ -2,14 +2,14 @@ Plataforma.registrarLicao({
   id: 'en-a1-02',
   trilha: 'ingles',
   tipo: 'licao',
-  titulo: 'FamÃ­lia e pessoas',
-  subtitulo: 'English A1 Â· Unidade 3',
+  titulo: 'Família e pessoas',
+  subtitulo: 'English A1 · Unidade 3',
   duracaoMin: 30,
   xp: 30,
   objetivos: [
-    'Nomear membros da famÃ­lia',
+    'Nomear membros da família',
     'Usar my, your, his e her',
-    'Apresentar pessoas prÃ³ximas'
+    'Apresentar pessoas próximas'
   ],
   conceitos: ['en.familia'],
   etapas: [
@@ -18,15 +18,15 @@ Plataforma.registrarLicao({
       titulo: 'My family',
       introduz: ['en.familia'],
       blocos: [
-        { tipo: 'vocab', titulo: 'FamÃ­lia', pares: [
-          ['mother / mom', 'mÃ£e'],
+        { tipo: 'vocab', titulo: 'Família', pares: [
+          ['mother / mom', 'mãe'],
           ['father / dad', 'pai'],
-          ['sister', 'irmÃ£'],
-          ['brother', 'irmÃ£o'],
+          ['sister', 'irmã'],
+          ['brother', 'irmão'],
           ['son / daughter', 'filho / filha']
         ] },
-        { tipo: 'ingles', frase: 'This is my sister. Her name is Lia.', traducao: 'Esta Ã© a minha irmÃ£. O nome dela Ã© Lia.' },
-        { tipo: 'nota', tom: 'info', texto: '`my` = meu/minha Â· `your` = seu/sua Â· `his` = dele Â· `her` = dela. Use `her` para falar de uma mulher e `his` para um homem.' }
+        { tipo: 'ingles', frase: 'This is my sister. Her name is Lia.', traducao: 'Esta é a minha irmã. O nome dela é Lia.' },
+        { tipo: 'nota', tom: 'info', texto: '`my` = meu/minha · `your` = seu/sua · `his` = dele · `her` = dela. Use `her` para falar de uma mulher e `his` para um homem.' }
       ]
     },
     {
@@ -36,17 +36,17 @@ Plataforma.registrarLicao({
         tipo: 'choose-image',
         habilidade: 'vocabulario',
         dimensao: 'reconhecimento',
-        enunciado: 'Quem Ã© a **mother**? Toque na imagem correta.',
+        enunciado: 'Quem é a **mother**? Toque na imagem correta.',
         audio: 'mother',
         opcoes: [
-          { emoji: 'ðŸ‘©', texto: 'mother' },
-          { emoji: 'ðŸ‘¨', texto: 'father' },
-          { emoji: 'ðŸ‘§', texto: 'sister' },
-          { emoji: 'ðŸ‘¦', texto: 'brother' }
+          { emoji: '👩', texto: 'mother' },
+          { emoji: '👨', texto: 'father' },
+          { emoji: '👧', texto: 'sister' },
+          { emoji: '👦', texto: 'brother' }
         ],
         correta: 0,
-        dicas: ['Mother Ã© a figura materna.', 'Toque na palavra para confirmar.'],
-        explicacao: 'mother = mÃ£e. Comparando: father (pai), sister (irmÃ£), brother (irmÃ£o).',
+        dicas: ['Mother é a figura materna.', 'Toque na palavra para confirmar.'],
+        explicacao: 'mother = mãe. Comparando: father (pai), sister (irmã), brother (irmão).',
         conceitos: ['en.familia']
       }
     },
@@ -57,7 +57,7 @@ Plataforma.registrarLicao({
         tipo: 'listening',
         habilidade: 'listening',
         dimensao: 'reconhecimento',
-        enunciado: 'OuÃ§a e escolha a frase correta.',
+        enunciado: 'Ouça e escolha a frase correta.',
         audio: 'This is my brother, Tom.',
         opcoes: [
           'This is my brother, Tom.',
@@ -65,8 +65,8 @@ Plataforma.registrarLicao({
           'This is my father, Tom.'
         ],
         correta: 0,
-        dicas: ['A palavra dita foi brother.', 'Tom Ã© o nome da pessoa apresentada.'],
-        explicacao: 'This is my brother, Tom. = Este Ã© meu irmÃ£o, Tom.',
+        dicas: ['A palavra dita foi brother.', 'Tom é o nome da pessoa apresentada.'],
+        explicacao: 'This is my brother, Tom. = Este é meu irmão, Tom.',
         conceitos: ['en.familia']
       }
     },
@@ -80,8 +80,8 @@ Plataforma.registrarLicao({
         enunciado: 'Complete com o possessivo correto (my, his ou her).',
         codigo: 'This is Ana. {{1}} name is Ana. This is Paulo. {{2}} name is Paulo.',
         lacunas: [['her'], ['his']],
-        dicas: ['Ana Ã© mulher: use o possessivo dela.', 'Paulo Ã© homem: use o possessivo dele.'],
-        explicacao: 'her = dela; his = dele. O possessivo acompanha **quem possui**, nÃ£o o que Ã© possuÃ­do.',
+        dicas: ['Ana é mulher: use o possessivo dela.', 'Paulo é homem: use o possessivo dele.'],
+        explicacao: 'her = dela; his = dele. O possessivo acompanha **quem possui**, não o que é possuído.',
         conceitos: ['en.familia']
       }
     },
@@ -92,7 +92,7 @@ Plataforma.registrarLicao({
         tipo: 'dialogue',
         habilidade: 'compreensao',
         dimensao: 'aplicacao',
-        enunciado: 'Converse sobre a famÃ­lia.',
+        enunciado: 'Converse sobre a família.',
         cena: 'Um colega mostra uma foto no celular.',
         interlocutor: 'Sara',
         turnos: [
@@ -101,7 +101,7 @@ Plataforma.registrarLicao({
           { fala: 'She is cute! Is she your only sister?', opcoes: ['No, I have two brothers too.', 'Yes, she is my mother.', 'It costs ten dollars.'], correta: 0 }
         ],
         dicas: ['Who is this? pede uma pessoa.', 'How old is she? pede idade.'],
-        explicacao: 'VocÃª praticou perguntas sobre pessoas (Who is this?), idade (How old) e respostas com possessivos.',
+        explicacao: 'Você praticou perguntas sobre pessoas (Who is this?), idade (How old) e respostas com possessivos.',
         conceitos: ['en.familia'],
         desafio: true
       }
@@ -113,7 +113,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         habilidade: 'writing',
         dimensao: 'construcao',
-        enunciado: 'Apresente uma pessoa da sua famÃ­lia: use This is my... e the name.',
+        enunciado: 'Apresente uma pessoa da sua família: use This is my... e the name.',
         esqueleto: 'This is my ... . Her/His name is ...',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
@@ -121,7 +121,7 @@ Plataforma.registrarLicao({
         },
         respostasAceitas: ['This is my sister. Her name is Lia.'],
         dicas: ['Escolha sister ou brother.', 'Use Her name is para mulher e His name is para homem.'],
-        explicacao: 'This is my sister. Her name is Lia. â€” apresentaÃ§Ã£o completa e natural de uma pessoa.',
+        explicacao: 'This is my sister. Her name is Lia. — apresentação completa e natural de uma pessoa.',
         conceitos: ['en.familia']
       }
     }
