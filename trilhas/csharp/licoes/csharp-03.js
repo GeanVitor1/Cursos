@@ -163,7 +163,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         dimensao: 'construcao',
         enunciado: 'Escreva uma lista chamada `produtos` do tipo `List<Produto>` e adicione um produto com Nome "Monitor".',
-        esqueleto: '// seu código aqui',
+        esqueleto: 'List<Produto> produtos = new List<Produto>();\n\n// adicione o produto "Monitor" aqui',
         validar: function (valor) {
           const t = P.dom.normalizarCodigo(valor);
           return t.indexOf('list<produto>produtos=newlist<produto>()') !== -1 &&
