@@ -15,28 +15,174 @@ Plataforma.registrarLicao({
   etapas: [
     {
       tipo: 'conteudo',
-      titulo: 'Where is the station?',
+      titulo: 'Lugares da cidade (1)',
       introduz: ['en.lugares'],
       blocos: [
-        { tipo: 'vocab', titulo: 'Lugares', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
           ['bank / supermarket', 'banco / supermercado'],
-          ['hospital / pharmacy', 'hospital / farmácia'],
+          ['hospital / pharmacy', 'hospital / farmácia']
+        ] },
+        { tipo: 'ingles', frase: 'This is the bank.', traducao: 'Este é o banco.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-07-p1',
+        tipo: 'match-pairs',
+        habilidade: 'vocabulario',
+        dimensao: 'associacao',
+        enunciado: 'Conecte cada lugar ao significado.',
+        pares: [
+          ['bank', 'banco'],
+          ['supermarket', 'supermercado'],
+          ['pharmacy', 'farmácia']
+        ],
+        dicas: ['Pharmacy lembra "farmácia".', 'Bank é onde se guarda dinheiro.'],
+        explicacao: 'bank, supermarket e pharmacy: lugares que aparecem em qualquer caminho pela cidade.',
+        conceitos: ['en.lugares']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Lugares da cidade (2)',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
           ['station / airport', 'estação / aeroporto'],
           ['hotel / restaurant', 'hotel / restaurante']
         ] },
-        { tipo: 'vocab', titulo: 'Direções e transporte', pares: [
+        { tipo: 'ingles', frase: 'This is the station.', traducao: 'Esta é a estação.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-07-p2',
+        tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
+        dimensao: 'reconhecimento',
+        enunciado: 'O que significa **airport**?',
+        opcoes: ['Aeroporto', 'Estação', 'Hotel', 'Restaurante'],
+        correta: 0,
+        feedbackErro: {
+          1: 'Estação é **station**.',
+          2: 'Hotel é **hotel**.',
+          3: 'Restaurante é **restaurant**.'
+        },
+        dicas: ['Air vem de avião.', 'É onde os voos chegam e partem.'],
+        explicacao: 'airport = aeroporto; station = estação. Lugares de viagem que você vai usar muito.',
+        conceitos: ['en.lugares']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Onde fica?',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
           ['Where is...?', 'Onde fica...?'],
-          ['go straight', 'siga em frente'],
-          ['turn left / turn right', 'vire à esquerda / à direita'],
-          ['on foot / by bus / by train', 'a pé / de ônibus / de trem'],
-          ['next to / near', 'ao lado de / perto de'],
           ['Is it far?', 'É longe?'],
-          ['minute / walk', 'minuto / caminhada'],
+          ['minute / walk', 'minuto / caminhada']
+        ] },
+        { tipo: 'ingles', frase: 'Where is the hotel?', traducao: 'Onde fica o hotel?' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-07-p3',
+        tipo: 'order-blocks',
+        habilidade: 'gramatica',
+        dimensao: 'ordenacao',
+        enunciado: 'Ordene para perguntar onde fica o hotel.',
+        blocos: ['Where', 'is', 'the', 'hotel?'],
+        dicas: ['Comece com Where.', 'O verbo is vem antes do lugar.'],
+        explicacao: 'Where is the hotel? — a pergunta-chave para se localizar em qualquer cidade.',
+        conceitos: ['en.lugares']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Direções',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+          ['go straight', 'siga em frente'],
+          ['turn left / turn right', 'vire à esquerda / à direita']
+        ] },
+        { tipo: 'ingles', frase: 'Go straight and turn left.', traducao: 'Siga em frente e vire à esquerda.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-07-p4',
+        tipo: 'order-blocks',
+        habilidade: 'gramatica',
+        dimensao: 'ordenacao',
+        enunciado: 'Ordene a direção.',
+        blocos: ['Go', 'straight', 'and', 'turn', 'left.'],
+        dicas: ['Comece com o verbo Go.', 'Straight vem logo depois.'],
+        explicacao: 'Go straight and turn left. — a direção completa em uma frase.',
+        conceitos: ['en.lugares']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Ao lado de, perto de',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+          ['next to / near', 'ao lado de / perto de'],
           ['It costs...', 'Custa...']
         ] },
-        { tipo: 'ingles', frase: 'Go straight and turn left. The bank is next to the supermarket.', traducao: 'Siga em frente e vire à esquerda. O banco fica ao lado do supermercado.' },
-        { tipo: 'nota', tom: 'info', texto: '`Where is...?` (Onde fica...?) é a pergunta-chave. Responda com `go straight`, `turn left` ou `turn right` e diga o ponto de referência.' }
+        { tipo: 'ingles', frase: 'The bank is next to the supermarket.', traducao: 'O banco fica ao lado do supermercado.' }
       ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-07-p5',
+        tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
+        dimensao: 'reconhecimento',
+        enunciado: 'O que significa **next to**?',
+        opcoes: ['Ao lado de', 'Em frente de', 'Longe de', 'Dentro de'],
+        correta: 0,
+        feedbackErro: {
+          1: 'Em frente de é outra posição, que você verá depois.',
+          2: 'Longe de é o contrário de perto.',
+          3: 'Dentro de é outra posição.'
+        },
+        dicas: ['Next to indica vizinhança.', 'É uma das respostas mais comuns ao dar direções.'],
+        explicacao: 'next to = ao lado de; near = perto de. Use para dar o ponto de referência.',
+        conceitos: ['en.lugares']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Transporte',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+          ['on foot / by bus / by train', 'a pé / de ônibus / de trem']
+        ] },
+        { tipo: 'ingles', frase: 'I go to work on foot.', traducao: 'Eu vou ao trabalho a pé.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-07-p6',
+        tipo: 'match-pairs',
+        habilidade: 'vocabulario',
+        dimensao: 'associacao',
+        enunciado: 'Conecte cada transporte ao significado.',
+        pares: [
+          ['on foot', 'a pé'],
+          ['by bus', 'de ônibus'],
+          ['by train', 'de trem']
+        ],
+        dicas: ['Foot é o pé.', 'Bus é ônibus; train é trem.'],
+        explicacao: 'on foot, by bus e by train: como você se locomove pela cidade.',
+        conceitos: ['en.lugares']
+      }
     },
     {
       tipo: 'atividade',

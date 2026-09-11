@@ -158,7 +158,11 @@ Plataforma.registrarLicao({
           'Citar que mudanças futuras ficam mais seguras',
           'Citar legibilidade ou reaproveitamento'
         ],
-        palavrasChave: ['um lugar', 'unico', 'mud', 'alter', 'reutiliz', 'reaproveit', 'legiv', 'repet', 'duplic'],
+        palavrasChave: [
+          ['um lugar', 'unico lugar', 'um unico lugar', 'unico', 'lugar', 'centraliz'],
+          ['mud', 'alter', 'futur', 'segur'],
+          ['legi', 'legiv', 'reutiliz', 'reaproveit', 'aproveit', 'repet', 'duplic']
+        ],
         exemplo: 'Porque a regra fica em um único lugar: se ela mudar, altero o método e todos os usos passam a ter o comportamento correto. Isso evita repetir e duplicar a regra, deixa o código mais legível e permite reaproveitar a lógica.',
         dicas: ['Pense no dia em que a regra mudar.', 'Pense em quem vai ler o código depois.'],
         explicacao: 'Centralizar a regra em um lugar é uma das primeiras boas práticas que você vai usar no trabalho: elimina duplicação e reduz o risco de bugs.',

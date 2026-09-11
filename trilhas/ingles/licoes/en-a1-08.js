@@ -15,29 +15,178 @@ Plataforma.registrarLicao({
   etapas: [
     {
       tipo: 'conteudo',
-      titulo: 'Everyday questions',
+      titulo: 'Palavras de pergunta (1)',
       introduz: ['en.perguntas'],
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras de pergunta', pares: [
+        { tipo: 'texto', texto: 'Estas são as palavras que abrem quase toda pergunta em inglês. Vamos em grupos pequenos.' },
+        { tipo: 'vocab', titulo: 'Perguntas novas (1)', pares: [
           ['What...?', 'O que...?'],
           ['Where...?', 'Onde...?'],
-          ['When...?', 'Quando...?'],
+          ['When...?', 'Quando...?']
+        ] },
+        { tipo: 'ingles', frase: 'What? Where? When?', traducao: 'O que? Onde? Quando?' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-08-p1',
+        tipo: 'match-pairs',
+        habilidade: 'vocabulario',
+        dimensao: 'associacao',
+        enunciado: 'Conecte a palavra de pergunta ao significado.',
+        pares: [
+          ['What', 'O que'],
+          ['Where', 'Onde'],
+          ['When', 'Quando']
+        ],
+        dicas: ['Where começa a pergunta de lugar.', 'When lembra tempo.'],
+        explicacao: 'What, Where e When: as três palavras de pergunta mais usadas.',
+        conceitos: ['en.perguntas']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Palavras de pergunta (2)',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Perguntas novas (1)', pares: [
           ['Who...?', 'Quem...?'],
           ['Why...? / How...?', 'Por que...? / Como...?']
         ] },
-        { tipo: 'vocab', titulo: 'Perguntas de conversa', pares: [
+        { tipo: 'ingles', frase: 'Who? Why?', traducao: 'Quem? Por que?' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-08-p2',
+        tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
+        dimensao: 'reconhecimento',
+        enunciado: 'O que significa **why**?',
+        opcoes: ['Por que', 'Quem', 'Quando', 'Onde'],
+        correta: 0,
+        feedbackErro: {
+          1: 'Quem é **who**.',
+          2: 'Quando é **when**.',
+          3: 'Onde é **where**.'
+        },
+        dicas: ['Why pergunta a razão.', 'How pergunta o modo.'],
+        explicacao: 'why = por que; how = como. Com who, when e where, você cobre as perguntas essenciais.',
+        conceitos: ['en.perguntas']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'De onde você é?',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (1)', pares: [
           ['Where are you from?', 'De onde você é?'],
+          ['I am from Brazil.', 'Eu sou do Brasil.']
+        ] },
+        { tipo: 'ingles', frase: 'Where are you from?', traducao: 'De onde você é?' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-08-p3',
+        tipo: 'order-blocks',
+        habilidade: 'gramatica',
+        dimensao: 'ordenacao',
+        enunciado: 'Ordene a pergunta: "De onde você é?"',
+        blocos: ['Where', 'are', 'you', 'from?'],
+        dicas: ['Comece com a palavra de pergunta.', 'O verbo are vem antes de you.'],
+        explicacao: 'Where are you from? — pergunta em que o verbo vem antes do sujeito.',
+        conceitos: ['en.perguntas']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'O que você faz?',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
           ['What do you do?', 'O que você faz (trabalho)?'],
+          ['I am a developer.', 'Eu sou desenvolvedor(a).']
+        ] },
+        { tipo: 'ingles', frase: 'What do you do? I am a developer.', traducao: 'O que você faz? Eu sou desenvolvedor.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-08-p4',
+        tipo: 'fill-code',
+        habilidade: 'gramatica',
+        dimensao: 'preenchimento',
+        enunciado: 'Complete a pergunta sobre profissão.',
+        codigo: 'What {{1}} you do?',
+        lacunas: [['do']],
+        dicas: ['O auxiliar aparece antes de you.', 'A pergunta é What do you do?'],
+        explicacao: 'What do you do? = O que você faz? A resposta usa I am a... + profissão.',
+        conceitos: ['en.perguntas']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Tempo e conversa',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
           ['How is the weather?', 'Como está o tempo?'],
           ['What about you?', 'E você?'],
-          ['I am a developer.', 'Eu sou desenvolvedor(a).'],
-          ['here', 'aqui'],
+          ['here', 'aqui']
+        ] },
+        { tipo: 'ingles', frase: 'How is the weather?', traducao: 'Como está o tempo?' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-08-p5',
+        tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
+        dimensao: 'reconhecimento',
+        enunciado: 'O que significa **weather**?',
+        opcoes: ['Tempo (clima)', 'Semana', 'Trabalho', 'Aqui'],
+        correta: 0,
+        feedbackErro: {
+          1: 'Semana é **week**, que você verá a seguir.',
+          2: 'Trabalho é **work**.',
+          3: 'Aqui é **here**.'
+        },
+        dicas: ['Weather é sobre sol, chuva e frio.', 'Use em conversa informal.'],
+        explicacao: 'weather = tempo (clima). Não confunda com time, que é hora.',
+        conceitos: ['en.perguntas']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Semana, mês e agora',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
           ['week / month', 'semana / mês'],
           ['now', 'agora']
         ] },
-        { tipo: 'ingles', frase: "Where are you from? — I'm from Brazil. What about you?", traducao: 'De onde você é? — Sou do Brasil. E você?' },
-        { tipo: 'nota', tom: 'info', texto: '`What do you do?` pergunta a profissão. A resposta é `I am a...` — por exemplo, `I am a developer.`' }
+        { tipo: 'ingles', frase: 'I study English every week.', traducao: 'Eu estudo inglês toda semana.' }
       ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-08-p6',
+        tipo: 'match-pairs',
+        habilidade: 'vocabulario',
+        dimensao: 'associacao',
+        enunciado: 'Conecte cada palavra ao significado.',
+        pares: [
+          ['week', 'semana'],
+          ['month', 'mês'],
+          ['now', 'agora']
+        ],
+        dicas: ['Week tem 7 dias.', 'Month é o mês do calendário.'],
+        explicacao: 'week, month e now: palavras de tempo que aparecem em qualquer conversa.',
+        conceitos: ['en.perguntas']
+      }
     },
     {
       tipo: 'atividade',

@@ -210,8 +210,7 @@ window.Plataforma = window.Plataforma || {};
         if (!chaves.length) return null;
         const normalizado = P.dom.normalizar(texto.value);
         const palavras = normalizado.split(/[^a-z0-9#+]+/).filter(function (p) { return p.length >= 3; });
-        const encontradas = chaves.filter(function (chave) {
-          const alvo = P.dom.normalizar(chave);
+        function casa(alvo) {
           if (!alvo) return false;
           if (normalizado.indexOf(alvo) !== -1) return true;
           return palavras.some(function (p) {
@@ -219,8 +218,13 @@ window.Plataforma = window.Plataforma || {};
             if (tam < 4) return false;
             return p.indexOf(alvo.slice(0, tam)) === 0 || alvo.indexOf(p.slice(0, tam)) === 0;
           });
+        }
+        return chaves.filter(function (chave) {
+          const alternativas = Array.isArray(chave) ? chave : [chave];
+          return alternativas.some(function (alternativa) {
+            return casa(P.dom.normalizar(alternativa));
+          });
         });
-        return encontradas;
       }
 
       function limpar() {
@@ -231,9 +235,10 @@ window.Plataforma = window.Plataforma || {};
         verificar: function () {
           const chaves = palavrasPresentes();
           if (chaves === null) return { correto: true, selecionada: null };
-          const minimo = atv.minimoChaves || Math.ceil((atv.palavrasChave || []).length * 0.6);
-          const faltando = (atv.palavrasChave || []).filter(function (chave) {
-            return chaves.indexOf(chave) === -1;
+          const grupos = atv.palavrasChave || [];
+          const minimo = atv.minimoChaves || Math.ceil(grupos.length * 0.6);
+          const faltando = grupos.filter(function (grupo) {
+            return chaves.indexOf(grupo) === -1;
           });
           if (chaves.length >= minimo) {
             texto.classList.add('correta');
@@ -242,7 +247,9 @@ window.Plataforma = window.Plataforma || {};
           texto.classList.add('errada');
           const detalhes = [];
           if (faltando.length) {
-            detalhes.push('A resposta ainda não tocou nos pontos: ' + faltando.slice(0, 4).map(function (c) { return '**' + c + '**'; }).join(', ') + '.');
+            detalhes.push('A resposta ainda não tocou nos pontos: ' + faltando.slice(0, 4).map(function (c) {
+              return '**' + (Array.isArray(c) ? c[0] : c) + '**';
+            }).join(', ') + '.');
           }
           return { correto: false, selecionada: null, detalhes: detalhes };
         },

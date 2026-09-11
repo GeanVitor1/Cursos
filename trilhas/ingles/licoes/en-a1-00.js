@@ -15,33 +15,189 @@ Plataforma.registrarLicao({
   etapas: [
     {
       tipo: 'conteudo',
-      titulo: 'Hello! Vamos nos apresentar',
+      titulo: 'Primeiros cumprimentos',
       introduz: ['en.saudacoes'],
       blocos: [
-        { tipo: 'texto', texto: 'Imagine que você entrou em uma turma nova ou em uma reunião de trabalho com pessoas de outros países. A primeira coisa é **cumprimentar e dizer seu nome**.' },
-        { tipo: 'vocab', titulo: 'Saudações por horário', pares: [
-          ['Good morning', 'Bom dia (até 12h)'],
-          ['Good afternoon', 'Boa tarde'],
-          ['Good evening', 'Boa noite (ao chegar)'],
-          ['Hello / Hi', 'Olá / Oi']
+        { tipo: 'texto', texto: 'Imagine que você entrou em uma turma nova ou em uma reunião de trabalho com pessoas de outros países. A primeira coisa é **cumprimentar**. Vamos começar com três cumprimentos curtos.' },
+        { tipo: 'vocab', titulo: 'Cumprimentos básicos (3)', pares: [
+          ['Hello', 'Olá'],
+          ['Hi', 'Oi'],
+          ['Good morning', 'Bom dia (até 12h)']
         ] },
-        { tipo: 'vocab', titulo: 'Apresentando-se', pares: [
+        { tipo: 'ingles', frase: 'Hello! Good morning!', traducao: 'Olá! Bom dia!' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-00-p1',
+        tipo: 'match-pairs',
+        habilidade: 'vocabulario',
+        dimensao: 'associacao',
+        enunciado: 'Conecte cada cumprimento ao significado.',
+        pares: [
+          ['Hello', 'Olá'],
+          ['Hi', 'Oi'],
+          ['Good morning', 'Bom dia']
+        ],
+        dicas: ['Hello e Hi são os cumprimentos mais gerais.', 'Morning é a parte da manhã.'],
+        explicacao: 'Hello, Hi e Good morning resolvem a abertura de qualquer conversa pela manhã.',
+        conceitos: ['en.saudacoes']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Boa tarde e boa noite',
+      blocos: [
+        { tipo: 'texto', texto: 'Depois do meio-dia, o cumprimento muda. E ao chegar à noite, também. Veja as duas formas que faltam.' },
+        { tipo: 'vocab', titulo: 'Outros horários (2)', pares: [
+          ['Good afternoon', 'Boa tarde'],
+          ['Good evening', 'Boa noite (ao chegar)']
+        ] },
+        { tipo: 'ingles', frase: 'Good afternoon! Good evening!', traducao: 'Boa tarde! Boa noite!' },
+        { tipo: 'nota', tom: 'info', texto: '`Good evening` é usado **ao chegar**. Para se despedir à noite, o inglês usa outra expressão, que você verá mais adiante.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-00-p2',
+        tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
+        dimensao: 'reconhecimento',
+        enunciado: 'O que significa **Good evening**?',
+        opcoes: [
+          'Boa noite (ao chegar)',
+          'Bom dia',
+          'Boa tarde',
+          'Olá'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: 'Bom dia é **Good morning**.',
+          2: 'Boa tarde é **Good afternoon**.',
+          3: 'Olá é **Hello**.'
+        },
+        dicas: ['Evening é o período da noite.', 'É o cumprimento usado quando você chega à noite.'],
+        explicacao: 'Good evening = boa noite (ao chegar). Good afternoon = boa tarde.',
+        conceitos: ['en.saudacoes']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Dizendo seu nome',
+      blocos: [
+        { tipo: 'texto', texto: 'Agora que você já cumprimentou, o próximo passo é dizer quem você é. Há duas formas muito comuns.' },
+        { tipo: 'vocab', titulo: 'Seu nome (2)', pares: [
           ['My name is Ana.', 'Meu nome é Ana.'],
-          ['I am Ana.', 'Eu sou a Ana.'],
-          ['Nice to meet you.', 'Prazer em conhecer você.'],
-          ['Nice to meet you too.', 'Prazer em conhecer você também.'],
+          ['I am Ana.', 'Eu sou a Ana.']
+        ] },
+        { tipo: 'ingles', frase: 'Hi! My name is Ana.', traducao: 'Oi! Meu nome é Ana.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-00-p3',
+        tipo: 'order-blocks',
+        habilidade: 'gramatica',
+        dimensao: 'ordenacao',
+        enunciado: 'Ordene as palavras para dizer: "Meu nome é Ana."',
+        blocos: ['My', 'name', 'is', 'Ana.'],
+        dicas: ['Comece pelo possessivo My.', 'O verbo is vem depois de name.'],
+        explicacao: 'My name is Ana. — a estrutura mais comum para dizer o próprio nome.',
+        conceitos: ['en.saudacoes']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Perguntando o nome',
+      blocos: [
+        { tipo: 'vocab', titulo: 'A pergunta (1)', pares: [
           ['What is your name?', 'Qual é o seu nome?']
         ] },
-        { tipo: 'vocab', titulo: 'Perguntando como a pessoa está', pares: [
+        { tipo: 'nota', tom: 'info', texto: '`my` = meu/minha; `your` = seu/sua. Repare que o inglês não muda a palavra conforme o gênero.' },
+        { tipo: 'ingles', frase: 'What is your name?', traducao: 'Qual é o seu nome?' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-00-p4',
+        tipo: 'fill-code',
+        habilidade: 'gramatica',
+        dimensao: 'preenchimento',
+        enunciado: 'Complete a pergunta com o possessivo correto.',
+        codigo: 'What is {{1}} name?',
+        lacunas: [['your']],
+        dicas: ['A pergunta é para a outra pessoa.', 'O possessivo de "você" é your.'],
+        explicacao: '`My name is...` (eu) e `What is your name?` (você). my ↔ your é um par que você vai usar sempre.',
+        conceitos: ['en.saudacoes']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Prazer em conhecer',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Conhecendo alguém (2)', pares: [
+          ['Nice to meet you.', 'Prazer em conhecer você.'],
+          ['Nice to meet you too.', 'Prazer em conhecer você também.']
+        ] },
+        { tipo: 'nota', tom: 'info', texto: 'A segunda frase devolve o cumprimento: use **too** (também) quando a outra pessoa fala primeiro.' },
+        { tipo: 'ingles', frase: 'Nice to meet you!', traducao: 'Prazer em conhecer você!' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-00-p5',
+        tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
+        dimensao: 'reconhecimento',
+        enunciado: 'O que significa **Nice to meet you**?',
+        opcoes: [
+          'Prazer em conhecer você',
+          'Boa noite',
+          'Qual é o seu nome?',
+          'Eu sou a Ana'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: 'Boa noite é **Good evening**.',
+          2: 'A pergunta do nome é **What is your name?**.',
+          3: 'Eu sou a Ana é **I am Ana**.'
+        },
+        dicas: ['Meet é conhecer/encontrar.', 'É a frase usada logo depois da apresentação.'],
+        explicacao: 'Nice to meet you = prazer em conhecer você. Com too, você devolve o cumprimento.',
+        conceitos: ['en.saudacoes']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Como você está?',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Conversa rápida (3)', pares: [
           ['How are you?', 'Como você está?'],
           ["I'm fine, thanks.", 'Estou bem, obrigado(a).'],
-          ['And you?', 'E você?'],
-          ["I'm fine too.", 'Eu também estou bem.']
+          ['And you?', 'E você?']
         ] },
-        { tipo: 'ingles', frase: 'Hello! My name is Ana. Nice to meet you.', traducao: 'Olá! Meu nome é Ana. Prazer em conhecer você.' },
-        { tipo: 'ingles', frase: "Ana: Hi! How are you? — Bruno: I'm fine, thanks. And you?", traducao: 'Ana: Oi! Como você está? — Bruno: Estou bem, obrigado. E você?' },
-        { tipo: 'nota', tom: 'info', texto: '`my` = meu/minha; `your` = seu/sua. `I\'m` é a contração de `I am`. Repare que o inglês não muda a palavra conforme o gênero.' }
+        { tipo: 'ingles', frase: "How are you? I'm fine, thanks. And you?", traducao: 'Como você está? Estou bem, obrigado. E você?' }
       ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-00-p6',
+        tipo: 'fill-code',
+        habilidade: 'gramatica',
+        dimensao: 'preenchimento',
+        enunciado: 'Complete a resposta.',
+        codigo: "I'm {{1}}, thanks. And {{2}}?",
+        lacunas: [['fine'], ['you']],
+        dicas: ['Estou bem = I am ___.', 'A pergunta de volta é And ___?'],
+        explicacao: "I'm fine, thanks. And you? — o par pergunta/resposta mais comum em inglês.",
+        conceitos: ['en.saudacoes']
+      }
     },
     {
       tipo: 'atividade',

@@ -185,6 +185,8 @@ Nomes de conceitos usam o formato `trilha.conceito` (ex.: `sql.where`).
 ## Boas práticas de didática adotadas
 
 - **Um conceito principal por lição** (no máximo dois fortemente ligados).
+- **Vocabulário em microetapas**: cada bloco de `vocab`/`glossario` ensina poucos termos e é
+  seguido de prática antes de avançar (regra verificada pelo linter de inglês).
 - Camadas: intuição → analogia curta → visualização → exemplo mínimo → interação → aplicação.
 - Toda lição tem `objetivos`, `trabalho` ("💼 no trabalho") em algum ponto e atividades de
   dimensões diferentes.
@@ -237,6 +239,13 @@ pode usar palavras já explicadas antes — fora as palavras de ligação básic
 seguinte, e `order`, `where` e `between` só aparecem quando o conteúdo da trilha realmente precisa
 deles. O relatório lista as introduções por etapa em `introducoesDeVocabulario`.
 
+Na **própria trilha de inglês**, a progressão é a mesma: cada etapa de conteúdo ensina no máximo
+**3 termos novos** e **6 palavras novas** (contando o glossário), e as frases de exemplo
+(`bloco ingles`) só podem usar palavras já explicadas. Cada bloco pequeno de vocabulário é
+seguido de prática imediata (reconhecer, ouvir, completar, ordenar), em vez de uma tela com
+dezenas de termos. Um número, um membro da família ou um verbo novo entra quando os anteriores
+já foram praticados.
+
 O **linter de símbolos** usa `data/simbolos-codigo.js` (105 símbolos, palavras-chave e APIs com
 a lição em que são explicados) e garante que `foreach`, `=>`, `await`, `Where`, `SaveChanges`,
 `Results.Ok`, `TOP` etc. não apareçam em blocos de código antes da explicação.
@@ -253,6 +262,8 @@ Regras aplicadas pelos linters:
 - `retoma` apontando para conceito ainda não ensinado → **erro**;
 - palavra de inglês usada antes de ensinada (inclusive em alternativa errada) → **erro**;
 - etapa de programação introduzindo mais de 3 termos novos de inglês de uma vez → **erro**;
+- etapa da trilha de inglês introduzindo mais de 3 termos ou mais de 6 palavras novas → **erro**;
+- frase de exemplo (`bloco ingles`) da trilha de inglês usando palavra ainda não explicada → **erro**;
 - frase do English corner usando palavra ainda não explicada (fora palavras de ligação) → **erro**;
 - exercício de inglês de trilha de programação cobrando palavra não ensinada → **erro**;
 - símbolo/keyword de código usado antes de explicado → **erro**;

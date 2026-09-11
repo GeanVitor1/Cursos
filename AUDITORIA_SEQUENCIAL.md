@@ -5,7 +5,7 @@
 - Trilhas analisadas: **20**
 - Lições publicadas: **45**
 - Etapas percorridas: **367**
-- Atividades percorridas: **250**
+- Atividades percorridas: **344**
 - Conceitos registrados: **161**
 - Conceitos com introdução marcada: **83**
 - Erros: **0** · Avisos: **0**
@@ -62,22 +62,22 @@
 | Comandos git (`terminal.git`) | etapa 6 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
 | Comandos docker (`terminal.docker`) | etapa 7 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
 | Comandos npm (`terminal.npm`) | etapa 8 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
-| Saudações e apresentações (`en.saudacoes`) | etapa 1 · en-a1-00 | en-a1-00 etapa 2 | en-a1-00 etapa 5 | PRONTO_PARA_AVALIACAO | — |
+| Saudações e apresentações (`en.saudacoes`) | etapa 1 · en-a1-00 | en-a1-00 etapa 2 | en-a1-00 etapa 16 | PRONTO_PARA_AVALIACAO | — |
 | Números, idade e preços (`en.numeros`) | etapa 1 · en-a1-01 | en-a1-01 etapa 2 | en-a1-checkpoint etapa 4 | PRONTO_PARA_AVALIACAO | — |
-| Família e pessoas (`en.familia`) | etapa 1 · en-a1-02 | en-a1-02 etapa 2 | en-a1-02 etapa 5 | PRONTO_PARA_AVALIACAO | en.saudacoes |
-| Rotina e present simple (`en.rotina`) | etapa 1 · en-a1-03 | en-a1-03 etapa 2 | en-a1-03 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| Família e pessoas (`en.familia`) | etapa 1 · en-a1-02 | en-a1-02 etapa 2 | en-a1-02 etapa 18 | PRONTO_PARA_AVALIACAO | en.saudacoes |
+| Rotina e present simple (`en.rotina`) | etapa 1 · en-a1-03 | en-a1-03 etapa 2 | en-a1-03 etapa 16 | PRONTO_PARA_AVALIACAO | — |
 | Horas, dias e datas (`en.horarios`) | etapa 1 · en-a1-04 | en-a1-04 etapa 2 | en-a1-checkpoint etapa 6 | PRONTO_PARA_AVALIACAO | en.numeros |
-| Comida e restaurante (`en.comida`) | etapa 1 · en-a1-05 | en-a1-05 etapa 2 | en-a1-05 etapa 4 | PRONTO_PARA_AVALIACAO | — |
-| Compras e supermercado (`en.compras`) | etapa 1 · en-a1-06 | en-a1-06 etapa 2 | en-a1-06 etapa 3 | PRONTO_PARA_AVALIACAO | en.numeros |
-| Lugares, direções e transporte (`en.lugares`) | etapa 1 · en-a1-07 | en-a1-07 etapa 2 | en-a1-07 etapa 4 | PRONTO_PARA_AVALIACAO | — |
-| Perguntas básicas e conversa (`en.perguntas`) | etapa 1 · en-a1-08 | en-a1-08 etapa 2 | en-a1-08 etapa 5 | PRONTO_PARA_AVALIACAO | en.saudacoes |
-| Passado simples (`en.passado`) | etapa 1 · en-a2-00 | en-a2-00 etapa 2 | en-a2-00 etapa 5 | PRONTO_PARA_AVALIACAO | en.rotina |
-| Planos e futuro (`en.futuro`) | etapa 1 · en-a2-01 | en-a2-01 etapa 2 | en-a2-01 etapa 5 | PRONTO_PARA_AVALIACAO | en.rotina |
-| Viagem: aeroporto e hotel (`en.viagem`) | etapa 1 · en-a2-02 | en-a2-02 etapa 2 | en-a2-02 etapa 4 | PRONTO_PARA_AVALIACAO | en.lugares |
+| Comida e restaurante (`en.comida`) | etapa 1 · en-a1-05 | en-a1-05 etapa 2 | en-a1-05 etapa 17 | PRONTO_PARA_AVALIACAO | — |
+| Compras e supermercado (`en.compras`) | etapa 1 · en-a1-06 | en-a1-06 etapa 2 | en-a1-06 etapa 16 | PRONTO_PARA_AVALIACAO | en.numeros |
+| Lugares, direções e transporte (`en.lugares`) | etapa 1 · en-a1-07 | en-a1-07 etapa 2 | en-a1-07 etapa 15 | PRONTO_PARA_AVALIACAO | — |
+| Perguntas básicas e conversa (`en.perguntas`) | etapa 1 · en-a1-08 | en-a1-08 etapa 2 | en-a1-08 etapa 16 | PRONTO_PARA_AVALIACAO | en.saudacoes |
+| Passado simples (`en.passado`) | etapa 1 · en-a2-00 | en-a2-00 etapa 2 | en-a2-00 etapa 22 | PRONTO_PARA_AVALIACAO | en.rotina |
+| Planos e futuro (`en.futuro`) | etapa 1 · en-a2-01 | en-a2-01 etapa 2 | en-a2-01 etapa 12 | PRONTO_PARA_AVALIACAO | en.rotina |
+| Viagem: aeroporto e hotel (`en.viagem`) | etapa 1 · en-a2-02 | en-a2-02 etapa 2 | en-a2-02 etapa 17 | PRONTO_PARA_AVALIACAO | en.lugares |
 | Vocabulário técnico (`ingles.vocabulario`) | etapa 1 · ingles-00 | ingles-00 etapa 2 | — | PRONTO_PARA_AVALIACAO | — |
-| Frases de trabalho (`ingles.frases`) | etapa 5 · ingles-00 | ingles-00 etapa 6 | — | PRATICADO | ingles.vocabulario |
-| Leitura técnica em inglês (`ingles.leitura`) | etapa 5 · ingles-00 | ingles-00 etapa 7 | ingles-01 etapa 5 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
-| Mensagens de erro em inglês (`ingles.erros`) | etapa 1 · ingles-01 | ingles-01 etapa 2 | ingles-01 etapa 7 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
+| Frases de trabalho (`ingles.frases`) | etapa 7 · ingles-00 | ingles-00 etapa 8 | — | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
+| Leitura técnica em inglês (`ingles.leitura`) | etapa 17 · ingles-00 | ingles-00 etapa 21 | ingles-01 etapa 25 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
+| Mensagens de erro em inglês (`ingles.erros`) | etapa 1 · ingles-01 | ingles-01 etapa 2 | ingles-01 etapa 27 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
 | O que é LINQ (`linq.intro`) | etapa 1 · linq-00 | linq-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | csharp.lambda, csharp.list |
 | Where (`linq.where`) | etapa 2 · linq-00 | linq-00 etapa 5 | linq-01 etapa 6 | PRONTO_PARA_AVALIACAO | linq.intro |
 | Lambda em consultas (`linq.lambda`) | etapa 2 · linq-00 | linq-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.lambda |

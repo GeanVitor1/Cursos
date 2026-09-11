@@ -73,6 +73,7 @@ function expandir(token) {
 const lexico = new Set();
 const lexicoLicao = {};
 const LIMITE_NOVAS_POR_ETAPA = 3;
+const LIMITE_PALAVRAS_NOVAS_ETAPA = 6;
 const introducoesVocabulario = [];
 
 function tokensDoItem(item) {
@@ -108,6 +109,15 @@ function registrarTermoVocab(item, licao, registro) {
   registrarItem(item, licao);
 }
 
+function registrarPalavrasNovas(item, licao, registro) {
+  if (registro) {
+    tokensDoItem(item).forEach(function (tok) {
+      if (!tokenConhecido(tok)) registro.palavras.add(tok);
+    });
+  }
+  registrarItem(item, licao);
+}
+
 function registrarBloco(bloco, licao, registro) {
   if (!bloco || typeof bloco !== 'object') return;
   if (bloco.tipo === 'vocab') {
@@ -115,7 +125,7 @@ function registrarBloco(bloco, licao, registro) {
   } else if (bloco.tipo === 'ingles') {
     registrarItem(bloco.frase, licao);
   } else if (bloco.tipo === 'glossario') {
-    (bloco.itens || []).forEach(function (item) { if (Array.isArray(item)) registrarItem(item[0], licao); });
+    (bloco.itens || []).forEach(function (item) { if (Array.isArray(item)) registrarPalavrasNovas(item[0], licao, registro); });
   }
 }
 
@@ -364,7 +374,7 @@ posicoes.forEach(function (p) {
     const ctxBase = { trilha: p.trilha, licao: licao.id, nivel: p.nivel, etapa: i + 1 };
     if (etapa.tipo === 'conteudo') {
       const novasDaEtapa = { termos: 0, palavras: new Set() };
-      const registroNovas = completo ? null : novasDaEtapa;
+      const registroNovas = novasDaEtapa;
       (etapa.blocos || []).forEach(function (bloco) {
         if (!completo && bloco && bloco.tipo === 'ingles') {
           verificarFraseControlada(bloco.frase, licao.id, i + 1, 'bloco.ingles.frase');
@@ -372,7 +382,7 @@ posicoes.forEach(function (p) {
         registrarBloco(bloco, licao.id, registroNovas);
       });
       registrarIntroduzVocab(etapa.introduzVocab, licao.id, registroNovas);
-      if (!completo && novasDaEtapa.termos > LIMITE_NOVAS_POR_ETAPA) {
+      if (novasDaEtapa.termos > LIMITE_NOVAS_POR_ETAPA) {
         erros.push({
           campo: 'vocab',
           trecho: Array.from(novasDaEtapa.palavras).join(', '),
@@ -383,13 +393,28 @@ posicoes.forEach(function (p) {
           msg: 'Etapa introduz ' + novasDaEtapa.termos + ' termos novos de inglês (máximo ' + LIMITE_NOVAS_POR_ETAPA + '): divida em etapas menores.'
         });
       }
-      if (!completo && novasDaEtapa.termos > 0) {
+      if (completo && novasDaEtapa.palavras.size > LIMITE_PALAVRAS_NOVAS_ETAPA) {
+        erros.push({
+          campo: 'vocab',
+          trecho: Array.from(novasDaEtapa.palavras).join(', '),
+          desconhecidas: Array.from(novasDaEtapa.palavras),
+          licao: licao.id,
+          etapa: i + 1,
+          regra: 'limite-palavras-novas-etapa',
+          msg: 'Etapa introduz ' + novasDaEtapa.palavras.size + ' palavras novas de inglês (máximo ' + LIMITE_PALAVRAS_NOVAS_ETAPA + ') contando glossario e vocab: divida em etapas menores.'
+        });
+      }
+      if (novasDaEtapa.termos > 0 || novasDaEtapa.palavras.size > 0) {
         introducoesVocabulario.push({ licao: licao.id, etapa: i + 1, termos: novasDaEtapa.termos, palavras: Array.from(novasDaEtapa.palavras) });
       }
       if (!completo) return;
       (etapa.blocos || []).forEach(function (bloco) {
         if (!bloco) return;
-        if (bloco.tipo === 'vocab' || bloco.tipo === 'ingles' || bloco.tipo === 'glossario') return;
+        if (bloco.tipo === 'ingles') {
+          verificarFraseControlada(bloco.frase, licao.id, i + 1, 'bloco.ingles.frase');
+          return;
+        }
+        if (bloco.tipo === 'vocab' || bloco.tipo === 'glossario') return;
         if (bloco.tipo === 'codigo') {
           verificarTexto(bloco.codigo, Object.assign({ campo: 'bloco.codigo' }, ctxBase), true);
           return;
@@ -434,6 +459,7 @@ const resumo = {
   atividadesPercorridas: atividadesPercorridas,
   palavrasNoLexico: lexico.size,
   limiteNovasPorEtapa: LIMITE_NOVAS_POR_ETAPA,
+  limitePalavrasNovasPorEtapaIngles: LIMITE_PALAVRAS_NOVAS_ETAPA,
   introducoesDeVocabulario: introducoesVocabulario,
   erros: erros.length,
   detalhes: erros
@@ -443,8 +469,9 @@ fs.writeFileSync(RELATORIO_JSON, JSON.stringify(resumo, null, 2));
 
 const matriz = {
   geradoEm: resumo.geradoEm,
-  regra: 'Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Nas trilhas de programação, cada etapa ensina no máximo ' + LIMITE_NOVAS_POR_ETAPA + ' palavras novas e toda frase em inglês usa apenas palavras já explicadas (mais palavras de ligação básicas).',
+  regra: 'Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Em todas as trilhas, cada etapa ensina no máximo ' + LIMITE_NOVAS_POR_ETAPA + ' termos novos; na trilha de inglês, no máximo ' + LIMITE_PALAVRAS_NOVAS_ETAPA + ' palavras novas por etapa, e as frases de exemplo (bloco ingles) só usam palavras já explicadas.',
   limiteNovasPorEtapa: LIMITE_NOVAS_POR_ETAPA,
+  limitePalavrasNovasPorEtapaIngles: LIMITE_PALAVRAS_NOVAS_ETAPA,
   introducoesDeVocabulario: introducoesVocabulario,
   palavras: Array.from(lexico).sort().map(function (tok) {
     return {

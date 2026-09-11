@@ -1,10 +1,11 @@
 {
-  "geradoEm": "2026-09-11T15:11:56.431Z",
+  "geradoEm": "2026-09-11T15:39:38.239Z",
   "licoesPercorridas": 45,
-  "etapasPercorridas": 382,
-  "atividadesPercorridas": 250,
+  "etapasPercorridas": 560,
+  "atividadesPercorridas": 344,
   "palavrasNoLexico": 430,
   "limiteNovasPorEtapa": 3,
+  "limitePalavrasNovasPorEtapaIngles": 6,
   "introducoesDeVocabulario": [
     {
       "licao": "sql-00",
@@ -70,6 +71,1223 @@
       "termos": 1,
       "palavras": [
         "between"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "etapa": 13,
+      "termos": 0,
+      "palavras": [
+        "get",
+        "set"
+      ]
+    },
+    {
+      "licao": "csharp-00",
+      "etapa": 17,
+      "termos": 0,
+      "palavras": [
+        "class",
+        "public"
+      ]
+    },
+    {
+      "licao": "csharp-02",
+      "etapa": 2,
+      "termos": 0,
+      "palavras": [
+        "método",
+        "calculartotal"
+      ]
+    },
+    {
+      "licao": "csharp-02",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "parâmetro",
+        "preco",
+        "quantidade"
+      ]
+    },
+    {
+      "licao": "csharp-02",
+      "etapa": 4,
+      "termos": 0,
+      "palavras": [
+        "retorno",
+        "return",
+        "void"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "etapa": 2,
+      "termos": 0,
+      "palavras": [
+        "list",
+        "produto",
+        "add",
+        "item",
+        "count"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "new",
+        "nome",
+        "mouse",
+        "m"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "etapa": 6,
+      "termos": 0,
+      "palavras": [
+        "foreach",
+        "in"
+      ]
+    },
+    {
+      "licao": "csharp-03",
+      "etapa": 7,
+      "termos": 0,
+      "palavras": [
+        "remove",
+        "clear"
+      ]
+    },
+    {
+      "licao": "csharp-04",
+      "etapa": 4,
+      "termos": 0,
+      "palavras": [
+        "null"
+      ]
+    },
+    {
+      "licao": "csharp-05",
+      "etapa": 2,
+      "termos": 0,
+      "palavras": [
+        "interface",
+        "inotificador"
+      ]
+    },
+    {
+      "licao": "csharp-05",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "classe",
+        "concreta"
+      ]
+    },
+    {
+      "licao": "csharp-06",
+      "etapa": 2,
+      "termos": 0,
+      "palavras": [
+        "construtor",
+        "notificador"
+      ]
+    },
+    {
+      "licao": "csharp-06",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "readonly",
+        "injeção",
+        "de",
+        "dependência"
+      ]
+    },
+    {
+      "licao": "csharp-08",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "int",
+        "parse",
+        "texto",
+        "formatexception",
+        "lançar",
+        "exceção"
+      ]
+    },
+    {
+      "licao": "csharp-08",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "throw",
+        "finally"
+      ]
+    },
+    {
+      "licao": "terminal-00",
+      "etapa": 2,
+      "termos": 0,
+      "palavras": [
+        "pwd",
+        "ls",
+        "dir",
+        "cd"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "hello",
+        "hi",
+        "good",
+        "morning"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "afternoon",
+        "evening"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "my",
+        "ana",
+        "i",
+        "am"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "what",
+        "your"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "nice",
+        "to",
+        "meet",
+        "you",
+        "too"
+      ]
+    },
+    {
+      "licao": "en-a1-00",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "how",
+        "are",
+        "i'm",
+        "fine",
+        "thanks"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+        "zero",
+        "oh"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "eleven",
+        "twelve",
+        "thirteen",
+        "fourteen",
+        "fifteen",
+        "sixteen"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "seventeen",
+        "eighteen",
+        "nineteen",
+        "twenty"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "thirty",
+        "forty",
+        "fifty",
+        "sixty"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "seventy",
+        "eighty",
+        "ninety",
+        "hundred"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "etapa": 13,
+      "termos": 2,
+      "palavras": [
+        "years",
+        "old",
+        "be"
+      ]
+    },
+    {
+      "licao": "en-a1-01",
+      "etapa": 14,
+      "termos": 2,
+      "palavras": [
+        "phone",
+        "number",
+        "double"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "family",
+        "this"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "mother",
+        "mom",
+        "father",
+        "dad"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "sister",
+        "brother"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "son",
+        "daughter",
+        "have"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "his",
+        "her"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "who",
+        "she",
+        "he"
+      ]
+    },
+    {
+      "licao": "en-a1-02",
+      "etapa": 13,
+      "termos": 1,
+      "palavras": [
+        "yes",
+        "no"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "wake",
+        "up",
+        "breakfast"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "go",
+        "work",
+        "study",
+        "come",
+        "home"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "lunch",
+        "bed",
+        "sleep"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "with",
+        "night"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "every",
+        "day",
+        "we",
+        "they"
+      ]
+    },
+    {
+      "licao": "en-a1-03",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "usually",
+        "present",
+        "simple"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "time",
+        "it",
+        "it's",
+        "o'clock"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "half",
+        "past",
+        "quarter"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "etapa": 5,
+      "termos": 1,
+      "palavras": [
+        "monday",
+        "tuesday",
+        "wednesday"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ]
+    },
+    {
+      "licao": "en-a1-04",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "meeting",
+        "starts"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "dinner",
+        "water",
+        "coffee",
+        "juice"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "bread",
+        "rice",
+        "chicken",
+        "sandwich",
+        "apple"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "menu",
+        "bill",
+        "perfect"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "would",
+        "like",
+        "want",
+        "can",
+        "please"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "etapa": 9,
+      "termos": 3,
+      "palavras": [
+        "ready",
+        "anything",
+        "drink",
+        "else"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "sure",
+        "that's",
+        "that",
+        "thank"
+      ]
+    },
+    {
+      "licao": "en-a1-05",
+      "etapa": 13,
+      "termos": 3,
+      "palavras": [
+        "here",
+        "food",
+        "enjoy",
+        "great"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "much",
+        "dollars",
+        "expensive",
+        "cheap"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "cash",
+        "credit",
+        "card",
+        "dollar"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "help",
+        "pay",
+        "by"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "do",
+        "another",
+        "size",
+        "try",
+        "fitting",
+        "room"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "jacket",
+        "jeans",
+        "hat",
+        "shirt",
+        "sale"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "over",
+        "there",
+        "accept",
+        "bag"
+      ]
+    },
+    {
+      "licao": "en-a1-06",
+      "etapa": 13,
+      "termos": 2,
+      "palavras": [
+        "shopping",
+        "total"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "bank",
+        "supermarket",
+        "hospital",
+        "pharmacy"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "station",
+        "airport",
+        "hotel",
+        "restaurant"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "far",
+        "minute",
+        "walk"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "straight",
+        "turn",
+        "left",
+        "right"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "next",
+        "near",
+        "costs"
+      ]
+    },
+    {
+      "licao": "en-a1-07",
+      "etapa": 11,
+      "termos": 1,
+      "palavras": [
+        "foot",
+        "bus",
+        "train"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "etapa": 1,
+      "termos": 1,
+      "palavras": [
+        "when"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "etapa": 3,
+      "termos": 1,
+      "palavras": [
+        "why"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "developer"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "weather",
+        "about"
+      ]
+    },
+    {
+      "licao": "en-a1-08",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "week",
+        "month",
+        "now"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "worked",
+        "studied",
+        "watch",
+        "watched"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "stay",
+        "stayed",
+        "rain",
+        "rained"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "etapa": 5,
+      "termos": 3,
+      "palavras": [
+        "went",
+        "had",
+        "see",
+        "saw"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "buy",
+        "bought",
+        "take",
+        "took",
+        "some",
+        "fruit"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "was",
+        "were"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "yesterday",
+        "today",
+        "tomorrow",
+        "last",
+        "weekend",
+        "ago"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "etapa": 13,
+      "termos": 2,
+      "palavras": [
+        "beach",
+        "photos"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "etapa": 15,
+      "termos": 3,
+      "palavras": [
+        "parents",
+        "house",
+        "together"
+      ]
+    },
+    {
+      "licao": "en-a2-00",
+      "etapa": 17,
+      "termos": 3,
+      "palavras": [
+        "movie",
+        "then",
+        "so"
+      ]
+    },
+    {
+      "licao": "en-a2-01",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "going",
+        "travel",
+        "she's",
+        "tonight"
+      ]
+    },
+    {
+      "licao": "en-a2-01",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "will",
+        "call",
+        "later"
+      ]
+    },
+    {
+      "licao": "en-a2-01",
+      "etapa": 5,
+      "termos": 3,
+      "palavras": [
+        "send",
+        "sent",
+        "visit",
+        "photo"
+      ]
+    },
+    {
+      "licao": "en-a2-01",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "city",
+        "let's",
+        "let",
+        "us",
+        "also"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "passport",
+        "boarding",
+        "pass"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "etapa": 3,
+      "termos": 3,
+      "palavras": [
+        "luggage",
+        "flight",
+        "check"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "etapa": 5,
+      "termos": 3,
+      "palavras": [
+        "gate",
+        "seat",
+        "board"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "final"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "reservation",
+        "single"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "included",
+        "welcome",
+        "under"
+      ]
+    },
+    {
+      "licao": "en-a2-02",
+      "etapa": 13,
+      "termos": 1,
+      "palavras": [
+        "could"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "request",
+        "response"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 3,
+      "termos": 3,
+      "palavras": [
+        "error",
+        "build",
+        "deploy"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "issue",
+        "branch"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "failed",
+        "unavailable",
+        "because"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "review",
+        "merge"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "fix",
+        "retry",
+        "down"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 13,
+      "termos": 3,
+      "palavras": [
+        "change",
+        "connection",
+        "wrong"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 15,
+      "termos": 3,
+      "palavras": [
+        "config",
+        "configuration",
+        "hey",
+        "chat"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "connect",
+        "cannot",
+        "not"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 3,
+      "termos": 3,
+      "palavras": [
+        "object",
+        "instance",
+        "reference"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "resource",
+        "does",
+        "exist"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "timeout",
+        "expired",
+        "while"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "waiting",
+        "wait"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "file",
+        "path",
+        "found"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 14,
+      "termos": 3,
+      "palavras": [
+        "title",
+        "steps",
+        "reproduce",
+        "create"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 16,
+      "termos": 3,
+      "palavras": [
+        "after",
+        "duplicated",
+        "application"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 18,
+      "termos": 2,
+      "palavras": [
+        "client",
+        "calling"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 20,
+      "termos": 3,
+      "palavras": [
+        "address",
+        "bug",
+        "retrying"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 22,
+      "termos": 2,
+      "palavras": [
+        "processed",
+        "twice",
+        "expected",
+        "actual"
+      ]
+    },
+    {
+      "licao": "ef-00",
+      "etapa": 2,
+      "termos": 0,
+      "palavras": [
+        "orm",
+        "ef",
+        "core"
+      ]
+    },
+    {
+      "licao": "ef-00",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "entidade",
+        "mapeamento"
+      ]
+    },
+    {
+      "licao": "ef-01",
+      "etapa": 4,
+      "termos": 0,
+      "palavras": [
+        "dbcontext",
+        "dbcontextoptions",
+        "dbset",
+        "x"
+      ]
+    },
+    {
+      "licao": "aspnet-02",
+      "etapa": 2,
+      "termos": 0,
+      "palavras": [
+        "builder",
+        "createbuilder",
+        "args"
+      ]
+    },
+    {
+      "licao": "aspnet-02",
+      "etapa": 4,
+      "termos": 0,
+      "palavras": [
+        "mapget",
+        "id"
+      ]
+    },
+    {
+      "licao": "aspnet-02",
+      "etapa": 6,
+      "termos": 0,
+      "palavras": [
+        "mappost",
+        "app",
+        "run"
       ]
     }
   ],

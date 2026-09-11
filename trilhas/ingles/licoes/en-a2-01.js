@@ -15,29 +15,125 @@ Plataforma.registrarLicao({
   etapas: [
     {
       tipo: 'conteudo',
-      titulo: 'Tomorrow, next week...',
+      titulo: 'going to: planos decididos',
       introduz: ['en.futuro'],
       blocos: [
-        { tipo: 'texto', texto: 'Para o futuro, o inglês usa duas formas muito comuns: **going to** (planos já decididos) e **will** (decisões de última hora, promessas e previsões).' },
-        { tipo: 'vocab', titulo: 'Futuro em uso', pares: [
+        { tipo: 'texto', texto: 'Para o futuro, o inglês usa duas formas muito comuns. A primeira é **going to**, para planos já decididos.' },
+        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
           ["I'm going to travel next week.", 'Vou viajar na próxima semana.'],
-          ["She's going to study tonight.", 'Ela vai estudar hoje à noite.'],
+          ["She's going to study tonight.", 'Ela vai estudar hoje à noite.']
+        ] },
+        { tipo: 'ingles', frase: "I'm going to travel next week.", traducao: 'Vou viajar na próxima semana.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a2-01-p1',
+        tipo: 'order-blocks',
+        habilidade: 'gramatica',
+        dimensao: 'ordenacao',
+        enunciado: 'Ordene o plano no futuro.',
+        blocos: ["I'm", 'going to', 'travel', 'next week.'],
+        dicas: ['Comece com I\'m.', 'Going to vem antes do verbo principal.'],
+        explicacao: "I'm going to travel next week. — plano decidido com going to + verbo.",
+        conceitos: ['en.futuro']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'will: decisões e promessas',
+      blocos: [
+        { tipo: 'texto', texto: 'A segunda forma é **will**, usada em decisões de última hora, promessas e previsões.' },
+        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
           ['I will call you tomorrow.', 'Eu vou te ligar amanhã.'],
-          ["It will rain later.", 'Vai chover mais tarde.'],
+          ['It will rain later.', 'Vai chover mais tarde.']
+        ] },
+        { tipo: 'ingles', frase: 'I will call you tomorrow.', traducao: 'Eu vou te ligar amanhã.' },
+        { tipo: 'nota', tom: 'atencao', texto: 'A contração é muito comum na fala: `I am` → `I\'m` e `I will` → `I\'ll`.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a2-01-p2',
+        tipo: 'fill-code',
+        habilidade: 'gramatica',
+        dimensao: 'preenchimento',
+        enunciado: 'Complete com a forma de futuro para decisão na hora.',
+        codigo: 'I {{1}} call you tomorrow.',
+        lacunas: [['will']],
+        dicas: ['Decisão de última hora usa will.', 'Going to seria para plano já decidido.'],
+        explicacao: 'I will call you tomorrow. — a promessa feita na hora usa will.',
+        conceitos: ['en.futuro']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Palavras úteis do futuro (1)',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
           ['send → sent', 'enviar → enviei'],
-          ['a photo', 'uma foto'],
           ['visit', 'visitar'],
+          ['a photo', 'uma foto']
+        ] },
+        { tipo: 'ingles', frase: 'I will send a photo.', traducao: 'Eu vou enviar uma foto.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a2-01-p3',
+        tipo: 'match-pairs',
+        habilidade: 'vocabulario',
+        dimensao: 'associacao',
+        enunciado: 'Conecte cada palavra ao significado.',
+        pares: [
+          ['send', 'enviar'],
+          ['visit', 'visitar'],
+          ['photo', 'foto']
+        ],
+        dicas: ['Send é o que você faz com uma mensagem.', 'Photo aparece em "foto".'],
+        explicacao: 'send, visit e photo: palavras que aparecem em planos e mensagens.',
+        conceitos: ['en.futuro']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Palavras úteis do futuro (2)',
+      blocos: [
+        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
           ['the city', 'a cidade'],
           ["Let's...", 'Vamos... (convite)'],
           ['also', 'também']
         ] },
+        { tipo: 'ingles', frase: "Let's visit the city!", traducao: 'Vamos visitar a cidade!' },
         { tipo: 'lista', itens: [
           '`going to` = plano: I am going to + verbo.',
           '`will` = decisão/promessa/previsão: I will + verbo.',
           'Marcadores: `tomorrow`, `next week`, `next month`, `tonight`.'
-        ] },
-        { tipo: 'nota', tom: 'atencao', texto: 'A contração é muito comum na fala: `I am` → `I\'m` e `I will` → `I\'ll`.' }
+        ] }
       ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a2-01-p4',
+        tipo: 'multiple-choice',
+        habilidade: 'compreensao',
+        dimensao: 'reconhecimento',
+        enunciado: 'O que **Let\'s** indica?',
+        opcoes: ['Um convite: "Vamos..."', 'Uma proibição', 'Uma pergunta de preço', 'Uma despedida'],
+        correta: 0,
+        feedbackErro: {
+          1: 'Let\'s não proíbe nada; é um convite.',
+          2: 'Preço se pergunta com How much.',
+          3: 'Despedida seria outra expressão.'
+        },
+        dicas: ['Let\'s vem de let us.', 'É usado para propor algo a alguém.'],
+        explicacao: "Let's = vamos. Use para convidar: Let's have lunch. Let's visit the city.",
+        conceitos: ['en.futuro']
+      }
     },
     {
       tipo: 'atividade',
