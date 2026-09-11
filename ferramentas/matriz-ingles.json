@@ -1,14 +1,83 @@
 {
-  "geradoEm": "2026-09-10T18:53:26.659Z",
-  "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback.",
+  "geradoEm": "2026-09-11T10:24:00.742Z",
+  "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Nas trilhas de programação, cada etapa ensina no máximo 3 palavras novas e toda frase em inglês usa apenas palavras já explicadas (mais palavras de ligação básicas).",
+  "limiteNovasPorEtapa": 3,
+  "introducoesDeVocabulario": [
+    {
+      "licao": "sql-00",
+      "etapa": 12,
+      "termos": 3,
+      "palavras": [
+        "database",
+        "server",
+        "table"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "etapa": 13,
+      "termos": 3,
+      "palavras": [
+        "row",
+        "column",
+        "primary",
+        "key"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "retrieve",
+        "customer",
+        "all"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "etapa": 13,
+      "termos": 3,
+      "palavras": [
+        "name",
+        "email",
+        "of"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "etapa": 13,
+      "termos": 1,
+      "palavras": [
+        "from"
+      ]
+    },
+    {
+      "licao": "sql-04",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "order",
+        "where"
+      ]
+    },
+    {
+      "licao": "sql-05",
+      "etapa": 8,
+      "termos": 1,
+      "palavras": [
+        "between"
+      ]
+    }
+  ],
   "palavras": [
     {
       "palavra": "a",
-      "introduzidaEm": "en-a1-04",
+      "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-04",
-        "atividade": "en-a1-04-a2",
-        "etapa": 3
+        "licao": "sql-00",
+        "atividade": "sql00-a6",
+        "etapa": 14
       }
     },
     {
@@ -90,7 +159,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-02",
         "atividade": "sql02-a8",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
@@ -135,7 +204,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-02",
         "atividade": "sql02-a8",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
@@ -203,15 +272,6 @@
       }
     },
     {
-      "palavra": "ativo",
-      "introduzidaEm": "sql-00",
-      "primeiroUsoEmAtividade": {
-        "licao": "sql-01",
-        "atividade": "sql01-a1",
-        "etapa": 3
-      }
-    },
-    {
       "palavra": "bag",
       "introduzidaEm": "en-a1-06",
       "primeiroUsoEmAtividade": {
@@ -271,6 +331,15 @@
       }
     },
     {
+      "palavra": "between",
+      "introduzidaEm": "sql-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-05",
+        "atividade": "sql05-a7",
+        "etapa": 9
+      }
+    },
+    {
       "palavra": "bill",
       "introduzidaEm": "en-a1-05",
       "primeiroUsoEmAtividade": {
@@ -326,7 +395,7 @@
     },
     {
       "palavra": "brazil",
-      "introduzidaEm": "en-a1-08",
+      "introduzidaEm": "sql-03",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-08",
         "atividade": "en-a1-08-l1",
@@ -533,15 +602,6 @@
       }
     },
     {
-      "palavra": "cidade",
-      "introduzidaEm": "sql-00",
-      "primeiroUsoEmAtividade": {
-        "licao": "sql-02",
-        "atividade": "sql02-a1",
-        "etapa": 2
-      }
-    },
-    {
       "palavra": "city",
       "introduzidaEm": "en-a2-01",
       "primeiroUsoEmAtividade": {
@@ -597,7 +657,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-00",
         "atividade": "sql00-a6",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
@@ -725,16 +785,16 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-02",
         "atividade": "sql02-a8",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
       "palavra": "customers",
-      "introduzidaEm": "sql-00",
+      "introduzidaEm": "sql-02",
       "primeiroUsoEmAtividade": {
         "licao": "sql-02",
         "atividade": "sql02-a8",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
@@ -948,11 +1008,11 @@
     },
     {
       "palavra": "email",
-      "introduzidaEm": "sql-00",
+      "introduzidaEm": "sql-02",
       "primeiroUsoEmAtividade": {
         "licao": "sql-02",
-        "atividade": "sql02-a1",
-        "etapa": 2
+        "atividade": "sql02-a8",
+        "etapa": 14
       }
     },
     {
@@ -1243,11 +1303,11 @@
     },
     {
       "palavra": "from",
-      "introduzidaEm": "sql-02",
+      "introduzidaEm": "sql-03",
       "primeiroUsoEmAtividade": {
-        "licao": "sql-02",
-        "atividade": "sql02-a7",
-        "etapa": 12
+        "licao": "sql-03",
+        "atividade": "sql03-a9",
+        "etapa": 14
       }
     },
     {
@@ -1501,11 +1561,11 @@
     },
     {
       "palavra": "id",
-      "introduzidaEm": "sql-00",
+      "introduzidaEm": "aspnet-02",
       "primeiroUsoEmAtividade": {
-        "licao": "sql-01",
-        "atividade": "sql01-a3",
-        "etapa": 7
+        "licao": "aspnet-02",
+        "atividade": "api02-a1",
+        "etapa": 4
       }
     },
     {
@@ -1569,7 +1629,7 @@
     },
     {
       "palavra": "is",
-      "introduzidaEm": "en-a1-00",
+      "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-00",
         "atividade": "en-a1-00-l1",
@@ -1919,7 +1979,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-02",
         "atividade": "sql02-a8",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
@@ -1993,11 +2053,11 @@
     },
     {
       "palavra": "nome",
-      "introduzidaEm": "sql-00",
+      "introduzidaEm": "csharp-03",
       "primeiroUsoEmAtividade": {
-        "licao": "sql-01",
-        "atividade": "sql01-a2",
-        "etapa": 5
+        "licao": "csharp-03",
+        "atividade": "cs03-a5",
+        "etapa": 7
       }
     },
     {
@@ -2069,7 +2129,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-02",
         "atividade": "sql02-a8",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
@@ -2092,7 +2152,7 @@
     },
     {
       "palavra": "on",
-      "introduzidaEm": "en-a1-04",
+      "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-04",
         "atividade": "en-a1-04-l1",
@@ -2110,7 +2170,7 @@
     },
     {
       "palavra": "order",
-      "introduzidaEm": "sql-02",
+      "introduzidaEm": "sql-04",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-05",
         "atividade": "en-a1-05-a3",
@@ -2119,11 +2179,11 @@
     },
     {
       "palavra": "orders",
-      "introduzidaEm": "ingles-01",
+      "introduzidaEm": "sql-04",
       "primeiroUsoEmAtividade": {
-        "licao": "ingles-01",
-        "atividade": "en01-a3",
-        "etapa": 5
+        "licao": "sql-04",
+        "atividade": "sql04-a6",
+        "etapa": 10
       }
     },
     {
@@ -2200,12 +2260,30 @@
       }
     },
     {
+      "palavra": "paulo",
+      "introduzidaEm": "sql-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-03",
+        "atividade": "sql03-a9",
+        "etapa": 14
+      }
+    },
+    {
       "palavra": "pay",
       "introduzidaEm": "en-a1-06",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-06",
         "atividade": "en-a1-06-a2",
         "etapa": 3
+      }
+    },
+    {
+      "palavra": "pendente",
+      "introduzidaEm": "sql-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-04",
+        "atividade": "sql04-a6",
+        "etapa": 10
       }
     },
     {
@@ -2425,7 +2503,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-02",
         "atividade": "sql02-a8",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
@@ -2502,8 +2580,13 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-00",
         "atividade": "sql00-a6",
-        "etapa": 13
+        "etapa": 14
       }
+    },
+    {
+      "palavra": "rows",
+      "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "run",
@@ -2588,7 +2671,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-00",
         "atividade": "sql00-a6",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
@@ -2744,6 +2827,15 @@
       }
     },
     {
+      "palavra": "status",
+      "introduzidaEm": "sql-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-04",
+        "atividade": "sql04-a6",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "stay",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -2830,6 +2922,15 @@
       }
     },
     {
+      "palavra": "são",
+      "introduzidaEm": "sql-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-03",
+        "atividade": "sql03-a9",
+        "etapa": 14
+      }
+    },
+    {
       "palavra": "t",
       "introduzidaEm": "en-a1-06",
       "primeiroUsoEmAtividade": {
@@ -2844,7 +2945,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-00",
         "atividade": "sql00-a6",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
@@ -2916,7 +3017,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-02",
         "atividade": "sql02-a8",
-        "etapa": 13
+        "etapa": 14
       }
     },
     {
@@ -3219,6 +3320,15 @@
       }
     },
     {
+      "palavra": "valortotal",
+      "introduzidaEm": "sql-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-05",
+        "atividade": "sql05-a7",
+        "etapa": 9
+      }
+    },
+    {
       "palavra": "var",
       "introduzidaEm": "aspnet-02",
       "primeiroUsoEmAtividade": null
@@ -3394,11 +3504,11 @@
     },
     {
       "palavra": "where",
-      "introduzidaEm": "en-a1-06",
+      "introduzidaEm": "sql-04",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-06",
-        "atividade": "en-a1-06-a2",
-        "etapa": 3
+        "licao": "sql-04",
+        "atividade": "sql04-a6",
+        "etapa": 10
       }
     },
     {

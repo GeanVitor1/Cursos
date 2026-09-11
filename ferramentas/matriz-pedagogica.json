@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-09-10T18:53:26.570Z",
+  "geradoEm": "2026-09-11T10:24:00.653Z",
   "regra": "Estados de conteúdo: NAO_ENSINADO → INTRODUZIDO → PRATICADO → PRONTO_PARA_AVALIACAO. MASTERED é calculado em tempo real pelo motor (confiança + dimensões + revisão espaçada), não pelo conteúdo estático.",
   "conceitos": [
     {
@@ -22,9 +22,9 @@
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-00",
-        "etapa": 14,
+        "etapa": 15,
         "titulo": "",
-        "pos": 14
+        "pos": 15
       },
       "praticas": 2,
       "dimensoes": [
@@ -54,9 +54,9 @@
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-00",
-        "etapa": 14,
+        "etapa": 15,
         "titulo": "",
-        "pos": 14
+        "pos": 15
       },
       "praticas": 2,
       "dimensoes": [
@@ -88,7 +88,7 @@
         "licao": "sql-checkpoint-fundamentos",
         "etapa": 2,
         "titulo": "",
-        "pos": 69
+        "pos": 74
       },
       "praticas": 4,
       "dimensoes": [
@@ -177,7 +177,7 @@
         "licao": "sql-checkpoint-fundamentos",
         "etapa": 3,
         "titulo": "",
-        "pos": 70
+        "pos": 75
       },
       "praticas": 3,
       "dimensoes": [
@@ -195,22 +195,22 @@
         "trilha": "sql",
         "licao": "sql-00",
         "etapa": 12,
-        "titulo": "English corner",
+        "titulo": "English corner · Database words",
         "pos": 12
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-00",
-        "etapa": 13,
+        "etapa": 14,
         "titulo": "",
-        "pos": 13
+        "pos": 14
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-02",
-        "etapa": 13,
+        "etapa": 14,
         "titulo": "",
-        "pos": 37
+        "pos": 39
       },
       "praticas": 5,
       "dimensoes": [
@@ -227,14 +227,14 @@
         "licao": "sql-01",
         "etapa": 2,
         "titulo": "Tipos de dados: cada coluna tem um papel",
-        "pos": 16
+        "pos": 17
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-01",
         "etapa": 3,
         "titulo": "",
-        "pos": 17
+        "pos": 18
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -252,21 +252,21 @@
         "licao": "sql-01",
         "etapa": 4,
         "titulo": "Chave estrangeira: ligando tabelas",
-        "pos": 18
+        "pos": 19
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-01",
         "etapa": 5,
         "titulo": "",
-        "pos": 19
+        "pos": 20
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-01",
         "etapa": 9,
         "titulo": "",
-        "pos": 23
+        "pos": 24
       },
       "praticas": 4,
       "dimensoes": [],
@@ -283,21 +283,21 @@
         "licao": "sql-01",
         "etapa": 4,
         "titulo": "Chave estrangeira: ligando tabelas",
-        "pos": 18
+        "pos": 19
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-01",
         "etapa": 5,
         "titulo": "",
-        "pos": 19
+        "pos": 20
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-01",
         "etapa": 9,
         "titulo": "",
-        "pos": 23
+        "pos": 24
       },
       "praticas": 2,
       "dimensoes": [],
@@ -314,21 +314,21 @@
         "licao": "sql-02",
         "etapa": 1,
         "titulo": "Como conversamos com o banco",
-        "pos": 25
+        "pos": 26
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 26
+        "pos": 27
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-02",
-        "etapa": 13,
+        "etapa": 14,
         "titulo": "",
-        "pos": 37
+        "pos": 39
       },
       "praticas": 7,
       "dimensoes": [
@@ -347,21 +347,21 @@
         "licao": "sql-02",
         "etapa": 1,
         "titulo": "Como conversamos com o banco",
-        "pos": 25
+        "pos": 26
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 28
+        "pos": 29
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-checkpoint-fundamentos",
         "etapa": 5,
         "titulo": "",
-        "pos": 72
+        "pos": 77
       },
       "praticas": 4,
       "dimensoes": [],
@@ -378,14 +378,14 @@
         "licao": "sql-02",
         "etapa": 3,
         "titulo": "Escolhendo as colunas",
-        "pos": 27
+        "pos": 28
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-02",
         "etapa": 5,
         "titulo": "",
-        "pos": 29
+        "pos": 30
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -403,21 +403,21 @@
         "licao": "sql-02",
         "etapa": 9,
         "titulo": "Nem só de consulta vive um banco",
-        "pos": 33
+        "pos": 34
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-02",
         "etapa": 10,
         "titulo": "",
-        "pos": 34
+        "pos": 35
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-checkpoint-fundamentos",
         "etapa": 4,
         "titulo": "",
-        "pos": 71
+        "pos": 76
       },
       "praticas": 1,
       "dimensoes": [],
@@ -434,21 +434,21 @@
         "licao": "sql-03",
         "etapa": 1,
         "titulo": "Nem tudo, só o que importa",
-        "pos": 38
+        "pos": 40
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 39
+        "pos": 41
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-03",
-        "etapa": 13,
+        "etapa": 14,
         "titulo": "",
-        "pos": 50
+        "pos": 53
       },
       "praticas": 8,
       "dimensoes": [],
@@ -465,21 +465,21 @@
         "licao": "sql-03",
         "etapa": 3,
         "titulo": "Operadores de comparação",
-        "pos": 40
+        "pos": 42
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-03",
         "etapa": 4,
         "titulo": "",
-        "pos": 41
+        "pos": 43
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-checkpoint-fundamentos",
         "etapa": 6,
         "titulo": "",
-        "pos": 73
+        "pos": 78
       },
       "praticas": 4,
       "dimensoes": [],
@@ -496,21 +496,21 @@
         "licao": "sql-03",
         "etapa": 6,
         "titulo": "Texto pede aspas simples",
-        "pos": 43
+        "pos": 45
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-03",
         "etapa": 7,
         "titulo": "",
-        "pos": 44
+        "pos": 46
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-checkpoint-fundamentos",
         "etapa": 10,
         "titulo": "",
-        "pos": 77
+        "pos": 82
       },
       "praticas": 3,
       "dimensoes": [],
@@ -527,21 +527,21 @@
         "licao": "sql-04",
         "etapa": 1,
         "titulo": "Duas condições ao mesmo tempo",
-        "pos": 51
+        "pos": 54
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 52
+        "pos": 55
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-04",
-        "etapa": 9,
+        "etapa": 10,
         "titulo": "",
-        "pos": 59
+        "pos": 63
       },
       "praticas": 7,
       "dimensoes": [],
@@ -558,21 +558,21 @@
         "licao": "sql-04",
         "etapa": 6,
         "titulo": "Cuidado com a precedência",
-        "pos": 56
+        "pos": 59
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-04",
         "etapa": 7,
         "titulo": "",
-        "pos": 57
+        "pos": 60
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-04",
-        "etapa": 9,
+        "etapa": 10,
         "titulo": "",
-        "pos": 59
+        "pos": 63
       },
       "praticas": 3,
       "dimensoes": [],
@@ -589,21 +589,21 @@
         "licao": "sql-05",
         "etapa": 1,
         "titulo": "Três operadores que você vai usar muito",
-        "pos": 60
+        "pos": 64
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 61
+        "pos": 65
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-05",
         "etapa": 7,
         "titulo": "",
-        "pos": 66
+        "pos": 70
       },
       "praticas": 4,
       "dimensoes": [],
@@ -620,21 +620,21 @@
         "licao": "sql-05",
         "etapa": 1,
         "titulo": "Três operadores que você vai usar muito",
-        "pos": 60
+        "pos": 64
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 61
+        "pos": 65
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-05",
-        "etapa": 8,
+        "etapa": 9,
         "titulo": "",
-        "pos": 67
+        "pos": 72
       },
       "praticas": 5,
       "dimensoes": [],
@@ -651,21 +651,21 @@
         "licao": "sql-05",
         "etapa": 1,
         "titulo": "Três operadores que você vai usar muito",
-        "pos": 60
+        "pos": 64
       },
       "praticadoEm": {
         "trilha": "sql",
         "licao": "sql-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 61
+        "pos": 65
       },
       "avaliadoEm": {
         "trilha": "sql",
         "licao": "sql-05",
         "etapa": 7,
         "titulo": "",
-        "pos": 66
+        "pos": 70
       },
       "praticas": 4,
       "dimensoes": [],
@@ -682,21 +682,21 @@
         "licao": "csharp-00",
         "etapa": 2,
         "titulo": "Classe é o molde",
-        "pos": 80
+        "pos": 85
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 81
+        "pos": 86
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-00",
         "etapa": 9,
         "titulo": "",
-        "pos": 87
+        "pos": 92
       },
       "praticas": 6,
       "dimensoes": [
@@ -716,14 +716,14 @@
         "licao": "csharp-00",
         "etapa": 2,
         "titulo": "Classe é o molde",
-        "pos": 80
+        "pos": 85
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 81
+        "pos": 86
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -747,21 +747,21 @@
         "licao": "csharp-00",
         "etapa": 2,
         "titulo": "Classe é o molde",
-        "pos": 80
+        "pos": 85
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-00",
         "etapa": 8,
         "titulo": "",
-        "pos": 86
+        "pos": 91
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-01",
         "etapa": 7,
         "titulo": "",
-        "pos": 94
+        "pos": 99
       },
       "praticas": 3,
       "dimensoes": [
@@ -780,21 +780,21 @@
         "licao": "csharp-00",
         "etapa": 4,
         "titulo": "Criando o objeto com new",
-        "pos": 82
+        "pos": 87
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 83
+        "pos": 88
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-00",
         "etapa": 9,
         "titulo": "",
-        "pos": 87
+        "pos": 92
       },
       "praticas": 4,
       "dimensoes": [
@@ -816,21 +816,21 @@
         "licao": "csharp-01",
         "etapa": 1,
         "titulo": "Variável é uma caixa etiquetada",
-        "pos": 88
+        "pos": 93
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-01",
         "etapa": 5,
         "titulo": "",
-        "pos": 92
+        "pos": 97
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-01",
         "etapa": 7,
         "titulo": "",
-        "pos": 94
+        "pos": 99
       },
       "praticas": 3,
       "dimensoes": [
@@ -849,14 +849,14 @@
         "licao": "csharp-01",
         "etapa": 3,
         "titulo": "Decidindo com if",
-        "pos": 90
+        "pos": 95
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-01",
         "etapa": 4,
         "titulo": "",
-        "pos": 91
+        "pos": 96
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -878,14 +878,14 @@
         "licao": "csharp-02",
         "etapa": 2,
         "titulo": "Anatomia de um método",
-        "pos": 96
+        "pos": 101
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-02",
         "etapa": 3,
         "titulo": "",
-        "pos": 97
+        "pos": 102
       },
       "avaliadoEm": null,
       "praticas": 7,
@@ -907,21 +907,21 @@
         "licao": "csharp-03",
         "etapa": 2,
         "titulo": "Declarando, adicionando e percorrendo",
-        "pos": 103
+        "pos": 108
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-03",
         "etapa": 3,
         "titulo": "",
-        "pos": 104
+        "pos": 109
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-03",
         "etapa": 8,
         "titulo": "",
-        "pos": 109
+        "pos": 114
       },
       "praticas": 6,
       "dimensoes": [
@@ -945,14 +945,14 @@
         "licao": "csharp-03",
         "etapa": 2,
         "titulo": "Declarando, adicionando e percorrendo",
-        "pos": 103
+        "pos": 108
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-03",
         "etapa": 5,
         "titulo": "",
-        "pos": 106
+        "pos": 111
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -974,21 +974,21 @@
         "licao": "csharp-04",
         "etapa": 1,
         "titulo": "Null não é vazio, nem zero",
-        "pos": 110
+        "pos": 115
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-04",
         "etapa": 3,
         "titulo": "",
-        "pos": 112
+        "pos": 117
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-04",
         "etapa": 7,
         "titulo": "",
-        "pos": 116
+        "pos": 121
       },
       "praticas": 5,
       "dimensoes": [
@@ -1009,21 +1009,21 @@
         "licao": "csharp-04",
         "etapa": 2,
         "titulo": "O erro mais famoso do .NET",
-        "pos": 111
+        "pos": 116
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-08",
         "etapa": 3,
         "titulo": "",
-        "pos": 142
+        "pos": 147
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-08",
         "etapa": 5,
         "titulo": "",
-        "pos": 144
+        "pos": 149
       },
       "praticas": 5,
       "dimensoes": [
@@ -1045,21 +1045,21 @@
         "licao": "csharp-05",
         "etapa": 2,
         "titulo": "Interface é o contrato",
-        "pos": 118
+        "pos": 123
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-05",
         "etapa": 3,
         "titulo": "",
-        "pos": 119
+        "pos": 124
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-05",
         "etapa": 6,
         "titulo": "",
-        "pos": 122
+        "pos": 127
       },
       "praticas": 6,
       "dimensoes": [
@@ -1083,14 +1083,14 @@
         "licao": "csharp-06",
         "etapa": 2,
         "titulo": "Recebendo pelo construtor",
-        "pos": 125
+        "pos": 130
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-06",
         "etapa": 3,
         "titulo": "",
-        "pos": 126
+        "pos": 131
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -1111,21 +1111,21 @@
         "licao": "csharp-06",
         "etapa": 2,
         "titulo": "Recebendo pelo construtor",
-        "pos": 125
+        "pos": 130
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-06",
         "etapa": 3,
         "titulo": "",
-        "pos": 126
+        "pos": 131
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-06",
         "etapa": 5,
         "titulo": "",
-        "pos": 128
+        "pos": 133
       },
       "praticas": 5,
       "dimensoes": [
@@ -1148,21 +1148,21 @@
         "licao": "csharp-07",
         "etapa": 4,
         "titulo": "A regra como argumento",
-        "pos": 134
+        "pos": 139
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-07",
         "etapa": 5,
         "titulo": "",
-        "pos": 135
+        "pos": 140
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-07",
         "etapa": 9,
         "titulo": "",
-        "pos": 139
+        "pos": 144
       },
       "praticas": 5,
       "dimensoes": [
@@ -1184,21 +1184,21 @@
         "licao": "csharp-09",
         "etapa": 1,
         "titulo": "O problema: esperar parado",
-        "pos": 147
+        "pos": 152
       },
       "praticadoEm": {
         "trilha": "csharp",
         "licao": "csharp-09",
         "etapa": 3,
         "titulo": "",
-        "pos": 149
+        "pos": 154
       },
       "avaliadoEm": {
         "trilha": "csharp",
         "licao": "csharp-09",
         "etapa": 6,
         "titulo": "",
-        "pos": 152
+        "pos": 157
       },
       "praticas": 6,
       "dimensoes": [
@@ -1220,14 +1220,14 @@
         "licao": "logica-00",
         "etapa": 2,
         "titulo": "Os quatro raciocínios deste treino",
-        "pos": 154
+        "pos": 159
       },
       "praticadoEm": {
         "trilha": "logica",
         "licao": "logica-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 155
+        "pos": 160
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -1246,14 +1246,14 @@
         "licao": "logica-00",
         "etapa": 2,
         "titulo": "Os quatro raciocínios deste treino",
-        "pos": 154
+        "pos": 159
       },
       "praticadoEm": {
         "trilha": "logica",
         "licao": "logica-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 157
+        "pos": 162
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -1274,14 +1274,14 @@
         "licao": "logica-00",
         "etapa": 2,
         "titulo": "Os quatro raciocínios deste treino",
-        "pos": 154
+        "pos": 159
       },
       "praticadoEm": {
         "trilha": "logica",
         "licao": "logica-00",
         "etapa": 7,
         "titulo": "",
-        "pos": 159
+        "pos": 164
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -1299,14 +1299,14 @@
         "licao": "logica-00",
         "etapa": 2,
         "titulo": "Os quatro raciocínios deste treino",
-        "pos": 154
+        "pos": 159
       },
       "praticadoEm": {
         "trilha": "logica",
         "licao": "logica-00",
         "etapa": 8,
         "titulo": "",
-        "pos": 160
+        "pos": 165
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -1324,14 +1324,14 @@
         "licao": "terminal-00",
         "etapa": 2,
         "titulo": "Navegando em pastas",
-        "pos": 162
+        "pos": 167
       },
       "praticadoEm": {
         "trilha": "terminal",
         "licao": "terminal-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 163
+        "pos": 168
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -1349,21 +1349,21 @@
         "licao": "terminal-00",
         "etapa": 4,
         "titulo": "Rodando um projeto .NET",
-        "pos": 164
+        "pos": 169
       },
       "praticadoEm": {
         "trilha": "terminal",
         "licao": "terminal-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 165
+        "pos": 170
       },
       "avaliadoEm": {
         "trilha": "terminal",
         "licao": "terminal-00",
         "etapa": 7,
         "titulo": "",
-        "pos": 167
+        "pos": 172
       },
       "praticas": 2,
       "dimensoes": [
@@ -1383,7 +1383,7 @@
         "licao": "terminal-00",
         "etapa": 6,
         "titulo": "Git, Docker e npm: três vizinhos",
-        "pos": 166
+        "pos": 171
       },
       "praticadoEm": null,
       "avaliadoEm": null,
@@ -1402,7 +1402,7 @@
         "licao": "terminal-00",
         "etapa": 6,
         "titulo": "Git, Docker e npm: três vizinhos",
-        "pos": 166
+        "pos": 171
       },
       "praticadoEm": null,
       "avaliadoEm": null,
@@ -1421,7 +1421,7 @@
         "licao": "terminal-00",
         "etapa": 6,
         "titulo": "Git, Docker e npm: três vizinhos",
-        "pos": 166
+        "pos": 171
       },
       "praticadoEm": null,
       "avaliadoEm": null,
@@ -1440,21 +1440,21 @@
         "licao": "en-a1-00",
         "etapa": 1,
         "titulo": "Hello! Vamos nos apresentar",
-        "pos": 168
+        "pos": 173
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 169
+        "pos": 174
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 172
+        "pos": 177
       },
       "praticas": 5,
       "dimensoes": [
@@ -1475,21 +1475,21 @@
         "licao": "en-a1-01",
         "etapa": 1,
         "titulo": "Numbers: de 0 a 100",
-        "pos": 174
+        "pos": 179
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 175
+        "pos": 180
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-checkpoint",
         "etapa": 4,
         "titulo": "",
-        "pos": 226
+        "pos": 231
       },
       "praticas": 5,
       "dimensoes": [
@@ -1509,21 +1509,21 @@
         "licao": "en-a1-02",
         "etapa": 1,
         "titulo": "My family",
-        "pos": 180
+        "pos": 185
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 181
+        "pos": 186
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-02",
         "etapa": 5,
         "titulo": "",
-        "pos": 184
+        "pos": 189
       },
       "praticas": 5,
       "dimensoes": [
@@ -1545,21 +1545,21 @@
         "licao": "en-a1-03",
         "etapa": 1,
         "titulo": "My daily routine",
-        "pos": 186
+        "pos": 191
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 187
+        "pos": 192
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-03",
         "etapa": 6,
         "titulo": "",
-        "pos": 191
+        "pos": 196
       },
       "praticas": 5,
       "dimensoes": [
@@ -1580,21 +1580,21 @@
         "licao": "en-a1-04",
         "etapa": 1,
         "titulo": "What time is it?",
-        "pos": 192
+        "pos": 197
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 193
+        "pos": 198
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-checkpoint",
         "etapa": 6,
         "titulo": "",
-        "pos": 228
+        "pos": 233
       },
       "praticas": 5,
       "dimensoes": [
@@ -1616,21 +1616,21 @@
         "licao": "en-a1-05",
         "etapa": 1,
         "titulo": "At the restaurant",
-        "pos": 198
+        "pos": 203
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 199
+        "pos": 204
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-05",
         "etapa": 4,
         "titulo": "",
-        "pos": 201
+        "pos": 206
       },
       "praticas": 5,
       "dimensoes": [
@@ -1650,21 +1650,21 @@
         "licao": "en-a1-06",
         "etapa": 1,
         "titulo": "How much is it?",
-        "pos": 204
+        "pos": 209
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-06",
         "etapa": 2,
         "titulo": "",
-        "pos": 205
+        "pos": 210
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-06",
         "etapa": 3,
         "titulo": "",
-        "pos": 206
+        "pos": 211
       },
       "praticas": 5,
       "dimensoes": [
@@ -1686,21 +1686,21 @@
         "licao": "en-a1-07",
         "etapa": 1,
         "titulo": "Where is the station?",
-        "pos": 210
+        "pos": 215
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-07",
         "etapa": 2,
         "titulo": "",
-        "pos": 211
+        "pos": 216
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-07",
         "etapa": 4,
         "titulo": "",
-        "pos": 213
+        "pos": 218
       },
       "praticas": 5,
       "dimensoes": [
@@ -1721,21 +1721,21 @@
         "licao": "en-a1-08",
         "etapa": 1,
         "titulo": "Everyday questions",
-        "pos": 216
+        "pos": 221
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-08",
         "etapa": 2,
         "titulo": "",
-        "pos": 217
+        "pos": 222
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a1-08",
         "etapa": 5,
         "titulo": "",
-        "pos": 220
+        "pos": 225
       },
       "praticas": 6,
       "dimensoes": [
@@ -1758,21 +1758,21 @@
         "licao": "en-a2-00",
         "etapa": 1,
         "titulo": "Talking about yesterday",
-        "pos": 233
+        "pos": 238
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a2-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 234
+        "pos": 239
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a2-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 237
+        "pos": 242
       },
       "praticas": 5,
       "dimensoes": [
@@ -1794,21 +1794,21 @@
         "licao": "en-a2-01",
         "etapa": 1,
         "titulo": "Tomorrow, next week...",
-        "pos": 239
+        "pos": 244
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a2-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 240
+        "pos": 245
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a2-01",
         "etapa": 5,
         "titulo": "",
-        "pos": 243
+        "pos": 248
       },
       "praticas": 5,
       "dimensoes": [
@@ -1831,21 +1831,21 @@
         "licao": "en-a2-02",
         "etapa": 1,
         "titulo": "At the airport and hotel",
-        "pos": 245
+        "pos": 250
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "en-a2-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 246
+        "pos": 251
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "en-a2-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 248
+        "pos": 253
       },
       "praticas": 5,
       "dimensoes": [
@@ -1867,14 +1867,14 @@
         "licao": "ingles-00",
         "etapa": 1,
         "titulo": "As palavras que aparecem todo dia",
-        "pos": 251
+        "pos": 256
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "ingles-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 252
+        "pos": 257
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -1893,14 +1893,14 @@
         "licao": "ingles-00",
         "etapa": 5,
         "titulo": "Montando frases do trabalho",
-        "pos": 255
+        "pos": 260
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "ingles-00",
         "etapa": 6,
         "titulo": "",
-        "pos": 256
+        "pos": 261
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -1920,21 +1920,21 @@
         "licao": "ingles-00",
         "etapa": 5,
         "titulo": "Montando frases do trabalho",
-        "pos": 255
+        "pos": 260
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "ingles-00",
         "etapa": 7,
         "titulo": "",
-        "pos": 257
+        "pos": 262
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "ingles-01",
         "etapa": 5,
         "titulo": "",
-        "pos": 262
+        "pos": 267
       },
       "praticas": 3,
       "dimensoes": [
@@ -1954,21 +1954,21 @@
         "licao": "ingles-01",
         "etapa": 1,
         "titulo": "Mensagens de erro que você vai ver",
-        "pos": 258
+        "pos": 263
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "ingles-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 259
+        "pos": 264
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "ingles-01",
         "etapa": 7,
         "titulo": "",
-        "pos": 264
+        "pos": 269
       },
       "praticas": 3,
       "dimensoes": [
@@ -1989,14 +1989,14 @@
         "licao": "linq-00",
         "etapa": 1,
         "titulo": "Você já escreveu LINQ sem saber",
-        "pos": 265
+        "pos": 270
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 267
+        "pos": 272
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -2018,14 +2018,14 @@
         "licao": "linq-00",
         "etapa": 2,
         "titulo": "O mesmo filtro, agora com LINQ",
-        "pos": 266
+        "pos": 271
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 268
+        "pos": 273
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -2047,21 +2047,21 @@
         "licao": "linq-00",
         "etapa": 2,
         "titulo": "O mesmo filtro, agora com LINQ",
-        "pos": 266
+        "pos": 271
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 268
+        "pos": 273
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-01",
         "etapa": 6,
         "titulo": "",
-        "pos": 276
+        "pos": 281
       },
       "praticas": 13,
       "dimensoes": [
@@ -2084,7 +2084,7 @@
         "licao": "linq-00",
         "etapa": 2,
         "titulo": "O mesmo filtro, agora com LINQ",
-        "pos": 266
+        "pos": 271
       },
       "praticadoEm": null,
       "avaliadoEm": null,
@@ -2103,21 +2103,21 @@
         "licao": "linq-02",
         "etapa": 1,
         "titulo": "Where escolhe linhas. Select escolhe o formato",
-        "pos": 277
+        "pos": 282
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 278
+        "pos": 283
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-02",
         "etapa": 5,
         "titulo": "",
-        "pos": 281
+        "pos": 286
       },
       "praticas": 4,
       "dimensoes": [
@@ -2139,21 +2139,21 @@
         "licao": "linq-03",
         "etapa": 1,
         "titulo": "Buscando um produto específico",
-        "pos": 282
+        "pos": 287
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 283
+        "pos": 288
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-03",
         "etapa": 4,
         "titulo": "",
-        "pos": 285
+        "pos": 290
       },
       "praticas": 9,
       "dimensoes": [
@@ -2177,21 +2177,21 @@
         "licao": "ef-00",
         "etapa": 2,
         "titulo": "ORM: o tradutor entre C# e o banco",
-        "pos": 289
+        "pos": 294
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 290
+        "pos": 295
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 6,
         "titulo": "",
-        "pos": 293
+        "pos": 298
       },
       "praticas": 4,
       "dimensoes": [
@@ -2214,14 +2214,14 @@
         "licao": "ef-00",
         "etapa": 2,
         "titulo": "ORM: o tradutor entre C# e o banco",
-        "pos": 289
+        "pos": 294
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 290
+        "pos": 295
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -2242,14 +2242,14 @@
         "licao": "ef-01",
         "etapa": 1,
         "titulo": "A porta de entrada para o banco",
-        "pos": 294
+        "pos": 299
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-01",
         "etapa": 3,
         "titulo": "",
-        "pos": 296
+        "pos": 301
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -2273,14 +2273,14 @@
         "licao": "ef-01",
         "etapa": 2,
         "titulo": "DbSet: uma gaveta para cada tipo de coisa",
-        "pos": 295
+        "pos": 300
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-01",
         "etapa": 3,
         "titulo": "",
-        "pos": 296
+        "pos": 301
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -2303,21 +2303,21 @@
         "licao": "ef-02",
         "etapa": 3,
         "titulo": "SaveChanges: agora sim, o INSERT",
-        "pos": 304
+        "pos": 309
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 305
+        "pos": 310
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-02",
         "etapa": 8,
         "titulo": "",
-        "pos": 309
+        "pos": 314
       },
       "praticas": 5,
       "dimensoes": [
@@ -2341,21 +2341,21 @@
         "licao": "ef-03",
         "etapa": 1,
         "titulo": "LINQ no DbSet vira SQL",
-        "pos": 310
+        "pos": 315
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-03",
         "etapa": 3,
         "titulo": "",
-        "pos": 312
+        "pos": 317
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-03",
         "etapa": 6,
         "titulo": "",
-        "pos": 315
+        "pos": 320
       },
       "praticas": 5,
       "dimensoes": [
@@ -2381,14 +2381,14 @@
         "licao": "aspnet-00",
         "etapa": 1,
         "titulo": "Duas partes conversando",
-        "pos": 317
+        "pos": 322
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 319
+        "pos": 324
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -2408,7 +2408,7 @@
         "licao": "aspnet-00",
         "etapa": 1,
         "titulo": "Duas partes conversando",
-        "pos": 317
+        "pos": 322
       },
       "praticadoEm": null,
       "avaliadoEm": null,
@@ -2427,7 +2427,7 @@
         "licao": "aspnet-00",
         "etapa": 1,
         "titulo": "Duas partes conversando",
-        "pos": 317
+        "pos": 322
       },
       "praticadoEm": null,
       "avaliadoEm": null,
@@ -2446,14 +2446,14 @@
         "licao": "aspnet-00",
         "etapa": 1,
         "titulo": "Duas partes conversando",
-        "pos": 317
+        "pos": 322
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 333
+        "pos": 338
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -2477,14 +2477,14 @@
         "licao": "aspnet-00",
         "etapa": 4,
         "titulo": "A resposta conta o que aconteceu",
-        "pos": 320
+        "pos": 325
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 321
+        "pos": 326
       },
       "avaliadoEm": null,
       "praticas": 4,
@@ -2506,14 +2506,14 @@
         "licao": "aspnet-01",
         "etapa": 1,
         "titulo": "Um formato que todo mundo entende",
-        "pos": 325
+        "pos": 330
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 326
+        "pos": 331
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -2534,14 +2534,14 @@
         "licao": "aspnet-02",
         "etapa": 1,
         "titulo": "O que é um endpoint",
-        "pos": 330
+        "pos": 335
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 333
+        "pos": 338
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3397,7 +3397,7 @@
     {
       "licao": "sql-00",
       "trilha": "sql",
-      "etapa": 13,
+      "etapa": 14,
       "id": "sql00-a6",
       "tipo": "translate",
       "dimensao": "associacao",
@@ -3410,7 +3410,7 @@
     {
       "licao": "sql-00",
       "trilha": "sql",
-      "etapa": 14,
+      "etapa": 15,
       "id": "sql00-a5",
       "tipo": "scenario",
       "dimensao": "aplicacao",
@@ -3587,7 +3587,7 @@
     {
       "licao": "sql-02",
       "trilha": "sql",
-      "etapa": 13,
+      "etapa": 14,
       "id": "sql02-a8",
       "tipo": "write-code",
       "dimensao": null,
@@ -3712,7 +3712,7 @@
     {
       "licao": "sql-03",
       "trilha": "sql",
-      "etapa": 13,
+      "etapa": 14,
       "id": "sql03-a9",
       "tipo": "write-code",
       "dimensao": null,
@@ -3792,7 +3792,7 @@
     {
       "licao": "sql-04",
       "trilha": "sql",
-      "etapa": 9,
+      "etapa": 10,
       "id": "sql04-a6",
       "tipo": "write-code",
       "dimensao": null,
@@ -3892,7 +3892,7 @@
     {
       "licao": "sql-05",
       "trilha": "sql",
-      "etapa": 8,
+      "etapa": 9,
       "id": "sql05-a7",
       "tipo": "write-code",
       "dimensao": null,

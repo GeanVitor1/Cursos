@@ -189,12 +189,40 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
-      titulo: 'English corner',
+      titulo: 'English corner · Database words',
       introduz: ['sql.ingles'],
       blocos: [
-        { tipo: 'texto', texto: 'Vocabulário que aparece em toda documentação e em conversas de trabalho:' },
-        { tipo: 'vocab', titulo: 'Database vocabulary', pares: [['database', 'banco de dados'], ['server', 'servidor'], ['table', 'tabela'], ['row', 'linha (registro)'], ['column', 'coluna (campo)'], ['primary key', 'chave primária']] },
-        { tipo: 'ingles', frase: 'The customers table has Id, Nome, Email, Cidade and Ativo columns.', traducao: 'A tabela de clientes tem as colunas Id, Nome, Email, Cidade e Ativo.' }
+        { tipo: 'texto', texto: 'Documentação e mensagens de trabalho estão em inglês. Vamos aprender **três palavras por vez**, sempre ligadas ao que você acabou de ver.' },
+        {
+          tipo: 'vocab',
+          titulo: 'Palavras novas (3)',
+          pares: [
+            ['database', 'banco de dados'],
+            ['server', 'servidor'],
+            ['table', 'tabela']
+          ]
+        },
+        { tipo: 'ingles', frase: 'The database is on the server.', traducao: 'O banco de dados está no servidor.' },
+        { tipo: 'nota', tom: 'info', texto: 'Palavras de ligação: **the** = o/a; **is** = é/está; **on** = em/sobre. Elas aparecem em quase toda frase e o sentido vem do contexto.' }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'English corner · Table words',
+      blocos: [
+        { tipo: 'texto', texto: 'Mais três palavras, ainda falando da mesma tabela:' },
+        {
+          tipo: 'vocab',
+          titulo: 'Palavras novas (3)',
+          pares: [
+            ['row', 'linha (registro)'],
+            ['column', 'coluna (campo)'],
+            ['primary key', 'chave primária']
+          ]
+        },
+        { tipo: 'ingles', frase: 'A table has rows and columns.', traducao: 'Uma tabela tem linhas e colunas.' },
+        { tipo: 'ingles', frase: 'The table has a primary key.', traducao: 'A tabela tem uma chave primária.' },
+        { tipo: 'nota', tom: 'info', texto: '**a** = um/uma; **has** = tem; **and** = e. O plural em inglês quase sempre leva **s**: row → rows, column → columns.' }
       ]
     },
     {

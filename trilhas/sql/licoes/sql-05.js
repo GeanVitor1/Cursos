@@ -178,6 +178,22 @@ Plataforma.registrarLicao({
       }
     },
     {
+      tipo: 'conteudo',
+      titulo: 'English corner · Between',
+      blocos: [
+        { tipo: 'texto', texto: 'Uma palavra nova, muito parecida com o operador que você acabou de aprender: **between** (entre).' },
+        {
+          tipo: 'vocab',
+          titulo: 'Palavra nova (1)',
+          pares: [
+            ['between', 'entre']
+          ]
+        },
+        { tipo: 'ingles', frase: 'Retrieve all rows where ValorTotal between 100 and 1000.', traducao: 'Recupere todas as linhas em que o ValorTotal esteja entre 100 e 1000.' },
+        { tipo: 'nota', tom: 'info', texto: '**between ... and ...** = "entre ... e ...". É o mesmo desenho do `BETWEEN ... AND ...` no SQL.' }
+      ]
+    },
+    {
       tipo: 'atividade',
       atividade: {
         id: 'sql05-a7',

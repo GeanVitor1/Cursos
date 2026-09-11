@@ -14,27 +14,27 @@
 
 | Conceito | Introdução | Primeira prática | Primeira avaliação | Estado no conteúdo | Pré-requisitos |
 | --- | --- | --- | --- | --- | --- |
-| Banco de dados (`sql.banco`) | etapa 1 · sql-00 | sql-00 etapa 6 | sql-00 etapa 14 | PRONTO_PARA_AVALIACAO | — |
-| Servidor (`sql.servidor`) | etapa 2 · sql-00 | sql-00 etapa 6 | sql-00 etapa 14 | PRONTO_PARA_AVALIACAO | — |
+| Banco de dados (`sql.banco`) | etapa 1 · sql-00 | sql-00 etapa 6 | sql-00 etapa 15 | PRONTO_PARA_AVALIACAO | — |
+| Servidor (`sql.servidor`) | etapa 2 · sql-00 | sql-00 etapa 6 | sql-00 etapa 15 | PRONTO_PARA_AVALIACAO | — |
 | Tabelas, linhas e colunas (`sql.tabela`) | etapa 3 · sql-00 | sql-00 etapa 5 | sql-checkpoint-fundamentos etapa 2 | PRONTO_PARA_AVALIACAO | sql.banco |
 | Coluna (`sql.coluna`) | etapa 4 · sql-00 | sql-00 etapa 5 | — | PRATICADO | sql.tabela |
 | Registros (`sql.registro`) | etapa 4 · sql-00 | sql-00 etapa 6 | — | PRONTO_PARA_AVALIACAO | sql.tabela |
 | Chave primária (`sql.chave-primaria`) | etapa 8 · sql-00 | sql-00 etapa 9 | sql-checkpoint-fundamentos etapa 3 | PRONTO_PARA_AVALIACAO | sql.tabela |
-| Inglês técnico (`sql.ingles`) | etapa 12 · sql-00 | sql-00 etapa 13 | sql-02 etapa 13 | PRONTO_PARA_AVALIACAO | — |
+| Inglês técnico (`sql.ingles`) | etapa 12 · sql-00 | sql-00 etapa 14 | sql-02 etapa 14 | PRONTO_PARA_AVALIACAO | — |
 | Tipos de dados (`sql.tipos-dados`) | etapa 2 · sql-01 | sql-01 etapa 3 | — | PRATICADO | sql.coluna |
 | Chave estrangeira (`sql.chave-estrangeira`) | etapa 4 · sql-01 | sql-01 etapa 5 | sql-01 etapa 9 | PRONTO_PARA_AVALIACAO | sql.chave-primaria |
 | Relacionamentos (`sql.relacionamento`) | etapa 4 · sql-01 | sql-01 etapa 5 | sql-01 etapa 9 | PRATICADO | sql.chave-estrangeira |
-| SELECT (`sql.select`) | etapa 1 · sql-02 | sql-02 etapa 2 | sql-02 etapa 13 | PRONTO_PARA_AVALIACAO | sql.tabela |
+| SELECT (`sql.select`) | etapa 1 · sql-02 | sql-02 etapa 2 | sql-02 etapa 14 | PRONTO_PARA_AVALIACAO | sql.tabela |
 | FROM (`sql.from`) | etapa 1 · sql-02 | sql-02 etapa 4 | sql-checkpoint-fundamentos etapa 5 | PRONTO_PARA_AVALIACAO | sql.select |
 | Seleção de colunas (`sql.colunas`) | etapa 3 · sql-02 | sql-02 etapa 5 | — | PRATICADO | sql.select |
 | Comandos SQL (`sql.comandos-sql`) | etapa 9 · sql-02 | sql-02 etapa 10 | sql-checkpoint-fundamentos etapa 4 | PRATICADO | sql.select |
-| WHERE (`sql.where`) | etapa 1 · sql-03 | sql-03 etapa 2 | sql-03 etapa 13 | PRONTO_PARA_AVALIACAO | sql.select |
+| WHERE (`sql.where`) | etapa 1 · sql-03 | sql-03 etapa 2 | sql-03 etapa 14 | PRONTO_PARA_AVALIACAO | sql.select |
 | Operadores de comparação (`sql.operadores`) | etapa 3 · sql-03 | sql-03 etapa 4 | sql-checkpoint-fundamentos etapa 6 | PRONTO_PARA_AVALIACAO | sql.where |
 | Textos e aspas (`sql.texto-aspas`) | etapa 6 · sql-03 | sql-03 etapa 7 | sql-checkpoint-fundamentos etapa 10 | PRONTO_PARA_AVALIACAO | sql.where |
-| AND e OR (`sql.and-or`) | etapa 1 · sql-04 | sql-04 etapa 2 | sql-04 etapa 9 | PRONTO_PARA_AVALIACAO | sql.where |
-| Parênteses em filtros (`sql.parenteses`) | etapa 6 · sql-04 | sql-04 etapa 7 | sql-04 etapa 9 | PRONTO_PARA_AVALIACAO | sql.and-or |
+| AND e OR (`sql.and-or`) | etapa 1 · sql-04 | sql-04 etapa 2 | sql-04 etapa 10 | PRONTO_PARA_AVALIACAO | sql.where |
+| Parênteses em filtros (`sql.parenteses`) | etapa 6 · sql-04 | sql-04 etapa 7 | sql-04 etapa 10 | PRONTO_PARA_AVALIACAO | sql.and-or |
 | IN (`sql.in`) | etapa 1 · sql-05 | sql-05 etapa 2 | sql-05 etapa 7 | PRONTO_PARA_AVALIACAO | sql.where |
-| BETWEEN (`sql.between`) | etapa 1 · sql-05 | sql-05 etapa 2 | sql-05 etapa 8 | PRONTO_PARA_AVALIACAO | sql.where |
+| BETWEEN (`sql.between`) | etapa 1 · sql-05 | sql-05 etapa 2 | sql-05 etapa 9 | PRONTO_PARA_AVALIACAO | sql.where |
 | NOT (`sql.not`) | etapa 1 · sql-05 | sql-05 etapa 2 | sql-05 etapa 7 | PRONTO_PARA_AVALIACAO | sql.where |
 | Classes (`csharp.classes`) | etapa 2 · csharp-00 | csharp-00 etapa 3 | csharp-00 etapa 9 | PRONTO_PARA_AVALIACAO | — |
 | Propriedades (`csharp.propriedades`) | etapa 2 · csharp-00 | csharp-00 etapa 3 | — | PRONTO_PARA_AVALIACAO | csharp.classes |

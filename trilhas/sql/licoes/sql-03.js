@@ -282,6 +282,23 @@ Plataforma.registrarLicao({
       }
     },
     {
+      tipo: 'conteudo',
+      titulo: 'English corner · Origin: from',
+      blocos: [
+        { tipo: 'texto', texto: 'Uma palavra nova ajuda a dizer **de onde**: **from**.' },
+        {
+          tipo: 'vocab',
+          titulo: 'Palavra nova (1)',
+          pares: [
+            ['from', 'de / do (origem)']
+          ]
+        },
+        { tipo: 'ingles', frase: 'Customers from Brazil.', traducao: 'Clientes do Brasil.' },
+        { tipo: 'ingles', frase: 'Retrieve all customers from São Paulo.', traducao: 'Retorne todos os clientes de São Paulo.' },
+        { tipo: 'nota', tom: 'info', texto: 'Aqui **from** marca a **origem**: de onde o cliente vem. Repare na ordem: **customers from São Paulo** = clientes de São Paulo.' }
+      ]
+    },
+    {
       tipo: 'atividade',
       atividade: {
         id: 'sql03-a9',

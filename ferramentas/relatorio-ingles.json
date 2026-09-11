@@ -1,9 +1,78 @@
 {
-  "geradoEm": "2026-09-10T18:53:26.659Z",
+  "geradoEm": "2026-09-11T10:24:00.742Z",
   "licoesPercorridas": 45,
-  "etapasPercorridas": 337,
+  "etapasPercorridas": 342,
   "atividadesPercorridas": 241,
-  "palavrasNoLexico": 428,
+  "palavrasNoLexico": 433,
+  "limiteNovasPorEtapa": 3,
+  "introducoesDeVocabulario": [
+    {
+      "licao": "sql-00",
+      "etapa": 12,
+      "termos": 3,
+      "palavras": [
+        "database",
+        "server",
+        "table"
+      ]
+    },
+    {
+      "licao": "sql-00",
+      "etapa": 13,
+      "termos": 3,
+      "palavras": [
+        "row",
+        "column",
+        "primary",
+        "key"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "retrieve",
+        "customer",
+        "all"
+      ]
+    },
+    {
+      "licao": "sql-02",
+      "etapa": 13,
+      "termos": 3,
+      "palavras": [
+        "name",
+        "email",
+        "of"
+      ]
+    },
+    {
+      "licao": "sql-03",
+      "etapa": 13,
+      "termos": 1,
+      "palavras": [
+        "from"
+      ]
+    },
+    {
+      "licao": "sql-04",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "order",
+        "where"
+      ]
+    },
+    {
+      "licao": "sql-05",
+      "etapa": 8,
+      "termos": 1,
+      "palavras": [
+        "between"
+      ]
+    }
+  ],
   "erros": 0,
   "detalhes": []
 }

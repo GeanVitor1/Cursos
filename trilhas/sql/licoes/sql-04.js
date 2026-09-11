@@ -211,6 +211,24 @@ Plataforma.registrarLicao({
       }
     },
     {
+      tipo: 'conteudo',
+      titulo: 'English corner · Orders and where',
+      blocos: [
+        { tipo: 'texto', texto: 'Duas palavras novas aparecem nos pedidos de dados: **order** (pedido) e **where** (onde / em que).' },
+        {
+          tipo: 'vocab',
+          titulo: 'Palavras novas (2)',
+          pares: [
+            ['order', 'pedido'],
+            ['where', 'onde / em que']
+          ]
+        },
+        { tipo: 'ingles', frase: 'Retrieve all orders.', traducao: 'Recupere todos os pedidos.' },
+        { tipo: 'ingles', frase: 'Retrieve all orders where Status = \'Pendente\'.', traducao: 'Recupere todos os pedidos em que o Status é Pendente.' },
+        { tipo: 'nota', tom: 'info', texto: '**where** é a mesma palavra que você usa no SQL: lá ela filtra linhas; aqui, aprenda o sentido "onde / em que".' }
+      ]
+    },
+    {
       tipo: 'atividade',
       atividade: {
         id: 'sql04-a6',

@@ -208,7 +208,7 @@ Estados de conteúdo dos 82 conceitos publicados (matriz em `ferramentas/matriz-
 
 | Arquivo | O que faz |
 | --- | --- |
-| `ferramentas/linter-ingles.js` | percorre **todas as 45 lições** e verifica **palavra a palavra** todo texto em inglês exibido (enunciado, alternativas erradas incluídas, áudio, diálogos, leituras, dicas citadas, feedback). Sai com erro se uma palavra não foi ensinada antes. Nas trilhas não-inglesas usa o English corner/local e só checa texto de fato em inglês. |
+| `ferramentas/linter-ingles.js` | percorre **todas as 45 lições** e verifica **palavra a palavra** todo texto em inglês exibido (enunciado, alternativas erradas incluídas, áudio, diálogos, leituras, dicas citadas, feedback). Sai com erro se uma palavra não foi ensinada antes. Nas trilhas não-inglesas usa o English corner/local, exige **no máximo 3 termos novos por etapa** e garante que toda frase use apenas palavras já explicadas (fora palavras de ligação). |
 | `data/ingles-lexico.js` | nomes próprios, contrações (I'm, it's, don't...), identificadores de código e vocabulário português usados na separação EN/PT. |
 | `ferramentas/linter-simbolos.js` | percorre todas as 45 lições e verifica 105 símbolos/keywords/APIs de código (`;`, `foreach`, `=>`, `await`, `Where`, `SaveChanges`, `Results.Ok`, `TOP`...) **em código, enunciados, dicas, explicações e feedback**. Sai com erro se um símbolo aparece antes da lição que o explica. |
 | `data/simbolos-codigo.js` | registro `grupo:símbolo → lição de introdução + nome legível`. |
@@ -302,9 +302,14 @@ Inglês (transversal)
      léxico curado, não por dicionário);
    - palavras ambíguas (`no`, `a`, `as`) tratadas como portuguesas quando sozinhas; por serem
      funcionais e ensinadas nas primeiras lições, não geraram falso negativo no conteúdo atual.
-8. **Inglês nas trilhas de código**: o English corner do SQL (retrieve, customer, all, name,
-   email, order, of, from) e os comandos do Terminal são ensinados na própria trilha e checados
-   pelo linter; jargão de trilhas sem lição (DTO, migration, tracking, logging, controller,
+8. **Inglês nas trilhas de código**: o English corner do SQL é distribuído em etapas curtas
+   (sql-00: `database`/`server`/`table` e depois `row`/`column`/`primary key`; sql-02:
+   `retrieve`/`customer`/`all` e depois `name`/`email`/`of`; sql-03: `from`; sql-04:
+   `order`/`where`; sql-05: `between`), sempre com o `vocab` antes da frase e nenhuma etapa
+   passando de 3 termos. Os comandos do Terminal são ensinados na própria trilha. O linter falha
+   se uma etapa de programação introduzir mais de 3 termos de uma vez, se uma frase usar palavra
+   ainda não explicada ou se um exercício marcado com conceito `*.ingles` cobrar palavra não
+   ensinada; jargão de trilhas sem lição (DTO, migration, tracking, logging, controller,
    refatorar, hash, token, cache) está registrado como "nunca antes de ensinar" e bloqueia
    regressões.
 
@@ -320,7 +325,7 @@ Saída esperada (resumo):
 
 ```
 Linter pedagógico ....... Erros: 0 | Avisos: 0 · 82 conceitos · 44 termos PT
-Linter de inglês ........ Problemas: 0 · 428 palavras no léxico · 45 lições
+Linter de inglês ........ Problemas: 0 · 433 palavras no léxico · 45 lições
 Linter de símbolos ...... Problemas: 0 · 105 símbolos registrados
 Validador de estrutura .. Validação concluída sem erros
 ```

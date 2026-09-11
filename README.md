@@ -210,6 +210,13 @@ de inglês**. Ele usa `data/ingles-lexico.js` (nomes próprios, contrações, id
 código e palavras portuguesas) e grava `ferramentas/matriz-ingles.json`
 (palavra → lição que ensinou → primeiro uso em atividade).
 
+Nas trilhas de programação, o inglês segue a mesma progressão do resto do curso: cada etapa
+ensina no máximo **3 termos novos** (blocos `vocab`/`introduzVocab`) e toda frase em inglês só
+pode usar palavras já explicadas antes — fora as palavras de ligação básicas (`the`, `is`, `and`,
+`from`...). Assim, `retrieve`/`customer`/`all` são ensinados em uma etapa, `name`/`email`/`of` na
+seguinte, e `order`, `where` e `between` só aparecem quando o conteúdo da trilha realmente precisa
+deles. O relatório lista as introduções por etapa em `introducoesDeVocabulario`.
+
 O **linter de símbolos** usa `data/simbolos-codigo.js` (105 símbolos, palavras-chave e APIs com
 a lição em que são explicados) e garante que `foreach`, `=>`, `await`, `Where`, `SaveChanges`,
 `Results.Ok`, `TOP` etc. não apareçam em blocos de código antes da explicação.
@@ -222,6 +229,9 @@ Regras aplicadas pelos linters:
 - pré-requisito conceitual não introduzido antes → **erro**;
 - `retoma` apontando para conceito ainda não ensinado → **erro**;
 - palavra de inglês usada antes de ensinada (inclusive em alternativa errada) → **erro**;
+- etapa de programação introduzindo mais de 3 termos novos de inglês de uma vez → **erro**;
+- frase do English corner usando palavra ainda não explicada (fora palavras de ligação) → **erro**;
+- exercício de inglês de trilha de programação cobrando palavra não ensinada → **erro**;
 - símbolo/keyword de código usado antes de explicado → **erro**;
 - siglas e símbolos (`ORM`, `API`, `HTTP`, `DbSet`, `=>`, `ToListAsync`…) fora de ordem → erro.
 

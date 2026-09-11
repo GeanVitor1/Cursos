@@ -248,24 +248,20 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
-      titulo: 'English corner',
+      titulo: 'English corner · Asking for data',
       blocos: [
-        { tipo: 'ingles', frase: 'Retrieve all customers.', traducao: 'Recupere/retorne todos os clientes.' },
+        { tipo: 'texto', texto: 'Pedidos de dados aparecem em inglês em documentação, issues e tarefas. Vamos aprender **três palavras por vez**.' },
         {
           tipo: 'vocab',
-          titulo: 'Work vocabulary',
+          titulo: 'Palavras novas (3)',
           pares: [
             ['retrieve', 'recuperar / retornar'],
             ['customer', 'cliente'],
-            ['all', 'todos'],
-            ['name', 'nome'],
-            ['email', 'e-mail'],
-            ['order', 'pedido'],
-            ['of', 'de (dentro da frase)'],
-            ['from', 'de / do']
+            ['all', 'todos']
           ]
         },
-        { tipo: 'texto', texto: 'Nas próximas etapas, o inglês aparece em pedidos curtos — as dicas ajudam com as palavras novas.' }
+        { tipo: 'ingles', frase: 'Retrieve all customers.', traducao: 'Recupere/retorne todos os clientes.' },
+        { tipo: 'nota', tom: 'info', texto: 'A ordem da frase segue o pedido: primeiro a ação (**retrieve**), depois a quantidade (**all**) e por último quem (**customers**).' }
       ]
     },
     {
@@ -283,6 +279,24 @@ Plataforma.registrarLicao({
         explicacao: 'Consulta completa: `SELECT Nome, Preco FROM Produtos;`. Sem uma condição, ela retorna todos os produtos.',
         conceitos: ['sql.select', 'sql.from']
       }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'English corner · Which fields?',
+      blocos: [
+        { tipo: 'texto', texto: 'Para dizer **de quem** ou **de quê**, o inglês usa uma palavra pequena: **of**.' },
+        {
+          tipo: 'vocab',
+          titulo: 'Palavras novas (3)',
+          pares: [
+            ['name', 'nome'],
+            ['email', 'e-mail'],
+            ['of', 'de (dentro da frase)']
+          ]
+        },
+        { tipo: 'ingles', frase: 'The name and email of a customer.', traducao: 'O nome e o e-mail de um cliente.' },
+        { tipo: 'nota', tom: 'info', texto: 'Ligação: **the** = o/a; **and** = e; **a** = um/uma. Repare como **of a customer** equivale a "de um cliente".' }
+      ]
     },
     {
       tipo: 'atividade',
