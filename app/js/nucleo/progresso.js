@@ -66,18 +66,40 @@ window.Plataforma = window.Plataforma || {};
     };
   }
 
+  function fronteiraLiberada(comLicao) {
+    let ultimoComRegistro = -1;
+    comLicao.forEach(function (e, i) {
+      if (P.dados.obterRegistroLicao(e.licao)) ultimoComRegistro = i;
+    });
+    return ultimoComRegistro + 1;
+  }
+
   function statusEtapa(trilhaId, etapa) {
     if (etapa.licao && P.dados.estaConcluida(etapa.licao)) return 'concluida';
     const resumo = daTrilha(trilhaId);
-    if (resumo && resumo.status === 'bloqueada') return 'bloqueada';
-    if (!etapa.licao) return 'planejada';
     if (!resumo) return 'bloqueada';
+    if (resumo.status === 'bloqueada') return 'bloqueada';
+    if (!etapa.licao) return 'planejada';
     if (resumo.trilha && resumo.trilha.acessoLivre) return 'disponivel';
     const indice = resumo.comLicao.findIndex(function (e) { return e.id === etapa.id; });
-    for (let i = 0; i < indice; i += 1) {
-      if (!P.dados.estaConcluida(resumo.comLicao[i].licao)) return 'bloqueada';
+    if (indice === -1) return 'bloqueada';
+    if (indice <= fronteiraLiberada(resumo.comLicao)) return 'disponivel';
+    return 'bloqueada';
+  }
+
+  function statusLicao(licaoId) {
+    const ids = idsTrilhas();
+    for (let i = 0; i < ids.length; i += 1) {
+      const t = trilha(ids[i]);
+      if (!t) continue;
+      const etapas = etapasDaTrilha(t);
+      for (let j = 0; j < etapas.length; j += 1) {
+        if (etapas[j].licao === licaoId) {
+          return { trilhaId: ids[i], trilha: t, etapa: etapas[j], status: statusEtapa(ids[i], etapas[j]) };
+        }
+      }
     }
-    return 'disponivel';
+    return null;
   }
 
   function idsTrilhas() {
@@ -99,21 +121,49 @@ window.Plataforma = window.Plataforma || {};
       const resumo = daTrilha(t.id);
       if (!resumo) return;
       if (resumo.status !== 'disponivel' && resumo.status !== 'em-andamento') return;
-      for (let i = 0; i < resumo.comLicao.length; i += 1) {
-        const etapa = resumo.comLicao[i];
-        if (!P.dados.estaConcluida(etapa.licao)) {
-          candidatas.push({
-            trilha: resumo.trilha,
-            etapa: etapa,
-            nivelNome: etapa.nivelNome,
-            transversal: !!t.transversal
-          });
-          return;
+      const etapas = resumo.comLicao;
+      let escolhida = null;
+      let retomada = false;
+
+      for (let i = etapas.length - 1; i >= 0; i -= 1) {
+        if (P.dados.estaConcluida(etapas[i].licao)) continue;
+        if (P.dados.obterRascunho(etapas[i].licao)) {
+          escolhida = etapas[i];
+          retomada = true;
+          break;
         }
       }
+
+      if (!escolhida) {
+        let ultimoComRegistro = -1;
+        etapas.forEach(function (e, i) {
+          if (P.dados.obterRegistroLicao(e.licao)) ultimoComRegistro = i;
+        });
+        for (let i = ultimoComRegistro + 1; i < etapas.length; i += 1) {
+          if (!P.dados.estaConcluida(etapas[i].licao)) { escolhida = etapas[i]; break; }
+        }
+        if (!escolhida) {
+          for (let i = 0; i < etapas.length; i += 1) {
+            if (!P.dados.estaConcluida(etapas[i].licao)) { escolhida = etapas[i]; break; }
+          }
+        }
+      }
+
+      if (!escolhida) return;
+      if (statusEtapa(t.id, escolhida) !== 'disponivel') return;
+      candidatas.push({
+        trilha: resumo.trilha,
+        etapa: escolhida,
+        nivelNome: escolhida.nivelNome,
+        transversal: !!t.transversal,
+        retomada: retomada
+      });
     });
     const principais = candidatas.filter(function (c) { return !c.transversal; });
-    const lista = principais.length ? principais : candidatas;
+    const lista = (principais.length ? principais : candidatas).slice().sort(function (a, b) {
+      if (a.retomada === b.retomada) return 0;
+      return a.retomada ? -1 : 1;
+    });
     return lista.length ? lista[0] : null;
   }
 
@@ -365,6 +415,7 @@ window.Plataforma = window.Plataforma || {};
     etapasDaTrilha: etapasDaTrilha,
     daTrilha: daTrilha,
     statusEtapa: statusEtapa,
+    statusLicao: statusLicao,
     proximaEtapa: proximaEtapa,
     proximaEtapaDepois: proximaEtapaDepois,
     conceitosParaRevisar: conceitosParaRevisar,

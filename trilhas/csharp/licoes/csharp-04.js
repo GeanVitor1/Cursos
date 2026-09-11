@@ -32,13 +32,12 @@ Plataforma.registrarLicao({
     {
       tipo: 'conteudo',
       titulo: 'O erro mais famoso do .NET',
-      introduz: ['csharp.excecoes'],
       blocos: [
-        { tipo: 'texto', texto: 'Se você tentar acessar uma propriedade de algo que está `null`, o programa é interrompido por um erro. No C#, esse tipo de erro interrompe a execução e é chamado de **exceção**.' },
-        { tipo: 'conceito', id: 'csharp.excecoes', titulo: 'Exceção', texto: 'Um erro que interrompe o programa quando algo inesperado acontece. Pode ser tratada depois com try/catch (você verá em uma próxima etapa).', exemplo: 'NullReferenceException' },
+        { tipo: 'texto', texto: 'Se você tentar acessar uma propriedade de algo que está `null`, o programa é interrompido por um erro. No .NET, esse erro tem nome próprio: **NullReferenceException**.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'Cliente cliente = null;\n\n// Lança NullReferenceException\nConsole.WriteLine(cliente.Nome);' },
         { tipo: 'diagrama', arte: 'cliente ──► null\n              │\n   cliente.Nome ──► ✖ nada para acessar\n              ▼\n   NullReferenceException' },
-        { tipo: 'nota', tom: 'atencao', texto: 'A mensagem do erro não diz onde o null nasceu — só onde ele apareceu. Por isso, ler os **detalhes do erro** é uma habilidade importante na **investigação de erro**.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'A mensagem do erro não diz onde o null nasceu — só onde ele apareceu. Por isso, ler os **detalhes do erro** é uma habilidade importante na **investigação de erro**.' },
+        { tipo: 'futuro', conceitos: ['csharp.excecoes'], texto: 'Mais adiante você vai estudar as **exceções** com calma: por que acontecem e como tratá-las com try/catch.' }
       ]
     },
     {
@@ -78,6 +77,7 @@ Plataforma.registrarLicao({
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'string nome = cliente?.Nome;' },
         { tipo: 'texto', texto: 'E o `??` (null-coalescing) fornece um valor alternativo quando o resultado é null:' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'string nome = cliente?.Nome ?? "Sem nome";' },
+        { tipo: 'nota', tom: 'info', texto: 'Em textos, `.Length` devolve a quantidade de caracteres: `cliente.Telefone.Length`. Se `Telefone` for null, acessar `.Length` quebra — por isso usamos `?.`.' },
         { tipo: 'glossario', titulo: 'Dicionário do null', itens: [
           ['!= null', 'verificação', 'Só entra no bloco se houver objeto.'],
           ['?.', 'null-conditional', 'Acessa a propriedade apenas se o objeto existir.'],
@@ -99,7 +99,7 @@ Plataforma.registrarLicao({
         opcoes: ['Sem nome', 'NullReferenceException', 'null', 'Uma linha em branco'],
         correta: 0,
         feedbackErro: {
-          1: 'O `?.` evita exatamente esse erro: sem objeto, o resultado é null em vez de exceção.',
+          1: 'O `?.` evita exatamente esse erro: sem objeto, o resultado é null em vez de interromper o programa.',
           2: 'O `??` transforma o null em "Sem nome" antes de escrever.',
           3: 'Quando não há valor, o `??` fornece o texto alternativo.'
         },

@@ -5,9 +5,9 @@
 - Trilhas analisadas: **20**
 - Lições publicadas: **45**
 - Etapas percorridas: **367**
-- Atividades percorridas: **241**
-- Conceitos registrados: **160**
-- Conceitos com introdução marcada: **82**
+- Atividades percorridas: **250**
+- Conceitos registrados: **161**
+- Conceitos com introdução marcada: **83**
 - Erros: **0** · Avisos: **0**
 
 ## Evidência por conceito (introdução → prática → avaliação)
@@ -33,34 +33,35 @@
 | Textos e aspas (`sql.texto-aspas`) | etapa 6 · sql-03 | sql-03 etapa 7 | sql-checkpoint-fundamentos etapa 10 | PRONTO_PARA_AVALIACAO | sql.where |
 | AND e OR (`sql.and-or`) | etapa 1 · sql-04 | sql-04 etapa 2 | sql-04 etapa 10 | PRONTO_PARA_AVALIACAO | sql.where |
 | Parênteses em filtros (`sql.parenteses`) | etapa 6 · sql-04 | sql-04 etapa 7 | sql-04 etapa 10 | PRONTO_PARA_AVALIACAO | sql.and-or |
-| IN (`sql.in`) | etapa 1 · sql-05 | sql-05 etapa 2 | sql-05 etapa 7 | PRONTO_PARA_AVALIACAO | sql.where |
-| BETWEEN (`sql.between`) | etapa 1 · sql-05 | sql-05 etapa 2 | sql-05 etapa 9 | PRONTO_PARA_AVALIACAO | sql.where |
-| NOT (`sql.not`) | etapa 1 · sql-05 | sql-05 etapa 2 | sql-05 etapa 7 | PRONTO_PARA_AVALIACAO | sql.where |
-| Classes (`csharp.classes`) | etapa 2 · csharp-00 | csharp-00 etapa 3 | csharp-00 etapa 9 | PRONTO_PARA_AVALIACAO | — |
-| Propriedades (`csharp.propriedades`) | etapa 2 · csharp-00 | csharp-00 etapa 3 | — | PRONTO_PARA_AVALIACAO | csharp.classes |
-| Tipos de dados em C# (`csharp.tipos`) | etapa 2 · csharp-00 | csharp-00 etapa 8 | csharp-01 etapa 7 | PRONTO_PARA_AVALIACAO | — |
-| Objetos (`csharp.objetos`) | etapa 4 · csharp-00 | csharp-00 etapa 5 | csharp-00 etapa 9 | PRONTO_PARA_AVALIACAO | csharp.classes |
-| Variáveis (`csharp.variaveis`) | etapa 1 · csharp-01 | csharp-01 etapa 5 | csharp-01 etapa 7 | PRONTO_PARA_AVALIACAO | — |
-| Condições (`csharp.condicoes`) | etapa 3 · csharp-01 | csharp-01 etapa 4 | — | PRONTO_PARA_AVALIACAO | csharp.variaveis |
-| Métodos (`csharp.metodos`) | etapa 2 · csharp-02 | csharp-02 etapa 3 | — | PRONTO_PARA_AVALIACAO | csharp.variaveis |
-| List e coleções (`csharp.list`) | etapa 2 · csharp-03 | csharp-03 etapa 3 | csharp-03 etapa 8 | PRONTO_PARA_AVALIACAO | csharp.objetos |
-| Generics básicos (`csharp.generics`) | etapa 2 · csharp-03 | csharp-03 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.list |
+| IN (`sql.in`) | etapa 1 · sql-05 | sql-05 etapa 2 | sql-05 etapa 9 | PRONTO_PARA_AVALIACAO | sql.where |
+| BETWEEN (`sql.between`) | etapa 3 · sql-05 | sql-05 etapa 4 | sql-05 etapa 11 | PRONTO_PARA_AVALIACAO | sql.where |
+| NOT (`sql.not`) | etapa 5 · sql-05 | sql-05 etapa 6 | sql-05 etapa 9 | PRONTO_PARA_AVALIACAO | sql.where |
+| Classes (`csharp.classes`) | etapa 2 · csharp-00 | csharp-00 etapa 3 | csharp-00 etapa 21 | PRONTO_PARA_AVALIACAO | — |
+| Propriedades (`csharp.propriedades`) | etapa 4 · csharp-00 | csharp-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.classes |
+| Valores (`csharp.valor`) | etapa 6 · csharp-00 | csharp-00 etapa 7 | — | PRATICADO | csharp.propriedades |
+| Objetos (`csharp.objetos`) | etapa 8 · csharp-00 | csharp-00 etapa 9 | csharp-00 etapa 21 | PRONTO_PARA_AVALIACAO | csharp.classes |
+| Tipos de dados em C# (`csharp.tipos`) | etapa 15 · csharp-00 | csharp-00 etapa 16 | csharp-01 etapa 9 | PRONTO_PARA_AVALIACAO | — |
+| Variáveis (`csharp.variaveis`) | etapa 1 · csharp-01 | csharp-01 etapa 2 | csharp-01 etapa 9 | PRONTO_PARA_AVALIACAO | — |
+| Condições (`csharp.condicoes`) | etapa 5 · csharp-01 | csharp-01 etapa 6 | — | PRONTO_PARA_AVALIACAO | csharp.variaveis |
+| Métodos (`csharp.metodos`) | etapa 2 · csharp-02 | csharp-02 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.variaveis |
+| List e coleções (`csharp.list`) | etapa 2 · csharp-03 | csharp-03 etapa 4 | csharp-03 etapa 12 | PRONTO_PARA_AVALIACAO | csharp.objetos |
+| Generics básicos (`csharp.generics`) | etapa 8 · csharp-03 | csharp-03 etapa 10 | — | PRONTO_PARA_AVALIACAO | csharp.list |
 | Null e NullReferenceException (`csharp.null`) | etapa 1 · csharp-04 | csharp-04 etapa 3 | csharp-04 etapa 7 | PRONTO_PARA_AVALIACAO | csharp.objetos |
-| Exceções (`csharp.excecoes`) | etapa 2 · csharp-04 | csharp-08 etapa 3 | csharp-08 etapa 5 | PRONTO_PARA_AVALIACAO | csharp.metodos |
-| Interfaces (`csharp.interfaces`) | etapa 2 · csharp-05 | csharp-05 etapa 3 | csharp-05 etapa 6 | PRONTO_PARA_AVALIACAO | csharp.classes, csharp.metodos |
-| Construtores (`csharp.construtor`) | etapa 2 · csharp-06 | csharp-06 etapa 3 | — | PRONTO_PARA_AVALIACAO | csharp.classes |
-| Injeção de dependência (`csharp.di`) | etapa 2 · csharp-06 | csharp-06 etapa 3 | csharp-06 etapa 5 | PRONTO_PARA_AVALIACAO | csharp.interfaces, csharp.construtor |
-| Lambdas (`csharp.lambda`) | etapa 4 · csharp-07 | csharp-07 etapa 5 | csharp-07 etapa 9 | PRONTO_PARA_AVALIACAO | csharp.metodos |
+| Interfaces (`csharp.interfaces`) | etapa 2 · csharp-05 | csharp-05 etapa 4 | csharp-05 etapa 7 | PRONTO_PARA_AVALIACAO | csharp.classes, csharp.metodos |
+| Construtores (`csharp.construtor`) | etapa 2 · csharp-06 | csharp-06 etapa 4 | — | PRONTO_PARA_AVALIACAO | csharp.classes |
+| Injeção de dependência (`csharp.di`) | etapa 3 · csharp-06 | csharp-06 etapa 4 | csharp-06 etapa 6 | PRONTO_PARA_AVALIACAO | csharp.interfaces, csharp.construtor |
+| Lambdas (`csharp.lambda`) | etapa 5 · csharp-07 | csharp-07 etapa 6 | csharp-07 etapa 10 | PRONTO_PARA_AVALIACAO | csharp.metodos |
+| Exceções (`csharp.excecoes`) | etapa 1 · csharp-08 | csharp-08 etapa 4 | csharp-08 etapa 6 | PRONTO_PARA_AVALIACAO | csharp.metodos |
 | async e await (`csharp.async`) | etapa 1 · csharp-09 | csharp-09 etapa 3 | csharp-09 etapa 6 | PRONTO_PARA_AVALIACAO | csharp.metodos, csharp.generics |
 | Total de pedido (`logica.total`) | etapa 2 · logica-00 | logica-00 etapa 3 | — | PRONTO_PARA_AVALIACAO | — |
-| Validação de regra (`logica.validacao`) | etapa 2 · logica-00 | logica-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | logica.total |
-| Encontrar duplicados (`logica.duplicados`) | etapa 2 · logica-00 | logica-00 etapa 7 | — | PRATICADO | — |
-| Agrupar dados (`logica.agrupamento`) | etapa 2 · logica-00 | logica-00 etapa 8 | — | PRATICADO | — |
+| Validação de regra (`logica.validacao`) | etapa 5 · logica-00 | logica-00 etapa 6 | — | PRONTO_PARA_AVALIACAO | logica.total |
+| Encontrar duplicados (`logica.duplicados`) | etapa 8 · logica-00 | logica-00 etapa 9 | — | PRATICADO | — |
+| Agrupar dados (`logica.agrupamento`) | etapa 10 · logica-00 | logica-00 etapa 11 | — | PRATICADO | — |
 | Comandos de navegação (`terminal.comandos`) | etapa 2 · terminal-00 | terminal-00 etapa 3 | — | PRATICADO | — |
-| Comandos dotnet (`terminal.dotnet`) | etapa 4 · terminal-00 | terminal-00 etapa 5 | terminal-00 etapa 7 | PRONTO_PARA_AVALIACAO | terminal.comandos |
+| Comandos dotnet (`terminal.dotnet`) | etapa 4 · terminal-00 | terminal-00 etapa 5 | terminal-00 etapa 9 | PRONTO_PARA_AVALIACAO | terminal.comandos |
 | Comandos git (`terminal.git`) | etapa 6 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
-| Comandos docker (`terminal.docker`) | etapa 6 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
-| Comandos npm (`terminal.npm`) | etapa 6 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
+| Comandos docker (`terminal.docker`) | etapa 7 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
+| Comandos npm (`terminal.npm`) | etapa 8 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
 | Saudações e apresentações (`en.saudacoes`) | etapa 1 · en-a1-00 | en-a1-00 etapa 2 | en-a1-00 etapa 5 | PRONTO_PARA_AVALIACAO | — |
 | Números, idade e preços (`en.numeros`) | etapa 1 · en-a1-01 | en-a1-01 etapa 2 | en-a1-checkpoint etapa 4 | PRONTO_PARA_AVALIACAO | — |
 | Família e pessoas (`en.familia`) | etapa 1 · en-a1-02 | en-a1-02 etapa 2 | en-a1-02 etapa 5 | PRONTO_PARA_AVALIACAO | en.saudacoes |
@@ -77,25 +78,25 @@
 | Frases de trabalho (`ingles.frases`) | etapa 5 · ingles-00 | ingles-00 etapa 6 | — | PRATICADO | ingles.vocabulario |
 | Leitura técnica em inglês (`ingles.leitura`) | etapa 5 · ingles-00 | ingles-00 etapa 7 | ingles-01 etapa 5 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
 | Mensagens de erro em inglês (`ingles.erros`) | etapa 1 · ingles-01 | ingles-01 etapa 2 | ingles-01 etapa 7 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
-| O que é LINQ (`linq.intro`) | etapa 1 · linq-00 | linq-00 etapa 3 | — | PRONTO_PARA_AVALIACAO | csharp.lambda, csharp.list |
-| Lambda em consultas (`linq.lambda`) | etapa 2 · linq-00 | linq-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | csharp.lambda |
-| Where (`linq.where`) | etapa 2 · linq-00 | linq-00 etapa 4 | linq-01 etapa 6 | PRONTO_PARA_AVALIACAO | linq.intro |
-| ToList (`linq.tolist`) | etapa 2 · linq-00 | — | — | INTRODUZIDO | linq.intro |
+| O que é LINQ (`linq.intro`) | etapa 1 · linq-00 | linq-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | csharp.lambda, csharp.list |
+| Where (`linq.where`) | etapa 2 · linq-00 | linq-00 etapa 5 | linq-01 etapa 6 | PRONTO_PARA_AVALIACAO | linq.intro |
+| Lambda em consultas (`linq.lambda`) | etapa 2 · linq-00 | linq-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.lambda |
+| ToList (`linq.tolist`) | etapa 3 · linq-00 | linq-00 etapa 6 | — | PRATICADO | linq.intro |
 | Select (`linq.select`) | etapa 1 · linq-02 | linq-02 etapa 2 | linq-02 etapa 5 | PRONTO_PARA_AVALIACAO | linq.intro |
 | First, FirstOrDefault e Single (`linq.first`) | etapa 1 · linq-03 | linq-03 etapa 2 | linq-03 etapa 4 | PRONTO_PARA_AVALIACAO | linq.where, csharp.null |
-| ORM (`ef.orm`) | etapa 2 · ef-00 | ef-00 etapa 3 | ef-00 etapa 6 | PRONTO_PARA_AVALIACAO | sql.tabela, csharp.classes |
-| Entidades (`ef.entidade`) | etapa 2 · ef-00 | ef-00 etapa 3 | — | PRONTO_PARA_AVALIACAO | ef.orm |
+| ORM (`ef.orm`) | etapa 2 · ef-00 | ef-00 etapa 4 | ef-00 etapa 7 | PRONTO_PARA_AVALIACAO | sql.tabela, csharp.classes |
+| Entidades (`ef.entidade`) | etapa 3 · ef-00 | ef-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | ef.orm |
 | DbContext (`ef.dbcontext`) | etapa 1 · ef-01 | ef-01 etapa 3 | — | PRONTO_PARA_AVALIACAO | ef.orm, csharp.construtor, csharp.di |
 | DbSet (`ef.dbset`) | etapa 2 · ef-01 | ef-01 etapa 3 | — | PRONTO_PARA_AVALIACAO | ef.dbcontext |
 | SaveChanges (`ef.savechanges`) | etapa 3 · ef-02 | ef-02 etapa 4 | ef-02 etapa 8 | PRONTO_PARA_AVALIACAO | ef.dbset, csharp.async |
 | Consultas com EF (`ef.consultas`) | etapa 1 · ef-03 | ef-03 etapa 3 | ef-03 etapa 6 | PRONTO_PARA_AVALIACAO | ef.dbset, linq.where, csharp.async, linq.first |
-| HTTP (`aspnet.http`) | etapa 1 · aspnet-00 | aspnet-00 etapa 3 | — | PRONTO_PARA_AVALIACAO | — |
-| Request (requisição) (`aspnet.requisicao`) | etapa 1 · aspnet-00 | — | — | INTRODUZIDO | aspnet.http |
-| Response (resposta) (`aspnet.resposta`) | etapa 1 · aspnet-00 | — | — | INTRODUZIDO | aspnet.http |
-| API e endpoints (`aspnet.api`) | etapa 1 · aspnet-00 | aspnet-02 etapa 4 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
-| Status codes (`aspnet.status`) | etapa 4 · aspnet-00 | aspnet-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
+| HTTP (`aspnet.http`) | etapa 1 · aspnet-00 | aspnet-00 etapa 6 | — | PRONTO_PARA_AVALIACAO | — |
+| API e endpoints (`aspnet.api`) | etapa 1 · aspnet-00 | aspnet-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
+| Request (requisição) (`aspnet.requisicao`) | etapa 2 · aspnet-00 | aspnet-00 etapa 3 | — | PRATICADO | aspnet.http |
+| Response (resposta) (`aspnet.resposta`) | etapa 2 · aspnet-00 | aspnet-00 etapa 3 | — | PRATICADO | aspnet.http |
+| Status codes (`aspnet.status`) | etapa 7 · aspnet-00 | aspnet-00 etapa 8 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
 | JSON (`aspnet.json`) | etapa 1 · aspnet-01 | aspnet-01 etapa 2 | — | PRONTO_PARA_AVALIACAO | — |
-| Rotas (`aspnet.rotas`) | etapa 1 · aspnet-02 | aspnet-02 etapa 4 | — | PRATICADO | aspnet.api |
+| Rotas (`aspnet.rotas`) | etapa 1 · aspnet-02 | aspnet-02 etapa 8 | — | PRATICADO | aspnet.api |
 
 <!-- MANUAL -->
 ## O erro que originou esta auditoria

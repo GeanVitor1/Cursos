@@ -34,14 +34,15 @@ Plataforma.registrarRegistroConceitos({
     // Terminal
     'terminal.comandos': { prerequisitos: [], termos: [], definicao: 'Comandos de navegação em pastas: pwd, ls/dir, cd e mkdir.', exemplo: 'cd Projetos' },
     'terminal.dotnet': { prerequisitos: ['terminal.comandos'], termos: ['dotnet '], definicao: 'Comandos para criar, compilar, executar e testar projetos .NET.', exemplo: 'dotnet run, dotnet build, dotnet test' },
-    'terminal.git': { prerequisitos: ['terminal.comandos'], termos: ['git '], definicao: 'Comandos para versionar o código: status, add, commit e push.', exemplo: 'git commit -m "Corrige cálculo"' },
-    'terminal.docker': { prerequisitos: ['terminal.comandos'], termos: ['docker '], definicao: 'Comandos para subir os serviços descritos no projeto.', exemplo: 'docker compose up' },
-    'terminal.npm': { prerequisitos: ['terminal.comandos'], termos: ['npm '], definicao: 'Comandos para instalar dependências do frontend.', exemplo: 'npm install' },
+    'terminal.git': { prerequisitos: ['terminal.comandos'], preview: true, termos: ['git '], definicao: 'Comandos para versionar o código: status, add, commit e push.', exemplo: 'git commit -m "Corrige cálculo"' },
+    'terminal.docker': { prerequisitos: ['terminal.comandos'], preview: true, termos: ['docker '], definicao: 'Comandos para subir os serviços descritos no projeto.', exemplo: 'docker compose up' },
+    'terminal.npm': { prerequisitos: ['terminal.comandos'], preview: true, termos: ['npm '], definicao: 'Comandos para instalar dependências do frontend.', exemplo: 'npm install' },
 
     // C#
     'csharp.classes': { prerequisitos: [], termos: ['class '], definicao: 'Um molde que descreve quais dados uma coisa tem.', exemplo: 'class Produto { ... }' },
     'csharp.objetos': { prerequisitos: ['csharp.classes'], termos: ['new '], definicao: 'Uma cópia preenchida do molde, criada com new.', exemplo: 'Produto produto = new Produto();' },
     'csharp.propriedades': { prerequisitos: ['csharp.classes'], termos: ['{ get; set; }', '.length'], definicao: 'Um dado do objeto, como Nome ou Preco, que pode ser lido e gravado.', exemplo: 'public string Nome { get; set; }' },
+    'csharp.valor': { prerequisitos: ['csharp.propriedades'], termos: [], definicao: 'O conteúdo guardado em uma propriedade: "Mouse" em Nome, 100.00 em Preco.', exemplo: 'Nome = "Mouse" → "Mouse" é o valor.' },
     'csharp.tipos': { prerequisitos: [], termos: [], definicao: 'O tipo define que espécie de valor cabe: int, decimal, string, bool e DateTime.', exemplo: 'decimal preco = 100.50m;' },
     'csharp.variaveis': { prerequisitos: [], termos: [], definicao: 'Uma caixa etiquetada que guarda um valor com um nome.', exemplo: 'int estoque = 25;' },
     'csharp.condicoes': { prerequisitos: ['csharp.variaveis'], termos: ['if ('], definicao: 'O if executa um bloco somente quando a condição é verdadeira.', exemplo: 'if (estoque < 10) { ... }' },

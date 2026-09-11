@@ -36,12 +36,21 @@ Plataforma.registrarLicao({
         { tipo: 'texto', texto: 'Uma **interface** descreve **o que** algo faz, sem dizer **como**. Quem implementa assume o compromisso de cumprir aquele contrato.' },
         { tipo: 'conceito', id: 'csharp.interfaces', titulo: 'Interface', texto: 'Um contrato: uma lista de métodos que uma classe se compromete a ter. Ela não executa nada; ela promete.', exemplo: 'interface INotificador { void Enviar(string mensagem); }' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'public interface INotificador\n{\n    void Enviar(string mensagem);\n}' },
+        { tipo: 'glossario', titulo: 'O contrato', itens: [
+          ['interface', 'contrato', 'Lista de métodos que uma classe se compromete a ter.'],
+          ['INotificador', 'prefixo I', 'Convenção do .NET: interfaces começam com I.']
+        ] }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Implementando o contrato',
+      blocos: [
+        { tipo: 'texto', texto: 'Quem assina o contrato é uma **classe concreta**: ela se compromete a ter todos os métodos da interface. Duas classes podem cumprir o mesmo contrato de formas diferentes.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'public class EmailNotificador : INotificador\n{\n    public void Enviar(string mensagem)\n    {\n        // envia e-mail de verdade\n    }\n}\n\npublic class SmsNotificador : INotificador\n{\n    public void Enviar(string mensagem)\n    {\n        // envia SMS\n    }\n}' },
         { tipo: 'diagrama', arte: '      PedidoService\n            │ depende de\n            ▼\n      INotificador  ◄── contrato\n        ▲       ▲\n        │       │\nEmailNotificador  SmsNotificador\n   (implementações)' },
-        { tipo: 'glossario', titulo: 'Termos que aparecem no código', itens: [
-          ['interface', 'contrato', 'Lista de métodos que uma classe se compromete a ter.'],
+        { tipo: 'glossario', titulo: 'Quem implementa', itens: [
           [': INotificador', 'implementa', 'A classe assina o contrato e precisa cumprir tudo.'],
-          ['INotificador', 'prefixo I', 'Convenção do .NET: interfaces começam com I.'],
           ['classe concreta', 'implementação', 'A classe de verdade, que contém o código que executa a ação.']
         ] }
       ]

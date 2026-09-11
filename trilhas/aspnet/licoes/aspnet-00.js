@@ -16,18 +16,66 @@ Plataforma.registrarLicao({
     {
       tipo: 'conteudo',
       titulo: 'Duas partes conversando',
-      introduz: ['aspnet.http', 'aspnet.requisicao', 'aspnet.resposta', 'aspnet.api'],
+      introduz: ['aspnet.http', 'aspnet.api'],
       blocos: [
         { tipo: 'retoma', conceito: 'ef.dbset', texto: 'Você já sabe ler e gravar no banco pela sua aplicação. Agora a aplicação vai **responder a outros programas** — é aí que entra a web.' },
         { tipo: 'texto', texto: 'Toda aplicação web funciona como uma conversa: o **cliente** (navegador, app, outro sistema) faz um pedido, e o **servidor** responde. A conversa segue um protocolo chamado **HTTP** (HyperText Transfer Protocol — o protocolo de comunicação da web).' },
-        { tipo: 'conceito', id: 'aspnet.http', titulo: 'HTTP', texto: 'O protocolo de comunicação da web: o cliente pede (requisição) e o servidor responde (resposta).', exemplo: 'GET /api/produtos/10' },
-        { tipo: 'conceito', id: 'aspnet.requisicao', titulo: 'Requisição (request)', texto: 'O pedido que o cliente envia ao servidor.', exemplo: 'GET /api/produtos/10' },
-        { tipo: 'conceito', id: 'aspnet.resposta', titulo: 'Resposta (response)', texto: 'O que o servidor devolve ao cliente: os dados + um código que resume o resultado.', exemplo: '200 OK com os dados do produto.' },
+        { tipo: 'conceito', id: 'aspnet.http', titulo: 'HTTP', texto: 'O protocolo de comunicação da web: o cliente pede e o servidor responde.', exemplo: 'GET /api/produtos/10' },
         { tipo: 'texto', texto: 'O servidor que expõe esses endereços é a sua **API** (Application Programming Interface — interface de programação de aplicações): um conjunto de endereços que outros programas chamam para obter ou enviar dados.' },
         { tipo: 'conceito', id: 'aspnet.api', titulo: 'API', texto: 'Um conjunto de endereços que outros programas chamam para obter ou enviar dados.', exemplo: 'A API de produtos responde em /api/produtos.' },
         { tipo: 'diagrama', arte: 'CLIENTE                              SERVIDOR (sua API)\n   │                                      │\n   │  GET /api/produtos/10   ──────────►  │\n   │                                      │ consulta o banco\n   │  ◄──────────  200 OK + dados         │\n   │                                      │' },
         { tipo: 'trabalho', texto: 'Quando a interface do usuário (a tela) "não carrega os dados", o problema pode estar no cliente, na API ou no banco. Entender requisição e resposta é o primeiro passo para investigar.', fonte: '💼 No trabalho' }
       ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Requisição e resposta',
+      introduz: ['aspnet.requisicao', 'aspnet.resposta'],
+      blocos: [
+        { tipo: 'texto', texto: 'Dentro dessa conversa, cada lado tem um papel. O pedido do cliente tem um nome, e a devolutiva do servidor também:' },
+        { tipo: 'conceito', id: 'aspnet.requisicao', titulo: 'Requisição (request)', texto: 'O pedido que o cliente envia ao servidor.', exemplo: 'GET /api/produtos/10' },
+        { tipo: 'conceito', id: 'aspnet.resposta', titulo: 'Resposta (response)', texto: 'O que o servidor devolve ao cliente: os dados + um código que resume o resultado.', exemplo: '200 OK com os dados do produto.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'api00-a0',
+        tipo: 'match-pairs',
+        dimensao: 'associacao',
+        enunciado: 'Conecte cada parte da conversa ao seu papel.',
+        pares: [
+          ['Requisição', 'O pedido que o cliente envia'],
+          ['Resposta', 'O que o servidor devolve ao cliente']
+        ],
+        dicas: ['O cliente pede; o servidor responde.', 'Request = pedido; response = resposta.'],
+        explicacao: 'Requisição e resposta são os dois lados de toda conversa na web.',
+        conceitos: ['aspnet.requisicao', 'aspnet.resposta']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'api00-a5',
+        tipo: 'multiple-choice',
+        dimensao: 'reconhecimento',
+        enunciado: 'O que é uma API, neste contexto?',
+        opcoes: [
+          'Um conjunto de endereços que outros programas chamam para obter ou enviar dados',
+          'Um banco de dados na nuvem',
+          'Um aplicativo de celular',
+          'Uma linguagem de programação'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: 'A API conversa com o banco, mas não é o banco: ela expõe endereços para outros programas.',
+          2: 'O app cliente é quem chama a API; a API fica no servidor.',
+          3: 'API é um conjunto de endereços expostos, não uma linguagem.'
+        },
+        dicas: ['Ela fica no servidor e responde a outros programas.', 'Pense em /api/produtos.'],
+        explicacao: 'A API é a porta de entrada do servidor: uma coleção de endereços que respondem requisições.',
+        conceitos: ['aspnet.api']
+      }
     },
     {
       tipo: 'conteudo',

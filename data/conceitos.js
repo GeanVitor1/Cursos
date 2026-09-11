@@ -51,6 +51,7 @@ Plataforma.registrarConceitos({
   'csharp.classes': 'Classes',
   'csharp.objetos': 'Objetos',
   'csharp.propriedades': 'Propriedades',
+  'csharp.valor': 'Valores',
   'csharp.construtor': 'Construtores',
   'csharp.variaveis': 'Variáveis',
   'csharp.tipos': 'Tipos de dados em C#',

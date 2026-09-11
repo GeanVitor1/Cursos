@@ -90,6 +90,16 @@ window.Plataforma = window.Plataforma || {};
 
   let estado = carregar();
 
+  window.addEventListener('storage', function (ev) {
+    if (!ev || ev.key !== CHAVE || ev.newValue == null) return;
+    try {
+      estado = normalizarEstado(JSON.parse(ev.newValue));
+      ouvintes.forEach(function (cb) {
+        try { cb(estado); } catch (e) { /* ignora */ }
+      });
+    } catch (e) { /* conteúdo inválido: mantém o estado atual */ }
+  });
+
   function salvar() {
     estado.atualizadoEm = new Date().toISOString();
     if (disponivel) {
@@ -270,15 +280,35 @@ window.Plataforma = window.Plataforma || {};
     return !!(l && l.status === 'concluida');
   }
 
+  function assinaturaLicao(id) {
+    const licao = P.interno.licoes ? P.interno.licoes[id] : null;
+    if (!licao || !licao.etapas) return '0';
+    return licao.etapas.length + ':' + licao.etapas.map(function (e, i) {
+      if (e.tipo === 'atividade' && e.atividade && e.atividade.id) return e.atividade.id;
+      return 'c:' + String(e.titulo || i);
+    }).join('|');
+  }
+
+  function sincronizarConteudo(id, l) {
+    const atual = assinaturaLicao(id);
+    if (l.assinatura === atual) return;
+    l.assinatura = atual;
+    l.etapasPremiadas = {};
+    l.rascunho = null;
+  }
+
   function obterRegistroLicao(id) { return estado.licoes[id] || null; }
 
   function obterRascunho(id) {
     const l = estado.licoes[id];
-    return l && l.rascunho ? l.rascunho : null;
+    if (!l || !l.rascunho) return null;
+    if (l.assinatura !== assinaturaLicao(id)) return null;
+    return l.rascunho;
   }
 
   function atualizarRascunho(id, indice) {
     const l = estado.licoes[id] || { status: 'em-andamento', tentativas: 0, melhorAproveitamento: 0 };
+    sincronizarConteudo(id, l);
     if (l.status !== 'concluida') l.status = 'em-andamento';
     l.rascunho = { indice: indice, em: new Date().toISOString() };
     estado.licoes[id] = l;
@@ -295,11 +325,14 @@ window.Plataforma = window.Plataforma || {};
 
   function obterEtapasPremiadas(id) {
     const l = estado.licoes[id];
-    return (l && l.etapasPremiadas) ? l.etapasPremiadas : {};
+    if (!l || !l.etapasPremiadas) return {};
+    if (l.assinatura !== assinaturaLicao(id)) return {};
+    return l.etapasPremiadas;
   }
 
   function marcarEtapaPremiada(id, indice) {
     const l = estado.licoes[id] || { status: 'em-andamento', tentativas: 0, melhorAproveitamento: 0 };
+    sincronizarConteudo(id, l);
     l.etapasPremiadas = l.etapasPremiadas || {};
     l.etapasPremiadas[indice] = true;
     estado.licoes[id] = l;

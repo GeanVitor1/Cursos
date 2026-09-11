@@ -61,14 +61,22 @@ Plataforma.registrarLicao({
     {
       tipo: 'conteudo',
       titulo: 'A regra como argumento',
-      introduz: ['csharp.lambda'],
       blocos: [
+        { tipo: 'texto', texto: 'Em vez de um método para cada filtro, que tal receber **a regra** como argumento? O C# permite: uma função pode receber outra função.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'public List<Produto> Filtrar(List<Produto> produtos, Func<Produto, bool> regra)\n{\n    List<Produto> resultado = new List<Produto>();\n\n    foreach (Produto produto in produtos)\n    {\n        if (regra(produto))\n        {\n            resultado.Add(produto);\n        }\n    }\n\n    return resultado;\n}' },
         { tipo: 'texto', texto: '`Func<Produto, bool>` é um tipo de função: recebe um `Produto` e devolve um `bool` (verdadeiro/falso). O método percorre a lista e pergunta a cada item: "a regra aprova você?"' },
-        { tipo: 'diagrama', arte: 'Lista original          Aplicar regra: p => p.Ativo\n\nMouse    Ativo=true   → true   → ✅ mantém\nTeclado  Ativo=true   → true   → ✅ mantém\nMonitor  Ativo=false  → false  → ❌ remove\nCabo     Ativo=true   → true   → ✅ mantém\n\nResultado: Mouse, Teclado, Cabo' },
-        { tipo: 'texto', texto: 'Agora a **regra** é decidida por quem chama o método:' },
+        { tipo: 'nota', tom: 'info', texto: 'Agora só falta escrever a regra que será passada. É o que você faz na próxima tela.' }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'A lambda: a regra escrita na hora',
+      introduz: ['csharp.lambda'],
+      blocos: [
+        { tipo: 'texto', texto: 'A **regra** é decidida por quem chama o método, escrita na hora em uma forma curta chamada **lambda**:' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> ativos = Filtrar(produtos, p => p.Ativo);\nList<Produto> caros = Filtrar(produtos, p => p.Preco > 100);' },
         { tipo: 'conceito', id: 'csharp.lambda', titulo: 'Lambda (a seta =>)', texto: 'Uma regra curta escrita na hora, no formato `item => condição`. O `=>` se lê "tal que": "o item p, tal que p.Ativo". O item antes da seta é temporário; a condição depois da seta devolve verdadeiro ou falso.', exemplo: 'p => p.Ativo   // para cada produto p, considere p.Ativo' },
+        { tipo: 'diagrama', arte: 'Lista original          Aplicar regra: p => p.Ativo\n\nMouse    Ativo=true   → true   → ✅ mantém\nTeclado  Ativo=true   → true   → ✅ mantém\nMonitor  Ativo=false  → false  → ❌ remove\nCabo     Ativo=true   → true   → ✅ mantém\n\nResultado: Mouse, Teclado, Cabo' },
         { tipo: 'texto', texto: 'Destrinchando `p => p.Ativo`:' },
         { tipo: 'lista', itens: [
           '`p` — um nome temporário para **cada item** que está sendo testado.',

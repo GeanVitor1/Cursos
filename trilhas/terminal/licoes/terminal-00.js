@@ -87,13 +87,29 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
-      titulo: 'Git, Docker e npm: três vizinhos',
-      introduz: ['terminal.git', 'terminal.docker', 'terminal.npm'],
+      titulo: 'Prévia: Git para versionar',
+      introduz: ['terminal.git'],
       blocos: [
         { tipo: 'codigo', linguagem: 'texto', codigo: 'git status        # ver o que mudou\ngit add .         # preparar tudo o que mudou (. = todos os arquivos)\ngit commit -m "Corrige cálculo do total"   # gravar com uma mensagem (-m = mensagem)\ngit push          # enviar para o servidor' },
-        { tipo: 'texto', texto: 'Esses quatro comandos Git você usa dezenas de vezes por semana. Eles são uma **prévia**: a trilha de Git vai aprofundar esse fluxo de colaboração.' },
-        { tipo: 'codigo', linguagem: 'texto', codigo: 'docker compose up     # sobe um serviço em um container (Docker = ferramenta de containers; container = pacote pronto com a aplicação e tudo o que ela precisa)\nnpm install           # instala as dependências da parte visual (frontend); npm = gerenciador de pacotes do frontend' },
-        { tipo: 'nota', tom: 'info', texto: '`docker compose up` e `npm install` são apenas **preview**: você vai estudá-los nas trilhas de Docker e de Frontend (a parte visual). Anote o significado para reconhecê-los quando virem.' }
+        { tipo: 'texto', texto: 'Esses quatro comandos Git você usa dezenas de vezes por semana. Eles são uma **prévia**: a trilha de Git vai aprofundar esse fluxo de colaboração.' }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Prévia: Docker para empacotar',
+      introduz: ['terminal.docker'],
+      blocos: [
+        { tipo: 'codigo', linguagem: 'texto', codigo: 'docker compose up     # sobe um serviço em um container' },
+        { tipo: 'nota', tom: 'info', texto: '**Docker** = ferramenta de containers; **container** = pacote pronto com a aplicação e tudo o que ela precisa. `docker compose up` é apenas **preview**: você vai estudá-lo na trilha de Docker.' }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Prévia: npm para o frontend',
+      introduz: ['terminal.npm'],
+      blocos: [
+        { tipo: 'codigo', linguagem: 'texto', codigo: 'npm install           # instala as dependências da parte visual (frontend)' },
+        { tipo: 'nota', tom: 'info', texto: '**npm** = gerenciador de pacotes do frontend. `npm install` é apenas **preview**: você vai estudá-lo na trilha de Frontend (a parte visual).' }
       ]
     },
     {

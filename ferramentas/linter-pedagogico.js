@@ -36,6 +36,9 @@ function aviso(msg, onde, extra) {
 }
 
 const erros = [];
+const LIMITE_CONCEITOS_POR_ETAPA = 2;
+const LIMITE_TERMOS_GLOSSARIO_POR_ETAPA = 5;
+const TRILHAS_PROGRAMACAO = new Set(['sql', 'csharp', 'logica', 'terminal', 'linq', 'entity-framework', 'aspnet']);
 
 function carregar(rel) {
   const abs = path.resolve(APP, rel);
@@ -168,6 +171,8 @@ function marcarIntroducao(id, onde, extra) {
   });
   conhecidos[id] = true;
   introduzidoEm[id] = onde;
+  if (extra && extra.novos && extra.novos.indexOf(id) === -1) extra.novos.push(id);
+  if (extra && extra.licao && extra.novosLicao && extra.novosLicao.indexOf(id) === -1) extra.novosLicao.push(id);
 }
 
 function verificarUso(ids, texto, onde, ehAtividade, arquivo) {
@@ -241,11 +246,14 @@ posicoes.forEach(function (p, indiceLicao) {
   const licao = p.licao;
   const arquivo = 'trilhas/' + p.trilha + '/licoes/' + licao.id + '.js';
   const ehProva = licao.tipo === 'prova';
+  const novosDaLicao = [];
   (licao.etapas || []).forEach(function (etapa, indiceEtapa) {
     contadorPosicoes += 1;
     const onde = { trilha: p.trilha, licao: licao.id, etapa: indiceEtapa + 1, titulo: etapa.titulo || '', pos: contadorPosicoes };
+    const novosDaEtapa = [];
+    const extraIntro = { arquivo: arquivo, novos: novosDaEtapa, licao: licao.id, novosLicao: novosDaLicao };
     if (etapa.introduz) {
-      (etapa.introduz || []).forEach(function (id) { marcarIntroducao(id, onde, { arquivo: arquivo }); });
+      (etapa.introduz || []).forEach(function (id) { marcarIntroducao(id, onde, extraIntro); });
       if ((etapa.introduz || []).length) {
         matrizEnsino.push({ licao: licao.id, trilha: p.trilha, etapa: indiceEtapa + 1, ensina: etapa.introduz.slice() });
       }
@@ -253,10 +261,31 @@ posicoes.forEach(function (p, indiceLicao) {
     if (etapa.tipo === 'conteudo') {
       (etapa.blocos || []).forEach(function (bloco) {
         if (bloco && bloco.tipo === 'conceito') {
-          marcarIntroducao(bloco.id, onde, { arquivo: arquivo });
+          marcarIntroducao(bloco.id, onde, extraIntro);
           matrizEnsino.push({ licao: licao.id, trilha: p.trilha, etapa: indiceEtapa + 1, ensina: [bloco.id] });
         }
       });
+      if (novosDaEtapa.length > LIMITE_CONCEITOS_POR_ETAPA) {
+        erro('Etapa introduz ' + novosDaEtapa.length + ' conceitos novos (máximo ' + LIMITE_CONCEITOS_POR_ETAPA + '): ' + novosDaEtapa.join(', '), onde, {
+          conceitos: novosDaEtapa.slice(), arquivo: arquivo,
+          sugestao: 'Divida a etapa em etapas menores, com prática entre elas'
+        });
+      }
+      const termosGlossario = [];
+      (etapa.blocos || []).forEach(function (bloco) {
+        if (!bloco || bloco.tipo !== 'glossario') return;
+        (bloco.itens || []).forEach(function (item) {
+          if (!Array.isArray(item)) return;
+          const termo = norm(item[0]);
+          if (termo && termosGlossario.indexOf(termo) === -1) termosGlossario.push(termo);
+        });
+      });
+      if (TRILHAS_PROGRAMACAO.has(p.trilha) && termosGlossario.length > LIMITE_TERMOS_GLOSSARIO_POR_ETAPA) {
+        erro('Etapa apresenta ' + termosGlossario.length + ' termos no glossário (máximo ' + LIMITE_TERMOS_GLOSSARIO_POR_ETAPA + '): ' + termosGlossario.join(', '), onde, {
+          termos: termosGlossario.slice(), arquivo: arquivo,
+          sugestao: 'Divida os termos entre etapas menores'
+        });
+      }
       (etapa.blocos || []).forEach(function (bloco) {
         if (!bloco) return;
         if (bloco.tipo === 'retoma' && bloco.conceito && !conhecidos[bloco.conceito]) {
@@ -320,6 +349,16 @@ posicoes.forEach(function (p, indiceLicao) {
       });
     } else {
       erro('Tipo de etapa desconhecido: ' + etapa.tipo, onde, { arquivo: arquivo });
+    }
+  });
+  novosDaLicao.forEach(function (id) {
+    const info = registro.conceitos[id] || {};
+    if (info.preview) return;
+    if (!praticadoEm[id] || praticadoEm[id].licao !== licao.id) {
+      erro('Conceito introduzido e não praticado na mesma lição: ' + id, { trilha: p.trilha, licao: licao.id }, {
+        conceito: id, arquivo: arquivo,
+        sugestao: 'Adicione uma atividade simples que use o conceito antes de terminar a lição'
+      });
     }
   });
 });

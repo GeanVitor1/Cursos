@@ -29,19 +29,30 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
-      titulo: 'Recebendo pelo construtor',
-      introduz: ['csharp.construtor', 'csharp.di'],
+      titulo: 'O construtor: recebendo no nascimento',
+      introduz: ['csharp.construtor'],
       blocos: [
-        { tipo: 'texto', texto: 'O **construtor** é o método chamado no momento em que o objeto é criado. Ele é o lugar natural para receber as dependências:' },
+        { tipo: 'texto', texto: 'O **construtor** é o método chamado no momento em que o objeto é criado. Ele tem o mesmo nome da classe e é o lugar natural para receber o que a classe precisa.' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'public class PedidoService\n{\n    public PedidoService(INotificador notificador)\n    {\n        _notificador = notificador;\n    }\n}' },
+        { tipo: 'glossario', titulo: 'Entendendo o construtor', itens: [
+          ['construtor', 'recebe as dependências', 'Método com o mesmo nome da classe, sem retorno.'],
+          ['_notificador', 'campo privado', 'Guardado com underline por convenção do time.']
+        ] }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Injeção de dependência',
+      introduz: ['csharp.di'],
+      blocos: [
+        { tipo: 'texto', texto: 'Quando a dependência chega de fora pelo construtor, damos a isso o nome de **injeção de dependência** (DI). A classe não constrói mais o que depende: ela **recebe**.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'public class PedidoService\n{\n    private readonly INotificador _notificador;\n\n    public PedidoService(INotificador notificador)\n    {\n        _notificador = notificador;\n    }\n\n    public void FinalizarPedido(Pedido pedido)\n    {\n        _notificador.Enviar("Pedido confirmado");\n    }\n}' },
         { tipo: 'diagrama', arte: 'ANTES: PedidoService constrói       DEPOIS: PedidoService recebe\n\nPedidoService                       algo externo\n   │ new                                 │ injeta\n   ▼                                     ▼\nEmailNotificador                    PedidoService(INotificador)\n                                         │ usa\n                                         ▼\n                                    qualquer implementação' },
         { tipo: 'glossario', titulo: 'Decifrando o código', itens: [
-          ['construtor', 'recebe as dependências', 'Método com o mesmo nome da classe, sem retorno.'],
-          ['_notificador', 'campo privado', 'Guardado com underline por convenção do time.'],
           ['readonly', 'não muda depois', 'A referência é definida uma vez, no construtor.'],
           ['injeção de dependência', 'DI', 'Fornecer as dependências de fora para dentro.']
         ] },
-        { tipo: 'nota', tom: 'info', texto: 'O nome "injeção de dependência" descreve exatamente isso: a dependência é **injetada** (entregue) de fora. Você já viu o problema; a solução agora tem nome.' }
+        { tipo: 'nota', tom: 'info', texto: 'O nome "injeção de dependência" descreve exatamente isso: a dependência é **injetada** (entregue) de fora.' }
       ]
     },
     {

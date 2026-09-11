@@ -25,19 +25,41 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
-      titulo: 'Anatomia de um método',
+      titulo: 'Método: uma ação com nome',
       introduz: ['csharp.metodos'],
       blocos: [
-        { tipo: 'nota', tom: 'info', texto: 'Duas palavras-chave aparecem no código a seguir: `return` devolve o resultado para quem chamou; `void` indica que o método não devolve nada.' },
+        { tipo: 'texto', texto: 'Um **método** dá nome a uma ação. A regra passa a viver em um lugar só, e todos chamam pelo nome.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'public decimal CalcularTotal(decimal preco, int quantidade)\n{\n    decimal total = preco * quantidade;\n    return total;\n}' },
-        { tipo: 'diagrama', arte: 'public decimal CalcularTotal(decimal preco, int quantidade)\n  │       │            │                    │\n  │       │            │                    └─ parâmetros (entradas)\n  │       │            └─ nome da ação\n  │       └─ tipo do retorno (o que devolve)\n  └─ quem pode usar' },
-        { tipo: 'glossario', titulo: 'Decifrando a assinatura', itens: [
+        { tipo: 'glossario', titulo: 'O começo da assinatura', itens: [
           ['método', 'ação', 'Bloco de código com nome que executa uma tarefa.'],
+          ['CalcularTotal', 'nome da ação', 'É por esse nome que o método é chamado.']
+        ] },
+        { tipo: 'nota', tom: 'info', texto: 'Nas próximas telas você vai destrinchar as **entradas** (parâmetros) e a **saída** (retorno) desse mesmo código, uma parte por vez.' }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Parâmetros: as entradas',
+      blocos: [
+        { tipo: 'texto', texto: 'Entre parênteses vêm as entradas do método: os valores que ele precisa receber para trabalhar. Cada entrada é um **parâmetro** com tipo e nome.' },
+        { tipo: 'diagrama', arte: 'public decimal CalcularTotal(decimal preco, int quantidade)\n  │       │            │                    │\n  │       │            │                    └─ parâmetros (entradas)\n  │       │            └─ nome da ação\n  │       └─ tipo do retorno (o que devolve)\n  └─ quem pode usar' },
+        { tipo: 'glossario', titulo: 'Entradas', itens: [
           ['parâmetro', 'entrada', 'Valor que o método precisa receber para trabalhar.'],
+          ['preco / quantidade', 'parâmetros', 'Cada parâmetro tem tipo e nome: `decimal preco`, `int quantidade`.']
+        ] }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Retorno: a saída',
+      blocos: [
+        { tipo: 'texto', texto: 'O método devolve um resultado ao final — esse resultado é o **retorno**. A palavra `return` entrega o valor para quem chamou.' },
+        { tipo: 'glossario', titulo: 'Saída', itens: [
           ['retorno', 'saída', 'Resultado que o método devolve para quem chamou.'],
-          ['return', 'devolve o resultado', 'Palavra-chave que entrega o valor do método para quem chamou.'],
+          ['return', 'devolve o resultado', 'Palavra-chave que entrega o valor do método.'],
           ['void', 'não devolve nada', 'Usado quando o método executa algo, mas não devolve valor.']
         ] },
+        { tipo: 'texto', texto: 'Quando o método não devolve nada, usamos `void` no lugar do tipo de retorno. É o caso de ações como enviar um e-mail.' },
         { tipo: 'texto', texto: 'Chamamos o método assim: `decimal total = CalcularTotal(100.00m, 3);` — o resultado (300.00) é devolvido e guardado em `total`.' }
       ]
     },

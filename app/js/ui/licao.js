@@ -14,6 +14,17 @@ window.Plataforma = window.Plataforma || {};
       ]));
       return;
     }
+    const info = P.progresso.statusLicao(licao.id);
+    if (info && (info.status === 'bloqueada' || info.status === 'planejada')) {
+      P.ui.layout.toast(
+        info.status === 'bloqueada'
+          ? 'Conclua a etapa anterior para liberar esta.'
+          : 'Etapa planejada — será liberada em uma próxima fase.',
+        'aviso'
+      );
+      P.roteador.ir('#/trilha/' + info.trilhaId);
+      return;
+    }
     P.ui.runner.iniciar({
       modo: 'licao',
       licao: licao,

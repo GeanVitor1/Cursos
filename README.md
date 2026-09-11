@@ -118,10 +118,20 @@ Inglês (transversal)
 | Azure | Docker 100% + CI/CD 50% |
 | Microsserviços | ASP.NET + Arquitetura + Mensageria + Docker 100% |
 
-- Dentro de uma trilha, as etapas liberam em sequência.
+- Dentro de uma trilha, as etapas liberam em sequência, mas **progresso nunca é bloqueado de volta**:
+  a fronteira de liberação é a etapa mais avançada que o aluno já iniciou/concluiu, então concluir
+  uma etapa fora de ordem (ou recuperar dados antigos) libera tudo até ela, sem travar o que já foi
+  conquistado.
 - Entre trilhas, a trilha só sai de **Bloqueada** quando os pré-requisitos atingem o mínimo.
 - Trilhas `transversal: true` (English e Git) podem rodar em paralelo.
-- O botão **Continuar** da home sempre aponta para a próxima etapa do caminho principal.
+- O botão **Continuar** da home e o **Iniciar sessão** retomam a etapa em andamento ou a próxima
+  após o ponto mais avançado — nunca voltam para o início da trilha.
+- Ação `#/licao/<id>` de etapa bloqueada/planejada é redirecionada para a trilha, evitando
+  progresso fora de ordem.
+- Posição salva (`rascunho`) e etapas premiadas têm assinatura de conteúdo: se a lição for editada,
+  o rascunho antigo é descartado em vez de retomar em uma etapa errada.
+- Abas abertas no mesmo navegador sincronizam o progresso (evento `storage`), evitando que uma aba
+  antiga sobrescreva o avanço feito em outra.
 
 ## Estrutura
 
@@ -203,6 +213,12 @@ O resultado completo fica em `AUDITORIA_SEQUENCIAL.md`, com a tabela de evidênc
 (`INTRODUZIDO`, `PRATICADO`, `PRONTO_PARA_AVALIACAO`). A matriz completa, com `ensina` de cada
 etapa e `exige` de cada atividade, fica em `ferramentas/matriz-pedagogica.json`.
 
+Ele também controla a **densidade didática**: cada etapa de conteúdo introduz no máximo
+**2 conceitos novos**; nas trilhas de programação, cada etapa apresenta no máximo **5 termos por
+glossário**; e todo conceito introduzido precisa ser **praticado em alguma atividade da mesma
+lição** (exceto prévias explicitamente marcadas com `preview: true`). Isso evita telas que
+despejam `class`, `public`, tipos, propriedades e símbolos de uma só vez.
+
 O **linter de inglês** constrói o léxico em ordem (blocos `vocab`, `ingles`, `glossario` e
 `introduzVocab`) e verifica TODA string em inglês exibida ao aluno — enunciado, alternativas
 erradas, áudio, diálogos, leituras, dicas citadas e feedback — **nas 45 lições, não só na trilha
@@ -227,6 +243,9 @@ Regras aplicadas pelos linters:
 - conteúdo mencionando conceito não introduzido → **aviso**;
 - desafio ou prova cobrando conceito não praticado → **erro**;
 - pré-requisito conceitual não introduzido antes → **erro**;
+- etapa de conteúdo introduzindo mais de 2 conceitos novos → **erro**;
+- etapa de programação com mais de 5 termos no glossário → **erro**;
+- conceito introduzido sem prática na mesma lição → **erro** (prévias com `preview: true` são isentas);
 - `retoma` apontando para conceito ainda não ensinado → **erro**;
 - palavra de inglês usada antes de ensinada (inclusive em alternativa errada) → **erro**;
 - etapa de programação introduzindo mais de 3 termos novos de inglês de uma vez → **erro**;

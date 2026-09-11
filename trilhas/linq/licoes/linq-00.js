@@ -26,19 +26,29 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
-      titulo: 'O mesmo filtro, agora com LINQ',
-      introduz: ['linq.lambda', 'linq.where', 'linq.tolist'],
+      titulo: 'Where: o filtro ganha um nome',
+      introduz: ['linq.where', 'linq.lambda'],
       blocos: [
-        { tipo: 'conceito', id: 'linq.tolist', titulo: 'ToList', texto: 'Transforma o resultado de uma consulta em uma lista de verdade.', exemplo: 'produtos.Where(p => p.Ativo).ToList()' },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> ativos = produtos.Where(p => p.Ativo).ToList();' },
-        { tipo: 'conceito', id: 'linq.intro', titulo: 'LINQ', texto: 'Recurso do C# para escrever consultas que filtram, transformam e resumem coleções com nomes claros.', exemplo: 'produtos.Where(p => p.Ativo).ToList()' },
-        { tipo: 'diagrama', arte: 'produtos.Where(p => p.Ativo).ToList()\n   │          │              └─ transforma em lista\n   │          └─ mantém apenas os que passam na regra\n   └─ coleção original (não é alterada)' },
+        { tipo: 'texto', texto: 'Em vez de escrever o `foreach` à mão, o LINQ oferece um método pronto para filtrar: `Where`.' },
+        { tipo: 'conceito', id: 'linq.where', titulo: 'Where', texto: 'O método do LINQ que filtra: mantém apenas os itens que satisfazem a regra.', exemplo: 'produtos.Where(p => p.Preco > 100)' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'var ativos = produtos.Where(p => p.Ativo);' },
         { tipo: 'lista', itens: [
           '`Where` filtra (as regras que você já conhece do SQL: WHERE!).',
-          'A lambda `p => p.Ativo` é a mesma ideia da etapa de C#.',
-          '`ToList()` transforma o resultado em uma lista de verdade.'
+          'A lambda `p => p.Ativo` é a mesma ideia que você aprendeu em C#.',
+          'O resultado ainda é uma consulta; na próxima tela você o transforma em lista.'
         ] },
-        { tipo: 'conceito', id: 'linq.where', titulo: 'Where', texto: 'O método do LINQ que filtra: mantém apenas os itens que satisfazem a regra.', exemplo: 'produtos.Where(p => p.Preco > 100)' },
+        { tipo: 'conceito', id: 'linq.lambda', titulo: 'Lambda em consultas', texto: 'A regra curta `item => condição` passada para o Where.', exemplo: 'p => p.Ativo' }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'ToList: o resultado vira lista',
+      introduz: ['linq.tolist'],
+      blocos: [
+        { tipo: 'texto', texto: 'A consulta montada com `Where` ainda não é uma lista comum. Para transformá-la em uma `List<Produto>`, use `ToList()`:' },
+        { tipo: 'conceito', id: 'linq.tolist', titulo: 'ToList', texto: 'Transforma o resultado de uma consulta em uma lista de verdade.', exemplo: 'produtos.Where(p => p.Ativo).ToList()' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> ativos = produtos.Where(p => p.Ativo).ToList();' },
+        { tipo: 'diagrama', arte: 'produtos.Where(p => p.Ativo).ToList()\n   │          │              └─ transforma em lista\n   │          └─ mantém apenas os que passam na regra\n   └─ coleção original (não é alterada)' },
         { tipo: 'trabalho', texto: 'LINQ aparece em praticamente todo código .NET: filtrar produtos, ordenar pedidos, somar valores, projetar relatórios. E é a mesma linguagem usada nas consultas de banco com ferramentas de acesso a banco.', fonte: '💼 Em uma vaga .NET' }
       ]
     },
@@ -108,7 +118,7 @@ Plataforma.registrarLicao({
         ],
         dicas: ['A coleção vem antes do ponto.', 'ToList transforma o resultado em uma lista.'],
         explicacao: 'Origem → filtro → resultado. Essa leitura vai se repetir em toda consulta LINQ.',
-        conceitos: ['linq.intro', 'linq.where']
+        conceitos: ['linq.intro', 'linq.where', 'linq.tolist']
       }
     },
     {

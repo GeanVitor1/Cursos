@@ -15,46 +15,14 @@ Plataforma.registrarLicao({
   etapas: [
     {
       tipo: 'conteudo',
-      titulo: 'Três operadores que você vai usar muito',
-      introduz: ['sql.in', 'sql.between', 'sql.not'],
+      titulo: 'IN: comparar com uma lista',
+      introduz: ['sql.in'],
       blocos: [
-        { tipo: 'retoma', conceito: 'sql.and-or', texto: 'Você já combina condições com `AND` e `OR`. Agora conheça três atalhos que deixam as consultas mais curtas e legíveis.' },
-        {
-          tipo: 'codigo',
-          linguagem: 'sql',
-          codigo: '-- IN: valor dentro de uma lista\nWHERE Cidade IN (\'Curitiba\', \'Recife\');\n\n-- BETWEEN: dentro de um intervalo (inclui os extremos)\nWHERE Preco BETWEEN 100 AND 500;\n\n-- NOT: inverte a condição\nWHERE Status NOT IN (\'Cancelado\', \'Estornado\');'
-        },
-        {
-          tipo: 'lista',
-          itens: [
-            '`IN` substitui vários OR encadeados.',
-            '`BETWEEN a AND b` equivale a `>= a AND <= b`.',
-            '`NOT` inverte qualquer condição: aqui você verá `NOT IN`.'
-          ]
-        },
-        { tipo: 'nota', tom: 'info', texto: '`BETWEEN` **inclui** os dois extremos. `Preco BETWEEN 100 AND 500` traz também os produtos de exatamente 100 e de exatamente 500.' }
+        { tipo: 'retoma', conceito: 'sql.and-or', texto: 'Você já combina condições com `AND` e `OR`. Agora conheça três atalhos que deixam as consultas mais curtas — um de cada vez.' },
+        { tipo: 'texto', texto: 'Quando você quer comparar uma coluna com **vários valores possíveis**, em vez de encadear vários `OR`, use `IN`:' },
+        { tipo: 'codigo', linguagem: 'sql', codigo: 'WHERE Cidade IN (\'Curitiba\', \'Recife\');' },
+        { tipo: 'nota', tom: 'info', texto: '`IN` substitui vários `OR` encadeados: o valor da coluna precisa estar na lista.' }
       ]
-    },
-    {
-      tipo: 'atividade',
-      atividade: {
-        id: 'sql05-a1',
-        tipo: 'match-pairs',
-        enunciado: 'Conecte cada operador ao seu uso.',
-        pares: [
-          ['IN', 'Lista de valores possíveis'],
-          ['BETWEEN', 'Intervalo entre dois valores'],
-          ['NOT', 'Inverte a condição'],
-          ['AND', 'Todas as condições verdadeiras'],
-          ['OR', 'Pelo menos uma condição verdadeira']
-        ],
-        dicas: [
-          'IN lembra "está dentro de".',
-          'BETWEEN lembra "entre".'
-        ],
-        explicacao: 'Com esse kit você cobre a maioria das condições do dia a dia. O resto é combinação.',
-        conceitos: ['sql.in', 'sql.between', 'sql.not', 'sql.and-or']
-      }
     },
     {
       tipo: 'atividade',
@@ -71,6 +39,16 @@ Plataforma.registrarLicao({
         explicacao: '`Cidade IN (\'Curitiba\', \'Recife\')` é equivalente a `Cidade = \'Curitiba\' OR Cidade = \'Recife\'`, porém mais legível.',
         conceitos: ['sql.in']
       }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'BETWEEN: dentro de um intervalo',
+      introduz: ['sql.between'],
+      blocos: [
+        { tipo: 'texto', texto: 'Para verificar se um valor está **dentro de um intervalo**, use `BETWEEN a AND b`:' },
+        { tipo: 'codigo', linguagem: 'sql', codigo: 'WHERE Preco BETWEEN 100 AND 500;' },
+        { tipo: 'nota', tom: 'info', texto: '`BETWEEN a AND b` equivale a `>= a AND <= b`. Ele **inclui** os dois extremos.' }
+      ]
     },
     {
       tipo: 'atividade',
@@ -113,6 +91,16 @@ Plataforma.registrarLicao({
       }
     },
     {
+      tipo: 'conteudo',
+      titulo: 'NOT: invertendo a condição',
+      introduz: ['sql.not'],
+      blocos: [
+        { tipo: 'texto', texto: 'E quando a condição é o contrário? `NOT` inverte o resultado:' },
+        { tipo: 'codigo', linguagem: 'sql', codigo: 'WHERE Status NOT IN (\'Cancelado\', \'Estornado\');' },
+        { tipo: 'nota', tom: 'info', texto: '`NOT` inverte qualquer condição. Aqui você vê `NOT IN`: ele exclui os valores da lista.' }
+      ]
+    },
+    {
       tipo: 'atividade',
       atividade: {
         id: 'sql05-a4',
@@ -129,6 +117,27 @@ Plataforma.registrarLicao({
         ],
         explicacao: 'IN funciona para números e textos; BETWEEN inclui os extremos; NOT inverte — `NOT IN` exclui os valores listados.',
         conceitos: ['sql.in', 'sql.between', 'sql.not']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql05-a1',
+        tipo: 'match-pairs',
+        enunciado: 'Agora que você viu os três, conecte cada operador ao seu uso.',
+        pares: [
+          ['IN', 'Lista de valores possíveis'],
+          ['BETWEEN', 'Intervalo entre dois valores'],
+          ['NOT', 'Inverte a condição'],
+          ['AND', 'Todas as condições verdadeiras'],
+          ['OR', 'Pelo menos uma condição verdadeira']
+        ],
+        dicas: [
+          'IN lembra "está dentro de".',
+          'BETWEEN lembra "entre".'
+        ],
+        explicacao: 'Com esse kit você cobre a maioria das condições do dia a dia. O resto é combinação.',
+        conceitos: ['sql.in', 'sql.between', 'sql.not', 'sql.and-or']
       }
     },
     {

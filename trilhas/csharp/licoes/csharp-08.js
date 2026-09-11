@@ -33,18 +33,28 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Tratando com try/catch',
       blocos: [
+        { tipo: 'texto', texto: 'O `try` tenta executar um bloco. Se algo falhar, o `catch` captura o erro e decide o que fazer:' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'try\n{\n    int numero = int.Parse(textoDigitado);\n    Console.WriteLine(numero);\n}\ncatch (FormatException)\n{\n    Console.WriteLine("Digite apenas números.");\n}' },
         { tipo: 'lista', itens: [
           '`try`: tenta executar o bloco.',
           '`catch`: captura a exceção e decide o que fazer.',
           'O catch declara **qual tipo** de exceção ele trata — o ideal é ser específico.'
         ] },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: 'catch (Exception)\n{\n    // não faça isso: engole qualquer erro\n}' },
-        { tipo: 'nota', tom: 'info', texto: '`Exception` representa **qualquer** erro; `FormatException` é um tipo específico de erro. Por isso, `catch (Exception)` captura tudo.' },
+        { tipo: 'nota', tom: 'info', texto: '`Exception` representa **qualquer** erro; `FormatException` é um tipo específico de erro. Por isso, `catch (Exception)` captura tudo.' }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'throw, finally e o perigo de engolir erro',
+      blocos: [
+        { tipo: 'texto', texto: 'Quando o problema não pode ser resolvido ali, o código **lança** uma exceção com `throw` para que outra parte trate:' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'if (quantidade > estoqueAtual)\n{\n    throw new InvalidOperationException("Estoque insuficiente");\n}' },
         { tipo: 'glossario', titulo: 'Palavras do tratamento de erro', itens: [
           ['throw', 'lança uma exceção', 'Avisa o programa que algo deu errado, interrompendo aquele fluxo.'],
           ['finally', 'executa sempre', 'Bloco que executa sempre, com ou sem erro.']
         ] },
+        { tipo: 'texto', texto: 'E o catch genérico, sem fazer nada, esconde o problema:' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'catch (Exception)\n{\n    // não faça isso: engole qualquer erro\n}' },
         { tipo: 'destaque', texto: 'Capturar tudo e não fazer nada é pior do que não tratar: o erro desaparece da tela e reaparece como bug misterioso em produção.' }
       ]
     },

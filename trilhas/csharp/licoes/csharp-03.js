@@ -25,44 +25,30 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
-      titulo: 'Declarando, adicionando e percorrendo',
-      introduz: ['csharp.list', 'csharp.generics'],
+      titulo: 'Criando a lista e adicionando',
+      introduz: ['csharp.list'],
       blocos: [
-        { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> produtos = new List<Produto>();\n\nprodutos.Add(new Produto { Nome = "Mouse", Preco = 100.00m });\nprodutos.Add(new Produto { Nome = "Teclado", Preco = 200.00m });\n\nConsole.WriteLine(produtos.Count); // 2' },
-        { tipo: 'nota', tom: 'info', texto: 'O trecho `new Produto { Nome = "Mouse", Preco = 100.00m }` é um **inicializador de objeto**: cria o objeto e já preenche as propriedades de uma vez.' },
-        { tipo: 'texto', texto: 'O `<Produto>` entre `<` e `>` diz que **tipo** de item a lista aceita. Isso é um **generic**: o mesmo `List` funciona para qualquer tipo, mas cada lista fica restrita a um. `List<int>` aceita inteiros; `List<Produto>` aceita produtos; `List<int>` não aceita produto.' },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: 'foreach (Produto produto in produtos)\n{\n    Console.WriteLine(produto.Nome);\n}' },
-        { tipo: 'nota', tom: 'info', texto: '`foreach (Produto produto in produtos)` lê-se "para cada Produto `produto` na lista `produtos`": o bloco repete uma vez para cada item.' },
-        { tipo: 'glossario', titulo: 'Criar e percorrer', itens: [
-          ['new Produto { Nome = "Mouse", Preco = 100.00m }', 'inicializador de objeto', 'Cria o objeto e já preenche as propriedades de uma vez.'],
-          ['foreach (Produto produto in produtos)', 'para cada item', 'Percorre a lista, repetindo o bloco para cada item.']
-        ] },
-        { tipo: 'glossario', titulo: 'Métodos e propriedades da List', itens: [
+        { tipo: 'texto', texto: 'Em C#, a lista mais usada é a `List`. Ela nasce vazia e cresce conforme você adiciona itens com `Add`:' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> produtos = new List<Produto>();\n\nProduto mouse = new Produto();\nmouse.Nome = "Mouse";\nmouse.Preco = 100.00m;\n\nprodutos.Add(mouse);\n\nConsole.WriteLine(produtos.Count); // 1' },
+        { tipo: 'nota', tom: 'info', texto: 'A variável `produtos` é a lista. Você cria o objeto `mouse`, preenche e só então o coloca na lista com `Add`.' },
+        { tipo: 'glossario', titulo: 'Os primeiros recursos', itens: [
+          ['List<Produto>', 'lista de produtos', 'Um mesmo nome guarda vários itens em sequência.'],
           ['Add(item)', 'adiciona', 'Coloca um item no fim da lista.'],
-          ['Count', 'contagem', 'Quantidade de itens na lista.'],
-          ['Remove(item)', 'remove', 'Remove um item específico.'],
-          ['Clear()', 'esvazia', 'Remove todos os itens.']
+          ['Count', 'contagem', 'Quantidade de itens na lista.']
         ] },
         { tipo: 'trabalho', texto: 'Listas estão por toda parte no backend: itens de um pedido, produtos retornados de uma consulta, tarefas agendadas. Quando você consultar o banco mais adiante, o resultado será uma lista.', fonte: '💼 No trabalho' }
       ]
     },
     {
-      tipo: 'atividade',
-      atividade: {
-        id: 'cs03-a1',
-        tipo: 'match-pairs',
-        dimensao: 'associacao',
-        enunciado: 'Conecte cada recurso da lista ao que ele faz.',
-        pares: [
-          ['Add', 'Adiciona um item ao final'],
-          ['Count', 'Informa quantos itens existem'],
-          ['Remove', 'Retira um item específico'],
-          ['foreach', 'Percorre todos os itens']
-        ],
-        dicas: ['Add vem de "adicionar".', 'Count conta; foreach percorre.'],
-        explicacao: 'Esse quarteto cobre a maior parte do dia a dia com listas.',
-        conceitos: ['csharp.list']
-      }
+      tipo: 'conteudo',
+      titulo: 'Atalho: inicializador de objeto',
+      blocos: [
+        { tipo: 'texto', texto: 'Criar o objeto, preencher linha por linha e depois adicionar dá trabalho. O C# tem um atalho para criar o objeto **já preenchido**:' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'produtos.Add(new Produto { Nome = "Teclado", Preco = 200.00m });' },
+        { tipo: 'glossario', titulo: 'Entendendo o atalho', itens: [
+          ['new Produto { Nome = "Mouse", Preco = 100.00m }', 'inicializador de objeto', 'Cria o objeto e já preenche as propriedades entre chaves.']
+        ] }
+      ]
     },
     {
       tipo: 'atividade',
@@ -89,20 +75,6 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cs03-a3',
-        tipo: 'fill-code',
-        dimensao: 'preenchimento',
-        enunciado: 'Complete para criar uma lista de produtos e adicionar um item.',
-        codigo: 'List<{{1}}> produtos = new List<Produto>();\nprodutos.{{2}}(new Produto { Nome = "Webcam" });',
-        lacunas: [['Produto'], ['Add']],
-        dicas: ['O tipo entre < > é o mesmo da variável declarada.', 'O método de adicionar começa com A maiúsculo.'],
-        explicacao: 'A lista precisa saber que tipo guarda: `List<Produto>`. E `Add` insere o item.',
-        conceitos: ['csharp.list', 'csharp.generics']
-      }
-    },
-    {
-      tipo: 'atividade',
-      atividade: {
         id: 'cs03-a4',
         tipo: 'order-blocks',
         dimensao: 'ordenacao',
@@ -116,6 +88,72 @@ Plataforma.registrarLicao({
         dicas: ['Não dá para adicionar em uma lista que ainda não foi criada.', 'A contagem vem depois das inserções.'],
         explicacao: 'Criar → adicionar → usar. Essa sequência é a mesma em qualquer coleção.',
         conceitos: ['csharp.list']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Percorrendo a lista com foreach',
+      blocos: [
+        { tipo: 'texto', texto: 'Para passar por cada item da lista, use `foreach`:' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'foreach (Produto produto in produtos)\n{\n    Console.WriteLine(produto.Nome);\n}' },
+        { tipo: 'nota', tom: 'info', texto: '`foreach (Produto produto in produtos)` lê-se "para cada Produto `produto` na lista `produtos`": o bloco repete uma vez para cada item.' },
+        { tipo: 'glossario', titulo: 'Entendendo o foreach', itens: [
+          ['foreach (Produto produto in produtos)', 'para cada item', 'Percorre a lista, repetindo o bloco para cada item.']
+        ] }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Removendo itens',
+      blocos: [
+        { tipo: 'texto', texto: 'A lista também remove itens de duas formas: um item específico ou todos de uma vez.' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'produtos.Remove(mouse); // remove o item mouse\nprodutos.Clear();        // remove todos os itens' },
+        { tipo: 'glossario', titulo: 'Métodos de remoção', itens: [
+          ['Remove(item)', 'remove', 'Remove um item específico.'],
+          ['Clear()', 'esvazia', 'Remove todos os itens.']
+        ] }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Generics: o tipo entre < >',
+      introduz: ['csharp.generics'],
+      blocos: [
+        { tipo: 'texto', texto: 'O `<Produto>` entre `<` e `>` diz que **tipo** de item a lista aceita. Isso é um **generic**: o mesmo `List` funciona para qualquer tipo, mas cada lista fica restrita a um.' },
+        { tipo: 'conceito', id: 'csharp.generics', titulo: 'Generics', texto: 'Um recurso que permite usar o mesmo código com vários tipos, mantendo a segurança de tipos.', exemplo: 'List<Produto> aceita produtos; List<int> aceita inteiros.' },
+        { tipo: 'diagrama', arte: 'List<T>  (molde genérico)\n   │\n   ├── List<Produto>  → aceita produtos\n   ├── List<string>   → aceita textos\n   └── List<int>      → aceita inteiros' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'cs03-a1',
+        tipo: 'match-pairs',
+        dimensao: 'associacao',
+        enunciado: 'Conecte cada recurso da lista ao que ele faz.',
+        pares: [
+          ['Add', 'Adiciona um item ao final'],
+          ['Count', 'Informa quantos itens existem'],
+          ['Remove', 'Retira um item específico'],
+          ['foreach', 'Percorre todos os itens']
+        ],
+        dicas: ['Add vem de "adicionar".', 'Count conta; foreach percorre.'],
+        explicacao: 'Esse quarteto cobre a maior parte do dia a dia com listas.',
+        conceitos: ['csharp.list']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'cs03-a3',
+        tipo: 'fill-code',
+        dimensao: 'preenchimento',
+        enunciado: 'Complete para criar uma lista de produtos e adicionar um item.',
+        codigo: 'List<{{1}}> produtos = new List<Produto>();\nprodutos.{{2}}(new Produto { Nome = "Webcam" });',
+        lacunas: [['Produto'], ['Add']],
+        dicas: ['O tipo entre < > é o mesmo da variável declarada.', 'O método de adicionar começa com A maiúsculo.'],
+        explicacao: 'A lista precisa saber que tipo guarda: `List<Produto>`. E `Add` insere o item.',
+        conceitos: ['csharp.list', 'csharp.generics']
       }
     },
     {

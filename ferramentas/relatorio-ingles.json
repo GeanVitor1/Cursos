@@ -1,9 +1,9 @@
 {
-  "geradoEm": "2026-09-11T10:24:00.742Z",
+  "geradoEm": "2026-09-11T13:48:53.404Z",
   "licoesPercorridas": 45,
-  "etapasPercorridas": 342,
-  "atividadesPercorridas": 241,
-  "palavrasNoLexico": 433,
+  "etapasPercorridas": 382,
+  "atividadesPercorridas": 250,
+  "palavrasNoLexico": 430,
   "limiteNovasPorEtapa": 3,
   "introducoesDeVocabulario": [
     {
@@ -66,7 +66,7 @@
     },
     {
       "licao": "sql-05",
-      "etapa": 8,
+      "etapa": 10,
       "termos": 1,
       "palavras": [
         "between"

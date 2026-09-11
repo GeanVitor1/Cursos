@@ -1,7 +1,7 @@
 # Auditoria Pedagógica Global
 
 Data: setembro de 2026
-Escopo: todo o conteúdo publicado da plataforma (20 trilhas, 45 lições, 367 etapas, 241 atividades).
+Escopo: todo o conteúdo publicado da plataforma (20 trilhas, 45 lições, 367 etapas, 250 atividades).
 
 Este documento é o resultado da auditoria completa pedida: percorrer cada trilha na ordem real do
 aluno (aula → tela → atividade → resposta → feedback → próxima tela), identificar todo conteúdo
@@ -82,19 +82,19 @@ A auditoria foi feita em três camadas complementares:
 | Trilhas analisadas | — | 20 |
 | Lições analisadas | — | 45 |
 | Etapas percorridas | — | 367 |
-| Atividades verificadas | — | 241 |
-| Palavras de inglês no léxico acumulado | — | 428 |
+| Atividades verificadas | — | 250 |
+| Palavras de inglês no léxico acumulado | — | 430 |
 | Símbolos de código registrados | — | 105 |
 | Termos portugueses registrados | — | 44 |
-| Conceitos com introdução marcada | 81 | 82 (+`linq.tolist`) |
+| Conceitos com introdução marcada | 81 | 83 (+`linq.tolist`, `csharp.valor`) |
 
-Estados de conteúdo dos 82 conceitos publicados (matriz em `ferramentas/matriz-pedagogica.json`):
+Estados de conteúdo dos 83 conceitos publicados (matriz em `ferramentas/matriz-pedagogica.json`):
 
 | Estado | Significado | Quantidade |
 | --- | --- | --- |
 | `NAO_ENSINADO` | conceito registrado mas nunca ensinado no conteúdo publicado | 0 |
-| `INTRODUZIDO` | ensinado, ainda sem atividade de prática própria | 6 (ver seção 8) |
-| `PRATICADO` | praticado em uma dimensão | 10 |
+| `INTRODUZIDO` | ensinado, ainda sem atividade de prática própria | 3 (ver seção 8) |
+| `PRATICADO` | praticado em uma dimensão | 14 |
 | `PRONTO_PARA_AVALIACAO` | praticado em 2+ dimensões ou 3+ atividades | 66 |
 
 ---
@@ -208,6 +208,7 @@ Estados de conteúdo dos 82 conceitos publicados (matriz em `ferramentas/matriz-
 
 | Arquivo | O que faz |
 | --- | --- |
+| `ferramentas/linter-pedagogico.js` | além de ordem e pré-requisitos, controla a **densidade didática**: no máximo **2 conceitos novos por etapa de conteúdo**, no máximo **5 termos por glossário** nas trilhas de programação e **prática na mesma lição** para todo conceito introduzido (prévias com `preview: true` são isentas). |
 | `ferramentas/linter-ingles.js` | percorre **todas as 45 lições** e verifica **palavra a palavra** todo texto em inglês exibido (enunciado, alternativas erradas incluídas, áudio, diálogos, leituras, dicas citadas, feedback). Sai com erro se uma palavra não foi ensinada antes. Nas trilhas não-inglesas usa o English corner/local, exige **no máximo 3 termos novos por etapa** e garante que toda frase use apenas palavras já explicadas (fora palavras de ligação). |
 | `data/ingles-lexico.js` | nomes próprios, contrações (I'm, it's, don't...), identificadores de código e vocabulário português usados na separação EN/PT. |
 | `ferramentas/linter-simbolos.js` | percorre todas as 45 lições e verifica 105 símbolos/keywords/APIs de código (`;`, `foreach`, `=>`, `await`, `Where`, `SaveChanges`, `Results.Ok`, `TOP`...) **em código, enunciados, dicas, explicações e feedback**. Sai com erro se um símbolo aparece antes da lição que o explica. |
@@ -324,8 +325,8 @@ node ferramentas/validar-tudo.js
 Saída esperada (resumo):
 
 ```
-Linter pedagógico ....... Erros: 0 | Avisos: 0 · 82 conceitos · 44 termos PT
-Linter de inglês ........ Problemas: 0 · 433 palavras no léxico · 45 lições
+Linter pedagógico ....... Erros: 0 | Avisos: 0 · 83 conceitos · 44 termos PT
+Linter de inglês ........ Problemas: 0 · 430 palavras no léxico · 45 lições
 Linter de símbolos ...... Problemas: 0 · 105 símbolos registrados
 Validador de estrutura .. Validação concluída sem erros
 ```

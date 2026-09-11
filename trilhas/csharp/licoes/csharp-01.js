@@ -16,9 +16,43 @@ Plataforma.registrarLicao({
     {
       tipo: 'conteudo',
       titulo: 'Variável é uma caixa etiquetada',
-      introduz: ['csharp.variaveis', 'csharp.tipos'],
+      introduz: ['csharp.variaveis'],
       blocos: [
-        { tipo: 'texto', texto: 'Uma **variável** guarda um valor com um nome para você usar depois. No C#, cada variável tem um **tipo**, que define que espécie de valor cabe nela.' },
+        { tipo: 'texto', texto: 'Uma **variável** guarda um valor com um nome para você usar depois. É como uma caixa etiquetada: a etiqueta é o nome, e o conteúdo é o valor.' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'int estoque = 25;' },
+        { tipo: 'conceito', id: 'csharp.variaveis', titulo: 'Variável', texto: 'Um nome que guarda um valor para ser usado depois.', exemplo: 'estoque = 25' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'cs01-a0',
+        tipo: 'multiple-choice',
+        dimensao: 'reconhecimento',
+        enunciado: 'Na linha `int estoque = 25;`, o que é `estoque`?',
+        opcoes: [
+          'O nome da variável que guarda o valor 25',
+          'O valor guardado',
+          'Um tipo de dado',
+          'Um método'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: '25 é o valor guardado; estoque é o nome da variável.',
+          2: 'O tipo aqui é `int`; `estoque` é o nome.',
+          3: 'Não há método nesta linha.'
+        },
+        dicas: ['Compare com uma caixa etiquetada: o que é a etiqueta?', 'A etiqueta dá o nome.'],
+        explicacao: '`estoque` é o nome da variável; `25` é o valor que ela guarda. O `int` é o tipo.',
+        conceitos: ['csharp.variaveis']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Tipos: cada variável aceita uma espécie de valor',
+      introduz: ['csharp.tipos'],
+      blocos: [
+        { tipo: 'texto', texto: 'No C#, cada variável tem um **tipo**, que define que espécie de valor cabe nela.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'int estoque = 25;\ndecimal preco = 100.50m;\nstring nome = "Mouse";\nbool ativo = true;' },
         { tipo: 'tabela', titulo: 'Os tipos que você mais vai usar no backend', colunas: ['Tipo', 'Guarda', 'Exemplo'], linhas: [
           ['int', 'números inteiros', '25'],
@@ -27,9 +61,9 @@ Plataforma.registrarLicao({
           ['bool', 'verdadeiro ou falso', 'true / false'],
           ['DateTime', 'data e hora', 'DateTime.Now']
         ], legenda: 'Os mesmos conceitos do banco (INT, DECIMAL, VARCHAR, BIT) têm um tipo correspondente em C#.' },
+        { tipo: 'conceito', id: 'csharp.tipos', titulo: 'Tipos de dados em C#', texto: 'O tipo define que espécie de valor cabe na variável: int, decimal, string, bool e DateTime.', exemplo: 'decimal preco = 100.50m;' },
         { tipo: 'nota', tom: 'info', texto: 'Você também verá `var` no código. `var` não é "sem tipo": é o compilador descobrindo o tipo pelo valor. `var preco = 100.50m;` continua sendo decimal.' },
-        { tipo: 'nota', tom: 'info', texto: '`Now` significa **agora**: `DateTime.Now` devolve a data e a hora deste instante.' },
-        { tipo: 'nota', tom: 'info', texto: 'Todo texto tem tamanho: `nome.Length` devolve quantos caracteres ele tem.' }
+        { tipo: 'nota', tom: 'info', texto: '`Now` significa **agora**: `DateTime.Now` devolve a data e a hora deste instante.' }
       ]
     },
     {

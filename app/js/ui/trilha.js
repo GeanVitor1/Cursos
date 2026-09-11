@@ -182,7 +182,9 @@ window.Plataforma = window.Plataforma || {};
     } else {
       const prontidao = P.progresso.checkpointProntidao(t.id);
       const primeira = resumo.comLicao[0];
-      const jaComecou = resumo.concluidas.length > 0 || (primeira && P.dados.obterRascunho(primeira.licao));
+      const jaComecou = resumo.concluidas.length > 0 || resumo.comLicao.some(function (e) {
+        return !!P.dados.obterRegistroLicao(e.licao);
+      });
       if (prontidao && primeira && !jaComecou) {
         const cartao = criar('div', { classe: 'cartao cartao-prontidao' });
         cartao.appendChild(criar('h3', { texto: 'Checkpoint de prontidão' }));

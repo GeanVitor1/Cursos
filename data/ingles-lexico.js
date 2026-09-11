@@ -83,6 +83,7 @@ Plataforma.registrarLexicoIngles({
     'toque', 'ordene', 'monte', 'preencha', 'apresente', 'traduza', 'marque',
     'pedido', 'pedidos', 'conta', 'coisa', 'coisas', 'pessoa', 'pessoas',
     'lugar', 'lugares', 'parte', 'partes', 'forma', 'formas', 'texto',
+    'tipo', 'tipos', 'leitura',
     'ingles', 'inglês', 'portugues', 'português', 'quem', 'tudo', 'sobre',
     'entre', 'depois', 'antes', 'agora', 'sempre', 'nunca', 'muito', 'muita',
     'pouco', 'bem', 'mal', 'sim', 'também', 'apenas', 'so', 'só', 'cada',

@@ -32,23 +32,57 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Uma Minimal API inteira',
       blocos: [
-        { tipo: 'texto', texto: 'Existe uma forma enxuta de criar APIs no ASP.NET, ideal para aprender: a **Minimal API**. Repare que não há classes novas — só métodos que recebem e devolvem objetos:' },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: 'var builder = WebApplication.CreateBuilder(args);\nvar app = builder.Build();\n\nvar produtos = new List<Produto>\n{\n    new Produto { Id = 1, Nome = "Mouse", Preco = 100.00m },\n    new Produto { Id = 2, Nome = "Teclado", Preco = 200.00m }\n};\n\napp.MapGet("/produtos", () => produtos);\n\napp.Run();' },
-        { tipo: 'diagrama', arte: 'app.MapGet("/produtos", () => produtos)\n     │         │            │\n     │         │            └─ o que devolver (vira JSON na resposta)\n     │         └─ rota (endereço)\n     └─ método HTTP que este endereço atende' },
-        { tipo: 'texto', texto: 'Quando o cliente chama `GET /produtos`, o ASP.NET executa a lambda `() => produtos`, recebe a lista C# e a **serializa em JSON** automaticamente, com status **200 OK**.' },
-        { tipo: 'codigo', linguagem: 'json', codigo: '// Resposta ao cliente\n[\n  { "id": 1, "nome": "Mouse", "preco": 100.00 },\n  { "id": 2, "nome": "Teclado", "preco": 200.00 }\n]' },
-        { tipo: 'glossario', titulo: 'Decifrando o código', itens: [
-          ['var', 'tipo inferido', 'O compilador descobre o tipo pelo valor. Você já viu isso na trilha de C#.'],
+        { tipo: 'texto', texto: 'Existe uma forma enxuta de criar APIs no ASP.NET, ideal para aprender: a **Minimal API**. Vamos montá-la por partes, começando pelo início do programa:' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'var builder = WebApplication.CreateBuilder(args);\nvar app = builder.Build();' },
+        { tipo: 'glossario', titulo: 'A preparação da aplicação', itens: [
           ['builder / CreateBuilder', 'preparação da aplicação', 'O objeto que reúne as configurações antes de a aplicação iniciar. É preparação padrão: você não precisa decorar agora.'],
           ['Build()', 'montar a aplicação', 'Monta a aplicação com tudo o que foi configurado no builder.'],
-          ['args', 'argumentos de inicialização', 'Argumentos passados ao executar a aplicação. Não precisa entender agora.'],
-          ['() => produtos', 'lambda sem parâmetros', 'Os parênteses vazios significam que esta função não recebe nada; ela apenas devolve a lista.'],
-          ['(int id) => ...', 'lambda com parâmetro', 'Significa "para o id informado, faça...". O valor vem do parâmetro da rota, como o `{id}` visto acima.'],
+          ['args', 'argumentos de inicialização', 'Argumentos passados ao executar a aplicação. Não precisa entender agora.']
+        ] }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'A lista de produtos',
+      blocos: [
+        { tipo: 'texto', texto: 'Para focar na API, o exemplo guarda os produtos em uma lista na memória. Repare que é a mesma `List<Produto>` que você já conhece:' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'var produtos = new List<Produto>\n{\n    new Produto { Id = 1, Nome = "Mouse", Preco = 100.00m },\n    new Produto { Id = 2, Nome = "Teclado", Preco = 200.00m }\n};' },
+        { tipo: 'nota', tom: 'atencao', texto: 'Na versão profissional, a lista viria do `context.Produtos` do Entity Framework — exatamente o que você aprendeu na trilha anterior.' }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Mapeando o GET',
+      blocos: [
+        { tipo: 'texto', texto: 'Agora ligamos a rota `GET /produtos` ao código que responde:' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'app.MapGet("/produtos", () => produtos);' },
+        { tipo: 'diagrama', arte: 'app.MapGet("/produtos", () => produtos)\n     │         │            │\n     │         │            └─ o que devolver (vira JSON na resposta)\n     │         └─ rota (endereço)\n     └─ método HTTP que este endereço atende' },
+        { tipo: 'glossario', titulo: 'Entendendo a linha', itens: [
           ['MapGet', 'mapear um GET', 'Liga o método GET + rota ao código que responde.'],
+          ['() => produtos', 'lambda sem parâmetros', 'Os parênteses vazios significam que esta função não recebe nada; ela apenas devolve a lista.'],
+          ['(int id) => ...', 'lambda com parâmetro', 'Significa "para o id informado, faça...". O valor vem do parâmetro da rota, como o `{id}` visto acima.']
+        ] }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'A resposta vira JSON',
+      blocos: [
+        { tipo: 'texto', texto: 'Quando o cliente chama `GET /produtos`, o ASP.NET executa a lambda `() => produtos`, recebe a lista C# e a **serializa em JSON** automaticamente, com status **200 OK**:' },
+        { tipo: 'codigo', linguagem: 'json', codigo: '// Resposta ao cliente\n[\n  { "id": 1, "nome": "Mouse", "preco": 100.00 },\n  { "id": 2, "nome": "Teclado", "preco": 200.00 }\n]' },
+        { tipo: 'nota', tom: 'info', texto: 'Você não escreve o JSON à mão: o ASP.NET converte os objetos automaticamente.' }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Mapeando o POST e iniciando',
+      blocos: [
+        { tipo: 'texto', texto: 'O POST segue a mesma ideia: ligamos o método POST + rota ao código que **cria** um produto.' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'app.MapPost("/produtos", (Produto produto) =>\n{\n    produtos.Add(produto);\n});\n\napp.Run();' },
+        { tipo: 'glossario', titulo: 'Entendendo a linha', itens: [
           ['MapPost', 'mapear um POST', 'Liga o método POST + rota ao código que cria um recurso.'],
           ['app.Run()', 'iniciar', 'Coloca a API no ar para receber requisições.']
-        ] },
-        { tipo: 'nota', tom: 'atencao', texto: 'Neste exemplo os produtos estão em memória para você focar na API. Na versão profissional, a lista viria do `context.Produtos` do Entity Framework — exatamente o que você aprendeu na trilha anterior.' }
+        ] }
       ]
     },
     {

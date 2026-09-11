@@ -35,16 +35,25 @@ Plataforma.registrarLicao({
     {
       tipo: 'conteudo',
       titulo: 'ORM: o tradutor entre C# e o banco',
-      introduz: ['ef.orm', 'ef.entidade'],
+      introduz: ['ef.orm'],
       blocos: [
-        { tipo: 'texto', texto: '**ORM** significa Object-Relational Mapper (mapeador objeto-relacional) — mas o nome importa menos do que a função: ele **traduz** entre objetos C# e tabelas do banco. Ele mantém um **mapeamento**: a classe Produto corresponde à tabela Produtos; cada propriedade corresponde a uma coluna.' },
+        { tipo: 'texto', texto: '**ORM** significa Object-Relational Mapper (mapeador objeto-relacional) — mas o nome importa menos do que a função: ele **traduz** entre objetos C# e tabelas do banco.' },
         { tipo: 'diagrama', arte: 'C#                                    Banco de dados\n\nProduto                               Produtos\n├── Id        (int)      ◄──────►     ├── Id        INT\n├── Nome      (string)   ◄──────►     ├── Nome      VARCHAR\n├── Preco     (decimal)  ◄──────►     ├── Preco     DECIMAL\n└── Estoque   (int)      ◄──────►     └── Estoque   INT' },
-        { tipo: 'texto', texto: 'Você escreve C# e o ORM gera o SQL correspondente. O objeto Produto que você já sabe criar é chamado de **entidade** — a classe mapeada para uma tabela.' },
-        { tipo: 'glossario', titulo: 'Vocabulário essencial', itens: [
+        { tipo: 'glossario', titulo: 'Vocabulário do ORM', itens: [
           ['ORM', 'mapeador objeto-relacional', 'Tradutor entre objetos C# e tabelas do banco.'],
-          ['Entidade', 'classe mapeada', 'Classe como Produto, ligada a uma tabela.'],
-          ['Mapeamento', 'regra de correspondência', 'Diz qual classe vira qual tabela e qual propriedade vira qual coluna.'],
           ['EF Core', 'o ORM do .NET', 'Entity Framework Core, o ORM oficial da Microsoft, usado na maioria dos projetos.']
+        ] }
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Entidade: a classe que representa uma tabela',
+      introduz: ['ef.entidade'],
+      blocos: [
+        { tipo: 'texto', texto: 'Você escreve C# e o ORM gera o SQL correspondente. O objeto Produto que você já sabe criar é chamado de **entidade** — a classe mapeada para uma tabela.' },
+        { tipo: 'glossario', titulo: 'A correspondência', itens: [
+          ['Entidade', 'classe mapeada', 'Classe como Produto, ligada a uma tabela.'],
+          ['Mapeamento', 'regra de correspondência', 'Diz qual classe vira qual tabela e qual propriedade vira qual coluna.']
         ] },
         { tipo: 'trabalho', texto: 'Em projetos .NET profissionais, EF Core (ou um ORM equivalente) é a forma padrão de acessar o banco. O SQL continua existindo por baixo — e você já sabe lê-lo, o que é uma vantagem enorme.', fonte: '💼 Em uma vaga .NET' }
       ]

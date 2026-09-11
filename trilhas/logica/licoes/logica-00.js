@@ -25,14 +25,11 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
-      titulo: 'Os quatro raciocínios deste treino',
-      introduz: ['logica.total', 'logica.validacao', 'logica.duplicados', 'logica.agrupamento'],
+      titulo: 'Raciocínio 1: total',
+      introduz: ['logica.total'],
       blocos: [
-        { tipo: 'texto', texto: 'Antes de praticar, conheça os quatro raciocínios que vão aparecer. Eles voltam em quase todo sistema de verdade.' },
-        { tipo: 'conceito', id: 'logica.total', titulo: 'Total', texto: 'Somar o valor de cada item para chegar ao total de um pedido: preço × quantidade, item por item.', exemplo: '2 × 100 + 1 × 200 = 400' },
-        { tipo: 'conceito', id: 'logica.validacao', titulo: 'Validação de regra', texto: 'Verificar uma regra antes de alterar os dados, impedindo estados inválidos.', exemplo: 'Não permitir que o estoque fique negativo.' },
-        { tipo: 'conceito', id: 'logica.duplicados', titulo: 'Duplicados', texto: 'Encontrar itens repetidos em uma lista, guardando o que já foi visto.', exemplo: 'Dois clientes com o mesmo e-mail.' },
-        { tipo: 'conceito', id: 'logica.agrupamento', titulo: 'Agrupamento', texto: 'Separar os itens em grupos e contar quantos há em cada grupo.', exemplo: 'Quantos pedidos cada cliente fez.' }
+        { tipo: 'texto', texto: 'O primeiro raciocínio é **somar valores**: pegar o preço de cada item, multiplicar pela quantidade e somar tudo.' },
+        { tipo: 'conceito', id: 'logica.total', titulo: 'Total', texto: 'Somar o valor de cada item para chegar ao total de um pedido: preço × quantidade, item por item.', exemplo: '2 × 100 + 1 × 200 = 400' }
       ]
     },
     {
@@ -74,6 +71,15 @@ Plataforma.registrarLicao({
         explicacao: 'Iniciar → percorrer → acumular → devolver. Esse padrão de acumulador volta em praticamente toda soma que você fizer.',
         conceitos: ['logica.total']
       }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Raciocínio 2: validação',
+      introduz: ['logica.validacao'],
+      blocos: [
+        { tipo: 'texto', texto: 'O segundo raciocínio é **validar**: verificar uma regra **antes** de alterar os dados, para impedir estados inválidos.' },
+        { tipo: 'conceito', id: 'logica.validacao', titulo: 'Validação de regra', texto: 'Verificar uma regra antes de alterar os dados, impedindo estados inválidos.', exemplo: 'Não permitir que o estoque fique negativo.' }
+      ]
     },
     {
       tipo: 'atividade',
@@ -122,6 +128,15 @@ Plataforma.registrarLicao({
       }
     },
     {
+      tipo: 'conteudo',
+      titulo: 'Raciocínio 3: duplicados',
+      introduz: ['logica.duplicados'],
+      blocos: [
+        { tipo: 'texto', texto: 'O terceiro raciocínio é **encontrar repetidos**: percorrer uma lista guardando o que já foi visto e sinalizar o que se repete.' },
+        { tipo: 'conceito', id: 'logica.duplicados', titulo: 'Duplicados', texto: 'Encontrar itens repetidos em uma lista, guardando o que já foi visto.', exemplo: 'Dois clientes com o mesmo e-mail.' }
+      ]
+    },
+    {
       tipo: 'atividade',
       atividade: {
         id: 'lg00-a5',
@@ -145,6 +160,15 @@ Plataforma.registrarLicao({
         explicacao: 'Esse padrão se chama "conjunto de vistos": percorre uma vez, guarda o que já apareceu e sinaliza repetições. É a base dos relatórios e das consultas de agrupamento que você verá mais adiante.',
         conceitos: ['logica.duplicados']
       }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Raciocínio 4: agrupamento',
+      introduz: ['logica.agrupamento'],
+      blocos: [
+        { tipo: 'texto', texto: 'O quarto raciocínio é **agrupar e contar**: separar os itens em grupos e contar quantos há em cada grupo.' },
+        { tipo: 'conceito', id: 'logica.agrupamento', titulo: 'Agrupamento', texto: 'Separar os itens em grupos e contar quantos há em cada um.', exemplo: 'Quantos pedidos cada cliente fez.' }
+      ]
     },
     {
       tipo: 'atividade',

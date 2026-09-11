@@ -53,7 +53,7 @@ Plataforma.registrarSimbolosCodigo({
     'csharp:==': { licao: 'csharp-01', nome: 'operador ==' },
     'csharp:!=': { licao: 'csharp-01', nome: 'operador !=' },
     'csharp:*': { licao: 'csharp-01', nome: 'multiplicação *' },
-    'csharp:.length': { licao: 'csharp-01', nome: '.Length' },
+    'csharp:.length': { licao: 'csharp-04', nome: '.Length' },
     'csharp:return': { licao: 'csharp-02', nome: 'return' },
     'csharp:void': { licao: 'csharp-02', nome: 'void' },
     'csharp:list<': { licao: 'csharp-03', nome: 'List<T>' },
