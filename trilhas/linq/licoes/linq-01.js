@@ -91,7 +91,7 @@ Plataforma.registrarLicao({
         esqueleto: 'List<Produto> resultado = produtos\n    // seu código aqui\n    .ToList();',
         validar: function (valor) {
           const t = P.dom.normalizarCodigo(valor).replace(/ /g, '');
-          return t.indexOf('.where(') !== -1 && t.indexOf('=>') !== -1 && t.indexOf('estoque<10') !== -1 && t.indexOf('.tolist()') !== -1;
+          return t.indexOf('.where(') !== -1 && t.indexOf('=>') !== -1 && t.indexOf('estoque<10') !== -1;
         },
         respostasAceitas: ['List<Produto> resultado = produtos.Where(p => p.Estoque < 10).ToList();'],
         dicas: ['Where + lambda + ToList.', 'Use `p => p.Estoque < 10`.'],

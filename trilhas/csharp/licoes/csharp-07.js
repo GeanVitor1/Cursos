@@ -151,7 +151,8 @@ Plataforma.registrarLicao({
         esqueleto: 'List<Produto> resultado = Filtrar(produtos, );',
         validar: function (valor) {
           const t = P.dom.normalizarCodigo(valor).replace(/ /g, '');
-          return t.indexOf('filtrar(produtos,') !== -1 && t.indexOf('=>') !== -1 && t.indexOf('estoque<10') !== -1;
+          const lambdaOk = t.indexOf('=>') !== -1 && t.indexOf('estoque<10') !== -1;
+          return lambdaOk && (t.indexOf('filtrar(produtos,') !== -1 || t.indexOf('filtrar') === -1);
         },
         respostasAceitas: ['List<Produto> resultado = Filtrar(produtos, p => p.Estoque < 10);'],
         dicas: ['A lambda vai no segundo argumento.', 'Use `p => p.Estoque < 10`.'],

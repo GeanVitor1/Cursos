@@ -114,8 +114,8 @@ Plataforma.registrarLicao({
         esqueleto: 'public decimal CalcularTotal(decimal preco, int quantidade)\n{\n    // seu código aqui\n}',
         validar: function (valor) {
           const t = P.dom.normalizarCodigo(valor);
-          return t.indexOf('decimalcalculartotal(decimalpreco,intquantidade)') !== -1 &&
-            t.indexOf('returnpreco*quantidade') !== -1;
+          return t.indexOf('preco*quantidade') !== -1 &&
+            /return\(?(preco\*quantidade|total)\)?/.test(t);
         },
         respostasAceitas: ['public decimal CalcularTotal(decimal preco, int quantidade) { return preco * quantidade; }'],
         dicas: ['A assinatura já está no esqueleto; falta o corpo.', 'O corpo pode ser uma única linha: `return preco * quantidade;`'],

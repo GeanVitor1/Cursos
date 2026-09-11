@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-09-11T14:18:07.915Z",
+  "geradoEm": "2026-09-11T15:11:56.431Z",
   "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Nas trilhas de programação, cada etapa ensina no máximo 3 palavras novas e toda frase em inglês usa apenas palavras já explicadas (mais palavras de ligação básicas).",
   "limiteNovasPorEtapa": 3,
   "introducoesDeVocabulario": [

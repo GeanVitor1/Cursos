@@ -345,7 +345,8 @@ Plataforma.registrarLicao({
         esqueleto: 'public class Cliente\n{\n    // suas propriedades aqui\n}',
         validar: function (valor) {
           const t = P.dom.normalizar(valor);
-          return t.indexOf('class cliente') !== -1 &&
+          const declaraClasse = t.indexOf('class ') !== -1;
+          return (!declaraClasse || t.indexOf('class cliente') !== -1) &&
             t.indexOf('int id') !== -1 &&
             t.indexOf('string nome') !== -1 &&
             t.indexOf('string email') !== -1 &&
