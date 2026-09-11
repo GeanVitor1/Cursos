@@ -166,7 +166,7 @@ Plataforma.registrarLicao({
           'Citar que dá para trocar a implementação sem mudar quem usa'
         ],
         palavrasChave: ['contrato', 'o que', 'implement', 'como', 'trocar', 'substitu', 'combinado', 'promessa'],
-        exemplo: 'A interface é o contrato: ela diz que existe um método Enviar. A classe EmailNotificador é uma implementação concreta desse contrato, que envia de verdade por e-mail. Posso criar outra implementação (SMS) e trocar sem mudar quem chama Enviar.',
+        exemplo: 'A interface diz o que deve existir (o contrato) e a classe diz como funciona (a implementação concreta). Posso substituir a implementação (por exemplo, trocar e-mail por SMS) sem mudar quem usa a interface.',
         dicas: ['Pense em "o que" versus "como".', 'Pense na possibilidade de substituir uma implementação.'],
         explicacao: 'Separar contrato de implementação é o que permite testar e evoluir o sistema sem reescrever as classes que dependem dele.',
         conceitos: ['csharp.interfaces']

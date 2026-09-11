@@ -125,7 +125,7 @@ Plataforma.registrarLicao({
           'Com async/await, a aplicação atende outros acessos enquanto espera'
         ],
         palavrasChave: ['demor', 'esper', 'trav', 'bloque', 'atend', 'outras', 'outros', 'aces', 'livre', 'liber', 'concorr'],
-        exemplo: 'Porque acessar o banco leva tempo. Se o código esperasse parado, a aplicação ficaria bloqueada e outros acessos esperariam na fila. Com async/await, a operação acontece em segundo plano e a aplicação continua atendendo enquanto aguarda o resultado.',
+        exemplo: 'Porque acessar o banco demora. Se o código esperasse parado, a aplicação ficaria travada e deixaria de atender outros acessos. Com async/await, ela continua livre para atender em concorrência e libera o processamento enquanto espera o resultado.',
         dicas: ['Pense em várias pessoas usando a aplicação ao mesmo tempo.', 'Quem espera parado não atende ninguém.'],
         explicacao: 'Assincronismo é o que permite uma aplicação web atender muitos usuários com o mesmo servidor enquanto operações demoradas acontecem.',
         conceitos: ['csharp.async'],

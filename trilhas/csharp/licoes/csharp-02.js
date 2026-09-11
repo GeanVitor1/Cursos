@@ -113,9 +113,9 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva o método `CalcularTotal` recebendo `decimal preco` e `int quantidade`, devolvendo o total.',
         esqueleto: 'public decimal CalcularTotal(decimal preco, int quantidade)\n{\n    // seu código aqui\n}',
         validar: function (valor) {
-          const t = P.dom.normalizarCodigo(valor).replace(/m/g, '');
-          return t.indexOf('decimal calculartotal(decimal preco,int quantidade)') !== -1 &&
-            t.indexOf('return preco*quantidade') !== -1;
+          const t = P.dom.normalizarCodigo(valor);
+          return t.indexOf('decimalcalculartotal(decimalpreco,intquantidade)') !== -1 &&
+            t.indexOf('returnpreco*quantidade') !== -1;
         },
         respostasAceitas: ['public decimal CalcularTotal(decimal preco, int quantidade) { return preco * quantidade; }'],
         dicas: ['A assinatura já está no esqueleto; falta o corpo.', 'O corpo pode ser uma única linha: `return preco * quantidade;`'],
@@ -158,8 +158,8 @@ Plataforma.registrarLicao({
           'Citar que mudanças futuras ficam mais seguras',
           'Citar legibilidade ou reaproveitamento'
         ],
-        palavrasChave: ['um lugar', 'unico', 'único', 'mudar', 'mudança', 'alterar', 'reutiliz', 'reaproveit', 'legib', 'repet', 'duplic'],
-        exemplo: 'Porque a regra fica em um lugar só: se ela mudar, altero o método e todos os usos passam a ter o comportamento correto. Também deixa o código mais legível, pois o nome do método explica a intenção.',
+        palavrasChave: ['um lugar', 'unico', 'mud', 'alter', 'reutiliz', 'reaproveit', 'legiv', 'repet', 'duplic'],
+        exemplo: 'Porque a regra fica em um único lugar: se ela mudar, altero o método e todos os usos passam a ter o comportamento correto. Isso evita repetir e duplicar a regra, deixa o código mais legível e permite reaproveitar a lógica.',
         dicas: ['Pense no dia em que a regra mudar.', 'Pense em quem vai ler o código depois.'],
         explicacao: 'Centralizar a regra em um lugar é uma das primeiras boas práticas que você vai usar no trabalho: elimina duplicação e reduz o risco de bugs.',
         conceitos: ['csharp.metodos']

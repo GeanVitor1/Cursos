@@ -28,6 +28,8 @@ window.Plataforma = window.Plataforma || {};
     errosParaAjudaExtra: 2
   };
 
+  window.P = P;
+
   P.registrarManifesto = function (manifesto) { P.interno.manifesto = manifesto; };
   P.registrarTrilha = function (trilha) { P.interno.trilhas[trilha.id] = trilha; };
   P.registrarLicao = function (licao) { P.interno.licoes[licao.id] = licao; };

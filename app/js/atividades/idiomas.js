@@ -101,10 +101,11 @@ window.Plataforma = window.Plataforma || {};
       }
 
       const opcoes = atv.opcoes || [];
+      const ordem = P.dom.embaralhar(opcoes.map(function (_, i) { return i; }));
       let selecionada = null;
       let travado = false;
       const lista = criar('div', { classe: 'opcoes listening-opcoes' });
-      const botoes = opcoes.map(function (texto, i) {
+      const botoes = ordem.map(function (original, pos) {
         const botao = criar('button', {
           classe: 'opcao',
           type: 'button',
@@ -112,13 +113,14 @@ window.Plataforma = window.Plataforma || {};
             if (travado) return;
             botoes.forEach(function (b) { b.classList.remove('selecionada'); });
             botao.classList.add('selecionada');
-            selecionada = i;
+            selecionada = original;
             api.marcarRespondida(true);
           }
         }, [
-          criar('span', { classe: 'opcao-marcador', texto: String.fromCharCode(65 + i) }),
-          criar('span', { texto: texto })
+          criar('span', { classe: 'opcao-marcador', texto: String.fromCharCode(65 + pos) }),
+          criar('span', { texto: opcoes[original] })
         ]);
+        botao.dataset.indiceOriginal = original;
         lista.appendChild(botao);
         return botao;
       });
@@ -128,17 +130,17 @@ window.Plataforma = window.Plataforma || {};
       return {
         verificar: function () {
           travado = true;
-          botoes.forEach(function (b, i) {
+          botoes.forEach(function (b, pos) {
             b.classList.remove('selecionada');
-            if (i === atv.correta) b.classList.add('correta');
+            if (ordem[pos] === atv.correta) b.classList.add('correta');
           });
-          if (selecionada !== atv.correta && selecionada != null) botoes[selecionada].classList.add('errada');
+          if (selecionada !== atv.correta && selecionada != null) botoes[ordem.indexOf(selecionada)].classList.add('errada');
           return { correto: selecionada === atv.correta, selecionada: selecionada };
         },
         revelar: function () {
           travado = true;
-          botoes.forEach(function (b, i) {
-            if (i === atv.correta) b.classList.add('correta');
+          botoes.forEach(function (b, pos) {
+            if (ordem[pos] === atv.correta) b.classList.add('correta');
           });
         },
         prepararNovaTentativa: function () {
@@ -156,6 +158,7 @@ window.Plataforma = window.Plataforma || {};
     render: function (atv, area, api) {
       const grid = criar('div', { classe: 'imagem-grid' });
       const opcoes = atv.opcoes || [];
+      const ordem = P.dom.embaralhar(opcoes.map(function (_, i) { return i; }));
       let selecionada = null;
       let travado = false;
       if (atv.audio) {
@@ -167,7 +170,8 @@ window.Plataforma = window.Plataforma || {};
         });
         area.appendChild(criar('div', { classe: 'listening-controles' }, [ouvir]));
       }
-      const botoes = opcoes.map(function (opcao, i) {
+      const botoes = ordem.map(function (original) {
+        const opcao = opcoes[original];
         const texto = typeof opcao === 'string' ? opcao : opcao.texto;
         const emoji = typeof opcao === 'string' ? '' : opcao.emoji;
         const botao = criar('button', {
@@ -178,13 +182,14 @@ window.Plataforma = window.Plataforma || {};
             if (travado) return;
             botoes.forEach(function (b) { b.classList.remove('selecionada'); });
             botao.classList.add('selecionada');
-            selecionada = i;
+            selecionada = original;
             api.marcarRespondida(true);
           }
         }, [
           criar('span', { classe: 'imagem-emoji', texto: emoji }),
           texto ? criar('span', { classe: 'imagem-rotulo', texto: texto }) : null
         ]);
+        botao.dataset.indiceOriginal = original;
         grid.appendChild(botao);
         return botao;
       });
@@ -193,16 +198,16 @@ window.Plataforma = window.Plataforma || {};
       return {
         verificar: function () {
           travado = true;
-          botoes.forEach(function (b, i) {
+          botoes.forEach(function (b, pos) {
             b.classList.remove('selecionada');
-            if (i === atv.correta) b.classList.add('correta');
+            if (ordem[pos] === atv.correta) b.classList.add('correta');
           });
-          if (selecionada !== atv.correta && selecionada != null) botoes[selecionada].classList.add('errada');
+          if (selecionada !== atv.correta && selecionada != null) botoes[ordem.indexOf(selecionada)].classList.add('errada');
           return { correto: selecionada === atv.correta, selecionada: selecionada };
         },
         revelar: function () {
           travado = true;
-          botoes.forEach(function (b, i) { if (i === atv.correta) b.classList.add('correta'); });
+          botoes.forEach(function (b, pos) { if (ordem[pos] === atv.correta) b.classList.add('correta'); });
         },
         prepararNovaTentativa: function () {
           travado = false;
@@ -247,17 +252,19 @@ window.Plataforma = window.Plataforma || {};
         const turno = turnos[indice];
         linhas.appendChild(bolha('outro', turno.fala));
         if (turno.audio !== false) falarIngles(turno.fala, false);
-        const botoes = (turno.opcoes || []).map(function (texto, i) {
+        const opcoes = turno.opcoes || [];
+        const ordem = P.dom.embaralhar(opcoes.map(function (_, i) { return i; }));
+        const botoes = ordem.map(function (original, pos) {
           const botao = criar('button', {
             classe: 'opcao dialogo-opcao',
             type: 'button',
             onclick: function () {
               if (travado) return;
               travado = true;
-              const certo = i === turno.correta;
+              const certo = original === turno.correta;
               if (!certo) erros += 1;
-              botoes.forEach(function (b, j) {
-                if (j === turno.correta) b.classList.add('correta');
+              botoes.forEach(function (b) {
+                if (Number(b.dataset.indiceOriginal) === turno.correta) b.classList.add('correta');
               });
               if (!certo) botao.classList.add('errada');
               linhas.appendChild(bolha('jogador', turno.opcoes[turno.correta]));
@@ -265,9 +272,10 @@ window.Plataforma = window.Plataforma || {};
               window.setTimeout(renderTurno, certo ? 550 : 900);
             }
           }, [
-            criar('span', { classe: 'opcao-marcador', texto: String.fromCharCode(65 + i) }),
-            criar('span', { texto: texto })
+            criar('span', { classe: 'opcao-marcador', texto: String.fromCharCode(65 + pos) }),
+            criar('span', { texto: opcoes[original] })
           ]);
+          botao.dataset.indiceOriginal = original;
           opcoesBox.appendChild(botao);
           return botao;
         });

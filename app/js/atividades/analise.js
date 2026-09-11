@@ -209,8 +209,16 @@ window.Plataforma = window.Plataforma || {};
         const chaves = atv.palavrasChave || [];
         if (!chaves.length) return null;
         const normalizado = P.dom.normalizar(texto.value);
+        const palavras = normalizado.split(/[^a-z0-9#+]+/).filter(function (p) { return p.length >= 3; });
         const encontradas = chaves.filter(function (chave) {
-          return normalizado.indexOf(P.dom.normalizar(chave)) !== -1;
+          const alvo = P.dom.normalizar(chave);
+          if (!alvo) return false;
+          if (normalizado.indexOf(alvo) !== -1) return true;
+          return palavras.some(function (p) {
+            const tam = Math.min(p.length, alvo.length);
+            if (tam < 4) return false;
+            return p.indexOf(alvo.slice(0, tam)) === 0 || alvo.indexOf(p.slice(0, tam)) === 0;
+          });
         });
         return encontradas;
       }

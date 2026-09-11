@@ -32,6 +32,10 @@ O progresso é salvo no `localStorage`. Exporte/importe em **Meu progresso** par
 - **Sistema de confiança**: "tenho certeza / acho que sei / estou chutando" pesa no domínio.
 - **Revisão espaçada real**: 1 → 3 → 7 → 14 → 30 dias, com interleaving de conceitos.
 - **Feedback educativo por alternativa**, dicas progressivas e **modo socrático** ("Me guie").
+- **Alternativas embaralhadas a cada exibição** em múltipla escolha, listening, escolha de imagem e
+  diálogos: o gabarito nunca fica fixo na letra A e o aluno não decora posição. O índice `correta`
+  do conteúdo é o original; o motor sorteia a ordem e mantém o feedback alinhado à alternativa
+  escolhida.
 - Sessões de **5 / 15 / 30 / 60 minutos** com destinos diferentes.
 - **Checkpoint de prontidão** antes de trilhas que reutilizam conhecimentos anteriores.
 - **Mapa de carreira** com competências ✅ dominadas / 🟡 em estudo / 🔒 bloqueadas.

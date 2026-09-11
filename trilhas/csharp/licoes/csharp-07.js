@@ -173,7 +173,7 @@ Plataforma.registrarLicao({
           'O resultado é verdadeiro/falso para decidir se o item entra ou não'
         ],
         palavrasChave: ['item', 'cada', 'tempor', 'condi', 'verdade', 'falso', 'true', 'false', 'entra', 'mantém', 'mantem', 'filtra'],
-        exemplo: 'O primeiro x é cada item sendo percorrido; o x.Ativo lê a propriedade Ativo daquele item. A expressão devolve true para ativos e false para inativos, e quem filtra usa isso para decidir se o item permanece.',
+        exemplo: 'O primeiro x é um nome temporário para cada item que está sendo testado. A condição depois da seta (x.Ativo) devolve verdadeiro para ativos e falso para inativos; assim o item entra no resultado, e quem filtra mantém apenas os aprovados.',
         dicas: ['Não se prenda à palavra lambda: explique o comportamento.', 'Pense no item e no teste que ele passa.'],
         explicacao: 'Entender a lambda por dentro é o que permite ler qualquer filtro de dados sem decorar.',
         conceitos: ['csharp.lambda'],

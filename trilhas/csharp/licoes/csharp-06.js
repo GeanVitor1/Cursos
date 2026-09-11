@@ -158,8 +158,8 @@ Plataforma.registrarLicao({
           'Fica possível trocar a implementação sem reescrever a classe',
           'Fica possível testar com uma implementação falsa'
         ],
-        palavrasChave: ['new', 'constru', 'criar', 'trocar', 'substitu', 'test', 'falsa', 'falso', 'simular', 'implementa', 'recebe', 'injet', 'fora'],
-        exemplo: 'Sem DI, o PedidoService cria um EmailNotificador com new e fica preso a ele. Com DI, o service recebe um INotificador pelo construtor: posso entregar um notificador de SMS em produção ou um notificador falso no teste, sem alterar o service.',
+        palavrasChave: ['new', 'constr', 'cri', 'trocar', 'substitu', 'test', 'fals', 'simular', 'implementa', 'receb', 'injet', 'fora'],
+        exemplo: 'Sem DI, o PedidoService constrói o EmailNotificador com new e fica preso a ele. Com DI, o service recebe um INotificador pelo construtor: posso trocar ou substituir a implementação em produção, ou simular em testes com um notificador falso. A criação sai de dentro da classe e a dependência vem de fora.',
         dicas: ['Comece pelo problema: quem construía a dependência?', 'Depois diga o que muda: trocar e testar.'],
         explicacao: 'Entender o problema é mais importante do que decorar o nome. DI é apenas a técnica de fornecer dependências de fora.',
         conceitos: ['csharp.di']

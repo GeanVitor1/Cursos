@@ -46,14 +46,19 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function normalizar(texto) {
-    return String(texto == null ? '' : texto).toLowerCase().replace(/\s+/g, ' ').trim();
+    return String(texto == null ? '' : texto)
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/\s+/g, ' ')
+      .trim();
   }
 
   function normalizarCodigo(texto) {
     return normalizar(texto)
       .replace(/;\s*$/, '')
-      .replace(/\s*([=<>(),])\s*/g, '$1')
-      .replace(/\s+/g, ' ');
+      .replace(/\s*([=<>(),{}\[\];+\-*/%.])\s*/g, '$1')
+      .replace(/\s+/g, '');
   }
 
   function limpar(el) {

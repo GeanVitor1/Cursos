@@ -5,20 +5,23 @@ window.Plataforma = window.Plataforma || {};
 
   function montarOpcoes(atv, area, api) {
     const marcadores = ['A', 'B', 'C', 'D', 'E', 'F'];
+    const opcoes = atv.opcoes || [];
+    const ordem = P.dom.embaralhar(opcoes.map(function (_, i) { return i; }));
     let selecionada = -1;
     let travado = false;
     const botoes = [];
     const lista = criar('div', { classe: 'opcoes' });
 
-    (atv.opcoes || []).forEach(function (texto, i) {
+    ordem.forEach(function (original, pos) {
       const botao = criar('button', { classe: 'opcao', type: 'button' }, [
-        criar('span', { classe: 'opcao-marcador', texto: marcadores[i] || String(i + 1) }),
-        criar('span', { classe: 'opcao-texto', html: P.dom.formatar(texto) })
+        criar('span', { classe: 'opcao-marcador', texto: marcadores[pos] || String(pos + 1) }),
+        criar('span', { classe: 'opcao-texto', html: P.dom.formatar(opcoes[original]) })
       ]);
+      botao.dataset.indiceOriginal = original;
       botao.addEventListener('click', function () {
         if (travado) return;
-        selecionada = i;
-        botoes.forEach(function (b, j) { b.classList.toggle('selecionada', i === j); });
+        selecionada = original;
+        botoes.forEach(function (b) { b.classList.toggle('selecionada', b === botao); });
         api.marcarRespondida(true);
       });
       botoes.push(botao);
@@ -31,20 +34,21 @@ window.Plataforma = window.Plataforma || {};
       verificar: function () {
         travado = true;
         const correta = atv.correta;
-        botoes.forEach(function (b, i) {
+        botoes.forEach(function (b, pos) {
+          const original = ordem[pos];
           b.classList.add('travada');
           b.classList.remove('selecionada');
-          if (i === correta) b.classList.add('correta');
-          else if (i === selecionada) b.classList.add('errada');
+          if (original === correta) b.classList.add('correta');
+          else if (original === selecionada) b.classList.add('errada');
         });
         return { correto: selecionada === correta, selecionada: selecionada };
       },
       revelar: function () {
         travado = true;
-        botoes.forEach(function (b, i) {
+        botoes.forEach(function (b, pos) {
           b.classList.add('travada');
           b.classList.remove('selecionada');
-          if (i === atv.correta) b.classList.add('correta');
+          if (ordem[pos] === atv.correta) b.classList.add('correta');
         });
       },
       prepararNovaTentativa: function () {

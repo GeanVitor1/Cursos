@@ -114,7 +114,7 @@ Plataforma.registrarLicao({
           'Produz um novo resultado, sem alterar a coleção original'
         ],
         palavrasChave: ['percorre', 'cada', 'item', 'regra', 'lambda', 'verdade', 'true', 'false', 'mantém', 'mantem', 'descarta', 'remove', 'novo', 'original'],
-        exemplo: 'O Where percorre a lista item por item. Para cada produto, executa a regra (por exemplo p => p.Ativo). Se a regra devolver true, o item entra no resultado; se devolver false, fica de fora. A lista original permanece intacta.',
+        exemplo: 'O Where percorre a lista item por item. Para cada item, executa a lambda que representa a regra (por exemplo, p => p.Ativo). Se a regra devolver verdadeiro (true), o item entra no resultado; se devolver falso (false), o Where descarta ou remove o item. O Where mantém apenas os aprovados, cria um resultado novo e não altera a lista original.',
         dicas: ['Cite o teste feito em cada item.', 'Diga o que acontece com o resultado.'],
         explicacao: 'Explicar o Where por dentro é o que permite prever o resultado de qualquer filtro, inclusive os que as ferramentas de acesso a banco geram em SQL.',
         conceitos: ['linq.where'],

@@ -150,7 +150,7 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva um `if` que aplique 10% de desconto quando o preço for maior que 100. Use a variável `preco` e grave o resultado em `precoFinal`.',
         esqueleto: 'decimal preco = 150.00m;\ndecimal precoFinal = preco;\n\n// seu if aqui',
         validar: function (valor) {
-          const t = P.dom.normalizarCodigo(valor).replace(/m/g, '');
+          const t = P.dom.normalizarCodigo(valor);
           return t.indexOf('preco>100') !== -1 && t.indexOf('preco*0.9') !== -1;
         },
         respostasAceitas: ['if (preco > 100) { precoFinal = preco * 0.9m; }'],

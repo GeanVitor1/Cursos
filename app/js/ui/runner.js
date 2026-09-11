@@ -316,7 +316,19 @@ window.Plataforma = window.Plataforma || {};
     estado.caixaDica = caixaDica;
     estado.caixaSocratica = caixaSocratica;
     estado.confiancaBox = confiancaBox;
-    estado.instancia = def.render(atv, area, api);
+    try {
+      estado.instancia = def.render(atv, area, api);
+    } catch (erro) {
+      estado.instancia = null;
+      if (window.console && window.console.error) window.console.error(erro);
+      passo.appendChild(criar('div', { classe: 'bloco bloco-nota atencao' }, [
+        criar('span', { classe: 'nota-marca', texto: '!' }),
+        criar('div', { texto: 'Não foi possível montar esta atividade. Você pode continuar para a próxima etapa.' })
+      ]));
+      definirAcoes({ rotulo: 'Continuar', acao: avancar });
+      atualizarXpInfo();
+      return;
+    }
     if (estado.instancia && estado.instancia.focar) {
       window.setTimeout(function () { estado.instancia.focar(); }, 120);
     }
@@ -385,8 +397,21 @@ window.Plataforma = window.Plataforma || {};
 
   function verificar() {
     const atv = etapaAtual().atividade;
-    if (!estado.instancia) return;
-    const resultado = estado.instancia.verificar();
+    if (!estado.instancia) {
+      mostrarFeedback('errado', 'Atividade indisponível.', 'Não foi possível carregar esta atividade. Continue para a próxima etapa.');
+      definirAcoes({ rotulo: 'Continuar', acao: avancar });
+      return;
+    }
+    let resultado;
+    try {
+      resultado = estado.instancia.verificar();
+    } catch (erro) {
+      if (window.console && window.console.error) window.console.error(erro);
+      estado.verificada = true;
+      mostrarFeedback('errado', 'Não foi possível corrigir.', 'Houve um problema ao avaliar sua resposta. Tente novamente ou veja a resposta.');
+      definirAcoes({ rotulo: 'Tentar novamente', acao: tentarNovamente }, { rotulo: 'Ver resposta', acao: revelar });
+      return;
+    }
     estado.verificada = true;
     estado.tentativas += 1;
     const habilidade = atv.habilidade || (Array.isArray(atv.habilidades) ? atv.habilidades[0] : null);
@@ -478,7 +503,11 @@ window.Plataforma = window.Plataforma || {};
       estado.respostas.push({ id: atv.id, nivel: atv.nivel || null, correto: false });
       estado.respostaRegistrada = true;
     }
-    if (estado.instancia && estado.instancia.revelar) estado.instancia.revelar();
+    try {
+      if (estado.instancia && estado.instancia.revelar) estado.instancia.revelar();
+    } catch (erro) {
+      if (window.console && window.console.error) window.console.error(erro);
+    }
     if (!jaContabil && !estado.erroRegistrado && !estado.semPontuacao) {
       P.dados.responderConceito(atv.conceitos, false, false, {
         dimensao: P.atividades.dimensao(atv),

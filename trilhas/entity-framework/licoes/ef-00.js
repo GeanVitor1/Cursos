@@ -132,8 +132,8 @@ Plataforma.registrarLicao({
           'Ele gera SQL automaticamente',
           'Entender SQL continua importante para investigar e otimizar'
         ],
-        palavrasChave: ['traduz', 'mapeia', 'mapa', 'classe', 'tabela', 'gera', 'sql', 'c#', 'objeto', 'convers'],
-        exemplo: 'ORM é um tradutor entre o mundo dos objetos C# e o mundo relacional do banco. O EF Core gera o SQL a partir do que escrevo em C#. Mesmo assim, preciso saber SQL para entender e otimizar o que ele gera.',
+        palavrasChave: ['tradu', 'mape', 'classe', 'tabela', 'gera', 'sql', 'c#', 'objeto', 'conver'],
+        exemplo: 'ORM é um tradutor que mapeia o mundo dos objetos para o mundo relacional: cada classe vira uma tabela. O EF Core gera o SQL a partir do que escrevo em C#; mesmo assim, preciso saber SQL para investigar e otimizar o que ele converte.',
         dicas: ['Use a palavra "ponte" ou "tradutor".', 'Não esqueça o papel do SQL nessa história.'],
         explicacao: 'Compreender a relação ORM ↔ SQL é o que diferencia quem usa EF Core de quem apenas copia exemplos.',
         conceitos: ['ef.orm'],
