@@ -274,7 +274,9 @@ Plataforma.registrarLicao({
         esqueleto: 'I have ... at ... on ... .',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return /\bat\b/.test(t) && /\bon\b/.test(t) && /(monday|tuesday|wednesday|thursday|friday|saturday|sunday)/.test(t);
+          const temDia = /\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b/.test(t);
+          const temHora = /\bat\s+\d/.test(t) || /\bat\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|noon|midnight|half|quarter)\b/.test(t);
+          return /\bat\b/.test(t) && /\bon\b/.test(t) && temDia && temHora;
         },
         respostasAceitas: ["I have English class at 7 o'clock on Monday."],
         dicas: ['Ex.: I have a meeting at 9 on Monday.', 'Inclua um dia da semana em inglês.'],

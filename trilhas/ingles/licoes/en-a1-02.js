@@ -303,9 +303,10 @@ Plataforma.registrarLicao({
         esqueleto: 'This is my ... . Her/His name is ...',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.indexOf('this is my') !== -1 && (t.indexOf('her name is') !== -1 || t.indexOf('his name is') !== -1);
+          return t.indexOf('this is my') !== -1 &&
+            /(her|his) name('s| is)\s+[a-záéíóúâêôãõç]{2,}/.test(t);
         },
-        respostasAceitas: ['This is my sister. Her name is Lia.'],
+        respostasAceitas: ['This is my [parente]. Her/His name is [nome].'],
         dicas: ['Escolha sister ou brother.', 'Use Her name is para mulher e His name is para homem.'],
         explicacao: 'This is my sister. Her name is Lia. — apresentação completa e natural de uma pessoa.',
         conceitos: ['en.familia']

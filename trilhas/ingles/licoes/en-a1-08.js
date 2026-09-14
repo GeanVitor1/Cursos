@@ -291,7 +291,11 @@ Plataforma.registrarLicao({
         esqueleto: 'Where ...? What ...?',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.split('?').filter(function (p) { return p.trim().length > 3; }).length >= 2;
+          const perguntas = t.split('?').filter(function (p) { return p.trim().length > 3; });
+          const comInterrogativa = perguntas.filter(function (p) {
+            return /\b(where|what|who|how|when|why|which|do|does|are|is|can|could|would|did|have)\b/.test(p);
+          });
+          return perguntas.length >= 2 && comInterrogativa.length >= 2;
         },
         respostasAceitas: ['Where are you from? What do you do?'],
         dicas: ['Use as palavras de pergunta da unidade.', 'Termine cada pergunta com ponto de interrogação.'],

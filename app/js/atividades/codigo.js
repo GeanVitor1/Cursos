@@ -118,8 +118,9 @@ window.Plataforma = window.Plataforma || {};
       });
 
       function validar(valor) {
-        if (typeof atv.validar === 'function') return !!atv.validar(valor);
-        const normalizada = P.dom.normalizarCodigo(valor);
+        const texto = String(valor || '').replace(/[\u2018\u2019]/g, "'");
+        if (typeof atv.validar === 'function') return !!atv.validar(texto);
+        const normalizada = P.dom.normalizarCodigo(texto);
         return (atv.respostasAceitas || []).some(function (a) {
           return P.dom.normalizarCodigo(a) === normalizada;
         });

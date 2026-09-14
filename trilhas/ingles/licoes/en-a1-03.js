@@ -259,8 +259,9 @@ Plataforma.registrarLicao({
         esqueleto: 'I usually ... . I ... .',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          const frases = t.split('.').filter(function (f) { return f.trim().length > 0; });
-          return /\bi\b/.test(t) && frases.length >= 2;
+          const frases = t.split(/[.!?\n]/).filter(function (f) { return f.trim().length > 3; });
+          const comI = frases.filter(function (f) { return /\bi\b/.test(f); });
+          return frases.length >= 2 && comI.length >= 2;
         },
         respostasAceitas: ['I usually wake up at seven. I go to work at eight.'],
         dicas: ['Use verbos da unidade: wake up, study, work, have breakfast...', 'Duas frases terminadas com ponto.'],

@@ -311,7 +311,7 @@ Plataforma.registrarLicao({
         esqueleto: 'I have a reservation. Could I have the room key, please?',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.indexOf('reservation') !== -1 && (t.indexOf('room key') !== -1 || t.indexOf('room') !== -1) && t.indexOf('please') !== -1;
+          return t.indexOf('reservation') !== -1 && /\bkey\b/.test(t) && t.indexOf('please') !== -1;
         },
         respostasAceitas: ['I have a reservation. Could I have the room key, please?'],
         dicas: ['Use "I have a reservation."', 'Peça com "Could I have... please?"'],

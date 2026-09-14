@@ -221,7 +221,9 @@ Plataforma.registrarLicao({
         esqueleto: "Next week I'm going to ... . I'm also going to ... .",
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.indexOf('next week') !== -1 && t.indexOf('going to') !== -1 && t.split('.').filter(function (f) { return f.trim().length > 4; }).length >= 1;
+          const planos = (t.match(/going to/g) || []).length;
+          const frases = t.split(/[.!?\n]/).filter(function (f) { return f.trim().length > 4; });
+          return t.indexOf('next week') !== -1 && planos >= 2 && frases.length >= 2;
         },
         respostasAceitas: ["Next week I'm going to study English. I'm also going to work."],
         dicas: ['Use next week.', 'Use I\'m going to + verbo.'],

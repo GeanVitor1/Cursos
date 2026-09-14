@@ -270,10 +270,12 @@ Plataforma.registrarLicao({
         esqueleto: 'Where is ...? I go ...',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.indexOf('where is') !== -1 && (t.indexOf('by bus') !== -1 || t.indexOf('by train') !== -1 || t.indexOf('on foot') !== -1);
+          const pergunta = /\bwhere('s| is)\b/.test(t) && /\bairport\b/.test(t);
+          const transporte = /\b(by bus|take the bus|taking the bus)\b/.test(t);
+          return pergunta && transporte;
         },
         respostasAceitas: ['Where is the airport? I go by bus.'],
-        dicas: ['Comece com Where is the...', 'Use by bus, by train ou on foot.'],
+        dicas: ['Comece com Where is the airport?', 'Use by bus.'],
         explicacao: 'Where is the airport? I go by bus. — pedir informação e dizer o transporte em duas frases.',
         conceitos: ['en.lugares']
       }

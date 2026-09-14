@@ -281,14 +281,16 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         habilidade: 'writing',
         dimensao: 'construcao',
-        enunciado: 'Escreva uma apresentação com o seu nome (use "Hello" e "My name is").',
-        esqueleto: 'Hello, my name is ...',
+        enunciado: 'Escreva uma apresentação com o seu nome (use "Hello", "My name is" e "Nice to meet you").',
+        esqueleto: 'Hello, my name is ... Nice to meet you.',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.indexOf('hello') !== -1 && t.indexOf('my name is') !== -1 && t.replace(/[^a-z]/g, '').length > 18;
+          return /\bhello\b/.test(t) &&
+            /my name('s| is)\s+[a-záéíóúâêôãõç]{2,}/.test(t) &&
+            /\bnice to meet you\b/.test(t);
         },
-        respostasAceitas: ['Hello, my name is Ana. Nice to meet you.'],
-        dicas: ['Comece com Hello', 'Use `My name is` + seu nome.'],
+        respostasAceitas: ['Hello, my name is [seu nome]. Nice to meet you.'],
+        dicas: ['Comece com Hello', 'Use `My name is` + seu nome.', 'Feche com Nice to meet you.'],
         explicacao: 'Uma apresentação simples: Hello, my name is [nome]. Nice to meet you. Você acabou de produzir sua primeira frase em inglês do zero.',
         conceitos: ['en.saudacoes']
       }

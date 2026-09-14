@@ -321,10 +321,11 @@ Plataforma.registrarLicao({
         esqueleto: "I would like ... , please.",
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.indexOf('i would like') !== -1 && t.indexOf('please') !== -1 && t.split(' ').length >= 4;
+          const pedido = /(i would like|i'd like)\s+([a-z][a-z' -]*?)\s*,?\s*please/.exec(t);
+          return !!pedido && pedido[2].trim().length >= 2;
         },
         respostasAceitas: ['I would like a sandwich, please.'],
-        dicas: ['Comece com I would like.', 'Termine com please.'],
+        dicas: ["Comece com I would like (ou I'd like).", 'Diga a comida e termine com please.'],
         explicacao: 'I would like a sandwich, please. — educado, correto e entendido em qualquer restaurante.',
         conceitos: ['en.comida']
       }

@@ -298,7 +298,9 @@ Plataforma.registrarLicao({
         esqueleto: 'How much is ...? Can I pay by ...?',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.indexOf('how much') !== -1 && (t.indexOf('pay by card') !== -1 || t.indexOf('pay by credit card') !== -1);
+          const perguntaPreco = /\bhow much\b/.test(t) || /\bwhat's the price\b/.test(t);
+          const formaPagamento = /\bpay(ing)?\s+(by|with)\s+(a\s+|an\s+)?(credit\s+|debit\s+)?card/.test(t);
+          return perguntaPreco && formaPagamento;
         },
         respostasAceitas: ['How much is this jacket? Can I pay by card?'],
         dicas: ['Use How much is + item.', 'Use Can I pay by card?'],

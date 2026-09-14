@@ -374,7 +374,10 @@ Plataforma.registrarLicao({
         esqueleto: 'Yesterday I ... . Then I ... .',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.indexOf('yesterday') !== -1 && t.split('.').filter(function (f) { return f.trim().length > 5; }).length >= 2;
+          const marcador = /\b(yesterday|last night)\b/.test(t);
+          const frases = t.split(/[.!?\n]/).filter(function (f) { return f.trim().length > 5; });
+          const passado = /\b(was|were|had|went|did|saw|ate|got|made|took|came|bought|drank|slept|wrote|met|ran|said|told|thought|felt|left|found|gave|knew|put|sat|stood|spoke|wore|won|read)\b/.test(t) || /\b[a-z]{3,}ed\b/.test(t);
+          return marcador && frases.length >= 2 && passado;
         },
         respostasAceitas: ['Yesterday I worked. Then I went home.'],
         dicas: ['Use o marcador yesterday.', 'Use verbos no passado (worked, went, had...).'],

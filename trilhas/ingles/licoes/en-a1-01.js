@@ -310,15 +310,18 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         habilidade: 'writing',
         dimensao: 'construcao',
-        enunciado: 'Escreva a sua idade em uma frase completa.',
+        enunciado: 'Escreva a sua idade em uma frase completa (use a sua idade, qualquer uma).',
         esqueleto: 'I am ... years old.',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return /\bi am\b/.test(t) && /\byears old\b/.test(t) && /\d/.test(t);
+          const temVerbo = /\bi am\b/.test(t) || /\bi'm\b/.test(t);
+          const temIdade = /\d/.test(t) ||
+            /\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred)\b/.test(t);
+          return temVerbo && /\byears? old\b/.test(t) && temIdade;
         },
-        respostasAceitas: ['I am 30 years old.'],
-        dicas: ['Use I am + número + years old.', 'Nada do verbo "ter" nesta frase.'],
-        explicacao: 'I am 30 years old. Agora você consegue falar de idade como um nativo.',
+        respostasAceitas: ['I am [sua idade] years old.'],
+        dicas: ['Use I am + número + years old.', 'Nada do verbo "ter" nesta frase.', 'Escreva a sua idade — qualquer valor é aceito.'],
+        explicacao: 'I am [sua idade] years old. Agora você consegue falar de idade como um nativo.',
         conceitos: ['en.numeros']
       }
     }
