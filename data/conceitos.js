@@ -22,8 +22,15 @@ Plataforma.registrarConceitos({
   'sql.between': 'BETWEEN',
   'sql.not': 'NOT',
   'sql.ingles': 'Inglês técnico',
-  // SQL — planejados
   'sql.order-by': 'ORDER BY',
+  'sql.distinct': 'DISTINCT',
+  'sql.limite': 'Limitar resultados (TOP e LIMIT)',
+  'sql.null': 'Valores nulos (NULL) e COALESCE',
+  'sql.like': 'LIKE',
+  'sql.update': 'UPDATE e SET',
+  'sql.insert': 'INSERT INTO e VALUES',
+  'sql.delete': 'DELETE com segurança',
+  // SQL — planejados
   'sql.agregacao': 'Agregação',
   'sql.group-by': 'GROUP BY',
   'sql.having': 'HAVING',
@@ -122,12 +129,20 @@ Plataforma.registrarConceitos({
   'aspnet.status': 'Status codes',
 
   // Git
+  'git.repositorio': 'Repositório, clone e commit',
+  'git.sincronizacao': 'push, pull e sincronização',
   'git.branch': 'Branches',
   'git.merge': 'Merge',
   'git.pr': 'Pull request',
   'git.conflito': 'Conflitos',
   'git.review': 'Code review',
-  'git.revert': 'Revert e reset',
+  'git.revert': 'revert',
+  'git.reset': 'reset e seus modos',
+  'git.stash': 'stash',
+  'git.ignore': '.gitignore',
+  'git.fluxo': 'Fluxos de trabalho (Git Flow e trunk-based)',
+  'git.commits': 'Mensagens de commit',
+  'git.tags': 'Tags, releases e versionamento',
 
   // Segurança
   'seguranca.owasp': 'OWASP básico',
@@ -166,16 +181,24 @@ Plataforma.registrarConceitos({
   'frontend.hooks': 'Hooks',
 
   // Docker
+  'docker.ambiente': 'Ambiente reproduzível',
   'docker.imagem': 'Imagem',
   'docker.container': 'Container',
+  'docker.dockerfile': 'Dockerfile',
   'docker.portas': 'Portas',
   'docker.volumes': 'Volumes',
+  'docker.variaveis': 'Variáveis de ambiente em containers',
+  'docker.networks': 'Redes do Docker',
   'docker.compose': 'Docker Compose',
 
   // Redis
   'redis.cache': 'Cache',
+  'redis.servidor': 'O servidor Redis',
   'redis.ttl': 'TTL',
   'redis.cache-aside': 'Cache aside',
+  'redis.serializacao': 'Serialização de objetos',
+  'redis.invalidacao': 'Invalidação de cache',
+  'redis.integracao': 'Redis no ASP.NET Core',
 
   // Mensageria
   'mensageria.fila': 'Filas',

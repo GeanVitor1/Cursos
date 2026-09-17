@@ -1,9 +1,9 @@
 {
-  "geradoEm": "2026-09-17T15:55:16.038Z",
-  "licoesPercorridas": 45,
-  "etapasPercorridas": 560,
-  "atividadesPercorridas": 344,
-  "palavrasNoLexico": 430,
+  "geradoEm": "2026-09-17T19:45:39.490Z",
+  "licoesPercorridas": 93,
+  "etapasPercorridas": 1074,
+  "atividadesPercorridas": 685,
+  "palavrasNoLexico": 523,
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
   "introducoesDeVocabulario": [
@@ -71,6 +71,51 @@
       "termos": 1,
       "palavras": [
         "between"
+      ]
+    },
+    {
+      "licao": "sql-06",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "sort"
+      ]
+    },
+    {
+      "licao": "sql-07",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "only",
+        "different"
+      ]
+    },
+    {
+      "licao": "sql-09",
+      "etapa": 8,
+      "termos": 2,
+      "palavras": [
+        "phone",
+        "empty"
+      ]
+    },
+    {
+      "licao": "sql-10",
+      "etapa": 10,
+      "termos": 1,
+      "palavras": [
+        "starts",
+        "with"
+      ]
+    },
+    {
+      "licao": "sql-11",
+      "etapa": 8,
+      "termos": 3,
+      "palavras": [
+        "change",
+        "price",
+        "to"
       ]
     },
     {
@@ -286,7 +331,6 @@
       "termos": 2,
       "palavras": [
         "nice",
-        "to",
         "meet",
         "you",
         "too"
@@ -391,7 +435,6 @@
       "etapa": 14,
       "termos": 2,
       "palavras": [
-        "phone",
         "number",
         "double"
       ]
@@ -498,9 +541,8 @@
     {
       "licao": "en-a1-03",
       "etapa": 7,
-      "termos": 2,
+      "termos": 1,
       "palavras": [
-        "with",
         "night"
       ]
     },
@@ -570,10 +612,9 @@
     {
       "licao": "en-a1-04",
       "etapa": 9,
-      "termos": 2,
+      "termos": 1,
       "palavras": [
-        "meeting",
-        "starts"
+        "meeting"
       ]
     },
     {
@@ -682,8 +723,7 @@
       "termos": 2,
       "palavras": [
         "help",
-        "pay",
-        "by"
+        "pay"
       ]
     },
     {
@@ -1103,9 +1143,8 @@
     {
       "licao": "ingles-00",
       "etapa": 13,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
-        "change",
         "connection",
         "wrong"
       ]
@@ -1262,6 +1301,128 @@
       ]
     },
     {
+      "licao": "git-00",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "repository",
+        "history",
+        "clone"
+      ]
+    },
+    {
+      "licao": "git-01",
+      "etapa": 9,
+      "termos": 3,
+      "palavras": [
+        "remote",
+        "pull",
+        "push"
+      ]
+    },
+    {
+      "licao": "git-02",
+      "etapa": 10,
+      "termos": 2,
+      "palavras": [
+        "switch",
+        "feature"
+      ]
+    },
+    {
+      "licao": "git-03",
+      "etapa": 10,
+      "termos": 1,
+      "palavras": [
+        "combine"
+      ]
+    },
+    {
+      "licao": "git-04",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "team",
+        "code",
+        "approve"
+      ]
+    },
+    {
+      "licao": "git-05",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "conflict",
+        "resolve",
+        "before"
+      ]
+    },
+    {
+      "licao": "git-06",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "revert",
+        "undo"
+      ]
+    },
+    {
+      "licao": "git-07",
+      "etapa": 9,
+      "termos": 3,
+      "palavras": [
+        "reset",
+        "soft",
+        "safe"
+      ]
+    },
+    {
+      "licao": "git-08",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "stash",
+        "temporary"
+      ]
+    },
+    {
+      "licao": "git-09",
+      "etapa": 8,
+      "termos": 2,
+      "palavras": [
+        "ignore",
+        "secret"
+      ]
+    },
+    {
+      "licao": "git-10",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "workflow"
+      ]
+    },
+    {
+      "licao": "git-11",
+      "etapa": 8,
+      "termos": 3,
+      "palavras": [
+        "message",
+        "write",
+        "explain"
+      ]
+    },
+    {
+      "licao": "git-12",
+      "etapa": 10,
+      "termos": 3,
+      "palavras": [
+        "tag",
+        "release",
+        "version"
+      ]
+    },
+    {
       "licao": "aspnet-02",
       "etapa": 2,
       "termos": 0,
@@ -1276,8 +1437,7 @@
       "etapa": 4,
       "termos": 0,
       "palavras": [
-        "mapget",
-        "id"
+        "mapget"
       ]
     },
     {
@@ -1288,6 +1448,192 @@
         "mappost",
         "app",
         "run"
+      ]
+    },
+    {
+      "licao": "docker-00",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "environment",
+        "same"
+      ]
+    },
+    {
+      "licao": "docker-01",
+      "etapa": 8,
+      "termos": 2,
+      "palavras": [
+        "container",
+        "image"
+      ]
+    },
+    {
+      "licao": "docker-02",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "dockerfile",
+        "command"
+      ]
+    },
+    {
+      "licao": "docker-03",
+      "etapa": 10,
+      "termos": 2,
+      "palavras": [
+        "port",
+        "outside"
+      ]
+    },
+    {
+      "licao": "docker-04",
+      "etapa": 9,
+      "termos": 3,
+      "palavras": [
+        "volume",
+        "data",
+        "keep"
+      ]
+    },
+    {
+      "licao": "docker-05",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "variable",
+        "value"
+      ]
+    },
+    {
+      "licao": "docker-06",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "network"
+      ]
+    },
+    {
+      "licao": "docker-08",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "user",
+        "password"
+      ]
+    },
+    {
+      "licao": "docker-09",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "cache",
+        "fast"
+      ]
+    },
+    {
+      "licao": "redis-01",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "del"
+      ]
+    },
+    {
+      "licao": "redis-01",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "store"
+      ]
+    },
+    {
+      "licao": "redis-02",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "expire",
+        "ttl",
+        "ex"
+      ]
+    },
+    {
+      "licao": "redis-02",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "second"
+      ]
+    },
+    {
+      "licao": "redis-03",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "hit",
+        "miss"
+      ]
+    },
+    {
+      "licao": "redis-04",
+      "etapa": 5,
+      "termos": 0,
+      "palavras": [
+        "serialize",
+        "deserialize",
+        "setstringasync",
+        "getstringasync"
+      ]
+    },
+    {
+      "licao": "redis-04",
+      "etapa": 10,
+      "termos": 1,
+      "palavras": [
+        "save"
+      ]
+    },
+    {
+      "licao": "redis-05",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "removeasync"
+      ]
+    },
+    {
+      "licao": "redis-05",
+      "etapa": 10,
+      "termos": 1,
+      "palavras": [
+        "stale"
+      ]
+    },
+    {
+      "licao": "redis-06",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "addstackexchangerediscache",
+        "opcoes",
+        "localhost"
+      ]
+    },
+    {
+      "licao": "redis-06",
+      "etapa": 4,
+      "termos": 0,
+      "palavras": [
+        "idistributedcache",
+        "private"
+      ]
+    },
+    {
+      "licao": "redis-06",
+      "etapa": 11,
+      "termos": 1,
+      "palavras": [
+        "local"
       ]
     }
   ],

@@ -25,14 +25,14 @@ Plataforma.registrarTrilha({
       id: 'iniciante',
       nome: 'Iniciante',
       etapas: [
-        { titulo: 'Ordenando resultados com ORDER BY', duracao: 40 },
-        { titulo: 'Removendo duplicados com DISTINCT', duracao: 30 },
-        { titulo: 'Limitando resultados (TOP e LIMIT)', duracao: 30 },
-        { titulo: 'Valores nulos (NULL) e COALESCE', duracao: 45 },
-        { titulo: 'Textos com LIKE', duracao: 40 },
-        { titulo: 'Alterando dados com UPDATE', duracao: 40 },
-        { titulo: 'INSERT e DELETE com segurança', duracao: 50 },
-        { titulo: 'Checkpoint — Iniciante', duracao: 40, tipo: 'prova' }
+        { id: 'sql-06', titulo: 'Ordenando resultados com ORDER BY', duracao: 40, licao: 'sql-06' },
+        { id: 'sql-07', titulo: 'Removendo duplicados com DISTINCT', duracao: 30, licao: 'sql-07' },
+        { id: 'sql-08', titulo: 'Limitando resultados (TOP e LIMIT)', duracao: 30, licao: 'sql-08' },
+        { id: 'sql-09', titulo: 'Valores nulos (NULL) e COALESCE', duracao: 45, licao: 'sql-09' },
+        { id: 'sql-10', titulo: 'Textos com LIKE', duracao: 40, licao: 'sql-10' },
+        { id: 'sql-11', titulo: 'Alterando dados com UPDATE', duracao: 40, licao: 'sql-11' },
+        { id: 'sql-12', titulo: 'INSERT e DELETE com segurança', duracao: 50, licao: 'sql-12' },
+        { id: 'sql-cp-iniciante', titulo: 'Checkpoint — Iniciante', duracao: 40, licao: 'sql-checkpoint-iniciante', tipo: 'prova' }
       ]
     },
     {

@@ -3,11 +3,11 @@
 > Relatório gerado por `ferramentas/linter-pedagogico.js`. Ele percorre as trilhas na ordem real do aluno e verifica se cada conceito é ensinado antes de ser praticado ou cobrado.
 
 - Trilhas analisadas: **20**
-- Lições publicadas: **45**
+- Lições publicadas: **93**
 - Etapas percorridas: **367**
-- Atividades percorridas: **344**
-- Conceitos registrados: **161**
-- Conceitos com introdução marcada: **83**
+- Atividades percorridas: **685**
+- Conceitos registrados: **184**
+- Conceitos com introdução marcada: **121**
 - Erros: **0** · Avisos: **0**
 
 ## Evidência por conceito (introdução → prática → avaliação)
@@ -36,6 +36,14 @@
 | IN (`sql.in`) | etapa 1 · sql-05 | sql-05 etapa 2 | sql-05 etapa 9 | PRONTO_PARA_AVALIACAO | sql.where |
 | BETWEEN (`sql.between`) | etapa 3 · sql-05 | sql-05 etapa 4 | sql-05 etapa 11 | PRONTO_PARA_AVALIACAO | sql.where |
 | NOT (`sql.not`) | etapa 5 · sql-05 | sql-05 etapa 6 | sql-05 etapa 9 | PRONTO_PARA_AVALIACAO | sql.where |
+| ORDER BY (`sql.order-by`) | etapa 1 · sql-06 | sql-06 etapa 2 | sql-07 etapa 10 | PRONTO_PARA_AVALIACAO | sql.select |
+| DISTINCT (`sql.distinct`) | etapa 1 · sql-07 | sql-07 etapa 2 | sql-07 etapa 10 | PRONTO_PARA_AVALIACAO | sql.colunas |
+| Limitar resultados (TOP e LIMIT) (`sql.limite`) | etapa 1 · sql-08 | sql-08 etapa 2 | sql-checkpoint-iniciante etapa 4 | PRONTO_PARA_AVALIACAO | sql.order-by |
+| Valores nulos (NULL) e COALESCE (`sql.null`) | etapa 1 · sql-09 | sql-09 etapa 2 | sql-09 etapa 7 | PRONTO_PARA_AVALIACAO | sql.where |
+| LIKE (`sql.like`) | etapa 1 · sql-10 | sql-10 etapa 2 | sql-10 etapa 9 | PRONTO_PARA_AVALIACAO | sql.texto-aspas |
+| UPDATE e SET (`sql.update`) | etapa 1 · sql-11 | sql-11 etapa 2 | sql-11 etapa 7 | PRONTO_PARA_AVALIACAO | sql.comandos-sql, sql.where |
+| INSERT INTO e VALUES (`sql.insert`) | etapa 1 · sql-12 | sql-12 etapa 2 | sql-checkpoint-iniciante etapa 9 | PRONTO_PARA_AVALIACAO | sql.comandos-sql |
+| DELETE com segurança (`sql.delete`) | etapa 5 · sql-12 | sql-12 etapa 6 | sql-12 etapa 8 | PRONTO_PARA_AVALIACAO | sql.comandos-sql, sql.where |
 | Classes (`csharp.classes`) | etapa 2 · csharp-00 | csharp-00 etapa 3 | csharp-00 etapa 21 | PRONTO_PARA_AVALIACAO | — |
 | Propriedades (`csharp.propriedades`) | etapa 4 · csharp-00 | csharp-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.classes |
 | Valores (`csharp.valor`) | etapa 6 · csharp-00 | csharp-00 etapa 7 | — | PRATICADO | csharp.propriedades |
@@ -74,7 +82,7 @@
 | Passado simples (`en.passado`) | etapa 1 · en-a2-00 | en-a2-00 etapa 2 | en-a2-00 etapa 22 | PRONTO_PARA_AVALIACAO | en.rotina |
 | Planos e futuro (`en.futuro`) | etapa 1 · en-a2-01 | en-a2-01 etapa 2 | en-a2-01 etapa 12 | PRONTO_PARA_AVALIACAO | en.rotina |
 | Viagem: aeroporto e hotel (`en.viagem`) | etapa 1 · en-a2-02 | en-a2-02 etapa 2 | en-a2-02 etapa 17 | PRONTO_PARA_AVALIACAO | en.lugares |
-| Vocabulário técnico (`ingles.vocabulario`) | etapa 1 · ingles-00 | ingles-00 etapa 2 | — | PRONTO_PARA_AVALIACAO | — |
+| Vocabulário técnico (`ingles.vocabulario`) | etapa 1 · ingles-00 | ingles-00 etapa 2 | redis-checkpoint-fundamentos etapa 10 | PRONTO_PARA_AVALIACAO | — |
 | Frases de trabalho (`ingles.frases`) | etapa 7 · ingles-00 | ingles-00 etapa 8 | — | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
 | Leitura técnica em inglês (`ingles.leitura`) | etapa 17 · ingles-00 | ingles-00 etapa 21 | ingles-01 etapa 25 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
 | Mensagens de erro em inglês (`ingles.erros`) | etapa 1 · ingles-01 | ingles-01 etapa 2 | ingles-01 etapa 27 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
@@ -90,6 +98,20 @@
 | DbSet (`ef.dbset`) | etapa 2 · ef-01 | ef-01 etapa 3 | — | PRONTO_PARA_AVALIACAO | ef.dbcontext |
 | SaveChanges (`ef.savechanges`) | etapa 3 · ef-02 | ef-02 etapa 4 | ef-02 etapa 8 | PRONTO_PARA_AVALIACAO | ef.dbset, csharp.async |
 | Consultas com EF (`ef.consultas`) | etapa 1 · ef-03 | ef-03 etapa 3 | ef-03 etapa 6 | PRONTO_PARA_AVALIACAO | ef.dbset, linq.where, csharp.async, linq.first |
+| Repositório, clone e commit (`git.repositorio`) | etapa 1 · git-00 | git-00 etapa 2 | git-checkpoint-fundamentos etapa 2 | PRONTO_PARA_AVALIACAO | terminal.git |
+| push, pull e sincronização (`git.sincronizacao`) | etapa 1 · git-01 | git-01 etapa 2 | git-01 etapa 8 | PRONTO_PARA_AVALIACAO | git.repositorio |
+| Branches (`git.branch`) | etapa 1 · git-02 | git-02 etapa 2 | git-02 etapa 12 | PRONTO_PARA_AVALIACAO | git.repositorio |
+| Merge (`git.merge`) | etapa 1 · git-03 | git-03 etapa 2 | git-05 etapa 13 | PRONTO_PARA_AVALIACAO | git.branch |
+| Pull request (`git.pr`) | etapa 1 · git-04 | git-04 etapa 2 | git-04 etapa 13 | PRONTO_PARA_AVALIACAO | git.branch |
+| Code review (`git.review`) | etapa 5 · git-04 | git-04 etapa 6 | git-04 etapa 13 | PRONTO_PARA_AVALIACAO | git.pr |
+| Conflitos (`git.conflito`) | etapa 1 · git-05 | git-05 etapa 2 | git-05 etapa 13 | PRONTO_PARA_AVALIACAO | git.branch |
+| revert (`git.revert`) | etapa 1 · git-06 | git-06 etapa 2 | git-06 etapa 8 | PRONTO_PARA_AVALIACAO | git.repositorio |
+| reset e seus modos (`git.reset`) | etapa 1 · git-07 | git-07 etapa 2 | git-07 etapa 11 | PRONTO_PARA_AVALIACAO | git.repositorio |
+| stash (`git.stash`) | etapa 1 · git-08 | git-08 etapa 2 | git-08 etapa 11 | PRONTO_PARA_AVALIACAO | git.repositorio |
+| .gitignore (`git.ignore`) | etapa 1 · git-09 | git-09 etapa 2 | git-09 etapa 7 | PRONTO_PARA_AVALIACAO | git.repositorio |
+| Fluxos de trabalho (Git Flow e trunk-based) (`git.fluxo`) | etapa 1 · git-10 | git-10 etapa 2 | git-10 etapa 11 | PRONTO_PARA_AVALIACAO | git.branch, git.merge |
+| Mensagens de commit (`git.commits`) | etapa 1 · git-11 | git-11 etapa 2 | git-11 etapa 10 | PRONTO_PARA_AVALIACAO | git.repositorio |
+| Tags, releases e versionamento (`git.tags`) | etapa 1 · git-12 | git-12 etapa 2 | git-12 etapa 12 | PRONTO_PARA_AVALIACAO | git.repositorio |
 | HTTP (`aspnet.http`) | etapa 1 · aspnet-00 | aspnet-00 etapa 6 | — | PRONTO_PARA_AVALIACAO | — |
 | API e endpoints (`aspnet.api`) | etapa 1 · aspnet-00 | aspnet-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
 | Request (requisição) (`aspnet.requisicao`) | etapa 2 · aspnet-00 | aspnet-00 etapa 3 | — | PRATICADO | aspnet.http |
@@ -97,6 +119,22 @@
 | Status codes (`aspnet.status`) | etapa 7 · aspnet-00 | aspnet-00 etapa 8 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
 | JSON (`aspnet.json`) | etapa 1 · aspnet-01 | aspnet-01 etapa 2 | — | PRONTO_PARA_AVALIACAO | — |
 | Rotas (`aspnet.rotas`) | etapa 1 · aspnet-02 | aspnet-02 etapa 8 | — | PRATICADO | aspnet.api |
+| Ambiente reproduzível (`docker.ambiente`) | etapa 1 · docker-00 | docker-00 etapa 2 | docker-00 etapa 8 | PRONTO_PARA_AVALIACAO | terminal.comandos |
+| Imagem (`docker.imagem`) | etapa 1 · docker-01 | docker-01 etapa 2 | docker-02 etapa 12 | PRONTO_PARA_AVALIACAO | docker.ambiente |
+| Container (`docker.container`) | etapa 3 · docker-01 | docker-01 etapa 4 | docker-02 etapa 12 | PRONTO_PARA_AVALIACAO | docker.imagem |
+| Dockerfile (`docker.dockerfile`) | etapa 1 · docker-02 | docker-02 etapa 2 | docker-02 etapa 12 | PRONTO_PARA_AVALIACAO | docker.imagem |
+| Portas (`docker.portas`) | etapa 1 · docker-03 | docker-03 etapa 2 | docker-checkpoint-pratica etapa 2 | PRONTO_PARA_AVALIACAO | docker.container |
+| Volumes (`docker.volumes`) | etapa 1 · docker-04 | docker-04 etapa 2 | docker-04 etapa 8 | PRONTO_PARA_AVALIACAO | docker.container |
+| Variáveis de ambiente em containers (`docker.variaveis`) | etapa 1 · docker-05 | docker-05 etapa 2 | docker-checkpoint-pratica etapa 4 | PRONTO_PARA_AVALIACAO | docker.container |
+| Redes do Docker (`docker.networks`) | etapa 1 · docker-06 | docker-06 etapa 2 | docker-checkpoint-pratica etapa 5 | PRONTO_PARA_AVALIACAO | docker.container |
+| Docker Compose (`docker.compose`) | etapa 1 · docker-07 | docker-07 etapa 2 | docker-07 etapa 9 | PRONTO_PARA_AVALIACAO | docker.dockerfile |
+| Cache (`redis.cache`) | etapa 1 · redis-00 | redis-00 etapa 2 | redis-00 etapa 9 | PRONTO_PARA_AVALIACAO | aspnet.api |
+| O servidor Redis (`redis.servidor`) | etapa 1 · redis-01 | redis-01 etapa 2 | redis-checkpoint-fundamentos etapa 3 | PRONTO_PARA_AVALIACAO | redis.cache |
+| TTL (`redis.ttl`) | etapa 1 · redis-02 | redis-02 etapa 2 | redis-checkpoint-fundamentos etapa 4 | PRONTO_PARA_AVALIACAO | redis.servidor |
+| Cache aside (`redis.cache-aside`) | etapa 1 · redis-03 | redis-03 etapa 2 | redis-03 etapa 11 | PRONTO_PARA_AVALIACAO | redis.cache |
+| Serialização de objetos (`redis.serializacao`) | etapa 1 · redis-04 | redis-04 etapa 2 | redis-04 etapa 9 | PRONTO_PARA_AVALIACAO | redis.cache-aside |
+| Invalidação de cache (`redis.invalidacao`) | etapa 1 · redis-05 | redis-05 etapa 2 | redis-05 etapa 9 | PRONTO_PARA_AVALIACAO | redis.cache-aside |
+| Redis no ASP.NET Core (`redis.integracao`) | etapa 1 · redis-06 | redis-06 etapa 2 | redis-06 etapa 10 | PRONTO_PARA_AVALIACAO | redis.cache-aside |
 
 <!-- MANUAL -->
 ## O erro que originou esta auditoria

@@ -24,6 +24,14 @@ Plataforma.registrarRegistroConceitos({
     'sql.between': { prerequisitos: ['sql.where'], termos: [], definicao: 'Verifica se um valor está dentro de um intervalo, incluindo os extremos.', exemplo: 'WHERE Preco BETWEEN 100 AND 500' },
     'sql.not': { prerequisitos: ['sql.where'], termos: [], definicao: 'Inverte uma condição.', exemplo: "WHERE Status NOT IN ('Cancelado')" },
     'sql.ingles': { prerequisitos: [], termos: [], definicao: 'Vocabulário de inglês aplicado a consultas e ao trabalho com dados.', exemplo: 'Retrieve all customers = busque todos os clientes.' },
+    'sql.order-by': { prerequisitos: ['sql.select'], termos: ['order by'], definicao: 'A parte da consulta que define a ordem em que as linhas aparecem no resultado.', exemplo: 'ORDER BY Preco DESC' },
+    'sql.distinct': { prerequisitos: ['sql.colunas'], termos: ['distinct'], definicao: 'Remove linhas repetidas do resultado, mostrando cada combinação de valores uma única vez.', exemplo: 'SELECT DISTINCT Cidade FROM Clientes;' },
+    'sql.limite': { prerequisitos: ['sql.order-by'], termos: ['top ', 'limit '], definicao: 'Limita quantas linhas o resultado devolve: TOP (SQL Server) e LIMIT (MySQL e PostgreSQL).', exemplo: 'SELECT TOP 3 * FROM Produtos ORDER BY Preco DESC;' },
+    'sql.null': { prerequisitos: ['sql.where'], termos: ['null', 'coalesce'], definicao: 'NULL representa a ausência de valor; IS NULL encontra os vazios e COALESCE substitui o vazio por outro valor.', exemplo: "COALESCE(Telefone, 'Sem telefone')" },
+    'sql.like': { prerequisitos: ['sql.texto-aspas'], termos: ['like'], definicao: 'Compara texto por padrão: % representa qualquer quantidade de caracteres e _ um único caractere.', exemplo: "WHERE Nome LIKE 'A%'" },
+    'sql.update': { prerequisitos: ['sql.comandos-sql', 'sql.where'], termos: ['set '], definicao: 'Altera valores de linhas existentes. Sem WHERE, altera a tabela inteira.', exemplo: 'UPDATE Produtos SET Preco = 120 WHERE Id = 1;' },
+    'sql.insert': { prerequisitos: ['sql.comandos-sql'], termos: ['insert into', 'values'], definicao: 'Adiciona novos registros, informando as colunas e os valores na mesma ordem.', exemplo: "INSERT INTO Clientes (Nome, Cidade) VALUES ('Ana', 'Recife');" },
+    'sql.delete': { prerequisitos: ['sql.comandos-sql', 'sql.where'], termos: ['delete from'], definicao: 'Remove registros. Sem WHERE, apaga todas as linhas da tabela.', exemplo: 'DELETE FROM Clientes WHERE Id = 10;' },
 
     // Lógica
     'logica.total': { prerequisitos: [], termos: [], definicao: 'Somar o valor de cada item para chegar ao total do pedido.', exemplo: 'preço × quantidade, item por item.' },
@@ -102,6 +110,42 @@ Plataforma.registrarRegistroConceitos({
     'aspnet.status': { prerequisitos: ['aspnet.http'], termos: ['status code'], definicao: 'O número que resume o resultado: 200 OK, 201 Created, 204, 400, 404, 500.', exemplo: '404 = recurso não encontrado.' },
     'aspnet.json': { prerequisitos: [], termos: ['JSON'], definicao: 'Formato de texto simples para troca de dados, com pares "chave": valor.', exemplo: '{ "id": 1, "nome": "Mouse" }' },
     'aspnet.api': { prerequisitos: ['aspnet.http'], termos: ['API'], definicao: 'Um conjunto de endereços que outros programas chamam para obter ou enviar dados.', exemplo: 'API de produtos.' },
-    'aspnet.rotas': { prerequisitos: ['aspnet.api'], termos: [], definicao: 'O caminho da URL que identifica o recurso, como /produtos ou /produtos/10.', exemplo: 'app.MapGet("/produtos", ...)' }
+    'aspnet.rotas': { prerequisitos: ['aspnet.api'], termos: [], definicao: 'O caminho da URL que identifica o recurso, como /produtos ou /produtos/10.', exemplo: 'app.MapGet("/produtos", ...)' },
+
+    // Git
+    'git.repositorio': { prerequisitos: ['terminal.git'], termos: [], definicao: 'O projeto versionado: clone traz uma cópia, add prepara as mudanças e commit grava um ponto na história.', exemplo: 'git clone, git add, git commit' },
+    'git.sincronizacao': { prerequisitos: ['git.repositorio'], termos: [], definicao: 'push envia seus commits para o repositório remoto; pull traz os commits dos outros.', exemplo: 'git push origin main' },
+    'git.branch': { prerequisitos: ['git.repositorio'], termos: [], definicao: 'Uma linha paralela de desenvolvimento que isola um trabalho até ele estar pronto.', exemplo: 'git switch -c feature/preco' },
+    'git.merge': { prerequisitos: ['git.branch'], termos: [], definicao: 'Une o trabalho de uma branch na outra, criando um novo ponto na história.', exemplo: 'git merge feature/preco' },
+    'git.pr': { prerequisitos: ['git.branch'], termos: [], definicao: 'A proposta de juntar uma branch: o time revisa, comenta e aprova antes do merge.', exemplo: 'Abrir pull request de feature/preco para main.' },
+    'git.review': { prerequisitos: ['git.pr'], termos: [], definicao: 'A leitura crítica do código por outra pessoa, com comentários e sugestões antes de aprovar.', exemplo: 'Comentário: "esse if pode ser invertido para reduzir aninhamento".' },
+    'git.conflito': { prerequisitos: ['git.branch'], termos: ['conflito'], definicao: 'Quando duas mudanças tocam a mesma linha e o Git não consegue decidir sozinho; alguém precisa resolver.', exemplo: '<<<<<<< HEAD' },
+    'git.revert': { prerequisitos: ['git.repositorio'], termos: ['git revert'], definicao: 'Cria um novo commit que desfaz um commit anterior, preservando a história.', exemplo: 'git revert a1b2c3d' },
+    'git.reset': { prerequisitos: ['git.repositorio'], termos: ['git reset'], definicao: 'Move a branch para outro commit; os modos soft, mixed e hard decidem o que acontece com as mudanças.', exemplo: 'git reset --soft HEAD~1' },
+    'git.stash': { prerequisitos: ['git.repositorio'], termos: ['git stash'], definicao: 'Guarda mudanças não commitadas para você trocar de contexto e recuperá-las depois.', exemplo: 'git stash / git stash pop' },
+    'git.ignore': { prerequisitos: ['git.repositorio'], termos: ['.gitignore'], definicao: 'O arquivo que lista o que o Git deve ignorar: binários, segredos, pastas geradas.', exemplo: 'bin/, obj/, .env' },
+    'git.fluxo': { prerequisitos: ['git.branch', 'git.merge'], termos: [], definicao: 'Os acordos de como o time usa branches: Git Flow, trunk-based e variações.', exemplo: 'Features curtas saindo da main e voltando por pull request.' },
+    'git.commits': { prerequisitos: ['git.repositorio'], termos: [], definicao: 'A mensagem que explica o porquê da mudança, no imperativo e com contexto.', exemplo: 'Corrige cálculo de desconto em pedidos com cupom' },
+    'git.tags': { prerequisitos: ['git.repositorio'], termos: ['git tag'], definicao: 'Marcos nomeados na história, usados para releases e versionamento semântico.', exemplo: 'git tag v1.2.0' },
+
+    // Docker
+    'docker.ambiente': { prerequisitos: ['terminal.comandos'], termos: [], definicao: 'Empacotar a aplicação com tudo que ela precisa para rodar igual em qualquer máquina.', exemplo: 'O mesmo container roda na sua máquina e no servidor.' },
+    'docker.imagem': { prerequisitos: ['docker.ambiente'], termos: ['imagem docker'], definicao: 'O molde somente leitura com código, dependências e configuração; dela nascem os containers.', exemplo: 'mcr.microsoft.com/dotnet/aspnet:8.0' },
+    'docker.container': { prerequisitos: ['docker.imagem'], termos: [], definicao: 'Uma instância em execução da imagem, isolada e descartável.', exemplo: 'docker run minha-api' },
+    'docker.dockerfile': { prerequisitos: ['docker.imagem'], termos: ['dockerfile'], definicao: 'O arquivo com as instruções para construir uma imagem: base, cópia dos arquivos, build e comando.', exemplo: 'FROM, COPY, RUN, ENTRYPOINT' },
+    'docker.portas': { prerequisitos: ['docker.container'], termos: [], definicao: 'A ligação entre a porta do container e a porta da máquina, no formato -p externa:interna.', exemplo: 'docker run -p 8080:80' },
+    'docker.volumes': { prerequisitos: ['docker.container'], termos: [], definicao: 'Armazenamento que sobrevive ao container, usado para bancos e arquivos persistentes.', exemplo: 'docker run -v dados:/var/lib/sqlserver' },
+    'docker.variaveis': { prerequisitos: ['docker.container'], termos: [], definicao: 'Configuração passada em tempo de execução com -e ou em um arquivo .env.', exemplo: 'docker run -e ConnectionStrings__Default=...' },
+    'docker.networks': { prerequisitos: ['docker.container'], termos: [], definicao: 'A rede interna que permite os containers se encontrarem por nome, sem depender de IP.', exemplo: 'api e db conversando pela rede do compose.' },
+    'docker.compose': { prerequisitos: ['docker.dockerfile'], termos: ['docker-compose'], definicao: 'O arquivo que descreve vários serviços, redes e volumes e sobe tudo com um comando.', exemplo: 'docker compose up' },
+
+    // Redis
+    'redis.cache': { prerequisitos: ['aspnet.api'], termos: ['cache'], definicao: 'Guardar o resultado de uma consulta cara em memória para responder rápido na próxima vez.', exemplo: 'Lista de produtos vinda do cache em vez do banco.' },
+    'redis.servidor': { prerequisitos: ['redis.cache'], termos: [], definicao: 'Um banco de dados em memória, chave-valor, usado como cache e para estruturas rápidas.', exemplo: 'SET produto:10 "{...}"' },
+    'redis.ttl': { prerequisitos: ['redis.servidor'], termos: ['ttl'], definicao: 'O tempo de vida de uma chave; ao expirar, ela some sozinha e o próximo acesso recarrega do banco.', exemplo: 'SET produto:10 valor EX 60' },
+    'redis.cache-aside': { prerequisitos: ['redis.cache'], termos: ['cache aside'], definicao: 'O padrão mais comum: procura no cache, se não achar busca na fonte e guarda no cache.', exemplo: 'if (cache.TryGetValue(...)) { ... }' },
+    'redis.serializacao': { prerequisitos: ['redis.cache-aside'], termos: [], definicao: 'Converter o objeto para texto (JSON, por exemplo) antes de gravar e reconstruir na leitura.', exemplo: 'JsonSerializer.Serialize(produto)' },
+    'redis.invalidacao': { prerequisitos: ['redis.cache-aside'], termos: ['invalidação'], definicao: 'Remover ou atualizar o cache quando o dado muda, para não servir informação velha.', exemplo: 'RemoveAsync("produto:10") depois do Update.' },
+    'redis.integracao': { prerequisitos: ['redis.cache-aside'], termos: [], definicao: 'Registrar o Redis no ASP.NET Core e usá-lo dentro de um service.', exemplo: 'builder.Services.AddStackExchangeRedisCache(...)' }
   }
 });

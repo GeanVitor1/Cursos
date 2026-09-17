@@ -51,7 +51,7 @@ Plataforma.registrarTermosPortugues({
     'refatorar': { licao: null, nome: 'refatorar' },
     'hash': { licao: null, nome: 'hash' },
     'token': { licao: null, nome: 'token' },
-    'cache': { licao: null, nome: 'cache' },
+    'cache': { licao: 'docker-09', nome: 'cache' },
     'acoplamento': { licao: 'csharp-05', nome: 'acoplamento' }
   }
 });

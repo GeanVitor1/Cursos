@@ -54,7 +54,10 @@ O progresso é salvo no `localStorage`. Exporte/importe em **Meu progresso** par
 
 | Trilha | Lições | Tema central |
 | --- | --- | --- |
-| SQL | 6 (5 lições + checkpoint) | bancos, tabelas, SELECT, WHERE, AND/OR, IN/BETWEEN/NOT |
+| SQL | 15 (13 lições + 2 checkpoints) | Fundamentos (bancos, SELECT, WHERE, AND/OR, IN/BETWEEN/NOT) + Iniciante (ORDER BY, DISTINCT, TOP/LIMIT, NULL/COALESCE, LIKE, UPDATE, INSERT/DELETE) |
+| Git & GitHub | 17 (13 lições + 4 checkpoints) | clone/add/commit, push/pull, branch, merge, PR e code review, conflito, revert, reset, stash, .gitignore, Git Flow, commits, tags |
+| Docker | 14 (11 lições + 3 checkpoints) | ambiente reproduzível, imagem x container, Dockerfile, portas, volumes, variáveis, networks, compose, .NET + SQL Server + Redis |
+| Redis & Cache | 9 (7 lições + 2 checkpoints) | por que cache existe, Redis, TTL, cache aside, serialização, invalidação, ASP.NET Core + Redis |
 | C# para Backend | 10 | classes, tipos, métodos, listas, null, interfaces, DI, lambdas, exceções, async/await |
 | Lógica Aplicada | 1 | total de pedido, validação, duplicados, agrupamento |
 | Terminal | 1 | cd/ls, dotnet, git, docker e npm no contexto |
@@ -65,7 +68,7 @@ O progresso é salvo no `localStorage`. Exporte/importe em **Meu progresso** par
 | Entity Framework Core | 4 | ORM, DbContext/DbSet, Add+SaveChanges com SQL gerado, leitura de dados |
 | ASP.NET Core | 3 | HTTP, JSON, primeira API |
 
-As demais trilhas têm roadmap completo e entram em produção nas próximas fases.
+As demais trilhas (Segurança, Autenticação, Arquitetura, Testes, Frontend, Mensageria, CI/CD, Azure e Microsserviços) e os níveis avançados de SQL, Inglês, LINQ, EF Core e ASP.NET têm roadmap completo e entram em produção nas próximas ondas.
 
 ## Inglês (A1 → C1)
 

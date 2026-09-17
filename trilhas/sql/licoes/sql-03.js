@@ -229,7 +229,7 @@ Plataforma.registrarLicao({
           codigo: 'SELECT *\nFROM Pedidos\nWHERE Status <> \'Pago\';',
           legenda: 'Retorna os pedidos que ainda não foram pagos.'
         },
-        { tipo: 'futuro', conceitos: [], texto: 'Valores vazios (NULL) serão vistos depois.' }
+        { tipo: 'futuro', conceitos: ['sql.null'], texto: 'Valores vazios (NULL) serão vistos no nível Iniciante.' }
       ]
     },
     {

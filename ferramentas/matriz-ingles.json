@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-09-17T15:55:16.038Z",
+  "geradoEm": "2026-09-17T19:45:39.490Z",
   "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Em todas as trilhas, cada etapa ensina no máximo 3 termos novos; na trilha de inglês, no máximo 6 palavras novas por etapa, e as frases de exemplo (bloco ingles) só usam palavras já explicadas.",
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
@@ -68,6 +68,51 @@
       "termos": 1,
       "palavras": [
         "between"
+      ]
+    },
+    {
+      "licao": "sql-06",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "sort"
+      ]
+    },
+    {
+      "licao": "sql-07",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "only",
+        "different"
+      ]
+    },
+    {
+      "licao": "sql-09",
+      "etapa": 8,
+      "termos": 2,
+      "palavras": [
+        "phone",
+        "empty"
+      ]
+    },
+    {
+      "licao": "sql-10",
+      "etapa": 10,
+      "termos": 1,
+      "palavras": [
+        "starts",
+        "with"
+      ]
+    },
+    {
+      "licao": "sql-11",
+      "etapa": 8,
+      "termos": 3,
+      "palavras": [
+        "change",
+        "price",
+        "to"
       ]
     },
     {
@@ -283,7 +328,6 @@
       "termos": 2,
       "palavras": [
         "nice",
-        "to",
         "meet",
         "you",
         "too"
@@ -388,7 +432,6 @@
       "etapa": 14,
       "termos": 2,
       "palavras": [
-        "phone",
         "number",
         "double"
       ]
@@ -495,9 +538,8 @@
     {
       "licao": "en-a1-03",
       "etapa": 7,
-      "termos": 2,
+      "termos": 1,
       "palavras": [
-        "with",
         "night"
       ]
     },
@@ -567,10 +609,9 @@
     {
       "licao": "en-a1-04",
       "etapa": 9,
-      "termos": 2,
+      "termos": 1,
       "palavras": [
-        "meeting",
-        "starts"
+        "meeting"
       ]
     },
     {
@@ -679,8 +720,7 @@
       "termos": 2,
       "palavras": [
         "help",
-        "pay",
-        "by"
+        "pay"
       ]
     },
     {
@@ -1100,9 +1140,8 @@
     {
       "licao": "ingles-00",
       "etapa": 13,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
-        "change",
         "connection",
         "wrong"
       ]
@@ -1259,6 +1298,128 @@
       ]
     },
     {
+      "licao": "git-00",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "repository",
+        "history",
+        "clone"
+      ]
+    },
+    {
+      "licao": "git-01",
+      "etapa": 9,
+      "termos": 3,
+      "palavras": [
+        "remote",
+        "pull",
+        "push"
+      ]
+    },
+    {
+      "licao": "git-02",
+      "etapa": 10,
+      "termos": 2,
+      "palavras": [
+        "switch",
+        "feature"
+      ]
+    },
+    {
+      "licao": "git-03",
+      "etapa": 10,
+      "termos": 1,
+      "palavras": [
+        "combine"
+      ]
+    },
+    {
+      "licao": "git-04",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "team",
+        "code",
+        "approve"
+      ]
+    },
+    {
+      "licao": "git-05",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "conflict",
+        "resolve",
+        "before"
+      ]
+    },
+    {
+      "licao": "git-06",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "revert",
+        "undo"
+      ]
+    },
+    {
+      "licao": "git-07",
+      "etapa": 9,
+      "termos": 3,
+      "palavras": [
+        "reset",
+        "soft",
+        "safe"
+      ]
+    },
+    {
+      "licao": "git-08",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "stash",
+        "temporary"
+      ]
+    },
+    {
+      "licao": "git-09",
+      "etapa": 8,
+      "termos": 2,
+      "palavras": [
+        "ignore",
+        "secret"
+      ]
+    },
+    {
+      "licao": "git-10",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "workflow"
+      ]
+    },
+    {
+      "licao": "git-11",
+      "etapa": 8,
+      "termos": 3,
+      "palavras": [
+        "message",
+        "write",
+        "explain"
+      ]
+    },
+    {
+      "licao": "git-12",
+      "etapa": 10,
+      "termos": 3,
+      "palavras": [
+        "tag",
+        "release",
+        "version"
+      ]
+    },
+    {
       "licao": "aspnet-02",
       "etapa": 2,
       "termos": 0,
@@ -1273,8 +1434,7 @@
       "etapa": 4,
       "termos": 0,
       "palavras": [
-        "mapget",
-        "id"
+        "mapget"
       ]
     },
     {
@@ -1285,6 +1445,192 @@
         "mappost",
         "app",
         "run"
+      ]
+    },
+    {
+      "licao": "docker-00",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "environment",
+        "same"
+      ]
+    },
+    {
+      "licao": "docker-01",
+      "etapa": 8,
+      "termos": 2,
+      "palavras": [
+        "container",
+        "image"
+      ]
+    },
+    {
+      "licao": "docker-02",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "dockerfile",
+        "command"
+      ]
+    },
+    {
+      "licao": "docker-03",
+      "etapa": 10,
+      "termos": 2,
+      "palavras": [
+        "port",
+        "outside"
+      ]
+    },
+    {
+      "licao": "docker-04",
+      "etapa": 9,
+      "termos": 3,
+      "palavras": [
+        "volume",
+        "data",
+        "keep"
+      ]
+    },
+    {
+      "licao": "docker-05",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "variable",
+        "value"
+      ]
+    },
+    {
+      "licao": "docker-06",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "network"
+      ]
+    },
+    {
+      "licao": "docker-08",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "user",
+        "password"
+      ]
+    },
+    {
+      "licao": "docker-09",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "cache",
+        "fast"
+      ]
+    },
+    {
+      "licao": "redis-01",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "del"
+      ]
+    },
+    {
+      "licao": "redis-01",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "store"
+      ]
+    },
+    {
+      "licao": "redis-02",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "expire",
+        "ttl",
+        "ex"
+      ]
+    },
+    {
+      "licao": "redis-02",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "second"
+      ]
+    },
+    {
+      "licao": "redis-03",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "hit",
+        "miss"
+      ]
+    },
+    {
+      "licao": "redis-04",
+      "etapa": 5,
+      "termos": 0,
+      "palavras": [
+        "serialize",
+        "deserialize",
+        "setstringasync",
+        "getstringasync"
+      ]
+    },
+    {
+      "licao": "redis-04",
+      "etapa": 10,
+      "termos": 1,
+      "palavras": [
+        "save"
+      ]
+    },
+    {
+      "licao": "redis-05",
+      "etapa": 3,
+      "termos": 0,
+      "palavras": [
+        "removeasync"
+      ]
+    },
+    {
+      "licao": "redis-05",
+      "etapa": 10,
+      "termos": 1,
+      "palavras": [
+        "stale"
+      ]
+    },
+    {
+      "licao": "redis-06",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "addstackexchangerediscache",
+        "opcoes",
+        "localhost"
+      ]
+    },
+    {
+      "licao": "redis-06",
+      "etapa": 4,
+      "termos": 0,
+      "palavras": [
+        "idistributedcache",
+        "private"
+      ]
+    },
+    {
+      "licao": "redis-06",
+      "etapa": 11,
+      "termos": 1,
+      "palavras": [
+        "local"
       ]
     }
   ],
@@ -1337,6 +1683,15 @@
         "licao": "ingles-01",
         "atividade": "en01-a5",
         "etapa": 27
+      }
+    },
+    {
+      "palavra": "addstackexchangerediscache",
+      "introduzidaEm": "redis-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-06",
+        "atividade": "redis06-a1",
+        "etapa": 2
       }
     },
     {
@@ -1440,6 +1795,15 @@
       }
     },
     {
+      "palavra": "api",
+      "introduzidaEm": "docker-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-09",
+        "atividade": "docker09-a1",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "app",
       "introduzidaEm": "aspnet-02",
       "primeiroUsoEmAtividade": {
@@ -1467,6 +1831,15 @@
       }
     },
     {
+      "palavra": "approve",
+      "introduzidaEm": "git-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-04",
+        "atividade": "git04-a6",
+        "etapa": 12
+      }
+    },
+    {
       "palavra": "are",
       "introduzidaEm": "en-a1-00",
       "primeiroUsoEmAtividade": {
@@ -1479,6 +1852,15 @@
       "palavra": "args",
       "introduzidaEm": "aspnet-02",
       "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "as",
+      "introduzidaEm": "redis-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-04",
+        "atividade": "redis04-a7",
+        "etapa": 11
+      }
     },
     {
       "palavra": "at",
@@ -1546,6 +1928,15 @@
         "licao": "en-a1-03",
         "atividade": "en-a1-03-p3",
         "etapa": 6
+      }
+    },
+    {
+      "palavra": "before",
+      "introduzidaEm": "git-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-05",
+        "atividade": "git05-a7",
+        "etapa": 12
       }
     },
     {
@@ -1694,11 +2085,20 @@
     },
     {
       "palavra": "by",
-      "introduzidaEm": "en-a1-06",
+      "introduzidaEm": "sql-06",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-06",
-        "atividade": "en-a1-06-p3",
-        "etapa": 6
+        "licao": "sql-06",
+        "atividade": "sql06-a6",
+        "etapa": 10
+      }
+    },
+    {
+      "palavra": "cache",
+      "introduzidaEm": "docker-09",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-00",
+        "atividade": "redis00-a1",
+        "etapa": 2
       }
     },
     {
@@ -1775,11 +2175,20 @@
     },
     {
       "palavra": "change",
-      "introduzidaEm": "ingles-00",
+      "introduzidaEm": "sql-11",
       "primeiroUsoEmAtividade": {
-        "licao": "ingles-00",
-        "atividade": "en00-p7",
-        "etapa": 14
+        "licao": "sql-11",
+        "atividade": "sql11-a6",
+        "etapa": 9
+      }
+    },
+    {
+      "palavra": "changes",
+      "introduzidaEm": "git-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-01",
+        "atividade": "git01-a6",
+        "etapa": 10
       }
     },
     {
@@ -1856,6 +2265,24 @@
       }
     },
     {
+      "palavra": "clone",
+      "introduzidaEm": "git-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-00",
+        "atividade": "git00-a7",
+        "etapa": 12
+      }
+    },
+    {
+      "palavra": "code",
+      "introduzidaEm": "git-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-04",
+        "atividade": "git04-a6",
+        "etapa": 12
+      }
+    },
+    {
       "palavra": "coffee",
       "introduzidaEm": "en-a1-05",
       "primeiroUsoEmAtividade": {
@@ -1879,12 +2306,45 @@
       "primeiroUsoEmAtividade": null
     },
     {
+      "palavra": "combine",
+      "introduzidaEm": "git-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "come",
       "introduzidaEm": "en-a1-03",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-03",
         "atividade": "en-a1-03-p2",
         "etapa": 4
+      }
+    },
+    {
+      "palavra": "command",
+      "introduzidaEm": "docker-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "commands",
+      "introduzidaEm": "docker-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "commit",
+      "introduzidaEm": "git-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-06",
+        "atividade": "git06-a5",
+        "etapa": 10
+      }
+    },
+    {
+      "palavra": "compose",
+      "introduzidaEm": "docker-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-07",
+        "atividade": "docker07-a7",
+        "etapa": 11
       }
     },
     {
@@ -1915,6 +2375,15 @@
       }
     },
     {
+      "palavra": "conflict",
+      "introduzidaEm": "git-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-05",
+        "atividade": "git05-a7",
+        "etapa": 12
+      }
+    },
+    {
       "palavra": "connect",
       "introduzidaEm": "ingles-01",
       "primeiroUsoEmAtividade": {
@@ -1933,12 +2402,35 @@
       }
     },
     {
+      "palavra": "connects",
+      "introduzidaEm": "docker-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "construtor",
       "introduzidaEm": "csharp-06",
       "primeiroUsoEmAtividade": {
         "licao": "csharp-06",
         "atividade": "cs06-a2",
         "etapa": 5
+      }
+    },
+    {
+      "palavra": "container",
+      "introduzidaEm": "docker-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-01",
+        "atividade": "docker01-a5",
+        "etapa": 9
+      }
+    },
+    {
+      "palavra": "containers",
+      "introduzidaEm": "docker-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-06",
+        "atividade": "docker06-a6",
+        "etapa": 10
       }
     },
     {
@@ -2028,6 +2520,11 @@
       }
     },
     {
+      "palavra": "data",
+      "introduzidaEm": "docker-04",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "database",
       "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": {
@@ -2088,6 +2585,24 @@
       }
     },
     {
+      "palavra": "del",
+      "introduzidaEm": "redis-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-01",
+        "atividade": "redis01-a4",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "delete",
+      "introduzidaEm": "sql-12",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-12",
+        "atividade": "sql12-a8",
+        "etapa": 11
+      }
+    },
+    {
       "palavra": "dependência",
       "introduzidaEm": "csharp-06",
       "primeiroUsoEmAtividade": {
@@ -2106,6 +2621,15 @@
       }
     },
     {
+      "palavra": "deserialize",
+      "introduzidaEm": "redis-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-04",
+        "atividade": "redis04-a3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "developer",
       "introduzidaEm": "en-a1-08",
       "primeiroUsoEmAtividade": {
@@ -2113,6 +2637,11 @@
         "atividade": "en-a1-08-a4",
         "etapa": 16
       }
+    },
+    {
+      "palavra": "different",
+      "introduzidaEm": "sql-07",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "dinner",
@@ -2131,6 +2660,15 @@
         "licao": "en-a1-06",
         "atividade": "en-a1-06-a2",
         "etapa": 16
+      }
+    },
+    {
+      "palavra": "dockerfile",
+      "introduzidaEm": "docker-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-02",
+        "atividade": "docker02-a6",
+        "etapa": 12
       }
     },
     {
@@ -2244,6 +2782,15 @@
       }
     },
     {
+      "palavra": "empty",
+      "introduzidaEm": "sql-09",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-09",
+        "atividade": "sql09-a6",
+        "etapa": 9
+      }
+    },
+    {
       "palavra": "english",
       "introduzidaEm": "en-a1-08",
       "primeiroUsoEmAtividade": {
@@ -2271,6 +2818,15 @@
       }
     },
     {
+      "palavra": "environment",
+      "introduzidaEm": "docker-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-00",
+        "atividade": "docker00-a5",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "error",
       "introduzidaEm": "ingles-00",
       "primeiroUsoEmAtividade": {
@@ -2295,6 +2851,15 @@
         "licao": "en-a1-03",
         "atividade": "en-a1-03-p5",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "ex",
+      "introduzidaEm": "redis-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-02",
+        "atividade": "redis02-a2",
+        "etapa": 4
       }
     },
     {
@@ -2326,12 +2891,39 @@
       "primeiroUsoEmAtividade": null
     },
     {
+      "palavra": "expire",
+      "introduzidaEm": "redis-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-02",
+        "atividade": "redis02-a2",
+        "etapa": 4
+      }
+    },
+    {
       "palavra": "expired",
       "introduzidaEm": "ingles-01",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-01",
         "atividade": "en01-a1",
         "etapa": 23
+      }
+    },
+    {
+      "palavra": "expires",
+      "introduzidaEm": "redis-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-02",
+        "atividade": "redis02-a6",
+        "etapa": 10
+      }
+    },
+    {
+      "palavra": "explain",
+      "introduzidaEm": "git-11",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-11",
+        "atividade": "git11-a5",
+        "etapa": 9
       }
     },
     {
@@ -2362,12 +2954,30 @@
       }
     },
     {
+      "palavra": "fast",
+      "introduzidaEm": "docker-09",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-00",
+        "atividade": "redis00-a6",
+        "etapa": 11
+      }
+    },
+    {
       "palavra": "father",
       "introduzidaEm": "en-a1-02",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-02",
         "atividade": "en-a1-02-p2",
         "etapa": 4
+      }
+    },
+    {
+      "palavra": "feature",
+      "introduzidaEm": "git-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-02",
+        "atividade": "git02-a6",
+        "etapa": 11
       }
     },
     {
@@ -2398,6 +3008,15 @@
       }
     },
     {
+      "palavra": "files",
+      "introduzidaEm": "git-09",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-09",
+        "atividade": "git09-a5",
+        "etapa": 9
+      }
+    },
+    {
       "palavra": "final",
       "introduzidaEm": "en-a2-02",
       "primeiroUsoEmAtividade": {
@@ -2422,6 +3041,15 @@
         "licao": "en-a1-00",
         "atividade": "en-a1-00-p6",
         "etapa": 12
+      }
+    },
+    {
+      "palavra": "first",
+      "introduzidaEm": "sql-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-08",
+        "atividade": "sql08-a6",
+        "etapa": 9
       }
     },
     {
@@ -2481,7 +3109,11 @@
     {
       "palavra": "for",
       "introduzidaEm": "en-a2-02",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "git-02",
+        "atividade": "git02-a4",
+        "etapa": 7
+      }
     },
     {
       "palavra": "foreach",
@@ -2580,6 +3212,15 @@
         "licao": "csharp-00",
         "atividade": "cs00-a10",
         "etapa": 14
+      }
+    },
+    {
+      "palavra": "getstringasync",
+      "introduzidaEm": "redis-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-04",
+        "atividade": "redis04-a5",
+        "etapa": 8
       }
     },
     {
@@ -2732,6 +3373,24 @@
       }
     },
     {
+      "palavra": "history",
+      "introduzidaEm": "git-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-00",
+        "atividade": "git00-a7",
+        "etapa": 12
+      }
+    },
+    {
+      "palavra": "hit",
+      "introduzidaEm": "redis-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-03",
+        "atividade": "redis03-a6",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "home",
       "introduzidaEm": "en-a1-03",
       "primeiroUsoEmAtividade": {
@@ -2814,10 +3473,37 @@
     },
     {
       "palavra": "id",
-      "introduzidaEm": "aspnet-02",
+      "introduzidaEm": "sql-12",
       "primeiroUsoEmAtividade": {
-        "licao": "aspnet-02",
-        "atividade": "api02-a1",
+        "licao": "sql-12",
+        "atividade": "sql12-a8",
+        "etapa": 11
+      }
+    },
+    {
+      "palavra": "idistributedcache",
+      "introduzidaEm": "redis-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-06",
+        "atividade": "redis06-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "ignore",
+      "introduzidaEm": "git-09",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-09",
+        "atividade": "git09-a5",
+        "etapa": 9
+      }
+    },
+    {
+      "palavra": "image",
+      "introduzidaEm": "docker-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-07",
+        "atividade": "docker07-a5",
         "etapa": 8
       }
     },
@@ -2884,9 +3570,9 @@
       "palavra": "is",
       "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-00",
-        "atividade": "en-a1-00-p3",
-        "etapa": 6
+        "licao": "sql-09",
+        "atividade": "sql09-a1",
+        "etapa": 2
       }
     },
     {
@@ -2940,6 +3626,15 @@
       }
     },
     {
+      "palavra": "json",
+      "introduzidaEm": "redis-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-04",
+        "atividade": "redis04-a7",
+        "etapa": 11
+      }
+    },
+    {
       "palavra": "juice",
       "introduzidaEm": "en-a1-05",
       "primeiroUsoEmAtividade": {
@@ -2947,6 +3642,16 @@
         "atividade": "en-a1-05-p1",
         "etapa": 2
       }
+    },
+    {
+      "palavra": "keep",
+      "introduzidaEm": "docker-04",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "keeps",
+      "introduzidaEm": "docker-04",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "key",
@@ -2978,7 +3683,11 @@
     {
       "palavra": "later",
       "introduzidaEm": "en-a2-01",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "git-08",
+        "atividade": "git08-a6",
+        "etapa": 10
+      }
     },
     {
       "palavra": "left",
@@ -3035,6 +3744,24 @@
       }
     },
     {
+      "palavra": "local",
+      "introduzidaEm": "redis-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-06",
+        "atividade": "redis06-a8",
+        "etapa": 12
+      }
+    },
+    {
+      "palavra": "localhost",
+      "introduzidaEm": "redis-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-06",
+        "atividade": "redis06-a2",
+        "etapa": 3
+      }
+    },
+    {
       "palavra": "lot",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -3073,7 +3800,20 @@
     {
       "palavra": "m",
       "introduzidaEm": "csharp-03",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "git-checkpoint-fundamentos",
+        "atividade": "cp-git-f3",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "main",
+      "introduzidaEm": "git-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-04",
+        "atividade": "git04-a1",
+        "etapa": 2
+      }
     },
     {
       "palavra": "mapeamento",
@@ -3128,7 +3868,20 @@
     {
       "palavra": "merge",
       "introduzidaEm": "ingles-00",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "git-03",
+        "atividade": "git03-a1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "message",
+      "introduzidaEm": "git-11",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-11",
+        "atividade": "git11-a5",
+        "etapa": 9
+      }
     },
     {
       "palavra": "minute",
@@ -3137,6 +3890,15 @@
         "licao": "en-a1-07",
         "atividade": "en-a1-07-a3",
         "etapa": 15
+      }
+    },
+    {
+      "palavra": "miss",
+      "introduzidaEm": "redis-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-03",
+        "atividade": "redis03-a6",
+        "etapa": 10
       }
     },
     {
@@ -3239,11 +4001,25 @@
       }
     },
     {
+      "palavra": "names",
+      "introduzidaEm": "sql-07",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "near",
       "introduzidaEm": "en-a1-07",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-07",
         "atividade": "en-a1-07-p5",
+        "etapa": 10
+      }
+    },
+    {
+      "palavra": "network",
+      "introduzidaEm": "docker-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-06",
+        "atividade": "docker06-a6",
         "etapa": 10
       }
     },
@@ -3429,12 +4205,22 @@
       }
     },
     {
+      "palavra": "only",
+      "introduzidaEm": "sql-07",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "opcoes",
+      "introduzidaEm": "redis-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "order",
       "introduzidaEm": "sql-04",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-05",
-        "atividade": "en-a1-05-a3",
-        "etapa": 17
+        "licao": "sql-06",
+        "atividade": "sql06-a1",
+        "etapa": 2
       }
     },
     {
@@ -3454,6 +4240,11 @@
         "atividade": "ef00-a2",
         "etapa": 5
       }
+    },
+    {
+      "palavra": "outside",
+      "introduzidaEm": "docker-03",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "over",
@@ -3504,6 +4295,11 @@
         "atividade": "en-a2-02-p1",
         "etapa": 2
       }
+    },
+    {
+      "palavra": "password",
+      "introduzidaEm": "docker-08",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "past",
@@ -3570,11 +4366,11 @@
     },
     {
       "palavra": "phone",
-      "introduzidaEm": "en-a1-01",
+      "introduzidaEm": "sql-09",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-01",
-        "atividade": "en-a1-01-p8",
-        "etapa": 15
+        "licao": "sql-09",
+        "atividade": "sql09-a6",
+        "etapa": 9
       }
     },
     {
@@ -3605,6 +4401,11 @@
       }
     },
     {
+      "palavra": "port",
+      "introduzidaEm": "docker-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "preco",
       "introduzidaEm": "csharp-02",
       "primeiroUsoEmAtividade": {
@@ -3623,8 +4424,22 @@
       }
     },
     {
+      "palavra": "price",
+      "introduzidaEm": "sql-11",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-11",
+        "atividade": "sql11-a6",
+        "etapa": 9
+      }
+    },
+    {
       "palavra": "primary",
       "introduzidaEm": "sql-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "private",
+      "introduzidaEm": "redis-06",
       "primeiroUsoEmAtividade": null
     },
     {
@@ -3657,6 +4472,24 @@
         "licao": "csharp-00",
         "atividade": "cs00-a5",
         "etapa": 20
+      }
+    },
+    {
+      "palavra": "pull",
+      "introduzidaEm": "git-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-01",
+        "atividade": "git01-a7",
+        "etapa": 11
+      }
+    },
+    {
+      "palavra": "push",
+      "introduzidaEm": "git-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-01",
+        "atividade": "git01-a6",
+        "etapa": 10
       }
     },
     {
@@ -3724,12 +4557,48 @@
       }
     },
     {
+      "palavra": "release",
+      "introduzidaEm": "git-12",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-12",
+        "atividade": "git12-a7",
+        "etapa": 11
+      }
+    },
+    {
+      "palavra": "remote",
+      "introduzidaEm": "git-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-01",
+        "atividade": "git01-a6",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "remove",
       "introduzidaEm": "csharp-03",
       "primeiroUsoEmAtividade": {
         "licao": "linq-01",
         "atividade": "lq01-viz",
         "etapa": 2
+      }
+    },
+    {
+      "palavra": "removeasync",
+      "introduzidaEm": "redis-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-05",
+        "atividade": "redis05-a4",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "repository",
+      "introduzidaEm": "git-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-00",
+        "atividade": "git00-a7",
+        "etapa": 12
       }
     },
     {
@@ -3757,6 +4626,24 @@
         "licao": "en-a2-02",
         "atividade": "en-a2-02-p5",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "reset",
+      "introduzidaEm": "git-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-07",
+        "atividade": "git07-a6",
+        "etapa": 10
+      }
+    },
+    {
+      "palavra": "resolve",
+      "introduzidaEm": "git-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-05",
+        "atividade": "git05-a7",
+        "etapa": 12
       }
     },
     {
@@ -3841,6 +4728,15 @@
       }
     },
     {
+      "palavra": "revert",
+      "introduzidaEm": "git-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-06",
+        "atividade": "git06-a5",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "review",
       "introduzidaEm": "ingles-00",
       "primeiroUsoEmAtividade": {
@@ -3900,12 +4796,39 @@
       }
     },
     {
+      "palavra": "runs",
+      "introduzidaEm": "docker-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-00",
+        "atividade": "docker00-a5",
+        "etapa": 10
+      }
+    },
+    {
+      "palavra": "safe",
+      "introduzidaEm": "git-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-07",
+        "atividade": "git07-a6",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "sale",
       "introduzidaEm": "en-a1-06",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-06",
         "atividade": "en-a1-06-a4",
         "etapa": 18
+      }
+    },
+    {
+      "palavra": "same",
+      "introduzidaEm": "docker-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-00",
+        "atividade": "docker00-a5",
+        "etapa": 10
       }
     },
     {
@@ -3927,6 +4850,15 @@
       }
     },
     {
+      "palavra": "save",
+      "introduzidaEm": "redis-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-04",
+        "atividade": "redis04-a7",
+        "etapa": 11
+      }
+    },
+    {
       "palavra": "saw",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -3942,6 +4874,33 @@
         "licao": "en-a2-02",
         "atividade": "en-a2-02-p3",
         "etapa": 6
+      }
+    },
+    {
+      "palavra": "second",
+      "introduzidaEm": "redis-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-02",
+        "atividade": "redis02-a6",
+        "etapa": 10
+      }
+    },
+    {
+      "palavra": "seconds",
+      "introduzidaEm": "redis-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-02",
+        "atividade": "redis02-a6",
+        "etapa": 10
+      }
+    },
+    {
+      "palavra": "secret",
+      "introduzidaEm": "git-09",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-09",
+        "atividade": "git09-a5",
+        "etapa": 9
       }
     },
     {
@@ -3968,6 +4927,15 @@
       "primeiroUsoEmAtividade": null
     },
     {
+      "palavra": "serialize",
+      "introduzidaEm": "redis-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-04",
+        "atividade": "redis04-a3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "server",
       "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": {
@@ -3984,6 +4952,11 @@
         "atividade": "cs00-a10",
         "etapa": 14
       }
+    },
+    {
+      "palavra": "setstringasync",
+      "introduzidaEm": "redis-04",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "seven",
@@ -4092,7 +5065,11 @@
     {
       "palavra": "sixty",
       "introduzidaEm": "en-a1-01",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-02",
+        "atividade": "redis02-a6",
+        "etapa": 10
+      }
     },
     {
       "palavra": "size",
@@ -4118,6 +5095,15 @@
       }
     },
     {
+      "palavra": "soft",
+      "introduzidaEm": "git-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-07",
+        "atividade": "git07-a6",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "some",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -4132,12 +5118,39 @@
       "primeiroUsoEmAtividade": null
     },
     {
-      "palavra": "starts",
-      "introduzidaEm": "en-a1-04",
+      "palavra": "sort",
+      "introduzidaEm": "sql-06",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-04",
-        "atividade": "en-a1-04-p6",
-        "etapa": 12
+        "licao": "sql-06",
+        "atividade": "sql06-a6",
+        "etapa": 10
+      }
+    },
+    {
+      "palavra": "stale",
+      "introduzidaEm": "redis-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-05",
+        "atividade": "redis05-a7",
+        "etapa": 11
+      }
+    },
+    {
+      "palavra": "starts",
+      "introduzidaEm": "sql-10",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-10",
+        "atividade": "sql10-a7",
+        "etapa": 11
+      }
+    },
+    {
+      "palavra": "stash",
+      "introduzidaEm": "git-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-08",
+        "atividade": "git08-a6",
+        "etapa": 10
       }
     },
     {
@@ -4183,6 +5196,15 @@
         "licao": "ingles-01",
         "atividade": "en01-p8",
         "etapa": 15
+      }
+    },
+    {
+      "palavra": "store",
+      "introduzidaEm": "redis-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-01",
+        "atividade": "redis01-a6",
+        "etapa": 10
       }
     },
     {
@@ -4240,6 +5262,15 @@
       }
     },
     {
+      "palavra": "switch",
+      "introduzidaEm": "git-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-02",
+        "atividade": "git02-a6",
+        "etapa": 11
+      }
+    },
+    {
       "palavra": "são",
       "introduzidaEm": "sql-03",
       "primeiroUsoEmAtividade": {
@@ -4258,12 +5289,39 @@
       }
     },
     {
+      "palavra": "tag",
+      "introduzidaEm": "git-12",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-12",
+        "atividade": "git12-a7",
+        "etapa": 11
+      }
+    },
+    {
       "palavra": "take",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
         "licao": "en-a2-00",
         "atividade": "en-a2-00-p4",
         "etapa": 8
+      }
+    },
+    {
+      "palavra": "team",
+      "introduzidaEm": "git-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-04",
+        "atividade": "git04-a6",
+        "etapa": 12
+      }
+    },
+    {
+      "palavra": "temporary",
+      "introduzidaEm": "git-08",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-08",
+        "atividade": "git08-a6",
+        "etapa": 10
       }
     },
     {
@@ -4439,11 +5497,11 @@
     },
     {
       "palavra": "to",
-      "introduzidaEm": "en-a1-00",
+      "introduzidaEm": "sql-11",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-00",
-        "atividade": "en-a1-00-p5",
-        "etapa": 10
+        "licao": "sql-11",
+        "atividade": "sql11-a6",
+        "etapa": 9
       }
     },
     {
@@ -4537,6 +5595,15 @@
       }
     },
     {
+      "palavra": "ttl",
+      "introduzidaEm": "redis-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-02",
+        "atividade": "redis02-a2",
+        "etapa": 4
+      }
+    },
+    {
       "palavra": "tuesday",
       "introduzidaEm": "en-a1-04",
       "primeiroUsoEmAtividade": {
@@ -4605,6 +5672,15 @@
       }
     },
     {
+      "palavra": "undo",
+      "introduzidaEm": "git-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-06",
+        "atividade": "git06-a5",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "up",
       "introduzidaEm": "en-a1-03",
       "primeiroUsoEmAtividade": {
@@ -4621,6 +5697,11 @@
         "atividade": "en-a2-01-p4",
         "etapa": 8
       }
+    },
+    {
+      "palavra": "user",
+      "introduzidaEm": "docker-08",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "usually",
@@ -4641,6 +5722,29 @@
       }
     },
     {
+      "palavra": "value",
+      "introduzidaEm": "docker-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-01",
+        "atividade": "redis01-a6",
+        "etapa": 10
+      }
+    },
+    {
+      "palavra": "variable",
+      "introduzidaEm": "docker-05",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "version",
+      "introduzidaEm": "git-12",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-12",
+        "atividade": "git12-a7",
+        "etapa": 11
+      }
+    },
+    {
       "palavra": "visit",
       "introduzidaEm": "en-a2-01",
       "primeiroUsoEmAtividade": {
@@ -4656,6 +5760,15 @@
         "licao": "csharp-08",
         "atividade": "cs08-a3",
         "etapa": 6
+      }
+    },
+    {
+      "palavra": "volume",
+      "introduzidaEm": "docker-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-04",
+        "atividade": "docker04-a6",
+        "etapa": 10
       }
     },
     {
@@ -4864,11 +5977,11 @@
     },
     {
       "palavra": "with",
-      "introduzidaEm": "en-a1-03",
+      "introduzidaEm": "sql-10",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-03",
-        "atividade": "en-a1-03-l1",
-        "etapa": 12
+        "licao": "sql-10",
+        "atividade": "sql10-a7",
+        "etapa": 11
       }
     },
     {
@@ -4890,6 +6003,15 @@
       }
     },
     {
+      "palavra": "workflow",
+      "introduzidaEm": "git-10",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-10",
+        "atividade": "git10-a5",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "works",
       "introduzidaEm": "ingles-00",
       "primeiroUsoEmAtividade": {
@@ -4905,6 +6027,15 @@
         "licao": "en-a1-05",
         "atividade": "en-a1-05-p4",
         "etapa": 8
+      }
+    },
+    {
+      "palavra": "write",
+      "introduzidaEm": "git-11",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-11",
+        "atividade": "git11-a5",
+        "etapa": 9
       }
     },
     {

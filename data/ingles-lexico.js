@@ -20,6 +20,7 @@ Plataforma.registrarLexicoIngles({
     'column', 'primary', 'key', 'foreign', 'response', 'request', 'build',
     'deploy', 'issue', 'branch', 'array', 'json', 'http', 'url', 'api',
     'get', 'post', 'put', 'patch', 'head', 'body', 'host', 'localhost',
+    'order', 'by', 'asc', 'desc', 'distinct', 'like', 'coalesce', 'set', 'webcam',
     'dotnet', 'git', 'docker', 'npm', 'pwd', 'mkdir', 'compose', 'install',
     'webapi', 'console', 'test', 'run', 'status', 'add', 'commit', 'push',
     'clone', 'main', 'origin', 'config', 'n', 'm', 'lts', 'sdk',
@@ -167,6 +168,7 @@ Plataforma.registrarLexicoIngles({
     'indisponível', 'independente', 'responsavel', 'responsável',
     'consultar', 'executar', 'deu', 'dar', 'faz', 'fazem', 'foi', 'era',
     'eram', 'fica', 'ficam', 'vira', 'viram', 'passa', 'passam', 'entra',
+    'recupere', 'exclua', 'altere', 'distinto', 'ordenar', 'pago',
     'entram', 'sai', 'saem', 'sobe', 'desce', 'envia', 'enviam', 'recebe',
     'recebem', 'grava', 'gravam', 'salva', 'salvam', 'lê', 'leem', 'le',
     'escreve', 'escrevem', 'procura', 'procuram', 'busca', 'buscam'

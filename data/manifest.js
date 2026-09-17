@@ -29,7 +29,15 @@ Plataforma.registrarManifesto({
         '../trilhas/sql/licoes/sql-03.js',
         '../trilhas/sql/licoes/sql-04.js',
         '../trilhas/sql/licoes/sql-05.js',
-        '../provas/sql-fundamentos.js'
+        '../provas/sql-fundamentos.js',
+        '../trilhas/sql/licoes/sql-06.js',
+        '../trilhas/sql/licoes/sql-07.js',
+        '../trilhas/sql/licoes/sql-08.js',
+        '../trilhas/sql/licoes/sql-09.js',
+        '../trilhas/sql/licoes/sql-10.js',
+        '../trilhas/sql/licoes/sql-11.js',
+        '../trilhas/sql/licoes/sql-12.js',
+        '../provas/sql-iniciante.js'
       ]
     },
     {
@@ -87,7 +95,29 @@ Plataforma.registrarManifesto({
         '../trilhas/entity-framework/licoes/ef-03.js'
       ]
     },
-    { id: 'git', arquivo: '../trilhas/git/trilha.js', licoes: [] },
+    {
+      id: 'git',
+      arquivo: '../trilhas/git/trilha.js',
+      licoes: [
+        '../trilhas/git/licoes/git-00.js',
+        '../trilhas/git/licoes/git-01.js',
+        '../trilhas/git/licoes/git-checkpoint-fundamentos.js',
+        '../trilhas/git/licoes/git-02.js',
+        '../trilhas/git/licoes/git-03.js',
+        '../trilhas/git/licoes/git-04.js',
+        '../trilhas/git/licoes/git-05.js',
+        '../trilhas/git/licoes/git-checkpoint-colaboracao.js',
+        '../trilhas/git/licoes/git-06.js',
+        '../trilhas/git/licoes/git-07.js',
+        '../trilhas/git/licoes/git-08.js',
+        '../trilhas/git/licoes/git-09.js',
+        '../trilhas/git/licoes/git-checkpoint-correcoes.js',
+        '../trilhas/git/licoes/git-10.js',
+        '../trilhas/git/licoes/git-11.js',
+        '../trilhas/git/licoes/git-12.js',
+        '../trilhas/git/licoes/git-checkpoint-profissional.js'
+      ]
+    },
     {
       id: 'aspnet',
       arquivo: '../trilhas/aspnet/trilha.js',
@@ -102,8 +132,41 @@ Plataforma.registrarManifesto({
     { id: 'arquitetura', arquivo: '../trilhas/arquitetura/trilha.js', licoes: [] },
     { id: 'testes', arquivo: '../trilhas/testes/trilha.js', licoes: [] },
     { id: 'frontend', arquivo: '../trilhas/frontend/trilha.js', licoes: [] },
-    { id: 'docker', arquivo: '../trilhas/docker/trilha.js', licoes: [] },
-    { id: 'redis', arquivo: '../trilhas/redis/trilha.js', licoes: [] },
+    {
+      id: 'docker',
+      arquivo: '../trilhas/docker/trilha.js',
+      licoes: [
+        '../trilhas/docker/licoes/docker-00.js',
+        '../trilhas/docker/licoes/docker-01.js',
+        '../trilhas/docker/licoes/docker-02.js',
+        '../trilhas/docker/licoes/docker-checkpoint-fundamentos.js',
+        '../trilhas/docker/licoes/docker-03.js',
+        '../trilhas/docker/licoes/docker-04.js',
+        '../trilhas/docker/licoes/docker-05.js',
+        '../trilhas/docker/licoes/docker-06.js',
+        '../trilhas/docker/licoes/docker-checkpoint-pratica.js',
+        '../trilhas/docker/licoes/docker-07.js',
+        '../trilhas/docker/licoes/docker-08.js',
+        '../trilhas/docker/licoes/docker-09.js',
+        '../trilhas/docker/licoes/docker-10.js',
+        '../trilhas/docker/licoes/docker-checkpoint-profissional.js'
+      ]
+    },
+    {
+      id: 'redis',
+      arquivo: '../trilhas/redis/trilha.js',
+      licoes: [
+        '../trilhas/redis/licoes/redis-00.js',
+        '../trilhas/redis/licoes/redis-01.js',
+        '../trilhas/redis/licoes/redis-02.js',
+        '../trilhas/redis/licoes/redis-checkpoint-fundamentos.js',
+        '../trilhas/redis/licoes/redis-03.js',
+        '../trilhas/redis/licoes/redis-04.js',
+        '../trilhas/redis/licoes/redis-05.js',
+        '../trilhas/redis/licoes/redis-06.js',
+        '../trilhas/redis/licoes/redis-checkpoint-profissional.js'
+      ]
+    },
     { id: 'mensageria', arquivo: '../trilhas/mensageria/trilha.js', licoes: [] },
     { id: 'cicd', arquivo: '../trilhas/cicd/trilha.js', licoes: [] },
     { id: 'azure', arquivo: '../trilhas/azure/trilha.js', licoes: [] },
