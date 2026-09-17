@@ -67,11 +67,11 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function fronteiraLiberada(comLicao) {
-    let ultimoComRegistro = -1;
+    let ultimoConcluido = -1;
     comLicao.forEach(function (e, i) {
-      if (P.dados.obterRegistroLicao(e.licao)) ultimoComRegistro = i;
+      if (P.dados.estaConcluida(e.licao)) ultimoConcluido = i;
     });
-    return ultimoComRegistro + 1;
+    return ultimoConcluido + 1;
   }
 
   function statusEtapa(trilhaId, etapa) {

@@ -19,7 +19,7 @@ window.Plataforma = window.Plataforma || {};
       P.ui.layout.toast(
         info.status === 'bloqueada'
           ? 'Conclua a etapa anterior para liberar esta.'
-          : 'Etapa planejada — será liberada em uma próxima fase.',
+          : 'Etapa ainda em produção — não há o que concluir nela agora.',
         'aviso'
       );
       P.roteador.ir('#/trilha/' + info.trilhaId);

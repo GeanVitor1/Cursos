@@ -21,7 +21,7 @@ window.Plataforma = window.Plataforma || {};
   function chipStatus(status) {
     const mapa = {
       bloqueada: ['🔒 Bloqueada', null],
-      planejada: ['Planejada', null],
+      planejada: ['Em produção', null],
       disponivel: ['Disponível', 'primaria'],
       'em-andamento': ['Em andamento', 'aviso'],
       concluida: ['Concluída', 'sucesso']

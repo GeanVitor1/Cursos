@@ -471,6 +471,36 @@ window.Plataforma = window.Plataforma || {};
     salvar();
   }
 
+  function repararProgresso() {
+    const trilhas = (P.interno && P.interno.trilhas) ? P.interno.trilhas : null;
+    if (!trilhas) return 0;
+    let reparadas = 0;
+    Object.keys(trilhas).forEach(function (tid) {
+      if (trilhas[tid] && trilhas[tid].acessoLivre) return;
+      const licoes = [];
+      ((trilhas[tid] || {}).niveis || []).forEach(function (nivel) {
+        (nivel.etapas || []).forEach(function (etapa) {
+          if (etapa.licao) licoes.push(etapa.licao);
+        });
+      });
+      let ultimoConcluido = -1;
+      licoes.forEach(function (id, i) {
+        if (estaConcluida(id)) ultimoConcluido = i;
+      });
+      for (let i = 0; i < ultimoConcluido; i += 1) {
+        const registro = estado.licoes[licoes[i]];
+        if (!registro || registro.status === 'concluida') continue;
+        registro.status = 'concluida';
+        registro.concluidaEm = registro.concluidaEm || new Date().toISOString();
+        registro.rascunho = null;
+        registro.reparada = true;
+        reparadas += 1;
+      }
+    });
+    if (reparadas) salvar();
+    return reparadas;
+  }
+
   function resetar() {
     estado = criaPadrao();
     salvar();
@@ -506,6 +536,7 @@ window.Plataforma = window.Plataforma || {};
     tema: tema,
     exportar: exportar,
     importar: importar,
+    repararProgresso: repararProgresso,
     resetar: resetar,
     localStorageDisponivel: function () { return disponivel; },
     hojeISO: hojeISO

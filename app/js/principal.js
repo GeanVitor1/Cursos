@@ -21,6 +21,16 @@ window.Plataforma = window.Plataforma || {};
 
     P.ui.layout.montar();
 
+    const reparadas = P.dados.repararProgresso();
+    if (reparadas) {
+      P.ui.layout.toast(
+        reparadas === 1
+          ? 'Ajuste no progresso: 1 etapa que ficou para trás foi marcada como concluída para não te prender. Você pode revê-la quando quiser.'
+          : 'Ajuste no progresso: ' + reparadas + ' etapas que ficaram para trás foram marcadas como concluídas para não te prender. Você pode revê-las quando quiser.',
+        'aviso'
+      );
+    }
+
     P.roteador.registrar('/', function () { P.ui.inicio.render(); });
     P.roteador.registrar('/mapa', function () { P.ui.mapa.render(); });
     P.roteador.registrar('/trilha/:id', function (params) { P.ui.trilha.render(params); });

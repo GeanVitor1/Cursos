@@ -7,7 +7,7 @@ window.Plataforma = window.Plataforma || {};
   function chipStatus(status) {
     const mapa = {
       bloqueada: ['🔒 Bloqueada', null],
-      planejada: ['Planejada', null],
+      planejada: ['Em produção', null],
       disponivel: ['Disponível', 'primaria'],
       'em-andamento': ['Em andamento', 'aviso'],
       concluida: ['Concluída', 'sucesso']
@@ -18,7 +18,7 @@ window.Plataforma = window.Plataforma || {};
 
   function abrirEtapa(trilhaId, etapa, status) {
     if (status === 'planejada') {
-      P.ui.layout.toast('Etapa planejada — será liberada em uma próxima fase.', 'aviso');
+      P.ui.layout.toast('Etapa ainda em produção — não há o que concluir nela agora. O roadmap mostra a ordem prevista.', 'aviso');
       return;
     }
     if (status === 'bloqueada') {
@@ -32,7 +32,7 @@ window.Plataforma = window.Plataforma || {};
     const status = P.progresso.statusEtapa(trilhaId, etapa);
     const registro = etapa.licao ? P.dados.obterRegistroLicao(etapa.licao) : null;
     const prova = etapa.tipo === 'prova';
-    const icones = { concluida: '✓', disponivel: prova ? '★' : '▶', bloqueada: '🔒', planejada: '·' };
+    const icones = { concluida: '✓', disponivel: prova ? '★' : '▶', bloqueada: '🔒', planejada: '…' };
     const classeIcone = status === 'concluida' ? 'concluida' : (status === 'disponivel' ? (prova ? 'prova' : 'disponivel') : '');
 
     let meta = '';
@@ -44,7 +44,7 @@ window.Plataforma = window.Plataforma || {};
     } else if (status === 'bloqueada') {
       meta = 'Bloqueada';
     } else {
-      meta = 'Planejada';
+      meta = 'Em produção';
     }
 
     const titulo = criar('div', { classe: 'etapa-titulo' }, [
@@ -141,7 +141,7 @@ window.Plataforma = window.Plataforma || {};
       ]),
       criar('p', { classe: 'trilha-intro', texto: t.descricao || '' }),
       criar('div', { classe: 'trilha-resumo' }, [
-        chipStatus(resumo.status),
+        (resumo.status === 'concluida' && resumo.planejadas) ? comp.chip('Conteúdo atual concluído', 'sucesso') : chipStatus(resumo.status),
         criar('span', {}, [criar('strong', { texto: resumo.concluidas.length + ' de ' + resumo.total }), document.createTextNode(' etapas interativas concluídas')]),
         resumo.planejadas ? criar('span', {}, [criar('strong', { texto: String(resumo.planejadas) }), document.createTextNode(' etapas no roadmap')]) : null,
         duracaoTotal ? criar('span', {}, [criar('strong', { texto: '~' + duracaoTotal + ' min' }), document.createTextNode(' de conteúdo liberado')]) : null
@@ -177,7 +177,7 @@ window.Plataforma = window.Plataforma || {};
     } else if (resumo.status === 'planejada') {
       pagina.appendChild(criar('div', { classe: 'bloco-nota info' }, [
         criar('span', { classe: 'nota-marca', texto: 'i' }),
-        criar('div', { texto: 'Pré-requisitos já atendidos. Esta trilha está planejada e o roadmap abaixo mostra a ordem prevista das etapas — o conteúdo interativo entra nas próximas fases do projeto.' })
+        criar('div', { texto: 'Pré-requisitos já atendidos. O conteúdo desta trilha ainda está em produção: o roadmap abaixo mostra a ordem prevista das etapas, mas ainda não há nada para você concluir aqui.' })
       ]));
     } else {
       const prontidao = P.progresso.checkpointProntidao(t.id);
@@ -233,21 +233,29 @@ window.Plataforma = window.Plataforma || {};
     }
 
     (t.niveis || []).forEach(function (nivel) {
+      const etapasNivel = nivel.etapas || [];
+      const produzidas = etapasNivel.filter(function (e) { return !!e.licao; }).length;
       const bloco = criar('div', { classe: 'nivel-bloco' });
       bloco.appendChild(criar('div', { classe: 'nivel-titulo' }, [
         criar('h2', { texto: nivel.nome }),
-        comp.chip(String((nivel.etapas || []).length) + ' etapas')
+        produzidas === 0
+          ? comp.chip('Em produção', 'aviso')
+          : (produzidas < etapasNivel.length
+            ? comp.chip(produzidas + ' de ' + etapasNivel.length + ' etapas liberadas', 'aviso')
+            : comp.chip(String(etapasNivel.length) + ' etapas'))
       ]));
       const lista = criar('div', { classe: 'lista-etapas' });
-      (nivel.etapas || []).forEach(function (etapa) {
+      etapasNivel.forEach(function (etapa) {
         lista.appendChild(linhaEtapa(t.id, Object.assign({}, etapa, { nivelNome: nivel.nome })));
       });
       bloco.appendChild(lista);
       pagina.appendChild(bloco);
     });
 
-    if (t.id !== 'sql' && resumo.status === 'disponivel') {
-      pagina.appendChild(criar('p', { classe: 'fraco pequeno', texto: 'Conteúdo desta trilha em produção. O roadmap acima reflete o currículo planejado.' }));
+    if (resumo.planejadas) {
+      pagina.appendChild(criar('p', { classe: 'fraco pequeno', texto: resumo.status === 'disponivel'
+        ? 'Conteúdo desta trilha ainda em produção. O roadmap acima reflete o currículo planejado.'
+        : 'Etapas marcadas como "Em produção" ainda não têm conteúdo interativo: elas mostram a ordem prevista e não entram no seu progresso.' }));
     }
 
     P.ui.layout.definirConteudo(pagina);

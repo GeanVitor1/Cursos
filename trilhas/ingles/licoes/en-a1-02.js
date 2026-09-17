@@ -306,7 +306,7 @@ Plataforma.registrarLicao({
           return t.indexOf('this is my') !== -1 &&
             /(her|his) name('s| is)\s+[a-záéíóúâêôãõç]{2,}/.test(t);
         },
-        respostasAceitas: ['This is my [parente]. Her/His name is [nome].'],
+        respostasAceitas: ['This is my sister. Her name is Lia.'],
         dicas: ['Escolha sister ou brother.', 'Use Her name is para mulher e His name is para homem.'],
         explicacao: 'This is my sister. Her name is Lia. — apresentação completa e natural de uma pessoa.',
         conceitos: ['en.familia']

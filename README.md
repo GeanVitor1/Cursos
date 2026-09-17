@@ -122,10 +122,13 @@ Inglês (transversal)
 | Azure | Docker 100% + CI/CD 50% |
 | Microsserviços | ASP.NET + Arquitetura + Mensageria + Docker 100% |
 
-- Dentro de uma trilha, as etapas liberam em sequência, mas **progresso nunca é bloqueado de volta**:
-  a fronteira de liberação é a etapa mais avançada que o aluno já iniciou/concluiu, então concluir
-  uma etapa fora de ordem (ou recuperar dados antigos) libera tudo até ela, sem travar o que já foi
-  conquistado.
+- Dentro de uma trilha, as etapas liberam em sequência: a próxima etapa só abre quando a anterior é
+  **concluída** (abrir e sair de uma lição não libera a seguinte), o que impede pular conteúdo.
+  **Progresso nunca é bloqueado de volta**: concluir uma etapa fora de ordem (ou recuperar dados
+  antigos) libera tudo até ela, sem travar o que já foi conquistado.
+- Progresso salvo por versões antigas que ficou inconsistente (etapa anterior em aberto com etapas
+  posteriores já concluídas) é reparado automaticamente ao abrir a plataforma: as etapas que ficaram
+  para trás são marcadas como concluídas — sem XP e sem bônus — e continuam acessíveis para revisão.
 - Entre trilhas, a trilha só sai de **Bloqueada** quando os pré-requisitos atingem o mínimo.
 - Trilhas `transversal: true` (English e Git) podem rodar em paralelo.
 - O botão **Continuar** da home e o **Iniciar sessão** retomam a etapa em andamento ou a próxima

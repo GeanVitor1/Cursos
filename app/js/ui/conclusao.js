@@ -68,6 +68,12 @@ window.Plataforma = window.Plataforma || {};
     const licao = resumo.licao || {};
     const prova = licao.tipo === 'prova';
     const proxima = P.progresso.proximaEtapaDepois(licao.id) || P.progresso.proximaEtapa();
+    const resumoTrilha = P.progresso.daTrilha(licao.trilha);
+    const indiceAtual = resumoTrilha ? resumoTrilha.comLicao.findIndex(function (e) { return e.licao === licao.id; }) : -1;
+    const mesmaTrilha = !!(proxima && resumoTrilha && proxima.trilha && proxima.trilha.id === licao.trilha);
+    const indiceProxima = mesmaTrilha ? resumoTrilha.comLicao.findIndex(function (e) { return e.licao === proxima.etapa.licao; }) : -1;
+    const proximaAtras = indiceProxima > -1 && indiceAtual > -1 && indiceProxima < indiceAtual;
+    const trilhaTodaConcluida = !!(resumoTrilha && resumoTrilha.total > 0 && resumoTrilha.concluidas.length >= resumoTrilha.total);
     const pagina = criar('div', { classe: 'conclusao' });
 
     pagina.appendChild(criar('div', { classe: 'conclusao-icone' + (prova ? ' prova' : ''), texto: '✓' }));
@@ -106,9 +112,26 @@ window.Plataforma = window.Plataforma || {};
       ]));
     }
 
+    if (proximaAtras) {
+      pagina.appendChild(criar('div', { classe: 'bloco-nota atencao' }, [
+        criar('span', { classe: 'nota-marca', texto: '!' }),
+        criar('div', { html: P.dom.formatar('Ficou uma etapa anterior desta trilha em aberto: **' + proxima.etapa.titulo + '**. Ela é o próximo passo — sem concluí-la, o nível não fecha.') })
+      ]));
+    } else if (trilhaTodaConcluida && resumoTrilha.planejadas) {
+      pagina.appendChild(criar('div', { classe: 'bloco-nota info' }, [
+        criar('span', { classe: 'nota-marca', texto: 'i' }),
+        criar('div', { texto: 'Você concluiu todo o conteúdo já produzido desta trilha. Os próximos níveis ainda estão em produção — não há nada pendente para você aqui.' })
+      ]));
+    }
+
     const acoes = [];
     if (proxima) {
-      acoes.push(comp.botao('Próxima etapa', { onclick: function () { P.roteador.ir('#/licao/' + proxima.etapa.licao); } }));
+      const rotulo = proximaAtras
+        ? 'Concluir etapa pendente: ' + proxima.etapa.titulo
+        : (mesmaTrilha
+          ? 'Próxima etapa'
+          : 'Continuar em ' + (proxima.trilha.curto || proxima.trilha.nome) + ': ' + proxima.etapa.titulo);
+      acoes.push(comp.botao(rotulo, { onclick: function () { P.roteador.ir('#/licao/' + proxima.etapa.licao); } }));
     }
     if (resumo.aproveitamento < 90 || P.progresso.conceitosParaRevisar(true).length) {
       acoes.push(comp.botao('Praticar os pontos fracos agora', {
