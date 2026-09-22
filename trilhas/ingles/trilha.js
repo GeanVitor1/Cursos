@@ -35,10 +35,10 @@ Plataforma.registrarTrilha({
         { id: 'en-a2-00', titulo: 'Contando o que aconteceu: passado simples', duracao: 40, licao: 'en-a2-00' },
         { id: 'en-a2-01', titulo: 'Planos e futuro: going to e will', duracao: 40, licao: 'en-a2-01' },
         { id: 'en-a2-02', titulo: 'Viagem: aeroporto e hotel', duracao: 40, licao: 'en-a2-02' },
-        { titulo: 'Experiências de vida (present perfect)', duracao: 40 },
-        { titulo: 'Descrevendo pessoas e lugares', duracao: 35 },
-        { titulo: 'Saúde, telefone e mensagens', duracao: 40 },
-        { titulo: 'Checkpoint A2', duracao: 40, tipo: 'prova' }
+        { id: 'ingles-02', titulo: 'Experiências de vida (present perfect)', duracao: 40, licao: 'ingles-02' },
+        { id: 'ingles-03', titulo: 'Descrevendo pessoas e lugares', duracao: 35, licao: 'ingles-03' },
+        { id: 'ingles-04', titulo: 'Saúde, telefone e mensagens', duracao: 40, licao: 'ingles-04' },
+        { id: 'ingles-checkpoint-a2', titulo: 'Checkpoint A2', duracao: 40, licao: 'ingles-checkpoint-a2', tipo: 'prova' },
       ]
     },
     {
@@ -46,12 +46,12 @@ Plataforma.registrarTrilha({
       nome: 'B1 — Intermediário',
       descricao: 'Opinar, explicar problemas, contar histórias, participar de reuniões e escrever e-mails profissionais.',
       etapas: [
-        { titulo: 'Dar opinião: concordar e discordar', duracao: 45 },
-        { titulo: 'Explicando problemas e pedindo ajuda', duracao: 40 },
-        { titulo: 'Contando histórias e anedotas', duracao: 45 },
-        { titulo: 'Trabalho: reuniões e e-mails', duracao: 50 },
-        { titulo: 'Condicionais (if... then)', duracao: 45 },
-        { titulo: 'Checkpoint B1', duracao: 45, tipo: 'prova' }
+        { id: 'ingles-05', titulo: 'Dar opinião: concordar e discordar', duracao: 45, licao: 'ingles-05' },
+        { id: 'ingles-06', titulo: 'Explicando problemas e pedindo ajuda', duracao: 40, licao: 'ingles-06' },
+        { id: 'ingles-07', titulo: 'Contando histórias e anedotas', duracao: 45, licao: 'ingles-07' },
+        { id: 'ingles-08', titulo: 'Trabalho: reuniões e e-mails', duracao: 50, licao: 'ingles-08' },
+        { id: 'ingles-09', titulo: 'Condicionais (if... then)', duracao: 45, licao: 'ingles-09' },
+        { id: 'ingles-checkpoint-b1', titulo: 'Checkpoint B1', duracao: 45, licao: 'ingles-checkpoint-b1', tipo: 'prova' },
       ]
     },
     {
@@ -59,11 +59,11 @@ Plataforma.registrarTrilha({
       nome: 'B2 — Intermediário avançado',
       descricao: 'Debater, negociar, apresentar projetos e escrever relatórios com clareza.',
       etapas: [
-        { titulo: 'Debates e negociação', duracao: 50 },
-        { titulo: 'Apresentações profissionais', duracao: 50 },
-        { titulo: 'Phrasal verbs essenciais', duracao: 45 },
-        { titulo: 'Relatórios e propostas', duracao: 50 },
-        { titulo: 'Checkpoint B2', duracao: 45, tipo: 'prova' }
+        { id: 'ingles-10', titulo: 'Debates e negociação', duracao: 50, licao: 'ingles-10' },
+        { id: 'ingles-11', titulo: 'Apresentações profissionais', duracao: 50, licao: 'ingles-11' },
+        { id: 'ingles-12', titulo: 'Phrasal verbs essenciais', duracao: 45, licao: 'ingles-12' },
+        { id: 'ingles-13', titulo: 'Relatórios e propostas', duracao: 50, licao: 'ingles-13' },
+        { id: 'ingles-checkpoint-b2', titulo: 'Checkpoint B2', duracao: 45, licao: 'ingles-checkpoint-b2', tipo: 'prova' },
       ]
     },
     {
@@ -71,10 +71,10 @@ Plataforma.registrarTrilha({
       nome: 'C1 — Avançado',
       descricao: 'Nuances, argumentação, escrita executiva e comunicação em contextos complexos.',
       etapas: [
-        { titulo: 'Expressões idiomáticas e nuances', duracao: 50 },
-        { titulo: 'Argumentação avançada', duracao: 50 },
-        { titulo: 'Escrita acadêmica e executiva', duracao: 55 },
-        { titulo: 'Checkpoint C1', duracao: 50, tipo: 'prova' }
+        { id: 'ingles-14', titulo: 'Expressões idiomáticas e nuances', duracao: 50, licao: 'ingles-14' },
+        { id: 'ingles-15', titulo: 'Argumentação avançada', duracao: 50, licao: 'ingles-15' },
+        { id: 'ingles-16', titulo: 'Escrita acadêmica e executiva', duracao: 55, licao: 'ingles-16' },
+        { id: 'ingles-checkpoint-c1', titulo: 'Checkpoint C1', duracao: 50, licao: 'ingles-checkpoint-c1', tipo: 'prova' },
       ]
     },
     {
@@ -84,14 +84,14 @@ Plataforma.registrarTrilha({
       etapas: [
         { id: 'ingles-00', titulo: 'Vocabulário essencial: request, response, database', duracao: 35, licao: 'ingles-00' },
         { id: 'ingles-01', titulo: 'Mensagens de erro e leitura técnica', duracao: 35, licao: 'ingles-01' },
-        { titulo: 'Frases de reunião diária', duracao: 35 },
-        { titulo: 'GitHub: issue, pull request, merge, release', duracao: 40 },
-        { titulo: 'Lendo documentação da Microsoft', duracao: 45 },
-        { titulo: 'Stack Overflow e READMEs', duracao: 35 },
-        { titulo: 'Escrevendo issues e pull requests', duracao: 40 },
-        { titulo: 'Comentários de code review', duracao: 40 },
-        { titulo: 'Vagas e entrevista em inglês', duracao: 50 },
-        { titulo: 'Checkpoint — English for Developers', duracao: 40, tipo: 'prova' }
+        { id: 'ingles-17', titulo: 'Frases de reunião diária', duracao: 35, licao: 'ingles-17' },
+        { id: 'ingles-18', titulo: 'GitHub: issue, pull request, merge, release', duracao: 40, licao: 'ingles-18' },
+        { id: 'ingles-19', titulo: 'Lendo documentação da Microsoft', duracao: 45, licao: 'ingles-19' },
+        { id: 'ingles-20', titulo: 'Stack Overflow e READMEs', duracao: 35, licao: 'ingles-20' },
+        { id: 'ingles-21', titulo: 'Escrevendo issues e pull requests', duracao: 40, licao: 'ingles-21' },
+        { id: 'ingles-22', titulo: 'Comentários de code review', duracao: 40, licao: 'ingles-22' },
+        { id: 'ingles-23', titulo: 'Vagas e entrevista em inglês', duracao: 50, licao: 'ingles-23' },
+        { id: 'ingles-checkpoint-developer', titulo: 'Checkpoint — English for Developers', duracao: 40, licao: 'ingles-checkpoint-developer', tipo: 'prova' },
       ]
     }
   ]

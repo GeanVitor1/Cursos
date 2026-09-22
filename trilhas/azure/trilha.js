@@ -12,32 +12,32 @@ Plataforma.registrarTrilha({
       id: 'fundamentos',
       nome: 'Fundamentos',
       etapas: [
-        { titulo: 'Azure do ponto de vista do desenvolvedor', duracao: 40 },
-        { titulo: 'App Service: publicando uma API', duracao: 55 },
-        { titulo: 'Azure SQL', duracao: 50 },
-        { titulo: 'Checkpoint — Fundamentos', duracao: 45, tipo: 'prova' }
+        { id: 'azure-00', titulo: 'Azure do ponto de vista do desenvolvedor', duracao: 40, licao: 'azure-00' },
+        { id: 'azure-01', titulo: 'App Service: publicando uma API', duracao: 55, licao: 'azure-01' },
+        { id: 'azure-02', titulo: 'Azure SQL', duracao: 50, licao: 'azure-02' },
+        { id: 'azure-checkpoint-fundamentos', titulo: 'Checkpoint — Fundamentos', duracao: 45, licao: 'azure-checkpoint-fundamentos', tipo: 'prova' },
       ]
     },
     {
       id: 'containers',
       nome: 'Containers no Azure',
       etapas: [
-        { titulo: 'Container Registry', duracao: 40 },
-        { titulo: 'Container Apps', duracao: 50 },
-        { titulo: 'Noções de AKS', duracao: 45 },
-        { titulo: 'Checkpoint — Containers', duracao: 45, tipo: 'prova' }
+        { id: 'azure-03', titulo: 'Container Registry', duracao: 40, licao: 'azure-03' },
+        { id: 'azure-04', titulo: 'Container Apps', duracao: 50, licao: 'azure-04' },
+        { id: 'azure-05', titulo: 'Noções de AKS', duracao: 45, licao: 'azure-05' },
+        { id: 'azure-checkpoint-containers', titulo: 'Checkpoint — Containers', duracao: 45, licao: 'azure-checkpoint-containers', tipo: 'prova' },
       ]
     },
     {
       id: 'servicos',
       nome: 'Serviços essenciais',
       etapas: [
-        { titulo: 'Storage: blobs, filas e arquivos', duracao: 45 },
-        { titulo: 'Key Vault: segredos fora do código', duracao: 45 },
-        { titulo: 'Application Insights: enxergando produção', duracao: 50 },
-        { titulo: 'Service Bus', duracao: 50 },
-        { titulo: 'Azure Functions', duracao: 50 },
-        { titulo: 'Checkpoint final — Azure', duracao: 55, tipo: 'prova' }
+        { id: 'azure-06', titulo: 'Storage: blobs, filas e arquivos', duracao: 45, licao: 'azure-06' },
+        { id: 'azure-07', titulo: 'Key Vault: segredos fora do código', duracao: 45, licao: 'azure-07' },
+        { id: 'azure-08', titulo: 'Application Insights: enxergando produção', duracao: 50, licao: 'azure-08' },
+        { id: 'azure-09', titulo: 'Service Bus', duracao: 50, licao: 'azure-09' },
+        { id: 'azure-10', titulo: 'Azure Functions', duracao: 50, licao: 'azure-10' },
+        { id: 'azure-checkpoint-servicos', titulo: 'Checkpoint final — Azure', duracao: 55, licao: 'azure-checkpoint-servicos', tipo: 'prova' },
       ]
     }
   ]

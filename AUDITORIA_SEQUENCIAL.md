@@ -3,11 +3,11 @@
 > Relatório gerado por `ferramentas/linter-pedagogico.js`. Ele percorre as trilhas na ordem real do aluno e verifica se cada conceito é ensinado antes de ser praticado ou cobrado.
 
 - Trilhas analisadas: **20**
-- Lições publicadas: **93**
+- Lições publicadas: **367**
 - Etapas percorridas: **367**
-- Atividades percorridas: **685**
-- Conceitos registrados: **184**
-- Conceitos com introdução marcada: **121**
+- Atividades percorridas: **849**
+- Conceitos registrados: **358**
+- Conceitos com introdução marcada: **148**
 - Erros: **0** · Avisos: **0**
 
 ## Evidência por conceito (introdução → prática → avaliação)
@@ -23,7 +23,7 @@
 | Inglês técnico (`sql.ingles`) | etapa 12 · sql-00 | sql-00 etapa 14 | sql-02 etapa 14 | PRONTO_PARA_AVALIACAO | — |
 | Tipos de dados (`sql.tipos-dados`) | etapa 2 · sql-01 | sql-01 etapa 3 | — | PRATICADO | sql.coluna |
 | Chave estrangeira (`sql.chave-estrangeira`) | etapa 4 · sql-01 | sql-01 etapa 5 | sql-01 etapa 9 | PRONTO_PARA_AVALIACAO | sql.chave-primaria |
-| Relacionamentos (`sql.relacionamento`) | etapa 4 · sql-01 | sql-01 etapa 5 | sql-01 etapa 9 | PRATICADO | sql.chave-estrangeira |
+| Relacionamentos (`sql.relacionamento`) | etapa 4 · sql-01 | sql-01 etapa 5 | sql-01 etapa 9 | PRONTO_PARA_AVALIACAO | sql.chave-estrangeira |
 | SELECT (`sql.select`) | etapa 1 · sql-02 | sql-02 etapa 2 | sql-02 etapa 14 | PRONTO_PARA_AVALIACAO | sql.tabela |
 | FROM (`sql.from`) | etapa 1 · sql-02 | sql-02 etapa 4 | sql-checkpoint-fundamentos etapa 5 | PRONTO_PARA_AVALIACAO | sql.select |
 | Seleção de colunas (`sql.colunas`) | etapa 3 · sql-02 | sql-02 etapa 5 | — | PRATICADO | sql.select |
@@ -44,6 +44,33 @@
 | UPDATE e SET (`sql.update`) | etapa 1 · sql-11 | sql-11 etapa 2 | sql-11 etapa 7 | PRONTO_PARA_AVALIACAO | sql.comandos-sql, sql.where |
 | INSERT INTO e VALUES (`sql.insert`) | etapa 1 · sql-12 | sql-12 etapa 2 | sql-checkpoint-iniciante etapa 9 | PRONTO_PARA_AVALIACAO | sql.comandos-sql |
 | DELETE com segurança (`sql.delete`) | etapa 5 · sql-12 | sql-12 etapa 6 | sql-12 etapa 8 | PRONTO_PARA_AVALIACAO | sql.comandos-sql, sql.where |
+| JOIN (`sql.join`) | etapa 1 · sql-13 | sql-13 etapa 2 | sql-checkpoint-relacionamentos etapa 2 | PRONTO_PARA_AVALIACAO | — |
+| INNER JOIN (`sql.inner-join`) | etapa 1 · sql-14 | sql-14 etapa 2 | sql-checkpoint-relacionamentos etapa 3 | PRONTO_PARA_AVALIACAO | — |
+| LEFT JOIN (`sql.left-join`) | etapa 1 · sql-15 | sql-15 etapa 2 | sql-15 etapa 9 | PRONTO_PARA_AVALIACAO | — |
+| Múltiplos JOINs (`sql.join-multiplo`) | etapa 1 · sql-16 | sql-16 etapa 2 | sql-16 etapa 9 | PRONTO_PARA_AVALIACAO | — |
+| Aliases de tabelas (`sql.aliases`) | etapa 1 · sql-17 | sql-17 etapa 2 | sql-17 etapa 10 | PRONTO_PARA_AVALIACAO | — |
+| Agregação (`sql.agregacao`) | etapa 1 · sql-18 | sql-18 etapa 2 | sql-18 etapa 8 | PRONTO_PARA_AVALIACAO | — |
+| GROUP BY (`sql.group-by`) | etapa 1 · sql-19 | sql-19 etapa 2 | sql-19 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| HAVING (`sql.having`) | etapa 1 · sql-20 | sql-20 etapa 2 | sql-20 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| Relatórios com agregação (`sql.relatorios`) | etapa 1 · sql-21 | sql-21 etapa 2 | sql-21 etapa 5 | PRONTO_PARA_AVALIACAO | — |
+| Subqueries (`sql.subquery`) | etapa 1 · sql-22 | sql-22 etapa 2 | sql-22 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| CTEs (WITH) (`sql.cte`) | etapa 1 · sql-23 | sql-23 etapa 2 | sql-23 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| CASE WHEN (`sql.case`) | etapa 1 · sql-24 | sql-24 etapa 2 | sql-24 etapa 5 | PRONTO_PARA_AVALIACAO | — |
+| UNION e UNION ALL (`sql.union`) | etapa 1 · sql-25 | sql-25 etapa 2 | sql-25 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| EXISTS e NOT EXISTS (`sql.exists`) | etapa 1 · sql-26 | sql-26 etapa 2 | sql-26 etapa 5 | PRONTO_PARA_AVALIACAO | — |
+| Funções de data (`sql.datas`) | etapa 1 · sql-27 | sql-27 etapa 2 | sql-27 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| Funções de string (`sql.strings`) | etapa 1 · sql-28 | sql-28 etapa 2 | sql-28 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| Índices (`sql.indices`) | etapa 1 · sql-29 | sql-29 etapa 2 | sql-29 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| Views (`sql.views`) | etapa 1 · sql-30 | sql-30 etapa 2 | sql-30 etapa 5 | PRONTO_PARA_AVALIACAO | — |
+| Stored procedures e functions (`sql.procedures`) | etapa 1 · sql-31 | sql-31 etapa 2 | sql-31 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| Transações (`sql.transacoes`) | etapa 1 · sql-32 | sql-32 etapa 2 | sql-32 etapa 5 | PRONTO_PARA_AVALIACAO | — |
+| Locks e concorrência (`sql.locks`) | etapa 1 · sql-33 | sql-33 etapa 2 | sql-33 etapa 5 | PRONTO_PARA_AVALIACAO | — |
+| Execution plans (`sql.execution-plan`) | etapa 1 · sql-34 | sql-34 etapa 2 | sql-34 etapa 5 | PRONTO_PARA_AVALIACAO | — |
+| Window functions (`sql.window`) | etapa 1 · sql-35 | sql-35 etapa 2 | sql-35 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| Modelagem de e-commerce (`sql.modelagem`) | etapa 1 · sql-36 | sql-36 etapa 2 | sql-36 etapa 5 | PRONTO_PARA_AVALIACAO | — |
+| Consultas de estoque (`sql.estoque`) | etapa 1 · sql-37 | sql-37 etapa 2 | sql-37 etapa 5 | PRONTO_PARA_AVALIACAO | — |
+| Análise de pagamentos (`sql.pagamento`) | etapa 1 · sql-38 | sql-38 etapa 2 | sql-38 etapa 4 | PRONTO_PARA_AVALIACAO | — |
+| Otimização de consultas (`sql.otimizacao`) | etapa 1 · sql-39 | sql-39 etapa 2 | sql-39 etapa 4 | PRONTO_PARA_AVALIACAO | — |
 | Classes (`csharp.classes`) | etapa 2 · csharp-00 | csharp-00 etapa 3 | csharp-00 etapa 21 | PRONTO_PARA_AVALIACAO | — |
 | Propriedades (`csharp.propriedades`) | etapa 4 · csharp-00 | csharp-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.classes |
 | Valores (`csharp.valor`) | etapa 6 · csharp-00 | csharp-00 etapa 7 | — | PRATICADO | csharp.propriedades |

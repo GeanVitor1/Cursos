@@ -39,61 +39,61 @@ Plataforma.registrarTrilha({
       id: 'relacionamentos',
       nome: 'Relacionamentos',
       etapas: [
-        { titulo: 'Por que JOIN existe', duracao: 40 },
-        { titulo: 'INNER JOIN na prática', duracao: 60 },
-        { titulo: 'LEFT JOIN e RIGHT JOIN', duracao: 60 },
-        { titulo: 'Múltiplos JOINs', duracao: 60 },
-        { titulo: 'Aliases e legibilidade', duracao: 30 },
-        { titulo: 'Checkpoint — Joins', duracao: 45, tipo: 'prova' }
+        { id: 'sql-13', titulo: 'Por que JOIN existe', duracao: 40, licao: 'sql-13' },
+        { id: 'sql-14', titulo: 'INNER JOIN na prática', duracao: 60, licao: 'sql-14' },
+        { id: 'sql-15', titulo: 'LEFT JOIN e RIGHT JOIN', duracao: 60, licao: 'sql-15' },
+        { id: 'sql-16', titulo: 'Múltiplos JOINs', duracao: 60, licao: 'sql-16' },
+        { id: 'sql-17', titulo: 'Aliases e legibilidade', duracao: 30, licao: 'sql-17' },
+        { id: 'sql-checkpoint-relacionamentos', titulo: 'Checkpoint — Joins', duracao: 45, licao: 'sql-checkpoint-relacionamentos', tipo: 'prova' },
       ]
     },
     {
       id: 'agregacao',
       nome: 'Agregação',
       etapas: [
-        { titulo: 'COUNT, SUM, AVG, MIN e MAX', duracao: 50 },
-        { titulo: 'GROUP BY', duracao: 50 },
-        { titulo: 'HAVING', duracao: 40 },
-        { titulo: 'Relatórios de vendas reais', duracao: 60 },
-        { titulo: 'Checkpoint — Agregação', duracao: 40, tipo: 'prova' }
+        { id: 'sql-18', titulo: 'COUNT, SUM, AVG, MIN e MAX', duracao: 50, licao: 'sql-18' },
+        { id: 'sql-19', titulo: 'GROUP BY', duracao: 50, licao: 'sql-19' },
+        { id: 'sql-20', titulo: 'HAVING', duracao: 40, licao: 'sql-20' },
+        { id: 'sql-21', titulo: 'Relatórios de vendas reais', duracao: 60, licao: 'sql-21' },
+        { id: 'sql-checkpoint-agregacao', titulo: 'Checkpoint — Agregação', duracao: 40, licao: 'sql-checkpoint-agregacao', tipo: 'prova' },
       ]
     },
     {
       id: 'intermediario',
       nome: 'Intermediário',
       etapas: [
-        { titulo: 'Subqueries', duracao: 50 },
-        { titulo: 'CTEs (WITH)', duracao: 50 },
-        { titulo: 'CASE WHEN', duracao: 45 },
-        { titulo: 'UNION e UNION ALL', duracao: 35 },
-        { titulo: 'EXISTS e NOT EXISTS', duracao: 45 },
-        { titulo: 'Funções de data', duracao: 45 },
-        { titulo: 'Funções de string', duracao: 45 },
-        { titulo: 'Checkpoint — Intermediário', duracao: 50, tipo: 'prova' }
+        { id: 'sql-22', titulo: 'Subqueries', duracao: 50, licao: 'sql-22' },
+        { id: 'sql-23', titulo: 'CTEs (WITH)', duracao: 50, licao: 'sql-23' },
+        { id: 'sql-24', titulo: 'CASE WHEN', duracao: 45, licao: 'sql-24' },
+        { id: 'sql-25', titulo: 'UNION e UNION ALL', duracao: 35, licao: 'sql-25' },
+        { id: 'sql-26', titulo: 'EXISTS e NOT EXISTS', duracao: 45, licao: 'sql-26' },
+        { id: 'sql-27', titulo: 'Funções de data', duracao: 45, licao: 'sql-27' },
+        { id: 'sql-28', titulo: 'Funções de string', duracao: 45, licao: 'sql-28' },
+        { id: 'sql-checkpoint-intermediario', titulo: 'Checkpoint — Intermediário', duracao: 50, licao: 'sql-checkpoint-intermediario', tipo: 'prova' },
       ]
     },
     {
       id: 'avancado',
       nome: 'Avançado',
       etapas: [
-        { titulo: 'Índices: o que são e quando usar', duracao: 50 },
-        { titulo: 'Views', duracao: 40 },
-        { titulo: 'Stored procedures e functions', duracao: 60 },
-        { titulo: 'Transações e integridade', duracao: 50 },
-        { titulo: 'Locks e concorrência', duracao: 50 },
-        { titulo: 'Execution plans e performance', duracao: 60 },
-        { titulo: 'Window functions', duracao: 60 }
+        { id: 'sql-29', titulo: 'Índices: o que são e quando usar', duracao: 50, licao: 'sql-29' },
+        { id: 'sql-30', titulo: 'Views', duracao: 40, licao: 'sql-30' },
+        { id: 'sql-31', titulo: 'Stored procedures e functions', duracao: 60, licao: 'sql-31' },
+        { id: 'sql-32', titulo: 'Transações e integridade', duracao: 50, licao: 'sql-32' },
+        { id: 'sql-33', titulo: 'Locks e concorrência', duracao: 50, licao: 'sql-33' },
+        { id: 'sql-34', titulo: 'Execution plans e performance', duracao: 60, licao: 'sql-34' },
+        { id: 'sql-35', titulo: 'Window functions', duracao: 60, licao: 'sql-35' },
       ]
     },
     {
       id: 'profissional',
       nome: 'Profissional',
       etapas: [
-        { titulo: 'Modelagem de e-commerce', duracao: 90 },
-        { titulo: 'Consultas de estoque', duracao: 60 },
-        { titulo: 'Análise de pagamentos e relatórios', duracao: 60 },
-        { titulo: 'Otimização de consultas lentas', duracao: 60 },
-        { titulo: 'Checkpoint final — SQL Profissional', duracao: 60, tipo: 'prova' }
+        { id: 'sql-36', titulo: 'Modelagem de e-commerce', duracao: 90, licao: 'sql-36' },
+        { id: 'sql-37', titulo: 'Consultas de estoque', duracao: 60, licao: 'sql-37' },
+        { id: 'sql-38', titulo: 'Análise de pagamentos e relatórios', duracao: 60, licao: 'sql-38' },
+        { id: 'sql-39', titulo: 'Otimização de consultas lentas', duracao: 60, licao: 'sql-39' },
+        { id: 'sql-checkpoint-profissional', titulo: 'Checkpoint final — SQL Profissional', duracao: 60, licao: 'sql-checkpoint-profissional', tipo: 'prova' },
       ]
     }
   ]

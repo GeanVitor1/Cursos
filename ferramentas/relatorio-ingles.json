@@ -1,9 +1,9 @@
 {
-  "geradoEm": "2026-09-17T19:45:39.490Z",
-  "licoesPercorridas": 93,
-  "etapasPercorridas": 1074,
-  "atividadesPercorridas": 685,
-  "palavrasNoLexico": 523,
+  "geradoEm": "2026-09-22T10:18:56.562Z",
+  "licoesPercorridas": 367,
+  "etapasPercorridas": 1329,
+  "atividadesPercorridas": 849,
+  "palavrasNoLexico": 572,
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
   "introducoesDeVocabulario": [
@@ -119,6 +119,199 @@
       ]
     },
     {
+      "licao": "sql-14",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "inner",
+        "outer"
+      ]
+    },
+    {
+      "licao": "sql-15",
+      "etapa": 8,
+      "termos": 2,
+      "palavras": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "licao": "sql-16",
+      "etapa": 8,
+      "termos": 1,
+      "palavras": [
+        "product"
+      ]
+    },
+    {
+      "licao": "sql-17",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "short",
+        "alias"
+      ]
+    },
+    {
+      "licao": "sql-19",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "group"
+      ]
+    },
+    {
+      "licao": "sql-20",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "having",
+        "filter"
+      ]
+    },
+    {
+      "licao": "sql-22",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "subquery"
+      ]
+    },
+    {
+      "licao": "sql-23",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "common",
+        "expression"
+      ]
+    },
+    {
+      "licao": "sql-24",
+      "etapa": 6,
+      "termos": 3,
+      "palavras": [
+        "case",
+        "paid",
+        "pending"
+      ]
+    },
+    {
+      "licao": "sql-25",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "union"
+      ]
+    },
+    {
+      "licao": "sql-26",
+      "etapa": 6,
+      "termos": 2,
+      "palavras": [
+        "exists",
+        "check"
+      ]
+    },
+    {
+      "licao": "sql-28",
+      "etapa": 8,
+      "termos": 2,
+      "palavras": [
+        "upper",
+        "lower"
+      ]
+    },
+    {
+      "licao": "sql-29",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "index",
+        "fast"
+      ]
+    },
+    {
+      "licao": "sql-30",
+      "etapa": 6,
+      "termos": 2,
+      "palavras": [
+        "view",
+        "saved"
+      ]
+    },
+    {
+      "licao": "sql-31",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "procedure",
+        "save",
+        "time"
+      ]
+    },
+    {
+      "licao": "sql-32",
+      "etapa": 6,
+      "termos": 1,
+      "palavras": [
+        "protect"
+      ]
+    },
+    {
+      "licao": "sql-33",
+      "etapa": 6,
+      "termos": 1,
+      "palavras": [
+        "lock"
+      ]
+    },
+    {
+      "licao": "sql-34",
+      "etapa": 6,
+      "termos": 3,
+      "palavras": [
+        "plan",
+        "slow",
+        "explain"
+      ]
+    },
+    {
+      "licao": "sql-35",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "window",
+        "rank"
+      ]
+    },
+    {
+      "licao": "sql-36",
+      "etapa": 6,
+      "termos": 1,
+      "palavras": [
+        "design"
+      ]
+    },
+    {
+      "licao": "sql-37",
+      "etapa": 6,
+      "termos": 2,
+      "palavras": [
+        "low",
+        "stock"
+      ]
+    },
+    {
+      "licao": "sql-38",
+      "etapa": 5,
+      "termos": 1,
+      "palavras": [
+        "payment"
+      ]
+    },
+    {
       "licao": "csharp-00",
       "etapa": 13,
       "termos": 0,
@@ -173,8 +366,7 @@
         "list",
         "produto",
         "add",
-        "item",
-        "count"
+        "item"
       ]
     },
     {
@@ -342,7 +534,6 @@
       "termos": 2,
       "palavras": [
         "how",
-        "are",
         "i'm",
         "fine",
         "thanks"
@@ -572,7 +763,6 @@
       "etapa": 1,
       "termos": 2,
       "palavras": [
-        "time",
         "it",
         "it's",
         "o'clock"
@@ -809,9 +999,7 @@
       "termos": 2,
       "palavras": [
         "straight",
-        "turn",
-        "left",
-        "right"
+        "turn"
       ]
     },
     {
@@ -1031,11 +1219,10 @@
     {
       "licao": "en-a2-02",
       "etapa": 3,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
         "luggage",
-        "flight",
-        "check"
+        "flight"
       ]
     },
     {
@@ -1405,11 +1592,10 @@
     {
       "licao": "git-11",
       "etapa": 8,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
         "message",
-        "write",
-        "explain"
+        "write"
       ]
     },
     {
@@ -1525,10 +1711,9 @@
     {
       "licao": "docker-09",
       "etapa": 9,
-      "termos": 2,
+      "termos": 1,
       "palavras": [
-        "cache",
-        "fast"
+        "cache"
       ]
     },
     {
@@ -1583,14 +1768,6 @@
         "deserialize",
         "setstringasync",
         "getstringasync"
-      ]
-    },
-    {
-      "licao": "redis-04",
-      "etapa": 10,
-      "termos": 1,
-      "palavras": [
-        "save"
       ]
     },
     {

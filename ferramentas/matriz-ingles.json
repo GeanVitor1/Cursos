@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-09-17T19:45:39.490Z",
+  "geradoEm": "2026-09-22T10:18:56.562Z",
   "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Em todas as trilhas, cada etapa ensina no máximo 3 termos novos; na trilha de inglês, no máximo 6 palavras novas por etapa, e as frases de exemplo (bloco ingles) só usam palavras já explicadas.",
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
@@ -116,6 +116,199 @@
       ]
     },
     {
+      "licao": "sql-14",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "inner",
+        "outer"
+      ]
+    },
+    {
+      "licao": "sql-15",
+      "etapa": 8,
+      "termos": 2,
+      "palavras": [
+        "left",
+        "right"
+      ]
+    },
+    {
+      "licao": "sql-16",
+      "etapa": 8,
+      "termos": 1,
+      "palavras": [
+        "product"
+      ]
+    },
+    {
+      "licao": "sql-17",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "short",
+        "alias"
+      ]
+    },
+    {
+      "licao": "sql-19",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "group"
+      ]
+    },
+    {
+      "licao": "sql-20",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "having",
+        "filter"
+      ]
+    },
+    {
+      "licao": "sql-22",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "subquery"
+      ]
+    },
+    {
+      "licao": "sql-23",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "common",
+        "expression"
+      ]
+    },
+    {
+      "licao": "sql-24",
+      "etapa": 6,
+      "termos": 3,
+      "palavras": [
+        "case",
+        "paid",
+        "pending"
+      ]
+    },
+    {
+      "licao": "sql-25",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "union"
+      ]
+    },
+    {
+      "licao": "sql-26",
+      "etapa": 6,
+      "termos": 2,
+      "palavras": [
+        "exists",
+        "check"
+      ]
+    },
+    {
+      "licao": "sql-28",
+      "etapa": 8,
+      "termos": 2,
+      "palavras": [
+        "upper",
+        "lower"
+      ]
+    },
+    {
+      "licao": "sql-29",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "index",
+        "fast"
+      ]
+    },
+    {
+      "licao": "sql-30",
+      "etapa": 6,
+      "termos": 2,
+      "palavras": [
+        "view",
+        "saved"
+      ]
+    },
+    {
+      "licao": "sql-31",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "procedure",
+        "save",
+        "time"
+      ]
+    },
+    {
+      "licao": "sql-32",
+      "etapa": 6,
+      "termos": 1,
+      "palavras": [
+        "protect"
+      ]
+    },
+    {
+      "licao": "sql-33",
+      "etapa": 6,
+      "termos": 1,
+      "palavras": [
+        "lock"
+      ]
+    },
+    {
+      "licao": "sql-34",
+      "etapa": 6,
+      "termos": 3,
+      "palavras": [
+        "plan",
+        "slow",
+        "explain"
+      ]
+    },
+    {
+      "licao": "sql-35",
+      "etapa": 7,
+      "termos": 2,
+      "palavras": [
+        "window",
+        "rank"
+      ]
+    },
+    {
+      "licao": "sql-36",
+      "etapa": 6,
+      "termos": 1,
+      "palavras": [
+        "design"
+      ]
+    },
+    {
+      "licao": "sql-37",
+      "etapa": 6,
+      "termos": 2,
+      "palavras": [
+        "low",
+        "stock"
+      ]
+    },
+    {
+      "licao": "sql-38",
+      "etapa": 5,
+      "termos": 1,
+      "palavras": [
+        "payment"
+      ]
+    },
+    {
       "licao": "csharp-00",
       "etapa": 13,
       "termos": 0,
@@ -170,8 +363,7 @@
         "list",
         "produto",
         "add",
-        "item",
-        "count"
+        "item"
       ]
     },
     {
@@ -339,7 +531,6 @@
       "termos": 2,
       "palavras": [
         "how",
-        "are",
         "i'm",
         "fine",
         "thanks"
@@ -569,7 +760,6 @@
       "etapa": 1,
       "termos": 2,
       "palavras": [
-        "time",
         "it",
         "it's",
         "o'clock"
@@ -806,9 +996,7 @@
       "termos": 2,
       "palavras": [
         "straight",
-        "turn",
-        "left",
-        "right"
+        "turn"
       ]
     },
     {
@@ -1028,11 +1216,10 @@
     {
       "licao": "en-a2-02",
       "etapa": 3,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
         "luggage",
-        "flight",
-        "check"
+        "flight"
       ]
     },
     {
@@ -1402,11 +1589,10 @@
     {
       "licao": "git-11",
       "etapa": 8,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
         "message",
-        "write",
-        "explain"
+        "write"
       ]
     },
     {
@@ -1522,10 +1708,9 @@
     {
       "licao": "docker-09",
       "etapa": 9,
-      "termos": 2,
+      "termos": 1,
       "palavras": [
-        "cache",
-        "fast"
+        "cache"
       ]
     },
     {
@@ -1580,14 +1765,6 @@
         "deserialize",
         "setstringasync",
         "getstringasync"
-      ]
-    },
-    {
-      "licao": "redis-04",
-      "etapa": 10,
-      "termos": 1,
-      "palavras": [
-        "save"
       ]
     },
     {
@@ -1727,6 +1904,15 @@
       }
     },
     {
+      "palavra": "alias",
+      "introduzidaEm": "sql-17",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-17",
+        "atividade": "sql17-a6",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "all",
       "introduzidaEm": "sql-02",
       "primeiroUsoEmAtividade": {
@@ -1841,11 +2027,11 @@
     },
     {
       "palavra": "are",
-      "introduzidaEm": "en-a1-00",
+      "introduzidaEm": "sql-29",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-00",
-        "atividade": "en-a1-00-a4",
-        "etapa": 16
+        "licao": "sql-29",
+        "atividade": "sql29-a5",
+        "etapa": 8
       }
     },
     {
@@ -2156,6 +2342,15 @@
       }
     },
     {
+      "palavra": "case",
+      "introduzidaEm": "sql-24",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-24",
+        "atividade": "sql24-a4",
+        "etapa": 7
+      }
+    },
+    {
       "palavra": "cash",
       "introduzidaEm": "en-a1-06",
       "primeiroUsoEmAtividade": {
@@ -2207,11 +2402,20 @@
     },
     {
       "palavra": "check",
-      "introduzidaEm": "en-a2-02",
+      "introduzidaEm": "sql-26",
       "primeiroUsoEmAtividade": {
         "licao": "en-a2-02",
         "atividade": "en-a2-02-p2",
         "etapa": 4
+      }
+    },
+    {
+      "palavra": "checks",
+      "introduzidaEm": "sql-26",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-26",
+        "atividade": "sql26-a4",
+        "etapa": 7
       }
     },
     {
@@ -2339,6 +2543,15 @@
       }
     },
     {
+      "palavra": "common",
+      "introduzidaEm": "sql-23",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-23",
+        "atividade": "sql23-a5",
+        "etapa": 8
+      }
+    },
+    {
       "palavra": "compose",
       "introduzidaEm": "docker-07",
       "primeiroUsoEmAtividade": {
@@ -2462,11 +2675,11 @@
     },
     {
       "palavra": "count",
-      "introduzidaEm": "csharp-03",
+      "introduzidaEm": "sql-18",
       "primeiroUsoEmAtividade": {
-        "licao": "csharp-03",
-        "atividade": "cs03-a2",
-        "etapa": 4
+        "licao": "sql-18",
+        "atividade": "sql18-a6",
+        "etapa": 10
       }
     },
     {
@@ -2531,6 +2744,15 @@
         "licao": "ingles-00",
         "atividade": "en00-p1",
         "etapa": 2
+      }
+    },
+    {
+      "palavra": "date",
+      "introduzidaEm": "sql-27",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-27",
+        "atividade": "sql27-a5",
+        "etapa": 8
       }
     },
     {
@@ -2627,6 +2849,15 @@
         "licao": "redis-04",
         "atividade": "redis04-a3",
         "etapa": 6
+      }
+    },
+    {
+      "palavra": "design",
+      "introduzidaEm": "sql-36",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-36",
+        "atividade": "sql36-a4",
+        "etapa": 7
       }
     },
     {
@@ -2877,6 +3108,15 @@
       "primeiroUsoEmAtividade": null
     },
     {
+      "palavra": "exists",
+      "introduzidaEm": "sql-26",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-26",
+        "atividade": "sql26-a4",
+        "etapa": 7
+      }
+    },
+    {
       "palavra": "expected",
       "introduzidaEm": "ingles-01",
       "primeiroUsoEmAtividade": {
@@ -2919,11 +3159,25 @@
     },
     {
       "palavra": "explain",
-      "introduzidaEm": "git-11",
+      "introduzidaEm": "sql-34",
       "primeiroUsoEmAtividade": {
-        "licao": "git-11",
-        "atividade": "git11-a5",
-        "etapa": 9
+        "licao": "sql-34",
+        "atividade": "sql34-a4",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "expression",
+      "introduzidaEm": "sql-23",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "expressions",
+      "introduzidaEm": "sql-23",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-23",
+        "atividade": "sql23-a5",
+        "etapa": 8
       }
     },
     {
@@ -2955,11 +3209,11 @@
     },
     {
       "palavra": "fast",
-      "introduzidaEm": "docker-09",
+      "introduzidaEm": "sql-29",
       "primeiroUsoEmAtividade": {
-        "licao": "redis-00",
-        "atividade": "redis00-a6",
-        "etapa": 11
+        "licao": "sql-29",
+        "atividade": "sql29-a5",
+        "etapa": 8
       }
     },
     {
@@ -3014,6 +3268,24 @@
         "licao": "git-09",
         "atividade": "git09-a5",
         "etapa": 9
+      }
+    },
+    {
+      "palavra": "filter",
+      "introduzidaEm": "sql-20",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-27",
+        "atividade": "sql27-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "filters",
+      "introduzidaEm": "sql-20",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-20",
+        "atividade": "sql20-a5",
+        "etapa": 8
       }
     },
     {
@@ -3260,6 +3532,15 @@
       }
     },
     {
+      "palavra": "group",
+      "introduzidaEm": "sql-19",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-19",
+        "atividade": "sql19-a5",
+        "etapa": 8
+      }
+    },
+    {
       "palavra": "had",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -3297,6 +3578,15 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-02",
         "atividade": "en-a1-02-p4",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "having",
+      "introduzidaEm": "sql-20",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-20",
+        "atividade": "sql20-a5",
         "etapa": 8
       }
     },
@@ -3526,9 +3816,27 @@
       }
     },
     {
+      "palavra": "index",
+      "introduzidaEm": "sql-29",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-29",
+        "atividade": "sql29-a5",
+        "etapa": 8
+      }
+    },
+    {
       "palavra": "injeção",
       "introduzidaEm": "csharp-06",
       "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "inner",
+      "introduzidaEm": "sql-14",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-14",
+        "atividade": "sql14-a5",
+        "etapa": 8
+      }
     },
     {
       "palavra": "inotificador",
@@ -3626,6 +3934,15 @@
       }
     },
     {
+      "palavra": "join",
+      "introduzidaEm": "sql-13",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-13",
+        "atividade": "sql13-a5",
+        "etapa": 9
+      }
+    },
+    {
       "palavra": "json",
       "introduzidaEm": "redis-04",
       "primeiroUsoEmAtividade": {
@@ -3691,11 +4008,11 @@
     },
     {
       "palavra": "left",
-      "introduzidaEm": "en-a1-07",
+      "introduzidaEm": "sql-15",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-07",
-        "atividade": "en-a1-07-p4",
-        "etapa": 8
+        "licao": "sql-15",
+        "atividade": "sql15-a5",
+        "etapa": 9
       }
     },
     {
@@ -3762,12 +4079,44 @@
       }
     },
     {
+      "palavra": "lock",
+      "introduzidaEm": "sql-33",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "locks",
+      "introduzidaEm": "sql-33",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-33",
+        "atividade": "sql33-a4",
+        "etapa": 7
+      }
+    },
+    {
       "palavra": "lot",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
         "licao": "en-a2-00",
         "atividade": "en-a2-00-p7",
         "etapa": 14
+      }
+    },
+    {
+      "palavra": "low",
+      "introduzidaEm": "sql-37",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-37",
+        "atividade": "sql37-a4",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "lower",
+      "introduzidaEm": "sql-28",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-28",
+        "atividade": "sql28-a5",
+        "etapa": 9
       }
     },
     {
@@ -4003,7 +4352,11 @@
     {
       "palavra": "names",
       "introduzidaEm": "sql-07",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-17",
+        "atividade": "sql17-a6",
+        "etapa": 10
+      }
     },
     {
       "palavra": "near",
@@ -4190,9 +4543,9 @@
       "palavra": "on",
       "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-04",
-        "atividade": "en-a1-04-p6",
-        "etapa": 12
+        "licao": "sql-13",
+        "atividade": "sql13-a1",
+        "etapa": 2
       }
     },
     {
@@ -4242,6 +4595,11 @@
       }
     },
     {
+      "palavra": "outer",
+      "introduzidaEm": "sql-14",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "outside",
       "introduzidaEm": "docker-03",
       "primeiroUsoEmAtividade": null
@@ -4253,6 +4611,15 @@
         "licao": "en-a1-06",
         "atividade": "en-a1-06-p6",
         "etapa": 12
+      }
+    },
+    {
+      "palavra": "paid",
+      "introduzidaEm": "sql-24",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-24",
+        "atividade": "sql24-a4",
+        "etapa": 7
       }
     },
     {
@@ -4338,12 +4705,35 @@
       }
     },
     {
+      "palavra": "payment",
+      "introduzidaEm": "sql-38",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "payments",
+      "introduzidaEm": "sql-38",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-38",
+        "atividade": "sql38-a3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "pendente",
       "introduzidaEm": "sql-04",
       "primeiroUsoEmAtividade": {
         "licao": "sql-04",
         "atividade": "sql04-a6",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "pending",
+      "introduzidaEm": "sql-24",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-24",
+        "atividade": "sql24-a4",
+        "etapa": 7
       }
     },
     {
@@ -4389,6 +4779,20 @@
         "licao": "en-a2-00",
         "atividade": "en-a2-00-p7",
         "etapa": 14
+      }
+    },
+    {
+      "palavra": "plan",
+      "introduzidaEm": "sql-34",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "plans",
+      "introduzidaEm": "sql-34",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-34",
+        "atividade": "sql34-a4",
+        "etapa": 7
       }
     },
     {
@@ -4443,9 +4847,41 @@
       "primeiroUsoEmAtividade": null
     },
     {
+      "palavra": "procedure",
+      "introduzidaEm": "sql-31",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-31",
+        "atividade": "sql31-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "procedures",
+      "introduzidaEm": "sql-31",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-31",
+        "atividade": "sql31-a5",
+        "etapa": 8
+      }
+    },
+    {
       "palavra": "processed",
       "introduzidaEm": "ingles-01",
       "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "product",
+      "introduzidaEm": "sql-16",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "products",
+      "introduzidaEm": "sql-16",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-16",
+        "atividade": "sql16-a5",
+        "etapa": 9
+      }
     },
     {
       "palavra": "produto",
@@ -4463,6 +4899,15 @@
         "licao": "csharp-03",
         "atividade": "cs03-a3",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "protect",
+      "introduzidaEm": "sql-32",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-32",
+        "atividade": "sql32-a4",
+        "etapa": 7
       }
     },
     {
@@ -4516,6 +4961,20 @@
       }
     },
     {
+      "palavra": "queries",
+      "introduzidaEm": "sql-29",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-29",
+        "atividade": "sql29-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "query",
+      "introduzidaEm": "sql-22",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "rain",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -4531,6 +4990,20 @@
         "licao": "en-a2-00",
         "atividade": "en-a2-00-p2",
         "etapa": 4
+      }
+    },
+    {
+      "palavra": "rank",
+      "introduzidaEm": "sql-35",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "ranks",
+      "introduzidaEm": "sql-35",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-35",
+        "atividade": "sql35-a5",
+        "etapa": 8
       }
     },
     {
@@ -4756,11 +5229,11 @@
     },
     {
       "palavra": "right",
-      "introduzidaEm": "en-a1-07",
+      "introduzidaEm": "sql-15",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-07",
-        "atividade": "en-a1-07-l1",
-        "etapa": 13
+        "licao": "sql-checkpoint-relacionamentos",
+        "atividade": "cp-j8",
+        "etapa": 9
       }
     },
     {
@@ -4784,7 +5257,11 @@
     {
       "palavra": "rows",
       "introduzidaEm": "sql-00",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-19",
+        "atividade": "sql19-a5",
+        "etapa": 8
+      }
     },
     {
       "palavra": "run",
@@ -4851,11 +5328,20 @@
     },
     {
       "palavra": "save",
-      "introduzidaEm": "redis-04",
+      "introduzidaEm": "sql-31",
       "primeiroUsoEmAtividade": {
-        "licao": "redis-04",
-        "atividade": "redis04-a7",
-        "etapa": 11
+        "licao": "sql-31",
+        "atividade": "sql31-a5",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "saved",
+      "introduzidaEm": "sql-30",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-30",
+        "atividade": "sql30-a4",
+        "etapa": 7
       }
     },
     {
@@ -5018,6 +5504,15 @@
       }
     },
     {
+      "palavra": "short",
+      "introduzidaEm": "sql-17",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-17",
+        "atividade": "sql17-a6",
+        "etapa": 10
+      }
+    },
+    {
       "palavra": "simple",
       "introduzidaEm": "en-a1-03",
       "primeiroUsoEmAtividade": {
@@ -5083,6 +5578,15 @@
         "licao": "en-a1-03",
         "atividade": "en-a1-03-p3",
         "etapa": 6
+      }
+    },
+    {
+      "palavra": "slow",
+      "introduzidaEm": "sql-34",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-34",
+        "atividade": "sql34-a4",
+        "etapa": 7
       }
     },
     {
@@ -5199,6 +5703,15 @@
       }
     },
     {
+      "palavra": "stock",
+      "introduzidaEm": "sql-37",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-37",
+        "atividade": "sql37-a4",
+        "etapa": 7
+      }
+    },
+    {
       "palavra": "store",
       "introduzidaEm": "redis-01",
       "primeiroUsoEmAtividade": {
@@ -5231,6 +5744,15 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-03",
         "atividade": "en-a1-03-p2",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "subquery",
+      "introduzidaEm": "sql-22",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-26",
+        "atividade": "sql26-a2",
         "etapa": 4
       }
     },
@@ -5286,6 +5808,15 @@
         "licao": "sql-00",
         "atividade": "sql00-a6",
         "etapa": 14
+      }
+    },
+    {
+      "palavra": "tables",
+      "introduzidaEm": "sql-36",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-36",
+        "atividade": "sql36-a4",
+        "etapa": 7
       }
     },
     {
@@ -5470,11 +6001,11 @@
     },
     {
       "palavra": "time",
-      "introduzidaEm": "en-a1-04",
+      "introduzidaEm": "sql-31",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-04",
-        "atividade": "en-a1-04-p1",
-        "etapa": 2
+        "licao": "sql-31",
+        "atividade": "sql31-a5",
+        "etapa": 8
       }
     },
     {
@@ -5574,6 +6105,15 @@
         "licao": "en-a1-07",
         "atividade": "en-a1-07-p6",
         "etapa": 12
+      }
+    },
+    {
+      "palavra": "transactions",
+      "introduzidaEm": "sql-32",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-32",
+        "atividade": "sql32-a4",
+        "etapa": 7
       }
     },
     {
@@ -5681,6 +6221,15 @@
       }
     },
     {
+      "palavra": "union",
+      "introduzidaEm": "sql-25",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-25",
+        "atividade": "sql25-a5",
+        "etapa": 8
+      }
+    },
+    {
       "palavra": "up",
       "introduzidaEm": "en-a1-03",
       "primeiroUsoEmAtividade": {
@@ -5690,12 +6239,30 @@
       }
     },
     {
+      "palavra": "upper",
+      "introduzidaEm": "sql-28",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-28",
+        "atividade": "sql28-a5",
+        "etapa": 9
+      }
+    },
+    {
       "palavra": "us",
       "introduzidaEm": "en-a2-01",
       "primeiroUsoEmAtividade": {
         "licao": "en-a2-01",
         "atividade": "en-a2-01-p4",
         "etapa": 8
+      }
+    },
+    {
+      "palavra": "use",
+      "introduzidaEm": "sql-17",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-17",
+        "atividade": "sql17-a6",
+        "etapa": 10
       }
     },
     {
@@ -5742,6 +6309,24 @@
         "licao": "git-12",
         "atividade": "git12-a7",
         "etapa": 11
+      }
+    },
+    {
+      "palavra": "view",
+      "introduzidaEm": "sql-30",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-30",
+        "atividade": "sql30-a4",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "views",
+      "introduzidaEm": "sql-30",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-30",
+        "atividade": "sql30-a4",
+        "etapa": 7
       }
     },
     {
@@ -5973,6 +6558,15 @@
         "licao": "en-a2-01",
         "atividade": "en-a2-01-p2",
         "etapa": 4
+      }
+    },
+    {
+      "palavra": "window",
+      "introduzidaEm": "sql-35",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-35",
+        "atividade": "sql35-a5",
+        "etapa": 8
       }
     },
     {
