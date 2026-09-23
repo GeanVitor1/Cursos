@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-09-22T10:18:56.562Z",
+  "geradoEm": "2026-09-23T14:36:14.828Z",
   "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Em todas as trilhas, cada etapa ensina no máximo 3 termos novos; na trilha de inglês, no máximo 6 palavras novas por etapa, e as frases de exemplo (bloco ingles) só usam palavras já explicadas.",
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
@@ -1268,6 +1268,101 @@
       ]
     },
     {
+      "licao": "ingles-02",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "ever",
+        "visited",
+        "canada"
+      ]
+    },
+    {
+      "licao": "ingles-02",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "already",
+        "seen"
+      ]
+    },
+    {
+      "licao": "ingles-02",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "yet",
+        "haven't"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "quiet",
+        "busy",
+        "place"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "bigger",
+        "than"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "comfortable",
+        "more"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "friendly",
+        "very",
+        "people"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "tired",
+        "headache",
+        "feel"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "etapa": 3,
+      "termos": 1,
+      "palavras": [
+        "me",
+        "back"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "etapa": 5,
+      "termos": 3,
+      "palavras": [
+        "message",
+        "appointment",
+        "doctor"
+      ]
+    },
+    {
       "licao": "ingles-00",
       "etapa": 1,
       "termos": 2,
@@ -1455,6 +1550,67 @@
       ]
     },
     {
+      "licao": "ingles-17",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "standup",
+        "blocker",
+        "task"
+      ]
+    },
+    {
+      "licao": "ingles-17",
+      "etapa": 3,
+      "termos": 1,
+      "palavras": [
+        "service"
+      ]
+    },
+    {
+      "licao": "ingles-17",
+      "etapa": 5,
+      "termos": 1,
+      "palavras": [
+        "tests"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "pull",
+        "open",
+        "close"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "etapa": 3,
+      "termos": 1,
+      "palavras": [
+        "approved"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "comment",
+        "need"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "release"
+      ]
+    },
+    {
       "licao": "ef-00",
       "etapa": 2,
       "termos": 0,
@@ -1497,10 +1653,9 @@
     {
       "licao": "git-01",
       "etapa": 9,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
         "remote",
-        "pull",
         "push"
       ]
     },
@@ -1534,11 +1689,10 @@
     {
       "licao": "git-05",
       "etapa": 11,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
         "conflict",
-        "resolve",
-        "before"
+        "resolve"
       ]
     },
     {
@@ -1587,21 +1741,11 @@
       ]
     },
     {
-      "licao": "git-11",
-      "etapa": 8,
-      "termos": 2,
-      "palavras": [
-        "message",
-        "write"
-      ]
-    },
-    {
       "licao": "git-12",
       "etapa": 10,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
         "tag",
-        "release",
         "version"
       ]
     },
@@ -1922,6 +2066,15 @@
       }
     },
     {
+      "palavra": "already",
+      "introduzidaEm": "ingles-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p2",
+        "etapa": 4
+      }
+    },
+    {
       "palavra": "also",
       "introduzidaEm": "en-a2-01",
       "primeiroUsoEmAtividade": {
@@ -1941,11 +2094,11 @@
     },
     {
       "palavra": "an",
-      "introduzidaEm": "ingles-00",
+      "introduzidaEm": "ingles-04",
       "primeiroUsoEmAtividade": {
-        "licao": "ingles-01",
-        "atividade": "en01-a2",
-        "etapa": 24
+        "licao": "ingles-04",
+        "atividade": "en-a2-04-p3",
+        "etapa": 6
       }
     },
     {
@@ -2017,12 +2170,30 @@
       }
     },
     {
+      "palavra": "appointment",
+      "introduzidaEm": "ingles-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-04",
+        "atividade": "en-a2-04-p3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "approve",
       "introduzidaEm": "git-04",
       "primeiroUsoEmAtividade": {
         "licao": "git-04",
         "atividade": "git04-a6",
         "etapa": 12
+      }
+    },
+    {
+      "palavra": "approved",
+      "introduzidaEm": "ingles-18",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-18",
+        "atividade": "en18-p4",
+        "etapa": 8
       }
     },
     {
@@ -2055,6 +2226,15 @@
         "licao": "en-a1-03",
         "atividade": "en-a1-03-p5",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "back",
+      "introduzidaEm": "ingles-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-04",
+        "atividade": "en-a2-04-p2",
+        "etapa": 4
       }
     },
     {
@@ -2118,11 +2298,11 @@
     },
     {
       "palavra": "before",
-      "introduzidaEm": "git-05",
+      "introduzidaEm": "ingles-18",
       "primeiroUsoEmAtividade": {
-        "licao": "git-05",
-        "atividade": "git05-a7",
-        "etapa": 12
+        "licao": "ingles-18",
+        "atividade": "en18-p3",
+        "etapa": 6
       }
     },
     {
@@ -2135,12 +2315,39 @@
       }
     },
     {
+      "palavra": "bigger",
+      "introduzidaEm": "ingles-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p2",
+        "etapa": 4
+      }
+    },
+    {
       "palavra": "bill",
       "introduzidaEm": "en-a1-05",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-05",
         "atividade": "en-a1-05-p3",
         "etapa": 6
+      }
+    },
+    {
+      "palavra": "blocker",
+      "introduzidaEm": "ingles-17",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-17",
+        "atividade": "en17-p1",
+        "etapa": 2
+      }
+    },
+    {
+      "palavra": "blockers",
+      "introduzidaEm": "ingles-17",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-17",
+        "atividade": "en17-p4",
+        "etapa": 8
       }
     },
     {
@@ -2261,6 +2468,15 @@
       }
     },
     {
+      "palavra": "busy",
+      "introduzidaEm": "ingles-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p1",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "buy",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -2324,6 +2540,15 @@
       }
     },
     {
+      "palavra": "canada",
+      "introduzidaEm": "ingles-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p1",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "cannot",
       "introduzidaEm": "ingles-01",
       "primeiroUsoEmAtividade": {
@@ -2379,11 +2604,11 @@
     },
     {
       "palavra": "changes",
-      "introduzidaEm": "git-01",
+      "introduzidaEm": "ingles-18",
       "primeiroUsoEmAtividade": {
-        "licao": "git-01",
-        "atividade": "git01-a6",
-        "etapa": 10
+        "licao": "ingles-18",
+        "atividade": "en18-p3",
+        "etapa": 6
       }
     },
     {
@@ -2478,6 +2703,15 @@
       }
     },
     {
+      "palavra": "close",
+      "introduzidaEm": "ingles-18",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-18",
+        "atividade": "en18-p1",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "code",
       "introduzidaEm": "git-04",
       "primeiroUsoEmAtividade": {
@@ -2524,6 +2758,15 @@
       }
     },
     {
+      "palavra": "comfortable",
+      "introduzidaEm": "ingles-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "command",
       "introduzidaEm": "docker-02",
       "primeiroUsoEmAtividade": null
@@ -2531,6 +2774,11 @@
     {
       "palavra": "commands",
       "introduzidaEm": "docker-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "comment",
+      "introduzidaEm": "ingles-18",
       "primeiroUsoEmAtividade": null
     },
     {
@@ -2903,6 +3151,15 @@
       }
     },
     {
+      "palavra": "doctor",
+      "introduzidaEm": "ingles-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-04",
+        "atividade": "en-a2-04-p3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "does",
       "introduzidaEm": "ingles-01",
       "primeiroUsoEmAtividade": null
@@ -3076,6 +3333,15 @@
       }
     },
     {
+      "palavra": "ever",
+      "introduzidaEm": "ingles-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p1",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "every",
       "introduzidaEm": "en-a1-03",
       "primeiroUsoEmAtividade": {
@@ -3235,6 +3501,15 @@
       }
     },
     {
+      "palavra": "feel",
+      "introduzidaEm": "ingles-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-04",
+        "atividade": "en-a2-04-p1",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "fifteen",
       "introduzidaEm": "en-a1-01",
       "primeiroUsoEmAtividade": {
@@ -3382,9 +3657,9 @@
       "palavra": "for",
       "introduzidaEm": "en-a2-02",
       "primeiroUsoEmAtividade": {
-        "licao": "git-02",
-        "atividade": "git02-a4",
-        "etapa": 7
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p4",
+        "etapa": 8
       }
     },
     {
@@ -3448,6 +3723,15 @@
         "licao": "en-a1-04",
         "atividade": "en-a1-04-a2",
         "etapa": 14
+      }
+    },
+    {
+      "palavra": "friendly",
+      "introduzidaEm": "ingles-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p4",
+        "etapa": 8
       }
     },
     {
@@ -3561,7 +3845,11 @@
     {
       "palavra": "has",
       "introduzidaEm": "sql-00",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p5",
+        "etapa": 9
+      }
     },
     {
       "palavra": "hat",
@@ -3582,6 +3870,15 @@
       }
     },
     {
+      "palavra": "haven't",
+      "introduzidaEm": "ingles-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "having",
       "introduzidaEm": "sql-20",
       "primeiroUsoEmAtividade": {
@@ -3597,6 +3894,15 @@
         "licao": "en-a1-02",
         "atividade": "en-a1-02-p6",
         "etapa": 12
+      }
+    },
+    {
+      "palavra": "headache",
+      "introduzidaEm": "ingles-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-04",
+        "atividade": "en-a2-04-p1",
+        "etapa": 2
       }
     },
     {
@@ -4001,9 +4307,9 @@
       "palavra": "later",
       "introduzidaEm": "en-a2-01",
       "primeiroUsoEmAtividade": {
-        "licao": "git-08",
-        "atividade": "git08-a6",
-        "etapa": 10
+        "licao": "ingles-04",
+        "atividade": "en-a2-04-p2",
+        "etapa": 4
       }
     },
     {
@@ -4093,6 +4399,15 @@
       }
     },
     {
+      "palavra": "london",
+      "introduzidaEm": "ingles-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "lot",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -4150,9 +4465,9 @@
       "palavra": "m",
       "introduzidaEm": "csharp-03",
       "primeiroUsoEmAtividade": {
-        "licao": "git-checkpoint-fundamentos",
-        "atividade": "cp-git-f3",
-        "etapa": 4
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p3",
+        "etapa": 6
       }
     },
     {
@@ -4188,6 +4503,15 @@
       "primeiroUsoEmAtividade": null
     },
     {
+      "palavra": "me",
+      "introduzidaEm": "ingles-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-04",
+        "atividade": "en-a2-04-p2",
+        "etapa": 4
+      }
+    },
+    {
       "palavra": "meet",
       "introduzidaEm": "en-a1-00",
       "primeiroUsoEmAtividade": {
@@ -4218,18 +4542,18 @@
       "palavra": "merge",
       "introduzidaEm": "ingles-00",
       "primeiroUsoEmAtividade": {
-        "licao": "git-03",
-        "atividade": "git03-a1",
-        "etapa": 2
+        "licao": "ingles-18",
+        "atividade": "en18-p3",
+        "etapa": 6
       }
     },
     {
       "palavra": "message",
-      "introduzidaEm": "git-11",
+      "introduzidaEm": "ingles-04",
       "primeiroUsoEmAtividade": {
-        "licao": "git-11",
-        "atividade": "git11-a5",
-        "etapa": 9
+        "licao": "ingles-checkpoint-a2",
+        "atividade": "en-a2-cp10",
+        "etapa": 11
       }
     },
     {
@@ -4275,6 +4599,15 @@
         "licao": "en-a1-08",
         "atividade": "en-a1-08-p6",
         "etapa": 12
+      }
+    },
+    {
+      "palavra": "more",
+      "introduzidaEm": "ingles-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p3",
+        "etapa": 6
       }
     },
     {
@@ -4365,6 +4698,15 @@
         "licao": "en-a1-07",
         "atividade": "en-a1-07-p5",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "need",
+      "introduzidaEm": "ingles-18",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-18",
+        "atividade": "en18-p3",
+        "etapa": 6
       }
     },
     {
@@ -4568,6 +4910,15 @@
       "primeiroUsoEmAtividade": null
     },
     {
+      "palavra": "open",
+      "introduzidaEm": "ingles-18",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-18",
+        "atividade": "en18-p1",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "order",
       "introduzidaEm": "sql-04",
       "primeiroUsoEmAtividade": {
@@ -4737,6 +5088,15 @@
       }
     },
     {
+      "palavra": "people",
+      "introduzidaEm": "ingles-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p4",
+        "etapa": 8
+      }
+    },
+    {
       "palavra": "perfect",
       "introduzidaEm": "en-a1-05",
       "primeiroUsoEmAtividade": {
@@ -4779,6 +5139,15 @@
         "licao": "en-a2-00",
         "atividade": "en-a2-00-p7",
         "etapa": 14
+      }
+    },
+    {
+      "palavra": "place",
+      "introduzidaEm": "ingles-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p1",
+        "etapa": 2
       }
     },
     {
@@ -4921,11 +5290,11 @@
     },
     {
       "palavra": "pull",
-      "introduzidaEm": "git-01",
+      "introduzidaEm": "ingles-18",
       "primeiroUsoEmAtividade": {
-        "licao": "git-01",
-        "atividade": "git01-a7",
-        "etapa": 11
+        "licao": "ingles-18",
+        "atividade": "en18-p1",
+        "etapa": 2
       }
     },
     {
@@ -4973,6 +5342,15 @@
       "palavra": "query",
       "introduzidaEm": "sql-22",
       "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "quiet",
+      "introduzidaEm": "ingles-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p1",
+        "etapa": 2
+      }
     },
     {
       "palavra": "rain",
@@ -5031,7 +5409,7 @@
     },
     {
       "palavra": "release",
-      "introduzidaEm": "git-12",
+      "introduzidaEm": "ingles-18",
       "primeiroUsoEmAtividade": {
         "licao": "git-12",
         "atividade": "git12-a7",
@@ -5399,6 +5777,15 @@
       }
     },
     {
+      "palavra": "seen",
+      "introduzidaEm": "ingles-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p2",
+        "etapa": 4
+      }
+    },
+    {
       "palavra": "send",
       "introduzidaEm": "en-a2-01",
       "primeiroUsoEmAtividade": {
@@ -5428,6 +5815,15 @@
         "licao": "sql-00",
         "atividade": "sql00-a6",
         "etapa": 14
+      }
+    },
+    {
+      "palavra": "service",
+      "introduzidaEm": "ingles-17",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-17",
+        "atividade": "en17-p2",
+        "etapa": 4
       }
     },
     {
@@ -5525,9 +5921,9 @@
       "palavra": "single",
       "introduzidaEm": "en-a2-02",
       "primeiroUsoEmAtividade": {
-        "licao": "linq-03",
-        "atividade": "lq03-a1",
-        "etapa": 2
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p5",
+        "etapa": 9
       }
     },
     {
@@ -5637,6 +6033,15 @@
         "licao": "redis-05",
         "atividade": "redis05-a7",
         "etapa": 11
+      }
+    },
+    {
+      "palavra": "standup",
+      "introduzidaEm": "ingles-17",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-17",
+        "atividade": "en17-p1",
+        "etapa": 2
       }
     },
     {
@@ -5838,6 +6243,15 @@
       }
     },
     {
+      "palavra": "task",
+      "introduzidaEm": "ingles-17",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-17",
+        "atividade": "en17-p1",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "team",
       "introduzidaEm": "git-04",
       "primeiroUsoEmAtividade": {
@@ -5865,12 +6279,30 @@
       }
     },
     {
+      "palavra": "tests",
+      "introduzidaEm": "ingles-17",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-17",
+        "atividade": "en17-p5",
+        "etapa": 9
+      }
+    },
+    {
       "palavra": "texto",
       "introduzidaEm": "csharp-08",
       "primeiroUsoEmAtividade": {
         "licao": "csharp-08",
         "atividade": "cs08-a2",
         "etapa": 5
+      }
+    },
+    {
+      "palavra": "than",
+      "introduzidaEm": "ingles-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p2",
+        "etapa": 4
       }
     },
     {
@@ -6015,6 +6447,15 @@
         "licao": "ingles-01",
         "atividade": "en01-p4",
         "etapa": 8
+      }
+    },
+    {
+      "palavra": "tired",
+      "introduzidaEm": "ingles-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-04",
+        "atividade": "en-a2-04-p1",
+        "etapa": 2
       }
     },
     {
@@ -6312,6 +6753,15 @@
       }
     },
     {
+      "palavra": "very",
+      "introduzidaEm": "ingles-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-03",
+        "atividade": "en-a2-03-p4",
+        "etapa": 8
+      }
+    },
+    {
       "palavra": "view",
       "introduzidaEm": "sql-30",
       "primeiroUsoEmAtividade": {
@@ -6336,6 +6786,15 @@
         "licao": "en-a2-01",
         "atividade": "en-a2-01-p3",
         "etapa": 6
+      }
+    },
+    {
+      "palavra": "visited",
+      "introduzidaEm": "ingles-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p1",
+        "etapa": 2
       }
     },
     {
@@ -6625,10 +7084,10 @@
     },
     {
       "palavra": "write",
-      "introduzidaEm": "git-11",
+      "introduzidaEm": "ingles-17",
       "primeiroUsoEmAtividade": {
-        "licao": "git-11",
-        "atividade": "git11-a5",
+        "licao": "ingles-17",
+        "atividade": "en17-p5",
         "etapa": 9
       }
     },
@@ -6671,6 +7130,15 @@
         "licao": "en-a2-00",
         "atividade": "en-a2-00-p6",
         "etapa": 12
+      }
+    },
+    {
+      "palavra": "yet",
+      "introduzidaEm": "ingles-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-02",
+        "atividade": "en-a2-02-p3",
+        "etapa": 6
       }
     },
     {

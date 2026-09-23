@@ -1,9 +1,9 @@
 {
-  "geradoEm": "2026-09-22T10:18:56.562Z",
+  "geradoEm": "2026-09-23T14:36:14.828Z",
   "licoesPercorridas": 367,
-  "etapasPercorridas": 1329,
-  "atividadesPercorridas": 849,
-  "palavrasNoLexico": 572,
+  "etapasPercorridas": 1384,
+  "atividadesPercorridas": 884,
+  "palavrasNoLexico": 608,
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
   "introducoesDeVocabulario": [
@@ -1271,6 +1271,101 @@
       ]
     },
     {
+      "licao": "ingles-02",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "ever",
+        "visited",
+        "canada"
+      ]
+    },
+    {
+      "licao": "ingles-02",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "already",
+        "seen"
+      ]
+    },
+    {
+      "licao": "ingles-02",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "yet",
+        "haven't"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "quiet",
+        "busy",
+        "place"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "etapa": 3,
+      "termos": 2,
+      "palavras": [
+        "bigger",
+        "than"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "comfortable",
+        "more"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "friendly",
+        "very",
+        "people"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "tired",
+        "headache",
+        "feel"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "etapa": 3,
+      "termos": 1,
+      "palavras": [
+        "me",
+        "back"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "etapa": 5,
+      "termos": 3,
+      "palavras": [
+        "message",
+        "appointment",
+        "doctor"
+      ]
+    },
+    {
       "licao": "ingles-00",
       "etapa": 1,
       "termos": 2,
@@ -1458,6 +1553,67 @@
       ]
     },
     {
+      "licao": "ingles-17",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "standup",
+        "blocker",
+        "task"
+      ]
+    },
+    {
+      "licao": "ingles-17",
+      "etapa": 3,
+      "termos": 1,
+      "palavras": [
+        "service"
+      ]
+    },
+    {
+      "licao": "ingles-17",
+      "etapa": 5,
+      "termos": 1,
+      "palavras": [
+        "tests"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "etapa": 1,
+      "termos": 3,
+      "palavras": [
+        "pull",
+        "open",
+        "close"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "etapa": 3,
+      "termos": 1,
+      "palavras": [
+        "approved"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "comment",
+        "need"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "etapa": 7,
+      "termos": 1,
+      "palavras": [
+        "release"
+      ]
+    },
+    {
       "licao": "ef-00",
       "etapa": 2,
       "termos": 0,
@@ -1500,10 +1656,9 @@
     {
       "licao": "git-01",
       "etapa": 9,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
         "remote",
-        "pull",
         "push"
       ]
     },
@@ -1537,11 +1692,10 @@
     {
       "licao": "git-05",
       "etapa": 11,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
         "conflict",
-        "resolve",
-        "before"
+        "resolve"
       ]
     },
     {
@@ -1590,21 +1744,11 @@
       ]
     },
     {
-      "licao": "git-11",
-      "etapa": 8,
-      "termos": 2,
-      "palavras": [
-        "message",
-        "write"
-      ]
-    },
-    {
       "licao": "git-12",
       "etapa": 10,
-      "termos": 3,
+      "termos": 2,
       "palavras": [
         "tag",
-        "release",
         "version"
       ]
     },

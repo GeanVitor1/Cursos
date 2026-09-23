@@ -5,9 +5,9 @@
 - Trilhas analisadas: **20**
 - Lições publicadas: **367**
 - Etapas percorridas: **367**
-- Atividades percorridas: **849**
+- Atividades percorridas: **884**
 - Conceitos registrados: **358**
-- Conceitos com introdução marcada: **148**
+- Conceitos com introdução marcada: **153**
 - Erros: **0** · Avisos: **0**
 
 ## Evidência por conceito (introdução → prática → avaliação)
@@ -109,10 +109,15 @@
 | Passado simples (`en.passado`) | etapa 1 · en-a2-00 | en-a2-00 etapa 2 | en-a2-00 etapa 22 | PRONTO_PARA_AVALIACAO | en.rotina |
 | Planos e futuro (`en.futuro`) | etapa 1 · en-a2-01 | en-a2-01 etapa 2 | en-a2-01 etapa 12 | PRONTO_PARA_AVALIACAO | en.rotina |
 | Viagem: aeroporto e hotel (`en.viagem`) | etapa 1 · en-a2-02 | en-a2-02 etapa 2 | en-a2-02 etapa 17 | PRONTO_PARA_AVALIACAO | en.lugares |
+| Experiências de vida (present perfect) (`en.a2-experiencias`) | etapa 1 · ingles-02 | ingles-02 etapa 2 | ingles-02 etapa 9 | PRONTO_PARA_AVALIACAO | en.passado |
+| Descrevendo pessoas e lugares (`en.a2-descricao`) | etapa 1 · ingles-03 | ingles-03 etapa 2 | ingles-03 etapa 9 | PRONTO_PARA_AVALIACAO | en.lugares |
+| Saúde, telefone e mensagens (`en.a2-saude`) | etapa 1 · ingles-04 | ingles-04 etapa 2 | ingles-04 etapa 8 | PRONTO_PARA_AVALIACAO | en.rotina |
 | Vocabulário técnico (`ingles.vocabulario`) | etapa 1 · ingles-00 | ingles-00 etapa 2 | redis-checkpoint-fundamentos etapa 10 | PRONTO_PARA_AVALIACAO | — |
 | Frases de trabalho (`ingles.frases`) | etapa 7 · ingles-00 | ingles-00 etapa 8 | — | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
-| Leitura técnica em inglês (`ingles.leitura`) | etapa 17 · ingles-00 | ingles-00 etapa 21 | ingles-01 etapa 25 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
+| Leitura técnica em inglês (`ingles.leitura`) | etapa 17 · ingles-00 | ingles-00 etapa 21 | ingles-01 etapa 25 | PRONTO_PARA_AVALIACAO | — |
 | Mensagens de erro em inglês (`ingles.erros`) | etapa 1 · ingles-01 | ingles-01 etapa 2 | ingles-01 etapa 27 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
+| Frases de reunião diária (`ingles.reuniao`) | etapa 1 · ingles-17 | ingles-17 etapa 2 | ingles-17 etapa 9 | PRONTO_PARA_AVALIACAO | ingles.frases |
+| GitHub em inglês: issue, pull request, merge, release (`ingles.github`) | etapa 1 · ingles-18 | ingles-18 etapa 2 | ingles-18 etapa 9 | PRONTO_PARA_AVALIACAO | ingles.vocabulario, ingles.frases |
 | O que é LINQ (`linq.intro`) | etapa 1 · linq-00 | linq-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | csharp.lambda, csharp.list |
 | Where (`linq.where`) | etapa 2 · linq-00 | linq-00 etapa 5 | linq-01 etapa 6 | PRONTO_PARA_AVALIACAO | linq.intro |
 | Lambda em consultas (`linq.lambda`) | etapa 2 · linq-00 | linq-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.lambda |

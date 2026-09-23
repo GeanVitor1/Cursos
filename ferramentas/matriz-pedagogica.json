@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-09-22T10:18:56.362Z",
+  "geradoEm": "2026-09-23T14:36:21.073Z",
   "regra": "Estados de conteúdo: NAO_ENSINADO → INTRODUZIDO → PRATICADO → PRONTO_PARA_AVALIACAO. MASTERED é calculado em tempo real pelo motor (confiança + dimensões + revisão espaçada), não pelo conteúdo estático.",
   "conceitos": [
     {
@@ -2935,6 +2935,117 @@
       ]
     },
     {
+      "id": "en.a2-experiencias",
+      "nome": "Experiências de vida (present perfect)",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-02",
+        "etapa": 1,
+        "titulo": "Perguntando sobre experiências",
+        "pos": 766
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-02",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 767
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-02",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 774
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "ordenacao",
+        "preenchimento",
+        "associacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.passado"
+      ]
+    },
+    {
+      "id": "en.a2-descricao",
+      "nome": "Descrevendo pessoas e lugares",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-03",
+        "etapa": 1,
+        "titulo": "Descrevendo o ambiente",
+        "pos": 775
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-03",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 776
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-03",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 783
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "ordenacao",
+        "preenchimento",
+        "reconhecimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.lugares"
+      ]
+    },
+    {
+      "id": "en.a2-saude",
+      "nome": "Saúde, telefone e mensagens",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-04",
+        "etapa": 1,
+        "titulo": "Expressando como você se sente",
+        "pos": 784
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-04",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 785
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-04",
+        "etapa": 8,
+        "titulo": "",
+        "pos": 791
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "ordenacao",
+        "preenchimento",
+        "reconhecimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.rotina"
+      ]
+    },
+    {
       "id": "ingles.vocabulario",
       "nome": "Vocabulário técnico",
       "introduzidoEm": {
@@ -2942,21 +3053,21 @@
         "licao": "ingles-00",
         "etapa": 1,
         "titulo": "As palavras que aparecem todo dia (1)",
-        "pos": 766
+        "pos": 803
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "ingles-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 767
+        "pos": 804
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-checkpoint-fundamentos",
         "etapa": 10,
         "titulo": "",
-        "pos": 1273
+        "pos": 1328
       },
       "praticas": 18,
       "dimensoes": [
@@ -2974,14 +3085,14 @@
         "licao": "ingles-00",
         "etapa": 7,
         "titulo": "A frase que você mais vai ler",
-        "pos": 772
+        "pos": 809
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "ingles-00",
         "etapa": 8,
         "titulo": "",
-        "pos": 773
+        "pos": 810
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -3002,21 +3113,21 @@
         "licao": "ingles-00",
         "etapa": 17,
         "titulo": "Montando frases do trabalho",
-        "pos": 782
+        "pos": 819
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "ingles-00",
         "etapa": 21,
         "titulo": "",
-        "pos": 786
+        "pos": 823
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "ingles-01",
         "etapa": 25,
         "titulo": "",
-        "pos": 811
+        "pos": 848
       },
       "praticas": 7,
       "dimensoes": [
@@ -3026,9 +3137,7 @@
         "aplicacao"
       ],
       "estado": "PRONTO_PARA_AVALIACAO",
-      "prerequisitos": [
-        "ingles.vocabulario"
-      ]
+      "prerequisitos": []
     },
     {
       "id": "ingles.erros",
@@ -3038,21 +3147,21 @@
         "licao": "ingles-01",
         "etapa": 1,
         "titulo": "Conectando ao banco",
-        "pos": 787
+        "pos": 824
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "ingles-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 788
+        "pos": 825
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "ingles-01",
         "etapa": 27,
         "titulo": "",
-        "pos": 813
+        "pos": 850
       },
       "praticas": 9,
       "dimensoes": [
@@ -3067,6 +3176,81 @@
       ]
     },
     {
+      "id": "ingles.reuniao",
+      "nome": "Frases de reunião diária",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-17",
+        "etapa": 1,
+        "titulo": "A estrutura de uma Daily (Standup)",
+        "pos": 851
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-17",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 852
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-17",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 859
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "ordenacao",
+        "preenchimento",
+        "reconhecimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "ingles.frases"
+      ]
+    },
+    {
+      "id": "ingles.github",
+      "nome": "GitHub em inglês: issue, pull request, merge, release",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-18",
+        "etapa": 1,
+        "titulo": "Colaboração no GitHub: Pull Request",
+        "pos": 860
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-18",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 861
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "ingles-18",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 868
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "ordenacao",
+        "preenchimento",
+        "reconhecimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "ingles.vocabulario",
+        "ingles.frases"
+      ]
+    },
+    {
       "id": "linq.intro",
       "nome": "O que é LINQ",
       "introduzidoEm": {
@@ -3074,14 +3258,14 @@
         "licao": "linq-00",
         "etapa": 1,
         "titulo": "Você já escreveu LINQ sem saber",
-        "pos": 814
+        "pos": 869
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 817
+        "pos": 872
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -3103,21 +3287,21 @@
         "licao": "linq-00",
         "etapa": 2,
         "titulo": "Where: o filtro ganha um nome",
-        "pos": 815
+        "pos": 870
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 818
+        "pos": 873
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-01",
         "etapa": 6,
         "titulo": "",
-        "pos": 826
+        "pos": 881
       },
       "praticas": 13,
       "dimensoes": [
@@ -3140,14 +3324,14 @@
         "licao": "linq-00",
         "etapa": 2,
         "titulo": "Where: o filtro ganha um nome",
-        "pos": 815
+        "pos": 870
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 818
+        "pos": 873
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -3169,14 +3353,14 @@
         "licao": "linq-00",
         "etapa": 3,
         "titulo": "ToList: o resultado vira lista",
-        "pos": 816
+        "pos": 871
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 6,
         "titulo": "",
-        "pos": 819
+        "pos": 874
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3196,21 +3380,21 @@
         "licao": "linq-02",
         "etapa": 1,
         "titulo": "Where escolhe linhas. Select escolhe o formato",
-        "pos": 827
+        "pos": 882
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 828
+        "pos": 883
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-02",
         "etapa": 5,
         "titulo": "",
-        "pos": 831
+        "pos": 886
       },
       "praticas": 4,
       "dimensoes": [
@@ -3232,21 +3416,21 @@
         "licao": "linq-03",
         "etapa": 1,
         "titulo": "Buscando um produto específico",
-        "pos": 832
+        "pos": 887
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 833
+        "pos": 888
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-03",
         "etapa": 4,
         "titulo": "",
-        "pos": 835
+        "pos": 890
       },
       "praticas": 9,
       "dimensoes": [
@@ -3270,21 +3454,21 @@
         "licao": "ef-00",
         "etapa": 2,
         "titulo": "ORM: o tradutor entre C# e o banco",
-        "pos": 839
+        "pos": 894
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 841
+        "pos": 896
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 7,
         "titulo": "",
-        "pos": 844
+        "pos": 899
       },
       "praticas": 4,
       "dimensoes": [
@@ -3307,14 +3491,14 @@
         "licao": "ef-00",
         "etapa": 3,
         "titulo": "Entidade: a classe que representa uma tabela",
-        "pos": 840
+        "pos": 895
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 841
+        "pos": 896
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -3335,14 +3519,14 @@
         "licao": "ef-01",
         "etapa": 1,
         "titulo": "A porta de entrada para o banco",
-        "pos": 845
+        "pos": 900
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-01",
         "etapa": 3,
         "titulo": "",
-        "pos": 847
+        "pos": 902
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -3366,14 +3550,14 @@
         "licao": "ef-01",
         "etapa": 2,
         "titulo": "DbSet: uma gaveta para cada tipo de coisa",
-        "pos": 846
+        "pos": 901
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-01",
         "etapa": 3,
         "titulo": "",
-        "pos": 847
+        "pos": 902
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -3396,21 +3580,21 @@
         "licao": "ef-02",
         "etapa": 3,
         "titulo": "SaveChanges: agora sim, o INSERT",
-        "pos": 855
+        "pos": 910
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 856
+        "pos": 911
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-02",
         "etapa": 8,
         "titulo": "",
-        "pos": 860
+        "pos": 915
       },
       "praticas": 5,
       "dimensoes": [
@@ -3434,21 +3618,21 @@
         "licao": "ef-03",
         "etapa": 1,
         "titulo": "LINQ no DbSet vira SQL",
-        "pos": 861
+        "pos": 916
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-03",
         "etapa": 3,
         "titulo": "",
-        "pos": 863
+        "pos": 918
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-03",
         "etapa": 6,
         "titulo": "",
-        "pos": 866
+        "pos": 921
       },
       "praticas": 5,
       "dimensoes": [
@@ -3474,21 +3658,21 @@
         "licao": "git-00",
         "etapa": 1,
         "titulo": "Um projeto com memória",
-        "pos": 868
+        "pos": 923
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 869
+        "pos": 924
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-checkpoint-fundamentos",
         "etapa": 2,
         "titulo": "",
-        "pos": 892
+        "pos": 947
       },
       "praticas": 13,
       "dimensoes": [
@@ -3512,21 +3696,21 @@
         "licao": "git-01",
         "etapa": 1,
         "titulo": "Duas cópias do mesmo projeto",
-        "pos": 880
+        "pos": 935
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 881
+        "pos": 936
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-01",
         "etapa": 8,
         "titulo": "",
-        "pos": 887
+        "pos": 942
       },
       "praticas": 7,
       "dimensoes": [
@@ -3550,21 +3734,21 @@
         "licao": "git-02",
         "etapa": 1,
         "titulo": "Uma linha paralela de trabalho",
-        "pos": 901
+        "pos": 956
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 902
+        "pos": 957
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 912
+        "pos": 967
       },
       "praticas": 19,
       "dimensoes": [
@@ -3588,21 +3772,21 @@
         "licao": "git-03",
         "etapa": 1,
         "titulo": "Juntando os dois caminhos",
-        "pos": 913
+        "pos": 968
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 914
+        "pos": 969
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-05",
         "etapa": 13,
         "titulo": "",
-        "pos": 949
+        "pos": 1004
       },
       "praticas": 12,
       "dimensoes": [
@@ -3625,21 +3809,21 @@
         "licao": "git-04",
         "etapa": 1,
         "titulo": "A proposta de juntar o trabalho",
-        "pos": 924
+        "pos": 979
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 925
+        "pos": 980
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 13,
         "titulo": "",
-        "pos": 936
+        "pos": 991
       },
       "praticas": 8,
       "dimensoes": [
@@ -3659,21 +3843,21 @@
         "licao": "git-04",
         "etapa": 5,
         "titulo": "Code review: o olhar de outra pessoa",
-        "pos": 928
+        "pos": 983
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 6,
         "titulo": "",
-        "pos": 929
+        "pos": 984
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 13,
         "titulo": "",
-        "pos": 936
+        "pos": 991
       },
       "praticas": 5,
       "dimensoes": [
@@ -3693,21 +3877,21 @@
         "licao": "git-05",
         "etapa": 1,
         "titulo": "Quando o Git não decide sozinho",
-        "pos": 937
+        "pos": 992
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 938
+        "pos": 993
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-05",
         "etapa": 13,
         "titulo": "",
-        "pos": 949
+        "pos": 1004
       },
       "praticas": 8,
       "dimensoes": [
@@ -3729,21 +3913,21 @@
         "licao": "git-06",
         "etapa": 1,
         "titulo": "Errar depois de enviar",
-        "pos": 960
+        "pos": 1015
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-06",
         "etapa": 2,
         "titulo": "",
-        "pos": 961
+        "pos": 1016
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-06",
         "etapa": 8,
         "titulo": "",
-        "pos": 967
+        "pos": 1022
       },
       "praticas": 7,
       "dimensoes": [
@@ -3764,21 +3948,21 @@
         "licao": "git-07",
         "etapa": 1,
         "titulo": "Voltando o ponteiro sem apagar o trabalho",
-        "pos": 971
+        "pos": 1026
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-07",
         "etapa": 2,
         "titulo": "",
-        "pos": 972
+        "pos": 1027
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-07",
         "etapa": 11,
         "titulo": "",
-        "pos": 981
+        "pos": 1036
       },
       "praticas": 7,
       "dimensoes": [
@@ -3800,21 +3984,21 @@
         "licao": "git-08",
         "etapa": 1,
         "titulo": "Interrompido no meio do trabalho",
-        "pos": 982
+        "pos": 1037
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-08",
         "etapa": 2,
         "titulo": "",
-        "pos": 983
+        "pos": 1038
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-08",
         "etapa": 11,
         "titulo": "",
-        "pos": 992
+        "pos": 1047
       },
       "praticas": 7,
       "dimensoes": [
@@ -3837,21 +4021,21 @@
         "licao": "git-09",
         "etapa": 1,
         "titulo": "O que não pertence ao repositório",
-        "pos": 993
+        "pos": 1048
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-09",
         "etapa": 2,
         "titulo": "",
-        "pos": 994
+        "pos": 1049
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-09",
         "etapa": 7,
         "titulo": "",
-        "pos": 999
+        "pos": 1054
       },
       "praticas": 6,
       "dimensoes": [
@@ -3873,21 +4057,21 @@
         "licao": "git-10",
         "etapa": 1,
         "titulo": "Acordos do time, não regras do Git",
-        "pos": 1013
+        "pos": 1068
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-10",
         "etapa": 2,
         "titulo": "",
-        "pos": 1014
+        "pos": 1069
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-10",
         "etapa": 11,
         "titulo": "",
-        "pos": 1023
+        "pos": 1078
       },
       "praticas": 6,
       "dimensoes": [
@@ -3909,21 +4093,21 @@
         "licao": "git-11",
         "etapa": 1,
         "titulo": "A mensagem é para quem vai ler depois",
-        "pos": 1024
+        "pos": 1079
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-11",
         "etapa": 2,
         "titulo": "",
-        "pos": 1025
+        "pos": 1080
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-11",
         "etapa": 10,
         "titulo": "",
-        "pos": 1033
+        "pos": 1088
       },
       "praticas": 6,
       "dimensoes": [
@@ -3943,21 +4127,21 @@
         "licao": "git-12",
         "etapa": 1,
         "titulo": "Marcos nomeados na história",
-        "pos": 1034
+        "pos": 1089
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-12",
         "etapa": 2,
         "titulo": "",
-        "pos": 1035
+        "pos": 1090
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-12",
         "etapa": 12,
         "titulo": "",
-        "pos": 1045
+        "pos": 1100
       },
       "praticas": 8,
       "dimensoes": [
@@ -3980,14 +4164,14 @@
         "licao": "aspnet-00",
         "etapa": 1,
         "titulo": "Duas partes conversando",
-        "pos": 1057
+        "pos": 1112
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 6,
         "titulo": "",
-        "pos": 1062
+        "pos": 1117
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -4007,14 +4191,14 @@
         "licao": "aspnet-00",
         "etapa": 1,
         "titulo": "Duas partes conversando",
-        "pos": 1057
+        "pos": 1112
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 1060
+        "pos": 1115
       },
       "avaliadoEm": null,
       "praticas": 6,
@@ -4038,14 +4222,14 @@
         "licao": "aspnet-00",
         "etapa": 2,
         "titulo": "Requisição e resposta",
-        "pos": 1058
+        "pos": 1113
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 1059
+        "pos": 1114
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -4065,14 +4249,14 @@
         "licao": "aspnet-00",
         "etapa": 2,
         "titulo": "Requisição e resposta",
-        "pos": 1058
+        "pos": 1113
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 1059
+        "pos": 1114
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -4092,14 +4276,14 @@
         "licao": "aspnet-00",
         "etapa": 7,
         "titulo": "A resposta conta o que aconteceu",
-        "pos": 1063
+        "pos": 1118
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 8,
         "titulo": "",
-        "pos": 1064
+        "pos": 1119
       },
       "avaliadoEm": null,
       "praticas": 4,
@@ -4121,14 +4305,14 @@
         "licao": "aspnet-01",
         "etapa": 1,
         "titulo": "Um formato que todo mundo entende",
-        "pos": 1068
+        "pos": 1123
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 1069
+        "pos": 1124
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -4149,14 +4333,14 @@
         "licao": "aspnet-02",
         "etapa": 1,
         "titulo": "O que é um endpoint",
-        "pos": 1073
+        "pos": 1128
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-02",
         "etapa": 8,
         "titulo": "",
-        "pos": 1080
+        "pos": 1135
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -4176,21 +4360,21 @@
         "licao": "docker-00",
         "etapa": 1,
         "titulo": "A frase que todo time conhece",
-        "pos": 1085
+        "pos": 1140
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 1086
+        "pos": 1141
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-00",
         "etapa": 8,
         "titulo": "",
-        "pos": 1092
+        "pos": 1147
       },
       "praticas": 5,
       "dimensoes": [],
@@ -4207,21 +4391,21 @@
         "licao": "docker-01",
         "etapa": 1,
         "titulo": "O molde e a cópia",
-        "pos": 1095
+        "pos": 1150
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 1096
+        "pos": 1151
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 1115
+        "pos": 1170
       },
       "praticas": 9,
       "dimensoes": [],
@@ -4238,21 +4422,21 @@
         "licao": "docker-01",
         "etapa": 3,
         "titulo": "Do molde nasce o container",
-        "pos": 1097
+        "pos": 1152
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-01",
         "etapa": 4,
         "titulo": "",
-        "pos": 1098
+        "pos": 1153
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 1115
+        "pos": 1170
       },
       "praticas": 13,
       "dimensoes": [],
@@ -4269,21 +4453,21 @@
         "licao": "docker-02",
         "etapa": 1,
         "titulo": "A receita da imagem",
-        "pos": 1104
+        "pos": 1159
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 1105
+        "pos": 1160
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 1115
+        "pos": 1170
       },
       "praticas": 6,
       "dimensoes": [],
@@ -4300,21 +4484,21 @@
         "licao": "docker-03",
         "etapa": 1,
         "titulo": "A porta de fora",
-        "pos": 1126
+        "pos": 1181
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 1127
+        "pos": 1182
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-checkpoint-pratica",
         "etapa": 2,
         "titulo": "",
-        "pos": 1168
+        "pos": 1223
       },
       "praticas": 10,
       "dimensoes": [],
@@ -4331,21 +4515,21 @@
         "licao": "docker-04",
         "etapa": 1,
         "titulo": "O container é descartável",
-        "pos": 1137
+        "pos": 1192
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 1138
+        "pos": 1193
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-04",
         "etapa": 8,
         "titulo": "",
-        "pos": 1144
+        "pos": 1199
       },
       "praticas": 13,
       "dimensoes": [],
@@ -4362,21 +4546,21 @@
         "licao": "docker-05",
         "etapa": 1,
         "titulo": "A mesma imagem, configurações diferentes",
-        "pos": 1147
+        "pos": 1202
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 1148
+        "pos": 1203
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-checkpoint-pratica",
         "etapa": 4,
         "titulo": "",
-        "pos": 1170
+        "pos": 1225
       },
       "praticas": 14,
       "dimensoes": [],
@@ -4393,21 +4577,21 @@
         "licao": "docker-06",
         "etapa": 1,
         "titulo": "Containers que precisam conversar",
-        "pos": 1157
+        "pos": 1212
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-06",
         "etapa": 2,
         "titulo": "",
-        "pos": 1158
+        "pos": 1213
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-checkpoint-pratica",
         "etapa": 5,
         "titulo": "",
-        "pos": 1171
+        "pos": 1226
       },
       "praticas": 10,
       "dimensoes": [],
@@ -4424,21 +4608,21 @@
         "licao": "docker-07",
         "etapa": 1,
         "titulo": "Vários comandos viram um arquivo",
-        "pos": 1176
+        "pos": 1231
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-07",
         "etapa": 2,
         "titulo": "",
-        "pos": 1177
+        "pos": 1232
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-07",
         "etapa": 9,
         "titulo": "",
-        "pos": 1184
+        "pos": 1239
       },
       "praticas": 28,
       "dimensoes": [],
@@ -4455,21 +4639,21 @@
         "licao": "redis-00",
         "etapa": 1,
         "titulo": "Toda requisição vai até o banco",
-        "pos": 1233
+        "pos": 1288
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 1234
+        "pos": 1289
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-00",
         "etapa": 9,
         "titulo": "",
-        "pos": 1241
+        "pos": 1296
       },
       "praticas": 7,
       "dimensoes": [],
@@ -4486,21 +4670,21 @@
         "licao": "redis-01",
         "etapa": 1,
         "titulo": "Um banco de dados em memória",
-        "pos": 1244
+        "pos": 1299
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 1245
+        "pos": 1300
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-checkpoint-fundamentos",
         "etapa": 3,
         "titulo": "",
-        "pos": 1266
+        "pos": 1321
       },
       "praticas": 6,
       "dimensoes": [],
@@ -4517,21 +4701,21 @@
         "licao": "redis-02",
         "etapa": 1,
         "titulo": "Nada vive para sempre",
-        "pos": 1254
+        "pos": 1309
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 1255
+        "pos": 1310
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-checkpoint-fundamentos",
         "etapa": 4,
         "titulo": "",
-        "pos": 1267
+        "pos": 1322
       },
       "praticas": 8,
       "dimensoes": [],
@@ -4548,21 +4732,21 @@
         "licao": "redis-03",
         "etapa": 1,
         "titulo": "O padrão mais comum",
-        "pos": 1274
+        "pos": 1329
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 1275
+        "pos": 1330
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-03",
         "etapa": 11,
         "titulo": "",
-        "pos": 1284
+        "pos": 1339
       },
       "praticas": 11,
       "dimensoes": [],
@@ -4579,21 +4763,21 @@
         "licao": "redis-04",
         "etapa": 1,
         "titulo": "O Redis não conhece o seu objeto",
-        "pos": 1285
+        "pos": 1340
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 1286
+        "pos": 1341
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-04",
         "etapa": 9,
         "titulo": "",
-        "pos": 1293
+        "pos": 1348
       },
       "praticas": 8,
       "dimensoes": [],
@@ -4610,21 +4794,21 @@
         "licao": "redis-05",
         "etapa": 1,
         "titulo": "O dado mudou, a cópia não",
-        "pos": 1296
+        "pos": 1351
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 1297
+        "pos": 1352
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-05",
         "etapa": 9,
         "titulo": "",
-        "pos": 1304
+        "pos": 1359
       },
       "praticas": 7,
       "dimensoes": [],
@@ -4641,21 +4825,21 @@
         "licao": "redis-06",
         "etapa": 1,
         "titulo": "Registrar o Redis no builder",
-        "pos": 1307
+        "pos": 1362
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-06",
         "etapa": 2,
         "titulo": "",
-        "pos": 1308
+        "pos": 1363
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-06",
         "etapa": 10,
         "titulo": "",
-        "pos": 1316
+        "pos": 1371
       },
       "praticas": 8,
       "dimensoes": [],
@@ -5886,6 +6070,30 @@
       ]
     },
     {
+      "licao": "ingles-02",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.a2-experiencias"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.a2-descricao"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.a2-saude"
+      ]
+    },
+    {
       "licao": "ingles-00",
       "trilha": "ingles",
       "etapa": 1,
@@ -5915,6 +6123,22 @@
       "etapa": 1,
       "ensina": [
         "ingles.erros"
+      ]
+    },
+    {
+      "licao": "ingles-17",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "ingles.reuniao"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "ingles.github"
       ]
     },
     {
@@ -13156,6 +13380,334 @@
       ]
     },
     {
+      "licao": "ingles-02",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a2-02-p1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-experiencias"
+      ]
+    },
+    {
+      "licao": "ingles-02",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a2-02-p2",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-experiencias"
+      ]
+    },
+    {
+      "licao": "ingles-02",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a2-02-p3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-experiencias"
+      ]
+    },
+    {
+      "licao": "ingles-02",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-a2-02-p4",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-experiencias"
+      ]
+    },
+    {
+      "licao": "ingles-02",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-a2-02-p5",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.a2-experiencias"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a2-03-p1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-descricao"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a2-03-p2",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-descricao"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a2-03-p3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-descricao"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-a2-03-p4",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-descricao"
+      ]
+    },
+    {
+      "licao": "ingles-03",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-a2-03-p5",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.a2-descricao"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a2-04-p1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-saude"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a2-04-p2",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-saude"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a2-04-p3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-saude"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-a2-04-p4",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.a2-saude"
+      ]
+    },
+    {
+      "licao": "ingles-04",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-a2-04-p5",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.a2-saude"
+      ]
+    },
+    {
+      "licao": "ingles-checkpoint-a2",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en-a2-cp1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.passado"
+      ]
+    },
+    {
+      "licao": "ingles-checkpoint-a2",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-a2-cp2",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.futuro"
+      ]
+    },
+    {
+      "licao": "ingles-checkpoint-a2",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-a2-cp3",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.viagem"
+      ]
+    },
+    {
+      "licao": "ingles-checkpoint-a2",
+      "trilha": "ingles",
+      "etapa": 5,
+      "id": "en-a2-cp4",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.a2-experiencias"
+      ]
+    },
+    {
+      "licao": "ingles-checkpoint-a2",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-a2-cp5",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.a2-experiencias"
+      ]
+    },
+    {
+      "licao": "ingles-checkpoint-a2",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-a2-cp6",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.a2-descricao"
+      ]
+    },
+    {
+      "licao": "ingles-checkpoint-a2",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-a2-cp7",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.a2-descricao",
+        "en.a2-saude"
+      ]
+    },
+    {
+      "licao": "ingles-checkpoint-a2",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-a2-cp8",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.a2-saude"
+      ]
+    },
+    {
+      "licao": "ingles-checkpoint-a2",
+      "trilha": "ingles",
+      "etapa": 10,
+      "id": "en-a2-cp9",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": true,
+      "desafio": false,
+      "exige": [
+        "en.a2-saude"
+      ]
+    },
+    {
+      "licao": "ingles-checkpoint-a2",
+      "trilha": "ingles",
+      "etapa": 11,
+      "id": "en-a2-cp10",
+      "tipo": "reading",
+      "dimensao": "compreensao",
+      "prova": true,
+      "desafio": true,
+      "exige": [
+        "en.passado",
+        "en.futuro",
+        "en.a2-descricao"
+      ]
+    },
+    {
       "licao": "ingles-00",
       "trilha": "ingles",
       "etapa": 2,
@@ -13507,6 +14059,136 @@
       "exige": [
         "ingles.leitura",
         "ingles.erros"
+      ]
+    },
+    {
+      "licao": "ingles-17",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en17-p1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.reuniao"
+      ]
+    },
+    {
+      "licao": "ingles-17",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en17-p2",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.reuniao"
+      ]
+    },
+    {
+      "licao": "ingles-17",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en17-p3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.reuniao"
+      ]
+    },
+    {
+      "licao": "ingles-17",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en17-p4",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.reuniao"
+      ]
+    },
+    {
+      "licao": "ingles-17",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en17-p5",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "ingles.reuniao"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "trilha": "ingles",
+      "etapa": 2,
+      "id": "en18-p1",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.github"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en18-p2",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.github"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en18-p3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.github"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en18-p4",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "ingles.github"
+      ]
+    },
+    {
+      "licao": "ingles-18",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en18-p5",
+      "tipo": "scenario",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "ingles.github"
       ]
     },
     {

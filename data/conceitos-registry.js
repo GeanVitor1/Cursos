@@ -80,12 +80,16 @@ Plataforma.registrarRegistroConceitos({
     'en.passado': { prerequisitos: ['en.rotina'], termos: [], definicao: 'Falar de acontecimentos no passado (worked, went, was).', exemplo: 'Yesterday I worked and then I went home.' },
     'en.futuro': { prerequisitos: ['en.rotina'], termos: [], definicao: 'Falar de planos e decisões futuras (going to, will).', exemplo: "I'm going to travel next week." },
     'en.viagem': { prerequisitos: ['en.lugares'], termos: [], definicao: 'Resolver situações de aeroporto e hotel em inglês.', exemplo: 'I have a reservation. Here is my passport.' },
+    'en.a2-experiencias': { prerequisitos: ['en.passado'], termos: [], definicao: 'Falar de experiências com o present perfect (have you ever, I have visited).', exemplo: 'Have you ever visited Canada? I have worked here for two years.' },
+    'en.a2-descricao': { prerequisitos: ['en.lugares'], termos: [], definicao: 'Descrever pessoas, rotinas e lugares com adjetivos e comparações.', exemplo: 'This office is quiet and comfortable. That city is bigger.' },
+    'en.a2-saude': { prerequisitos: ['en.rotina'], termos: [], definicao: 'Comunicação diária sobre saúde, chamadas e mensagens.', exemplo: 'I have a headache. Could you call me back later?' },
 
     // Inglês
     'ingles.vocabulario': { prerequisitos: [], termos: [], definicao: 'Palavras técnicas que se repetem em documentação, tickets e mensagens.', exemplo: 'request, response, database, error.' },
     'ingles.frases': { prerequisitos: ['ingles.vocabulario'], termos: [], definicao: 'Frases curtas do trabalho, com sujeito + verbo + complemento.', exemplo: 'The request failed.' },
     'ingles.erros': { prerequisitos: ['ingles.vocabulario'], termos: [], definicao: 'Mensagens de erro em inglês e o que cada uma indica.', exemplo: 'Cannot connect to the database.' },
-    'ingles.leitura': { prerequisitos: ['ingles.vocabulario'], termos: [], definicao: 'Ler mensagens, issues e tickets reais e identificar o problema.', exemplo: 'Title: duplicated orders after retrying the request.' },
+    'ingles.reuniao': { prerequisitos: ['ingles.frases'], termos: [], definicao: 'Participar da reunião diária (daily / standup) relatando status e impedimentos.', exemplo: 'Yesterday I worked on the API. Today I will fix the bug. I have a blocker.' },
+    'ingles.github': { prerequisitos: ['ingles.vocabulario', 'ingles.frases'], termos: [], definicao: 'Interações no GitHub: pull requests, branches, conflitos e comentários de revisão.', exemplo: 'Please review my pull request. Merged to main.' },
 
     // LINQ
     'linq.intro': { prerequisitos: ['csharp.lambda', 'csharp.list'], termos: ['LINQ'], definicao: 'Consultas escritas em C# para filtrar, transformar e resumir coleções.', exemplo: 'produtos.Where(p => p.Ativo).ToList()' },

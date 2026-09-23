@@ -204,7 +204,11 @@ Plataforma.registrarLexicoIngles({
     'classifique', 'setembro', 'crie', 'nada', 'ativos', 'nomes',
     'consultas', 'lentas', 'entrega', 'baixo', 'unidades', 'some',
     'pagamentos', 'valores', 'numere', 'decrescente', 'trava', 'travas',
-    'escreve', 'escrevem', 'procura', 'procuram', 'busca', 'buscam'
+    'escreve', 'escrevem', 'procura', 'procuram', 'busca', 'buscam',
+    'tranquilo', 'movimentado', 'silencioso', 'ocupado', 'comparativo', 'direto', 'combina',
+    'dizemos', 'junta', 'expressa', 'compromisso', 'dor', 'cabeça', 'cabeca',
+    'relata', 'poderia', 'ligar', 'futuro', 'impedimento', 'corrigir',
+    'principal', 'pedimos', 'resolver', 'abriu', 'precisamos', 'autoriza'
   ],
 
   expressoesPortuguesas: [
