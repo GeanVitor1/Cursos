@@ -92,12 +92,21 @@ window.Plataforma = window.Plataforma || {};
     ]));
 
     pagina.appendChild(criar('div', { classe: 'cartao' }, [
-      criar('h3', { texto: 'Backup e portabilidade' }),
-      criar('p', { classe: 'muted pequeno', texto: 'O arquivo pode ser guardado em data/progresso.json dentro do projeto para versionar sua evolução.' }),
+      criar('h3', { texto: 'Sincronização em nuvem e backup' }),
+      criar('p', { classe: 'muted pequeno', texto: 'Seu progresso agora sincroniza automaticamente na nuvem (Supabase) entre seus computadores sem precisar fazer login.' }),
       criar('div', { classe: 'dados-acoes' }, [
-        comp.botao('Exportar progresso', { onclick: exportarArquivo }),
+        comp.botao('Sincronizar com a nuvem agora', {
+          onclick: async function () {
+            if (P.nuvem && P.nuvem.carregarRemoto) {
+              await P.nuvem.carregarRemoto();
+              P.ui.layout.toast('Sincronizado com a nuvem!', 'sucesso');
+              render();
+            }
+          }
+        }),
+        comp.botao('Exportar progresso', { tipo: 'fantasma', onclick: exportarArquivo }),
         criar('label', { classe: 'btn btn-fantasma' }, [
-          'Importar progresso',
+          'Importar arquivo',
           criar('input', {
             type: 'file',
             accept: 'application/json,.json',

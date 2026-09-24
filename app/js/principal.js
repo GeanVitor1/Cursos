@@ -14,6 +14,9 @@ window.Plataforma = window.Plataforma || {};
   async function iniciar() {
     try {
       await P.carregador.carregarTudo();
+      if (P.nuvem && P.nuvem.carregarRemoto) {
+        await P.nuvem.carregarRemoto();
+      }
     } catch (e) {
       erroFatal(e);
       return;

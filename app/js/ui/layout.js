@@ -81,12 +81,39 @@ window.Plataforma = window.Plataforma || {};
       texto: '☰',
       onclick: abrirMenu
     });
+    const chipNuvem = criar('div', {
+      classe: 'chip-nuvem sincronizado',
+      title: 'Status da sincronização na nuvem (clique para sincronizar agora)',
+      texto: '☁️ Sincronizado',
+      onclick: async function () {
+        if (P.nuvem && P.nuvem.carregarRemoto) {
+          chipNuvem.textContent = '☁️ Sincronizando...';
+          chipNuvem.className = 'chip-nuvem carregando';
+          await P.nuvem.carregarRemoto();
+          P.ui.layout.toast('Progresso sincronizado com a nuvem', 'sucesso');
+        }
+      }
+    });
+
+    if (P.nuvem && P.nuvem.aoMudarStatus) {
+      P.nuvem.aoMudarStatus(function (info) {
+        if (!chipNuvem) return;
+        chipNuvem.className = 'chip-nuvem ' + info.status;
+        if (info.status === 'sincronizado') chipNuvem.textContent = '☁️ Sincronizado';
+        else if (info.status === 'salvando') chipNuvem.textContent = '☁️ Salvando...';
+        else if (info.status === 'carregando') chipNuvem.textContent = '☁️ Baixando...';
+        else if (info.status === 'erro') chipNuvem.textContent = '⚠️ Erro nuvem';
+        else if (info.status === 'offline') chipNuvem.textContent = '☁️ Offline';
+        chipNuvem.title = info.mensagem || 'Sincronização em nuvem';
+      });
+    }
+
     const topo = criar('header', { classe: 'topo' }, [
       criar('div', { classe: 'topo-esquerda' }, [
         botaoMenu,
         criar('span', { classe: 'topo-titulo', texto: 'Formação Full Stack .NET — uma etapa por vez' })
       ]),
-      criar('div', { classe: 'topo-direita' }, [chipSessao])
+      criar('div', { classe: 'topo-direita' }, [chipNuvem, chipSessao])
     ]);
     conteudoEl = criar('main', { classe: 'conteudo', id: 'conteudo' });
     const area = criar('div', { classe: 'area' }, [topo, conteudoEl]);

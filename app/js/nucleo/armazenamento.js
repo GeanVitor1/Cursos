@@ -100,7 +100,7 @@ window.Plataforma = window.Plataforma || {};
     } catch (e) { /* conteúdo inválido: mantém o estado atual */ }
   });
 
-  function salvar() {
+  function salvar(naoEnviarNuvem) {
     estado.atualizadoEm = new Date().toISOString();
     if (disponivel) {
       try {
@@ -112,6 +112,9 @@ window.Plataforma = window.Plataforma || {};
     ouvintes.forEach(function (cb) {
       try { cb(estado); } catch (e) { /* ignora */ }
     });
+    if (!naoEnviarNuvem && P.nuvem && P.nuvem.salvarRemoto) {
+      P.nuvem.salvarRemoto(estado);
+    }
   }
 
   function aoMudar(cb) { ouvintes.push(cb); }
@@ -465,10 +468,10 @@ window.Plataforma = window.Plataforma || {};
   function tema() { return estado.configuracoes.tema || 'claro'; }
   function exportar() { return JSON.parse(JSON.stringify(estado)); }
 
-  function importar(dados) {
+  function importar(dados, naoEnviarNuvem) {
     if (!dados || typeof dados !== 'object') throw new Error('Formato de arquivo inválido.');
     estado = normalizarEstado(dados);
-    salvar();
+    salvar(naoEnviarNuvem);
   }
 
   function repararProgresso() {
