@@ -202,9 +202,26 @@ window.Plataforma = window.Plataforma || {};
       classe: 'btn btn-primario',
       onclick: function () { if (acaoPrimariaAtual) acaoPrimariaAtual.acao(); }
     });
+    const botoesAcoes = [botaoSecundario, botaoPrimario];
+
+    if (estado.modo === 'licao' && estado.licao) {
+      const botaoConcluirDireto = criar('button', {
+        classe: 'btn btn-fantasma',
+        title: 'Marcar esta lição inteira como concluída agora e salvar imediatamente',
+        texto: '✓ Marcar como concluída',
+        onclick: function () {
+          P.dados.concluirLicao(estado.licao.id, { aproveitamento: 100 });
+          P.ui.layout.toast('Lição concluída e salva com sucesso!', 'sucesso');
+          liberarModo();
+          P.roteador.ir('#/trilha/' + estado.licao.trilha);
+        }
+      });
+      botoesAcoes.unshift(botaoConcluirDireto);
+    }
+
     const rodape = criar('div', { classe: 'runner-rodape' }, [
       criar('div', { classe: 'runner-info' }, [infoXp, salvoEl]),
-      criar('div', { classe: 'runner-acoes' }, [botaoSecundario, botaoPrimario])
+      criar('div', { classe: 'runner-acoes' }, botoesAcoes)
     ]);
 
     const etapa = etapaAtual();

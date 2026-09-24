@@ -19,6 +19,61 @@ window.Plataforma = window.Plataforma || {};
     if (typeof cb === 'function') ouvintesStatus.push(cb);
   }
 
+  // Mescla dois estados de forma aditiva: nenhuma lição concluída é perdida!
+  function mesclarEstados(local, remoto) {
+    if (!remoto) return local;
+    if (!local) return remoto;
+
+    const base = Object.assign({}, remoto, local);
+
+    // Mescla lições: se estiver concluída em qualquer um dos dois, fica como concluída
+    base.licoes = Object.assign({}, remoto.licoes || {}, local.licoes || {});
+    const todasLicoes = Object.keys(Object.assign({}, remoto.licoes || {}, local.licoes || {}));
+    todasLicoes.forEach(function (id) {
+      const rl = (remoto.licoes && remoto.licoes[id]) || null;
+      const ll = (local.licoes && local.licoes[id]) || null;
+      if (rl && rl.status === 'concluida') {
+        base.licoes[id] = Object.assign({}, ll || {}, rl);
+      } else if (ll && ll.status === 'concluida') {
+        base.licoes[id] = Object.assign({}, rl || {}, ll);
+      } else {
+        base.licoes[id] = Object.assign({}, rl || {}, ll || {});
+      }
+    });
+
+    // Mescla XP: fica com o maior valor
+    base.xp = Math.max(local.xp || 0, remoto.xp || 0);
+
+    // Mescla Streak
+    const streakLocal = local.streak || { atual: 0, recorde: 0, dias: [] };
+    const streakRemoto = remoto.streak || { atual: 0, recorde: 0, dias: [] };
+    const diasSet = new Set((streakLocal.dias || []).concat(streakRemoto.dias || []));
+    base.streak = {
+      atual: Math.max(streakLocal.atual || 0, streakRemoto.atual || 0),
+      recorde: Math.max(streakLocal.recorde || 0, streakRemoto.recorde || 0),
+      ultimoDia: (streakLocal.ultimoDia > (streakRemoto.ultimoDia || '')) ? streakLocal.ultimoDia : (streakRemoto.ultimoDia || streakLocal.ultimoDia),
+      dias: Array.from(diasSet)
+    };
+
+    // Mescla conceitos
+    base.conceitos = Object.assign({}, remoto.conceitos || {}, local.conceitos || {});
+
+    // Mescla habilidades
+    base.habilidades = Object.assign({}, remoto.habilidades || {}, local.habilidades || {});
+
+    // Mescla sessões
+    const sessoesMap = {};
+    (remoto.sessoes || []).concat(local.sessoes || []).forEach(function (s) {
+      if (s && s.data) sessoesMap[s.data + '_' + s.id] = s;
+    });
+    base.sessoes = Object.values(sessoesMap);
+
+    base.configuracoes = Object.assign({}, remoto.configuracoes || {}, local.configuracoes || {});
+    base.atualizadoEm = new Date().toISOString();
+
+    return base;
+  }
+
   async function carregarRemoto() {
     try {
       notificarStatus('carregando', 'Buscando progresso na nuvem...');
@@ -41,25 +96,16 @@ window.Plataforma = window.Plataforma || {};
         const remoto = linhas[0].dados;
         const local = P.dados.estado();
 
-        // Compara timestamps de atualização
-        const timeRemoto = remoto.atualizadoEm ? new Date(remoto.atualizadoEm).getTime() : 0;
-        const timeLocal = local.atualizadoEm ? new Date(local.atualizadoEm).getTime() : 0;
+        // Mesclagem inteligente: garante que tudo o que estava concluído em qualquer um dos dois prevaleça!
+        const mesclado = mesclarEstados(local, remoto);
 
-        // Se o remoto for mais recente ou igual, ou se o local for virgem (sem xp e sem licoes)
-        const localVazio = (!local.xp || local.xp === 0) && Object.keys(local.licoes || {}).length === 0;
+        P.dados.importar(mesclado, true); // true = não re-enviar imediatamente durante carregamento
+        // Salva o mesclado na nuvem caso o local tivesse novidades ou diferenças
+        salvarRemoto(mesclado, false);
 
-        if (timeRemoto >= timeLocal || localVazio) {
-          P.dados.importar(remoto);
-          notificarStatus('sincronizado', 'Progresso carregado da nuvem');
-          return { atualizado: true, dados: remoto };
-        } else {
-          // Local é mais recente que a nuvem, sincroniza o local para a nuvem
-          await salvarRemoto(local, true);
-          notificarStatus('sincronizado', 'Nuvem atualizada com o progresso mais recente');
-          return { atualizado: false, dados: local };
-        }
+        notificarStatus('sincronizado', 'Progresso sincronizado com a nuvem');
+        return { atualizado: true, dados: mesclado };
       } else {
-        // Se a nuvem ainda não tem registro ou está vazia, envia o local atual
         const local = P.dados.estado();
         const temDadosLocais = (local.xp && local.xp > 0) || Object.keys(local.licoes || {}).length > 0;
         if (temDadosLocais) {
@@ -80,16 +126,17 @@ window.Plataforma = window.Plataforma || {};
       if (timerDebounce) clearTimeout(timerDebounce);
       timerDebounce = setTimeout(function () {
         salvarRemoto(estadoParaSalvar, true);
-      }, 1500);
+      }, 1000);
       return;
     }
 
     try {
       sincronizando = true;
       notificarStatus('salvando', 'Salvando na nuvem...');
+      const dados = estadoParaSalvar || P.dados.estado();
       const payload = {
         id: REGISTRO_ID,
-        dados: estadoParaSalvar || P.dados.estado(),
+        dados: dados,
         atualizado_em: new Date().toISOString()
       };
 

@@ -127,7 +127,12 @@ window.Plataforma = window.Plataforma || {};
     ]);
     app.appendChild(criar('div', { classe: 'app-shell' }, [montarSidebar(), area, fundo, navInferior]));
     aplicarTema(P.dados.tema());
-    P.dados.aoMudar(atualizarEstatisticas);
+    P.dados.aoMudar(function () {
+      atualizarEstatisticas();
+      if (!document.querySelector('.runner')) {
+        P.roteador.processar();
+      }
+    });
     atualizarEstatisticas();
   }
 

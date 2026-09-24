@@ -542,7 +542,30 @@ p { margin: 0 0 12px; }
 .etapa-icone.prova { background: var(--aviso-suave); border-color: var(--aviso); color: var(--aviso); }
 .etapa-conteudo { flex: 1; min-width: 0; }
 .etapa-titulo { font-weight: 620; font-size: 14.5px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.etapa-meta { font-size: 12.5px; color: var(--texto-fraco); margin-top: 2px; }
+.etapa-acoes { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.btn-check-etapa {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--texto-suave);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all .15s ease;
+}
+.btn-check-etapa:hover {
+  background: var(--superficie-2);
+  border-color: var(--borda-forte);
+}
+.btn-check-etapa.concluida {
+  background: var(--sucesso-suave);
+  border-color: var(--sucesso);
+  color: var(--sucesso);
+}
 .etapa-seta { color: var(--texto-fraco); font-size: 15px; }
 
 .runner { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; min-height: calc(100vh - 130px); }

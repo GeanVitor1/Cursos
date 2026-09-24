@@ -52,16 +52,44 @@ window.Plataforma = window.Plataforma || {};
       prova ? comp.chip('Prova', 'aviso') : null
     ]);
 
-    return criar('button', {
+    const acoes = criar('div', { classe: 'etapa-acoes' });
+
+    if (etapa.licao && status !== 'planejada') {
+      const estaConcluida = status === 'concluida';
+      const btnCheck = criar('button', {
+        classe: 'btn-check-etapa' + (estaConcluida ? ' concluida' : ''),
+        title: estaConcluida ? 'Etapa marcada como concluída (clique para desmarcar)' : 'Marcar etapa como concluída',
+        texto: estaConcluida ? '✓ Concluída' : 'Marcar concluída',
+        onclick: function (ev) {
+          ev.stopPropagation();
+          const resultado = P.dados.alternarConclusaoLicao(etapa.licao);
+          P.ui.layout.toast(
+            resultado ? 'Etapa marcada como concluída!' : 'Etapa desmarcada!',
+            'sucesso'
+          );
+          render({ id: trilhaId });
+        }
+      });
+      acoes.appendChild(btnCheck);
+    }
+
+    if (status === 'disponivel' || status === 'concluida') {
+      acoes.appendChild(criar('span', { classe: 'etapa-seta', texto: '›' }));
+    }
+
+    return criar('div', {
       classe: 'etapa ' + status,
-      onclick: function () { abrirEtapa(trilhaId, etapa, status); }
+      role: 'button',
+      tabIndex: 0,
+      onclick: function () { abrirEtapa(trilhaId, etapa, status); },
+      onkeydown: function (ev) { if (ev.key === 'Enter') abrirEtapa(trilhaId, etapa, status); }
     }, [
       criar('span', { classe: 'etapa-icone ' + classeIcone, texto: icones[status] || '·' }),
       criar('div', { classe: 'etapa-conteudo' }, [
         titulo,
         criar('div', { classe: 'etapa-meta', texto: meta })
       ]),
-      criar('span', { classe: 'etapa-seta', texto: status === 'disponivel' || status === 'concluida' ? '›' : '' })
+      acoes
     ]);
   }
 

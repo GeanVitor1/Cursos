@@ -368,6 +368,34 @@ window.Plataforma = window.Plataforma || {};
     return { primeiraVez: primeiraVez, bonus: bonus };
   }
 
+  function alternarConclusaoLicao(id, forcarStatus) {
+    const licao = (P.interno.licoes && P.interno.licoes[id]) || {};
+    const registro = estado.licoes[id] || { tentativas: 0, melhorAproveitamento: 0 };
+    const jaConcluida = registro.status === 'concluida';
+    const novoStatus = forcarStatus !== undefined ? (forcarStatus ? 'concluida' : 'disponivel') : (jaConcluida ? 'disponivel' : 'concluida');
+
+    if (novoStatus === 'concluida') {
+      registro.status = 'concluida';
+      registro.concluidaEm = registro.concluidaEm || new Date().toISOString();
+      registro.melhorAproveitamento = registro.melhorAproveitamento || 100;
+      registro.rascunho = null;
+      if (!jaConcluida) {
+        const bonus = licao.xp || P.conf.xpAula || 30;
+        adicionarXp(bonus, 'conclusao');
+      }
+    } else {
+      registro.status = 'disponivel';
+      registro.concluidaEm = null;
+    }
+
+    estado.licoes[id] = registro;
+    salvar();
+    if (P.nuvem && P.nuvem.salvarRemoto) {
+      P.nuvem.salvarRemoto(estado, true);
+    }
+    return novoStatus === 'concluida';
+  }
+
   function registrarRevisao(info) {
     estado.revisoes.push({
       data: new Date().toISOString(),
@@ -524,6 +552,7 @@ window.Plataforma = window.Plataforma || {};
     obterEtapasPremiadas: obterEtapasPremiadas,
     marcarEtapaPremiada: marcarEtapaPremiada,
     concluirLicao: concluirLicao,
+    alternarConclusaoLicao: alternarConclusaoLicao,
     registrarRevisao: registrarRevisao,
     resumoConceitos: resumoConceitos,
     estadoConceito: estadoConceito,
