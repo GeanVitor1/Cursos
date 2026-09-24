@@ -254,7 +254,7 @@ Plataforma.registrarLicao({
             ['clone', 'clonar']
           ]
         },
-        { tipo: 'ingles', frase: 'Clone the repository to see the history.', traducao: 'Clone o repositório para ver o histórico.' },
+        { tipo: 'ingles', frase: 'Clone the repository https://github.com/mercado-aurora/painel.git to see the history.', traducao: 'Clone o repositório https://github.com/mercado-aurora/painel.git para ver o histórico.' },
         { tipo: 'nota', tom: 'info', texto: '**repository** (repositório) é a origem da abreviação `repo`, que você vai encontrar em conversas e ferramentas.' }
       ]
     },
@@ -264,7 +264,7 @@ Plataforma.registrarLicao({
         id: 'git00-a7',
         tipo: 'write-code',
         dimensao: 'construcao',
-        enunciado: 'Clone the repository to see the history.',
+        enunciado: 'Clone the repository https://github.com/mercado-aurora/painel.git to see the history.',
         placeholder: 'git ...',
         respostasAceitas: [
           'git clone https://github.com/mercado-aurora/painel.git',
@@ -272,7 +272,7 @@ Plataforma.registrarLicao({
         ],
         dicas: [
           'repository = repositório; history = histórico.',
-          'O comando que traz uma cópia completa é o clone.'
+          'O comando que traz uma cópia completa é o clone com o endereço informado.'
         ],
         explicacao: 'Traduzindo: "clone the repository to see the history" = clone o repositório para ver o histórico. `git clone <endereço>` traz a cópia completa do projeto.',
         conceitos: ['git.repositorio']

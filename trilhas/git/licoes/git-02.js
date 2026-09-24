@@ -225,7 +225,7 @@ Plataforma.registrarLicao({
             ['feature', 'funcionalidade']
           ]
         },
-        { tipo: 'ingles', frase: 'Switch to a new branch for the feature.', traducao: 'Troque para uma branch nova para a funcionalidade.' },
+        { tipo: 'ingles', frase: 'Switch to a new branch feature/preco for the feature.', traducao: 'Troque para uma branch nova feature/preco para a funcionalidade.' },
         { tipo: 'nota', tom: 'info', texto: 'O próprio comando usa a palavra: `git switch` = trocar. E **feature** virou o prefixo padrão de branches de funcionalidade.' }
       ]
     },
@@ -235,7 +235,7 @@ Plataforma.registrarLicao({
         id: 'git02-a6',
         tipo: 'write-code',
         dimensao: 'construcao',
-        enunciado: 'Start a new branch for the feature.',
+        enunciado: 'Start a new branch feature/preco for the feature.',
         placeholder: 'git ...',
         respostasAceitas: [
           'git switch -c feature/preco',
@@ -243,9 +243,9 @@ Plataforma.registrarLicao({
         ],
         dicas: [
           'start = começar; new branch = branch nova.',
-          'Criar e trocar no mesmo comando usa switch -c.'
+          'Criar e trocar no mesmo comando usa switch -c seguido do nome da branch.'
         ],
-        explicacao: 'A frase pede uma branch nova para a funcionalidade. O comando cria a branch e já entra nela.',
+        explicacao: 'A frase pede uma branch nova (feature/preco) para a funcionalidade. O comando `git switch -c feature/preco` cria a branch e já entra nela.',
         conceitos: ['git.branch']
       }
     },
