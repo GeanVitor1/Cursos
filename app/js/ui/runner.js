@@ -171,13 +171,26 @@ window.Plataforma = window.Plataforma || {};
     const barra = criar('div', { classe: 'barra barra-fina' }, [preenchimento]);
 
     const topo = criar('div', { classe: 'runner-topo' }, [
-      criar('button', { classe: 'runner-sair', texto: '✕', title: 'Sair da etapa', onclick: sair }),
       criar('button', {
+        type: 'button',
+        classe: 'runner-sair',
+        texto: '✕',
+        title: 'Sair da etapa',
+        onclick: function (ev) {
+          if (ev && ev.preventDefault) ev.preventDefault();
+          sair();
+        }
+      }),
+      criar('button', {
+        type: 'button',
         classe: 'runner-anterior',
         texto: '‹ Anterior',
         title: 'Voltar para a etapa anterior',
         disabled: estado.indice === 0,
-        onclick: voltarEtapa
+        onclick: function (ev) {
+          if (ev && ev.preventDefault) ev.preventDefault();
+          voltarEtapa();
+        }
       }),
       barra,
       criar('span', { classe: 'runner-contador', texto: (estado.indice + 1) + '/' + estado.etapas.length })
@@ -194,22 +207,32 @@ window.Plataforma = window.Plataforma || {};
     infoXp = criar('div', { classe: 'runner-xp' });
     salvoEl = criar('span', { classe: 'runner-salvo', texto: '' });
     botaoSecundario = criar('button', {
+      type: 'button',
       classe: 'btn btn-fantasma',
       hidden: true,
-      onclick: function () { if (acaoSecundariaAtual) acaoSecundariaAtual.acao(); }
+      onclick: function (ev) {
+        if (ev && ev.preventDefault) ev.preventDefault();
+        if (acaoSecundariaAtual) acaoSecundariaAtual.acao();
+      }
     });
     botaoPrimario = criar('button', {
+      type: 'button',
       classe: 'btn btn-primario',
-      onclick: function () { if (acaoPrimariaAtual) acaoPrimariaAtual.acao(); }
+      onclick: function (ev) {
+        if (ev && ev.preventDefault) ev.preventDefault();
+        if (acaoPrimariaAtual) acaoPrimariaAtual.acao();
+      }
     });
     const botoesAcoes = [botaoSecundario, botaoPrimario];
 
     if (estado.modo === 'licao' && estado.licao) {
       const botaoConcluirDireto = criar('button', {
+        type: 'button',
         classe: 'btn btn-fantasma',
         title: 'Marcar esta lição inteira como concluída agora e salvar imediatamente',
         texto: '✓ Marcar como concluída',
-        onclick: function () {
+        onclick: function (ev) {
+          if (ev && ev.preventDefault) ev.preventDefault();
           P.dados.concluirLicao(estado.licao.id, { aproveitamento: 100 });
           P.ui.layout.toast('Lição concluída e salva com sucesso!', 'sucesso');
           liberarModo();

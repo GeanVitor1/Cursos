@@ -601,6 +601,12 @@ p { margin: 0 0 12px; }
 }
 .runner-xp { font-size: 13px; font-weight: 650; color: var(--texto-fraco); }
 .runner-acoes { display: flex; gap: 10px; align-items: center; }
+.runner-acoes .btn, .runner-anterior, .runner-sair {
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
 .runner-acento { color: var(--primaria); }
 
 .passo { display: flex; flex-direction: column; gap: 16px; }
