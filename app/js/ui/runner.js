@@ -277,9 +277,16 @@ window.Plataforma = window.Plataforma || {};
     const area = criar('div', { classe: 'atividade-area' });
     passo.appendChild(area);
 
-    const caixaDica = criar('div', { classe: 'dica-caixa', hidden: true });
-    const caixaSocratica = criar('div', { classe: 'dica-caixa socratica', hidden: true });
     const botoesAjuda = criar('div', { classe: 'atividade-ajuda' }, [
+      (atv.conceitos && atv.conceitos.length)
+        ? criar('button', {
+            classe: 'btn-link btn-dica',
+            texto: '📖 Ver explicação do tema',
+            onclick: function () {
+              if (atv.conceitos && atv.conceitos[0]) comp.abrirConceito(atv.conceitos[0]);
+            }
+          })
+        : null,
       (atv.socratico && atv.socratico.length)
         ? criar('button', { classe: 'btn-link btn-dica', texto: 'Me guie com perguntas', onclick: mostrarProximaSocratica })
         : null,
@@ -539,7 +546,12 @@ window.Plataforma = window.Plataforma || {};
       estado.xpSessao += P.conf.xpRevelado;
       P.dados.adicionarXp(P.conf.xpRevelado, 'esforco');
     }
-    mostrarFeedback('revelado', 'Resposta revelada.', atv.explicacao, (jaContabil || estado.semPontuacao) ? null : '+' + P.conf.xpRevelado + ' XP');
+    let textoRevelacao = atv.explicacao || '';
+    if (atv.pares && Array.isArray(atv.pares)) {
+      const listaPares = atv.pares.map(function (p) { return '• `' + p[0] + '` ➔ ' + p[1]; }).join('\n');
+      textoRevelacao = '**Conexões corretas:**\n' + listaPares + (textoRevelacao ? '\n\n' + textoRevelacao : '');
+    }
+    mostrarFeedback('revelado', 'Resposta revelada.', textoRevelacao, (jaContabil || estado.semPontuacao) ? null : '+' + P.conf.xpRevelado + ' XP');
     definirAcoes({ rotulo: 'Continuar', acao: avancar });
     atualizarXpInfo();
   }

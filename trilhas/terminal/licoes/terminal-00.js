@@ -24,17 +24,34 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
-      titulo: 'Navegando em pastas',
+      titulo: 'Navegando em pastas: como funciona na prática',
       introduz: ['terminal.comandos'],
       blocos: [
-        { tipo: 'codigo', linguagem: 'texto', codigo: 'pwd              # mostra a pasta atual\nls               # lista o conteúdo (dir no Windows)\ncd Projetos      # entra na pasta Projetos\ncd ..            # volta uma pasta\nmkdir MeuProjeto # cria uma pasta' },
-        { tipo: 'glossario', titulo: 'Decifrando os comandos', itens: [
-          ['pwd', 'print working directory', 'Mostra onde você está.'],
-          ['ls / dir', 'list', 'Lista arquivos e pastas.'],
-          ['cd', 'change directory', 'Entra ou sai de pastas.'],
-          ['..', 'pasta acima', 'Atalho para voltar um nível.']
-        ] }
+        { tipo: 'texto', texto: 'Quando você abre o terminal, você está sempre situado dentro de uma pasta específica do seu sistema (chamada de diretório atual de trabalho).' },
+        { tipo: 'codigo', linguagem: 'texto', codigo: '# 1. Saber onde você está:\npwd\n# Saída de exemplo: /c/Users/voce/Projetos\n\n# 2. Ver o que existe dentro da pasta atual:\nls               # no PowerShell/Linux (ou dir)\n\n# 3. Entrar em uma subpasta:\ncd MeuProjeto    # "change directory" para entrar em MeuProjeto\n\n# 4. Voltar uma pasta para trás:\ncd ..            # os dois pontos (..) representam a pasta acima/pai\n\n# 5. Criar uma nova pasta para organizar seu código:\nmkdir NovoApp    # "make directory"' },
+        { tipo: 'glossario', titulo: 'Por que esses nomes estranhos?', itens: [
+          ['pwd', 'print working directory', 'Imprime na tela a pasta em que você se encontra.'],
+          ['ls / dir', 'list', 'Lista todos os arquivos e subpastas do local atual.'],
+          ['cd <pasta>', 'change directory', 'Muda para a pasta indicada pelo nome.'],
+          ['cd ..', 'pasta pai (nível acima)', 'Sobe exatamente um nível na árvore de diretórios.'],
+          ['mkdir <nome>', 'make directory', 'Cria um novo diretório com o nome especificado.']
+        ] },
+        { tipo: 'trabalho', texto: 'Fluxo diário do desenvolvedor: você abre o terminal na pasta raiz, usa `cd` para entrar no projeto, roda `ls` para conferir os arquivos e só então inicia o trabalho.', fonte: '💼 Rotina Real' }
       ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'term00-a0-escrita',
+        tipo: 'fill-code',
+        dimensao: 'preenchimento',
+        enunciado: 'Pratique a escrita dos comandos: escreva o comando para entrar na pasta Projetos e, em seguida, o comando para listar o conteúdo.',
+        codigo: '{{1}} Projetos\n{{2}}',
+        lacunas: [['cd'], ['ls', 'dir']],
+        dicas: ['Para mudar/entrar de pasta usamos cd (change directory).', 'Para listar o conteúdo usamos ls ou dir.'],
+        explicacao: 'Excelente! Usamos `cd` seguido do nome da pasta para entrar nela, e `ls` (ou `dir` no Windows) para inspecionar os arquivos existentes.',
+        conceitos: ['terminal.comandos']
+      }
     },
     {
       tipo: 'atividade',
@@ -49,8 +66,8 @@ Plataforma.registrarLicao({
           ['mkdir MeuProjeto', 'Criar uma pasta'],
           ['cd ..', 'Voltar para a pasta anterior']
         ],
-        dicas: ['cd vem de "change directory".', 'mkdir lembra "make directory".'],
-        explicacao: 'São os quatro comandos de navegação que você usa 90% do tempo.',
+        dicas: ['cd vem de "change directory" (mudar diretório).', 'mkdir lembra "make directory" (criar diretório).'],
+        explicacao: 'Estes são os comandos fundamentais de movimentação: `cd <pasta>` para avançar, `cd ..` para retornar, `mkdir` para criar novas pastas e `ls` para inspecionar o conteúdo.',
         conceitos: ['terminal.comandos']
       }
     },

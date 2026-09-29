@@ -229,7 +229,13 @@ window.Plataforma = window.Plataforma || {};
           encontradas.push(atv);
         });
       });
-      return P.dom.embaralhar(encontradas);
+      return encontradas.sort(function (a, b) {
+        const pesoTipo = { 'write-code': 3, 'fill-code': 2, 'debug': 2, 'scenario': 1 };
+        const pa = pesoTipo[a.tipo] || 0;
+        const pb = pesoTipo[b.tipo] || 0;
+        if (pa !== pb) return pb - pa;
+        return Math.random() - 0.5;
+      });
     }).filter(function (b) { return b.length; });
 
     const intercaladas = [];

@@ -78,11 +78,11 @@ window.Plataforma = window.Plataforma || {};
           travado = true;
           colunaEsq.querySelectorAll('.match-item').forEach(function (b) { b.classList.add('travada'); });
           colunaDir.querySelectorAll('.match-item').forEach(function (b) { b.classList.add('travada'); });
-          return { correto: errosTentativa === 0 };
+          return { correto: pareados === pares.length };
         },
         revelar: function () {
           travado = true;
-          colunaEsq.querySelectorAll('.match-item').forEach(function (b) { b.classList.add('pareado', 'selecionado'); });
+          colunaEsq.querySelectorAll('.match-item').forEach(function (b) { b.classList.add('pareado'); });
           colunaDir.querySelectorAll('.match-item').forEach(function (b) { b.classList.add('pareado'); });
         },
         prepararNovaTentativa: function () {
