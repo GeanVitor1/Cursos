@@ -9,3 +9,6 @@ desktop.ini
 
 # Dependências
 node_modules/
+.gstack/
+test-results/
+playwright-report/
