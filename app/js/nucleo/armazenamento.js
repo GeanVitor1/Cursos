@@ -5,6 +5,7 @@ window.Plataforma = window.Plataforma || {};
   const ouvintes = [];
   let disponivel = true;
   let emTransacao = false;
+  let ultimoLocal = null;
 
   P.dimensoes = {
     reconhecimento: { nome: 'Reconhecimento', descricao: 'Identificar a resposta certa entre opções.' },
@@ -53,7 +54,7 @@ window.Plataforma = window.Plataforma || {};
       acertos: 0,
       erros: 0,
       sequencia: 0,
-      pontos: 0,
+      pontos: c && c.pontos == null ? (c.acertos || 0) : 0,
       acertosConfiantes: 0,
       chutesCertos: 0,
       dimensoes: {},
@@ -62,10 +63,91 @@ window.Plataforma = window.Plataforma || {};
     };
     const atual = Object.assign(base, c || {});
     atual.dimensoes = atual.dimensoes || {};
+    Object.keys(atual.dimensoes).forEach(function (id) {
+      const dim = atual.dimensoes[id];
+      atual.dimensoes[id] = Object.assign({ acertos: 0, erros: 0, pontos: dim.acertos || 0, sequencia: 0 }, dim);
+    });
     return atual;
   }
 
+  function normalizarHabilidade(h) {
+    return Object.assign({ acertos: 0, erros: 0, pontos: h.acertos || 0 }, h);
+  }
+
+  function validarEstado(dados) {
+    function objeto(valor) { return valor !== null && typeof valor === 'object' && !Array.isArray(valor); }
+    function exigir(condicao, campo) { if (!condicao) throw new Error('Campo de progresso inválido: ' + campo); }
+    function contadores(valor, campos) {
+      exigir(objeto(valor), 'registro');
+      campos.forEach(function (campo) {
+        if (valor[campo] != null) exigir(Number.isFinite(valor[campo]) && valor[campo] >= 0, campo);
+      });
+    }
+    function mapa(valor, verificar) {
+      exigir(objeto(valor), 'mapa');
+      Object.values(valor).forEach(verificar);
+    }
+    function conceito(c) {
+      contadores(c, ['acertos', 'erros', 'pontos', 'sequencia', 'acertosConfiantes', 'chutesCertos']);
+      if (c.dimensoes != null) mapa(c.dimensoes, function (dim) { contadores(dim, ['acertos', 'erros', 'pontos', 'sequencia']); });
+    }
+    exigir(objeto(dados), 'estado');
+    // Dados externos não podem alterar protótipos usados pelos mapas do motor.
+    JSON.stringify(dados, function (chave, valor) {
+      exigir(chave !== '__proto__' && chave !== 'constructor' && chave !== 'prototype', chave);
+      return valor;
+    });
+    contadores(dados, ['xp', 'xpBase']);
+    ['licoes', 'conceitos', 'agenda', 'habilidades', 'configuracoes', 'premios', 'eventosPratica', 'praticaBase'].forEach(function (campo) {
+      if (dados[campo] != null) exigir(objeto(dados[campo]), campo);
+    });
+    mapa(dados.licoes || {}, function (l) {
+      contadores(l, ['tentativas', 'melhorAproveitamento']);
+      if (l.status != null) exigir(['disponivel', 'em-andamento', 'concluida', 'bloqueada', 'planejada'].indexOf(l.status) !== -1, 'status');
+      if (l.assinatura != null) exigir(typeof l.assinatura === 'string', 'assinatura');
+      if (l.rascunho != null) exigir(objeto(l.rascunho) && Number.isInteger(l.rascunho.indice) && l.rascunho.indice >= 0, 'rascunho');
+      if (l.etapasPremiadas != null) mapa(l.etapasPremiadas, function (v) { exigir(typeof v === 'boolean', 'etapa premiada'); });
+      if (l.resultadosEtapas != null) mapa(l.resultadosEtapas, function (v) {
+        contadores(v, ['dicas']);
+        if (v.primeira != null) exigir(typeof v.primeira === 'boolean', 'primeira tentativa');
+      });
+    });
+    mapa(dados.conceitos || {}, conceito);
+    mapa(dados.habilidades || {}, function (h) { contadores(h, ['acertos', 'erros', 'pontos']); });
+    mapa(dados.agenda || {}, function (a) {
+      contadores(a, ['nivel', 'acertosSeguidos']);
+      if (a.proximaEm != null) exigir(typeof a.proximaEm === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(a.proximaEm) && Number.isFinite(Date.parse(a.proximaEm)), 'data da revisão');
+    });
+    mapa(dados.premios || {}, function (v) { exigir(Number.isFinite(v) && v >= 0, 'prêmio'); });
+    mapa(dados.eventosPratica || {}, function (ev) {
+      exigir(objeto(ev) && typeof ev.correto === 'boolean' && typeof ev.em === 'string' && Number.isFinite(Date.parse(ev.em)), 'evento');
+      if (ev.habilidade) exigir(Object.prototype.hasOwnProperty.call(P.habilidades, ev.habilidade), 'habilidade');
+      else exigir(Array.isArray(ev.ids) && ev.ids.every(function (id) { return typeof id === 'string' && !['__proto__', 'constructor', 'prototype'].includes(id); }) && Object.prototype.hasOwnProperty.call(P.dimensoes, ev.dimensao) && Object.prototype.hasOwnProperty.call(pesosConfianca, ev.confianca), 'prática');
+    });
+    if (dados.praticaBase) {
+      if (dados.praticaBase.conceitos != null) mapa(dados.praticaBase.conceitos, conceito);
+      if (dados.praticaBase.habilidades != null) mapa(dados.praticaBase.habilidades, function (h) { contadores(h, ['acertos', 'erros', 'pontos']); });
+    }
+    ['sessoes', 'revisoes'].forEach(function (campo) {
+      if (dados[campo] == null) return;
+      exigir(Array.isArray(dados[campo]), campo);
+      dados[campo].forEach(function (s) {
+        contadores(s, ['minutos', 'xp', 'acertos', 'erros']);
+        if (s.conceitos != null) exigir(Array.isArray(s.conceitos), 'conceitos da revisão');
+      });
+    });
+    if (dados.streak != null) {
+      contadores(dados.streak, ['atual', 'recorde']);
+      if (dados.streak.dias != null) exigir(Array.isArray(dados.streak.dias) && dados.streak.dias.every(function (d) { return typeof d === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(d); }), 'dias');
+    }
+    ['atualizadoEm', 'criadoEm', 'reiniciadoEm'].forEach(function (campo) {
+      if (dados[campo] != null) exigir(typeof dados[campo] === 'string' && Number.isFinite(Date.parse(dados[campo])), campo);
+    });
+  }
+
   function normalizarEstado(dados) {
+    if (dados != null) validarEstado(dados);
+    dados = dados ? JSON.parse(JSON.stringify(dados)) : null;
     const base = criaPadrao();
     const estado = Object.assign(base, dados || {});
     estado.streak = Object.assign({ atual: 0, recorde: 0, ultimoDia: null, dias: [] }, dados && dados.streak ? dados.streak : {});
@@ -81,8 +163,17 @@ window.Plataforma = window.Plataforma || {};
     estado.xpBase = dados && typeof dados.xpBase === 'number' ? dados.xpBase : Math.max(0, estado.xp - Object.values(estado.premios).reduce(function (n, p) { return n + p; }, 0));
     estado.eventosPratica = estado.eventosPratica || {};
     estado.praticaBase = dados && dados.praticaBase ? dados.praticaBase : JSON.parse(JSON.stringify({ conceitos: estado.conceitos, habilidades: estado.habilidades }));
+    estado.praticaBase.conceitos = estado.praticaBase.conceitos || {};
+    estado.praticaBase.habilidades = estado.praticaBase.habilidades || {};
+    Object.keys(estado.praticaBase.conceitos).forEach(function (id) { estado.praticaBase.conceitos[id] = normalizarConceito(estado.praticaBase.conceitos[id]); });
+    Object.keys(estado.praticaBase.habilidades).forEach(function (id) { estado.praticaBase.habilidades[id] = normalizarHabilidade(estado.praticaBase.habilidades[id]); });
     Object.keys(estado.conceitos).forEach(function (id) {
       estado.conceitos[id] = normalizarConceito(estado.conceitos[id]);
+      estado.conceitos[id].estado = calcularEstadoConceito(estado.conceitos[id]);
+      estado.conceitos[id].dominio = calcularDominio(estado.conceitos[id]);
+    });
+    Object.keys(estado.habilidades).forEach(function (id) {
+      estado.habilidades[id] = normalizarHabilidade(estado.habilidades[id]);
     });
     return estado;
   }
@@ -90,7 +181,9 @@ window.Plataforma = window.Plataforma || {};
   function carregar() {
     try {
       const bruto = window.localStorage.getItem(CHAVE);
-      return bruto ? normalizarEstado(JSON.parse(bruto)) : criaPadrao();
+      const carregado = bruto ? normalizarEstado(JSON.parse(bruto)) : criaPadrao();
+      ultimoLocal = bruto;
+      return carregado;
     } catch (e) {
       disponivel = false;
       console.error('[Progresso] Não foi possível ler o progresso salvo:', e);
@@ -112,7 +205,11 @@ window.Plataforma = window.Plataforma || {};
         return estado.licoes[id].status === 'concluida' && (!recebido.licoes[id] || recebido.licoes[id].status !== 'concluida');
       });
       // Persiste a união só quando há novidade: evita ping-pong de eventos entre abas.
-      if (disponivel && (faltamEventos || faltamConclusoes)) window.localStorage.setItem(CHAVE, JSON.stringify(estado));
+      if (disponivel && (faltamEventos || faltamConclusoes)) {
+        const bruto = JSON.stringify(estado);
+        window.localStorage.setItem(CHAVE, bruto);
+        ultimoLocal = bruto;
+      }
       ouvintes.forEach(function (cb) {
         try { cb(estado); } catch (e) { console.error('[Progresso] Falha ao atualizar a interface:', e); }
       });
@@ -125,7 +222,9 @@ window.Plataforma = window.Plataforma || {};
     sincronizarLocal();
     if (disponivel) {
       try {
-        window.localStorage.setItem(CHAVE, JSON.stringify(estado));
+        const bruto = JSON.stringify(estado);
+        window.localStorage.setItem(CHAVE, bruto);
+        ultimoLocal = bruto;
       } catch (e) {
         disponivel = false;
         console.error('[Progresso] Não foi possível salvar no navegador:', e);
@@ -162,6 +261,9 @@ window.Plataforma = window.Plataforma || {};
     const antigo = recente === a ? b : a;
     const resultado = normalizarEstado(Object.assign({}, antigo, recente));
     resultado.premios = Object.assign({}, a.premios || {}, b.premios || {});
+    Object.keys(resultado.premios).forEach(function (id) {
+      resultado.premios[id] = Math.max(a.premios[id] || 0, b.premios[id] || 0);
+    });
     resultado.xpBase = Math.max(a.xpBase == null ? a.xp || 0 : a.xpBase, b.xpBase == null ? b.xp || 0 : b.xpBase);
     resultado.xp = resultado.xpBase + Object.values(resultado.premios).reduce(function (n, p) { return n + p; }, 0);
     resultado.licoes = Object.assign({}, antigo.licoes || {}, recente.licoes || {});
@@ -185,6 +287,13 @@ window.Plataforma = window.Plataforma || {};
     ['conceitos', 'agenda', 'habilidades', 'configuracoes'].forEach(function (campo) {
       resultado[campo] = Object.assign({}, antigo[campo] || {}, recente[campo] || {});
     });
+    Object.keys(resultado.agenda).forEach(function (id) {
+      const x = a.agenda[id], y = b.agenda[id];
+      if (!x || !y) return;
+      const tx = x.atualizadaEm || x.ultimoErroEm || '';
+      const ty = y.atualizadaEm || y.ultimoErroEm || '';
+      if (tx !== ty) resultado.agenda[id] = tx > ty ? x : y;
+    });
     resultado.eventosPratica = Object.assign({}, a.eventosPratica || {}, b.eventosPratica || {});
     resultado.praticaBase = { conceitos: {}, habilidades: {} };
     ['conceitos', 'habilidades'].forEach(function (campo) {
@@ -193,6 +302,15 @@ window.Plataforma = window.Plataforma || {};
       Object.keys(Object.assign({}, x, y)).forEach(function (id) {
         const base = Object.assign({}, x[id] || {}, y[id] || {});
         ['acertos', 'erros', 'pontos', 'acertosConfiantes', 'chutesCertos'].forEach(function (n) { base[n] = Math.max((x[id] || {})[n] || 0, (y[id] || {})[n] || 0); });
+        if (campo === 'conceitos') {
+          base.dimensoes = Object.assign({}, (x[id] || {}).dimensoes || {}, (y[id] || {}).dimensoes || {});
+          Object.keys(base.dimensoes).forEach(function (d) {
+            const dx = ((x[id] || {}).dimensoes || {})[d] || {};
+            const dy = ((y[id] || {}).dimensoes || {})[d] || {};
+            base.dimensoes[d] = Object.assign({}, dx, dy);
+            ['acertos', 'erros', 'pontos', 'sequencia'].forEach(function (n) { base.dimensoes[d][n] = Math.max(dx[n] || 0, dy[n] || 0); });
+          });
+        }
         resultado.praticaBase[campo][id] = base;
       });
     });
@@ -210,6 +328,15 @@ window.Plataforma = window.Plataforma || {};
   function reconstruirPratica(alvo) {
     alvo.conceitos = JSON.parse(JSON.stringify(alvo.praticaBase.conceitos));
     alvo.habilidades = JSON.parse(JSON.stringify(alvo.praticaBase.habilidades));
+    Object.keys(alvo.conceitos).forEach(function (id) {
+      const c = normalizarConceito(alvo.conceitos[id]);
+      c.estado = calcularEstadoConceito(c);
+      c.dominio = calcularDominio(c);
+      alvo.conceitos[id] = c;
+    });
+    Object.keys(alvo.habilidades).forEach(function (id) {
+      alvo.habilidades[id] = normalizarHabilidade(alvo.habilidades[id]);
+    });
     Object.values(alvo.eventosPratica || {}).sort(function (a, b) { return a.em.localeCompare(b.em); }).forEach(function (ev) {
       if (ev.habilidade) {
         const h = alvo.habilidades[ev.habilidade] || { acertos: 0, erros: 0, pontos: 0 };
@@ -240,7 +367,10 @@ window.Plataforma = window.Plataforma || {};
     if (!disponivel) return;
     try {
       const bruto = window.localStorage.getItem(CHAVE);
-      if (bruto) estado = mesclarEstados(estado, normalizarEstado(JSON.parse(bruto)));
+      if (bruto && bruto !== ultimoLocal) {
+        estado = mesclarEstados(estado, JSON.parse(bruto));
+        ultimoLocal = bruto;
+      }
     } catch (e) { console.warn('[Progresso] Falha ao ler a versão salva:', e); }
   }
   function hojeISO() { return new Date().toLocaleDateString('sv-SE'); }
@@ -313,17 +443,17 @@ window.Plataforma = window.Plataforma || {};
     const tentativas = c.acertos + c.erros;
     if (!tentativas) return 0;
     const pontos = typeof c.pontos === 'number' ? c.pontos : c.acertos;
-    return pontos / (pontos + c.erros);
+    return pontos / tentativas;
   }
 
   function calcularEstadoConceito(c) {
     const tentativas = c.acertos + c.erros;
     if (!tentativas) return 'aprendendo';
     if (c.erros > c.acertos) return 'dificuldade';
-    if (c.erros > 0) return 'revisar';
     const variedade = dimensoesComAcerto(c).length;
     const forte = precisao(c) >= 0.8;
     if (c.acertos >= 3 && variedade >= 2 && forte) return 'dominado';
+    if (c.erros > 0) return 'revisar';
     if (c.acertos >= 3 && variedade < 2) return 'revisar';
     return 'aprendendo';
   }
@@ -338,11 +468,11 @@ window.Plataforma = window.Plataforma || {};
         dims[d] = { percentual: 0, tentativas: 0 };
         return;
       }
-      const acertosPonderados = info.pontos || info.acertos || 0;
-      const pct = Math.round((acertosPonderados / (acertosPonderados + (info.erros || 0))) * 100);
+      const acertosPonderados = info.pontos == null ? (info.acertos || 0) : info.pontos;
+      const pct = Math.round((acertosPonderados / ((info.acertos || 0) + (info.erros || 0))) * 100);
       dims[d] = { percentual: Math.max(0, Math.min(100, pct)), tentativas: (info.acertos || 0) + (info.erros || 0) };
       pontosTotais += acertosPonderados;
-      tentativasTotais += acertosPonderados + (info.erros || 0);
+      tentativasTotais += (info.acertos || 0) + (info.erros || 0);
     });
     const geral = tentativasTotais ? Math.round((pontosTotais / tentativasTotais) * 100) : 0;
     return { geral: geral, dimensoes: dims, medidas: tentativasTotais };
@@ -353,6 +483,7 @@ window.Plataforma = window.Plataforma || {};
       nivel: 0,
       proximaEm: diaISO(P.conf.intervalosRevisao[0]),
       ultimoErroEm: new Date().toISOString(),
+      atualizadaEm: new Date().toISOString(),
       acertosSeguidos: 0
     };
   }
@@ -368,6 +499,7 @@ window.Plataforma = window.Plataforma || {};
       nivel: proximoNivel,
       proximaEm: diaISO(P.conf.intervalosRevisao[proximoNivel]),
       ultimoErroEm: atual.ultimoErroEm || null,
+      atualizadaEm: new Date().toISOString(),
       acertosSeguidos: (atual.acertosSeguidos || 0) + 1
     };
   }
@@ -393,7 +525,8 @@ window.Plataforma = window.Plataforma || {};
         dim.acertos += 1;
         dim.pontos = (dim.pontos || 0) + peso;
         if (primeiraTentativa) dim.sequencia = (dim.sequencia || 0) + 1;
-        if (info.revisao) agendarAcerto(id);
+        if (confianca === 'chute' && !estado.agenda[id]) agendarErro(id);
+        else if (info.revisao) agendarAcerto(id);
       } else {
         c.erros += 1;
         c.sequencia = 0;
@@ -529,34 +662,6 @@ window.Plataforma = window.Plataforma || {};
     return { primeiraVez: primeiraVez, bonus: bonus };
   }
 
-  function alternarConclusaoLicao(id, forcarStatus) {
-    const licao = (P.interno.licoes && P.interno.licoes[id]) || {};
-    const registro = estado.licoes[id] || { tentativas: 0, melhorAproveitamento: 0 };
-    const jaConcluida = registro.status === 'concluida';
-    const novoStatus = forcarStatus !== undefined ? (forcarStatus ? 'concluida' : 'disponivel') : (jaConcluida ? 'disponivel' : 'concluida');
-
-    if (novoStatus === 'concluida') {
-      registro.status = 'concluida';
-      registro.concluidaEm = registro.concluidaEm || new Date().toISOString();
-      registro.melhorAproveitamento = registro.melhorAproveitamento || 100;
-      registro.rascunho = null;
-      if (!jaConcluida) {
-        const bonus = licao.xp || P.conf.xpAula || 30;
-        adicionarXp(bonus, 'conclusao');
-      }
-    } else {
-      registro.status = 'disponivel';
-      registro.concluidaEm = null;
-    }
-
-    estado.licoes[id] = registro;
-    salvar();
-    if (P.nuvem && P.nuvem.salvarRemoto) {
-      P.nuvem.salvarRemoto(estado, true);
-    }
-    return novoStatus === 'concluida';
-  }
-
   function registrarRevisao(info) {
     estado.revisoes.push({
       data: new Date().toISOString(),
@@ -662,25 +767,7 @@ window.Plataforma = window.Plataforma || {};
 
   function importar(dados, naoEnviarNuvem) {
     if (!dados || typeof dados !== 'object' || Array.isArray(dados) || !Number.isFinite(dados.xp) || dados.xp < 0 || !dados.licoes || typeof dados.licoes !== 'object' || Array.isArray(dados.licoes)) throw new Error('Formato de arquivo inválido. Exporte um backup da plataforma.');
-    ['conceitos', 'agenda', 'habilidades', 'configuracoes', 'premios'].forEach(function (campo) {
-      if (dados[campo] != null && (typeof dados[campo] !== 'object' || Array.isArray(dados[campo]))) throw new Error('Campo inválido: ' + campo);
-    });
-    ['sessoes', 'revisoes'].forEach(function (campo) {
-      if (dados[campo] != null && !Array.isArray(dados[campo])) throw new Error('Campo inválido: ' + campo);
-    });
-    if (dados.streak != null && (typeof dados.streak !== 'object' || Array.isArray(dados.streak) || (dados.streak.dias != null && !Array.isArray(dados.streak.dias)))) throw new Error('Histórico de dias inválido.');
-    if (dados.xpBase != null && (!Number.isFinite(dados.xpBase) || dados.xpBase < 0)) throw new Error('XP base inválido.');
-    Object.values(dados.premios || {}).forEach(function (xp) {
-      if (!Number.isFinite(xp) || xp < 0) throw new Error('Prêmio de XP inválido.');
-    });
-    Object.values(dados.eventosPratica || {}).forEach(function (evento) {
-      if (!evento || typeof evento.correto !== 'boolean' || typeof evento.em !== 'string' || (!evento.habilidade && (!Array.isArray(evento.ids) || !P.dimensoes[evento.dimensao] || pesosConfianca[evento.confianca] == null))) throw new Error('Registro de prática inválido.');
-    });
     const candidato = normalizarEstado(dados);
-    Object.keys(candidato.licoes).forEach(function (id) {
-      const l = candidato.licoes[id];
-      if (!l || typeof l !== 'object' || Array.isArray(l)) throw new Error('Registro de lição inválido: ' + id);
-    });
     if (!naoEnviarNuvem) candidato.reiniciadoEm = new Date().toISOString();
     if (naoEnviarNuvem && JSON.stringify(candidato) === JSON.stringify(estado)) return;
     estado = candidato;
@@ -742,7 +829,6 @@ window.Plataforma = window.Plataforma || {};
     marcarEtapaPremiada: marcarEtapaPremiada,
     registrarResultadoEtapa: registrarResultadoEtapa,
     concluirLicao: concluirLicao,
-    alternarConclusaoLicao: alternarConclusaoLicao,
     registrarRevisao: registrarRevisao,
     resumoConceitos: resumoConceitos,
     estadoConceito: estadoConceito,

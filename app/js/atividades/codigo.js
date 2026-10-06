@@ -3,6 +3,12 @@ window.Plataforma = window.Plataforma || {};
 (function (P) {
   const criar = P.dom.criar;
 
+  function respostaNormalizada(atv, valor) {
+    const sql = (atv.conceitos || []).some(function (id) { return id.indexOf('sql.') === 0; }) || /^sql/.test(atv.id || '');
+    const shell = /^(git|docker|redis|term)/.test(atv.id || '');
+    return P.dom.normalizarRespostaCodigo(valor, !sql, sql ? 'sql' : (shell ? 'shell' : 'codigo'));
+  }
+
   P.atividades.registrar('fill-code', {
     rotulo: 'Completar código',
     render: function (atv, area, api) {
@@ -20,7 +26,8 @@ window.Plataforma = window.Plataforma || {};
             classe: 'lacuna',
             type: 'text',
             autocomplete: 'off',
-            spellcheck: 'false'
+            spellcheck: 'false',
+            'aria-label': 'Lacuna ' + (indice + 1)
           });
           input.style.width = Math.max(8, exemplo.length + 3) + 'ch';
           input.addEventListener('input', function () { checar(); });
@@ -48,9 +55,8 @@ window.Plataforma = window.Plataforma || {};
 
       function aceita(indice, valor) {
         const aceitos = (atv.lacunas && atv.lacunas[indice]) || [];
-        const sensivel = /^(cs|linq|ef|api)/.test(atv.id || '');
-        const normalizado = P.dom.normalizarRespostaCodigo(valor, sensivel);
-        return aceitos.some(function (a) { return P.dom.normalizarRespostaCodigo(a, sensivel) === normalizado; });
+        const normalizado = respostaNormalizada(atv, valor);
+        return aceitos.some(function (a) { return respostaNormalizada(atv, a) === normalizado; });
       }
 
       return {
@@ -101,6 +107,7 @@ window.Plataforma = window.Plataforma || {};
       const texto = criar('textarea', {
         classe: 'write-codigo',
         spellcheck: 'false',
+        'aria-label': 'Sua resposta',
         placeholder: atv.placeholder || 'Escreva sua resposta aqui...'
       });
       wrap.appendChild(texto);
@@ -121,10 +128,9 @@ window.Plataforma = window.Plataforma || {};
       function validar(valor) {
         const texto = String(valor || '').replace(/[\u2018\u2019]/g, "'");
         if (typeof atv.validar === 'function' && (atv.habilidade === 'writing' || !atv.respostasAceitas || !atv.respostasAceitas.length)) return !!atv.validar(texto);
-        const sensivel = /^(cs|linq|ef|api)/.test(atv.id || '');
-        const normalizada = P.dom.normalizarRespostaCodigo(texto, sensivel);
+        const normalizada = respostaNormalizada(atv, texto);
         return (atv.respostasAceitas || []).some(function (a) {
-          return P.dom.normalizarRespostaCodigo(a, sensivel) === normalizada;
+          return respostaNormalizada(atv, a) === normalizada;
         });
       }
 

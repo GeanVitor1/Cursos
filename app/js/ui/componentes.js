@@ -5,6 +5,17 @@ window.Plataforma = window.Plataforma || {};
   const d = P.dom;
   const criar = d.criar;
 
+  function teclaModal(ev, caixa, cancelar) {
+    if (ev.key === 'Escape') { ev.preventDefault(); cancelar(); }
+    if (ev.key !== 'Tab') return;
+    const botoes = Array.from(caixa.querySelectorAll('button:not(:disabled)'));
+    if (!botoes.length) return;
+    const atual = botoes.indexOf(document.activeElement);
+    const proximo = ev.shiftKey ? (atual - 1 + botoes.length) % botoes.length : (atual + 1) % botoes.length;
+    ev.preventDefault();
+    botoes[proximo].focus();
+  }
+
   function botao(rotulo, opcoes) {
     opcoes = opcoes || {};
     const tipo = opcoes.tipo || 'primario';
@@ -180,7 +191,7 @@ window.Plataforma = window.Plataforma || {};
       const fundo = criar('div', { classe: 'modal-fundo' });
       const caixa = criar('div', { classe: 'modal' }, [
         criar('span', { classe: 'pequeno fraco', texto: info && info.licao ? 'Ensinado em: ' + (P.interno.licoes[info.licao] || {}).titulo : 'Definição' }),
-        criar('h3', { texto: nome }),
+        criar('h3', { id: 'modal-titulo', texto: nome }),
         criar('p', { html: d.formatar((info && info.definicao) || 'A definição deste conceito aparece na lição em que ele é introduzido.') }),
         info && info.exemplo ? criar('div', { classe: 'conceito-exemplo' }, [
           criar('span', { classe: 'pequeno fraco', texto: 'Exemplo' }),
@@ -193,9 +204,10 @@ window.Plataforma = window.Plataforma || {};
       fundo.appendChild(caixa);
       caixa.setAttribute('role', 'dialog');
       caixa.setAttribute('aria-modal', 'true');
+      caixa.setAttribute('aria-labelledby', 'modal-titulo');
       const antes = document.activeElement;
       function fechar() { fundo.remove(); if (antes && antes.isConnected) antes.focus(); resolver(true); }
-      fundo.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') { ev.preventDefault(); fechar(); } });
+      fundo.addEventListener('keydown', function (ev) { teclaModal(ev, caixa, fechar); });
       fundo.addEventListener('click', function (ev) { if (ev.target === fundo) fechar(); });
       document.body.appendChild(fundo);
       caixa.querySelector('button').focus();
@@ -322,7 +334,7 @@ window.Plataforma = window.Plataforma || {};
     return new Promise(function (resolver) {
       const fundo = criar('div', { classe: 'modal-fundo' });
       const caixa = criar('div', { classe: 'modal' }, [
-        criar('h3', { texto: opcoes.titulo || 'Confirmar' }),
+        criar('h3', { id: 'modal-titulo', texto: opcoes.titulo || 'Confirmar' }),
         criar('p', { html: d.formatar(opcoes.texto || '') }),
         criar('div', { classe: 'modal-acoes' }, [
           criar('button', { classe: 'btn btn-fantasma', texto: opcoes.rotuloCancelar || 'Cancelar', onclick: function () { fechar(false); } }),
@@ -338,14 +350,9 @@ window.Plataforma = window.Plataforma || {};
         if (antes && antes.isConnected) antes.focus();
         resolver(valor);
       }
+      caixa.setAttribute('aria-labelledby', 'modal-titulo');
       fundo.addEventListener('keydown', function (ev) {
-        if (ev.key === 'Escape') { ev.preventDefault(); fechar(false); }
-        if (ev.key === 'Tab') {
-          const botoes = Array.from(caixa.querySelectorAll('button'));
-          const atual = botoes.indexOf(document.activeElement);
-          const proximo = ev.shiftKey ? (atual - 1 + botoes.length) % botoes.length : (atual + 1) % botoes.length;
-          ev.preventDefault(); botoes[proximo].focus();
-        }
+        teclaModal(ev, caixa, function () { fechar(false); });
       });
       fundo.addEventListener('click', function (ev) { if (ev.target === fundo) fechar(false); });
       document.body.appendChild(fundo);

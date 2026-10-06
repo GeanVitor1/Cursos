@@ -176,6 +176,7 @@ window.Plataforma = window.Plataforma || {};
       const texto = criar('textarea', {
         classe: 'write-codigo explain-texto',
         spellcheck: 'true',
+        'aria-label': 'Sua explicação',
         placeholder: atv.placeholder || 'Explique do seu jeito, sem decorar...'
       });
       wrap.appendChild(texto);

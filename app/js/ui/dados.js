@@ -26,12 +26,13 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function importarArquivo(arquivo) {
+    const versao = P.roteador.versao();
     const leitor = new FileReader();
     leitor.onload = function () {
       try {
         P.dados.importar(JSON.parse(leitor.result));
         P.ui.layout.toast('Progresso importado com sucesso', 'sucesso');
-        render();
+        if (versao === P.roteador.versao()) render();
       } catch (e) {
         P.ui.layout.toast('Falha ao importar: ' + e.message, 'erro');
       }
@@ -94,14 +95,15 @@ window.Plataforma = window.Plataforma || {};
 
     pagina.appendChild(criar('div', { classe: 'cartao' }, [
       criar('h3', { texto: 'Sincronização em nuvem e backup' }),
-      criar('p', { classe: 'muted pequeno', texto: 'Seu progresso agora sincroniza automaticamente na nuvem (Supabase) entre seus computadores sem precisar fazer login.' }),
+      criar('p', { classe: 'muted pequeno', texto: 'A nuvem usa um perfil pessoal compartilhado entre os dispositivos que acessam este site. Sem login, todos os visitantes usam o mesmo progresso.' }),
       criar('div', { classe: 'dados-acoes' }, [
         comp.botao('Sincronizar com a nuvem agora', {
           onclick: async function () {
             if (P.nuvem && P.nuvem.carregarRemoto) {
+              const versao = P.roteador.versao();
               const resultado = await P.nuvem.sincronizar();
               P.ui.layout.toast(resultado.erro ? 'Falha na sincronização. Seu progresso local foi preservado.' : 'Sincronizado com a nuvem!', resultado.erro ? 'erro' : 'sucesso');
-              render();
+              if (versao === P.roteador.versao()) render();
             }
           }
         }),

@@ -9,7 +9,7 @@ window.Plataforma = window.Plataforma || {};
     const numero = params && Number(params.min);
     const limite = Number.isFinite(numero) && numero > 0 ? Math.max(3, Math.min(20, numero)) : 8;
     const incluirHoje = !!(params && params.escopo === 'hoje');
-    const conceitos = P.progresso.conceitosParaRevisar(incluirHoje);
+    const conceitos = P.progresso.conceitosParaRevisar(incluirHoje).slice(0, 8);
     if (conceitos.length) {
       P.ui.layout.definirConteudo(criar('div', { classe: 'estado-vazio', texto: 'Preparando revisão...', role: 'status' }));
       try { await P.carregador.carregarConceitos(conceitos.map(function (c) { return c.id; })); }

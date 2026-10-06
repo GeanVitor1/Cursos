@@ -170,6 +170,7 @@ window.Plataforma = window.Plataforma || {};
   function encerrar() {
     salvarPosicao();
     descartarInstancia();
+    if (salvoTimer) { window.clearTimeout(salvoTimer); salvoTimer = null; }
     acaoPrimariaAtual = null;
     acaoSecundariaAtual = null;
     estado = null;

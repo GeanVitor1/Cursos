@@ -19,6 +19,8 @@ As chamadas ao Supabase são simuladas nos testes. Nenhum progresso real é alte
 
 `complementares.spec.cjs` verifica a importação do backup realmente baixado pela interface, rejeição de arquivo inválido, revisão com lições carregadas sob demanda, controles de sessão, dicas, modal de explicação e revelação sem XP duplicado depois de recarregar.
 
+`auditoria.spec.cjs` cobre foco e nomes acessíveis dos modais, menu por teclado, larguras intermediárias, tema entre abas e backups, navegação durante sincronização, contagem de conteúdo publicado, flags de comandos, rotas com nomes de protótipos e revisão na data local de São Paulo. Os testes unitários adicionais verificam domínio ponderado pela confiança, recuperação após erros, migração de dimensões, agenda concorrente e rejeição de dados internos inválidos. `servidor.test.cjs` verifica arquivos públicos, métodos HTTP, caminhos inválidos e acesso a arquivos privados por links/junções.
+
 Resultados JSON, screenshots e traces de falhas ficam em `.gstack/qa-reports/runs/<id>/`. Evidências visuais e métricas ficam em `.gstack/qa-reports/`. Os artefatos são ignorados pelo Git e pela Vercel.
 
 Para desenvolver, use `npm start` e abra `http://127.0.0.1:8080/app/`. Feche esse servidor antes de rodar a suíte: os testes iniciam seu próprio servidor na porta 8080. Não execute duas suítes simultaneamente nessa porta.

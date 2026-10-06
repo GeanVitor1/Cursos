@@ -2,10 +2,10 @@ window.Plataforma = window.Plataforma || {};
 
 (function (P) {
   P.interno = {
-    trilhas: {},
-    licoes: {},
+    trilhas: Object.create(null),
+    licoes: Object.create(null),
     manifesto: null,
-    conceitos: {},
+    conceitos: Object.create(null),
     certificacoes: [],
     projetos: [],
     entrevistas: [],

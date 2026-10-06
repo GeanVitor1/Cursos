@@ -17,6 +17,7 @@ window.Plataforma = window.Plataforma || {};
 
   let conteudoEl = null;
   let chipSessao = null;
+  let focoAntesMenu = null;
 
   function itemNav(rota, rotulo, icone, hash, pct) {
     const filhos = [
@@ -77,6 +78,8 @@ window.Plataforma = window.Plataforma || {};
     chipSessao = criar('div', { classe: 'chip-sessao', hidden: true });
     const botaoMenu = criar('button', {
       classe: 'menu-botao',
+      'aria-expanded': 'false',
+      'aria-controls': 'menu-lateral',
       title: 'Abrir menu',
       texto: '☰',
       onclick: abrirMenu
@@ -127,8 +130,23 @@ window.Plataforma = window.Plataforma || {};
       botaoMenuInferior()
     ]);
     app.appendChild(criar('div', { classe: 'app-shell' }, [montarSidebar(), area, fundo, navInferior]));
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.id = 'menu-lateral';
+    sidebar.addEventListener('keydown', function (ev) {
+      if (!document.querySelector('.app-shell.menu-aberto')) return;
+      if (ev.key === 'Escape') { ev.preventDefault(); fecharMenu(); }
+      if (ev.key !== 'Tab') return;
+      const botoes = Array.from(sidebar.querySelectorAll('button:not(:disabled)'));
+      const indice = botoes.indexOf(document.activeElement);
+      if ((!ev.shiftKey && indice === botoes.length - 1) || (ev.shiftKey && indice === 0)) {
+        ev.preventDefault();
+        botoes[ev.shiftKey ? botoes.length - 1 : 0].focus();
+      }
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth > 960) fecharMenu(); });
     aplicarTema(P.dados.tema());
     P.dados.aoMudar(function () {
+      aplicarTema(P.dados.tema());
       atualizarEstatisticas();
       if (!document.querySelector('.runner') && !document.querySelector('.conclusao')) {
         queueMicrotask(function () {
@@ -154,6 +172,8 @@ window.Plataforma = window.Plataforma || {};
     return criar('button', {
       classe: 'bottom-item',
       title: 'Abrir menu completo',
+      'aria-expanded': 'false',
+      'aria-controls': 'menu-lateral',
       onclick: abrirMenu
     }, [
       criar('span', { classe: 'bottom-icone', texto: '☰' }),
@@ -162,17 +182,25 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function abrirMenu() {
+    focoAntesMenu = document.activeElement;
     const shell = document.querySelector('.app-shell');
     if (shell) shell.classList.add('menu-aberto');
     const fundo = document.querySelector('.drawer-fundo');
     if (fundo) fundo.classList.add('visivel');
+    document.querySelectorAll('[aria-controls="menu-lateral"]').forEach(function (b) { b.setAttribute('aria-expanded', 'true'); });
+    const item = document.querySelector('.sidebar .nav-item.ativo') || document.querySelector('.sidebar .nav-item');
+    if (item) item.focus();
   }
 
   function fecharMenu() {
     const shell = document.querySelector('.app-shell');
+    const estavaAberto = shell && shell.classList.contains('menu-aberto');
     if (shell) shell.classList.remove('menu-aberto');
     const fundo = document.querySelector('.drawer-fundo');
     if (fundo) fundo.classList.remove('visivel');
+    document.querySelectorAll('[aria-controls="menu-lateral"]').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+    if (estavaAberto && focoAntesMenu && focoAntesMenu.isConnected) focoAntesMenu.focus();
+    focoAntesMenu = null;
   }
 
   function definirConteudo(elemento) {
@@ -186,6 +214,8 @@ window.Plataforma = window.Plataforma || {};
     const alvo = rota === 'trilha' && param ? 'trilha-' + param : (rota === 'inicio' ? 'inicio' : rota);
     document.querySelectorAll('.nav-item').forEach(function (el) {
       el.classList.toggle('ativo', el.dataset.rota === alvo);
+      if (el.dataset.rota === alvo) el.setAttribute('aria-current', 'page');
+      else el.removeAttribute('aria-current');
     });
     document.querySelectorAll('.bottom-item').forEach(function (el) {
       const r = el.dataset.rota;
@@ -196,6 +226,8 @@ window.Plataforma = window.Plataforma || {};
       else if (r === 'mix-revisao') ativo = rota === 'revisao';
       else ativo = r === rota;
       el.classList.toggle('ativo', ativo);
+      if (ativo) el.setAttribute('aria-current', 'page');
+      else el.removeAttribute('aria-current');
     });
   }
 
@@ -254,7 +286,7 @@ window.Plataforma = window.Plataforma || {};
   function toast(mensagem, tipo) {
     const container = document.getElementById('toasts');
     if (!container) return;
-    const el = criar('div', { classe: 'toast' + (tipo ? ' ' + tipo : ''), texto: mensagem });
+    const el = criar('div', { classe: 'toast' + (tipo ? ' ' + tipo : ''), texto: mensagem, role: tipo === 'erro' ? 'alert' : 'status' });
     container.appendChild(el);
     window.requestAnimationFrame(function () { el.classList.add('visivel'); });
     window.setTimeout(function () {

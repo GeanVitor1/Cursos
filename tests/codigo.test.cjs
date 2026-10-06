@@ -17,3 +17,11 @@ test('C# respeita maiúsculas e SQL não une identificadores distintos', () => {
   assert.notEqual(normalizar('produtos.Add(produto)', true), normalizar('produtos.add(produto)', true));
   assert.notEqual(normalizar('SELECTNome FROM Clientes', false), normalizar('SELECT Nome FROM Clientes', false));
 });
+
+test('flags de terminal e decremento em C# não são comentários SQL', () => {
+  assert.notEqual(normalizar('git reset --soft HEAD~1', true, 'shell'), normalizar('git reset --hard HEAD~1', true, 'shell'));
+  assert.notEqual(normalizar('docker run --name api nginx', true, 'shell'), normalizar('docker run', true, 'shell'));
+  assert.notEqual(normalizar('contador--;', true), normalizar('contador;', true));
+  assert.equal(normalizar('SELECT Nome FROM Clientes -- comentário', false), normalizar('select Nome from Clientes', false));
+  assert.equal(normalizar('git status # comentário', true, 'shell'), normalizar('git status', true, 'shell'));
+});

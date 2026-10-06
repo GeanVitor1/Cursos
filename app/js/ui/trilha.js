@@ -55,11 +55,10 @@ window.Plataforma = window.Plataforma || {};
     const acoes = criar('div', { classe: 'etapa-acoes' });
 
     if (etapa.licao && status === 'concluida') {
-      const estaConcluida = status === 'concluida';
       const btnCheck = criar('button', {
-        classe: 'btn-check-etapa' + (estaConcluida ? ' concluida' : ''),
-        title: estaConcluida ? 'Etapa marcada como concluída (clique para desmarcar)' : 'Marcar etapa como concluída',
-        texto: estaConcluida ? '✓ Concluída' : 'Marcar concluída',
+        classe: 'btn-check-etapa concluida',
+        title: 'Revisar etapa concluída',
+        texto: '✓ Concluída',
         onclick: function (ev) {
           ev.stopPropagation();
           abrirEtapa(trilhaId, etapa, status);
@@ -260,7 +259,10 @@ window.Plataforma = window.Plataforma || {};
 
     (t.niveis || []).forEach(function (nivel) {
       const etapasNivel = nivel.etapas || [];
-      const produzidas = etapasNivel.filter(function (e) { return !!e.licao; }).length;
+      const produzidas = etapasNivel.filter(function (e) {
+        const l = P.interno.licoes[e.licao];
+        return l && (l.disponivel === true || (l.etapas && l.etapas.length));
+      }).length;
       const bloco = criar('div', { classe: 'nivel-bloco' });
       bloco.appendChild(criar('div', { classe: 'nivel-titulo' }, [
         criar('h2', { texto: nivel.nome }),

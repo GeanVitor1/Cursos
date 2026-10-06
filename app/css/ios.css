@@ -18,8 +18,8 @@
   --borda: rgba(60, 60, 67, .12);
   --borda-forte: rgba(60, 60, 67, .3);
   --texto: #1c1c1e;
-  --texto-suave: rgba(60, 60, 67, .6);
-  --texto-fraco: rgba(60, 60, 67, .45);
+  --texto-suave: #565660;
+  --texto-fraco: #686870;
   --primaria: #007aff;
   --primaria-forte: #0062cc;
   --primaria-suave: rgba(0, 122, 255, .12);
@@ -49,8 +49,8 @@
   --borda: rgba(255, 255, 255, .12);
   --borda-forte: rgba(255, 255, 255, .24);
   --texto: #ffffff;
-  --texto-suave: rgba(235, 235, 245, .6);
-  --texto-fraco: rgba(235, 235, 245, .4);
+  --texto-suave: #c5c5d0;
+  --texto-fraco: #b0b0ba;
   --primaria: #0a84ff;
   --primaria-forte: #409cff;
   --primaria-suave: rgba(10, 132, 255, .18);

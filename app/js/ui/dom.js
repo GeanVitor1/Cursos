@@ -62,9 +62,18 @@ window.Plataforma = window.Plataforma || {};
   }
 
   // Compara tokens sem alterar texto entre aspas ou unir identificadores distintos.
-  function normalizarRespostaCodigo(texto, sensivelAMaiusculas) {
-    const tokens = String(texto || '').match(/\/\*[\s\S]*?\*\/|\/\/[^\n]*|--[^\n]*|'(?:[^'\\]|\\.|'')*'|"(?:[^"\\]|\\.|"")*"|[\p{L}_@][\p{L}\p{N}_]*|\d+(?:\.\d+)?[mMdDfFlL]?|=>|==|!=|<=|>=|&&|\|\||\?\?|\?\.|\S/gu) || [];
-    const significativos = tokens.filter(function (t) { return !/^(\/\*|\/\/|--)/.test(t); }).map(function (t) {
+  const tokenCodigo = /'(?:[^'\\]|\\.|'')*'|"(?:[^"\\]|\\.|"")*"|[\p{L}_@][\p{L}\p{N}_]*|\d+(?:\.\d+)?[mMdDfFlL]?|=>|==|!=|<=|>=|&&|\|\||\?\?|\?\.|\S/u;
+  const expressoesCodigo = {
+    sql: new RegExp(/\/\*[\s\S]*?\*\/|--[^\n]*/.source + '|' + tokenCodigo.source, 'gu'),
+    shell: new RegExp(/#[^\n]*/.source + '|' + tokenCodigo.source, 'gu'),
+    codigo: new RegExp(/\/\*[\s\S]*?\*\/|\/\/[^\n]*/.source + '|' + tokenCodigo.source, 'gu')
+  };
+  function normalizarRespostaCodigo(texto, sensivelAMaiusculas, linguagem) {
+    const dialeto = linguagem || (sensivelAMaiusculas ? 'codigo' : 'sql');
+    const comentario = dialeto === 'sql' ? /^(\/\*|--)/ : (dialeto === 'shell' ? /^#/ : /^(\/\*|\/\/)/);
+    const regex = expressoesCodigo[dialeto] || expressoesCodigo.codigo;
+    const tokens = String(texto || '').match(regex) || [];
+    const significativos = tokens.filter(function (t) { return !comentario.test(t); }).map(function (t) {
       return sensivelAMaiusculas || /^["']/.test(t) ? t : t.toLowerCase();
     });
     if (significativos[significativos.length - 1] === ';') significativos.pop();

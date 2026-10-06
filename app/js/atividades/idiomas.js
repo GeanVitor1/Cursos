@@ -58,14 +58,13 @@ window.Plataforma = window.Plataforma || {};
           criar('span', { classe: 'nota-marca', texto: 'i' }),
           criar('div', { texto: 'Seu navegador não tem voz em inglês disponível. O texto apareceu para você continuar praticando — tente outro navegador para ouvir a pronúncia.' })
         ]));
-      } else {
-        window.setTimeout(function () { botaoOuvir.focus(); }, 100);
       }
 
       if (atv.modo === 'escrever') {
         const input = criar('input', {
           classe: 'listening-input',
           type: 'text',
+          'aria-label': 'Escreva o que você ouviu',
           placeholder: atv.placeholder || 'Escreva o que você ouviu...',
           autocomplete: 'off',
           autocapitalize: 'off',
@@ -129,6 +128,7 @@ window.Plataforma = window.Plataforma || {};
       area.appendChild(wrap);
 
       return {
+        focar: function () { botaoOuvir.focus(); },
         verificar: function () {
           travado = true;
           botoes.forEach(function (b, pos) {

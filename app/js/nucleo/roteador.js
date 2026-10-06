@@ -32,10 +32,14 @@ window.Plataforma = window.Plataforma || {};
         if (P.ui && P.ui.layout && P.ui.layout.marcarAtivo) {
           P.ui.layout.marcarAtivo(partes[0] || 'inicio', partes[1] || null);
         }
-        Promise.resolve(rota.handler(params)).catch(function (erro) {
+        const atual = versao;
+        function tratarErro(erro) {
           console.error('[Navegação]', erro);
+          if (atual !== versao) return;
           P.ui.layout.toast('Não foi possível abrir esta página. Tente novamente.', 'erro');
-        });
+        }
+        try { Promise.resolve(rota.handler(params)).catch(tratarErro); }
+        catch (erro) { tratarErro(erro); }
         return;
       }
     }

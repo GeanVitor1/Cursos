@@ -183,7 +183,7 @@ window.Plataforma = window.Plataforma || {};
     const hoje = P.dados.hojeISO();
     if (c.agenda && c.agenda.proximaEm) {
       if (c.agenda.proximaEm <= hoje) return true;
-      if (incluirHoje && c.agenda.ultimoErroEm && String(c.agenda.ultimoErroEm).slice(0, 10) === hoje) return true;
+      if (incluirHoje && c.agenda.ultimoErroEm && new Date(c.agenda.ultimoErroEm).toLocaleDateString('sv-SE') === hoje) return true;
       return false;
     }
     return c.erros > 0 || c.estado === 'revisar';
@@ -192,7 +192,6 @@ window.Plataforma = window.Plataforma || {};
   function conceitosParaRevisar(incluirHoje) {
     return P.dados.resumoConceitos()
       .filter(function (c) {
-        if (c.estado === 'dominado') return false;
         if (c.acertos === 0 && c.erros === 0) return false;
         return revisaoVencida(c, incluirHoje);
       })
