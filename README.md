@@ -20,6 +20,12 @@ python -m http.server 8080
 
 O progresso é salvo no `localStorage`. Exporte/importe em **Meu progresso** para backup.
 
+Auditoria funcional e instruções de verificação: [AUDITORIA_QA.md](AUDITORIA_QA.md) e [TESTING.md](TESTING.md).
+
+O carregamento inicial usa `data/catalogo.js`; o conteúdo de cada lição é baixado ao abri-la. Ao editar aulas, execute `npm run catalogo` (o build da Vercel também o gera). O catálogo atual contém **130 lições publicadas** e **237 registros de roadmap**, distribuídos em 20 trilhas. Registros planejados não entram no percentual de conclusão.
+
+O perfil de nuvem existente é pessoal e compartilhado entre os dispositivos que acessam o site. Não há isolamento por aluno. A sincronização atômica entre computadores requer aplicar `ferramentas/supabase-progresso.sql` e então habilitar `sincronizacaoAtomica` em `app/js/nucleo/registro.js`. As limitações de produção estão documentadas na auditoria.
+
 ## O que já está implementado
 
 - Motor da plataforma: trilhas, fases, níveis, etapas, progressão, XP, streak, checkpoints.
@@ -54,7 +60,7 @@ O progresso é salvo no `localStorage`. Exporte/importe em **Meu progresso** par
 
 | Trilha | Lições | Tema central |
 | --- | --- | --- |
-| SQL | 15 (13 lições + 2 checkpoints) | Fundamentos (bancos, SELECT, WHERE, AND/OR, IN/BETWEEN/NOT) + Iniciante (ORDER BY, DISTINCT, TOP/LIMIT, NULL/COALESCE, LIKE, UPDATE, INSERT/DELETE) |
+| SQL | 46 | Fundamentos, consultas, escrita, relacionamentos, agregações e checkpoints |
 | Git & GitHub | 17 (13 lições + 4 checkpoints) | clone/add/commit, push/pull, branch, merge, PR e code review, conflito, revert, reset, stash, .gitignore, Git Flow, commits, tags |
 | Docker | 14 (11 lições + 3 checkpoints) | ambiente reproduzível, imagem x container, Dockerfile, portas, volumes, variáveis, networks, compose, .NET + SQL Server + Redis |
 | Redis & Cache | 9 (7 lições + 2 checkpoints) | por que cache existe, Redis, TTL, cache aside, serialização, invalidação, ASP.NET Core + Redis |
@@ -64,11 +70,12 @@ O progresso é salvo no `localStorage`. Exporte/importe em **Meu progresso** par
 | **English A1** | **10 (9 lições + checkpoint)** | apresentações, números, família, rotina, horas, comida, compras, lugares, perguntas |
 | **English A2** | **3** | passado simples, planos/futuro, viagem (aeroporto e hotel) |
 | English for Developers | 2 | vocabulário técnico, mensagens de erro e leitura de issues |
+| English adicional | 5 | lições legadas e checkpoint A2 |
 | LINQ | 4 | por que existe, Where, Select, First/FirstOrDefault/Single |
 | Entity Framework Core | 4 | ORM, DbContext/DbSet, Add+SaveChanges com SQL gerado, leitura de dados |
 | ASP.NET Core | 3 | HTTP, JSON, primeira API |
 
-As demais trilhas (Segurança, Autenticação, Arquitetura, Testes, Frontend, Mensageria, CI/CD, Azure e Microsserviços) e os níveis avançados de SQL, Inglês, LINQ, EF Core e ASP.NET têm roadmap completo e entram em produção nas próximas ondas.
+As demais trilhas (Segurança, Autenticação, Arquitetura, Testes, Frontend, Mensageria, CI/CD, Azure e Microsserviços) e os níveis ainda não publicados de Inglês, LINQ, EF Core e ASP.NET têm roadmap e entram em produção nas próximas ondas.
 
 ## Inglês (A1 → C1)
 
