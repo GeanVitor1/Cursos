@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'cicd-04',
+  planejada: true,
   trilha: 'cicd',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Artifacts',
   subtitulo: 'Na prática · Etapa 6',
   duracaoMin: 35,

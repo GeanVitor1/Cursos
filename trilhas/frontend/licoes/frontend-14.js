@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-14',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Interfaces e types',
   subtitulo: 'TypeScript · Etapa 18',
   duracaoMin: 45,

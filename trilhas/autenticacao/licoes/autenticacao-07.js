@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'autenticacao-07',
+  planejada: true,
   trilha: 'autenticacao',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Roles e policies',
   subtitulo: 'Autorização · Etapa 10',
   duracaoMin: 50,

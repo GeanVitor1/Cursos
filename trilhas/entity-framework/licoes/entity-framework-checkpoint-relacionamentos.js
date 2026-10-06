@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'entity-framework-checkpoint-relacionamentos',
+  planejada: true,
   trilha: 'entity-framework',
   tipo: 'prova',
   titulo: 'Checkpoint — Relacionamentos',

@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'entity-framework-checkpoint-intermediario',
+  planejada: true,
   trilha: 'entity-framework',
   tipo: 'prova',
   titulo: 'Checkpoint — Intermediário',

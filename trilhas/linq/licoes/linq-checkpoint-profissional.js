@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'linq-checkpoint-profissional',
+  planejada: true,
   trilha: 'linq',
   tipo: 'prova',
   titulo: 'Checkpoint final — LINQ Profissional',

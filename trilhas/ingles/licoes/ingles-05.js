@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-05',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Dar opinião: concordar e discordar',

@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'frontend-checkpoint-css',
+  planejada: true,
   trilha: 'frontend',
   tipo: 'prova',
   titulo: 'Checkpoint — CSS',

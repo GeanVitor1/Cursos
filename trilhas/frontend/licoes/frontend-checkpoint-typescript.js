@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'frontend-checkpoint-typescript',
+  planejada: true,
   trilha: 'frontend',
   tipo: 'prova',
   titulo: 'Checkpoint — TypeScript',

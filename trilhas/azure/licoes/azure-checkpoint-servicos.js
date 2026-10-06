@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'azure-checkpoint-servicos',
+  planejada: true,
   trilha: 'azure',
   tipo: 'prova',
   titulo: 'Checkpoint final — Azure',

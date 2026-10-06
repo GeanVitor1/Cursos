@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'testes-checkpoint-unitarios',
+  planejada: true,
   trilha: 'testes',
   tipo: 'prova',
   titulo: 'Checkpoint — Unitários',

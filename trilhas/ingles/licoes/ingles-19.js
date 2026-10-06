@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-19',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Lendo documentação da Microsoft',

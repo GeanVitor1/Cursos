@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-16',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Escrita acadêmica e executiva',

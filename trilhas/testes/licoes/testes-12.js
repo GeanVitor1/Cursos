@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'testes-12',
+  planejada: true,
   trilha: 'testes',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Testes no pipeline de CI',
   subtitulo: 'Profissional · Etapa 16',
   duracaoMin: 45,

@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-16',
+  planejada: true,
   trilha: 'arquitetura',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Eventos de domínio',
   subtitulo: 'DDD · Etapa 20',
   duracaoMin: 50,

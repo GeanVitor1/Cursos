@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'mensageria-00',
+  planejada: true,
   trilha: 'mensageria',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Comunicação síncrona vs assíncrona',
   subtitulo: 'Fundamentos · Etapa 1',
   duracaoMin: 40,

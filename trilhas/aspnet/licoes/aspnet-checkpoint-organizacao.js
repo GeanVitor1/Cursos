@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'aspnet-checkpoint-organizacao',
+  planejada: true,
   trilha: 'aspnet',
   tipo: 'prova',
   titulo: 'Checkpoint — Organização',

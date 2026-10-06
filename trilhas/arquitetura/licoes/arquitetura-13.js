@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-13',
+  planejada: true,
   trilha: 'arquitetura',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Linguagem ubíqua e contexto',
   subtitulo: 'DDD · Etapa 17',
   duracaoMin: 40,

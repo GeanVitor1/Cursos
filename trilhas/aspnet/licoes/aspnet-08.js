@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'aspnet-08',
+  planejada: true,
   trilha: 'aspnet',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Swagger e OpenAPI',
   subtitulo: 'HTTP na prática · Etapa 10',
   duracaoMin: 35,

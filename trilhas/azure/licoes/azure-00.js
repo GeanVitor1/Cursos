@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'azure-00',
+  planejada: true,
   trilha: 'azure',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Azure do ponto de vista do desenvolvedor',
   subtitulo: 'Fundamentos · Etapa 1',
   duracaoMin: 40,

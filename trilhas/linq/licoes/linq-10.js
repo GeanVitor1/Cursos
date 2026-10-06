@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'linq-10',
+  planejada: true,
   trilha: 'linq',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Join em LINQ (em breve)',
   subtitulo: 'Intermediário · Etapa 13',
   duracaoMin: 50,

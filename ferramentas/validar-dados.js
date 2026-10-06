@@ -142,10 +142,18 @@ function validarAtividade(atv, onde) {
 
 function validarLicao(licao) {
   const onde = 'lição ' + (licao.id || '?');
+  // O roadmap legado registra arquivos vazios explicitamente intitulados "em breve".
+  // Continuam visíveis como planejados, sem entrar em progresso ou desbloqueio.
+  if (licao.planejada === true) {
+    if (!['licao', 'prova'].includes(licao.tipo)) erro(onde + ': tipo planejado inválido');
+    if (!Array.isArray(licao.etapas) || licao.etapas.length) erro(onde + ': planejada deve ter etapas vazias');
+    if (!licao.id || !licao.trilha || !licao.titulo) erro(onde + ': metadados da etapa planejada incompletos');
+    return;
+  }
   if (!licao.id) { erro('Lição sem id'); return; }
   if (!licao.trilha) erro(onde + ': sem trilha');
   if (!licao.titulo) erro(onde + ': sem título');
-  if (!licao.tipo) erro(onde + ': sem tipo (licao ou prova)');
+  if (!['licao', 'prova'].includes(licao.tipo)) erro(onde + ': tipo inválido (licao ou prova)');
   if (!Array.isArray(licao.etapas) || !licao.etapas.length) erro(onde + ': sem etapas');
   validarConceitos(licao.conceitos, onde);
   let atividades = 0;

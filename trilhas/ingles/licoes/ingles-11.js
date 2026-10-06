@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-11',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Apresentações profissionais',

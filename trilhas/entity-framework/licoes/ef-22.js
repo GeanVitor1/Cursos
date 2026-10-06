@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'ef-22',
+  planejada: true,
   trilha: 'entity-framework',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Global query filters e soft delete (em breve)',
   subtitulo: 'Avançado · Etapa 27',
   duracaoMin: 45,

@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'seguranca-checkpoint-ataques',
+  planejada: true,
   trilha: 'seguranca',
   tipo: 'prova',
   titulo: 'Checkpoint — OWASP',

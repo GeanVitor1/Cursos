@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'mensageria-checkpoint-fundamentos',
+  planejada: true,
   trilha: 'mensageria',
   tipo: 'prova',
   titulo: 'Checkpoint — Fundamentos',

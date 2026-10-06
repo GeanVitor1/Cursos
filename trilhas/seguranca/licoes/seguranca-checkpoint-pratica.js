@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'seguranca-checkpoint-pratica',
+  planejada: true,
   trilha: 'seguranca',
   tipo: 'prova',
   titulo: 'Checkpoint final — Segurança',

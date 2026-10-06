@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'aspnet-09',
+  planejada: true,
   trilha: 'aspnet',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Controllers: quando usar em vez de Minimal API',
   subtitulo: 'Organização de uma API · Etapa 12',
   duracaoMin: 45,

@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'linq-09',
+  planejada: true,
   trilha: 'linq',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Projeções com Select e objetos anônimos (em breve)',
   subtitulo: 'Intermediário · Etapa 12',
   duracaoMin: 40,

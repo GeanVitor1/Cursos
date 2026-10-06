@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'mensageria-checkpoint-rabbitmq',
+  planejada: true,
   trilha: 'mensageria',
   tipo: 'prova',
   titulo: 'Checkpoint — RabbitMQ',

@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'testes-02',
+  planejada: true,
   trilha: 'testes',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Arrange, Act, Assert',
   subtitulo: 'Fundamentos · Etapa 3',
   duracaoMin: 35,

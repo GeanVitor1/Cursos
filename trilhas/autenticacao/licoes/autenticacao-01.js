@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'autenticacao-01',
+  planejada: true,
   trilha: 'autenticacao',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Senhas nunca em texto puro: hash e salt',
   subtitulo: 'Fundamentos · Etapa 2',
   duracaoMin: 45,

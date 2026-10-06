@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'linq-05',
+  planejada: true,
   trilha: 'linq',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'OrderBy e ThenBy (em breve)',
   subtitulo: 'Iniciante · Etapa 7',
   duracaoMin: 35,

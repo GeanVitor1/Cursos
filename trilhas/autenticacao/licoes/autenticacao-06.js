@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'autenticacao-06',
+  planejada: true,
   trilha: 'autenticacao',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: '[Authorize] em endpoints',
   subtitulo: 'Autorização · Etapa 9',
   duracaoMin: 40,

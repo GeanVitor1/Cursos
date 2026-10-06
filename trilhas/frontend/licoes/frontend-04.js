@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-04',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Flexbox',
   subtitulo: 'CSS · Etapa 6',
   duracaoMin: 50,

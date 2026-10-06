@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'microsservicos-01',
+  planejada: true,
   trilha: 'microsservicos',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Monolito modular',
   subtitulo: 'Fundamentos · Etapa 2',
   duracaoMin: 45,

@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'ef-12',
+  planejada: true,
   trilha: 'entity-framework',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Many-to-Many (em breve)',
   subtitulo: 'Relacionamentos · Etapa 15',
   duracaoMin: 55,

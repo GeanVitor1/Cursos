@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'autenticacao-checkpoint-falhas',
+  planejada: true,
   trilha: 'autenticacao',
   tipo: 'prova',
   titulo: 'Checkpoint final — Auth',

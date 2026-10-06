@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-16',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Funções tipadas',
   subtitulo: 'TypeScript · Etapa 20',
   duracaoMin: 40,

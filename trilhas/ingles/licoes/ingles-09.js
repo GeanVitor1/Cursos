@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-09',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Condicionais (if... then)',

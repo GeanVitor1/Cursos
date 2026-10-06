@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'cicd-02',
+  planejada: true,
   trilha: 'cicd',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Build automatizado de .NET',
   subtitulo: 'Fundamentos · Etapa 3',
   duracaoMin: 50,

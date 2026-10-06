@@ -205,7 +205,7 @@ Plataforma.registrarLicao({
         id: 'en-a2-cp10',
         tipo: 'reading',
         habilidade: 'reading',
-        dimensao: 'compreensao',
+        dimensao: 'aplicacao',
         titulo: 'Trip message',
         enunciado: 'Leia a mensagem e responda à pergunta.',
         texto: 'Hi! Last week I was in London. The city was busy and the hotel was very comfortable. Tomorrow I will visit my parents.',

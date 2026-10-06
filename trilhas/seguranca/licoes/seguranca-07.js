@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'seguranca-07',
+  planejada: true,
   trilha: 'seguranca',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Hash de senha: por que nunca texto puro',
   subtitulo: 'Segurança na prática · Etapa 10',
   duracaoMin: 45,

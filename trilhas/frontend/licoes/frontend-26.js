@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-26',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Autenticação no frontend',
   subtitulo: 'React · Etapa 31',
   duracaoMin: 55,

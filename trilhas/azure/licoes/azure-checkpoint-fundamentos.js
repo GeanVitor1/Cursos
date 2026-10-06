@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'azure-checkpoint-fundamentos',
+  planejada: true,
   trilha: 'azure',
   tipo: 'prova',
   titulo: 'Checkpoint — Fundamentos',

@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'autenticacao-09',
+  planejada: true,
   trilha: 'autenticacao',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Registro e login completos',
   subtitulo: 'Autorização · Etapa 12',
   duracaoMin: 60,

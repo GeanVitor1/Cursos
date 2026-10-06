@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-07',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Contando histórias e anedotas',

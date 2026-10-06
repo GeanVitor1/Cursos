@@ -148,6 +148,7 @@ function verificarFraseControlada(frase, licao, etapa, campo) {
 }
 
 function tokenizar(str) {
+  str = String(str).replace(/https?:\/\/[^\s]+/g, '');
   const matches = [];
   const re = /[A-Za-zÀ-ÿ]+(?:['’][A-Za-zÀ-ÿ]+)*/g;
   let m;

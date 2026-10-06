@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-checkpoint-developer',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'prova',
   titulo: 'Checkpoint — English for Developers',

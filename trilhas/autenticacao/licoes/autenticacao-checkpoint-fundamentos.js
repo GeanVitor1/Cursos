@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'autenticacao-checkpoint-fundamentos',
+  planejada: true,
   trilha: 'autenticacao',
   tipo: 'prova',
   titulo: 'Checkpoint — Fundamentos',

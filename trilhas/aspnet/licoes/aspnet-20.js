@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'aspnet-20',
+  planejada: true,
   trilha: 'aspnet',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Revisão do projeto e próximos passos',
   subtitulo: 'Projeto guiado · Etapa 25',
   duracaoMin: 40,

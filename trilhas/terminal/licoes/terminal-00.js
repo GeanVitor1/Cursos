@@ -48,7 +48,7 @@ Plataforma.registrarLicao({
         enunciado: 'Pratique a escrita dos comandos: escreva o comando para entrar na pasta Projetos e, em seguida, o comando para listar o conteúdo.',
         codigo: '{{1}} Projetos\n{{2}}',
         lacunas: [['cd'], ['ls', 'dir']],
-        dicas: ['Para mudar/entrar de pasta usamos cd (change directory).', 'Para listar o conteúdo usamos ls ou dir.'],
+        dicas: ['Para entrar em uma pasta usamos cd seguido do nome dela.', 'Para listar o conteúdo usamos ls ou dir.'],
         explicacao: 'Excelente! Usamos `cd` seguido do nome da pasta para entrar nela, e `ls` (ou `dir` no Windows) para inspecionar os arquivos existentes.',
         conceitos: ['terminal.comandos']
       }
@@ -66,7 +66,7 @@ Plataforma.registrarLicao({
           ['mkdir MeuProjeto', 'Criar uma pasta'],
           ['cd ..', 'Voltar para a pasta anterior']
         ],
-        dicas: ['cd vem de "change directory" (mudar diretório).', 'mkdir lembra "make directory" (criar diretório).'],
+        dicas: ['cd seguido do nome entra em uma pasta.', 'mkdir seguido do nome cria uma pasta.'],
         explicacao: 'Estes são os comandos fundamentais de movimentação: `cd <pasta>` para avançar, `cd ..` para retornar, `mkdir` para criar novas pastas e `ls` para inspecionar o conteúdo.',
         conceitos: ['terminal.comandos']
       }

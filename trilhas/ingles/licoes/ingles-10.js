@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-10',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Debates e negociação',

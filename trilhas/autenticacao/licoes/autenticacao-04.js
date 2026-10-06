@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'autenticacao-04',
+  planejada: true,
   trilha: 'autenticacao',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Claims e roles dentro do token',
   subtitulo: 'JWT na prática · Etapa 6',
   duracaoMin: 45,

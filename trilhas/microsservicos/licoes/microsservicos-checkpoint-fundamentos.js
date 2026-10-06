@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'microsservicos-checkpoint-fundamentos',
+  planejada: true,
   trilha: 'microsservicos',
   tipo: 'prova',
   titulo: 'Checkpoint — Fundamentos',

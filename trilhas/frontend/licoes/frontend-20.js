@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-20',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Props',
   subtitulo: 'React · Etapa 25',
   duracaoMin: 40,

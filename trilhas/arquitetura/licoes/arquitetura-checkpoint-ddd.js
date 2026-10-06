@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-checkpoint-ddd',
+  planejada: true,
   trilha: 'arquitetura',
   tipo: 'prova',
   titulo: 'Checkpoint final — DDD',

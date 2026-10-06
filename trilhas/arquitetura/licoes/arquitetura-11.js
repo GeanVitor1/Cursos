@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-11',
+  planejada: true,
   trilha: 'arquitetura',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Regra de dependência: para dentro',
   subtitulo: 'Clean Code & Clean Architecture · Etapa 14',
   duracaoMin: 45,

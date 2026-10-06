@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-27',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Organização de projeto',
   subtitulo: 'React · Etapa 32',
   duracaoMin: 45,

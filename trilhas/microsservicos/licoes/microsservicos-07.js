@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'microsservicos-07',
+  planejada: true,
   trilha: 'microsservicos',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Observabilidade: logs, métricas e tracing',
   subtitulo: 'Problemas reais · Etapa 10',
   duracaoMin: 55,

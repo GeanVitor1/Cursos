@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'testes-checkpoint-fundamentos',
+  planejada: true,
   trilha: 'testes',
   tipo: 'prova',
   titulo: 'Checkpoint — Fundamentos',

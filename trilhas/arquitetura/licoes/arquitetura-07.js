@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-07',
+  planejada: true,
   trilha: 'arquitetura',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Interface Segregation',
   subtitulo: 'SOLID · Etapa 9',
   duracaoMin: 35,

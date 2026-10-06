@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-12',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'fetch e promessas',
   subtitulo: 'JavaScript essencial · Etapa 15',
   duracaoMin: 45,

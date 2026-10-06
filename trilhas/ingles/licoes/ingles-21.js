@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-21',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Escrevendo issues e pull requests',

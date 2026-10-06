@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'frontend-checkpoint-react',
+  planejada: true,
   trilha: 'frontend',
   tipo: 'prova',
   titulo: 'Checkpoint final — React',

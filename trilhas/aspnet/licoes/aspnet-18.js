@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'aspnet-18',
+  planejada: true,
   trilha: 'aspnet',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'API de produtos completa',
   subtitulo: 'Projeto guiado · Etapa 23',
   duracaoMin: 70,

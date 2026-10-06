@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'aspnet-17',
+  planejada: true,
   trilha: 'aspnet',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'async/await em APIs',
   subtitulo: 'Qualidade · Etapa 21',
   duracaoMin: 40,

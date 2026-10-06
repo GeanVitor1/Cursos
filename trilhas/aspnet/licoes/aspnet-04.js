@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'aspnet-04',
+  planejada: true,
   trilha: 'aspnet',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'PUT e PATCH',
   subtitulo: 'HTTP na prática · Etapa 6',
   duracaoMin: 40,

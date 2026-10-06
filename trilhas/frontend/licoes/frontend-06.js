@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-06',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Responsividade',
   subtitulo: 'CSS · Etapa 8',
   duracaoMin: 40,

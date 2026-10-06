@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'aspnet-checkpoint-projeto',
+  planejada: true,
   trilha: 'aspnet',
   tipo: 'prova',
   titulo: 'Checkpoint final — ASP.NET',

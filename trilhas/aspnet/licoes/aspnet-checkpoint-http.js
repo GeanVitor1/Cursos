@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'aspnet-checkpoint-http',
+  planejada: true,
   trilha: 'aspnet',
   tipo: 'prova',
   titulo: 'Checkpoint — HTTP',

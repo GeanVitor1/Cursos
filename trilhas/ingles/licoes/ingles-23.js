@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-23',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Vagas e entrevista em inglês',

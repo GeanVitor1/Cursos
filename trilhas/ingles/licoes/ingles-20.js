@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-20',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Stack Overflow e READMEs',

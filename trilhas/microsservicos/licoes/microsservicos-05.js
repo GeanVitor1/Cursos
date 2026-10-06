@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'microsservicos-05',
+  planejada: true,
   trilha: 'microsservicos',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'API Gateway',
   subtitulo: 'Comunicação · Etapa 7',
   duracaoMin: 45,

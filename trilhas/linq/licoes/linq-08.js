@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'linq-08',
+  planejada: true,
   trilha: 'linq',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'IQueryable vs IEnumerable: a diferença que importa (em breve)',
   subtitulo: 'Intermediário · Etapa 11',
   duracaoMin: 50,

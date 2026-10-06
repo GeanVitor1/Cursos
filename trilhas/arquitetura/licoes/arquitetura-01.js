@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-01',
+  planejada: true,
   trilha: 'arquitetura',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Controller → Service → Repository',
   subtitulo: 'Fundamentos · Etapa 2',
   duracaoMin: 50,

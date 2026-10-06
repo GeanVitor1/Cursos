@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'mensageria-checkpoint-eventos',
+  planejada: true,
   trilha: 'mensageria',
   tipo: 'prova',
   titulo: 'Checkpoint final — Mensageria',

@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'linq-13',
+  planejada: true,
   trilha: 'linq',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Evitando consultas lentas e N+1 (em breve)',
   subtitulo: 'Profissional · Etapa 17',
   duracaoMin: 55,

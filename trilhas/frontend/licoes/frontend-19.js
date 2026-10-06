@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-19',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Componentes e JSX',
   subtitulo: 'React · Etapa 24',
   duracaoMin: 50,

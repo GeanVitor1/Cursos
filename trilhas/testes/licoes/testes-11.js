@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'testes-11',
+  planejada: true,
   trilha: 'testes',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Cobertura sem ilusão',
   subtitulo: 'Profissional · Etapa 15',
   duracaoMin: 35,

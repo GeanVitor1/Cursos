@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'linq-cp-fundamentos',
+  planejada: true,
   trilha: 'linq',
   tipo: 'prova',
   titulo: 'Checkpoint — Fundamentos',

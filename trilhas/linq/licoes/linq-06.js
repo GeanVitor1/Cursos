@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'linq-06',
+  planejada: true,
   trilha: 'linq',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'GroupBy (em breve)',
   subtitulo: 'Iniciante · Etapa 8',
   duracaoMin: 45,

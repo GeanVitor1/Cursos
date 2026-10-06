@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-13',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Relatórios e propostas',

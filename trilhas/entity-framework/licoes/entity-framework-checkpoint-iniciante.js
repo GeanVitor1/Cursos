@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'entity-framework-checkpoint-iniciante',
+  planejada: true,
   trilha: 'entity-framework',
   tipo: 'prova',
   titulo: 'Checkpoint — Iniciante',

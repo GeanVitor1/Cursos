@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-06',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Explicando problemas e pedindo ajuda',

@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-checkpoint-c1',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'prova',
   titulo: 'Checkpoint C1',

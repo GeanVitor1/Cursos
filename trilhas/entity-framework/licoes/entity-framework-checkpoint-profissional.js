@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'entity-framework-checkpoint-profissional',
+  planejada: true,
   trilha: 'entity-framework',
   tipo: 'prova',
   titulo: 'Checkpoint final — EF Profissional',

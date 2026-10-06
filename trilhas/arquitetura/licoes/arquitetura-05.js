@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-05',
+  planejada: true,
   trilha: 'arquitetura',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Open/Closed',
   subtitulo: 'SOLID · Etapa 7',
   duracaoMin: 40,

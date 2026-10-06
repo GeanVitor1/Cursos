@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-checkpoint-clean',
+  planejada: true,
   trilha: 'arquitetura',
   tipo: 'prova',
   titulo: 'Checkpoint — Clean Architecture',

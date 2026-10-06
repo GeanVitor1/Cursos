@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'mensageria-01',
+  planejada: true,
   trilha: 'mensageria',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Filas: a ideia central',
   subtitulo: 'Fundamentos · Etapa 2',
   duracaoMin: 40,

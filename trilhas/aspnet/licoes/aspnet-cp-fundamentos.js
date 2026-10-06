@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'aspnet-cp-fundamentos',
+  planejada: true,
   trilha: 'aspnet',
   tipo: 'prova',
   titulo: 'Checkpoint — Fundamentos',

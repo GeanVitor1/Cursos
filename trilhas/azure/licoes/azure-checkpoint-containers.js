@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'azure-checkpoint-containers',
+  planejada: true,
   trilha: 'azure',
   tipo: 'prova',
   titulo: 'Checkpoint — Containers',

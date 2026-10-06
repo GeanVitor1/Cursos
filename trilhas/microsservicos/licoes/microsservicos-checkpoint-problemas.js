@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'microsservicos-checkpoint-problemas',
+  planejada: true,
   trilha: 'microsservicos',
   tipo: 'prova',
   titulo: 'Checkpoint final — System Design',

@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-22',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Comentários de code review',

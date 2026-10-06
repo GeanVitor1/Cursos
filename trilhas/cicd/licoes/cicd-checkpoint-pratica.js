@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'cicd-checkpoint-pratica',
+  planejada: true,
   trilha: 'cicd',
   tipo: 'prova',
   titulo: 'Checkpoint final — CI/CD',

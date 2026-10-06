@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-05',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Grid',
   subtitulo: 'CSS · Etapa 7',
   duracaoMin: 50,

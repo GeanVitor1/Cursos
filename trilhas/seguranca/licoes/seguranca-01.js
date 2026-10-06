@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'seguranca-01',
+  planejada: true,
   trilha: 'seguranca',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Validação de entrada e dados sensíveis',
   subtitulo: 'Fundamentos · Etapa 2',
   duracaoMin: 40,

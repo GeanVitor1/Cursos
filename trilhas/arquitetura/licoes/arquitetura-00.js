@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-00',
+  planejada: true,
   trilha: 'arquitetura',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Por que separar responsabilidades',
   subtitulo: 'Fundamentos · Etapa 1',
   duracaoMin: 40,

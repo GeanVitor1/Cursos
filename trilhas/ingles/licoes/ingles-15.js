@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-15',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Argumentação avançada',

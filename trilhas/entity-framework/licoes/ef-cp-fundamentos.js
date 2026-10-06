@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ef-cp-fundamentos',
+  planejada: true,
   trilha: 'entity-framework',
   tipo: 'prova',
   titulo: 'Checkpoint — Fundamentos',

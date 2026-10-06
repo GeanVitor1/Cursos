@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-21',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'State',
   subtitulo: 'React · Etapa 26',
   duracaoMin: 45,

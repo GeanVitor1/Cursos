@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'aspnet-05',
+  planejada: true,
   trilha: 'aspnet',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'DELETE',
   subtitulo: 'HTTP na prática · Etapa 7',
   duracaoMin: 30,

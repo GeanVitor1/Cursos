@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'frontend-11',
+  planejada: true,
   trilha: 'frontend',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'DOM e eventos',
   subtitulo: 'JavaScript essencial · Etapa 14',
   duracaoMin: 45,

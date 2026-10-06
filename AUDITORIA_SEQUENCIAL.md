@@ -5,7 +5,7 @@
 - Trilhas analisadas: **20**
 - Lições publicadas: **367**
 - Etapas percorridas: **367**
-- Atividades percorridas: **884**
+- Atividades percorridas: **885**
 - Conceitos registrados: **358**
 - Conceitos com introdução marcada: **153**
 - Erros: **0** · Avisos: **0**
@@ -92,11 +92,11 @@
 | Validação de regra (`logica.validacao`) | etapa 5 · logica-00 | logica-00 etapa 6 | — | PRONTO_PARA_AVALIACAO | logica.total |
 | Encontrar duplicados (`logica.duplicados`) | etapa 8 · logica-00 | logica-00 etapa 9 | — | PRATICADO | — |
 | Agrupar dados (`logica.agrupamento`) | etapa 10 · logica-00 | logica-00 etapa 11 | — | PRATICADO | — |
-| Comandos de navegação (`terminal.comandos`) | etapa 2 · terminal-00 | terminal-00 etapa 3 | — | PRATICADO | — |
-| Comandos dotnet (`terminal.dotnet`) | etapa 4 · terminal-00 | terminal-00 etapa 5 | terminal-00 etapa 9 | PRONTO_PARA_AVALIACAO | terminal.comandos |
-| Comandos git (`terminal.git`) | etapa 6 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
-| Comandos docker (`terminal.docker`) | etapa 7 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
-| Comandos npm (`terminal.npm`) | etapa 8 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
+| Comandos de navegação (`terminal.comandos`) | etapa 2 · terminal-00 | terminal-00 etapa 3 | — | PRONTO_PARA_AVALIACAO | — |
+| Comandos dotnet (`terminal.dotnet`) | etapa 5 · terminal-00 | terminal-00 etapa 6 | terminal-00 etapa 10 | PRONTO_PARA_AVALIACAO | terminal.comandos |
+| Comandos git (`terminal.git`) | etapa 7 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
+| Comandos docker (`terminal.docker`) | etapa 8 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
+| Comandos npm (`terminal.npm`) | etapa 9 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
 | Saudações e apresentações (`en.saudacoes`) | etapa 1 · en-a1-00 | en-a1-00 etapa 2 | en-a1-00 etapa 16 | PRONTO_PARA_AVALIACAO | — |
 | Números, idade e preços (`en.numeros`) | etapa 1 · en-a1-01 | en-a1-01 etapa 2 | en-a1-checkpoint etapa 4 | PRONTO_PARA_AVALIACAO | — |
 | Família e pessoas (`en.familia`) | etapa 1 · en-a1-02 | en-a1-02 etapa 2 | en-a1-02 etapa 18 | PRONTO_PARA_AVALIACAO | en.saudacoes |

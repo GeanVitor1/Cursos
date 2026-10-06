@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'seguranca-00',
+  planejada: true,
   trilha: 'seguranca',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Segurança é requisito, não enfeite',
   subtitulo: 'Fundamentos · Etapa 1',
   duracaoMin: 35,

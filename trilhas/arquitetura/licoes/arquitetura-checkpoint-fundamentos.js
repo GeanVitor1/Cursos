@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-checkpoint-fundamentos',
+  planejada: true,
   trilha: 'arquitetura',
   tipo: 'prova',
   titulo: 'Checkpoint — Fundamentos',

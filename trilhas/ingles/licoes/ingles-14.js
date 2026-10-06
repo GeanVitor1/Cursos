@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-14',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Expressões idiomáticas e nuances',

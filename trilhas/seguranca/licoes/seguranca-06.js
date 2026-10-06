@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'seguranca-06',
+  planejada: true,
   trilha: 'seguranca',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Exposição de dados e mensagens de erro',
   subtitulo: 'Ataques comuns (OWASP) · Etapa 8',
   duracaoMin: 40,

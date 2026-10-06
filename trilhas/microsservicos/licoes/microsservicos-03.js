@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'microsservicos-03',
+  planejada: true,
   trilha: 'microsservicos',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Comunicação síncrona entre serviços',
   subtitulo: 'Comunicação · Etapa 5',
   duracaoMin: 50,

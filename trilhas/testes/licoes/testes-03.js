@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'testes-03',
+  planejada: true,
   trilha: 'testes',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Testando services',
   subtitulo: 'Testes unitários · Etapa 5',
   duracaoMin: 50,

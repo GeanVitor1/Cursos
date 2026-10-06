@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'cicd-checkpoint-fundamentos',
+  planejada: true,
   trilha: 'cicd',
   tipo: 'prova',
   titulo: 'Checkpoint — Fundamentos',

@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'arquitetura-08',
+  planejada: true,
   trilha: 'arquitetura',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Dependency Inversion',
   subtitulo: 'SOLID · Etapa 10',
   duracaoMin: 40,

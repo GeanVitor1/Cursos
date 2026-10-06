@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'linq-checkpoint-intermediario',
+  planejada: true,
   trilha: 'linq',
   tipo: 'prova',
   titulo: 'Checkpoint — Intermediário',

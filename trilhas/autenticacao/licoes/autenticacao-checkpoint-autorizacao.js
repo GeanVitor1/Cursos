@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'autenticacao-checkpoint-autorizacao',
+  planejada: true,
   trilha: 'autenticacao',
   tipo: 'prova',
   titulo: 'Checkpoint — Autorização',

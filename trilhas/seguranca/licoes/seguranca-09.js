@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'seguranca-09',
+  planejada: true,
   trilha: 'seguranca',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Checklist de pull request seguro',
   subtitulo: 'Segurança na prática · Etapa 12',
   duracaoMin: 35,

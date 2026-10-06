@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'autenticacao-08',
+  planejada: true,
   trilha: 'autenticacao',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'ASP.NET Identity: quando usar',
   subtitulo: 'Autorização · Etapa 11',
   duracaoMin: 50,

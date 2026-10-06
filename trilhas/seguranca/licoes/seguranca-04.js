@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'seguranca-04',
+  planejada: true,
   trilha: 'seguranca',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'XSS: quando o problema está na saída',
   subtitulo: 'Ataques comuns (OWASP) · Etapa 6',
   duracaoMin: 40,

@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'microsservicos-checkpoint-comunicacao',
+  planejada: true,
   trilha: 'microsservicos',
   tipo: 'prova',
   titulo: 'Checkpoint — Comunicação',

@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'azure-03',
+  planejada: true,
   trilha: 'azure',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Container Registry',
   subtitulo: 'Containers no Azure · Etapa 5',
   duracaoMin: 40,

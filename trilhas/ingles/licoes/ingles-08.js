@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-08',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Trabalho: reuniões e e-mails',

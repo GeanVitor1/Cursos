@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-09-23T14:36:14.828Z",
+  "geradoEm": "2026-10-06T10:22:25.514Z",
   "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Em todas as trilhas, cada etapa ensina no máximo 3 termos novos; na trilha de inglês, no máximo 6 palavras novas por etapa, e as frases de exemplo (bloco ingles) só usam palavras já explicadas.",
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
@@ -471,7 +471,9 @@
         "pwd",
         "ls",
         "dir",
-        "cd"
+        "cd",
+        "pasta",
+        "mkdir"
       ]
     },
     {
@@ -2229,6 +2231,11 @@
       }
     },
     {
+      "palavra": "aurora",
+      "introduzidaEm": "git-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "back",
       "introduzidaEm": "ingles-04",
       "primeiroUsoEmAtividade": {
@@ -2589,7 +2596,7 @@
       "introduzidaEm": "terminal-00",
       "primeiroUsoEmAtividade": {
         "licao": "terminal-00",
-        "atividade": "term00-a1",
+        "atividade": "term00-a0-escrita",
         "etapa": 3
       }
     },
@@ -2742,6 +2749,15 @@
       "palavra": "columns",
       "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "com",
+      "introduzidaEm": "git-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-00",
+        "atividade": "git00-a7",
+        "etapa": 12
+      }
     },
     {
       "palavra": "combine",
@@ -3130,7 +3146,11 @@
     {
       "palavra": "dir",
       "introduzidaEm": "terminal-00",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "terminal-00",
+        "atividade": "term00-a0-escrita",
+        "etapa": 3
+      }
     },
     {
       "palavra": "do",
@@ -3780,6 +3800,20 @@
       }
     },
     {
+      "palavra": "git",
+      "introduzidaEm": "git-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-00",
+        "atividade": "git00-a7",
+        "etapa": 12
+      }
+    },
+    {
+      "palavra": "github",
+      "introduzidaEm": "git-00",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "go",
       "introduzidaEm": "en-a1-03",
       "primeiroUsoEmAtividade": {
@@ -4030,6 +4064,11 @@
         "atividade": "en-a1-00-a4",
         "etapa": 16
       }
+    },
+    {
+      "palavra": "https",
+      "introduzidaEm": "git-00",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "hundred",
@@ -4439,8 +4478,8 @@
       "introduzidaEm": "terminal-00",
       "primeiroUsoEmAtividade": {
         "licao": "terminal-00",
-        "atividade": "term00-a3",
-        "etapa": 9
+        "atividade": "term00-a0-escrita",
+        "etapa": 3
       }
     },
     {
@@ -4539,6 +4578,15 @@
       }
     },
     {
+      "palavra": "mercado",
+      "introduzidaEm": "git-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "git-11",
+        "atividade": "git11-a3",
+        "etapa": 5
+      }
+    },
+    {
       "palavra": "merge",
       "introduzidaEm": "ingles-00",
       "primeiroUsoEmAtividade": {
@@ -4572,6 +4620,15 @@
         "licao": "redis-03",
         "atividade": "redis03-a6",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "mkdir",
+      "introduzidaEm": "terminal-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "terminal-00",
+        "atividade": "term00-a1",
+        "etapa": 4
       }
     },
     {
@@ -4974,6 +5031,15 @@
       }
     },
     {
+      "palavra": "painel",
+      "introduzidaEm": "git-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-00",
+        "atividade": "redis00-a5",
+        "etapa": 9
+      }
+    },
+    {
       "palavra": "parents",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -5026,6 +5092,15 @@
         "licao": "en-a1-04",
         "atividade": "en-a1-04-p2",
         "etapa": 4
+      }
+    },
+    {
+      "palavra": "pasta",
+      "introduzidaEm": "terminal-00",
+      "primeiroUsoEmAtividade": {
+        "licao": "terminal-00",
+        "atividade": "term00-a0-escrita",
+        "etapa": 3
       }
     },
     {

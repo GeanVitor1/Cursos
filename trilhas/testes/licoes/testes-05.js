@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'testes-05',
+  planejada: true,
   trilha: 'testes',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Testando casos de erro',
   subtitulo: 'Testes unitários · Etapa 7',
   duracaoMin: 45,

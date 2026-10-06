@@ -1,7 +1,8 @@
 Plataforma.registrarLicao({
   id: 'microsservicos-04',
+  planejada: true,
   trilha: 'microsservicos',
-  tipo: 'undefined',
+  tipo: 'licao',
   titulo: 'Comunicação assíncrona e eventos',
   subtitulo: 'Comunicação · Etapa 6',
   duracaoMin: 50,

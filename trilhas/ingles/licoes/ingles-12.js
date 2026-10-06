@@ -1,5 +1,6 @@
 Plataforma.registrarLicao({
   id: 'ingles-12',
+  planejada: true,
   trilha: 'ingles',
   tipo: 'licao',
   titulo: 'Phrasal verbs essenciais',
