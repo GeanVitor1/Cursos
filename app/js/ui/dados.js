@@ -36,6 +36,7 @@ window.Plataforma = window.Plataforma || {};
         P.ui.layout.toast('Falha ao importar: ' + e.message, 'erro');
       }
     };
+    leitor.onerror = function () { P.ui.layout.toast('Não foi possível ler o arquivo selecionado.', 'erro'); };
     leitor.readAsText(arquivo);
   }
 
@@ -98,8 +99,8 @@ window.Plataforma = window.Plataforma || {};
         comp.botao('Sincronizar com a nuvem agora', {
           onclick: async function () {
             if (P.nuvem && P.nuvem.carregarRemoto) {
-              await P.nuvem.carregarRemoto();
-              P.ui.layout.toast('Sincronizado com a nuvem!', 'sucesso');
+              const resultado = await P.nuvem.sincronizar();
+              P.ui.layout.toast(resultado.erro ? 'Falha na sincronização. Seu progresso local foi preservado.' : 'Sincronizado com a nuvem!', resultado.erro ? 'erro' : 'sucesso');
               render();
             }
           }

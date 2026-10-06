@@ -61,6 +61,16 @@ window.Plataforma = window.Plataforma || {};
       .replace(/\s+/g, '');
   }
 
+  // Compara tokens sem alterar texto entre aspas ou unir identificadores distintos.
+  function normalizarRespostaCodigo(texto, sensivelAMaiusculas) {
+    const tokens = String(texto || '').match(/\/\*[\s\S]*?\*\/|\/\/[^\n]*|--[^\n]*|'(?:[^'\\]|\\.|'')*'|"(?:[^"\\]|\\.|"")*"|[\p{L}_@][\p{L}\p{N}_]*|\d+(?:\.\d+)?[mMdDfFlL]?|=>|==|!=|<=|>=|&&|\|\||\?\?|\?\.|\S/gu) || [];
+    const significativos = tokens.filter(function (t) { return !/^(\/\*|\/\/|--)/.test(t); }).map(function (t) {
+      return sensivelAMaiusculas || /^["']/.test(t) ? t : t.toLowerCase();
+    });
+    if (significativos[significativos.length - 1] === ';') significativos.pop();
+    return JSON.stringify(significativos);
+  }
+
   function limpar(el) {
     while (el.firstChild) el.removeChild(el.firstChild);
   }
@@ -72,6 +82,7 @@ window.Plataforma = window.Plataforma || {};
     embaralhar: embaralhar,
     normalizar: normalizar,
     normalizarCodigo: normalizarCodigo,
+    normalizarRespostaCodigo: normalizarRespostaCodigo,
     limpar: limpar
   };
 })(window.Plataforma);

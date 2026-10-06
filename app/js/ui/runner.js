@@ -22,6 +22,7 @@ window.Plataforma = window.Plataforma || {};
   };
 
   function iniciar(opcoes) {
+    encerrar();
     const etapas = opcoes.etapas || [];
     let indice = 0;
     let retomado = false;
@@ -36,6 +37,8 @@ window.Plataforma = window.Plataforma || {};
     }
     estado = {
       modo: opcoes.modo || 'licao',
+      idSessao: window.crypto.randomUUID(),
+      epoca: P.dados.estado().reiniciadoEm || null,
       licao: opcoes.licao || null,
       etapas: etapas,
       titulo: opcoes.titulo || (opcoes.licao ? opcoes.licao.titulo : ''),
@@ -52,6 +55,8 @@ window.Plataforma = window.Plataforma || {};
       revelado: false,
       errosSeguidos: 0,
       premiadas: premiadas,
+      resultados: (opcoes.modo === 'licao' && opcoes.licao) ? Object.assign({}, P.dados.obterResultadosEtapas(opcoes.licao.id)) : {},
+      finalizada: false,
       instancia: null,
       semPontuacao: !!opcoes.semPontuacao,
       aoFinalizar: opcoes.aoFinalizar || null,
@@ -71,13 +76,13 @@ window.Plataforma = window.Plataforma || {};
     if (tecladoInstalado) return;
     tecladoInstalado = true;
     document.addEventListener('keydown', function (ev) {
-      if (ev.key !== 'Enter') return;
+      if (ev.key !== 'Enter' || ev.repeat || document.querySelector('.modal-fundo')) return;
       const alvo = ev.target;
       if (alvo && (alvo.tagName === 'INPUT' || alvo.tagName === 'TEXTAREA' || alvo.tagName === 'BUTTON')) return;
       if (!document.querySelector('.runner')) return;
       if (acaoPrimariaAtual && !acaoPrimariaAtual.desabilitado) {
         ev.preventDefault();
-        acaoPrimariaAtual.acao();
+        executarAcao(acaoPrimariaAtual, ev);
       }
     });
   }
@@ -88,6 +93,18 @@ window.Plataforma = window.Plataforma || {};
     if (salvamentoInstalado) return;
     salvamentoInstalado = true;
     window.addEventListener('pagehide', salvarPosicao);
+    P.dados.aoMudar(function () {
+      queueMicrotask(function () {
+        if (!estado || estado.finalizada || !document.querySelector('.runner')) return;
+        if (estado.epoca !== (P.dados.estado().reiniciadoEm || null)) {
+          encerrar();
+          P.ui.layout.toast('O progresso foi substituído em outra aba ou dispositivo. Abra a lição novamente para continuar com os dados atuais.', 'aviso');
+          P.roteador.ir('#/');
+        } else if (estado.modo === 'licao') {
+          Object.assign(estado.premiadas, P.dados.obterEtapasPremiadas(estado.licao.id));
+        }
+      });
+    });
     document.addEventListener('visibilitychange', function () {
       if (document.visibilityState === 'hidden') salvarPosicao();
     });
@@ -102,14 +119,14 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function salvarPosicao() {
-    if (estado && estado.modo === 'licao' && estado.licao) {
+    if (estado && estado.epoca === (P.dados.estado().reiniciadoEm || null) && !estado.finalizada && document.querySelector('.runner') && estado.modo === 'licao' && estado.licao) {
       P.dados.atualizarRascunho(estado.licao.id, estado.indice);
     }
   }
 
   function indicarSalvo() {
     if (!salvoEl) return;
-    salvoEl.textContent = '✓ Progresso salvo';
+    salvoEl.textContent = P.dados.localStorageDisponivel() ? '✓ Progresso salvo neste navegador' : '⚠ Progresso não salvo neste navegador';
     salvoEl.classList.add('visivel');
     if (salvoTimer) window.clearTimeout(salvoTimer);
     salvoTimer = window.setTimeout(function () {
@@ -119,6 +136,7 @@ window.Plataforma = window.Plataforma || {};
 
   function voltarEtapa() {
     if (!estado || estado.indice === 0) return;
+    descartarInstancia();
     estado.indice -= 1;
     estado.retomado = false;
     salvarPosicao();
@@ -136,6 +154,26 @@ window.Plataforma = window.Plataforma || {};
     acaoPrimariaAtual = primaria || null;
     acaoSecundariaAtual = secundaria || null;
     atualizarBotoes();
+  }
+
+  function executarAcao(acao, ev) {
+    if (!estado || estado.finalizada || !document.querySelector('.runner') || document.querySelector('.modal-fundo')) return;
+    if (ev && (ev.detail > 1 || ev.repeat)) return;
+    if (acao && !acao.desabilitado) acao.acao();
+  }
+
+  function descartarInstancia() {
+    if (estado && estado.instancia && estado.instancia.destruir) estado.instancia.destruir();
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+  }
+
+  function encerrar() {
+    salvarPosicao();
+    descartarInstancia();
+    acaoPrimariaAtual = null;
+    acaoSecundariaAtual = null;
+    estado = null;
+    liberarModo();
   }
 
   function atualizarBotoes() {
@@ -212,7 +250,7 @@ window.Plataforma = window.Plataforma || {};
       hidden: true,
       onclick: function (ev) {
         if (ev && ev.preventDefault) ev.preventDefault();
-        if (acaoSecundariaAtual) acaoSecundariaAtual.acao();
+        executarAcao(acaoSecundariaAtual, ev);
       }
     });
     botaoPrimario = criar('button', {
@@ -220,27 +258,10 @@ window.Plataforma = window.Plataforma || {};
       classe: 'btn btn-primario',
       onclick: function (ev) {
         if (ev && ev.preventDefault) ev.preventDefault();
-        if (acaoPrimariaAtual) acaoPrimariaAtual.acao();
+        executarAcao(acaoPrimariaAtual, ev);
       }
     });
     const botoesAcoes = [botaoSecundario, botaoPrimario];
-
-    if (estado.modo === 'licao' && estado.licao) {
-      const botaoConcluirDireto = criar('button', {
-        type: 'button',
-        classe: 'btn btn-fantasma',
-        title: 'Marcar esta lição inteira como concluída agora e salvar imediatamente',
-        texto: '✓ Marcar como concluída',
-        onclick: function (ev) {
-          if (ev && ev.preventDefault) ev.preventDefault();
-          P.dados.concluirLicao(estado.licao.id, { aproveitamento: 100 });
-          P.ui.layout.toast('Lição concluída e salva com sucesso!', 'sucesso');
-          liberarModo();
-          P.roteador.ir('#/trilha/' + estado.licao.trilha);
-        }
-      });
-      botoesAcoes.unshift(botaoConcluirDireto);
-    }
 
     const rodape = criar('div', { classe: 'runner-rodape' }, [
       criar('div', { classe: 'runner-info' }, [infoXp, salvoEl]),
@@ -270,6 +291,10 @@ window.Plataforma = window.Plataforma || {};
     const atv = etapa.atividade || {};
     const def = P.atividades.encontrar(atv.tipo);
     const passo = criar('div', { classe: 'passo passo-atividade' });
+    const caixaDica = criar('div', { classe: 'caixa-dica', hidden: true });
+    const caixaSocratica = criar('div', { classe: 'caixa-socratica', hidden: true });
+    const sessaoAtual = estado;
+    const indiceAtual = estado.indice;
 
     const cabecalho = criar('div', { classe: 'atividade-cabecalho' }, [
       comp.chip(P.atividades.rotulo(atv.tipo), 'tipo'),
@@ -293,7 +318,7 @@ window.Plataforma = window.Plataforma || {};
         criar('h3', { texto: 'Tipo de atividade desconhecido: ' + atv.tipo })
       ]));
       corpo.appendChild(passo);
-      definirAcoes({ rotulo: 'Continuar', acao: avancar });
+      definirAcoes({ rotulo: 'Atividade indisponível', desabilitado: true });
       return;
     }
 
@@ -329,6 +354,7 @@ window.Plataforma = window.Plataforma || {};
 
     const api = {
       marcarRespondida: function (valor) {
+        if (estado !== sessaoAtual || estado.indice !== indiceAtual || estado.finalizada) return;
         estado.respondida = !!valor;
         if (estado.respondida) mostrarConfianca();
         if (!estado.verificada) {
@@ -370,14 +396,16 @@ window.Plataforma = window.Plataforma || {};
       if (window.console && window.console.error) window.console.error(erro);
       passo.appendChild(criar('div', { classe: 'bloco bloco-nota atencao' }, [
         criar('span', { classe: 'nota-marca', texto: '!' }),
-        criar('div', { texto: 'Não foi possível montar esta atividade. Você pode continuar para a próxima etapa.' })
+        criar('div', { texto: 'Não foi possível montar esta atividade. Seu progresso foi preservado. Volte para a trilha e tente abrir a lição novamente.' })
       ]));
-      definirAcoes({ rotulo: 'Continuar', acao: avancar });
+      definirAcoes({ rotulo: 'Atividade indisponível', desabilitado: true });
       atualizarXpInfo();
       return;
     }
     if (estado.instancia && estado.instancia.focar) {
-      window.setTimeout(function () { estado.instancia.focar(); }, 120);
+      window.requestAnimationFrame(function () {
+        if (estado === sessaoAtual && estado.indice === indiceAtual && estado.instancia) estado.instancia.focar();
+      });
     }
     definirAcoes({ rotulo: 'Verificar', acao: verificar, desabilitado: !estado.respondida });
     atualizarXpInfo();
@@ -392,6 +420,10 @@ window.Plataforma = window.Plataforma || {};
     estado.caixaDica.appendChild(criar('span', { classe: 'dica-marca', texto: 'Dica' }));
     estado.caixaDica.appendChild(criar('span', { html: P.dom.formatar(dicas[estado.dicasUsadas]) }));
     estado.dicasUsadas += 1;
+    const resultado = estado.resultados[estado.indice] || {};
+    resultado.dicas = estado.dicasUsadas;
+    estado.resultados[estado.indice] = resultado;
+    if (estado.modo === 'licao') P.dados.registrarResultadoEtapa(estado.licao.id, estado.indice, resultado);
   }
 
   function mostrarProximaSocratica() {
@@ -443,10 +475,11 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function verificar() {
+    if (!estado || estado.verificada || !estado.respondida) return;
     const atv = etapaAtual().atividade;
     if (!estado.instancia) {
-      mostrarFeedback('errado', 'Atividade indisponível.', 'Não foi possível carregar esta atividade. Continue para a próxima etapa.');
-      definirAcoes({ rotulo: 'Continuar', acao: avancar });
+      mostrarFeedback('errado', 'Atividade indisponível.', 'Volte para a trilha e tente abrir a lição novamente. Seu progresso foi preservado.');
+      definirAcoes({ rotulo: 'Atividade indisponível', desabilitado: true });
       return;
     }
     let resultado;
@@ -456,7 +489,7 @@ window.Plataforma = window.Plataforma || {};
       if (window.console && window.console.error) window.console.error(erro);
       estado.verificada = true;
       mostrarFeedback('errado', 'Não foi possível corrigir.', 'Houve um problema ao avaliar sua resposta. Tente novamente ou veja a resposta.');
-      definirAcoes({ rotulo: 'Tentar novamente', acao: tentarNovamente }, { rotulo: 'Ver resposta', acao: revelar });
+      definirAcoes({ rotulo: 'Tentar novamente', acao: tentarNovamente });
       return;
     }
     estado.verificada = true;
@@ -465,11 +498,15 @@ window.Plataforma = window.Plataforma || {};
     const infoConceito = {
       dimensao: P.atividades.dimensao(atv),
       confianca: estado.confianca || 'acho',
-      revisao: estado.modo === 'revisao'
+      revisao: estado.modo === 'revisao',
+      evento: (estado.modo === 'licao' ? 'licao:' + estado.licao.id : estado.idSessao) + ':' + atv.id
     };
     if (estado.semPontuacao && estado.tentativas === 1 && !estado.respostaRegistrada) {
-      estado.respostas.push({ id: atv.id, nivel: atv.nivel || null, correto: resultado.correto });
+      estado.respostas[estado.indice] = { id: atv.id, nivel: atv.nivel || null, correto: resultado.correto };
       estado.respostaRegistrada = true;
+    }
+    if (!estado.resultados[estado.indice] || typeof estado.resultados[estado.indice].primeira !== 'boolean') {
+      estado.resultados[estado.indice] = Object.assign({}, estado.resultados[estado.indice] || {}, { primeira: !!resultado.correto && resultado.semErros !== false });
     }
 
     if (resultado.correto) {
@@ -479,18 +516,18 @@ window.Plataforma = window.Plataforma || {};
       let ganho = 0;
       if (!jaContabil && !estado.semPontuacao) {
         if (primeira) estado.acertosPrimeira += 1;
-        const integro = primeira && estado.dicasUsadas === 0;
+        const integro = primeira && estado.resultados[estado.indice].primeira && estado.dicasUsadas === 0 && !estado.resultados[estado.indice].dicas;
         ganho = atv.desafio
           ? (integro ? P.conf.xpDesafio : P.conf.xpDesafioRevisao)
           : (integro ? P.conf.xpAtividade : P.conf.xpAtividadeRevisao);
+        P.dados.transacao(function () {
+          ganho = P.dados.adicionarXp(ganho, estado.modo === 'licao' ? 'etapa:' + estado.licao.id + ':' + estado.indice : null);
+          P.dados.responderConceito(atv.conceitos, true, primeira && estado.resultados[estado.indice].primeira, infoConceito);
+          estado.premiadas[estado.indice] = true;
+          if (estado.modo === 'licao' && estado.licao) P.dados.marcarEtapaPremiada(estado.licao.id, estado.indice);
+          if (habilidade) P.dados.registrarHabilidade(habilidade, true, infoConceito.evento);
+        });
         estado.xpSessao += ganho;
-        P.dados.adicionarXp(ganho, 'atividade');
-        P.dados.responderConceito(atv.conceitos, true, primeira, infoConceito);
-        estado.premiadas[estado.indice] = true;
-        if (estado.modo === 'licao' && estado.licao) {
-          P.dados.marcarEtapaPremiada(estado.licao.id, estado.indice);
-        }
-        if (habilidade) P.dados.registrarHabilidade(habilidade, true);
       }
       let texto = atv.explicacao || '';
       if (jaContabil) {
@@ -507,7 +544,7 @@ window.Plataforma = window.Plataforma || {};
       estado.errosSeguidos += 1;
       if (!estado.erroRegistrado && !jaContabil && !estado.semPontuacao) {
         P.dados.responderConceito(atv.conceitos, false, false, infoConceito);
-        if (habilidade) P.dados.registrarHabilidade(habilidade, false);
+        if (habilidade) P.dados.registrarHabilidade(habilidade, false, infoConceito.evento);
       }
       estado.erroRegistrado = true;
       const detalhe = feedbackDoErro(atv, resultado);
@@ -529,6 +566,7 @@ window.Plataforma = window.Plataforma || {};
         );
       }
     }
+    if (estado.modo === 'licao' && estado.licao) P.dados.registrarResultadoEtapa(estado.licao.id, estado.indice, estado.resultados[estado.indice]);
     atualizarXpInfo();
   }
 
@@ -547,7 +585,7 @@ window.Plataforma = window.Plataforma || {};
     const jaContabil = !!estado.premiadas[estado.indice];
     const habilidade = atv.habilidade || (Array.isArray(atv.habilidades) ? atv.habilidades[0] : null);
     if (estado.semPontuacao && !estado.respostaRegistrada) {
-      estado.respostas.push({ id: atv.id, nivel: atv.nivel || null, correto: false });
+      estado.respostas[estado.indice] = { id: atv.id, nivel: atv.nivel || null, correto: false };
       estado.respostaRegistrada = true;
     }
     try {
@@ -561,13 +599,17 @@ window.Plataforma = window.Plataforma || {};
         confianca: estado.confianca || 'acho',
         revisao: estado.modo === 'revisao'
       });
-      if (habilidade) P.dados.registrarHabilidade(habilidade, false);
+      if (habilidade) P.dados.registrarHabilidade(habilidade, false, (estado.modo === 'licao' ? 'licao:' + estado.licao.id : estado.idSessao) + ':' + atv.id);
     }
     estado.erroRegistrado = true;
     if (!estado.revelado && !jaContabil && !estado.semPontuacao) {
       estado.revelado = true;
       estado.xpSessao += P.conf.xpRevelado;
-      P.dados.adicionarXp(P.conf.xpRevelado, 'esforco');
+      P.dados.transacao(function () {
+        P.dados.adicionarXp(P.conf.xpRevelado, estado.modo === 'licao' ? 'etapa:' + estado.licao.id + ':' + estado.indice : null);
+        estado.premiadas[estado.indice] = true;
+        if (estado.modo === 'licao') P.dados.marcarEtapaPremiada(estado.licao.id, estado.indice);
+      });
     }
     let textoRevelacao = atv.explicacao || '';
     if (atv.pares && Array.isArray(atv.pares)) {
@@ -580,6 +622,10 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function avancar() {
+    if (!estado || estado.finalizada) return;
+    const atual = etapaAtual();
+    if (atual.tipo === 'atividade' && !estado.verificada && !estado.revelado) return;
+    descartarInstancia();
     estado.indice += 1;
     if (estado.indice >= estado.etapas.length) {
       finalizar();
@@ -609,6 +655,7 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function recomecar() {
+    descartarInstancia();
     estado.indice = 0;
     estado.retomado = false;
     estado.xpSessao = 0;
@@ -623,6 +670,8 @@ window.Plataforma = window.Plataforma || {};
   }
 
   async function sair() {
+    if (!estado || document.querySelector('.modal-fundo')) return;
+    const sessaoAtual = estado;
     const ehNivelamento = estado.modo === 'nivelamento';
     const confirmou = await comp.confirmar({
       titulo: ehNivelamento ? 'Sair do teste de nivelamento?' : 'Sair da etapa?',
@@ -632,7 +681,7 @@ window.Plataforma = window.Plataforma || {};
       rotuloOk: 'Sair',
       rotuloCancelar: ehNivelamento ? 'Continuar o teste' : 'Continuar estudando'
     });
-    if (!confirmou) return;
+    if (!confirmou || estado !== sessaoAtual) return;
     if (!ehNivelamento) salvarPosicao();
     liberarModo();
     if (estado.modo === 'licao' && estado.licao) {
@@ -654,16 +703,22 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function finalizar() {
+    if (!estado || estado.finalizada) return;
+    estado.finalizada = true;
+    acaoPrimariaAtual = null;
+    acaoSecundariaAtual = null;
+    descartarInstancia();
     liberarModo();
     if (typeof estado.aoFinalizar === 'function') {
       estado.aoFinalizar({
-        respostas: estado.respostas,
+        respostas: estado.respostas.filter(Boolean),
         totalAtividades: estado.totalAtividades,
         modo: estado.modo
       });
       return;
     }
     const total = estado.totalAtividades || 1;
+    estado.acertosPrimeira = Object.keys(estado.resultados).filter(function (id) { return estado.resultados[id].primeira; }).length;
     const aproveitamento = Math.round((estado.acertosPrimeira / total) * 100);
     const resumo = {
       modo: estado.modo,
@@ -696,8 +751,7 @@ window.Plataforma = window.Plataforma || {};
 
   P.ui.runner = {
     iniciar: iniciar,
-    acaoPrimaria: function () {
-      if (acaoPrimariaAtual && !acaoPrimariaAtual.desabilitado) acaoPrimariaAtual.acao();
-    }
+    encerrar: encerrar,
+    acaoPrimaria: function (ev) { executarAcao(acaoPrimariaAtual, ev); }
   };
 })(window.Plataforma);

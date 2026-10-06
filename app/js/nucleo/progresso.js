@@ -13,8 +13,13 @@ window.Plataforma = window.Plataforma || {};
     return lista;
   }
 
+  function publicada(id) {
+    const l = P.interno.licoes[id];
+    return !!l && (l.disponivel === true || (l.etapas && l.etapas.length > 0));
+  }
+
   function percentualTrilha(t) {
-    const comLicao = etapasDaTrilha(t).filter(function (e) { return !!e.licao; });
+    const comLicao = etapasDaTrilha(t).filter(function (e) { return publicada(e.licao); });
     const concluidas = comLicao.filter(function (e) { return P.dados.estaConcluida(e.licao); });
     return {
       comLicao: comLicao,
@@ -75,6 +80,7 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function statusEtapa(trilhaId, etapa) {
+    if (!publicada(etapa.licao)) return 'planejada';
     if (etapa.licao && P.dados.estaConcluida(etapa.licao)) return 'concluida';
     const resumo = daTrilha(trilhaId);
     if (!resumo) return 'bloqueada';
@@ -127,7 +133,7 @@ window.Plataforma = window.Plataforma || {};
 
       for (let i = etapas.length - 1; i >= 0; i -= 1) {
         if (P.dados.estaConcluida(etapas[i].licao)) continue;
-        if (P.dados.obterRascunho(etapas[i].licao)) {
+        if (statusEtapa(t.id, etapas[i]) === 'disponivel' && P.dados.obterRegistroLicao(etapas[i].licao) && P.dados.obterRegistroLicao(etapas[i].licao).status === 'em-andamento') {
           escolhida = etapas[i];
           retomada = true;
           break;
@@ -135,17 +141,8 @@ window.Plataforma = window.Plataforma || {};
       }
 
       if (!escolhida) {
-        let ultimoComRegistro = -1;
-        etapas.forEach(function (e, i) {
-          if (P.dados.obterRegistroLicao(e.licao)) ultimoComRegistro = i;
-        });
-        for (let i = ultimoComRegistro + 1; i < etapas.length; i += 1) {
-          if (!P.dados.estaConcluida(etapas[i].licao)) { escolhida = etapas[i]; break; }
-        }
-        if (!escolhida) {
-          for (let i = 0; i < etapas.length; i += 1) {
-            if (!P.dados.estaConcluida(etapas[i].licao)) { escolhida = etapas[i]; break; }
-          }
+        for (let i = 0; i < etapas.length; i += 1) {
+          if (!P.dados.estaConcluida(etapas[i].licao) && statusEtapa(t.id, etapas[i]) === 'disponivel') { escolhida = etapas[i]; break; }
         }
       }
 
@@ -390,7 +387,7 @@ window.Plataforma = window.Plataforma || {};
     if (!t) return [];
     const nivelRecomendado = P.dados.obterNivelIngles ? P.dados.obterNivelIngles() : null;
     return (t.niveis || []).map(function (nivel) {
-      const comLicao = (nivel.etapas || []).filter(function (e) { return e.licao; });
+      const comLicao = (nivel.etapas || []).filter(function (e) { return publicada(e.licao); });
       const concluidas = comLicao.filter(function (e) { return P.dados.estaConcluida(e.licao); });
       const percentual = comLicao.length ? Math.round((concluidas.length / comLicao.length) * 100) : 0;
       let status = 'disponivel';

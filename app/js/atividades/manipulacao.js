@@ -78,7 +78,7 @@ window.Plataforma = window.Plataforma || {};
           travado = true;
           colunaEsq.querySelectorAll('.match-item').forEach(function (b) { b.classList.add('travada'); });
           colunaDir.querySelectorAll('.match-item').forEach(function (b) { b.classList.add('travada'); });
-          return { correto: pareados === pares.length };
+          return { correto: pareados === pares.length, semErros: errosTentativa === 0 };
         },
         revelar: function () {
           travado = true;

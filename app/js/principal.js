@@ -14,9 +14,6 @@ window.Plataforma = window.Plataforma || {};
   async function iniciar() {
     try {
       await P.carregador.carregarTudo();
-      if (P.nuvem && P.nuvem.carregarRemoto) {
-        await P.nuvem.carregarRemoto();
-      }
     } catch (e) {
       erroFatal(e);
       return;
@@ -37,10 +34,10 @@ window.Plataforma = window.Plataforma || {};
     P.roteador.registrar('/', function () { P.ui.inicio.render(); });
     P.roteador.registrar('/mapa', function () { P.ui.mapa.render(); });
     P.roteador.registrar('/trilha/:id', function (params) { P.ui.trilha.render(params); });
-    P.roteador.registrar('/licao/:id', function (params) { P.ui.licao.render(params); });
-    P.roteador.registrar('/revisao', function () { P.ui.revisao.render(); });
-    P.roteador.registrar('/revisao/:min', function (params) { P.ui.revisao.render(params); });
-    P.roteador.registrar('/revisao/:min/:escopo', function (params) { P.ui.revisao.render(params); });
+    P.roteador.registrar('/licao/:id', function (params) { return P.ui.licao.render(params); });
+    P.roteador.registrar('/revisao', function () { return P.ui.revisao.render(); });
+    P.roteador.registrar('/revisao/:min', function (params) { return P.ui.revisao.render(params); });
+    P.roteador.registrar('/revisao/:min/:escopo', function (params) { return P.ui.revisao.render(params); });
     P.roteador.registrar('/certificacoes', function () { P.ui.certificacoes.render(); });
     P.roteador.registrar('/projetos', function () { P.ui.projetos.render(); });
     P.roteador.registrar('/entrevistas', function () { P.ui.entrevistas.render(); });
@@ -49,13 +46,17 @@ window.Plataforma = window.Plataforma || {};
     P.roteador.registrar('/nivelamento', function () { P.ui.nivelamento.render(); });
 
     P.roteador.iniciar();
+    if (P.nuvem && P.nuvem.carregarRemoto) P.nuvem.carregarRemoto();
   }
 
   window.addEventListener('error', function (ev) {
-    if (ev.error && !document.querySelector('.runner') && !document.querySelector('.home')) {
-      erroFatal(ev.error);
-    }
+    if (ev.error && document.querySelector('.app-shell')) P.ui.layout.toast('Ocorreu um erro nesta tela. Seu progresso salvo foi preservado.', 'erro');
   });
 
-  iniciar();
+  window.addEventListener('unhandledrejection', function (ev) {
+    console.error('[Plataforma] Operação não concluída:', ev.reason);
+    if (document.querySelector('.app-shell')) P.ui.layout.toast('Uma operação falhou. Verifique a conexão e tente novamente.', 'erro');
+  });
+
+  iniciar().catch(erroFatal);
 })(window.Plataforma);

@@ -2,14 +2,23 @@ window.Plataforma = window.Plataforma || {};
 
 (function (P) {
   const rotas = [];
+  let versao = 0;
+  let hashProcessado = null;
 
   function registrar(padrao, handler) {
     rotas.push({ partes: padrao.split('/').filter(Boolean), handler: handler });
   }
 
   function processar() {
+    const mudouHash = window.location.hash !== hashProcessado;
+    hashProcessado = window.location.hash;
+    if (mudouHash) P.ui.layout.fecharMenu();
+    versao += 1;
+    if (P.ui.runner) P.ui.runner.encerrar();
     const bruto = window.location.hash.replace(/^#\/?/, '');
-    const partes = bruto.split('/').filter(Boolean).map(decodeURIComponent);
+    let partes;
+    try { partes = bruto.split('/').filter(Boolean).map(decodeURIComponent); }
+    catch (e) { P.ui.layout.naoEncontrado(); return; }
     for (let i = 0; i < rotas.length; i += 1) {
       const rota = rotas[i];
       if (rota.partes.length !== partes.length) continue;
@@ -23,7 +32,10 @@ window.Plataforma = window.Plataforma || {};
         if (P.ui && P.ui.layout && P.ui.layout.marcarAtivo) {
           P.ui.layout.marcarAtivo(partes[0] || 'inicio', partes[1] || null);
         }
-        rota.handler(params);
+        Promise.resolve(rota.handler(params)).catch(function (erro) {
+          console.error('[Navegação]', erro);
+          P.ui.layout.toast('Não foi possível abrir esta página. Tente novamente.', 'erro');
+        });
         return;
       }
     }
@@ -31,14 +43,17 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function ir(hash) {
-    if (window.location.hash === hash) processar();
-    else window.location.hash = hash;
-  }
-
-  function iniciar() {
-    window.addEventListener('hashchange', processar);
+    P.ui.layout.fecharMenu();
+    if (window.location.hash !== hash) window.history.pushState(null, '', hash);
     processar();
   }
 
-  P.roteador = { registrar: registrar, ir: ir, iniciar: iniciar, processar: processar };
+  function iniciar() {
+    window.addEventListener('hashchange', function () {
+      if (window.location.hash !== hashProcessado) processar();
+    });
+    processar();
+  }
+
+  P.roteador = { registrar: registrar, ir: ir, iniciar: iniciar, processar: processar, versao: function () { return versao; } };
 })(window.Plataforma);

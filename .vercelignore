@@ -1,0 +1,6 @@
+.git/
+.gstack/
+node_modules/
+test-results/
+playwright-report/
+tests/

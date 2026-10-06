@@ -15,6 +15,8 @@ window.Plataforma = window.Plataforma || {};
   };
 
   P.conf = {
+    // Habilitar somente após aplicar ferramentas/supabase-progresso.sql.
+    sincronizacaoAtomica: false,
     xpAtividade: 10,
     xpAtividadeRevisao: 5,
     xpDesafio: 50,
@@ -32,7 +34,11 @@ window.Plataforma = window.Plataforma || {};
 
   P.registrarManifesto = function (manifesto) { P.interno.manifesto = manifesto; };
   P.registrarTrilha = function (trilha) { P.interno.trilhas[trilha.id] = trilha; };
-  P.registrarLicao = function (licao) { P.interno.licoes[licao.id] = licao; };
+  P.registrarLicao = function (licao) { P.interno.licoes[licao.id] = Object.assign({}, P.interno.licoes[licao.id] || {}, licao); };
+  P.registrarCatalogo = function (catalogo) {
+    catalogo.licoes.forEach(function (l) { P.interno.licoes[l.id] = l; });
+    P.interno.definicoes = catalogo.definicoes;
+  };
   P.registrarConceitos = function (mapa) { Object.assign(P.interno.conceitos, mapa); };
   P.registrarCertificacoes = function (lista) { P.interno.certificacoes = lista; };
   P.registrarProjetos = function (lista) { P.interno.projetos = lista; };

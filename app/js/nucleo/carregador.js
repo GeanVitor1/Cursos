@@ -1,37 +1,44 @@
 window.Plataforma = window.Plataforma || {};
 
 (function (P) {
+  const scripts = new Map();
   function carregarScript(src) {
-    return new Promise(function (resolver, rejeitar) {
+    if (scripts.has(src)) return scripts.get(src);
+    const promessa = new Promise(function (resolver, rejeitar) {
       const script = document.createElement('script');
       script.src = src;
-      script.async = false;
+      script.async = true;
       script.onload = function () { resolver(src); };
-      script.onerror = function () { rejeitar(new Error('Não foi possível carregar: ' + src)); };
+      script.onerror = function () { script.remove(); scripts.delete(src); rejeitar(new Error('Não foi possível carregar: ' + src)); };
       document.head.appendChild(script);
     });
+    scripts.set(src, promessa);
+    return promessa;
   }
 
   async function carregarTudo() {
-    await carregarScript('../data/manifest.js');
-    await carregarScript('../data/conceitos.js');
-    await carregarScript('../data/conceitos-registry.js');
-    await carregarScript('../data/habilidades.js');
+    await Promise.all(['../data/manifest.js', '../data/conceitos.js', '../data/conceitos-registry.js', '../data/habilidades.js', '../data/catalogo.js'].map(carregarScript));
     const manifesto = P.interno.manifesto;
     if (!manifesto) throw new Error('Manifesto não encontrado em data/manifest.js');
     const trilhas = manifesto.trilhas || [];
-    for (let t = 0; t < trilhas.length; t += 1) {
-      await carregarScript(trilhas[t].arquivo);
-      const licoes = trilhas[t].licoes || [];
-      for (let l = 0; l < licoes.length; l += 1) {
-        await carregarScript(licoes[l]);
-      }
-    }
+    await Promise.all(trilhas.map(function (t) { return carregarScript(t.arquivo); }));
     const extras = manifesto.arquivos || [];
-    for (let e = 0; e < extras.length; e += 1) {
-      await carregarScript(extras[e]);
-    }
+    await Promise.all(extras.map(carregarScript));
   }
 
-  P.carregador = { carregarScript: carregarScript, carregarTudo: carregarTudo };
+  async function carregarLicao(id) {
+    const l = P.interno.licoes[id];
+    if (!l || l.disponivel === false) return l;
+    if (!l.etapas) await carregarScript(l.arquivo);
+    return P.interno.licoes[id];
+  }
+
+  function carregarConceitos(ids) {
+    return Promise.all(Object.keys(P.interno.licoes).filter(function (id) {
+      const l = P.interno.licoes[id];
+      return l.disponivel && (l.conceitos || []).some(function (c) { return ids.indexOf(c) !== -1; });
+    }).map(carregarLicao));
+  }
+
+  P.carregador = { carregarScript: carregarScript, carregarTudo: carregarTudo, carregarLicao: carregarLicao, carregarConceitos: carregarConceitos };
 })(window.Plataforma);

@@ -73,7 +73,7 @@ window.Plataforma = window.Plataforma || {};
         });
         wrap.appendChild(input);
         input.addEventListener('input', function () {
-          api.marcarRespondida(input.value.trim().length > 1);
+          api.marcarRespondida(input.value.trim().length > 0);
         });
         area.appendChild(wrap);
         function normalizar(t) {
@@ -83,6 +83,7 @@ window.Plataforma = window.Plataforma || {};
           verificar: function () {
             const certo = normalizar(input.value) === normalizar(atv.resposta);
             input.classList.add(certo ? 'correta' : 'errada');
+            input.readOnly = true;
             return { correto: certo, selecionada: null };
           },
           revelar: function () {
@@ -94,7 +95,7 @@ window.Plataforma = window.Plataforma || {};
           prepararNovaTentativa: function () {
             input.classList.remove('correta', 'errada');
             input.readOnly = false;
-            api.marcarRespondida(input.value.trim().length > 1);
+            api.marcarRespondida(input.value.trim().length > 0);
           },
           focar: function () { input.focus(); }
         };
@@ -234,6 +235,8 @@ window.Plataforma = window.Plataforma || {};
       let indice = 0;
       let erros = 0;
       let travado = false;
+      let timerTurno = null;
+      let destruida = false;
 
       function bolha(quem, texto) {
         return criar('div', { classe: 'dialogo-bolha ' + (quem === 'outro' ? 'outro' : 'jogador') }, [
@@ -269,7 +272,7 @@ window.Plataforma = window.Plataforma || {};
               if (!certo) botao.classList.add('errada');
               linhas.appendChild(bolha('jogador', turno.opcoes[turno.correta]));
               indice += 1;
-              window.setTimeout(renderTurno, certo ? 550 : 900);
+              timerTurno = window.setTimeout(function () { if (!destruida) renderTurno(); }, certo ? 550 : 900);
             }
           }, [
             criar('span', { classe: 'opcao-marcador', texto: String.fromCharCode(65 + pos) }),
@@ -285,6 +288,7 @@ window.Plataforma = window.Plataforma || {};
       api.marcarRespondida(false);
 
       return {
+        destruir: function () { destruida = true; window.clearTimeout(timerTurno); },
         verificar: function () {
           travado = true;
           return { correto: indice >= turnos.length && erros === 0, selecionada: null };

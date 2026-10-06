@@ -29,7 +29,7 @@ window.Plataforma = window.Plataforma || {};
             ev.preventDefault();
             const proximo = inputs[indice + 1];
             if (proximo && !travado) proximo.focus();
-            else if (P.ui.runner && P.ui.runner.acaoPrimaria) P.ui.runner.acaoPrimaria();
+            else if (P.ui.runner && P.ui.runner.acaoPrimaria) P.ui.runner.acaoPrimaria(ev);
           });
           inputs[indice] = input;
           container.appendChild(input);
@@ -48,8 +48,9 @@ window.Plataforma = window.Plataforma || {};
 
       function aceita(indice, valor) {
         const aceitos = (atv.lacunas && atv.lacunas[indice]) || [];
-        const normalizado = P.dom.normalizarCodigo(valor);
-        return aceitos.some(function (a) { return P.dom.normalizarCodigo(a) === normalizado; });
+        const sensivel = /^(cs|linq|ef|api)/.test(atv.id || '');
+        const normalizado = P.dom.normalizarRespostaCodigo(valor, sensivel);
+        return aceitos.some(function (a) { return P.dom.normalizarRespostaCodigo(a, sensivel) === normalizado; });
       }
 
       return {
@@ -113,16 +114,17 @@ window.Plataforma = window.Plataforma || {};
       texto.addEventListener('keydown', function (ev) {
         if ((ev.ctrlKey || ev.metaKey) && ev.key === 'Enter') {
           ev.preventDefault();
-          if (P.ui.runner && P.ui.runner.acaoPrimaria) P.ui.runner.acaoPrimaria();
+          if (P.ui.runner && P.ui.runner.acaoPrimaria) P.ui.runner.acaoPrimaria(ev);
         }
       });
 
       function validar(valor) {
         const texto = String(valor || '').replace(/[\u2018\u2019]/g, "'");
-        if (typeof atv.validar === 'function') return !!atv.validar(texto);
-        const normalizada = P.dom.normalizarCodigo(texto);
+        if (typeof atv.validar === 'function' && (atv.habilidade === 'writing' || !atv.respostasAceitas || !atv.respostasAceitas.length)) return !!atv.validar(texto);
+        const sensivel = /^(cs|linq|ef|api)/.test(atv.id || '');
+        const normalizada = P.dom.normalizarRespostaCodigo(texto, sensivel);
         return (atv.respostasAceitas || []).some(function (a) {
-          return P.dom.normalizarCodigo(a) === normalizada;
+          return P.dom.normalizarRespostaCodigo(a, sensivel) === normalizada;
         });
       }
 

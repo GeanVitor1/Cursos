@@ -145,6 +145,7 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function definicaoConceito(id) {
+    if (P.interno.definicoes && P.interno.definicoes[id]) return P.interno.definicoes[id];
     const registro = P.interno.registroConceitos;
     let info = registro && registro.conceitos ? registro.conceitos[id] : null;
     if (!info) {
@@ -172,6 +173,7 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function abrirConceito(id) {
+    if (document.querySelector('.modal-fundo')) return Promise.resolve(false);
     const info = definicaoConceito(id);
     const nome = P.progresso.nomeConceito(id);
     return new Promise(function (resolver) {
@@ -189,9 +191,14 @@ window.Plataforma = window.Plataforma || {};
         ])
       ]);
       fundo.appendChild(caixa);
-      function fechar() { fundo.remove(); resolver(true); }
+      caixa.setAttribute('role', 'dialog');
+      caixa.setAttribute('aria-modal', 'true');
+      const antes = document.activeElement;
+      function fechar() { fundo.remove(); if (antes && antes.isConnected) antes.focus(); resolver(true); }
+      fundo.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') { ev.preventDefault(); fechar(); } });
       fundo.addEventListener('click', function (ev) { if (ev.target === fundo) fechar(); });
       document.body.appendChild(fundo);
+      caixa.querySelector('button').focus();
     });
   }
 
@@ -310,6 +317,7 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function confirmar(opcoes) {
+    if (document.querySelector('.modal-fundo')) return Promise.resolve(false);
     opcoes = opcoes || {};
     return new Promise(function (resolver) {
       const fundo = criar('div', { classe: 'modal-fundo' });
@@ -322,10 +330,23 @@ window.Plataforma = window.Plataforma || {};
         ])
       ]);
       fundo.appendChild(caixa);
+      caixa.setAttribute('role', 'dialog');
+      caixa.setAttribute('aria-modal', 'true');
+      const antes = document.activeElement;
       function fechar(valor) {
         fundo.remove();
+        if (antes && antes.isConnected) antes.focus();
         resolver(valor);
       }
+      fundo.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape') { ev.preventDefault(); fechar(false); }
+        if (ev.key === 'Tab') {
+          const botoes = Array.from(caixa.querySelectorAll('button'));
+          const atual = botoes.indexOf(document.activeElement);
+          const proximo = ev.shiftKey ? (atual - 1 + botoes.length) % botoes.length : (atual + 1) % botoes.length;
+          ev.preventDefault(); botoes[proximo].focus();
+        }
+      });
       fundo.addEventListener('click', function (ev) { if (ev.target === fundo) fechar(false); });
       document.body.appendChild(fundo);
       const primeiro = caixa.querySelector('.btn');

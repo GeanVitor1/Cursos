@@ -81,16 +81,17 @@ window.Plataforma = window.Plataforma || {};
       texto: '☰',
       onclick: abrirMenu
     });
-    const chipNuvem = criar('div', {
-      classe: 'chip-nuvem sincronizado',
+    const chipNuvem = criar('button', {
+      type: 'button',
+      classe: 'chip-nuvem carregando',
       title: 'Status da sincronização na nuvem (clique para sincronizar agora)',
-      texto: '☁️ Sincronizado',
+      texto: '☁️ Conectando...',
       onclick: async function () {
         if (P.nuvem && P.nuvem.carregarRemoto) {
           chipNuvem.textContent = '☁️ Sincronizando...';
           chipNuvem.className = 'chip-nuvem carregando';
-          await P.nuvem.carregarRemoto();
-          P.ui.layout.toast('Progresso sincronizado com a nuvem', 'sucesso');
+          const resultado = await P.nuvem.sincronizar();
+          P.ui.layout.toast(resultado.erro ? 'Falha na sincronização. Seu progresso local foi preservado.' : 'Progresso sincronizado com a nuvem', resultado.erro ? 'erro' : 'sucesso');
         }
       }
     });
@@ -129,8 +130,10 @@ window.Plataforma = window.Plataforma || {};
     aplicarTema(P.dados.tema());
     P.dados.aoMudar(function () {
       atualizarEstatisticas();
-      if (!document.querySelector('.runner')) {
-        P.roteador.processar();
+      if (!document.querySelector('.runner') && !document.querySelector('.conclusao')) {
+        queueMicrotask(function () {
+          if (!document.querySelector('.runner') && !document.querySelector('.conclusao')) P.roteador.processar();
+        });
       }
     });
     atualizarEstatisticas();
@@ -194,7 +197,6 @@ window.Plataforma = window.Plataforma || {};
       else ativo = r === rota;
       el.classList.toggle('ativo', ativo);
     });
-    fecharMenu();
   }
 
   function atualizarEstatisticas() {

@@ -54,7 +54,7 @@ window.Plataforma = window.Plataforma || {};
 
     const acoes = criar('div', { classe: 'etapa-acoes' });
 
-    if (etapa.licao && status !== 'planejada') {
+    if (etapa.licao && status === 'concluida') {
       const estaConcluida = status === 'concluida';
       const btnCheck = criar('button', {
         classe: 'btn-check-etapa' + (estaConcluida ? ' concluida' : ''),
@@ -62,12 +62,7 @@ window.Plataforma = window.Plataforma || {};
         texto: estaConcluida ? '✓ Concluída' : 'Marcar concluída',
         onclick: function (ev) {
           ev.stopPropagation();
-          const resultado = P.dados.alternarConclusaoLicao(etapa.licao);
-          P.ui.layout.toast(
-            resultado ? 'Etapa marcada como concluída!' : 'Etapa desmarcada!',
-            'sucesso'
-          );
-          render({ id: trilhaId });
+          abrirEtapa(trilhaId, etapa, status);
         }
       });
       acoes.appendChild(btnCheck);
@@ -82,7 +77,10 @@ window.Plataforma = window.Plataforma || {};
       role: 'button',
       tabIndex: 0,
       onclick: function () { abrirEtapa(trilhaId, etapa, status); },
-      onkeydown: function (ev) { if (ev.key === 'Enter') abrirEtapa(trilhaId, etapa, status); }
+      onkeydown: function (ev) {
+        if (ev.target !== ev.currentTarget || ev.repeat) return;
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); abrirEtapa(trilhaId, etapa, status); }
+      }
     }, [
       criar('span', { classe: 'etapa-icone ' + classeIcone, texto: icones[status] || '·' }),
       criar('div', { classe: 'etapa-conteudo' }, [

@@ -1,173 +1,133 @@
-window.Plataforma = window.Plataforma || {};
-
+﻿window.Plataforma = window.Plataforma || {};
 (function (P) {
-  const SUPABASE_URL = 'https://pxhttgocldnrfxtmmpzv.supabase.co';
-  const SUPABASE_KEY = 'sb_publishable_e_YewABKK8lN65iuBhXILQ_viPL_oVK';
-  const REGISTRO_ID = 'usuario_principal';
-
-  let sincronizando = false;
-  let timerDebounce = null;
-  const ouvintesStatus = [];
-
-  function notificarStatus(status, mensagem) {
-    ouvintesStatus.forEach(function (cb) {
-      try { cb({ status: status, mensagem: mensagem }); } catch (e) { /* ignora */ }
-    });
+  const URL = 'https://pxhttgocldnrfxtmmpzv.supabase.co/rest/v1/progresso_usuario';
+  const KEY = 'sb_publishable_e_YewABKK8lN65iuBhXILQ_viPL_oVK';
+  // Perfil pessoal legado. Vários alunos requerem Auth + RLS no servidor.
+  const ID = 'usuario_principal';
+  const ouvintes = [];
+  let statusAtual = { status: 'carregando', mensagem: 'Aguardando sincronização' };
+  let leitura = null;
+  let escrita = null;
+  let pendente = false;
+  let timer = null;
+  function status(nome, mensagem) {
+    statusAtual = { status: nome, mensagem: mensagem };
+    ouvintes.forEach(function (cb) { cb(statusAtual); });
   }
-
-  function aoMudarStatus(cb) {
-    if (typeof cb === 'function') ouvintesStatus.push(cb);
-  }
-
-  // Mescla dois estados de forma aditiva: nenhuma lição concluída é perdida!
-  function mesclarEstados(local, remoto) {
-    if (!remoto) return local;
-    if (!local) return remoto;
-
-    const base = Object.assign({}, remoto, local);
-
-    // Mescla lições: se estiver concluída em qualquer um dos dois, fica como concluída
-    base.licoes = Object.assign({}, remoto.licoes || {}, local.licoes || {});
-    const todasLicoes = Object.keys(Object.assign({}, remoto.licoes || {}, local.licoes || {}));
-    todasLicoes.forEach(function (id) {
-      const rl = (remoto.licoes && remoto.licoes[id]) || null;
-      const ll = (local.licoes && local.licoes[id]) || null;
-      if (rl && rl.status === 'concluida') {
-        base.licoes[id] = Object.assign({}, ll || {}, rl);
-      } else if (ll && ll.status === 'concluida') {
-        base.licoes[id] = Object.assign({}, rl || {}, ll);
-      } else {
-        base.licoes[id] = Object.assign({}, rl || {}, ll || {});
-      }
-    });
-
-    // Mescla XP: fica com o maior valor
-    base.xp = Math.max(local.xp || 0, remoto.xp || 0);
-
-    // Mescla Streak
-    const streakLocal = local.streak || { atual: 0, recorde: 0, dias: [] };
-    const streakRemoto = remoto.streak || { atual: 0, recorde: 0, dias: [] };
-    const diasSet = new Set((streakLocal.dias || []).concat(streakRemoto.dias || []));
-    base.streak = {
-      atual: Math.max(streakLocal.atual || 0, streakRemoto.atual || 0),
-      recorde: Math.max(streakLocal.recorde || 0, streakRemoto.recorde || 0),
-      ultimoDia: (streakLocal.ultimoDia > (streakRemoto.ultimoDia || '')) ? streakLocal.ultimoDia : (streakRemoto.ultimoDia || streakLocal.ultimoDia),
-      dias: Array.from(diasSet)
-    };
-
-    // Mescla conceitos
-    base.conceitos = Object.assign({}, remoto.conceitos || {}, local.conceitos || {});
-
-    // Mescla habilidades
-    base.habilidades = Object.assign({}, remoto.habilidades || {}, local.habilidades || {});
-
-    // Mescla sessões
-    const sessoesMap = {};
-    (remoto.sessoes || []).concat(local.sessoes || []).forEach(function (s) {
-      if (s && s.data) sessoesMap[s.data + '_' + s.id] = s;
-    });
-    base.sessoes = Object.values(sessoesMap);
-
-    base.configuracoes = Object.assign({}, remoto.configuracoes || {}, local.configuracoes || {});
-    base.atualizadoEm = new Date().toISOString();
-
-    return base;
-  }
-
-  async function carregarRemoto() {
+  async function requisitar(url, opcoes, lerJson) {
+    const controller = new AbortController();
+    const limite = setTimeout(function () { controller.abort(); }, 8000);
     try {
-      notificarStatus('carregando', 'Buscando progresso na nuvem...');
-      const resposta = await fetch(
-        SUPABASE_URL + '/rest/v1/progresso_usuario?id=eq.' + encodeURIComponent(REGISTRO_ID) + '&select=*',
-        {
-          headers: {
-            'apikey': SUPABASE_KEY,
-            'Authorization': 'Bearer ' + SUPABASE_KEY
-          }
-        }
-      );
-
-      if (!resposta.ok) {
-        throw new Error('HTTP ' + resposta.status);
-      }
-
-      const linhas = await resposta.json();
-      if (linhas && linhas.length > 0 && linhas[0].dados) {
-        const remoto = linhas[0].dados;
-        const local = P.dados.estado();
-
-        // Mesclagem inteligente: garante que tudo o que estava concluído em qualquer um dos dois prevaleça!
-        const mesclado = mesclarEstados(local, remoto);
-
-        P.dados.importar(mesclado, true); // true = não re-enviar imediatamente durante carregamento
-        // Salva o mesclado na nuvem caso o local tivesse novidades ou diferenças
-        salvarRemoto(mesclado, false);
-
-        notificarStatus('sincronizado', 'Progresso sincronizado com a nuvem');
-        return { atualizado: true, dados: mesclado };
-      } else {
-        const local = P.dados.estado();
-        const temDadosLocais = (local.xp && local.xp > 0) || Object.keys(local.licoes || {}).length > 0;
-        if (temDadosLocais) {
-          await salvarRemoto(local, true);
-        }
-        notificarStatus('sincronizado', 'Conectado à nuvem');
-        return { atualizado: false, dados: local };
-      }
-    } catch (e) {
-      console.warn('[Nuvem] Falha ao carregar progresso remoto:', e);
-      notificarStatus('offline', 'Modo offline (salvando localmente)');
-      return { erro: e };
-    }
+      const resposta = await fetch(url, Object.assign({}, opcoes, {
+        signal: controller.signal,
+        headers: Object.assign({ apikey: KEY, Authorization: 'Bearer ' + KEY }, (opcoes || {}).headers || {})
+      }));
+      if (!resposta.ok) throw new Error('HTTP ' + resposta.status);
+      return lerJson ? await resposta.json() : resposta;
+    } finally { clearTimeout(limite); }
   }
-
-  async function salvarRemoto(estadoParaSalvar, imediato) {
+  async function ler() {
+    const linhas = await requisitar(URL + '?id=eq.' + encodeURIComponent(ID) + '&select=dados&limit=1', null, true);
+    if (!Array.isArray(linhas)) throw new Error('Resposta de progresso inválida');
+    return linhas.length ? linhas[0].dados : null;
+  }
+  function comLock(acao) {
+    if (navigator.locks) return navigator.locks.request('trilha-net.nuvem', acao);
+    return acao();
+  }
+  async function enviarAtomico() {
+    const linhas = await requisitar(URL + '?id=eq.' + encodeURIComponent(ID) + '&select=dados,versao&limit=1', null, true);
+    let atual = linhas[0] || { dados: null, versao: 0 };
+    for (let tentativa = 0; tentativa < 4; tentativa += 1) {
+      const dados = P.dados.mesclarEstados(P.dados.exportar(), atual.dados);
+      const resultados = await requisitar(URL.replace('/progresso_usuario', '/rpc/salvar_progresso_atomico'), {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ p_id: ID, p_dados: dados, p_versao: atual.versao })
+      }, true);
+      const resultado = resultados[0];
+      if (!resultado || typeof resultado.sucesso !== 'boolean') throw new Error('Resposta da sincronização atômica inválida');
+      if (resultado.sucesso) return resultado.dados;
+      // Outra máquina salvou primeiro: mescla a versão devolvida pelo banco e repete.
+      atual = resultado;
+    }
+    throw new Error('Há alterações concorrentes na nuvem. Tente sincronizar novamente.');
+  }
+  function carregarRemoto() {
+    if (leitura) return leitura;
+    leitura = comLock(async function () {
+      status('carregando', 'Buscando progresso na nuvem...');
+      try {
+        const remoto = await ler();
+        if (remoto) {
+          const mesclado = P.dados.mesclarEstados(P.dados.exportar(), remoto);
+          P.dados.importar(mesclado, true);
+          if (JSON.stringify(mesclado) !== JSON.stringify(remoto)) salvarRemoto(null, false);
+        }
+        status('sincronizado', 'Progresso sincronizado com a nuvem');
+        return { atualizado: !!remoto };
+      } catch (erro) {
+        console.warn('[Nuvem] Falha ao carregar progresso:', erro);
+        status('offline', 'Sem conexão com a nuvem. O progresso continua salvo neste navegador.');
+        return { erro: erro };
+      }
+    }).finally(function () { leitura = null; });
+    return leitura;
+  }
+  function salvarRemoto(ignorado, imediato) {
+    pendente = true;
+    if (timer) { clearTimeout(timer); timer = null; }
     if (!imediato) {
-      if (timerDebounce) clearTimeout(timerDebounce);
-      timerDebounce = setTimeout(function () {
-        salvarRemoto(estadoParaSalvar, true);
-      }, 1000);
-      return;
+      timer = setTimeout(function () { timer = null; enviar(); }, 1000);
+      return Promise.resolve();
     }
-
-    try {
-      sincronizando = true;
-      notificarStatus('salvando', 'Salvando na nuvem...');
-      const dados = estadoParaSalvar || P.dados.estado();
-      const payload = {
-        id: REGISTRO_ID,
-        dados: dados,
-        atualizado_em: new Date().toISOString()
-      };
-
-      const resposta = await fetch(SUPABASE_URL + '/rest/v1/progresso_usuario', {
-        method: 'POST',
-        headers: {
-          'apikey': SUPABASE_KEY,
-          'Authorization': 'Bearer ' + SUPABASE_KEY,
-          'Content-Type': 'application/json',
-          'Prefer': 'resolution=merge-duplicates'
-        },
-        body: JSON.stringify(payload)
-      });
-
-      if (!resposta.ok) {
-        throw new Error('HTTP ' + resposta.status);
-      }
-
-      notificarStatus('sincronizado', 'Progresso sincronizado com a nuvem');
-    } catch (e) {
-      console.warn('[Nuvem] Falha ao sincronizar com a nuvem:', e);
-      notificarStatus('erro', 'Erro ao salvar na nuvem (salvo localmente)');
-    } finally {
-      sincronizando = false;
-    }
+    return enviar();
   }
-
+  function enviar() {
+    if (escrita) return escrita;
+    escrita = (async function () {
+      if (leitura) await leitura;
+      while (pendente) {
+        pendente = false;
+        const resultado = await comLock(async function () {
+          status('salvando', 'Salvando na nuvem...');
+          try {
+            if (P.conf.sincronizacaoAtomica) {
+              const atomico = await enviarAtomico();
+              P.dados.importar(P.dados.mesclarEstados(P.dados.exportar(), atomico), true);
+              return { salvo: true };
+            }
+            const remoto = await ler();
+            const dados = P.dados.mesclarEstados(P.dados.exportar(), remoto);
+            await requisitar(URL + '?on_conflict=id', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates' },
+              body: JSON.stringify({ id: ID, dados: dados, atualizado_em: new Date().toISOString() })
+            });
+            P.dados.importar(P.dados.mesclarEstados(P.dados.exportar(), dados), true);
+            return { salvo: true };
+          } catch (erro) {
+            console.warn('[Nuvem] Falha ao salvar progresso:', erro);
+            status('erro', 'Não foi salvo na nuvem. O progresso está neste navegador; tente sincronizar novamente.');
+            return { erro: erro };
+          }
+        });
+        if (resultado.erro) { pendente = true; return resultado; }
+      }
+      status('sincronizado', 'Progresso sincronizado com a nuvem');
+      return { salvo: true };
+    })().finally(function () { escrita = null; });
+    return escrita;
+  }
+  async function sincronizar() {
+    const resultado = await carregarRemoto();
+    if (resultado.erro) return resultado;
+    if (pendente) return salvarRemoto(null, true);
+    return resultado;
+  }
+  window.addEventListener('online', function () { sincronizar(); });
   P.nuvem = {
-    carregarRemoto: carregarRemoto,
-    salvarRemoto: salvarRemoto,
-    aoMudarStatus: aoMudarStatus,
-    estaSincronizando: function () { return sincronizando; }
+    carregarRemoto: carregarRemoto, salvarRemoto: salvarRemoto, sincronizar: sincronizar,
+    aoMudarStatus: function (cb) { ouvintes.push(cb); cb(statusAtual); },
+    estaSincronizando: function () { return !!(leitura || escrita); }
   };
 })(window.Plataforma);

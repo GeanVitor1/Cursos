@@ -234,6 +234,7 @@ window.Plataforma = window.Plataforma || {};
       return {
         verificar: function () {
           const chaves = palavrasPresentes();
+          texto.readOnly = true;
           if (chaves === null) return { correto: true, selecionada: null };
           const grupos = atv.palavrasChave || [];
           const minimo = atv.minimoChaves || Math.ceil(grupos.length * 0.6);

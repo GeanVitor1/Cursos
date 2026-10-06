@@ -162,6 +162,7 @@ p { margin: 0 0 12px; }
 .nav-icone { width: 18px; text-align: center; font-size: 14px; }
 .nav-sigla {
   width: 30px;
+  white-space: nowrap;
   font-size: 10.5px;
   font-weight: 800;
   letter-spacing: .02em;

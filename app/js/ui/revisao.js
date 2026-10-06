@@ -4,10 +4,26 @@ window.Plataforma = window.Plataforma || {};
   const criar = P.dom.criar;
   const comp = P.ui.componentes;
 
-  function render(params) {
-    const limite = params && params.min ? Math.max(3, Math.min(20, Number(params.min))) : 8;
+  async function render(params) {
+    const versao = P.roteador.versao();
+    const numero = params && Number(params.min);
+    const limite = Number.isFinite(numero) && numero > 0 ? Math.max(3, Math.min(20, numero)) : 8;
     const incluirHoje = !!(params && params.escopo === 'hoje');
     const conceitos = P.progresso.conceitosParaRevisar(incluirHoje);
+    if (conceitos.length) {
+      P.ui.layout.definirConteudo(criar('div', { classe: 'estado-vazio', texto: 'Preparando revisão...', role: 'status' }));
+      try { await P.carregador.carregarConceitos(conceitos.map(function (c) { return c.id; })); }
+      catch (e) {
+        console.error('[Revisão]', e);
+        if (versao !== P.roteador.versao()) return;
+        P.ui.layout.definirConteudo(criar('div', { classe: 'estado-vazio' }, [
+          criar('p', { texto: 'Não foi possível carregar a revisão. Verifique sua conexão.' }),
+          comp.botao('Tentar novamente', { onclick: function () { P.roteador.processar(); } })
+        ]));
+        return;
+      }
+      if (versao !== P.roteador.versao()) return;
+    }
     const atividades = P.progresso.atividadesDeRevisao(limite, incluirHoje);
     if (!conceitos.length || !atividades.length) {
       P.ui.layout.definirConteudo(criar('div', { classe: 'pagina' }, [
