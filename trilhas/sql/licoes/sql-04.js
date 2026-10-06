@@ -236,8 +236,8 @@ Plataforma.registrarLicao({
         enunciado: 'Retrieve all orders where (**Status** = \'Pendente\' or **Status** = \'Enviado\') and **ValorTotal** > 500.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select * from pedidos where (status = \'pendente\' or status = \'enviado\') and valortotal > 500',
-          'select * from pedidos where valortotal > 500 and (status = \'pendente\' or status = \'enviado\')'
+          "select * from pedidos where (status = 'Pendente' or status = 'Enviado') and valortotal > 500",
+          "select * from pedidos where valortotal > 500 and (status = 'Pendente' or status = 'Enviado')"
         ],
         dicas: [
           'orders = pedidos.',

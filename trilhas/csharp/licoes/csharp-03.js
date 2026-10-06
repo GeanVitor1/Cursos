@@ -170,7 +170,11 @@ Plataforma.registrarLicao({
             t.indexOf('.add(') !== -1 &&
             t.indexOf('monitor') !== -1;
         },
-        respostasAceitas: ['List<Produto> produtos = new List<Produto>(); produtos.Add(new Produto { Nome = "Monitor" });'],
+        respostasAceitas: [
+          "List<Produto> produtos = new List<Produto>(); produtos.Add(new Produto { Nome = \"Monitor\" });",
+          "var produtos = new List<Produto>(); produtos.Add(new Produto { Nome = \"Monitor\" });",
+          "List<Produto> produtos = new(); produtos.Add(new Produto { Nome = \"Monitor\" });"
+        ],
         dicas: ['Declare com `List<Produto> produtos = new List<Produto>();`.', 'Adicione com `produtos.Add(...)`.'],
         explicacao: 'Você acabou de reproduzir o padrão que vai aparecer em outras partes do sistema: preparar uma coleção e inserir itens nela.',
         conceitos: ['csharp.list', 'csharp.generics']

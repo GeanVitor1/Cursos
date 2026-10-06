@@ -212,7 +212,7 @@ Plataforma.registrarLicao({
         enunciado: 'Join customers and orders.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select pedidos.id, clientes.nome from pedidos join clientes on pedidos.clienteid = clientes.id'
+          "SELECT Pedidos.Id, Clientes.Nome FROM Pedidos JOIN Clientes ON Pedidos.ClienteId = Clientes.Id;"
         ],
         dicas: [
           'customers = clientes; orders = pedidos.',

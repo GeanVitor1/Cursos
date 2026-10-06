@@ -116,7 +116,14 @@ Plataforma.registrarLicao({
         tipo: 'fill-code',
         enunciado: 'Complete o código que serializa antes de gravar e desserializa depois de ler.',
         codigo: 'var texto = JsonSerializer.{{1}}(produto);\nawait cache.SetStringAsync("produto:10", texto);\n\nvar guardado = await cache.GetStringAsync("produto:10");\nvar produto = JsonSerializer.{{2}}<Produto>(guardado);',
-        lacunas: [['serialize'], ['deserialize']],
+        lacunas: [
+          [
+            "Serialize"
+          ],
+          [
+            "Deserialize"
+          ]
+        ],
         dicas: ['A ida é serialize.', 'A volta é deserialize.'],
         explicacao: '`Serialize` monta o texto para gravar; `Deserialize` reconstrói o objeto na leitura. É o vai e volta completo do cache.',
         conceitos: ['redis.serializacao']

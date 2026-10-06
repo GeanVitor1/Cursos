@@ -52,7 +52,14 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete o filtro para manter apenas os produtos com preço maior que 100.',
         codigo: 'List<Produto> resultado = produtos\n    .{{1}}(p => p.Preco {{2}} 100)\n    .ToList();',
-        lacunas: [['where', 'Where'], ['>']],
+        lacunas: [
+          [
+            "Where"
+          ],
+          [
+            ">"
+          ]
+        ],
         dicas: ['O método de filtro do LINQ tem o mesmo nome do comando SQL.', 'Mais caro que 100 usa um caractere.'],
         explicacao: '`Where` filtra e `>` compara. A lambda `p => p.Preco > 100` é avaliada para cada produto.',
         conceitos: ['linq.where', 'linq.lambda']
@@ -93,7 +100,10 @@ Plataforma.registrarLicao({
           const t = P.dom.normalizarCodigo(valor).replace(/ /g, '');
           return t.indexOf('.where(') !== -1 && t.indexOf('=>') !== -1 && t.indexOf('estoque<10') !== -1;
         },
-        respostasAceitas: ['List<Produto> resultado = produtos.Where(p => p.Estoque < 10).ToList();'],
+        respostasAceitas: [
+          "List<Produto> resultado = produtos.Where(p => p.Estoque < 10).ToList();",
+          "var resultado = produtos.Where(p => p.Estoque < 10).ToList();"
+        ],
         dicas: ['Where + lambda + ToList.', 'Use `p => p.Estoque < 10`.'],
         explicacao: '`produtos.Where(p => p.Estoque < 10).ToList()` — a estrutura que você vai repetir centenas de vezes no trabalho.',
         conceitos: ['linq.where', 'linq.lambda']

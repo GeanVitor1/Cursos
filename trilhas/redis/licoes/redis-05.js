@@ -117,7 +117,11 @@ Plataforma.registrarLicao({
         tipo: 'fill-code',
         enunciado: 'Complete o passo que limpa a cópia depois da gravação.',
         codigo: 'produto.Preco = 120;\nawait context.SaveChangesAsync();\nawait cache.{{1}}("produto:10");',
-        lacunas: [['removeasync']],
+        lacunas: [
+          [
+            "RemoveAsync"
+          ]
+        ],
         dicas: ['O método começa com Remove.', 'O nome apareceu no glossário acima.'],
         explicacao: '`RemoveAsync` apaga a chave; a próxima leitura encontra a falta e recarrega o valor novo do banco.',
         conceitos: ['redis.invalidacao']

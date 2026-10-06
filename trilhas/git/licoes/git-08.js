@@ -172,7 +172,8 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva o comando que guarda de lado as mudanças não commitadas da pasta.',
         placeholder: 'git ...',
         respostasAceitas: [
-          'git stash'
+          "git stash",
+          "git stash push"
         ],
         dicas: [
           'É o próprio nome do recurso.',

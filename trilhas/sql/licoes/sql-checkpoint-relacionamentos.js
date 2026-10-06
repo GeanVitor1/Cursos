@@ -231,7 +231,7 @@ Plataforma.registrarLicao({
         enunciado: 'Left join de Clientes com Pedidos filtrando ValorTotal acima de 200.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select clientes.nome, pedidos.valortotal from clientes left join pedidos on pedidos.clienteid = clientes.id where pedidos.valortotal > 200'
+          "SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes LEFT JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id WHERE Pedidos.ValorTotal > 200;"
         ],
         dicas: [
           'LEFT JOIN preserva os clientes.',

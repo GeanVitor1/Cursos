@@ -38,7 +38,11 @@ Plataforma.registrarLicao({
         tipo: 'fill-code',
         enunciado: 'Complete o registro do Redis no builder.',
         codigo: 'builder.Services.{{1}}(opcoes =>\n{\n    opcoes.Configuration = "localhost:6379";\n});',
-        lacunas: [['addstackexchangerediscache']],
+        lacunas: [
+          [
+            "AddStackExchangeRedisCache"
+          ]
+        ],
         dicas: ['O nome começa com Add.', 'O método foi apresentado no glossário acima.'],
         explicacao: '`AddStackExchangeRedisCache` registra o provedor do Redis. A configuração vem em uma lambda com o endereço do servidor.',
         conceitos: ['redis.integracao']
@@ -113,7 +117,11 @@ Plataforma.registrarLicao({
         tipo: 'fill-code',
         enunciado: 'Complete o campo que recebe o cache.',
         codigo: 'public class ProdutoService\n{\n    private readonly {{1}} cache;\n}',
-        lacunas: [['idistributedcache']],
+        lacunas: [
+          [
+            "IDistributedCache"
+          ]
+        ],
         dicas: ['É a interface de cache distribuído do ASP.NET Core.', 'O nome da interface começa com a letra I.'],
         explicacao: 'O campo guarda a interface; o provedor do Redis foi escolhido lá no registro do programa.',
         conceitos: ['redis.integracao']

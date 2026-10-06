@@ -152,7 +152,14 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete o endpoint que devolve a lista de produtos.',
         codigo: 'app.{{1}}("/produtos", () {{2}} produtos);',
-        lacunas: [['MapGet', 'mapget'], ['=>']],
+        lacunas: [
+          [
+            "MapGet"
+          ],
+          [
+            "=>"
+          ]
+        ],
         dicas: ['Mapear um GET chama-se MapGet.', 'A função que devolve a lista é uma lambda.'],
         explicacao: '`MapGet("/produtos", () => produtos)` — rota e resposta. O ASP.NET converte a lista em JSON automaticamente.',
         conceitos: ['aspnet.api', 'aspnet.json']

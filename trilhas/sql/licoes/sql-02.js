@@ -271,7 +271,9 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva uma consulta que retorne o **Nome** e o **Preco** de todos os produtos.',
         esqueleto: 'SELECT ___\nFROM ___;',
-        respostasAceitas: ['select nome, preco from produtos'],
+        respostasAceitas: [
+          "SELECT Nome, Preco FROM Produtos;"
+        ],
         dicas: [
           'Comece com SELECT, liste as colunas e use FROM Produtos.',
           'Estrutura: SELECT colunas FROM tabela;'
@@ -305,7 +307,9 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Retrieve the **name** and **email** of all customers.',
         placeholder: 'SELECT ...',
-        respostasAceitas: ['select nome, email from clientes'],
+        respostasAceitas: [
+          "SELECT Nome, Email FROM Clientes;"
+        ],
         dicas: [
           'customer = cliente. name = nome; email = e-mail.',
           'A tabela em português é Clientes. Colunas: Nome e Email.'

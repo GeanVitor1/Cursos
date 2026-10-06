@@ -103,7 +103,14 @@ Plataforma.registrarLicao({
         tipo: 'fill-code',
         enunciado: 'Complete o trecho que detecta a falta e guarda o valor no cache.',
         codigo: 'var valor = cache.Get("produto:10");\nif (valor == {{1}})\n{\n    valor = BuscarNoBanco(10);\n    cache.{{2}}("produto:10", valor);\n}\nreturn valor;',
-        lacunas: [['null'], ['set']],
+        lacunas: [
+          [
+            "null"
+          ],
+          [
+            "Set"
+          ]
+        ],
         dicas: ['A ausência de valor se verifica com uma palavra que você já conhece do C#.', 'O método que grava no cache é o mesmo SET do Redis, em forma de método.'],
         explicacao: '`null` detecta a falta; `Set` grava o resultado para as próximas chamadas. É o cache aside em quatro linhas.',
         conceitos: ['redis.cache-aside']

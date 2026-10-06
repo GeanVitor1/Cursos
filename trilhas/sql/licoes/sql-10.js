@@ -159,7 +159,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva uma consulta que retorne os clientes cujo nome **contém "silva"**.',
         respostasAceitas: [
-          "select * from clientes where nome like '%silva%'"
+          "SELECT * FROM Clientes WHERE Nome LIKE '%silva%';"
         ],
         dicas: [
           'Contém = % dos dois lados.',
@@ -190,7 +190,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva uma consulta que retorne os clientes cujo nome **termina com "Lima"**.',
         respostasAceitas: [
-          "select * from clientes where nome like '%lima'"
+          "SELECT * FROM Clientes WHERE Nome LIKE '%Lima';"
         ],
         dicas: [
           'Termina com = % apenas no início do padrão.',
@@ -225,7 +225,7 @@ Plataforma.registrarLicao({
         enunciado: 'Retrieve all customers where the name starts with A.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          "select * from clientes where nome like 'a%'"
+          "SELECT * FROM Clientes WHERE Nome LIKE 'A%';"
         ],
         dicas: [
           'starts with A = começa com A.',

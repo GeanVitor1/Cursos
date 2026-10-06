@@ -175,8 +175,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva uma consulta que retorne as **cidades distintas** dos clientes ativos.',
         respostasAceitas: [
-          'select distinct cidade from clientes where ativo = 1',
-          'select distinct cidade from clientes where ativo = 1;'
+          "SELECT DISTINCT Cidade FROM Clientes WHERE Ativo = 1;",
+          "select distinct cidade from clientes where ativo = 1;"
         ],
         dicas: [
           'O DISTINCT vem logo depois do SELECT.',

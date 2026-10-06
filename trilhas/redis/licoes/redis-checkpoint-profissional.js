@@ -56,7 +56,14 @@ Plataforma.registrarLicao({
         tipo: 'fill-code',
         enunciado: 'Complete o caminho da falta, incluindo a serialização.',
         codigo: 'var guardado = await cache.GetStringAsync(chave);\nif (guardado == {{1}})\n{\n    var produto = await context.Produtos.FindAsync(id);\n    var texto = JsonSerializer.{{2}}(produto);\n    await cache.SetStringAsync(chave, texto);\n}',
-        lacunas: [['null'], ['serialize']],
+        lacunas: [
+          [
+            "null"
+          ],
+          [
+            "Serialize"
+          ]
+        ],
         dicas: ['A falta é detectada com a ausência de valor.', 'O objeto vira texto antes de ser gravado.'],
         explicacao: '`null` detecta a falta; `Serialize` converte o objeto em texto. Só depois o valor vai para o cache.',
         conceitos: ['redis.cache-aside', 'redis.serializacao']
@@ -182,7 +189,14 @@ Plataforma.registrarLicao({
         tipo: 'fill-code',
         enunciado: 'Complete o registro do Redis no programa.',
         codigo: 'builder.Services.{{1}}(opcoes =>\n{\n    opcoes.{{2}} = "localhost:6379";\n});',
-        lacunas: [['addstackexchangerediscache'], ['configuration']],
+        lacunas: [
+          [
+            "AddStackExchangeRedisCache"
+          ],
+          [
+            "Configuration"
+          ]
+        ],
         dicas: ['O método de registro começa com Add.', 'A propriedade guarda o endereço do servidor.'],
         explicacao: '`AddStackExchangeRedisCache` registra o provedor e `Configuration` aponta para o servidor Redis.',
         conceitos: ['redis.integracao']

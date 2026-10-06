@@ -76,7 +76,14 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete para obter apenas os nomes dos produtos.',
         codigo: 'List<string> nomes = produtos\n    .{{1}}(p {{2}} p.Nome)\n    .ToList();',
-        lacunas: [['select', 'Select'], ['=>']],
+        lacunas: [
+          [
+            "Select"
+          ],
+          [
+            "=>"
+          ]
+        ],
         dicas: ['O método que transforma tem o mesmo nome do comando SQL.', 'A seta da lambda.'],
         explicacao: '`Select(p => p.Nome)` transforma cada produto em seu nome. Uma lista de produtos vira uma lista de textos.',
         conceitos: ['linq.select', 'linq.lambda']

@@ -165,8 +165,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna **nomes em maiúsculas** dos clientes de Curitiba.',
         respostasAceitas: [
-          "select upper(nome) as nome from clientes where cidade = 'curitiba'",
-          "select upper(nome) from clientes where cidade = 'curitiba'"
+          "select upper(nome) as nome from clientes where cidade = 'Curitiba'",
+          "select upper(nome) from clientes where cidade = 'Curitiba'"
         ],
         dicas: [
           'UPPER padroniza a caixa.',
@@ -203,7 +203,7 @@ Plataforma.registrarLicao({
         enunciado: 'Filter orders by date: pedidos do ano 2026.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select * from pedidos where year(datapedido) = 2026'
+          "SELECT * FROM Pedidos WHERE YEAR(DataPedido) = 2026;"
         ],
         dicas: [
           'YEAR extrai o ano.',

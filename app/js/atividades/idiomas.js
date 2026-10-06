@@ -3,6 +3,17 @@ window.Plataforma = window.Plataforma || {};
 (function (P) {
   const criar = P.dom.criar;
 
+  P.atividades.validarAudio = function (atv, valor) {
+    const texto = String(valor || '').trim();
+    const resposta = String(atv.resposta || '').trim();
+    if (/^\d+$/.test(resposta)) return texto === resposta;
+    if (/^\d{1,2}:\d{2}$/.test(resposta)) {
+      const horario = texto.match(/^(\d{1,2})\s*:\s*(\d{2})$/);
+      return !!horario && Number(horario[1]) + ':' + horario[2] === resposta;
+    }
+    return P.dom.normalizarIngles(texto) === P.dom.normalizarIngles(resposta);
+  };
+
   function falarIngles(texto, lento) {
     if (!texto || !window.speechSynthesis) return false;
     try {
@@ -75,12 +86,9 @@ window.Plataforma = window.Plataforma || {};
           api.marcarRespondida(input.value.trim().length > 0);
         });
         area.appendChild(wrap);
-        function normalizar(t) {
-          return String(t).toLowerCase().replace(/[.,!?;:'"’]/g, '').replace(/\s+/g, ' ').trim();
-        }
         return {
           verificar: function () {
-            const certo = normalizar(input.value) === normalizar(atv.resposta);
+            const certo = P.atividades.validarAudio(atv, input.value);
             input.classList.add(certo ? 'correta' : 'errada');
             input.readOnly = true;
             return { correto: certo, selecionada: null };

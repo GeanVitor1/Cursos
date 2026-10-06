@@ -166,7 +166,9 @@ Plataforma.registrarLicao({
         id: 'sql06-a5',
         tipo: 'write-code',
         enunciado: 'Escreva uma consulta que retorne **nome e preço** dos produtos, do mais caro para o mais barato.',
-        respostasAceitas: ['select nome, preco from produtos order by preco desc'],
+        respostasAceitas: [
+          "SELECT Nome, Preco FROM Produtos ORDER BY Preco DESC;"
+        ],
         dicas: [
           'Liste as colunas depois do SELECT.',
           'Use ORDER BY com DESC na coluna Preco.'
@@ -199,8 +201,8 @@ Plataforma.registrarLicao({
         enunciado: 'Sort all customers by **Nome**.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select * from clientes order by nome',
-          'select * from clientes order by nome asc'
+          "SELECT * FROM Clientes ORDER BY Nome;",
+          "select * from clientes order by nome asc"
         ],
         dicas: [
           'customers = clientes; name = nome.',

@@ -117,10 +117,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva uma consulta que retorne os **5 produtos mais caros** (nome e preço).',
         respostasAceitas: [
-          'select top 5 nome, preco from produtos order by preco desc',
-          'select top 5 * from produtos order by preco desc',
-          'select nome, preco from produtos order by preco desc limit 5',
-          'select * from produtos order by preco desc limit 5'
+          "SELECT TOP 5 Nome, Preco FROM Produtos ORDER BY Preco DESC;",
+          "select nome, preco from produtos order by preco desc limit 5"
         ],
         dicas: [
           'Use TOP 5 depois do SELECT ou LIMIT 5 no final.',
@@ -162,8 +160,8 @@ Plataforma.registrarLicao({
         enunciado: 'Retrieve the first 5 orders.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select top 5 * from pedidos',
-          'select * from pedidos limit 5'
+          "SELECT TOP 5 * FROM Pedidos;",
+          "select * from pedidos limit 5"
         ],
         dicas: [
           'orders = pedidos; first 5 = as 5 primeiras.',

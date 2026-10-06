@@ -138,7 +138,8 @@ Plataforma.registrarLicao({
         enunciado: 'Transactions protect orders: transfira 100 da conta 1 para a 2.',
         placeholder: 'BEGIN ...',
         respostasAceitas: [
-          'begin; update contas set saldo = saldo - 100 where id = 1; update contas set saldo = saldo + 100 where id = 2; commit;'
+          'BEGIN; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT;',
+          'BEGIN TRANSACTION; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT;'
         ],
         dicas: [
           'BEGIN abre, COMMIT fecha.',

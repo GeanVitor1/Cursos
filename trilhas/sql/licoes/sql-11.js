@@ -123,7 +123,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que atualiza o preço do produto de **Id 3** para **250**.',
         respostasAceitas: [
-          'update produtos set preco = 250 where id = 3'
+          "UPDATE Produtos SET Preco = 250 WHERE Id = 3;"
         ],
         dicas: [
           'UPDATE tabela SET coluna = valor WHERE condição.',
@@ -187,7 +187,7 @@ Plataforma.registrarLicao({
         enunciado: 'Change the price to 250 where Id = 7.',
         placeholder: 'UPDATE ...',
         respostasAceitas: [
-          'update produtos set preco = 250 where id = 7'
+          "UPDATE Produtos SET Preco = 250 WHERE Id = 7;"
         ],
         dicas: [
           'change the price = altere o preço.',

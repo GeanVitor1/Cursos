@@ -220,7 +220,7 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva o comando que executa **minha-api** em segundo plano com a variável **ASPNETCORE_ENVIRONMENT=Development**.',
         placeholder: 'docker ...',
         respostasAceitas: [
-          'docker run -d -e aspnetcore_environment=development minha-api'
+          "docker run -d -e ASPNETCORE_ENVIRONMENT=Development minha-api"
         ],
         dicas: [
           'Use -d para segundo plano e -e para a variável.',

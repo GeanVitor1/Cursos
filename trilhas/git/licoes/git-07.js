@@ -109,7 +109,11 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete para desfazer o último commit mantendo as mudanças preparadas para um novo commit.',
         codigo: 'git reset {{1}} HEAD~1',
-        lacunas: [['--soft', '- -soft', '--soft ']],
+        lacunas: [
+          [
+            "--soft"
+          ]
+        ],
         dicas: [
           'O modo mais cauteloso mantém tudo preparado.',
           'É o oposto de hard.'

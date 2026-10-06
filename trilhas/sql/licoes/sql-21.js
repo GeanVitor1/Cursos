@@ -109,7 +109,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva o relatório: **quantidade de pedidos por status**, só status com mais de 1 pedido.',
         respostasAceitas: [
-          'select status, count(*) as total from pedidos group by status having count(*) > 1'
+          'SELECT Status, COUNT(*) AS Total FROM Pedidos GROUP BY Status HAVING COUNT(*) > 1;',
+          'SELECT Status, COUNT(*) FROM Pedidos GROUP BY Status HAVING COUNT(*) > 1;'
         ],
         dicas: [
           'Agrupe por Status e conte.',

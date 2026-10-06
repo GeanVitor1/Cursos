@@ -4,10 +4,34 @@ window.Plataforma = window.Plataforma || {};
   const criar = P.dom.criar;
 
   function respostaNormalizada(atv, valor) {
-    const sql = (atv.conceitos || []).some(function (id) { return id.indexOf('sql.') === 0; }) || /^sql/.test(atv.id || '');
-    const shell = /^(git|docker|redis|term)/.test(atv.id || '');
-    return P.dom.normalizarRespostaCodigo(valor, !sql, sql ? 'sql' : (shell ? 'shell' : 'codigo'));
+    const conceitos = atv.conceitos || [];
+    const trilha = atv.trilha || (conceitos[0] || '').split('.')[0];
+    if (trilha === 'ingles' || atv.habilidade === 'writing') return P.dom.normalizarIngles(valor);
+    if (trilha === 'sql' || /^sql/.test(atv.id || '')) return P.dom.normalizarSql(valor);
+    if (trilha === 'redis' && !/\b(cache|JsonSerializer|builder|class|await)\b/.test(atv.codigo || '')) return P.dom.normalizarComando(valor, true);
+    if (trilha === 'docker') return P.dom.normalizarDocker(valor);
+    if (['git', 'terminal', 'term'].includes(trilha) || /^(git|term)/.test(atv.id || '')) return P.dom.normalizarComando(valor, false, atv.mensagemLivre);
+    return P.dom.normalizarCSharp(valor);
   }
+
+  function aceitaLacuna(atv, indice, valor) {
+    const normalizada = respostaNormalizada(atv, valor);
+    return normalizada !== null && ((atv.lacunas && atv.lacunas[indice]) || []).some(function (a) {
+      return respostaNormalizada(atv, a) === normalizada;
+    });
+  }
+
+  function validarEscrita(atv, valor) {
+    const texto = String(valor || '').replace(/[\u2018\u2019]/g, "'");
+    if (typeof atv.validar === 'function' && (atv.habilidade === 'writing' || !atv.respostasAceitas || !atv.respostasAceitas.length)) return !!atv.validar(atv.habilidade === 'writing' ? P.dom.expandirContracoesIngles(texto) : P.dom.prepararTextoNatural(texto));
+    const normalizada = respostaNormalizada(atv, texto);
+    return normalizada !== null && (atv.respostasAceitas || []).some(function (a) {
+      return respostaNormalizada(atv, a) === normalizada;
+    });
+  }
+
+  P.atividades.aceitaLacuna = aceitaLacuna;
+  P.atividades.validarEscrita = validarEscrita;
 
   P.atividades.registrar('fill-code', {
     rotulo: 'Completar código',
@@ -54,9 +78,7 @@ window.Plataforma = window.Plataforma || {};
       }
 
       function aceita(indice, valor) {
-        const aceitos = (atv.lacunas && atv.lacunas[indice]) || [];
-        const normalizado = respostaNormalizada(atv, valor);
-        return aceitos.some(function (a) { return respostaNormalizada(atv, a) === normalizado; });
+        return aceitaLacuna(atv, indice, valor);
       }
 
       return {
@@ -126,12 +148,7 @@ window.Plataforma = window.Plataforma || {};
       });
 
       function validar(valor) {
-        const texto = String(valor || '').replace(/[\u2018\u2019]/g, "'");
-        if (typeof atv.validar === 'function' && (atv.habilidade === 'writing' || !atv.respostasAceitas || !atv.respostasAceitas.length)) return !!atv.validar(texto);
-        const normalizada = respostaNormalizada(atv, texto);
-        return (atv.respostasAceitas || []).some(function (a) {
-          return respostaNormalizada(atv, a) === normalizada;
-        });
+        return validarEscrita(atv, valor);
       }
 
       return {

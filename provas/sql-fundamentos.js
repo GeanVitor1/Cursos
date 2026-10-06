@@ -207,7 +207,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva uma consulta que retorne **nome e e-mail dos clientes de Curitiba**.',
         respostasAceitas: [
-          'select nome, email from clientes where cidade = \'curitiba\''
+          "SELECT Nome, Email FROM Clientes WHERE Cidade = 'Curitiba';"
         ],
         dicas: [
           'Liste as colunas pedidas depois do SELECT.',

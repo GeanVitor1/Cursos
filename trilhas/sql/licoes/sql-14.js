@@ -134,8 +134,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna o **nome do cliente e o valor** dos pedidos acima de 100.',
         respostasAceitas: [
-          'select clientes.nome, pedidos.valortotal from clientes inner join pedidos on pedidos.clienteid = clientes.id where pedidos.valortotal > 100',
-          'select clientes.nome, pedidos.valortotal from pedidos inner join clientes on pedidos.clienteid = clientes.id where pedidos.valortotal > 100'
+          "SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes INNER JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id WHERE Pedidos.ValorTotal > 100;",
+          "select clientes.nome, pedidos.valortotal from pedidos inner join clientes on pedidos.clienteid = clientes.id where pedidos.valortotal > 100"
         ],
         dicas: [
           'Junte as tabelas pelo ON e filtre pelo WHERE.',
@@ -170,7 +170,7 @@ Plataforma.registrarLicao({
         enunciado: 'Inner join de Clientes com Pedidos, trazendo Nome e ValorTotal.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select clientes.nome, pedidos.valortotal from clientes inner join pedidos on pedidos.clienteid = clientes.id'
+          "SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes INNER JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id;"
         ],
         dicas: [
           'INNER JOIN com ON ligando ClienteId ao Id.',

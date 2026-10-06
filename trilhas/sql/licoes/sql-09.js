@@ -153,8 +153,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva uma consulta que retorne **nome e telefone**; quando o telefone for nulo, mostre **Sem telefone**.',
         respostasAceitas: [
-          "select nome, coalesce(telefone, 'sem telefone') from clientes",
-          "select nome, coalesce(telefone, 'sem telefone') as telefone from clientes"
+          "SELECT Nome, COALESCE(Telefone, 'Sem telefone') FROM Clientes;",
+          "select nome, coalesce(telefone, 'Sem telefone') as telefone from clientes"
         ],
         dicas: [
           'COALESCE recebe a coluna e o valor substituto.',
@@ -217,7 +217,7 @@ Plataforma.registrarLicao({
         enunciado: 'Retrieve all customers where Phone is empty.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select * from clientes where telefone is null'
+          "SELECT * FROM Clientes WHERE Telefone IS NULL;"
         ],
         dicas: [
           'customers = clientes; phone = telefone; empty = vazio.',

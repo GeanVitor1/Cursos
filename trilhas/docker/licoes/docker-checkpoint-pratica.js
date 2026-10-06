@@ -204,7 +204,7 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva um comando que executa **minha-api** em segundo plano, publicando a porta 8080 da máquina para a 80 do container e entregando a variável **ASPNETCORE_ENVIRONMENT=Development**.',
         placeholder: 'docker ...',
         respostasAceitas: [
-          'docker run -d -p 8080:80 -e aspnetcore_environment=development minha-api'
+          "docker run -d -p 8080:80 -e ASPNETCORE_ENVIRONMENT=Development minha-api"
         ],
         dicas: [
           'Comece com docker run -d.',

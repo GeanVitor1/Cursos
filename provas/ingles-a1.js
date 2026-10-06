@@ -177,7 +177,7 @@ Plataforma.registrarLicao({
         esqueleto: 'Hi! My name is ... . I am ... years old. I am from ... .',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.indexOf('my name is') !== -1 && /\bi am\b/.test(t) && /\byears old\b/.test(t) && t.indexOf('from') !== -1;
+          return /\bmy name('s| is)\s+\p{L}+/u.test(t) && /\bi am\b/.test(t) && /\byears? old\b/.test(t) && /\bfrom\s+\p{L}+/u.test(t);
         },
         respostasAceitas: ['Hi! My name is Ana. I am 30 years old. I am from Brazil.'],
         dicas: ['Use as três estruturas que você aprendeu.', 'Não esqueça years old.'],

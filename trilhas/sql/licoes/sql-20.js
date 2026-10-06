@@ -155,7 +155,8 @@ Plataforma.registrarLicao({
         enunciado: 'Having filters rows: cidades com mais de 3 clientes.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select cidade, count(*) as total from clientes group by cidade having count(*) > 3'
+          'SELECT Cidade, COUNT(*) AS Total FROM Clientes GROUP BY Cidade HAVING COUNT(*) > 3;',
+          'SELECT Cidade, COUNT(*) FROM Clientes GROUP BY Cidade HAVING COUNT(*) > 3;'
         ],
         dicas: [
           'Agrupe por Cidade.',

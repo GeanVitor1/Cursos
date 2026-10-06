@@ -224,11 +224,11 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'cp-git-f9',
         tipo: 'write-code',
+        mensagemLivre: true,
         enunciado: 'Escreva os três comandos do fechamento do dia: preparar tudo, gravar a mudança do frete e enviar para a linha principal do servidor.',
         esqueleto: 'git ___\ngit ___ -m "Ajusta cálculo de frete"\ngit ___ origin main',
         respostasAceitas: [
-          'git add . git commit -m "ajusta calculo de frete" git push origin main',
-          'git add .; git commit -m "ajusta calculo de frete"; git push origin main'
+          "git add .\ngit commit -m \"Ajusta cálculo de frete\"\ngit push origin main"
         ],
         dicas: [
           'Preparar, gravar e enviar: nessa ordem.',

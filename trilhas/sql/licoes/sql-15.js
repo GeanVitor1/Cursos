@@ -131,7 +131,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna o **nome de todos os clientes** e o valor dos pedidos (quando existirem).',
         respostasAceitas: [
-          'select clientes.nome, pedidos.valortotal from clientes left join pedidos on pedidos.clienteid = clientes.id'
+          "SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes LEFT JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id;"
         ],
         dicas: [
           'Preserve a tabela da esquerda: Clientes.',
@@ -162,7 +162,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna o **nome dos clientes que nunca fizeram pedido**.',
         respostasAceitas: [
-          'select clientes.nome from clientes left join pedidos on pedidos.clienteid = clientes.id where pedidos.id is null'
+          "SELECT Clientes.Nome FROM Clientes LEFT JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id WHERE Pedidos.Id IS NULL;"
         ],
         dicas: [
           'LEFT JOIN preserva os clientes.',
@@ -197,7 +197,7 @@ Plataforma.registrarLicao({
         enunciado: 'Left join de Clientes com Pedidos, trazendo todos os nomes.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select clientes.nome from clientes left join pedidos on pedidos.clienteid = clientes.id'
+          "SELECT Clientes.Nome FROM Clientes LEFT JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id;"
         ],
         dicas: [
           'LEFT JOIN preserva a esquerda.',

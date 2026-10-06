@@ -117,7 +117,10 @@ Plataforma.registrarLicao({
           return t.indexOf('preco*quantidade') !== -1 &&
             /return\(?(preco\*quantidade|total)\)?/.test(t);
         },
-        respostasAceitas: ['public decimal CalcularTotal(decimal preco, int quantidade) { return preco * quantidade; }'],
+        respostasAceitas: [
+          "public decimal CalcularTotal(decimal preco, int quantidade) { return preco * quantidade; }",
+          "public decimal CalcularTotal(decimal preco, int quantidade) { decimal total = preco * quantidade; return total; }"
+        ],
         dicas: ['A assinatura já está no esqueleto; falta o corpo.', 'O corpo pode ser uma única linha: `return preco * quantidade;`'],
         explicacao: 'Métodos pequenos e com uma responsabilidade clara são a base do código que outros conseguem ler. Esse é o caminho até os métodos de uma aplicação real.',
         conceitos: ['csharp.metodos']

@@ -108,7 +108,14 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete o contexto para expor as tabelas Produtos e Pedidos.',
         codigo: 'public class MercadoAuroraContext : DbContext\n{\n    public {{1}}<Produto> Produtos { get; set; }\n    public DbSet<{{2}}> Pedidos { get; set; }\n}',
-        lacunas: [['DbSet'], ['pedido', 'Pedido']],
+        lacunas: [
+          [
+            "DbSet"
+          ],
+          [
+            "Pedido"
+          ]
+        ],
         dicas: ['A gaveta chama-se DbSet.', 'A entidade de pedidos é Pedido.'],
         explicacao: 'Cada propriedade DbSet<T> abre uma tabela para consulta e gravação.',
         conceitos: ['ef.dbcontext', 'ef.dbset']

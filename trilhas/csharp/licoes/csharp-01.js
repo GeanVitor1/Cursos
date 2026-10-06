@@ -153,7 +153,10 @@ Plataforma.registrarLicao({
           const t = P.dom.normalizarCodigo(valor);
           return t.indexOf('preco>100') !== -1 && t.indexOf('preco*0.9') !== -1;
         },
-        respostasAceitas: ['if (preco > 100) { precoFinal = preco * 0.9m; }'],
+        respostasAceitas: [
+          "if (preco > 100) { precoFinal = preco * 0.9m; }",
+          "if (preco > 100) precoFinal = preco * 0.9m;"
+        ],
         dicas: ['A condição é `preco > 100`.', '10% de desconto significa multiplicar por 0.9.'],
         explicacao: '`if (preco > 100) { precoFinal = preco * 0.9m; }` — a decisão fica no código, não na cabeça de quem usa.',
         conceitos: ['csharp.condicoes', 'csharp.variaveis']

@@ -94,7 +94,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna **nome e faixa** (Caro acima de 500, senão Barato) dos produtos.',
         respostasAceitas: [
-          "select nome, case when preco > 500 then 'caro' else 'barato' end as faixa from produtos"
+          "select nome, case when preco > 500 then 'Caro' else 'Barato' end as faixa from produtos"
         ],
         dicas: [
           'CASE WHEN condição THEN valor ELSE valor END.',
@@ -131,7 +131,7 @@ Plataforma.registrarLicao({
         enunciado: 'Paid and pending orders: classifique o Status em Pago/Outros.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          "select status, case when status = 'pago' then 'pago' else 'outros' end as classe from pedidos"
+          "select status, case when status = 'Pago' then 'Pago' else 'Outros' end as classe from pedidos"
         ],
         dicas: [
           'WHEN Status = ... THEN ... ELSE ... END.',

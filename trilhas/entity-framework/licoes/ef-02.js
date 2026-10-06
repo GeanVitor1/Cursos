@@ -104,7 +104,14 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete para gravar o produto no banco.',
         codigo: 'context.Produtos.{{1}}(produto);\nawait context.{{2}}();',
-        lacunas: [['add', 'Add'], ['savechangesasync', 'SaveChangesAsync']],
+        lacunas: [
+          [
+            "Add"
+          ],
+          [
+            "SaveChangesAsync"
+          ]
+        ],
         dicas: ['O método que adiciona ao acompanhamento.', 'O método assíncrono que envia o SQL ao banco.'],
         explicacao: '`Add` + `SaveChangesAsync` é o par que grava um novo registro e devolve o Id gerado.',
         conceitos: ['ef.savechanges']

@@ -111,7 +111,11 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete a busca por Id que devolve null quando não encontrado.',
         codigo: 'Cliente? cliente = clientes\n    .First{{1}}(c => c.Id == id);',
-        lacunas: [['OrDefault', 'ordefault']],
+        lacunas: [
+          [
+            "OrDefault"
+          ]
+        ],
         dicas: ['O sufixo que evita a exceção.', 'Começa com maiúscula, no meio do método.'],
         explicacao: '`FirstOrDefault` é a escolha segura para buscas por Id. Depois, verifique o null.',
         conceitos: ['linq.first']

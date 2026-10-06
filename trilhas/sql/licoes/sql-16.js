@@ -98,7 +98,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna o **nome do produto** de cada item vendido (tabela ItensPedido com ProdutoId).',
         respostasAceitas: [
-          'select produtos.nome from itenspedido join produtos on itenspedido.produtoid = produtos.id'
+          "SELECT Produtos.Nome FROM ItensPedido JOIN Produtos ON ItensPedido.ProdutoId = Produtos.Id;"
         ],
         dicas: [
           'ItensPedido aponta para Produtos por ProdutoId.',

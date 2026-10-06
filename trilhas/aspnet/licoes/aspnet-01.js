@@ -84,7 +84,14 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete o JSON de um cliente com id 7 e nome "Ana".',
         codigo: '{\n  "id": {{1}},\n  "nome": "{{2}}"\n}',
-        lacunas: [['7'], ['ana', 'Ana']],
+        lacunas: [
+          [
+            "7"
+          ],
+          [
+            "Ana"
+          ]
+        ],
         dicas: ['Números vão sem aspas.', 'Textos vão entre aspas duplas.'],
         explicacao: 'Número sem aspas, texto com aspas duplas. Essa regra evita a maioria dos erros de JSON inválido.',
         conceitos: ['aspnet.json']

@@ -205,8 +205,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que insere um produto com **nome "Webcam"** e **preço 150**.',
         respostasAceitas: [
-          "insert into produtos (nome, preco) values ('webcam', 150)",
-          "insert into produtos (preco, nome) values (150, 'webcam')"
+          "INSERT INTO Produtos (Nome, Preco) VALUES ('Webcam', 150);",
+          "insert into produtos (preco, nome) values (150, 'Webcam')"
         ],
         dicas: [
           'Colunas entre parênteses, valores entre parênteses, mesma ordem.',

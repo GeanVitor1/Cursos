@@ -277,11 +277,11 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'cp-git-p10',
         tipo: 'write-code',
+        mensagemLivre: true,
         enunciado: 'A versão atual do projeto é v2.1.3 e uma funcionalidade nova e compatível acabou de ser concluída. Escreva os dois comandos que criam a tag anotada da próxima versão e a enviam para o servidor.',
         esqueleto: 'git tag -a ___ -m "Adiciona relatórios"\ngit push origin ___',
         respostasAceitas: [
-          'git tag -a v2.2.0 -m "adiciona relatorios" git push origin v2.2.0',
-          'git tag -a v2.2.0 -m "adiciona relatorios"; git push origin v2.2.0'
+          "git tag -a v2.2.0 -m \"Adiciona relatórios\"\ngit push origin v2.2.0"
         ],
         dicas: [
           'Funcionalidade nova sobe o número do meio.',

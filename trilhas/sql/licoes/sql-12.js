@@ -79,8 +79,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que insere um produto com **nome "Teclado"** e **preço 200**.',
         respostasAceitas: [
-          "insert into produtos (nome, preco) values ('teclado', 200)",
-          "insert into produtos (preco, nome) values (200, 'teclado')"
+          "INSERT INTO Produtos (Nome, Preco) VALUES ('Teclado', 200);",
+          "insert into produtos (preco, nome) values (200, 'Teclado')"
         ],
         dicas: [
           'Informe as colunas na ordem que você declarar.',
@@ -142,7 +142,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que remove o produto de **Id 4**.',
         respostasAceitas: [
-          'delete from produtos where id = 4'
+          "DELETE FROM Produtos WHERE Id = 4;"
         ],
         dicas: [
           'DELETE FROM tabela WHERE condição.',
@@ -217,7 +217,7 @@ Plataforma.registrarLicao({
         enunciado: 'Delete the customer with Id 10.',
         placeholder: 'DELETE ...',
         respostasAceitas: [
-          'delete from clientes where id = 10'
+          "DELETE FROM Clientes WHERE Id = 10;"
         ],
         dicas: [
           'delete = exclua; customer = cliente.',

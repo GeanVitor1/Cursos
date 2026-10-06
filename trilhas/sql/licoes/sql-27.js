@@ -160,7 +160,7 @@ Plataforma.registrarLicao({
         enunciado: 'Filter orders by date: pedidos de setembro (mês 9).',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select * from pedidos where month(datapedido) = 9'
+          "SELECT * FROM Pedidos WHERE MONTH(DataPedido) = 9;"
         ],
         dicas: [
           'MONTH extrai o mês.',

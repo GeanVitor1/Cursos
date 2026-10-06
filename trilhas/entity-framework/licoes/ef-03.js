@@ -94,7 +94,11 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete a busca do cliente pelo e-mail.',
         codigo: 'Cliente? cliente = await context.Clientes\n    .{{1}}(c => c.Email == "ana@email.com");',
-        lacunas: [['firstordefaultasync', 'FirstOrDefaultAsync']],
+        lacunas: [
+          [
+            "FirstOrDefaultAsync"
+          ]
+        ],
         dicas: ['Busca o primeiro ou devolve null, de forma assíncrona.', 'É o mesmo FirstOrDefault do LINQ com o sufixo Async.'],
         explicacao: '`FirstOrDefaultAsync` combina o método seguro do LINQ com a execução assíncrona no banco.',
         conceitos: ['ef.consultas', 'linq.first', 'csharp.async']

@@ -171,9 +171,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva o comando que guarda a chave `produto:10` com o valor Mouse e prazo de 60 segundos.',
         respostasAceitas: [
-          'set produto:10 "mouse" ex 60',
-          'set produto:10 mouse ex 60',
-          "set produto:10 'mouse' ex 60"
+          "SET produto:10 \"Mouse\" EX 60"
         ],
         dicas: ['Use a forma curta de expiração depois do valor.', 'A ordem é SET, chave, valor, EX e o tempo.'],
         explicacao: '`SET produto:10 "Mouse" EX 60` grava o valor e define o prazo em um único comando.',

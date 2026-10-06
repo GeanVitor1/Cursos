@@ -238,7 +238,9 @@ Plataforma.registrarLicao({
         id: 'sql03-a7',
         tipo: 'write-code',
         enunciado: 'Escreva uma consulta que retorne **todos os produtos com estoque menor que 10**.',
-        respostasAceitas: ['select * from produtos where estoque < 10'],
+        respostasAceitas: [
+          "SELECT * FROM Produtos WHERE Estoque < 10;"
+        ],
         dicas: [
           'A tabela é Produtos; a coluna é Estoque.',
           'Estrutura: SELECT * FROM Produtos WHERE Estoque < 10;'
@@ -306,9 +308,8 @@ Plataforma.registrarLicao({
         enunciado: 'Retrieve all customers from São Paulo.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select * from clientes where cidade = \'sao paulo\'',
-          'select * from clientes where cidade = \'são paulo\'',
-          "select * from clientes where cidade = 'são paulo'"
+          "SELECT * FROM Clientes WHERE Cidade = 'São Paulo';",
+          "select * from clientes where cidade = 'São Paulo'"
         ],
         dicas: [
           'from São Paulo = da cidade de São Paulo.',

@@ -89,8 +89,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna o **ticket médio** (média de ValorTotal) dos pedidos pagos.',
         respostasAceitas: [
-          "select avg(valortotal) as ticket from pedidos where status = 'pago'",
-          "select avg(valortotal) from pedidos where status = 'pago'"
+          "select avg(valortotal) as ticket from pedidos where status = 'Pago'",
+          "select avg(valortotal) from pedidos where status = 'Pago'"
         ],
         dicas: [
           'Filtre os Pagos com WHERE.',
@@ -125,8 +125,8 @@ Plataforma.registrarLicao({
         enunciado: 'Payments with status paid: some os valores.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          "select sum(valortotal) as total from pedidos where status = 'pago'",
-          "select sum(valortotal) from pedidos where status = 'pago'"
+          "select sum(valortotal) as total from pedidos where status = 'Pago'",
+          "select sum(valortotal) from pedidos where status = 'Pago'"
         ],
         dicas: [
           'payments = pagamentos; paid = pago.',

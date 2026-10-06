@@ -164,7 +164,11 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete a requisição para criar um novo produto.',
         codigo: '{{1}} /api/produtos\nCorpo: um corpo com nome e preço do produto',
-        lacunas: [['post', 'POST']],
+        lacunas: [
+          [
+            "POST"
+          ]
+        ],
         dicas: ['Criar registro usa o método de inserção.', 'São quatro letras maiúsculas.'],
         explicacao: 'POST é o método que envia dados no corpo da requisição para criar um recurso.',
         conceitos: ['aspnet.http']

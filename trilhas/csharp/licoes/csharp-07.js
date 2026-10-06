@@ -154,7 +154,11 @@ Plataforma.registrarLicao({
           const lambdaOk = t.indexOf('=>') !== -1 && t.indexOf('estoque<10') !== -1;
           return lambdaOk && (t.indexOf('filtrar(produtos,') !== -1 || t.indexOf('filtrar') === -1);
         },
-        respostasAceitas: ['List<Produto> resultado = Filtrar(produtos, p => p.Estoque < 10);'],
+        respostasAceitas: [
+          "List<Produto> resultado = Filtrar(produtos, p => p.Estoque < 10);",
+          "var resultado = Filtrar(produtos, p => p.Estoque < 10);",
+          "Filtrar(produtos, p => p.Estoque < 10);"
+        ],
         dicas: ['A lambda vai no segundo argumento.', 'Use `p => p.Estoque < 10`.'],
         explicacao: 'Você acabou de escrever a estrutura mental de um filtro: uma coleção + uma regra. Mais adiante isso vai ganhar um nome e uma sintaxe ainda mais curta.',
         conceitos: ['csharp.lambda', 'csharp.metodos']

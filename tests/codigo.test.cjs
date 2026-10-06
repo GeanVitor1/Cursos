@@ -25,3 +25,10 @@ test('flags de terminal e decremento em C# não são comentários SQL', () => {
   assert.equal(normalizar('SELECT Nome FROM Clientes -- comentário', false), normalizar('select Nome from Clientes', false));
   assert.equal(normalizar('git status # comentário', true, 'shell'), normalizar('git status', true, 'shell'));
 });
+
+test('SQL aceita cedilha e acentos nos identificadores, preservando os valores', () => {
+  const esperada = "INSERT INTO Produtos (Nome, Preco) VALUES ('Teclado', 200);";
+  assert.equal(normalizar("insert into produtos (Nome , Preço) values ('Teclado',200);", false), normalizar(esperada, false));
+  assert.equal(normalizar("INSERT INTO PRODUTOS (NOME, PREC\u0327O) VALUES ('Teclado', 200);", false), normalizar(esperada, false));
+  assert.notEqual(normalizar("INSERT INTO Produtos (Nome, Preco) VALUES ('Mouse', 200)", false), normalizar(esperada, false));
+});

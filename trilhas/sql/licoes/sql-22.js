@@ -160,7 +160,7 @@ Plataforma.registrarLicao({
         enunciado: 'Queries with subqueries: nomes dos clientes com pedido.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select nome from clientes where id in (select clienteid from pedidos)'
+          "SELECT Nome FROM Clientes WHERE Id IN (SELECT ClienteId FROM Pedidos);"
         ],
         dicas: [
           'A interna lista ClienteId.',

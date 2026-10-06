@@ -238,8 +238,8 @@ Plataforma.registrarLicao({
         enunciado: 'Start a new branch feature/preco for the feature.',
         placeholder: 'git ...',
         respostasAceitas: [
-          'git switch -c feature/preco',
-          'git switch -c feature/novo'
+          "git switch -c feature/preco",
+          "git checkout -b feature/preco"
         ],
         dicas: [
           'start = começar; new branch = branch nova.',

@@ -34,7 +34,12 @@ window.Plataforma = window.Plataforma || {};
 
   P.registrarManifesto = function (manifesto) { P.interno.manifesto = manifesto; };
   P.registrarTrilha = function (trilha) { P.interno.trilhas[trilha.id] = trilha; };
-  P.registrarLicao = function (licao) { P.interno.licoes[licao.id] = Object.assign({}, P.interno.licoes[licao.id] || {}, licao); };
+  P.registrarLicao = function (licao) {
+    (licao.etapas || []).forEach(function (etapa) {
+      if (etapa.atividade) etapa.atividade.trilha = licao.trilha;
+    });
+    P.interno.licoes[licao.id] = Object.assign({}, P.interno.licoes[licao.id] || {}, licao);
+  };
   P.registrarCatalogo = function (catalogo) {
     catalogo.licoes.forEach(function (l) { P.interno.licoes[l.id] = l; });
     P.interno.definicoes = catalogo.definicoes;

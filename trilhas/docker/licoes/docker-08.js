@@ -278,7 +278,7 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva a linha do arquivo compose que passa a variável **ASPNETCORE_ENVIRONMENT=Development** para o serviço.',
         placeholder: '- NOME=valor',
         respostasAceitas: [
-          '- aspnetcore_environment=development'
+          "- ASPNETCORE_ENVIRONMENT=Development"
         ],
         dicas: [
           'No compose, cada variável vira um item da lista environment.',

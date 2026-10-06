@@ -210,9 +210,9 @@ Plataforma.registrarLicao({
         enunciado: 'Retrieve all orders where **Status** <> \'Cancelado\' and **ValorTotal** between 100 and 1000.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select * from pedidos where status <> \'cancelado\' and valortotal between 100 and 1000',
-          'select * from pedidos where valortotal between 100 and 1000 and status <> \'cancelado\'',
-          'select * from pedidos where status not in (\'cancelado\') and valortotal between 100 and 1000'
+          "select * from pedidos where status <> 'Cancelado' and valortotal between 100 and 1000",
+          "select * from pedidos where valortotal between 100 and 1000 and status <> 'Cancelado'",
+          "select * from pedidos where status not in ('Cancelado') and valortotal between 100 and 1000"
         ],
         dicas: [
           'orders = pedidos. <> = diferente de.',

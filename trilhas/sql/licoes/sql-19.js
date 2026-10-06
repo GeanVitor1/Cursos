@@ -179,7 +179,8 @@ Plataforma.registrarLicao({
         enunciado: 'Group rows by status, contando os pedidos.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select status, count(*) as total from pedidos group by status'
+          'SELECT Status, COUNT(*) AS Total FROM Pedidos GROUP BY Status;',
+          'SELECT Status, COUNT(*) FROM Pedidos GROUP BY Status;'
         ],
         dicas: [
           'Agrupe por Status.',

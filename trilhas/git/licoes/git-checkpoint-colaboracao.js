@@ -252,8 +252,8 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva o comando que cria a branch fix/total-pedido e já entra nela.',
         placeholder: 'git ...',
         respostasAceitas: [
-          'git switch -c fix/total-pedido',
-          'git switch -c fix/total-pedido; '
+          "git switch -c fix/total-pedido",
+          "git checkout -b fix/total-pedido"
         ],
         dicas: [
           'Criar e trocar no mesmo comando.',

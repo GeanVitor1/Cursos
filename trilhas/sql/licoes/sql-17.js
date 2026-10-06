@@ -115,7 +115,7 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Reescreva com aliases: nome do cliente (c) e valor do pedido (p) com JOIN.',
         respostasAceitas: [
-          'select c.nome, p.valortotal from clientes as c join pedidos as p on p.clienteid = c.id'
+          "SELECT c.Nome, p.ValorTotal FROM Clientes AS c JOIN Pedidos AS p ON p.ClienteId = c.Id;"
         ],
         dicas: [
           'Apelide as duas tabelas no FROM e no JOIN.',
@@ -190,7 +190,7 @@ Plataforma.registrarLicao({
         enunciado: 'Use short alias names: c para Clientes no SELECT de Nome.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select c.nome from clientes as c'
+          "SELECT c.Nome FROM Clientes AS c;"
         ],
         dicas: [
           'Apelide Clientes de c com AS.',

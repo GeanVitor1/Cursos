@@ -42,4 +42,25 @@ A nuvem existente usa `usuario_principal`, compartilhado por quem acessa o site,
 
 O modo de sincronização atômica permanece desabilitado até que a migração SQL existente seja aplicada e validada no banco. Os testes cobrem conflitos simulados, mas não certificam as políticas ou a migração de um banco em produção.
 
-Exercícios de código continuam sendo comparados com as respostas cadastradas. O navegador não compila nem executa código do aluno; soluções equivalentes adicionais precisam estar entre as variantes aceitas.
+Exercícios de código são comparados com as respostas cadastradas e com equivalências específicas da linguagem. O navegador não compila nem executa código do aluno; outras soluções equivalentes precisam estar entre as variantes aceitas.
+
+## Revisão complementar dos gabaritos — 06/10/2026
+
+A primeira revisão deixou escapar uma falha real: testar a primeira resposta cadastrada não verificava se ela correspondia à grafia exigida pelo enunciado e pela explicação. Em SQL-12, o gabarito armazenava `'teclado'`, embora ambos pedissem `'Teclado'`, e a comparação não aceitava `Preço` como variante didática de `Preco`. A resposta enviada pelo aluno foi reproduzida e incluída nos testes de regressão.
+
+| Área | Correções e critérios |
+| --- | --- |
+| SQL | Identificadores aceitam caixa, cedilhas e acentos, inclusive Unicode decomposto. Espaços, comentários, terminador opcional, identificadores delimitados, JOIN/INNER JOIN, LEFT OUTER JOIN, AS opcional em aliases e ASC padrão são tratados sem alterar valores entre aspas. |
+| Gabaritos SQL | Grafia de nomes, cidades, status e textos corrigida conforme enunciado/explicação; três consultas de agrupamento mostradas nas explicações agora são aceitas também sem alias. Retirada a variante SELECT * de uma pergunta que exige nome e preço. BEGIN TRANSACTION aceito na transferência. |
+| C#, LINQ, EF e ASP.NET | Métodos, tipos e propriedades corrigidos nos gabaritos, especialmente nas lacunas de Redis com código C#. Aceitas variações previstas de var, retorno com variável local, método com expressão, nomes locais e parênteses de lambdas e ordem de propriedades automáticas. Mantida a grafia necessária das APIs. |
+| Docker | Variável ASPNETCORE_ENVIRONMENT=Development corrigida, incluindo Compose e checkpoint. Opções equivalentes e ordem de flags aceitas; imagem, valores e portas continuam sendo diferenciados. |
+| Git | Comandos múltiplos corrigidos para linhas separadas; aceitos ponto e vírgula e &&. Mensagens não vazias podem variar quando o exercício não determina o texto. Corrigida a branch errada e retirada a flag inválida - -soft. |
+| Redis | SET/GET/EX aceitam caixa; aspas equivalentes são aceitas no valor Mouse. Chaves e valores não são convertidos indiscriminadamente para minúsculas. |
+| Inglês | Lacunas aceitam caixa e espaços. Escrita livre trata apóstrofos tipográficos, contrações e espaços mantendo quebras de frase. Corrigidos What is the price, my name’s e dois planos na mesma frase. Transcrições numéricas mantêm dígitos e formato de horário, permitindo 06:45. |
+| Identificação | O motor recebe a trilha da lição, inclusive nos checkpoints cujos IDs começam com cp-. Isso evita interpretar comandos como código C# ou lacunas de Inglês como código sensível a maiúsculas. |
+
+Verificação desta revisão: build e quatro validadores sem erros, **39 testes unitários passando** e **117 cenários de navegador passando em 8,5 minutos**. A suíte percorreu as 130 lições/885 atividades, verificou todas as alternativas de múltipla escolha e testou **1.281 entradas** nos campos de escrita, preenchimento, explicação e transcrição, incluindo todas as respostas cadastradas e variações válidas e inválidas. O teste unitário dos modelos percorreu 788 variantes, complementadas pelos casos específicos de SQL/C#/comandos/Inglês. Também passaram a verificação de sintaxe dos 435 arquivos JavaScript rastreados e `git diff --check`. Datas dos relatórios gerados foram descartadas após confirmar que nenhum conteúdo havia mudado.
+
+A resposta exata do aluno foi aceita no navegador, na etapa 4/11 de SQL-12, com +10 XP; a evidência está em `.gstack/qa-reports/sql-12-resposta-aluno-correta.png`. Nenhum progresso de produção foi modificado pelos testes.
+
+A cobertura foi ampliada para impedir a repetição dos casos identificados. Ela não certifica toda solução possível nem substitui um compilador SQL/C# ou uma análise gramatical completa de Inglês.
