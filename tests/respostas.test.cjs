@@ -180,3 +180,59 @@ test('transcrições numéricas mantêm os dígitos e horários aceitam zero à 
   for (const s of ['6:45', '06:45', '6 : 45']) assert.equal(P.atividades.validarAudio(horario, s), true);
   for (const s of ['645', '6.45', '6:46', '16:45']) assert.equal(P.atividades.validarAudio(horario, s), false);
 });
+
+test('atividades de listening aceitam números por extenso, minúsculas, maiúsculas e pontuação', () => {
+  const atv17 = porId['en-a1-01-p4'];
+  for (const s of ['17', '17.', 'seventeen', 'seventeen.', 'Seventeen', 'Seventeen.', 'SEVENTEEN']) {
+    assert.equal(P.atividades.validarAudio(atv17, s), true, '17 válida: ' + s);
+  }
+  for (const s of ['18', '70', 'seventy']) {
+    assert.equal(P.atividades.validarAudio(atv17, s), false, '17 inválida: ' + s);
+  }
+
+  const atv80 = porId['en-a1-01-p6'];
+  for (const s of ['80', '80.', 'eighty', 'eighty.', 'Eighty', 'Eighty.']) {
+    assert.equal(P.atividades.validarAudio(atv80, s), true, '80 válida: ' + s);
+  }
+
+  const atv42 = porId['en-a1-cp3'];
+  for (const s of ['42', '42.', 'forty-two', 'forty two', 'Forty-two', 'I am forty-two years old.']) {
+    assert.equal(P.atividades.validarAudio(atv42, s), true, '42 válida: ' + s);
+  }
+
+  const atvTel = porId['en-a1-01-a3'];
+  for (const s of ['5550134', '555-0134', '555 0134', 'five five five, oh one three four']) {
+    assert.equal(P.atividades.validarAudio(atvTel, s), true, 'telefone válida: ' + s);
+  }
+});
+
+test('todas as trilhas aceitam variantes com maiúsculas/minúsculas sem penalizar o aluno', () => {
+  // SQL aceita literais com minúsculas ou maiúsculas
+  conferir('sql03-a9', [
+    "select * from clientes where cidade = 'são paulo'",
+    "select * from clientes where cidade = 'São Paulo'",
+    "SELECT * FROM CLIENTES WHERE CIDADE = 'SÃO PAULO'"
+  ], [
+    "select * from clientes where cidade = 'Campinas'"
+  ]);
+
+  // Git aceita comandos iniciados em maiúscula
+  conferir('cp-git-f9', [
+    'Git add .; Git commit -m "Ajusta frete"; Git push origin main',
+    'GIT ADD .; GIT COMMIT -M "Ajusta frete"; GIT PUSH ORIGIN MAIN'
+  ]);
+
+  // Docker aceita Docker ou docker
+  conferir('docker03-a6', [
+    'Docker run -p 8080:80 -d minha-api',
+    'docker run -P 8080:80 -D minha-api'
+  ]);
+
+  // Terminal lacunas aceitam minúsculas e maiúsculas
+  assert.equal(lacuna(porId['term00-a0-escrita'], 0, 'cd'), true);
+  assert.equal(lacuna(porId['term00-a0-escrita'], 0, 'CD'), true);
+  assert.equal(lacuna(porId['term00-a0-escrita'], 0, 'Cd'), true);
+  assert.equal(lacuna(porId['term00-a0-escrita'], 1, 'LS'), true);
+  assert.equal(lacuna(porId['term00-a0-escrita'], 1, 'DIR'), true);
+});
+

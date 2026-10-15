@@ -3,16 +3,75 @@ window.Plataforma = window.Plataforma || {};
 (function (P) {
   const criar = P.dom.criar;
 
-  P.atividades.validarAudio = function (atv, valor) {
-    const texto = String(valor || '').trim();
-    const resposta = String(atv.resposta || '').trim();
-    if (/^\d+$/.test(resposta)) return texto === resposta;
-    if (/^\d{1,2}:\d{2}$/.test(resposta)) {
-      const horario = texto.match(/^(\d{1,2})\s*:\s*(\d{2})$/);
-      return !!horario && Number(horario[1]) + ':' + horario[2] === resposta;
-    }
-    return P.dom.normalizarIngles(texto) === P.dom.normalizarIngles(resposta);
+  const numerosIngles = {
+    zero: 0, oh: 0, one: 1, two: 2, three: 3, four: 4, five: 5,
+    six: 6, seven: 7, eight: 8, nine: 9, ten: 10,
+    eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15,
+    sixteen: 16, seventeen: 17, eighteen: 18, nineteen: 19,
+    twenty: 20, thirty: 30, forty: 40, fifty: 50,
+    sixty: 60, seventy: 70, eighty: 80, ninety: 90, hundred: 100
   };
+
+  function converterTextoParaNumero(texto) {
+    const limpo = P.dom.normalizarIngles(texto);
+    if (!limpo) return null;
+    const palavras = limpo.split(/[\s-]+/).filter(Boolean);
+    if (palavras.length === 1 && numerosIngles[palavras[0]] !== undefined) {
+      return String(numerosIngles[palavras[0]]);
+    }
+    if (palavras.length === 2) {
+      const d = numerosIngles[palavras[0]], u = numerosIngles[palavras[1]];
+      if (d !== undefined && u !== undefined && d >= 20 && d < 100 && u < 10) {
+        return String(d + u);
+      }
+    }
+    if (palavras.length > 2 && palavras.every(function (p) { return numerosIngles[p] !== undefined && numerosIngles[p] < 10; })) {
+      return palavras.map(function (p) { return numerosIngles[p]; }).join('');
+    }
+    return null;
+  }
+
+  P.atividades.validarAudio = function (atv, valor) {
+    const textoBruto = String(valor || '').trim();
+    if (!textoBruto) return false;
+    const resposta = String(atv.resposta || '').trim();
+    const textoNorm = P.dom.normalizarIngles(textoBruto);
+    const audioNorm = atv.audio ? P.dom.normalizarIngles(atv.audio) : '';
+
+    if (audioNorm && (textoNorm === audioNorm || audioNorm.indexOf(textoNorm) !== -1 || textoNorm.indexOf(audioNorm) !== -1)) {
+      if (textoNorm.length >= 3 && !/^\d+$/.test(textoNorm.replace(/\s+/g, ''))) return true;
+    }
+
+    if (/^\d+$/.test(resposta)) {
+      const digitos = textoBruto.replace(/[^\d]/g, '');
+      const semPontuacao = textoBruto.replace(/[.,\s-]/g, '');
+      if (digitos === resposta && digitos === semPontuacao) return true;
+      const numeroConvertido = converterTextoParaNumero(textoBruto);
+      if (numeroConvertido === resposta) return true;
+      return false;
+    }
+
+    if (/^\d{1,2}:\d{2}$/.test(resposta)) {
+      const horario = textoBruto.match(/^(\d{1,2})\s*:\s*(\d{2})$/);
+      if (horario && Number(horario[1]) + ':' + horario[2] === resposta) return true;
+      const partesResposta = resposta.split(':');
+      const h = Number(partesResposta[0]), m = Number(partesResposta[1]);
+      const horaNome = Object.keys(numerosIngles).find(function (k) { return numerosIngles[k] === h; });
+      const resto = textoNorm.replace(new RegExp('^' + horaNome + '\\s*'), '');
+      if (textoNorm.startsWith(horaNome) && converterTextoParaNumero(resto) === String(m)) return true;
+      return false;
+    }
+
+    if (textoNorm === P.dom.normalizarIngles(resposta)) return true;
+
+    if (Array.isArray(atv.respostasAceitas) && atv.respostasAceitas.some(function (r) {
+      return P.dom.normalizarIngles(textoBruto) === P.dom.normalizarIngles(r);
+    })) return true;
+
+    return false;
+  };
+
+
 
   function falarIngles(texto, lento) {
     if (!texto || !window.speechSynthesis) return false;

@@ -126,12 +126,14 @@ Plataforma.registrarLicao({
         audio: 'Seventeen.',
         modo: 'escrever',
         resposta: '17',
+        respostasAceitas: ['17', 'seventeen'],
         placeholder: 'ex.: 12',
         dicas: ['Seventeen é 17.', 'Preste atenção na terminação -teen.'],
         explicacao: 'Você ouviu seventeen = 17. A partir de twenty, os números passam a usar outra terminação.',
         conceitos: ['en.numeros']
       }
     },
+
     {
       tipo: 'conteudo',
       titulo: 'Dezenas: 30 a 60',
@@ -186,12 +188,14 @@ Plataforma.registrarLicao({
         audio: 'Eighty.',
         modo: 'escrever',
         resposta: '80',
+        respostasAceitas: ['80', 'eighty'],
         placeholder: 'ex.: 40',
         dicas: ['Eighty é 80.', 'É a dezena do eight (8).'],
         explicacao: 'eighty = 80. Agora você já cobre os números de 1 a 100.',
         conceitos: ['en.numeros']
       }
     },
+
     {
       tipo: 'conteudo',
       titulo: 'Falando de idade',
@@ -282,12 +286,14 @@ Plataforma.registrarLicao({
         audio: 'My phone number is five five five, oh one three four.',
         modo: 'escrever',
         resposta: '5550134',
+        respostasAceitas: ['5550134', '555-0134', '555 0134', 'five five five, oh one three four'],
         placeholder: 'Apenas números, ex.: 5550134',
         dicas: ['Oh é o zero.', 'Não use traços na resposta.'],
         explicacao: 'Escutou 555, oh 1 3 4 → 5550134. Praticar números de telefone treina o ouvido para números rápidos.',
         conceitos: ['en.numeros']
       }
     },
+
     {
       tipo: 'atividade',
       atividade: {

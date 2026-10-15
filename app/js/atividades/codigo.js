@@ -6,7 +6,7 @@ window.Plataforma = window.Plataforma || {};
   function respostaNormalizada(atv, valor) {
     const conceitos = atv.conceitos || [];
     const trilha = atv.trilha || (conceitos[0] || '').split('.')[0];
-    if (trilha === 'ingles' || atv.habilidade === 'writing') return P.dom.normalizarIngles(valor);
+    if (trilha === 'ingles' || trilha === 'en' || atv.habilidade === 'writing') return P.dom.normalizarIngles(valor);
     if (trilha === 'sql' || /^sql/.test(atv.id || '')) return P.dom.normalizarSql(valor);
     if (trilha === 'redis' && !/\b(cache|JsonSerializer|builder|class|await)\b/.test(atv.codigo || '')) return P.dom.normalizarComando(valor, true);
     if (trilha === 'docker') return P.dom.normalizarDocker(valor);
@@ -16,22 +16,53 @@ window.Plataforma = window.Plataforma || {};
 
   function aceitaLacuna(atv, indice, valor) {
     const normalizada = respostaNormalizada(atv, valor);
-    return normalizada !== null && ((atv.lacunas && atv.lacunas[indice]) || []).some(function (a) {
+    if (normalizada !== null && ((atv.lacunas && atv.lacunas[indice]) || []).some(function (a) {
       return respostaNormalizada(atv, a) === normalizada;
-    });
+    })) return true;
+
+    const conceitos = atv.conceitos || [];
+    const trilha = atv.trilha || (conceitos[0] || '').split('.')[0];
+    if (['terminal', 'git', 'docker', 'ingles', 'en', 'sql'].includes(trilha) || /^(term|git|sql)/.test(atv.id || '')) {
+      const vLower = String(valor || '').trim().toLowerCase();
+      if (vLower && ((atv.lacunas && atv.lacunas[indice]) || []).some(function (a) {
+        return String(a || '').trim().toLowerCase() === vLower;
+      })) return true;
+    }
+
+    return false;
   }
 
   function validarEscrita(atv, valor) {
     const texto = String(valor || '').replace(/[\u2018\u2019]/g, "'");
     if (typeof atv.validar === 'function' && (atv.habilidade === 'writing' || !atv.respostasAceitas || !atv.respostasAceitas.length)) return !!atv.validar(atv.habilidade === 'writing' ? P.dom.expandirContracoesIngles(texto) : P.dom.prepararTextoNatural(texto));
     const normalizada = respostaNormalizada(atv, texto);
-    return normalizada !== null && (atv.respostasAceitas || []).some(function (a) {
+    if (normalizada !== null && (atv.respostasAceitas || []).some(function (a) {
       return respostaNormalizada(atv, a) === normalizada;
-    });
+    })) return true;
+
+    const conceitos = atv.conceitos || [];
+    const trilha = atv.trilha || (conceitos[0] || '').split('.')[0];
+    if (trilha === 'sql' || /^sql/.test(atv.id || '')) {
+      try {
+        const normUser = P.dom.normalizarSql(texto);
+        if (normUser) {
+          const tokensUser = JSON.parse(normUser).map(function (t) { return /^['"]/.test(t) ? P.dom.normalizar(t) : t; });
+          if ((atv.respostasAceitas || []).some(function (a) {
+            const normA = P.dom.normalizarSql(a);
+            if (!normA) return false;
+            const tokensA = JSON.parse(normA).map(function (t) { return /^['"]/.test(t) ? P.dom.normalizar(t) : t; });
+            return JSON.stringify(tokensUser) === JSON.stringify(tokensA);
+          })) return true;
+        }
+      } catch (e) {}
+    }
+
+    return false;
   }
 
   P.atividades.aceitaLacuna = aceitaLacuna;
   P.atividades.validarEscrita = validarEscrita;
+
 
   P.atividades.registrar('fill-code', {
     rotulo: 'Completar código',

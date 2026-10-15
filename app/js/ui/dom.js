@@ -185,6 +185,16 @@ window.Plataforma = window.Plataforma || {};
     return expandirContracoesIngles(texto).toLowerCase().replace(/[.,!?;:"]/g, ' ').replace(/\s+/g, ' ').trim();
   }
 
+  const comandosCli = new Set([
+    'git', 'docker', 'dotnet', 'npm', 'cd', 'ls', 'dir', 'mkdir', 'clear',
+    'add', 'commit', 'push', 'pull', 'checkout', 'branch', 'status', 'switch',
+    'merge', 'rebase', 'tag', 'log', 'diff', 'reset', 'restore', 'remote',
+    'init', 'clone', 'stash', 'pop', 'fetch', 'origin', 'main', 'master', 'head', 'upstream',
+    'build', 'run', 'test', 'watch', 'new', 'webapi', 'install', 'start',
+    'compose', 'up', 'down', 'stop', 'ps', 'exec', 'images', 'rm', 'rmi'
+  ]);
+
+
   function normalizarComando(texto, redis, mensagemLivre) {
     const tokens = [];
     let palavra = '', iniciou = false, aspas = null;
@@ -208,6 +218,15 @@ window.Plataforma = window.Plataforma || {};
     if (aspas) return null;
     fecharPalavra();
     if (tokens[tokens.length - 1] === ';') tokens.pop();
+    tokens.forEach(function (t, i) {
+      if (comandosCli.has(t.toLowerCase())) {
+        tokens[i] = t.toLowerCase();
+      } else if (t.startsWith('-') && !/^-\d+$/.test(t)) {
+        const eq = t.indexOf('=');
+        if (eq > 0) tokens[i] = t.slice(0, eq).toLowerCase() + t.slice(eq);
+        else tokens[i] = t.toLowerCase();
+      }
+    });
     if (redis) {
       const comandos = new Set(['SET', 'GET', 'DEL', 'EXPIRE', 'TTL', 'SETEX', 'PERSIST', 'MGET', 'MSET']);
       tokens.forEach(function (t, i) {
@@ -224,8 +243,10 @@ window.Plataforma = window.Plataforma || {};
     const normalizada = normalizarComando(texto);
     if (normalizada === null) return null;
     const tokens = JSON.parse(normalizada);
-    const inicio = tokens[0] === 'docker' && ['run', 'build'].includes(tokens[1]) ? 2 :
-      (tokens.slice(0, 3).join(' ') === 'docker compose up' ? 3 : 0);
+    const t0 = (tokens[0] || '').toLowerCase();
+    const t1 = (tokens[1] || '').toLowerCase();
+    const inicio = t0 === 'docker' && ['run', 'build'].includes(t1) ? 2 :
+      (tokens.slice(0, 3).map(function (t) { return t.toLowerCase(); }).join(' ') === 'docker compose up' ? 3 : 0);
     if (!inicio) return normalizada;
     const aliases = { '--detach': '-d', '--publish': '-p', '--env': '-e', '--volume': '-v', '--tag': '-t' };
     const flagsComValor = new Set(['-p', '-e', '-v', '-t']);
@@ -234,9 +255,9 @@ window.Plataforma = window.Plataforma || {};
       let t = tokens[i];
       if (t === ';') return normalizada;
       // Tudo após a imagem de docker run pertence ao comando do container.
-      if (tokens[1] === 'run' && posicionais.length) { posicionais.push(t); continue; }
+      if (t1 === 'run' && posicionais.length) { posicionais.push(t); continue; }
       const igual = t.indexOf('=');
-      const nome = igual > 0 ? t.slice(0, igual) : t;
+      const nome = (igual > 0 ? t.slice(0, igual) : t).toLowerCase();
       const flag = aliases[nome] || nome;
       if (flagsComValor.has(flag)) {
         const valor = igual > 0 ? t.slice(igual + 1) : tokens[++i];
@@ -249,6 +270,7 @@ window.Plataforma = window.Plataforma || {};
     flags.sort(function (a, b) { return JSON.stringify(a).localeCompare(JSON.stringify(b)); });
     return JSON.stringify(tokens.slice(0, inicio).concat(flags.flat(), posicionais));
   }
+
 
   function limpar(el) {
     while (el.firstChild) el.removeChild(el.firstChild);

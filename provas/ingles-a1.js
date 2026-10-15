@@ -67,11 +67,13 @@ Plataforma.registrarLicao({
         audio: 'I am forty-two years old.',
         modo: 'escrever',
         resposta: '42',
+        respostasAceitas: ['42', 'forty-two', 'forty two'],
         placeholder: 'Escreva apenas o número',
         dicas: ['Forty é 40.', 'Two é 2.'],
         explicacao: '42. Ouvir e transcrever idades treina números rápidos.',
         conceitos: ['en.numeros']
       }
+
     },
     {
       tipo: 'atividade',
