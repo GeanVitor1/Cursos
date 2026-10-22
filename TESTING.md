@@ -45,3 +45,7 @@ As respostas modelo verificam o comportamento do motor e os critérios publicado
 `node ferramentas/auditar-curriculo.cjs` atualiza o inventário por trilha em `ferramentas/inventario-curricular.json`. `npm run validate` distingue aulas publicadas de registros curriculares no relatório pedagógico.
 
 Os testes de nuvem usam respostas controladas. Não escrevem no perfil Supabase real nem comprovam políticas de autorização ou durabilidade do banco em produção. A inspeção remota desta rodada foi somente leitura: tabela acessível; coluna `versao` ausente.
+
+## Design dos componentes de aprendizagem
+
+`npx playwright test tests/e2e/design-aprendizagem.spec.cjs` verifica os temas claro/escuro em 320, 768 e 1440 px, além de progresso parcial e percurso selecionado em desktop e celular. Confere seletor com tema correto, foco após salvar a meta, navegação por teclado, progresso preservado e ausência de overflow horizontal. Capturas por componente são salvas em `.gstack/qa-reports/screenshots/`.

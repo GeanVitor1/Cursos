@@ -1,0 +1,120 @@
+/* Componentes de aprendizagem: a mesma identidade nos temas claro e escuro. */
+.formacao-intro, .atividade-subtitulo { color: var(--texto-suave); font-size: 14px; line-height: 1.6; max-width: 65ch; }
+.formacao-intro { margin-bottom: 22px; }
+.percurso { border-top: 1px solid var(--borda); }
+.percurso:last-child { border-bottom: 1px solid var(--borda); }
+.percurso-cabecalho { display: flex; align-items: center; gap: 14px; min-height: 88px; padding: 18px 6px; border-radius: 10px; list-style: none; cursor: pointer; transition: background-color .18s ease; }
+.percurso-cabecalho::-webkit-details-marker, .painel-expansivel > summary::-webkit-details-marker { display: none; }
+.percurso-cabecalho:hover { background: var(--superficie-2); }
+.percurso-marca { display: grid; place-items: center; flex: 0 0 42px; height: 42px; background: var(--superficie-2); color: var(--texto-suave); border-radius: 12px; font-size: 13px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.percurso.selecionado .percurso-marca { background: var(--primaria-suave); color: var(--primaria); }
+.percurso-titulo { display: grid; gap: 5px; min-width: 0; flex: 1; }
+.percurso-titulo strong { font-size: 16px; font-weight: 650; line-height: 1.4; }
+.percurso-contagem { font-size: 12px; color: var(--texto-suave); line-height: 1.5; }
+.percurso-atual { font-size: 11px; font-weight: 600; color: var(--primaria); white-space: nowrap; }
+.expansivel-seta, .painel-expansivel > summary::after { width: 8px; height: 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); transition: transform .18s ease; flex-shrink: 0; color: var(--texto-suave); }
+.expansivel-seta { margin: 0 10px 4px; }
+.percurso[open] .expansivel-seta, .painel-expansivel[open] > summary::after { transform: rotate(225deg); }
+.percurso-conteudo { padding: 2px 6px 20px; }
+.percurso-apresentacao { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; padding: 8px 0 20px; }
+.percurso-apresentacao p { max-width: 62ch; color: var(--texto-suave); font-size: 13px; line-height: 1.7; margin: 0; }
+.percurso-apresentacao .btn { flex-shrink: 0; min-height: 44px; }
+.percurso-lista { list-style: none; margin: 0; padding: 0; }
+.percurso-etapa + .percurso-etapa { border-top: 1px solid var(--borda); }
+.percurso-link { display: grid; grid-template-columns: 30px minmax(0, 1fr) 126px; gap: 16px; align-items: center; padding: 15px 10px; min-height: 76px; border-radius: 10px; color: var(--texto); text-decoration: none; transition: background-color .18s ease; }
+.percurso-link:hover { background: var(--superficie-2); }
+.percurso-link:active { background: var(--superficie-3); }
+.percurso-link:hover .percurso-info strong { color: var(--primaria); }
+.percurso-ordem { font-size: 12px; color: var(--texto-suave); font-weight: 600; text-align: center; font-variant-numeric: tabular-nums; }
+.percurso-etapa.concluida .percurso-ordem { color: var(--sucesso); font-size: 17px; }
+.percurso-info { display: grid; gap: 4px; min-width: 0; }
+.percurso-info strong { font-size: 14px; font-weight: 600; line-height: 1.4; }
+.percurso-descricao { font-size: 12px; line-height: 1.5; color: var(--texto-suave); }
+.percurso-progresso { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 6px; min-width: 0; }
+.percurso-status { font-size: 11px; line-height: 1.5; color: var(--texto-suave); }
+.percurso-percentual { font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.percurso-progresso .barra { grid-column: 1 / -1; height: 4px; margin: 0; }
+.percurso-etapa.concluida .percurso-status { color: var(--sucesso); }
+.percurso-etapa.concluida .barra-preenchimento { background: var(--sucesso); }
+.percurso-etapa.em-andamento .percurso-status, .percurso-etapa.disponivel .percurso-status { color: var(--primaria); }
+.percurso-etapa.planejada .percurso-status { grid-column: 1 / -1; text-align: right; }
+.painel-expansivel > summary { display: flex; justify-content: space-between; align-items: center; gap: 18px; min-height: 44px; list-style: none; cursor: pointer; border-radius: 8px; color: var(--texto-suave); font-size: 14px; padding: 10px 2px; transition: color .18s ease; }
+.painel-expansivel > summary::after { content: ''; margin: 0 8px 4px; }
+.painel-expansivel > summary:hover { color: var(--primaria); }
+.painel-expansivel[open] > summary { margin-bottom: 14px; }
+.percurso-cabecalho:focus-visible, .percurso-link:focus-visible, .painel-expansivel > summary:focus-visible { outline: 2px solid var(--primaria); outline-offset: 3px; }
+.aprendizagem-resumo > p { color: var(--texto-suave); font-size: 14px; line-height: 1.7; max-width: 72ch; }
+.aprendizagem-marcos { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 16px 0; }
+.aprendizagem-marcos li { padding: 7px 10px; border-radius: 8px; background: var(--sucesso-suave); color: var(--sucesso); font-size: 12px; font-weight: 600; }
+.aprendizagem-marcos li::before { content: '✓'; margin-right: 7px; }
+
+.atividade-resumo-cabecalho { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.atividade-subtitulo { margin: 0; }
+.atividade-periodo { background: var(--superficie-2); color: var(--texto-suave); border-radius: 7px; padding: 5px 9px; font-size: 11px; white-space: nowrap; }
+.atividade-grade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(230px, .65fr); gap: 32px; }
+.atividade-historico { min-width: 0; }
+.atividade-indicadores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 24px; }
+.atividade-indicador { display: grid; align-content: start; gap: 4px; }
+.atividade-indicador strong { font-size: clamp(20px, 2.5vw, 26px); font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -.025em; }
+.atividade-indicador span { color: var(--texto-suave); font-size: 12px; line-height: 1.4; }
+.atividade-semana, .atividade-calendario { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+.atividade-semana { margin-bottom: 8px; color: var(--texto-suave); font-size: 11px; text-align: center; }
+.atividade-calendario { margin: 0; }
+.atividade-dia { min-height: 34px; display: grid; place-items: center; border: 1px solid var(--borda); border-radius: 7px; background: var(--superficie-2); color: var(--texto-suave); font-size: 12px; font-variant-numeric: tabular-nums; }
+.atividade-dia.estudou { background: var(--sucesso-suave); color: var(--sucesso); border-color: var(--sucesso); font-weight: 700; }
+.atividade-dia.hoje { outline: 2px solid var(--primaria); outline-offset: -2px; color: var(--texto); font-weight: 650; }
+.atividade-legenda { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 14px; font-size: 11px; color: var(--texto-suave); }
+.atividade-legenda-estudo { display: inline-flex; align-items: center; gap: 6px; }
+.atividade-legenda-estudo::before { content: ''; width: 9px; height: 9px; background: var(--sucesso-suave); border: 1px solid var(--sucesso); border-radius: 3px; }
+.atividade-meta { align-self: start; padding: 22px; background: var(--superficie-2); border-radius: 12px; min-width: 0; }
+.atividade-meta h3 { font-size: 16px; }
+.atividade-meta > p { font-size: 13px; color: var(--texto-suave); line-height: 1.6; margin-bottom: 20px; }
+.atividade-meta > label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+.atividade-select { position: relative; }
+.atividade-select::after { content: ''; position: absolute; right: 17px; top: calc(50% - 6px); width: 7px; height: 7px; border-right: 1.5px solid var(--texto-suave); border-bottom: 1.5px solid var(--texto-suave); transform: rotate(45deg); pointer-events: none; }
+.atividade-select select { appearance: none; -webkit-appearance: none; font: inherit; color-scheme: light; width: 100%; min-height: 46px; padding: 10px 38px 10px 12px; border: 1px solid var(--borda-forte); border-radius: 9px; background: var(--superficie); color: var(--texto); cursor: pointer; font-size: 14px; transition: border-color .18s ease; }
+[data-tema="escuro"] .atividade-select select { color-scheme: dark; }
+.atividade-select select:hover { border-color: var(--primaria); }
+.atividade-select select:focus-visible { outline: 2px solid var(--primaria); outline-offset: 3px; }
+.atividade-select select option { color: var(--texto); background: var(--superficie); }
+.atividade-meta > .atividade-meta-progresso { color: var(--texto); font-weight: 600; font-size: 12px; margin: 20px 0 8px; font-variant-numeric: tabular-nums; }
+.atividade-meta .barra { background: var(--borda); }
+.atividade-meta-nota { display: block; font-size: 11px; color: var(--texto-suave); margin-top: 10px; }
+.atividade-regras { border-top: 1px solid var(--borda); margin-top: 24px; padding-top: 10px; }
+.atividade-regras > summary { font-size: 12px; }
+.atividade-regras p { color: var(--texto-suave); font-size: 12px; line-height: 1.7; max-width: 80ch; margin-bottom: 8px; }
+.atividade-recentes-titulo { margin-top: 24px; font-size: 14px; }
+.atividade-recentes { list-style: none; margin: 10px 0 0; padding: 0; }
+.atividade-recentes li { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 16px; padding: 10px 0; border-top: 1px solid var(--borda); font-size: 12px; }
+.atividade-recentes time { color: var(--texto-suave); font-variant-numeric: tabular-nums; }
+.decisao-motivo { margin-top: 12px; }
+.decisao-solucao + p { margin: 24px 0 12px; font-weight: 600; font-size: 15px; }
+
+@media (max-width: 960px) {
+  .atividade-select select { font-size: 16px; }
+}
+@media (max-width: 700px) {
+  .atividade-grade { grid-template-columns: 1fr; gap: 24px; }
+  .atividade-resumo-cabecalho { flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  .atividade-meta { padding: 18px; }
+  .atividade-select select { font-size: 16px; }
+  .percurso-apresentacao { flex-direction: column; gap: 14px; }
+  .percurso-apresentacao .btn { width: 100%; }
+  .percurso-link { grid-template-columns: 24px minmax(0, 1fr); gap: 8px 12px; padding: 14px 2px; }
+  .percurso-progresso { grid-column: 2; grid-template-columns: 1fr auto; width: 100%; max-width: 220px; }
+  .percurso-etapa.planejada .percurso-status { text-align: left; }
+  .percurso-cabecalho { gap: 10px; padding: 16px 2px; flex-wrap: wrap; }
+  .percurso-marca { flex-basis: 34px; height: 36px; font-size: 12px; border-radius: 9px; }
+  .percurso-titulo strong { font-size: 14px; }
+  .percurso-contagem { font-size: 11px; }
+  .percurso-atual { order: 4; margin-left: 44px; }
+  .expansivel-seta { margin-right: 5px; }
+  .percurso-conteudo { padding-left: 2px; padding-right: 2px; }
+  .atividade-indicadores { gap: 8px; }
+  .atividade-indicador strong { font-size: 20px; }
+  .atividade-indicador span { font-size: 11px; }
+  .atividade-dia { min-height: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .percurso-cabecalho, .percurso-link, .expansivel-seta, .painel-expansivel > summary::after, .atividade-select select { transition: none; }
+}

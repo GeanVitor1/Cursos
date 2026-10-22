@@ -160,12 +160,12 @@ window.Plataforma = window.Plataforma || {};
     const conceitos = P.dados.resumoConceitos();
     const dominados = conceitos.filter(function (c) { return c.estado === 'dominado'; });
     const lacunas = conceitos.filter(function (c) { return c.estado === 'dificuldade' || c.estado === 'revisar'; }).sort(function (a, b) { return b.erros - a.erros; });
-    const card = criar('section', { classe: 'cartao' });
+    const card = criar('section', { classe: 'cartao aprendizagem-resumo' });
     card.appendChild(criar('h2', { texto: 'O que você já aprendeu' }));
     card.appendChild(criar('p', { texto: dominados.length ? dominados.length + ' conceitos com evidências de domínio: ' + dominados.slice(0, 4).map(function (c) { return P.progresso.nomeConceito(c.id); }).join(', ') + '.' : 'O domínio aparece depois de prática consistente em diferentes formas de aplicação. Concluir uma aula é o primeiro passo.' }));
     card.appendChild(criar('p', { texto: lacunas.length ? 'Priorize estes pontos: ' + lacunas.slice(0, 3).map(function (c) { return P.progresso.nomeConceito(c.id); }).join(', ') + '.' : 'Continue praticando para identificar seus pontos fortes e dificuldades.' }));
     const marcos = P.progresso.resumo().marcos.filter(function (m) { return m.obtido; });
-    if (marcos.length) card.appendChild(criar('ul', { 'aria-label': 'Marcos de aprendizagem' }, marcos.map(function (m) { return criar('li', { texto: m.nome }); })));
+    if (marcos.length) card.appendChild(criar('ul', { classe: 'aprendizagem-marcos', 'aria-label': 'Marcos de aprendizagem' }, marcos.map(function (m) { return criar('li', { texto: m.nome }); })));
     card.appendChild(comp.botao('Ver evidências por conceito', { tipo: 'fantasma', onclick: function () { P.roteador.ir('#/dados'); } }));
     return card;
   }
@@ -197,7 +197,7 @@ window.Plataforma = window.Plataforma || {};
         ])
       ]));
     });
-    const detalhes = criar('details');
+    const detalhes = criar('details', { classe: 'painel-expansivel' });
     detalhes.appendChild(criar('summary', { texto: 'Ver todas as trilhas' }));
     detalhes.appendChild(lista);
     cartao.appendChild(detalhes);
@@ -231,7 +231,7 @@ window.Plataforma = window.Plataforma || {};
         ])
       ]));
     });
-    const detalhes = criar('details');
+    const detalhes = criar('details', { classe: 'painel-expansivel' });
     detalhes.appendChild(criar('summary', { texto: 'Explorar fases da formação' }));
     detalhes.appendChild(roadmap);
     cartao.appendChild(detalhes);
@@ -239,23 +239,59 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function cartaoPercursos() {
-    const box = criar('section', { classe: 'cartao' });
+    const box = criar('section', { classe: 'cartao formacao', 'aria-label': 'Percursos de formação' });
     box.appendChild(criar('h2', { texto: 'Escolha sua formação' }));
-    ((P.interno.manifesto || {}).percursos || []).forEach(function (percurso) {
-      const detalhe = criar('details');
-      detalhe.appendChild(criar('summary', { texto: percurso.nome }));
-      detalhe.appendChild(criar('p', { classe: 'muted pequeno', texto: percurso.descricao }));
-      detalhe.appendChild(comp.botao('Seguir este percurso', { tipo: 'suave', onclick: function () { P.dados.estado().configuracoes.percurso = percurso.nome; P.dados.salvar(); P.roteador.ir('#/'); } }));
+    box.appendChild(criar('p', { classe: 'formacao-intro', texto: 'Um caminho organizado para o que você quer aprender. Explore as trilhas e escolha seu próximo passo.' }));
+    const atual = P.dados.estado().configuracoes.percurso;
+    ((P.interno.manifesto || {}).percursos || []).forEach(function (percurso, indice) {
+      const selecionado = atual === percurso.nome;
+      const resumos = percurso.trilhas.map(function (id) { return P.progresso.daTrilha(id); }).filter(Boolean);
+      const disponiveis = resumos.filter(function (r) { return r.total > 0; }).length;
+      const detalhe = criar('details', { classe: 'percurso' + (selecionado ? ' selecionado' : ''), open: selecionado });
+      const resumo = criar('summary', { classe: 'percurso-cabecalho' }, [
+        criar('span', { classe: 'percurso-marca', 'aria-hidden': 'true', texto: String(indice + 1).padStart(2, '0') }),
+        criar('span', { classe: 'percurso-titulo' }, [
+          criar('strong', { texto: percurso.nome }),
+          criar('span', { classe: 'percurso-contagem', texto: resumos.length + ' trilhas · ' + disponiveis + ' com aulas publicadas' })
+        ]),
+        selecionado ? criar('span', { classe: 'percurso-atual', texto: 'Seu percurso' }) : null,
+        criar('span', { classe: 'expansivel-seta', 'aria-hidden': 'true' })
+      ]);
+      detalhe.appendChild(resumo);
+      const conteudo = criar('div', { classe: 'percurso-conteudo' });
+      const apresentacao = criar('div', { classe: 'percurso-apresentacao' });
+      apresentacao.appendChild(criar('p', { texto: percurso.descricao }));
+      apresentacao.appendChild(comp.botao(selecionado ? 'Percurso selecionado' : 'Seguir este percurso', {
+        tipo: selecionado ? 'fantasma' : 'suave', desabilitado: selecionado,
+        onclick: function () { P.dados.estado().configuracoes.percurso = percurso.nome; P.dados.salvar(); P.roteador.ir('#/'); }
+      }));
+      conteudo.appendChild(apresentacao);
       const lista = criar('ol', { classe: 'percurso-lista' });
-      percurso.trilhas.forEach(function (id) {
+      percurso.trilhas.forEach(function (id, posicao) {
         const r = P.progresso.daTrilha(id);
         if (!r) return;
-        const linha = criar('li');
-        linha.appendChild(criar('a', { href: '#/trilha/' + id, texto: r.trilha.curto || r.trilha.nome }));
-        linha.appendChild(criar('span', { classe: 'pequeno muted', texto: ' — ' + (r.total ? r.percentual + '% do publicado' : 'conteúdo planejado') + (r.planejadas ? ' · ' + r.planejadas + ' aulas em produção' : '') }));
+        const status = !r.total ? 'planejada' : r.status;
+        const rotulos = { planejada: 'Em produção', bloqueada: 'Pré-requisitos', concluida: 'Concluída', 'em-andamento': 'Em andamento', disponivel: 'Disponível' };
+        const linha = criar('li', { classe: 'percurso-etapa ' + status });
+        const link = criar('a', { classe: 'percurso-link', href: '#/trilha/' + id });
+        link.appendChild(criar('span', { classe: 'percurso-ordem', 'aria-hidden': 'true', texto: status === 'concluida' ? '✓' : String(posicao + 1).padStart(2, '0') }));
+        const info = criar('span', { classe: 'percurso-info' }, [
+          criar('strong', { texto: r.trilha.curto || r.trilha.nome }),
+          criar('span', { classe: 'percurso-descricao', texto: r.total ? r.concluidas.length + ' de ' + r.total + (r.total === 1 ? ' aula publicada concluída' : ' aulas publicadas concluídas') + (r.planejadas ? ' · ' + r.planejadas + ' em produção' : '') : r.planejadas + ' aulas em preparação' })
+        ]);
+        link.appendChild(info);
+        const progresso = criar('div', { classe: 'percurso-progresso' });
+        progresso.appendChild(criar('span', { classe: 'percurso-status', texto: rotulos[status] || 'Disponível' }));
+        if (r.total) {
+          progresso.appendChild(criar('span', { classe: 'percurso-percentual', texto: r.percentual + '%', 'aria-label': r.percentual + '% das aulas publicadas concluídas' }));
+          progresso.appendChild(comp.barra(r.percentual, 'fina'));
+        }
+        link.appendChild(progresso);
+        linha.appendChild(link);
         lista.appendChild(linha);
       });
-      detalhe.appendChild(lista);
+      conteudo.appendChild(lista);
+      detalhe.appendChild(conteudo);
       box.appendChild(detalhe);
     });
     return box;

@@ -82,3 +82,11 @@ Portanto, a migração existente em `ferramentas/supabase-progresso.sql` **não 
 A plataforma recebeu correções verificadas e conteúdo adicional, mas o escopo de **modernização completa** solicitado ainda não está concluído. As pendências acima são parte do trabalho restante, especialmente banco e currículo avançado.
 
 Metodologia e fontes técnicas: [METODOLOGIA.md](METODOLOGIA.md). Inventário: [ferramentas/inventario-curricular.json](ferramentas/inventario-curricular.json).
+
+## Ajuste visual após revisão do usuário
+
+Os componentes adicionados inicialmente ainda utilizavam listas, summaries e select com apresentação padrão do navegador. Isso deixava os percursos sem hierarquia e o seletor branco no tema escuro. Foi criada `app/css/aprendizagem.css`, carregada após os temas existentes, usando suas variáveis de cor e tipografia.
+
+Percursos agora exibem ordem, quantidade de aulas concluídas, progresso e status em linhas navegáveis completas. O percurso escolhido fica identificado e aberto. Calendário, indicadores, meta diária, marcos e painéis expansíveis receberam espaçamentos, estados de foco/hover e estilos responsivos. O select respeita o tema e o foco é recuperado após salvar. As informações extensas sobre contabilização ficam num painel expansível.
+
+Validação desta alteração: 16 cenários de interface/modernização e 8 novos cenários de design aprovados. Capturas inspecionadas em temas claro/escuro, com calendário vazio e percursos com progresso parcial, em desktop e celular. Sem novas dependências ou alteração nas regras de progresso.
