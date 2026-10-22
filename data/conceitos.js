@@ -1,4 +1,14 @@
 Plataforma.registrarConceitos({
+
+  "engenharia-ia.decisoes": "Da necessidade à decisão técnica",
+  "engenharia-ia.dotnet": "Escolher .NET e separar responsabilidades",
+  "engenharia-ia.performance": "Investigar consultas antes de usar cache",
+  "engenharia-ia.validacao": "Revisar, testar e depurar código gerado",
+  "ciber-fundamentos.redes": "Da rede ao HTTPS: localizar uma falha",
+  "ciber-fundamentos.linux": "Sistemas operacionais, Linux e menor privilégio",
+  "ciber-fundamentos.criptografia": "Criptografia, senhas e controle de acesso",
+  "ciber-fundamentos.ameacas": "Modelar ameaças e investigar com evidências"
+,
   // SQL — publicados
   'sql.banco': 'Banco de dados',
   'sql.servidor': 'Servidor',

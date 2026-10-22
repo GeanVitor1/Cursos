@@ -1,0 +1,372 @@
+{
+  "trilhas": 22,
+  "publicadas": 138,
+  "planejadas": 237,
+  "inventario": [
+    {
+      "id": "sql",
+      "nome": "SQL & Bancos de Dados",
+      "publicadas": 46,
+      "planejadas": 0,
+      "atividades": 271,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 109,
+      "prerequisitos": []
+    },
+    {
+      "id": "csharp",
+      "nome": "C# para Backend .NET",
+      "publicadas": 10,
+      "planejadas": 0,
+      "atividades": 57,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 5,
+      "escritaOuPreenchimento": 16,
+      "prerequisitos": []
+    },
+    {
+      "id": "logica",
+      "nome": "Lógica Aplicada ao Trabalho",
+      "publicadas": 1,
+      "planejadas": 0,
+      "atividades": 6,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": []
+    },
+    {
+      "id": "terminal",
+      "nome": "Terminal para Desenvolvedores",
+      "publicadas": 1,
+      "planejadas": 0,
+      "atividades": 4,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 2,
+      "prerequisitos": []
+    },
+    {
+      "id": "ingles",
+      "nome": "Inglês: Geral + para Desenvolvedores",
+      "publicadas": 21,
+      "planejadas": 21,
+      "atividades": 209,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 49,
+      "prerequisitos": []
+    },
+    {
+      "id": "linq",
+      "nome": "LINQ",
+      "publicadas": 4,
+      "planejadas": 15,
+      "atividades": 18,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 2,
+      "escritaOuPreenchimento": 5,
+      "prerequisitos": [
+        {
+          "trilha": "csharp",
+          "min": 100
+        },
+        {
+          "trilha": "sql",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "entity-framework",
+      "nome": "Entity Framework Core",
+      "publicadas": 4,
+      "planejadas": 27,
+      "atividades": 19,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 1,
+      "escritaOuPreenchimento": 5,
+      "prerequisitos": [
+        {
+          "trilha": "sql",
+          "min": 100
+        },
+        {
+          "trilha": "csharp",
+          "min": 100
+        },
+        {
+          "trilha": "linq",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "nome": "Git & GitHub Profissional",
+      "publicadas": 17,
+      "planejadas": 0,
+      "atividades": 125,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 20,
+      "prerequisitos": [
+        {
+          "trilha": "terminal",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "aspnet",
+      "nome": "ASP.NET Core & Web API",
+      "publicadas": 3,
+      "planejadas": 23,
+      "atividades": 15,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 4,
+      "prerequisitos": [
+        {
+          "trilha": "csharp",
+          "min": 100
+        },
+        {
+          "trilha": "sql",
+          "min": 100
+        },
+        {
+          "trilha": "linq",
+          "min": 100
+        },
+        {
+          "trilha": "entity-framework",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "seguranca",
+      "nome": "Segurança de Aplicações",
+      "publicadas": 0,
+      "planejadas": 13,
+      "atividades": 0,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": [
+        {
+          "trilha": "aspnet",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "autenticacao",
+      "nome": "Autenticação & Autorização",
+      "publicadas": 0,
+      "planejadas": 18,
+      "atividades": 0,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": [
+        {
+          "trilha": "aspnet",
+          "min": 100
+        },
+        {
+          "trilha": "seguranca",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "arquitetura",
+      "nome": "Arquitetura & SOLID",
+      "publicadas": 0,
+      "planejadas": 21,
+      "atividades": 0,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": [
+        {
+          "trilha": "aspnet",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "testes",
+      "nome": "Testes Automatizados",
+      "publicadas": 0,
+      "planejadas": 17,
+      "atividades": 0,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": [
+        {
+          "trilha": "aspnet",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "frontend",
+      "nome": "Frontend: HTML, CSS, TypeScript & React",
+      "publicadas": 0,
+      "planejadas": 33,
+      "atividades": 0,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": [
+        {
+          "trilha": "aspnet",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "docker",
+      "nome": "Docker",
+      "publicadas": 14,
+      "planejadas": 0,
+      "atividades": 95,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 25,
+      "prerequisitos": [
+        {
+          "trilha": "aspnet",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "redis",
+      "nome": "Redis & Cache",
+      "publicadas": 9,
+      "planejadas": 0,
+      "atividades": 66,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 11,
+      "prerequisitos": [
+        {
+          "trilha": "aspnet",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "mensageria",
+      "nome": "Mensageria",
+      "publicadas": 0,
+      "planejadas": 13,
+      "atividades": 0,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": [
+        {
+          "trilha": "aspnet",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "cicd",
+      "nome": "CI/CD com GitHub Actions",
+      "publicadas": 0,
+      "planejadas": 10,
+      "atividades": 0,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": [
+        {
+          "trilha": "git",
+          "min": 100
+        },
+        {
+          "trilha": "docker",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "azure",
+      "nome": "Azure para Desenvolvedores .NET",
+      "publicadas": 0,
+      "planejadas": 14,
+      "atividades": 0,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": [
+        {
+          "trilha": "docker",
+          "min": 100
+        },
+        {
+          "trilha": "cicd",
+          "min": 50
+        }
+      ]
+    },
+    {
+      "id": "microsservicos",
+      "nome": "Microsserviços & System Design",
+      "publicadas": 0,
+      "planejadas": 12,
+      "atividades": 0,
+      "decisoesComJustificativa": 0,
+      "explicacoesLivres": 0,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": [
+        {
+          "trilha": "aspnet",
+          "min": 100
+        },
+        {
+          "trilha": "arquitetura",
+          "min": 100
+        },
+        {
+          "trilha": "mensageria",
+          "min": 100
+        },
+        {
+          "trilha": "docker",
+          "min": 100
+        }
+      ]
+    },
+    {
+      "id": "engenharia-ia",
+      "nome": "Engenharia de Software com IA",
+      "publicadas": 4,
+      "planejadas": 0,
+      "atividades": 10,
+      "decisoesComJustificativa": 4,
+      "explicacoesLivres": 4,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": []
+    },
+    {
+      "id": "ciber-fundamentos",
+      "nome": "Fundamentos de Cibersegurança",
+      "publicadas": 4,
+      "planejadas": 0,
+      "atividades": 9,
+      "decisoesComJustificativa": 4,
+      "explicacoesLivres": 4,
+      "escritaOuPreenchimento": 0,
+      "prerequisitos": []
+    }
+  ]
+}

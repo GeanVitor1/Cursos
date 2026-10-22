@@ -34,3 +34,14 @@ Depois de editar uma lição, execute `npm run catalogo`. O catálogo guarda os 
 Para reproduzir a comparação de performance, extraia o commit anterior em `.gstack/qa-reports/original` e execute `node ferramentas/medir-carregamento.cjs`. A medição usa contextos novos, Supabase simulado e duas condições: sem latência adicional e 40 ms adicionais por script. Os valores variam com a máquina e a rede; não substituem uma medição da nova publicação na Vercel.
 
 As respostas modelo verificam o comportamento do motor e os critérios publicados. Exercícios de código são comparados com as variantes cadastradas e equivalências específicas da linguagem; não são compilados ou executados pelo navegador. SQL tolera caixa e acentos nos identificadores, preservando os valores entre aspas. C# preserva a grafia de tipos/métodos; comandos preservam flags, argumentos e variáveis de ambiente. Para outras soluções equivalentes, adicione uma variante em `respostasAceitas` e um caso de regressão. Os validadores de escrita livre em Inglês verificam as estruturas exigidas na atividade; não constituem uma análise gramatical completa.
+
+
+## Modernização de outubro de 2026
+
+`npm test` inclui regressões de atividade, fuso, meia-noite, sequência expirada, mescla entre dispositivos, leitura ativa, inatividade, sobreposição, backups, checkpoints e domínio.
+
+`npx playwright test tests/e2e/modernizacao.spec.cjs` percorre as duas trilhas novas, a justificativa incorreta, preferência de percurso, persistência de metas e calendário em 320, 768 e 1440 px.
+
+`node ferramentas/auditar-curriculo.cjs` atualiza o inventário por trilha em `ferramentas/inventario-curricular.json`. `npm run validate` distingue aulas publicadas de registros curriculares no relatório pedagógico.
+
+Os testes de nuvem usam respostas controladas. Não escrevem no perfil Supabase real nem comprovam políticas de autorização ou durabilidade do banco em produção. A inspeção remota desta rodada foi somente leitura: tabela acessível; coluna `versao` ausente.

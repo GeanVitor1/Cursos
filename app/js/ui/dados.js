@@ -89,7 +89,7 @@ window.Plataforma = window.Plataforma || {};
       criar('div', { classe: 'stat-card' }, [criar('span', { classe: 'stat-valor', texto: 'Nível ' + resumo.nivel.nivel }), criar('span', { classe: 'stat-rotulo', texto: 'faltam ' + Math.max(0, resumo.nivel.proximo - resumo.nivel.xp) + ' XP para o próximo' })]),
       criar('div', { classe: 'stat-card' }, [criar('span', { classe: 'stat-valor', texto: '🔥 ' + resumo.streak.atual }), criar('span', { classe: 'stat-rotulo', texto: 'dias seguidos · recorde ' + resumo.streak.recorde })]),
       criar('div', { classe: 'stat-card' }, [criar('span', { classe: 'stat-valor', texto: String(resumo.licoesConcluidas) }), criar('span', { classe: 'stat-rotulo', texto: 'etapas concluídas' })]),
-      criar('div', { classe: 'stat-card' }, [criar('span', { classe: 'stat-valor', texto: formatarTempo(resumo.tempoMinutos) }), criar('span', { classe: 'stat-rotulo', texto: 'tempo estimado de estudo' })]),
+      criar('div', { classe: 'stat-card' }, [criar('span', { classe: 'stat-valor', texto: formatarTempo(resumo.tempoMinutos) }), criar('span', { classe: 'stat-rotulo', texto: 'tempo de estudo medido' })]),
       criar('div', { classe: 'stat-card' }, [criar('span', { classe: 'stat-valor', texto: '🟢 ' + resumo.dominados }), criar('span', { classe: 'stat-rotulo', texto: resumo.dificuldade + ' com dificuldade · ' + resumo.revisar + ' a revisar' })])
     ]));
 
@@ -156,6 +156,7 @@ window.Plataforma = window.Plataforma || {};
     }
     pagina.appendChild(cartaoTabela);
 
+    pagina.appendChild(P.ui.atividade.render());
     P.ui.layout.definirConteudo(pagina);
   }
 

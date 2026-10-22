@@ -29,11 +29,11 @@ window.Plataforma = window.Plataforma || {};
       P.ui.layout.definirConteudo(criar('div', { classe: 'pagina' }, [
         criar('div', { classe: 'pagina-cabecalho' }, [
           criar('h1', { texto: 'Revisão rápida' }),
-          criar('p', { classe: 'muted', texto: 'Repetição espaçada dos conceitos em que você errou.' })
+          criar('p', { classe: 'muted', texto: 'Recupere conceitos já praticados e revise dificuldades em intervalos espaçados.' })
         ]),
         criar('div', { classe: 'cartao estado-vazio' }, [
           criar('h3', { texto: 'Nada vencido para revisar agora' }),
-          criar('p', { texto: 'Os conceitos errados voltam em 1 dia, 3 dias, 1 semana, 2 semanas e 1 mês. Volte quando algum estiver vencido — ou siga para a próxima etapa.' }),
+          criar('p', { texto: 'Os conceitos praticados voltam em intervalos de 1 dia, 3 dias, 1 semana, 2 semanas e 1 mês. Volte quando algum estiver vencido ou siga para a próxima etapa.' }),
           comp.botao('Ir para a próxima etapa', { onclick: function () { P.roteador.ir('#/'); } })
         ])
       ]));

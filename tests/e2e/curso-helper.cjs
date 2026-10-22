@@ -5,6 +5,11 @@ async function abrir(page, route = '#/') {
 }
 async function resposta(page, atv) {
   const scope = page.locator('.atividade-area');
+  if (atv.justificativa) {
+    await scope.locator(`.decisao-solucao [data-indice-original="${atv.correta}"]`).click();
+    await scope.locator(`.decisao-motivo [data-indice-original="${atv.justificativa.correta}"]`).click();
+    return;
+  }
   if (['multiple-choice', 'find-error', 'interpret-code', 'predict-output', 'translate', 'reading', 'debug', 'scenario', 'code-review', 'choose-image'].includes(atv.tipo) || atv.tipo === 'listening' && atv.modo !== 'escrever') {
     await scope.locator(`[data-indice-original="${atv.correta}"]`).click();
   } else if (atv.tipo === 'fill-code') {

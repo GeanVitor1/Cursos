@@ -1,9 +1,9 @@
 {
-  "geradoEm": "2026-10-15T13:27:11.804Z",
-  "licoesPercorridas": 367,
-  "etapasPercorridas": 1385,
-  "atividadesPercorridas": 885,
-  "palavrasNoLexico": 617,
+  "geradoEm": "2026-10-22T12:32:46.190Z",
+  "licoesPercorridas": 375,
+  "etapasPercorridas": 1434,
+  "atividadesPercorridas": 904,
+  "palavrasNoLexico": 622,
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
   "introducoesDeVocabulario": [
@@ -1616,6 +1616,40 @@
       ]
     },
     {
+      "licao": "engenharia-ia-01",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "controller"
+      ]
+    },
+    {
+      "licao": "engenharia-ia-02",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "cache",
+        "performance"
+      ]
+    },
+    {
+      "licao": "engenharia-ia-03",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "mock"
+      ]
+    },
+    {
+      "licao": "ciber-fundamentos-02",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "hash",
+        "token"
+      ]
+    },
+    {
       "licao": "ef-00",
       "etapa": 2,
       "termos": 0,
@@ -1852,14 +1886,6 @@
       "palavras": [
         "user",
         "password"
-      ]
-    },
-    {
-      "licao": "docker-09",
-      "etapa": 9,
-      "termos": 1,
-      "palavras": [
-        "cache"
       ]
     },
     {

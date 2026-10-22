@@ -35,6 +35,11 @@ window.Plataforma = window.Plataforma || {};
       }
       premiadas = Object.assign({}, P.dados.obterEtapasPremiadas(opcoes.licao.id));
     }
+    if (opcoes.licao && opcoes.licao.tipo === 'prova' && !P.dados.estaConcluida(opcoes.licao.id)) {
+      indice = 0; retomado = false;
+      const registro = P.dados.obterRegistroLicao(opcoes.licao.id);
+      if (registro) { registro.resultadosEtapas = {}; P.dados.salvar(); }
+    }
     estado = {
       modo: opcoes.modo || 'licao',
       idSessao: window.crypto.randomUUID(),
@@ -494,6 +499,7 @@ window.Plataforma = window.Plataforma || {};
       return;
     }
     estado.verificada = true;
+    P.dados.registrarAtividade('resposta', estado.idSessao + ':' + estado.indice + ':' + estado.tentativas, estado.licao && estado.licao.id);
     estado.tentativas += 1;
     const habilidade = atv.habilidade || (Array.isArray(atv.habilidades) ? atv.habilidades[0] : null);
     const infoConceito = {
@@ -502,12 +508,13 @@ window.Plataforma = window.Plataforma || {};
       revisao: estado.modo === 'revisao',
       evento: (estado.modo === 'licao' ? 'licao:' + estado.licao.id : estado.idSessao) + ':' + atv.id
     };
+    if (atv.tipo === 'explain') infoConceito.confianca = 'acho';
     if (estado.semPontuacao && estado.tentativas === 1 && !estado.respostaRegistrada) {
       estado.respostas[estado.indice] = { id: atv.id, nivel: atv.nivel || null, correto: resultado.correto };
       estado.respostaRegistrada = true;
     }
     if (!estado.resultados[estado.indice] || typeof estado.resultados[estado.indice].primeira !== 'boolean') {
-      estado.resultados[estado.indice] = Object.assign({}, estado.resultados[estado.indice] || {}, { primeira: !!resultado.correto && resultado.semErros !== false });
+      estado.resultados[estado.indice] = Object.assign({}, estado.resultados[estado.indice] || {}, { primeira: !!resultado.correto && resultado.semErros !== false && estado.dicasUsadas === 0 });
     }
 
     if (resultado.correto) {
@@ -736,6 +743,7 @@ window.Plataforma = window.Plataforma || {};
 
     if (estado.modo === 'licao' && estado.licao) {
       const resultado = P.dados.concluirLicao(estado.licao.id, { aproveitamento: aproveitamento });
+      resumo.aprovado = resultado.aprovado !== false;
       resumo.bonus = resultado.bonus;
       resumo.primeiraVez = resultado.primeiraVez;
     } else if (estado.modo === 'revisao') {

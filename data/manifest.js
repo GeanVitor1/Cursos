@@ -11,7 +11,9 @@ Plataforma.registrarManifesto({
         "csharp",
         "logica",
         "terminal",
-        "ingles"
+        "ingles",
+        "engenharia-ia",
+        "ciber-fundamentos"
       ]
     },
     {
@@ -578,6 +580,65 @@ Plataforma.registrarManifesto({
         "../trilhas/microsservicos/licoes/microsservicos-07.js",
         "../trilhas/microsservicos/licoes/microsservicos-08.js",
         "../trilhas/microsservicos/licoes/microsservicos-checkpoint-problemas.js"
+      ]
+    },
+    {
+      "id": "engenharia-ia",
+      "arquivo": "../trilhas/engenharia-ia/trilha.js",
+      "licoes": [
+        "../trilhas/engenharia-ia/licoes/engenharia-ia-00.js",
+        "../trilhas/engenharia-ia/licoes/engenharia-ia-01.js",
+        "../trilhas/engenharia-ia/licoes/engenharia-ia-02.js",
+        "../trilhas/engenharia-ia/licoes/engenharia-ia-03.js"
+      ]
+    },
+    {
+      "id": "ciber-fundamentos",
+      "arquivo": "../trilhas/ciber-fundamentos/trilha.js",
+      "licoes": [
+        "../trilhas/ciber-fundamentos/licoes/ciber-fundamentos-00.js",
+        "../trilhas/ciber-fundamentos/licoes/ciber-fundamentos-01.js",
+        "../trilhas/ciber-fundamentos/licoes/ciber-fundamentos-02.js",
+        "../trilhas/ciber-fundamentos/licoes/ciber-fundamentos-03.js"
+      ]
+    }
+  ],
+  "percursos": [
+    {
+      "nome": "Programação e Engenharia de Software",
+      "descricao": "Fundamentos → dados → APIs → qualidade → entrega. Use a trilha com IA para justificar e validar decisões.",
+      "trilhas": [
+        "logica",
+        "terminal",
+        "git",
+        "csharp",
+        "sql",
+        "engenharia-ia",
+        "linq",
+        "entity-framework",
+        "aspnet",
+        "arquitetura",
+        "testes",
+        "frontend",
+        "docker",
+        "redis",
+        "mensageria",
+        "cicd",
+        "azure",
+        "microsservicos"
+      ]
+    },
+    {
+      "nome": "Cibersegurança",
+      "descricao": "Redes e sistemas → ameaças → segurança de aplicações → identidade → infraestrutura. Os laboratórios usam dados fictícios e ambientes locais autorizados.",
+      "trilhas": [
+        "ciber-fundamentos",
+        "terminal",
+        "aspnet",
+        "seguranca",
+        "autenticacao",
+        "docker",
+        "azure"
       ]
     }
   ]

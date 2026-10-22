@@ -77,7 +77,7 @@ window.Plataforma = window.Plataforma || {};
     const pagina = criar('div', { classe: 'conclusao' });
 
     pagina.appendChild(criar('div', { classe: 'conclusao-icone' + (prova ? ' prova' : ''), texto: '✓' }));
-    pagina.appendChild(criar('h1', { texto: prova ? 'Checkpoint concluído' : 'Etapa concluída' }));
+    pagina.appendChild(criar('h1', { texto: prova ? (resumo.aprovado === false ? 'Checkpoint: vamos revisar' : 'Checkpoint aprovado') : 'Etapa concluída' }));
     pagina.appendChild(criar('p', { classe: 'muted', texto: licao.titulo || '' }));
 
     if (prova) {
@@ -85,7 +85,7 @@ window.Plataforma = window.Plataforma || {};
         criar('span', { classe: 'prova-numero', texto: resumo.aproveitamento + '%' }),
         criar('div', {}, [
           criar('strong', { texto: resumo.acertosPrimeira + ' de ' + resumo.totalAtividades + ' atividades corretas na primeira tentativa' }),
-          criar('p', { classe: 'muted pequeno', texto: 'O resultado não bloqueia seu avanço. Pontos fracos voltam automaticamente na revisão espaçada.' })
+          criar('p', { classe: 'muted pequeno', texto: 'Aprovação: ' + (licao.minimoAprovacao || 70) + '% de acertos na primeira tentativa. Pontos fracos voltam na revisão.' })
         ])
       ]));
     }
@@ -125,7 +125,8 @@ window.Plataforma = window.Plataforma || {};
     }
 
     const acoes = [];
-    if (proxima) {
+    if (resumo.aprovado === false) acoes.push(comp.botao('Tentar checkpoint novamente', { onclick: function () { P.roteador.ir('#/licao/' + licao.id); } }));
+    if (proxima && resumo.aprovado !== false) {
       const rotulo = proximaAtras
         ? 'Concluir etapa pendente: ' + proxima.etapa.titulo
         : (mesmaTrilha

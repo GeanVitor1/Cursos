@@ -61,7 +61,7 @@ test('cabeçalhos de níveis contam somente lições publicadas', async ({ page 
   await expect(page.locator('.nivel-bloco').filter({ has: page.locator('.etapa.planejada') }).first().locator('.nivel-titulo .chip')).toContainText(/liberadas|Em produção/);
 });
 
-test('comandos com flags diferentes e caixa incorreta são rejeitados', async ({ page }) => {
+test('comandos com flags diferentes são rejeitados e a política de caixa é preservada', async ({ page }) => {
   await abrir(page);
   const resultados = await page.evaluate(() => {
     const P = Plataforma;
@@ -73,7 +73,7 @@ test('comandos com flags diferentes e caixa incorreta são rejeitados', async ({
       return motor.verificar().correto;
     });
   });
-  expect(resultados).toEqual([true, false, false, false]);
+  expect(resultados).toEqual([true, false, false, true]);
 });
 
 test('revisão de hoje usa a data local após a meia-noite UTC', async ({ page, context }) => {

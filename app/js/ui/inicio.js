@@ -142,7 +142,7 @@ window.Plataforma = window.Plataforma || {};
       conceitos.length ? comp.chip(conceitos.length + (conceitos.length === 1 ? ' conceito' : ' conceitos'), 'aviso') : null
     ]));
     if (!conceitos.length) {
-      cartao.appendChild(criar('p', { classe: 'muted', texto: 'Nenhum conceito pendente. Os erros que você cometer voltam para cá, por repetição espaçada.' }));
+      cartao.appendChild(criar('p', { classe: 'muted', texto: 'Nenhuma revisão vencida agora. Os conceitos praticados voltam em intervalos espaçados, incluindo os que você acertou.' }));
       return cartao;
     }
     cartao.appendChild(criar('p', { classe: 'muted', texto: 'Estes pontos precisam de reforço: ' + conceitos.slice(0, 4).map(function (c) { return P.progresso.nomeConceito(c.id); }).join(', ') + '.' }));
@@ -154,6 +154,20 @@ window.Plataforma = window.Plataforma || {};
       }
     }));
     return cartao;
+  }
+
+  function cartaoAprendizagem() {
+    const conceitos = P.dados.resumoConceitos();
+    const dominados = conceitos.filter(function (c) { return c.estado === 'dominado'; });
+    const lacunas = conceitos.filter(function (c) { return c.estado === 'dificuldade' || c.estado === 'revisar'; }).sort(function (a, b) { return b.erros - a.erros; });
+    const card = criar('section', { classe: 'cartao' });
+    card.appendChild(criar('h2', { texto: 'O que você já aprendeu' }));
+    card.appendChild(criar('p', { texto: dominados.length ? dominados.length + ' conceitos com evidências de domínio: ' + dominados.slice(0, 4).map(function (c) { return P.progresso.nomeConceito(c.id); }).join(', ') + '.' : 'O domínio aparece depois de prática consistente em diferentes formas de aplicação. Concluir uma aula é o primeiro passo.' }));
+    card.appendChild(criar('p', { texto: lacunas.length ? 'Priorize estes pontos: ' + lacunas.slice(0, 3).map(function (c) { return P.progresso.nomeConceito(c.id); }).join(', ') + '.' : 'Continue praticando para identificar seus pontos fortes e dificuldades.' }));
+    const marcos = P.progresso.resumo().marcos.filter(function (m) { return m.obtido; });
+    if (marcos.length) card.appendChild(criar('ul', { 'aria-label': 'Marcos de aprendizagem' }, marcos.map(function (m) { return criar('li', { texto: m.nome }); })));
+    card.appendChild(comp.botao('Ver evidências por conceito', { tipo: 'fantasma', onclick: function () { P.roteador.ir('#/dados'); } }));
+    return card;
   }
 
   function cartaoTrilhas() {
@@ -183,7 +197,10 @@ window.Plataforma = window.Plataforma || {};
         ])
       ]));
     });
-    cartao.appendChild(lista);
+    const detalhes = criar('details');
+    detalhes.appendChild(criar('summary', { texto: 'Ver todas as trilhas' }));
+    detalhes.appendChild(lista);
+    cartao.appendChild(detalhes);
     return cartao;
   }
 
@@ -214,8 +231,34 @@ window.Plataforma = window.Plataforma || {};
         ])
       ]));
     });
-    cartao.appendChild(roadmap);
+    const detalhes = criar('details');
+    detalhes.appendChild(criar('summary', { texto: 'Explorar fases da formação' }));
+    detalhes.appendChild(roadmap);
+    cartao.appendChild(detalhes);
     return cartao;
+  }
+
+  function cartaoPercursos() {
+    const box = criar('section', { classe: 'cartao' });
+    box.appendChild(criar('h2', { texto: 'Escolha sua formação' }));
+    ((P.interno.manifesto || {}).percursos || []).forEach(function (percurso) {
+      const detalhe = criar('details');
+      detalhe.appendChild(criar('summary', { texto: percurso.nome }));
+      detalhe.appendChild(criar('p', { classe: 'muted pequeno', texto: percurso.descricao }));
+      detalhe.appendChild(comp.botao('Seguir este percurso', { tipo: 'suave', onclick: function () { P.dados.estado().configuracoes.percurso = percurso.nome; P.dados.salvar(); P.roteador.ir('#/'); } }));
+      const lista = criar('ol', { classe: 'percurso-lista' });
+      percurso.trilhas.forEach(function (id) {
+        const r = P.progresso.daTrilha(id);
+        if (!r) return;
+        const linha = criar('li');
+        linha.appendChild(criar('a', { href: '#/trilha/' + id, texto: r.trilha.curto || r.trilha.nome }));
+        linha.appendChild(criar('span', { classe: 'pequeno muted', texto: ' — ' + (r.total ? r.percentual + '% do publicado' : 'conteúdo planejado') + (r.planejadas ? ' · ' + r.planejadas + ' aulas em produção' : '') }));
+        lista.appendChild(linha);
+      });
+      detalhe.appendChild(lista);
+      box.appendChild(detalhe);
+    });
+    return box;
   }
 
   function render() {
@@ -233,12 +276,15 @@ window.Plataforma = window.Plataforma || {};
       statCard('🔥 ' + resumo.streak.atual, resumo.streak.atual === 1 ? 'dia estudando' : 'dias estudando'),
       statCard('Nível ' + resumo.nivel.nivel, resumo.nivel.xp + ' XP · faltam ' + Math.max(0, resumo.nivel.proximo - resumo.nivel.xp) + ' para subir'),
       statCard(resumo.licoesConcluidas, 'etapas concluídas'),
-      statCard(formatarTempo(resumo.tempoMinutos), 'tempo estimado de estudo')
+      statCard(formatarTempo(resumo.tempoMinutos), 'tempo de estudo medido')
     ]);
 
     pagina.appendChild(criar('div', { classe: 'home-grid' }, [cartaoContinua(proxima), stats]));
-    pagina.appendChild(cartaoSessao());
+    pagina.appendChild(cartaoAprendizagem());
+    pagina.appendChild(P.ui.atividade.render());
     pagina.appendChild(cartaoRevisao(conceitos));
+    pagina.appendChild(cartaoSessao());
+    pagina.appendChild(cartaoPercursos());
     pagina.appendChild(cartaoTrilhas());
     pagina.appendChild(cartaoRoadmap());
 

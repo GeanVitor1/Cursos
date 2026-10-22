@@ -26,7 +26,7 @@ window.Plataforma = window.Plataforma || {};
       comp.chip('Trilha ' + info.percentual + '%'),
       comp.chip('Domínio ' + info.dominio + '%')
     ]));
-    cartao.appendChild(comp.barra(info.dominio || info.percentual));
+    cartao.appendChild(comp.barra(info.dominio));
     if (c.trabalho) {
       cartao.appendChild(criar('p', { classe: 'pequeno fraco', texto: c.trabalho }));
     }

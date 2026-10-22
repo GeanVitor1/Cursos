@@ -2,7 +2,7 @@ Plataforma.registrarHabilidades({
   versao: 1,
   observacao: 'Cópia executável de data/skills-map.json (carregada sem servidor). O JSON é a fonte canônica para ferramentas.',
   categorias: [
-    { id: 'fundamentos', nome: 'Fundamentos', itens: ['logica', 'terminal', 'csharp', 'sql', 'ingles'] },
+    { id: 'fundamentos', nome: 'Fundamentos', itens: ['logica', 'terminal', 'csharp', 'sql', 'ingles', 'engenharia-ia', 'ciber-fundamentos'] },
     { id: 'dados', nome: 'Dados com C#', itens: ['linq', 'entity-framework'] },
     { id: 'backend', nome: 'Backend', itens: ['aspnet', 'autenticacao', 'seguranca'] },
     { id: 'engenharia', nome: 'Engenharia', itens: ['arquitetura', 'testes', 'git'] },
@@ -11,6 +11,44 @@ Plataforma.registrarHabilidades({
     { id: 'sistemas', nome: 'Sistemas distribuídos', itens: ['redis', 'mensageria', 'microsservicos'] }
   ],
   competencias: {
+  "engenharia-ia": {
+    "nome": "Engenharia de Software com IA",
+    "trilha": "engenharia-ia",
+    "fase": 1,
+    "dependencies": [],
+    "skills": [
+      "engenharia-ia.decisoes",
+      "engenharia-ia.dotnet",
+      "engenharia-ia.performance",
+      "engenharia-ia.validacao"
+    ],
+    "conceitosChave": [
+      "engenharia-ia.decisoes",
+      "engenharia-ia.dotnet",
+      "engenharia-ia.performance",
+      "engenharia-ia.validacao"
+    ],
+    "trabalho": "Decidir, especificar, revisar e validar soluções com IA. Conecte os conceitos às trilhas técnicas existentes."
+  },
+  "ciber-fundamentos": {
+    "nome": "Fundamentos de Cibersegurança",
+    "trilha": "ciber-fundamentos",
+    "fase": 1,
+    "dependencies": [],
+    "skills": [
+      "ciber-fundamentos.redes",
+      "ciber-fundamentos.linux",
+      "ciber-fundamentos.criptografia",
+      "ciber-fundamentos.ameacas"
+    ],
+    "conceitosChave": [
+      "ciber-fundamentos.redes",
+      "ciber-fundamentos.linux",
+      "ciber-fundamentos.criptografia",
+      "ciber-fundamentos.ameacas"
+    ],
+    "trabalho": "Redes, Linux, proteção de dados e investigação em laboratório local autorizado. Preparação para Segurança de Aplicações."
+  },
     logica: {
       nome: 'Lógica aplicada ao trabalho',
       trilha: 'logica',

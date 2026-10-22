@@ -18,13 +18,15 @@ npx serve .
 python -m http.server 8080
 ```
 
-O progresso é salvo no `localStorage`. Exporte/importe em **Meu progresso** para backup.
+O progresso é salvo no `localStorage`. O tempo é medido apenas durante estudo visível com interação recente. Um dia conta por resposta a exercício, conclusão de aula ou 2 minutos de leitura ativa; o fuso do perfil é America/Sao_Paulo. Histórico legado e XP são preservados. Exporte/importe em **Meu progresso** para backup.
 
 Auditoria funcional e instruções de verificação: [AUDITORIA_QA.md](AUDITORIA_QA.md) e [TESTING.md](TESTING.md).
 
-O carregamento inicial usa `data/catalogo.js`; o conteúdo de cada lição é baixado ao abri-la. Ao editar aulas, execute `npm run catalogo` (o build da Vercel também o gera). O catálogo atual contém **130 lições publicadas** e **237 registros de roadmap**, distribuídos em 20 trilhas. Registros planejados não entram no percentual de conclusão.
+O carregamento inicial usa `data/catalogo.js`; o conteúdo de cada lição é baixado ao abri-la. Ao editar aulas, execute `npm run catalogo` (o build da Vercel também o gera). O catálogo atual contém **138 lições publicadas** e **237 registros de roadmap**, distribuídos em 22 trilhas. Registros planejados não entram no percentual de conclusão.
 
 O perfil de nuvem existente é pessoal e compartilhado entre os dispositivos que acessam o site. Não há isolamento por aluno. A sincronização atômica entre computadores requer aplicar `ferramentas/supabase-progresso.sql` e então habilitar `sincronizacaoAtomica` em `app/js/nucleo/registro.js`. As limitações de produção estão documentadas na auditoria.
+
+A modernização atual está detalhada em [AUDITORIA_MODERNIZACAO.md](AUDITORIA_MODERNIZACAO.md), com a metodologia em [METODOLOGIA.md](METODOLOGIA.md).
 
 ## O que já está implementado
 
@@ -60,6 +62,8 @@ O perfil de nuvem existente é pessoal e compartilhado entre os dispositivos que
 
 | Trilha | Lições | Tema central |
 | --- | --- | --- |
+| Engenharia de Software com IA | 4 | decisões, .NET, diagnóstico, revisão e testes |
+| Fundamentos de Cibersegurança | 4 | redes, Linux, criptografia, autorização, ameaças e logs |
 | SQL | 46 | Fundamentos, consultas, escrita, relacionamentos, agregações e checkpoints |
 | Git & GitHub | 17 (13 lições + 4 checkpoints) | clone/add/commit, push/pull, branch, merge, PR e code review, conflito, revert, reset, stash, .gitignore, Git Flow, commits, tags |
 | Docker | 14 (11 lições + 3 checkpoints) | ambiente reproduzível, imagem x container, Dockerfile, portas, volumes, variáveis, networks, compose, .NET + SQL Server + Redis |
@@ -76,6 +80,10 @@ O perfil de nuvem existente é pessoal e compartilhado entre os dispositivos que
 | ASP.NET Core | 3 | HTTP, JSON, primeira API |
 
 As demais trilhas (Segurança, Autenticação, Arquitetura, Testes, Frontend, Mensageria, CI/CD, Azure e Microsserviços) e os níveis ainda não publicados de Inglês, LINQ, EF Core e ASP.NET têm roadmap e entram em produção nas próximas ondas.
+
+## Avaliações e domínio
+
+Checkpoints ainda não aprovados exigem 70% de acertos independentes na primeira tentativa, sem dicas. Ao reabrir, começam uma nova tentativa. As conclusões antigas são preservadas. Aulas comuns mantêm retomada por etapa. O domínio é medido separadamente da conclusão; explicações livres oferecem correção por referências e autoavaliação, sem garantia de correção semântica.
 
 ## Inglês (A1 → C1)
 
@@ -136,9 +144,7 @@ Inglês (transversal)
   **concluída** (abrir e sair de uma lição não libera a seguinte), o que impede pular conteúdo.
   **Progresso nunca é bloqueado de volta**: concluir uma etapa fora de ordem (ou recuperar dados
   antigos) libera tudo até ela, sem travar o que já foi conquistado.
-- Progresso salvo por versões antigas que ficou inconsistente (etapa anterior em aberto com etapas
-  posteriores já concluídas) é reparado automaticamente ao abrir a plataforma: as etapas que ficaram
-  para trás são marcadas como concluídas — sem XP e sem bônus — e continuam acessíveis para revisão.
+- Aulas anteriores pendentes permanecem pendentes: a fronteira de acesso preserva avanços existentes sem fabricar conclusões ou domínio.
 - Entre trilhas, a trilha só sai de **Bloqueada** quando os pré-requisitos atingem o mínimo.
 - Trilhas `transversal: true` (English e Git) podem rodar em paralelo.
 - O botão **Continuar** da home e o **Iniciar sessão** retomam a etapa em andamento ou a próxima

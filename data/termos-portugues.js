@@ -36,8 +36,8 @@ Plataforma.registrarTermosPortugues({
     'pull request': { licao: 'ingles-00', nome: 'pull request' },
     'code review': { licao: 'ingles-00', nome: 'code review' },
 
-    'performance': { licao: null, nome: 'performance (usar "desempenho")' },
-    'mock': { licao: 'testes-04', nome: 'mock' },
+    'performance': { licao: 'engenharia-ia-02', nome: 'performance (usar "desempenho")' },
+    'mock': { licao: 'engenharia-ia-03', nome: 'mock' },
     'materializar': { licao: null, nome: 'materializar' },
     'stack trace': { licao: null, nome: 'stack trace' },
     'anti-padrao': { licao: null, nome: 'anti-padrão' },
@@ -46,12 +46,12 @@ Plataforma.registrarTermosPortugues({
     'migration': { licao: 'ef-04', nome: 'migration' },
     'tracking': { licao: 'ef-14', nome: 'tracking' },
     'dto': { licao: 'aspnet-10', nome: 'DTO' },
-    'controller': { licao: 'aspnet-09', nome: 'controller' },
+    'controller': { licao: 'engenharia-ia-01', nome: 'controller' },
     'logging': { licao: 'aspnet-16', nome: 'logging' },
     'refatorar': { licao: 'arquitetura-09', nome: 'refatorar' },
-    'hash': { licao: 'seguranca-01', nome: 'hash' },
-    'token': { licao: 'autenticacao-02', nome: 'token' },
-    'cache': { licao: 'docker-09', nome: 'cache' },
+    'hash': { licao: 'ciber-fundamentos-02', nome: 'hash' },
+    'token': { licao: 'ciber-fundamentos-02', nome: 'token' },
+    'cache': { licao: 'engenharia-ia-02', nome: 'cache' },
     'acoplamento': { licao: 'csharp-05', nome: 'acoplamento' }
   }
 });

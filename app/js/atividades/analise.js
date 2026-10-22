@@ -33,7 +33,7 @@ window.Plataforma = window.Plataforma || {};
         area.appendChild(criar('div', { classe: 'pequeno fraco', texto: 'Alteração de ' + atv.autor }));
       }
       if (atv.diff) area.appendChild(blocoDiff(atv.diff));
-      return P.atividades.montarOpcoes(atv, area, api);
+      return P.atividades.montarDecisao(atv, area, api);
     }
   });
 
@@ -180,6 +180,7 @@ window.Plataforma = window.Plataforma || {};
         placeholder: atv.placeholder || 'Explique do seu jeito, sem decorar...'
       });
       wrap.appendChild(texto);
+      wrap.appendChild(criar('p', { classe: 'pequeno muted', texto: 'A correção automática verifica pontos de referência. Ela não comprova a validade técnica de uma explicação livre. Compare seu raciocínio com os critérios e a resposta modelo.' }));
 
       const criterios = criar('div', { classe: 'criterios', hidden: true });
       const modeloTitulo = criar('div', { classe: 'pequeno fraco', texto: 'Critérios de uma boa resposta' });

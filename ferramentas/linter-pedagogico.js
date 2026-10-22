@@ -401,8 +401,10 @@ const conceitosMatriz = conceitosPublicados.map(function (id) {
 const resumoRelatorio = {
   geradoEm: new Date().toISOString(),
   trilhas: ordemTrilhas.length,
-  licoes: Object.keys(licoes).length,
-  etapas: etapasTotal.length,
+  registros: Object.keys(licoes).length,
+  licoes: Object.values(licoes).filter(function (l) { return l.etapas && l.etapas.length; }).length,
+  etapasCurriculares: etapasTotal.length,
+  etapas: Object.values(licoes).reduce(function (n, l) { return n + (l.etapas || []).length; }, 0),
   atividades: posicoes.reduce(function (soma, p) {
     return soma + (p.licao.etapas || []).filter(function (e) { return e.tipo === 'atividade'; }).length;
   }, 0),

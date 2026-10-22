@@ -2,12 +2,12 @@
 
 > Relatório gerado por `ferramentas/linter-pedagogico.js`. Ele percorre as trilhas na ordem real do aluno e verifica se cada conceito é ensinado antes de ser praticado ou cobrado.
 
-- Trilhas analisadas: **20**
-- Lições publicadas: **367**
-- Etapas percorridas: **367**
-- Atividades percorridas: **885**
-- Conceitos registrados: **358**
-- Conceitos com introdução marcada: **153**
+- Trilhas analisadas: **22**
+- Lições publicadas: **138**
+- Etapas percorridas: **1434**
+- Atividades percorridas: **904**
+- Conceitos registrados: **366**
+- Conceitos com introdução marcada: **161**
 - Erros: **0** · Avisos: **0**
 
 ## Evidência por conceito (introdução → prática → avaliação)
@@ -118,6 +118,17 @@
 | Mensagens de erro em inglês (`ingles.erros`) | etapa 1 · ingles-01 | ingles-01 etapa 2 | ingles-01 etapa 27 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
 | Frases de reunião diária (`ingles.reuniao`) | etapa 1 · ingles-17 | ingles-17 etapa 2 | ingles-17 etapa 9 | PRONTO_PARA_AVALIACAO | ingles.frases |
 | GitHub em inglês: issue, pull request, merge, release (`ingles.github`) | etapa 1 · ingles-18 | ingles-18 etapa 2 | ingles-18 etapa 9 | PRONTO_PARA_AVALIACAO | ingles.vocabulario, ingles.frases |
+| HTTP (`aspnet.http`) | etapa 1 · engenharia-ia-00 | engenharia-ia-00 etapa 2 | — | PRONTO_PARA_AVALIACAO | — |
+| API e endpoints (`aspnet.api`) | etapa 1 · engenharia-ia-00 | engenharia-ia-00 etapa 2 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
+| Da necessidade à decisão técnica (`engenharia-ia.decisoes`) | etapa 3 · engenharia-ia-00 | engenharia-ia-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | — |
+| Escolher .NET e separar responsabilidades (`engenharia-ia.dotnet`) | etapa 2 · engenharia-ia-01 | engenharia-ia-01 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
+| Cache (`redis.cache`) | etapa 1 · engenharia-ia-02 | engenharia-ia-02 etapa 2 | redis-00 etapa 9 | PRONTO_PARA_AVALIACAO | aspnet.api |
+| Investigar consultas antes de usar cache (`engenharia-ia.performance`) | etapa 3 · engenharia-ia-02 | engenharia-ia-02 etapa 5 | — | PRONTO_PARA_AVALIACAO | — |
+| Revisar, testar e depurar código gerado (`engenharia-ia.validacao`) | etapa 2 · engenharia-ia-03 | engenharia-ia-03 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
+| Da rede ao HTTPS: localizar uma falha (`ciber-fundamentos.redes`) | etapa 3 · ciber-fundamentos-00 | ciber-fundamentos-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | — |
+| Sistemas operacionais, Linux e menor privilégio (`ciber-fundamentos.linux`) | etapa 1 · ciber-fundamentos-01 | ciber-fundamentos-01 etapa 3 | — | PRONTO_PARA_AVALIACAO | — |
+| Criptografia, senhas e controle de acesso (`ciber-fundamentos.criptografia`) | etapa 2 · ciber-fundamentos-02 | ciber-fundamentos-02 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
+| Modelar ameaças e investigar com evidências (`ciber-fundamentos.ameacas`) | etapa 1 · ciber-fundamentos-03 | ciber-fundamentos-03 etapa 3 | — | PRONTO_PARA_AVALIACAO | — |
 | O que é LINQ (`linq.intro`) | etapa 1 · linq-00 | linq-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | csharp.lambda, csharp.list |
 | Where (`linq.where`) | etapa 2 · linq-00 | linq-00 etapa 5 | linq-01 etapa 6 | PRONTO_PARA_AVALIACAO | linq.intro |
 | Lambda em consultas (`linq.lambda`) | etapa 2 · linq-00 | linq-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.lambda |
@@ -144,8 +155,6 @@
 | Fluxos de trabalho (Git Flow e trunk-based) (`git.fluxo`) | etapa 1 · git-10 | git-10 etapa 2 | git-10 etapa 11 | PRONTO_PARA_AVALIACAO | git.branch, git.merge |
 | Mensagens de commit (`git.commits`) | etapa 1 · git-11 | git-11 etapa 2 | git-11 etapa 10 | PRONTO_PARA_AVALIACAO | git.repositorio |
 | Tags, releases e versionamento (`git.tags`) | etapa 1 · git-12 | git-12 etapa 2 | git-12 etapa 12 | PRONTO_PARA_AVALIACAO | git.repositorio |
-| HTTP (`aspnet.http`) | etapa 1 · aspnet-00 | aspnet-00 etapa 6 | — | PRONTO_PARA_AVALIACAO | — |
-| API e endpoints (`aspnet.api`) | etapa 1 · aspnet-00 | aspnet-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
 | Request (requisição) (`aspnet.requisicao`) | etapa 2 · aspnet-00 | aspnet-00 etapa 3 | — | PRATICADO | aspnet.http |
 | Response (resposta) (`aspnet.resposta`) | etapa 2 · aspnet-00 | aspnet-00 etapa 3 | — | PRATICADO | aspnet.http |
 | Status codes (`aspnet.status`) | etapa 7 · aspnet-00 | aspnet-00 etapa 8 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
@@ -160,7 +169,6 @@
 | Variáveis de ambiente em containers (`docker.variaveis`) | etapa 1 · docker-05 | docker-05 etapa 2 | docker-checkpoint-pratica etapa 4 | PRONTO_PARA_AVALIACAO | docker.container |
 | Redes do Docker (`docker.networks`) | etapa 1 · docker-06 | docker-06 etapa 2 | docker-checkpoint-pratica etapa 5 | PRONTO_PARA_AVALIACAO | docker.container |
 | Docker Compose (`docker.compose`) | etapa 1 · docker-07 | docker-07 etapa 2 | docker-07 etapa 9 | PRONTO_PARA_AVALIACAO | docker.dockerfile |
-| Cache (`redis.cache`) | etapa 1 · redis-00 | redis-00 etapa 2 | redis-00 etapa 9 | PRONTO_PARA_AVALIACAO | aspnet.api |
 | O servidor Redis (`redis.servidor`) | etapa 1 · redis-01 | redis-01 etapa 2 | redis-checkpoint-fundamentos etapa 3 | PRONTO_PARA_AVALIACAO | redis.cache |
 | TTL (`redis.ttl`) | etapa 1 · redis-02 | redis-02 etapa 2 | redis-checkpoint-fundamentos etapa 4 | PRONTO_PARA_AVALIACAO | redis.servidor |
 | Cache aside (`redis.cache-aside`) | etapa 1 · redis-03 | redis-03 etapa 2 | redis-03 etapa 11 | PRONTO_PARA_AVALIACAO | redis.cache |

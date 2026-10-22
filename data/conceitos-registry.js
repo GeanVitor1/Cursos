@@ -1,6 +1,56 @@
 Plataforma.registrarRegistroConceitos({
   observacao: 'Metadados pedagógicos dos conceitos: pré-requisitos conceituais, termos que representam o conceito no conteúdo e definição curta para o glossário. A introdução real é marcada no conteúdo com bloco { tipo: "conceito" } ou com etapa.introduz.',
   conceitos: {
+
+  "engenharia-ia.decisoes": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Uma decisão técnica liga um requisito observável a uma solução e registra seus custos. Um critério de aceitação descreve como verificar o resultado.",
+    "exemplo": "Uma loja permite cancelar apenas pedidos ainda não enviados. A interface orienta o cliente; o servidor verifica a regra novamente e persiste a mudança. Um teste deve tentar cancelar após o envio e comprovar que o estado não mudou."
+  },
+  "engenharia-ia.dotnet": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": ".NET fornece runtime e bibliotecas; C# é uma linguagem que o utiliza. ASP.NET Core oferece componentes para aplicações web e APIs, como roteamento, configuração e processamento de requisições.",
+    "exemplo": "No cancelamento, o controller identifica a entrada; o service verifica envio e permissão; a persistência registra a alteração. O cliente nunca define sozinho se a operação está autorizada."
+  },
+  "engenharia-ia.performance": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Diagnóstico de performance usa medições para localizar custo. Cache mantém resultados para reutilizar; exige uma política de expiração e invalidação.",
+    "exemplo": "Uma listagem de 100 pedidos faz 101 consultas. Antes de instalar Redis, investigue a consulta repetida, a projeção e a paginação. Depois avalie se ainda há custo repetitivo que justifique cache e como invalidá-lo."
+  },
+  "engenharia-ia.validacao": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Um teste compara comportamento observado com um resultado esperado. Testes unitários isolam regras; testes de integração verificam colaboração com componentes reais, como o banco de teste.",
+    "exemplo": "Um teste de cancelamento apenas procura a palavra “sucesso” na resposta. Ele precisa também verificar o estado persistido e provar que usuário sem permissão não altera o pedido."
+  },
+  "ciber-fundamentos.redes": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "IP identifica um destino na rede; TCP fornece transporte confiável entre portas. DNS traduz nomes em endereços. HTTP define mensagens de aplicação; HTTPS protege a comunicação HTTP com TLS.",
+    "exemplo": "Laboratório local: abra as ferramentas de rede do navegador na plataforma. Observe método, status e duração de um arquivo. Interrompa a rede pelo próprio navegador, recarregue e compare erro de transporte com uma resposta HTTP. Não teste sistemas de terceiros."
+  },
+  "ciber-fundamentos.linux": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Um processo é um programa em execução. O sistema operacional controla arquivos, memória e permissões. No Linux, identidade do usuário e grupos participam da decisão de acesso.",
+    "exemplo": "Laboratório em uma máquina virtual local descartável: crie um arquivo sem dados reais e examine proprietário e permissões pelo gerenciador de arquivos. Compare leitura com escrita. Registre o acesso necessário antes de alterá-lo; não altere pastas do sistema."
+  },
+  "ciber-fundamentos.criptografia": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Criptografia reversível protege confidencialidade com uma chave. Hash produz um resumo; para senhas, use uma função de derivação própria com salt e custo adequados, por meio de biblioteca confiável. Autenticação identifica; autorização decide acesso.",
+    "exemplo": "Laboratório de revisão: a API valida o token e retorna o pedido pelo identificador da URL. Há duas contas fictícias e dois pedidos. O teste deve confirmar que a conta A não lê o pedido de B, mesmo com token válido."
+  },
+  "ciber-fundamentos.ameacas": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Modelagem de ameaças identifica ativos, caminhos de dados, fronteiras de confiança e possíveis abusos. Logs registram eventos relevantes para diagnóstico e detecção, com acesso e retenção controlados.",
+    "exemplo": "Laboratório local autorizado: modele um pedido acessado por duas contas fictícias. Registre tentativa negada com identificador de correlação e resultado, sem token. Verifique se uma falha do banco evita sucesso falso e preserva estado consistente. Registre escopo e descarte dados de teste ao terminar."
+  }
+,
     // SQL
     'sql.servidor': { prerequisitos: [], termos: ['servidor'], definicao: 'O computador onde o banco de dados fica instalado e funcionando.', exemplo: 'Um servidor pode hospedar vários bancos.' },
     'sql.banco': { prerequisitos: [], termos: ['banco de dados'], definicao: 'Um lugar organizado onde o sistema guarda informações para consultar e alterar depois.', exemplo: 'O banco mercado_aurora guarda Clientes, Produtos e Pedidos.' },

@@ -23,7 +23,10 @@ test('todos os gabaritos, alternativas embaralhadas e respostas inválidas', asy
         try {
           const instance = def.render(a, area, { marcarRespondida: v => { ready = v; } });
           const valid = input === 'model';
-          if (typeof input === 'number') area.querySelector(`[data-indice-original="${input}"]`).click();
+          if (typeof input === 'number') {
+            area.querySelector(`[data-indice-original="${input}"]`).click();
+            if (a.justificativa) area.querySelector(`.decisao-motivo [data-indice-original="${a.justificativa.correta}"]`).click();
+          }
           else if (a.tipo === 'fill-code') area.querySelectorAll('input').forEach((el, i) => { el.value = valid ? a.lacunas[i][0] : 'ZZZ_INVALIDO_987'; el.dispatchEvent(new Event('input')); });
           else if (a.tipo === 'write-code' || a.tipo === 'explain') {
             const el = area.querySelector('textarea');

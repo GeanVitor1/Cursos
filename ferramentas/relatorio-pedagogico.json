@@ -1,16 +1,18 @@
 {
-  "geradoEm": "2026-10-15T13:27:11.577Z",
-  "trilhas": 20,
-  "licoes": 367,
-  "etapas": 367,
-  "atividades": 885,
-  "conceitosRegistrados": 358,
-  "conceitosIntroduzidos": 153,
+  "geradoEm": "2026-10-22T12:32:45.819Z",
+  "trilhas": 22,
+  "registros": 375,
+  "licoes": 138,
+  "etapasCurriculares": 375,
+  "etapas": 1434,
+  "atividades": 904,
+  "conceitosRegistrados": 366,
+  "conceitosIntroduzidos": 161,
   "estados": {
     "NAO_ENSINADO": 0,
     "INTRODUZIDO": 3,
     "PRATICADO": 11,
-    "PRONTO_PARA_AVALIACAO": 139
+    "PRONTO_PARA_AVALIACAO": 147
   },
   "erros": [],
   "avisos": [],
@@ -3081,7 +3083,7 @@
         "licao": "redis-checkpoint-fundamentos",
         "etapa": 10,
         "titulo": "",
-        "pos": 1329
+        "pos": 1378
       },
       "praticas": 18,
       "dimensoes": [
@@ -3265,6 +3267,306 @@
       ]
     },
     {
+      "id": "aspnet.http",
+      "nome": "HTTP",
+      "introduzidoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-00",
+        "etapa": 1,
+        "titulo": "Antes do cenário",
+        "pos": 870
+      },
+      "praticadoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-00",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 871
+      },
+      "avaliadoEm": null,
+      "praticas": 5,
+      "dimensoes": [
+        "associacao",
+        "preenchimento",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "aspnet.api",
+      "nome": "API e endpoints",
+      "introduzidoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-00",
+        "etapa": 1,
+        "titulo": "Antes do cenário",
+        "pos": 870
+      },
+      "praticadoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-00",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 871
+      },
+      "avaliadoEm": null,
+      "praticas": 8,
+      "dimensoes": [
+        "associacao",
+        "reconhecimento",
+        "ordenacao",
+        "preenchimento",
+        "construcao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "aspnet.http"
+      ]
+    },
+    {
+      "id": "engenharia-ia.decisoes",
+      "nome": "Da necessidade à decisão técnica",
+      "introduzidoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-00",
+        "etapa": 3,
+        "titulo": "Da necessidade à decisão técnica",
+        "pos": 872
+      },
+      "praticadoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 874
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "engenharia-ia.dotnet",
+      "nome": "Escolher .NET e separar responsabilidades",
+      "introduzidoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-01",
+        "etapa": 2,
+        "titulo": "Escolher .NET e separar responsabilidades",
+        "pos": 878
+      },
+      "praticadoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-01",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 880
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "redis.cache",
+      "nome": "Cache",
+      "introduzidoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-02",
+        "etapa": 1,
+        "titulo": "Antes do cenário",
+        "pos": 883
+      },
+      "praticadoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-02",
+        "etapa": 2,
+        "titulo": "",
+        "pos": 884
+      },
+      "avaliadoEm": {
+        "trilha": "redis",
+        "licao": "redis-00",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 1346
+      },
+      "praticas": 8,
+      "dimensoes": [
+        "associacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "aspnet.api"
+      ]
+    },
+    {
+      "id": "engenharia-ia.performance",
+      "nome": "Investigar consultas antes de usar cache",
+      "introduzidoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-02",
+        "etapa": 3,
+        "titulo": "Investigar consultas antes de usar cache",
+        "pos": 885
+      },
+      "praticadoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-02",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 887
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "engenharia-ia.validacao",
+      "nome": "Revisar, testar e depurar código gerado",
+      "introduzidoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-03",
+        "etapa": 2,
+        "titulo": "Revisar, testar e depurar código gerado",
+        "pos": 891
+      },
+      "praticadoEm": {
+        "trilha": "engenharia-ia",
+        "licao": "engenharia-ia-03",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 893
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "ciber-fundamentos.redes",
+      "nome": "Da rede ao HTTPS: localizar uma falha",
+      "introduzidoEm": {
+        "trilha": "ciber-fundamentos",
+        "licao": "ciber-fundamentos-00",
+        "etapa": 3,
+        "titulo": "Da rede ao HTTPS: localizar uma falha",
+        "pos": 898
+      },
+      "praticadoEm": {
+        "trilha": "ciber-fundamentos",
+        "licao": "ciber-fundamentos-00",
+        "etapa": 5,
+        "titulo": "",
+        "pos": 900
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "ciber-fundamentos.linux",
+      "nome": "Sistemas operacionais, Linux e menor privilégio",
+      "introduzidoEm": {
+        "trilha": "ciber-fundamentos",
+        "licao": "ciber-fundamentos-01",
+        "etapa": 1,
+        "titulo": "Sistemas operacionais, Linux e menor privilégio",
+        "pos": 903
+      },
+      "praticadoEm": {
+        "trilha": "ciber-fundamentos",
+        "licao": "ciber-fundamentos-01",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 905
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "ciber-fundamentos.criptografia",
+      "nome": "Criptografia, senhas e controle de acesso",
+      "introduzidoEm": {
+        "trilha": "ciber-fundamentos",
+        "licao": "ciber-fundamentos-02",
+        "etapa": 2,
+        "titulo": "Criptografia, senhas e controle de acesso",
+        "pos": 909
+      },
+      "praticadoEm": {
+        "trilha": "ciber-fundamentos",
+        "licao": "ciber-fundamentos-02",
+        "etapa": 4,
+        "titulo": "",
+        "pos": 911
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
+      "id": "ciber-fundamentos.ameacas",
+      "nome": "Modelar ameaças e investigar com evidências",
+      "introduzidoEm": {
+        "trilha": "ciber-fundamentos",
+        "licao": "ciber-fundamentos-03",
+        "etapa": 1,
+        "titulo": "Modelar ameaças e investigar com evidências",
+        "pos": 914
+      },
+      "praticadoEm": {
+        "trilha": "ciber-fundamentos",
+        "licao": "ciber-fundamentos-03",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 916
+      },
+      "avaliadoEm": null,
+      "praticas": 2,
+      "dimensoes": [
+        "aplicacao",
+        "construcao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": []
+    },
+    {
       "id": "linq.intro",
       "nome": "O que é LINQ",
       "introduzidoEm": {
@@ -3272,14 +3574,14 @@
         "licao": "linq-00",
         "etapa": 1,
         "titulo": "Você já escreveu LINQ sem saber",
-        "pos": 870
+        "pos": 919
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 873
+        "pos": 922
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -3301,21 +3603,21 @@
         "licao": "linq-00",
         "etapa": 2,
         "titulo": "Where: o filtro ganha um nome",
-        "pos": 871
+        "pos": 920
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 874
+        "pos": 923
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-01",
         "etapa": 6,
         "titulo": "",
-        "pos": 882
+        "pos": 931
       },
       "praticas": 13,
       "dimensoes": [
@@ -3338,14 +3640,14 @@
         "licao": "linq-00",
         "etapa": 2,
         "titulo": "Where: o filtro ganha um nome",
-        "pos": 871
+        "pos": 920
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 874
+        "pos": 923
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -3367,14 +3669,14 @@
         "licao": "linq-00",
         "etapa": 3,
         "titulo": "ToList: o resultado vira lista",
-        "pos": 872
+        "pos": 921
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 6,
         "titulo": "",
-        "pos": 875
+        "pos": 924
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3394,21 +3696,21 @@
         "licao": "linq-02",
         "etapa": 1,
         "titulo": "Where escolhe linhas. Select escolhe o formato",
-        "pos": 883
+        "pos": 932
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 884
+        "pos": 933
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-02",
         "etapa": 5,
         "titulo": "",
-        "pos": 887
+        "pos": 936
       },
       "praticas": 4,
       "dimensoes": [
@@ -3430,21 +3732,21 @@
         "licao": "linq-03",
         "etapa": 1,
         "titulo": "Buscando um produto específico",
-        "pos": 888
+        "pos": 937
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 889
+        "pos": 938
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-03",
         "etapa": 4,
         "titulo": "",
-        "pos": 891
+        "pos": 940
       },
       "praticas": 9,
       "dimensoes": [
@@ -3468,21 +3770,21 @@
         "licao": "ef-00",
         "etapa": 2,
         "titulo": "ORM: o tradutor entre C# e o banco",
-        "pos": 895
+        "pos": 944
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 897
+        "pos": 946
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 7,
         "titulo": "",
-        "pos": 900
+        "pos": 949
       },
       "praticas": 4,
       "dimensoes": [
@@ -3505,14 +3807,14 @@
         "licao": "ef-00",
         "etapa": 3,
         "titulo": "Entidade: a classe que representa uma tabela",
-        "pos": 896
+        "pos": 945
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 897
+        "pos": 946
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -3533,14 +3835,14 @@
         "licao": "ef-01",
         "etapa": 1,
         "titulo": "A porta de entrada para o banco",
-        "pos": 901
+        "pos": 950
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-01",
         "etapa": 3,
         "titulo": "",
-        "pos": 903
+        "pos": 952
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -3564,14 +3866,14 @@
         "licao": "ef-01",
         "etapa": 2,
         "titulo": "DbSet: uma gaveta para cada tipo de coisa",
-        "pos": 902
+        "pos": 951
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-01",
         "etapa": 3,
         "titulo": "",
-        "pos": 903
+        "pos": 952
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -3594,21 +3896,21 @@
         "licao": "ef-02",
         "etapa": 3,
         "titulo": "SaveChanges: agora sim, o INSERT",
-        "pos": 911
+        "pos": 960
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 912
+        "pos": 961
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-02",
         "etapa": 8,
         "titulo": "",
-        "pos": 916
+        "pos": 965
       },
       "praticas": 5,
       "dimensoes": [
@@ -3632,21 +3934,21 @@
         "licao": "ef-03",
         "etapa": 1,
         "titulo": "LINQ no DbSet vira SQL",
-        "pos": 917
+        "pos": 966
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-03",
         "etapa": 3,
         "titulo": "",
-        "pos": 919
+        "pos": 968
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-03",
         "etapa": 6,
         "titulo": "",
-        "pos": 922
+        "pos": 971
       },
       "praticas": 5,
       "dimensoes": [
@@ -3672,21 +3974,21 @@
         "licao": "git-00",
         "etapa": 1,
         "titulo": "Um projeto com memória",
-        "pos": 924
+        "pos": 973
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 925
+        "pos": 974
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-checkpoint-fundamentos",
         "etapa": 2,
         "titulo": "",
-        "pos": 948
+        "pos": 997
       },
       "praticas": 13,
       "dimensoes": [
@@ -3710,21 +4012,21 @@
         "licao": "git-01",
         "etapa": 1,
         "titulo": "Duas cópias do mesmo projeto",
-        "pos": 936
+        "pos": 985
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 937
+        "pos": 986
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-01",
         "etapa": 8,
         "titulo": "",
-        "pos": 943
+        "pos": 992
       },
       "praticas": 7,
       "dimensoes": [
@@ -3748,21 +4050,21 @@
         "licao": "git-02",
         "etapa": 1,
         "titulo": "Uma linha paralela de trabalho",
-        "pos": 957
+        "pos": 1006
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 958
+        "pos": 1007
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 968
+        "pos": 1017
       },
       "praticas": 19,
       "dimensoes": [
@@ -3786,21 +4088,21 @@
         "licao": "git-03",
         "etapa": 1,
         "titulo": "Juntando os dois caminhos",
-        "pos": 969
+        "pos": 1018
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 970
+        "pos": 1019
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-05",
         "etapa": 13,
         "titulo": "",
-        "pos": 1005
+        "pos": 1054
       },
       "praticas": 12,
       "dimensoes": [
@@ -3823,21 +4125,21 @@
         "licao": "git-04",
         "etapa": 1,
         "titulo": "A proposta de juntar o trabalho",
-        "pos": 980
+        "pos": 1029
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 981
+        "pos": 1030
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 13,
         "titulo": "",
-        "pos": 992
+        "pos": 1041
       },
       "praticas": 8,
       "dimensoes": [
@@ -3857,21 +4159,21 @@
         "licao": "git-04",
         "etapa": 5,
         "titulo": "Code review: o olhar de outra pessoa",
-        "pos": 984
+        "pos": 1033
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 6,
         "titulo": "",
-        "pos": 985
+        "pos": 1034
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 13,
         "titulo": "",
-        "pos": 992
+        "pos": 1041
       },
       "praticas": 5,
       "dimensoes": [
@@ -3891,21 +4193,21 @@
         "licao": "git-05",
         "etapa": 1,
         "titulo": "Quando o Git não decide sozinho",
-        "pos": 993
+        "pos": 1042
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 994
+        "pos": 1043
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-05",
         "etapa": 13,
         "titulo": "",
-        "pos": 1005
+        "pos": 1054
       },
       "praticas": 8,
       "dimensoes": [
@@ -3927,21 +4229,21 @@
         "licao": "git-06",
         "etapa": 1,
         "titulo": "Errar depois de enviar",
-        "pos": 1016
+        "pos": 1065
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-06",
         "etapa": 2,
         "titulo": "",
-        "pos": 1017
+        "pos": 1066
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-06",
         "etapa": 8,
         "titulo": "",
-        "pos": 1023
+        "pos": 1072
       },
       "praticas": 7,
       "dimensoes": [
@@ -3962,21 +4264,21 @@
         "licao": "git-07",
         "etapa": 1,
         "titulo": "Voltando o ponteiro sem apagar o trabalho",
-        "pos": 1027
+        "pos": 1076
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-07",
         "etapa": 2,
         "titulo": "",
-        "pos": 1028
+        "pos": 1077
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-07",
         "etapa": 11,
         "titulo": "",
-        "pos": 1037
+        "pos": 1086
       },
       "praticas": 7,
       "dimensoes": [
@@ -3998,21 +4300,21 @@
         "licao": "git-08",
         "etapa": 1,
         "titulo": "Interrompido no meio do trabalho",
-        "pos": 1038
+        "pos": 1087
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-08",
         "etapa": 2,
         "titulo": "",
-        "pos": 1039
+        "pos": 1088
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-08",
         "etapa": 11,
         "titulo": "",
-        "pos": 1048
+        "pos": 1097
       },
       "praticas": 7,
       "dimensoes": [
@@ -4035,21 +4337,21 @@
         "licao": "git-09",
         "etapa": 1,
         "titulo": "O que não pertence ao repositório",
-        "pos": 1049
+        "pos": 1098
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-09",
         "etapa": 2,
         "titulo": "",
-        "pos": 1050
+        "pos": 1099
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-09",
         "etapa": 7,
         "titulo": "",
-        "pos": 1055
+        "pos": 1104
       },
       "praticas": 6,
       "dimensoes": [
@@ -4071,21 +4373,21 @@
         "licao": "git-10",
         "etapa": 1,
         "titulo": "Acordos do time, não regras do Git",
-        "pos": 1069
+        "pos": 1118
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-10",
         "etapa": 2,
         "titulo": "",
-        "pos": 1070
+        "pos": 1119
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-10",
         "etapa": 11,
         "titulo": "",
-        "pos": 1079
+        "pos": 1128
       },
       "praticas": 6,
       "dimensoes": [
@@ -4107,21 +4409,21 @@
         "licao": "git-11",
         "etapa": 1,
         "titulo": "A mensagem é para quem vai ler depois",
-        "pos": 1080
+        "pos": 1129
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-11",
         "etapa": 2,
         "titulo": "",
-        "pos": 1081
+        "pos": 1130
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-11",
         "etapa": 10,
         "titulo": "",
-        "pos": 1089
+        "pos": 1138
       },
       "praticas": 6,
       "dimensoes": [
@@ -4141,21 +4443,21 @@
         "licao": "git-12",
         "etapa": 1,
         "titulo": "Marcos nomeados na história",
-        "pos": 1090
+        "pos": 1139
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-12",
         "etapa": 2,
         "titulo": "",
-        "pos": 1091
+        "pos": 1140
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-12",
         "etapa": 12,
         "titulo": "",
-        "pos": 1101
+        "pos": 1150
       },
       "praticas": 8,
       "dimensoes": [
@@ -4171,64 +4473,6 @@
       ]
     },
     {
-      "id": "aspnet.http",
-      "nome": "HTTP",
-      "introduzidoEm": {
-        "trilha": "aspnet",
-        "licao": "aspnet-00",
-        "etapa": 1,
-        "titulo": "Duas partes conversando",
-        "pos": 1113
-      },
-      "praticadoEm": {
-        "trilha": "aspnet",
-        "licao": "aspnet-00",
-        "etapa": 6,
-        "titulo": "",
-        "pos": 1118
-      },
-      "avaliadoEm": null,
-      "praticas": 3,
-      "dimensoes": [
-        "associacao",
-        "preenchimento",
-        "aplicacao"
-      ],
-      "estado": "PRONTO_PARA_AVALIACAO",
-      "prerequisitos": []
-    },
-    {
-      "id": "aspnet.api",
-      "nome": "API e endpoints",
-      "introduzidoEm": {
-        "trilha": "aspnet",
-        "licao": "aspnet-00",
-        "etapa": 1,
-        "titulo": "Duas partes conversando",
-        "pos": 1113
-      },
-      "praticadoEm": {
-        "trilha": "aspnet",
-        "licao": "aspnet-00",
-        "etapa": 4,
-        "titulo": "",
-        "pos": 1116
-      },
-      "avaliadoEm": null,
-      "praticas": 6,
-      "dimensoes": [
-        "reconhecimento",
-        "ordenacao",
-        "preenchimento",
-        "construcao",
-        "aplicacao"
-      ],
-      "estado": "PRONTO_PARA_AVALIACAO",
-      "prerequisitos": [
-        "aspnet.http"
-      ]
-    },
-    {
       "id": "aspnet.requisicao",
       "nome": "Request (requisição)",
       "introduzidoEm": {
@@ -4236,14 +4480,14 @@
         "licao": "aspnet-00",
         "etapa": 2,
         "titulo": "Requisição e resposta",
-        "pos": 1114
+        "pos": 1163
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 1115
+        "pos": 1164
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -4263,14 +4507,14 @@
         "licao": "aspnet-00",
         "etapa": 2,
         "titulo": "Requisição e resposta",
-        "pos": 1114
+        "pos": 1163
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 1115
+        "pos": 1164
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -4290,14 +4534,14 @@
         "licao": "aspnet-00",
         "etapa": 7,
         "titulo": "A resposta conta o que aconteceu",
-        "pos": 1119
+        "pos": 1168
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 8,
         "titulo": "",
-        "pos": 1120
+        "pos": 1169
       },
       "avaliadoEm": null,
       "praticas": 4,
@@ -4319,14 +4563,14 @@
         "licao": "aspnet-01",
         "etapa": 1,
         "titulo": "Um formato que todo mundo entende",
-        "pos": 1124
+        "pos": 1173
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 1125
+        "pos": 1174
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -4347,14 +4591,14 @@
         "licao": "aspnet-02",
         "etapa": 1,
         "titulo": "O que é um endpoint",
-        "pos": 1129
+        "pos": 1178
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-02",
         "etapa": 8,
         "titulo": "",
-        "pos": 1136
+        "pos": 1185
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -4374,21 +4618,21 @@
         "licao": "docker-00",
         "etapa": 1,
         "titulo": "A frase que todo time conhece",
-        "pos": 1141
+        "pos": 1190
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 1142
+        "pos": 1191
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-00",
         "etapa": 8,
         "titulo": "",
-        "pos": 1148
+        "pos": 1197
       },
       "praticas": 5,
       "dimensoes": [],
@@ -4405,21 +4649,21 @@
         "licao": "docker-01",
         "etapa": 1,
         "titulo": "O molde e a cópia",
-        "pos": 1151
+        "pos": 1200
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 1152
+        "pos": 1201
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 1171
+        "pos": 1220
       },
       "praticas": 9,
       "dimensoes": [],
@@ -4436,21 +4680,21 @@
         "licao": "docker-01",
         "etapa": 3,
         "titulo": "Do molde nasce o container",
-        "pos": 1153
+        "pos": 1202
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-01",
         "etapa": 4,
         "titulo": "",
-        "pos": 1154
+        "pos": 1203
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 1171
+        "pos": 1220
       },
       "praticas": 13,
       "dimensoes": [],
@@ -4467,21 +4711,21 @@
         "licao": "docker-02",
         "etapa": 1,
         "titulo": "A receita da imagem",
-        "pos": 1160
+        "pos": 1209
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 1161
+        "pos": 1210
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 1171
+        "pos": 1220
       },
       "praticas": 6,
       "dimensoes": [],
@@ -4498,21 +4742,21 @@
         "licao": "docker-03",
         "etapa": 1,
         "titulo": "A porta de fora",
-        "pos": 1182
+        "pos": 1231
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 1183
+        "pos": 1232
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-checkpoint-pratica",
         "etapa": 2,
         "titulo": "",
-        "pos": 1224
+        "pos": 1273
       },
       "praticas": 10,
       "dimensoes": [],
@@ -4529,21 +4773,21 @@
         "licao": "docker-04",
         "etapa": 1,
         "titulo": "O container é descartável",
-        "pos": 1193
+        "pos": 1242
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 1194
+        "pos": 1243
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-04",
         "etapa": 8,
         "titulo": "",
-        "pos": 1200
+        "pos": 1249
       },
       "praticas": 13,
       "dimensoes": [],
@@ -4560,21 +4804,21 @@
         "licao": "docker-05",
         "etapa": 1,
         "titulo": "A mesma imagem, configurações diferentes",
-        "pos": 1203
+        "pos": 1252
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 1204
+        "pos": 1253
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-checkpoint-pratica",
         "etapa": 4,
         "titulo": "",
-        "pos": 1226
+        "pos": 1275
       },
       "praticas": 14,
       "dimensoes": [],
@@ -4591,21 +4835,21 @@
         "licao": "docker-06",
         "etapa": 1,
         "titulo": "Containers que precisam conversar",
-        "pos": 1213
+        "pos": 1262
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-06",
         "etapa": 2,
         "titulo": "",
-        "pos": 1214
+        "pos": 1263
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-checkpoint-pratica",
         "etapa": 5,
         "titulo": "",
-        "pos": 1227
+        "pos": 1276
       },
       "praticas": 10,
       "dimensoes": [],
@@ -4622,58 +4866,27 @@
         "licao": "docker-07",
         "etapa": 1,
         "titulo": "Vários comandos viram um arquivo",
-        "pos": 1232
+        "pos": 1281
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-07",
         "etapa": 2,
         "titulo": "",
-        "pos": 1233
+        "pos": 1282
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-07",
         "etapa": 9,
         "titulo": "",
-        "pos": 1240
+        "pos": 1289
       },
       "praticas": 28,
       "dimensoes": [],
       "estado": "PRONTO_PARA_AVALIACAO",
       "prerequisitos": [
         "docker.dockerfile"
-      ]
-    },
-    {
-      "id": "redis.cache",
-      "nome": "Cache",
-      "introduzidoEm": {
-        "trilha": "redis",
-        "licao": "redis-00",
-        "etapa": 1,
-        "titulo": "Toda requisição vai até o banco",
-        "pos": 1289
-      },
-      "praticadoEm": {
-        "trilha": "redis",
-        "licao": "redis-00",
-        "etapa": 2,
-        "titulo": "",
-        "pos": 1290
-      },
-      "avaliadoEm": {
-        "trilha": "redis",
-        "licao": "redis-00",
-        "etapa": 9,
-        "titulo": "",
-        "pos": 1297
-      },
-      "praticas": 7,
-      "dimensoes": [],
-      "estado": "PRONTO_PARA_AVALIACAO",
-      "prerequisitos": [
-        "aspnet.api"
       ]
     },
     {
@@ -4684,21 +4897,21 @@
         "licao": "redis-01",
         "etapa": 1,
         "titulo": "Um banco de dados em memória",
-        "pos": 1300
+        "pos": 1349
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 1301
+        "pos": 1350
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-checkpoint-fundamentos",
         "etapa": 3,
         "titulo": "",
-        "pos": 1322
+        "pos": 1371
       },
       "praticas": 6,
       "dimensoes": [],
@@ -4715,21 +4928,21 @@
         "licao": "redis-02",
         "etapa": 1,
         "titulo": "Nada vive para sempre",
-        "pos": 1310
+        "pos": 1359
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 1311
+        "pos": 1360
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-checkpoint-fundamentos",
         "etapa": 4,
         "titulo": "",
-        "pos": 1323
+        "pos": 1372
       },
       "praticas": 8,
       "dimensoes": [],
@@ -4746,21 +4959,21 @@
         "licao": "redis-03",
         "etapa": 1,
         "titulo": "O padrão mais comum",
-        "pos": 1330
+        "pos": 1379
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 1331
+        "pos": 1380
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-03",
         "etapa": 11,
         "titulo": "",
-        "pos": 1340
+        "pos": 1389
       },
       "praticas": 11,
       "dimensoes": [],
@@ -4777,21 +4990,21 @@
         "licao": "redis-04",
         "etapa": 1,
         "titulo": "O Redis não conhece o seu objeto",
-        "pos": 1341
+        "pos": 1390
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 1342
+        "pos": 1391
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-04",
         "etapa": 9,
         "titulo": "",
-        "pos": 1349
+        "pos": 1398
       },
       "praticas": 8,
       "dimensoes": [],
@@ -4808,21 +5021,21 @@
         "licao": "redis-05",
         "etapa": 1,
         "titulo": "O dado mudou, a cópia não",
-        "pos": 1352
+        "pos": 1401
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 1353
+        "pos": 1402
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-05",
         "etapa": 9,
         "titulo": "",
-        "pos": 1360
+        "pos": 1409
       },
       "praticas": 7,
       "dimensoes": [],
@@ -4839,21 +5052,21 @@
         "licao": "redis-06",
         "etapa": 1,
         "titulo": "Registrar o Redis no builder",
-        "pos": 1363
+        "pos": 1412
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-06",
         "etapa": 2,
         "titulo": "",
-        "pos": 1364
+        "pos": 1413
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-06",
         "etapa": 10,
         "titulo": "",
-        "pos": 1372
+        "pos": 1421
       },
       "praticas": 8,
       "dimensoes": [],

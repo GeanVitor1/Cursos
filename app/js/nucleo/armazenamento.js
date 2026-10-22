@@ -1,6 +1,8 @@
 window.Plataforma = window.Plataforma || {};
 
 (function (P) {
+  const formatosData = new Map();
+  const cacheCalendario = new WeakMap();
   const CHAVE = 'trilha-net.estado.v1';
   const ouvintes = [];
   let disponivel = true;
@@ -30,7 +32,8 @@ window.Plataforma = window.Plataforma || {};
 
   function criaPadrao() {
     return {
-      versao: 2,
+      versao: 3,
+      atividade: { fuso: 'America/Sao_Paulo', diasLegados: [], eventos: {}, intervalos: {} },
       criadoEm: new Date().toISOString(),
       atualizadoEm: new Date().toISOString(),
       xp: 0,
@@ -140,6 +143,17 @@ window.Plataforma = window.Plataforma || {};
       contadores(dados.streak, ['atual', 'recorde']);
       if (dados.streak.dias != null) exigir(Array.isArray(dados.streak.dias) && dados.streak.dias.every(function (d) { return typeof d === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(d); }), 'dias');
     }
+    if (dados.atividade != null) {
+      const a = dados.atividade;
+      exigir(objeto(a) && typeof a.fuso === 'string', 'atividade');
+      try { new Intl.DateTimeFormat('sv-SE', { timeZone: a.fuso }); } catch (e) { exigir(false, 'fuso'); }
+      exigir(Array.isArray(a.diasLegados) && a.diasLegados.every(function (d) { return typeof d === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(d) && !isNaN(Date.parse(d)); }), 'dias legados');
+      exigir(objeto(a.eventos) && objeto(a.intervalos), 'histórico de atividade');
+      mapa(a.eventos, function (e) { exigir(objeto(e) && ['resposta', 'conclusao'].includes(e.tipo) && typeof e.em === 'string' && !isNaN(Date.parse(e.em)) && (e.licao == null || typeof e.licao === 'string'), 'evento de atividade'); });
+      Object.keys(a.intervalos).forEach(function (k) { exigir(/^\d{1,12}$/.test(k) && Number.isInteger(a.intervalos[k]) && a.intervalos[k] >= 0 && a.intervalos[k] <= 1023, 'intervalo de atividade'); });
+    }
+    if (dados.configuracoes && dados.configuracoes.metaMinutos != null) exigir([5, 15, 30, 60].includes(dados.configuracoes.metaMinutos), 'meta de estudo');
+    if (dados.configuracoes && dados.configuracoes.percurso != null) exigir(typeof dados.configuracoes.percurso === 'string', 'percurso');
     ['atualizadoEm', 'criadoEm', 'reiniciadoEm'].forEach(function (campo) {
       if (dados[campo] != null) exigir(typeof dados[campo] === 'string' && Number.isFinite(Date.parse(dados[campo])), campo);
     });
@@ -151,6 +165,7 @@ window.Plataforma = window.Plataforma || {};
     const base = criaPadrao();
     const estado = Object.assign(base, dados || {});
     estado.streak = Object.assign({ atual: 0, recorde: 0, ultimoDia: null, dias: [] }, dados && dados.streak ? dados.streak : {});
+    estado.atividade = Object.assign({ fuso: 'America/Sao_Paulo', diasLegados: (estado.streak.dias || []).slice(), eventos: {}, intervalos: {} }, dados && dados.atividade || {});
     estado.configuracoes = Object.assign({ tema: 'claro', nivelIngles: null }, dados && dados.configuracoes ? dados.configuracoes : {});
     estado.licoes = estado.licoes || {};
     estado.conceitos = estado.conceitos || {};
@@ -175,6 +190,7 @@ window.Plataforma = window.Plataforma || {};
     Object.keys(estado.habilidades).forEach(function (id) {
       estado.habilidades[id] = normalizarHabilidade(estado.habilidades[id]);
     });
+    atualizarCalendario(estado);
     return estado;
   }
 
@@ -205,7 +221,11 @@ window.Plataforma = window.Plataforma || {};
         return estado.licoes[id].status === 'concluida' && (!recebido.licoes[id] || recebido.licoes[id].status !== 'concluida');
       });
       // Persiste a união só quando há novidade: evita ping-pong de eventos entre abas.
-      if (disponivel && (faltamEventos || faltamConclusoes)) {
+      const atividadeRecebida = recebido.atividade;
+      const faltaAtividade = Object.keys(estado.atividade.eventos).some(function (id) { return !Object.prototype.hasOwnProperty.call(atividadeRecebida.eventos, id); }) ||
+        Object.keys(estado.atividade.intervalos).some(function (k) { return ((atividadeRecebida.intervalos[k] || 0) | estado.atividade.intervalos[k]) !== (atividadeRecebida.intervalos[k] || 0); }) ||
+        estado.atividade.diasLegados.some(function (d) { return atividadeRecebida.diasLegados.indexOf(d) === -1; });
+      if (disponivel && (faltamEventos || faltamConclusoes || faltaAtividade)) {
         const bruto = JSON.stringify(estado);
         window.localStorage.setItem(CHAVE, bruto);
         ultimoLocal = bruto;
@@ -322,6 +342,9 @@ window.Plataforma = window.Plataforma || {};
     });
     resultado.streak.dias = Array.from(new Set((a.streak.dias || []).concat(b.streak.dias || []))).sort();
     resultado.streak.recorde = Math.max(a.streak.recorde || 0, b.streak.recorde || 0);
+    resultado.atividade = { fuso: recente.atividade.fuso, diasLegados: Array.from(new Set(a.atividade.diasLegados.concat(b.atividade.diasLegados))).sort(), eventos: Object.assign({}, a.atividade.eventos, b.atividade.eventos), intervalos: Object.assign({}, a.atividade.intervalos) };
+    Object.keys(b.atividade.intervalos).forEach(function (k) { resultado.atividade.intervalos[k] = (resultado.atividade.intervalos[k] || 0) | b.atividade.intervalos[k]; });
+    atualizarCalendario(resultado);
     return resultado;
   }
 
@@ -373,22 +396,78 @@ window.Plataforma = window.Plataforma || {};
       }
     } catch (e) { console.warn('[Progresso] Falha ao ler a versão salva:', e); }
   }
-  function hojeISO() { return new Date().toLocaleDateString('sv-SE'); }
-
-  function diaISO(deslocamento) {
-    const d = new Date();
-    d.setDate(d.getDate() + deslocamento);
-    return d.toLocaleDateString('sv-SE');
+  // Calendário do perfil: o mesmo fuso em todos os dispositivos.
+  function dataNoFuso(em, fuso) {
+    fuso = fuso || 'America/Sao_Paulo';
+    if (!formatosData.has(fuso)) formatosData.set(fuso, new Intl.DateTimeFormat('sv-SE', { timeZone: fuso, year: 'numeric', month: '2-digit', day: '2-digit' }));
+    return formatosData.get(fuso).format(new Date(em));
   }
-
-  function registrarDia() {
-    const hoje = hojeISO();
-    if (estado.streak.ultimoDia === hoje) return;
-    estado.streak.atual = estado.streak.ultimoDia === diaISO(-1) ? estado.streak.atual + 1 : 1;
-    estado.streak.ultimoDia = hoje;
-    if (estado.streak.atual > estado.streak.recorde) estado.streak.recorde = estado.streak.atual;
-    if (estado.streak.dias.indexOf(hoje) === -1) estado.streak.dias.push(hoje);
+  function hojeISO() { return dataNoFuso(Date.now(), estado.atividade.fuso); }
+  function deslocarDia(dia, n) {
+    const d = new Date(dia + 'T12:00:00Z');
+    d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().slice(0, 10);
   }
+  function diaISO(n) { return deslocarDia(hojeISO(), n); }
+  function atualizarCalendario(alvo) {
+    const a = alvo.atividade;
+    const hoje = dataNoFuso(Date.now(), a.fuso);
+    const cache = cacheCalendario.get(a);
+    if (cache && cache.hoje === hoje) { alvo.streak = Object.assign({}, cache.streak, { dias: cache.streak.dias.slice() }); return cache.dias; }
+    const dias = {};
+    function obter(d) { return dias[d] || (dias[d] = { dia: d, segundos: 0, respostas: 0, licoes: [], legado: false }); }
+    a.diasLegados.forEach(function (d) { obter(d).legado = true; });
+    Object.values(a.eventos).forEach(function (e) {
+      const d = obter(dataNoFuso(e.em, a.fuso));
+      if (e.tipo === 'resposta') d.respostas += 1;
+      if (e.tipo === 'conclusao' && d.licoes.indexOf(e.licao) === -1) d.licoes.push(e.licao);
+    });
+    Object.keys(a.intervalos).forEach(function (k) {
+      const mask = a.intervalos[k], inicio = Number(k) * 10000;
+      const primeiro = dataNoFuso(inicio, a.fuso), ultimo = dataNoFuso(inicio + 9000, a.fuso);
+      for (let i = 0; i < 10; i += 1) if (mask & (1 << i)) obter(primeiro === ultimo ? primeiro : dataNoFuso(inicio + i * 1000, a.fuso)).segundos += 1;
+    });
+    const validos = Object.keys(dias).filter(function (d) { const x = dias[d]; return d <= hoje && (x.legado || x.respostas > 0 || x.licoes.length || x.segundos >= 120); }).sort();
+    let sequencia = 0, recorde = 0, anterior = null;
+    validos.forEach(function (d) { sequencia = anterior && deslocarDia(anterior, 1) === d ? sequencia + 1 : 1; recorde = Math.max(recorde, sequencia); anterior = d; });
+    let atual = 0;
+    if (anterior === hoje || anterior === deslocarDia(hoje, -1)) atual = sequencia;
+    alvo.streak = { atual: atual, recorde: Math.max(recorde, alvo.streak.recorde || 0), ultimoDia: anterior, dias: validos };
+    const lista = Object.keys(dias).sort().map(function (d) { return Object.assign(dias[d], { valido: validos.indexOf(d) !== -1 }); });
+    cacheCalendario.set(a, { hoje: hoje, dias: lista, streak: alvo.streak });
+    return lista;
+  }
+  function registrarAtividade(tipo, chave, licao) {
+    if (!emTransacao) sincronizarLocal();
+    const id = chave || window.crypto.randomUUID();
+    if (estado.atividade.eventos[id]) return;
+    cacheCalendario.delete(estado.atividade);
+    estado.atividade.eventos[id] = { em: new Date().toISOString(), tipo: tipo, licao: licao || null };
+    atualizarCalendario(estado);
+    salvar();
+  }
+  function registrarTempo(inicio, fim) {
+    if (!Number.isFinite(inicio) || !Number.isFinite(fim) || fim <= inicio || fim - inicio > 15000) return;
+    sincronizarLocal();
+    cacheCalendario.delete(estado.atividade);
+    for (let sec = Math.floor(inicio / 1000); sec < Math.floor(fim / 1000); sec += 1) {
+      const k = Math.floor(sec / 10);
+      estado.atividade.intervalos[k] = (estado.atividade.intervalos[k] || 0) | (1 << (sec % 10));
+    }
+    atualizarCalendario(estado);
+    salvar();
+  }
+  function resumoAtividade() {
+    const dias = atualizarCalendario(estado);
+    const hoje = hojeISO(), inicioSemana = deslocarDia(hoje, -6);
+    const atual = dias.find(function (d) { return d.dia === hoje; });
+    return { dias: dias, fuso: estado.atividade.fuso, totalDias: estado.streak.dias.length,
+      segundos: dias.reduce(function (n, d) { return n + d.segundos; }, 0),
+      hojeSegundos: atual ? atual.segundos : 0,
+      semanaSegundos: dias.filter(function (d) { return d.dia >= inicioSemana && d.dia <= hoje; }).reduce(function (n, d) { return n + d.segundos; }, 0),
+      metaMinutos: estado.configuracoes.metaMinutos || 15 };
+  }
+  function registrarDia() { registrarAtividade('resposta'); }
 
   function limiarNivel(n) { return 100 * (n - 1) * (n - 1); }
 
@@ -415,7 +494,6 @@ window.Plataforma = window.Plataforma || {};
     const antes = nivelInfo().nivel;
     estado.xp += quantidade;
     estado.premios[chave] = quantidade;
-    registrarDia();
     salvar();
     const depois = nivelInfo().nivel;
     if (depois > antes && P.ui && P.ui.layout && P.ui.layout.toast) {
@@ -525,7 +603,7 @@ window.Plataforma = window.Plataforma || {};
         dim.acertos += 1;
         dim.pontos = (dim.pontos || 0) + peso;
         if (primeiraTentativa) dim.sequencia = (dim.sequencia || 0) + 1;
-        if (confianca === 'chute' && !estado.agenda[id]) agendarErro(id);
+        if (!estado.agenda[id]) { agendarErro(id); if (confianca !== 'chute') estado.agenda[id].ultimoErroEm = null; }
         else if (info.revisao) agendarAcerto(id);
       } else {
         c.erros += 1;
@@ -641,14 +719,22 @@ window.Plataforma = window.Plataforma || {};
       return { primeiraVez: false, bonus: 0 };
     }
     const prova = licao.tipo === 'prova';
+    if (prova && (info.aproveitamento || 0) < (licao.minimoAprovacao || 70)) {
+      registro.tentativas = (registro.tentativas || 0) + 1;
+      registro.melhorAproveitamento = Math.max(registro.melhorAproveitamento || 0, info.aproveitamento || 0);
+      estado.licoes[id] = registro;
+      salvar();
+      return { primeiraVez: false, bonus: 0, aprovado: false };
+    }
     registro.status = 'concluida';
     registro.tentativas = (registro.tentativas || 0) + 1;
     registro.concluidaEm = registro.concluidaEm || new Date().toISOString();
     registro.melhorAproveitamento = Math.max(registro.melhorAproveitamento || 0, info.aproveitamento || 0);
     registro.rascunho = null;
     estado.licoes[id] = registro;
-    const bonus = prova ? P.conf.xpProva : (licao.xp || P.conf.xpAula);
     emTransacao = true;
+    registrarAtividade('conclusao', 'conclusao:' + id, id);
+    const bonus = prova ? P.conf.xpProva : (licao.xp || P.conf.xpAula);
     adicionarXp(bonus, 'conclusao:' + id);
     estado.sessoes.push({
       data: new Date().toISOString(),
@@ -774,35 +860,8 @@ window.Plataforma = window.Plataforma || {};
     salvar(naoEnviarNuvem);
   }
 
-  function repararProgresso() {
-    const trilhas = (P.interno && P.interno.trilhas) ? P.interno.trilhas : null;
-    if (!trilhas) return 0;
-    let reparadas = 0;
-    Object.keys(trilhas).forEach(function (tid) {
-      if (trilhas[tid] && trilhas[tid].acessoLivre) return;
-      const licoes = [];
-      ((trilhas[tid] || {}).niveis || []).forEach(function (nivel) {
-        (nivel.etapas || []).forEach(function (etapa) {
-          if (etapa.licao) licoes.push(etapa.licao);
-        });
-      });
-      let ultimoConcluido = -1;
-      licoes.forEach(function (id, i) {
-        if (estaConcluida(id)) ultimoConcluido = i;
-      });
-      for (let i = 0; i < ultimoConcluido; i += 1) {
-        const registro = estado.licoes[licoes[i]];
-        if (!registro || registro.status === 'concluida') continue;
-        registro.status = 'concluida';
-        registro.concluidaEm = registro.concluidaEm || new Date().toISOString();
-        registro.rascunho = null;
-        registro.reparada = true;
-        reparadas += 1;
-      }
-    });
-    if (reparadas) salvar();
-    return reparadas;
-  }
+  // A fronteira de acesso já preserva avanços antigos. Não inventar conclusões.
+  function repararProgresso() { return 0; }
 
   function resetar() {
     estado = criaPadrao();
@@ -811,12 +870,17 @@ window.Plataforma = window.Plataforma || {};
   }
 
   P.dados = {
-    estado: function () { return estado; },
+    estado: function () { atualizarCalendario(estado); return estado; },
     salvar: salvar,
     transacao: transacao,
     mesclarEstados: mesclarEstados,
     aoMudar: aoMudar,
     registrarDia: registrarDia,
+    registrarAtividade: registrarAtividade,
+    registrarTempo: registrarTempo,
+    resumoAtividade: resumoAtividade,
+    deslocarDia: deslocarDia,
+    dataNoFuso: dataNoFuso,
     adicionarXp: adicionarXp,
     responderConceito: responderConceito,
     estaConcluida: estaConcluida,

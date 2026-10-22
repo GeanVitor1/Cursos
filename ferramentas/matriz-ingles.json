@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-10-15T13:27:11.804Z",
+  "geradoEm": "2026-10-22T12:32:46.190Z",
   "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Em todas as trilhas, cada etapa ensina no máximo 3 termos novos; na trilha de inglês, no máximo 6 palavras novas por etapa, e as frases de exemplo (bloco ingles) só usam palavras já explicadas.",
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
@@ -1613,6 +1613,40 @@
       ]
     },
     {
+      "licao": "engenharia-ia-01",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "controller"
+      ]
+    },
+    {
+      "licao": "engenharia-ia-02",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "cache",
+        "performance"
+      ]
+    },
+    {
+      "licao": "engenharia-ia-03",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "mock"
+      ]
+    },
+    {
+      "licao": "ciber-fundamentos-02",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "hash",
+        "token"
+      ]
+    },
+    {
       "licao": "ef-00",
       "etapa": 2,
       "termos": 0,
@@ -1849,14 +1883,6 @@
       "palavras": [
         "user",
         "password"
-      ]
-    },
-    {
-      "licao": "docker-09",
-      "etapa": 9,
-      "termos": 1,
-      "palavras": [
-        "cache"
       ]
     },
     {
@@ -2503,7 +2529,7 @@
     },
     {
       "palavra": "cache",
-      "introduzidaEm": "docker-09",
+      "introduzidaEm": "engenharia-ia-02",
       "primeiroUsoEmAtividade": {
         "licao": "redis-00",
         "atividade": "redis00-a1",
@@ -2909,6 +2935,11 @@
         "atividade": "docker06-a6",
         "etapa": 10
       }
+    },
+    {
+      "palavra": "controller",
+      "introduzidaEm": "engenharia-ia-01",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "core",
@@ -3886,6 +3917,11 @@
       }
     },
     {
+      "palavra": "hash",
+      "introduzidaEm": "ciber-fundamentos-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "hat",
       "introduzidaEm": "en-a1-06",
       "primeiroUsoEmAtividade": {
@@ -4632,6 +4668,11 @@
       }
     },
     {
+      "palavra": "mock",
+      "introduzidaEm": "engenharia-ia-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "mom",
       "introduzidaEm": "en-a1-02",
       "primeiroUsoEmAtividade": {
@@ -5179,6 +5220,11 @@
         "atividade": "en-a1-cp6",
         "etapa": 7
       }
+    },
+    {
+      "palavra": "performance",
+      "introduzidaEm": "engenharia-ia-02",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "pharmacy",
@@ -6567,6 +6613,15 @@
         "licao": "en-a2-00",
         "atividade": "en-a2-00-p8",
         "etapa": 16
+      }
+    },
+    {
+      "palavra": "token",
+      "introduzidaEm": "ciber-fundamentos-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "ciber-fundamentos-02",
+        "atividade": "ciber-fundamentos-02-decisao",
+        "etapa": 4
       }
     },
     {

@@ -157,7 +157,9 @@ window.Plataforma = window.Plataforma || {};
       });
     });
     const principais = candidatas.filter(function (c) { return !c.transversal; });
-    const lista = (principais.length ? principais : candidatas).slice().sort(function (a, b) {
+    const preferido = ((P.interno.manifesto || {}).percursos || []).find(function (p) { return p.nome === P.dados.estado().configuracoes.percurso; });
+    const doPercurso = preferido ? candidatas.filter(function (c) { return preferido.trilhas.indexOf(c.trilha.id) !== -1; }).sort(function (a, b) { return preferido.trilhas.indexOf(a.trilha.id) - preferido.trilhas.indexOf(b.trilha.id); }) : [];
+    const lista = (doPercurso.length ? doPercurso : (principais.length ? principais : candidatas)).slice().sort(function (a, b) {
       if (a.retomada === b.retomada) return 0;
       return a.retomada ? -1 : 1;
     });
@@ -183,7 +185,7 @@ window.Plataforma = window.Plataforma || {};
     const hoje = P.dados.hojeISO();
     if (c.agenda && c.agenda.proximaEm) {
       if (c.agenda.proximaEm <= hoje) return true;
-      if (incluirHoje && c.agenda.ultimoErroEm && new Date(c.agenda.ultimoErroEm).toLocaleDateString('sv-SE') === hoje) return true;
+      if (incluirHoje && c.agenda.ultimoErroEm && P.dados.dataNoFuso(c.agenda.ultimoErroEm, P.dados.estado().atividade.fuso) === hoje) return true;
       return false;
     }
     return c.erros > 0 || c.estado === 'revisar';
@@ -215,6 +217,8 @@ window.Plataforma = window.Plataforma || {};
       Object.keys(P.interno.licoes).forEach(function (id) {
         if (encontradas.length >= P.conf.maxAtividadesPorConceitoRevisao) return;
         const licao = P.interno.licoes[id];
+        const acesso = statusLicao(id);
+        if (acesso && acesso.status === 'bloqueada' && !P.dados.obterRegistroLicao(id)) return;
         (licao.etapas || []).forEach(function (etapa) {
           if (encontradas.length >= P.conf.maxAtividadesPorConceitoRevisao) return;
           if (etapa.tipo !== 'atividade' || !etapa.atividade) return;
@@ -226,7 +230,7 @@ window.Plataforma = window.Plataforma || {};
         });
       });
       return encontradas.sort(function (a, b) {
-        const pesoTipo = { 'write-code': 3, 'fill-code': 2, 'debug': 2, 'scenario': 1 };
+        const pesoTipo = { 'scenario': 3, 'code-review': 3, 'debug': 3, 'interpret-code': 2, 'write-code': 2, 'fill-code': 1, 'explain': 1 };
         const pa = pesoTipo[a.tipo] || 0;
         const pb = pesoTipo[b.tipo] || 0;
         if (pa !== pb) return pb - pa;
@@ -262,7 +266,7 @@ window.Plataforma = window.Plataforma || {};
     const lista = Object.keys(conceitos).map(function (cid) {
       const d = P.dados.dominioConceito(cid);
       return d ? d.geral : 0;
-    }).filter(function (v) { return v > 0; });
+    });
     if (!lista.length) return 0;
     return Math.round(lista.reduce(function (a, b) { return a + b; }, 0) / lista.length);
   }
@@ -293,7 +297,7 @@ window.Plataforma = window.Plataforma || {};
     const bloqueada = dependencias.some(function (d) { return !d.atendida; });
     let estado = 'disponivel';
     if (bloqueada) estado = 'bloqueada';
-    else if (resumo && resumo.percentual === 100) estado = 'dominada';
+    else if (resumo && resumo.percentual === 100 && resumo.dominio >= 80 && (c.conceitosChave || []).length && c.conceitosChave.every(function (id) { return P.dados.estadoConceito(id) === 'dominado'; })) estado = 'dominada';
     else if (resumo && resumo.concluidas.length > 0) estado = 'estudando';
     else if (!resumo || !resumo.comLicao.length) estado = 'planejada';
     return {
@@ -351,12 +355,19 @@ window.Plataforma = window.Plataforma || {};
       nivel: P.dados.nivelInfo(),
       streak: estado.streak,
       licoesConcluidas: concluidas,
-      tempoMinutos: tempo,
+      tempoMinutos: Math.floor(P.dados.resumoAtividade().segundos / 60),
+      tempoEstimadoLegado: tempo,
       dominados: conceitos.filter(function (c) { return c.estado === 'dominado'; }).length,
       revisar: conceitos.filter(function (c) { return c.estado === 'revisar' || c.estado === 'aprendendo'; }).length,
       dificuldade: conceitos.filter(function (c) { return c.estado === 'dificuldade'; }).length,
       totalConceitos: conceitos.length,
       revisoesVencidas: vencidas.length,
+      marcos: [
+        { nome: 'Primeira aula concluída', obtido: concluidas >= 1 },
+        { nome: '7 dias consecutivos', obtido: estado.streak.recorde >= 7 },
+        { nome: '3 conceitos com domínio demonstrado', obtido: conceitos.filter(function (c) { return c.estado === 'dominado'; }).length >= 3 },
+        { nome: 'Primeira revisão concluída', obtido: estado.revisoes.length >= 1 }
+      ],
       dominioMedio: conceitos.length ? Math.round(conceitos.reduce(function (soma, c) {
         return soma + ((c.dominio && c.dominio.geral) || 0);
       }, 0) / conceitos.length) : 0
