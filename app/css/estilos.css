@@ -1573,3 +1573,28 @@ button, .opcao, .match-item, .bloco-item, .imagem-card, .bottom-item, .nav-item,
 }
 
 @media(prefers-reduced-motion:reduce) { *, *::before, *::after { animation-duration:0.01ms!important; transition-duration:0.01ms!important; scroll-behavior:auto!important; } }
+
+/* ===== Vocabulário com ícone e uso real; bloco "Na vida real" ===== */
+.vocab-linha.com-icone { grid-template-columns: 52px 1fr 1.4fr; }
+.vocab-icone { display: flex; align-items: center; justify-content: center; font-size: 28px; border-right: 1px solid var(--borda); }
+button.vocab-en { background: none; border: 0; border-right: 1px solid var(--borda); text-align: left; cursor: pointer; font: inherit; font-family: var(--mono); color: var(--primaria); }
+button.vocab-en:hover { background: var(--primaria-suave); }
+.vocab-pt { display: flex; flex-direction: column; gap: 3px; }
+.vocab-uso { font-size: 12.5px; color: var(--texto-fraco); }
+.bloco-vida-real {
+  background: color-mix(in srgb, var(--sucesso) 8%, var(--superficie));
+  border: 1px solid color-mix(in srgb, var(--sucesso) 30%, var(--borda));
+  border-radius: var(--radius-sm); padding: 14px 16px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.vida-real-topo { display: flex; align-items: center; gap: 12px; }
+.vida-real-emoji { font-size: 38px; line-height: 1; flex-shrink: 0; }
+.vida-real-rotulo { font-size: 12px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--sucesso); }
+.vida-real-titulo { font-size: 15px; }
+.vida-real-texto { font-size: 14.5px; }
+.vida-real-frase { display: flex; gap: 8px; align-items: flex-start; background: var(--superficie); border-radius: 10px; padding: 8px 10px; }
+@media (max-width: 430px) {
+  .vocab-linha.com-icone { grid-template-columns: 44px 1fr; }
+  .vocab-linha.com-icone .vocab-icone { grid-row: span 2; }
+  .vocab-linha.com-icone .vocab-en { border-right: none; border-bottom: 0; }
+}

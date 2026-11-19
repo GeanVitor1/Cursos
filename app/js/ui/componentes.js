@@ -215,16 +215,48 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function blocoVocab(bloco) {
+    // Par: [inglês, português, emoji opcional, uso na vida real opcional]
+    const comIcone = (bloco.pares || []).some(function (par) { return par[2]; });
     const linhas = (bloco.pares || []).map(function (par) {
-      return criar('div', { classe: 'vocab-linha' }, [
-        criar('div', { classe: 'vocab-en', texto: par[0] }),
-        criar('div', { classe: 'vocab-pt', texto: par[1] })
+      return criar('div', { classe: 'vocab-linha' + (comIcone ? ' com-icone' : '') }, [
+        comIcone ? criar('div', { classe: 'vocab-icone', 'aria-hidden': 'true', texto: par[2] || '' }) : null,
+        criar('button', {
+          type: 'button', classe: 'vocab-en', texto: par[0],
+          title: 'Ouvir a pronúncia', onclick: function () { falar(par[0]); }
+        }),
+        criar('div', { classe: 'vocab-pt' }, [
+          criar('span', { texto: par[1] }),
+          par[3] ? criar('span', { classe: 'vocab-uso', html: '📍 ' + d.formatar(par[3]) }) : null
+        ])
       ]);
     });
     const partes = [];
     if (bloco.titulo) partes.push(criar('div', { classe: 'tabela-titulo', texto: bloco.titulo }));
     partes.push(criar('div', { classe: 'vocab' }, linhas));
     return criar('div', { classe: 'bloco tabela-bloco' }, partes);
+  }
+
+  function blocoVidaReal(bloco) {
+    const partes = [
+      criar('div', { classe: 'vida-real-topo' }, [
+        criar('span', { classe: 'vida-real-emoji', 'aria-hidden': 'true', texto: bloco.emoji || '🌎' }),
+        criar('div', {}, [
+          criar('div', { classe: 'vida-real-rotulo', texto: 'Na vida real' }),
+          bloco.titulo ? criar('strong', { classe: 'vida-real-titulo', texto: bloco.titulo }) : null
+        ])
+      ]),
+      criar('div', { classe: 'vida-real-texto', html: d.formatar(bloco.texto || '') })
+    ];
+    if (bloco.frase) {
+      partes.push(criar('div', { classe: 'vida-real-frase' }, [
+        criar('button', { type: 'button', classe: 'btn-link btn-ouvir', texto: '🔊', title: 'Ouvir', onclick: function () { falar(bloco.frase); } }),
+        criar('div', {}, [
+          criar('div', { classe: 'ingles-frase', texto: bloco.frase }),
+          bloco.traducao ? criar('div', { classe: 'ingles-traducao', texto: bloco.traducao }) : null
+        ])
+      ]));
+    }
+    return criar('div', { classe: 'bloco bloco-vida-real' }, partes);
   }
 
   function blocoIngles(def) {
@@ -296,6 +328,8 @@ window.Plataforma = window.Plataforma || {};
         return blocoTabela(bloco);
       case 'vocab':
         return blocoVocab(bloco);
+      case 'vida-real':
+        return blocoVidaReal(bloco);
       case 'trabalho':
         return blocoTrabalho(bloco);
       case 'glossario':

@@ -415,7 +415,16 @@ posicoes.forEach(function (p) {
           verificarFraseControlada(bloco.frase, licao.id, i + 1, 'bloco.ingles.frase');
           return;
         }
-        if (bloco.tipo === 'vocab' || bloco.tipo === 'glossario') return;
+        if (bloco.tipo === 'vida-real' && bloco.frase) {
+          verificarFraseControlada(bloco.frase, licao.id, i + 1, 'bloco.vida-real.frase');
+        }
+        if (bloco.tipo === 'vocab') {
+          (bloco.pares || []).forEach(function (par, j) {
+            if (Array.isArray(par) && typeof par[3] === 'string') verificarTexto(par[3], Object.assign({ campo: 'bloco.pares[' + j + '][3]' }, ctxBase), false, true);
+          });
+          return;
+        }
+        if (bloco.tipo === 'glossario') return;
         if (bloco.tipo === 'codigo') {
           verificarTexto(bloco.codigo, Object.assign({ campo: 'bloco.codigo' }, ctxBase), true);
           return;

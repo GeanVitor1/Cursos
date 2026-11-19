@@ -58,7 +58,7 @@ function carregar(caminho) {
 const TIPOS = ['multiple-choice', 'true-false', 'match-pairs', 'order-blocks', 'fill-code', 'write-code', 'find-error', 'predict-output', 'interpret-code', 'translate', 'reading', 'debug', 'scenario', 'code-review', 'explain', 'visualizer', 'listening', 'choose-image', 'dialogue'];
 const DIMENSOES = ['reconhecimento', 'associacao', 'ordenacao', 'preenchimento', 'construcao', 'aplicacao'];
 const HABILIDADES = ['vocabulario', 'gramatica', 'listening', 'reading', 'writing', 'compreensao', 'speaking'];
-const BLOCOS = ['texto', 'destaque', 'nota', 'lista', 'passos', 'codigo', 'diagrama', 'tabela', 'vocab', 'trabalho', 'glossario', 'ingles', 'conceito', 'retoma', 'futuro'];
+const BLOCOS = ['texto', 'destaque', 'nota', 'lista', 'passos', 'codigo', 'diagrama', 'tabela', 'vocab', 'trabalho', 'glossario', 'ingles', 'conceito', 'retoma', 'futuro', 'vida-real'];
 
 function validarConceitos(ids, onde) {
   (ids || []).forEach(function (id) {

@@ -20,9 +20,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Imagine que você entrou em uma turma nova ou em uma reunião de trabalho com pessoas de outros países. A primeira coisa é **cumprimentar**. Vamos começar com três cumprimentos curtos.' },
         { tipo: 'vocab', titulo: 'Cumprimentos básicos (3)', pares: [
-          ['Hello', 'Olá'],
-          ['Hi', 'Oi'],
-          ['Good morning', 'Bom dia (até 12h)']
+          ['Hello', 'Olá', '👋', 'ao entrar numa call com o time de outro país'],
+          ['Hi', 'Oi', '💬', 'no início de uma mensagem no Slack ou Teams'],
+          ['Good morning', 'Bom dia (até 12h)', '☀️', 'na daily às 9h, antes de falar o que fez ontem']
         ] },
         { tipo: 'ingles', frase: 'Hello! Good morning!', traducao: 'Olá! Bom dia!' }
       ]
@@ -51,8 +51,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Depois do meio-dia, o cumprimento muda. E ao chegar à noite, também. Veja as duas formas que faltam.' },
         { tipo: 'vocab', titulo: 'Outros horários (2)', pares: [
-          ['Good afternoon', 'Boa tarde'],
-          ['Good evening', 'Boa noite (ao chegar)']
+          ['Good afternoon', 'Boa tarde', '🌤️', 'reunião com o cliente depois do almoço'],
+          ['Good evening', 'Boa noite (ao chegar)', '🌙', 'ao entrar num jantar ou evento de networking']
         ] },
         { tipo: 'ingles', frase: 'Good afternoon! Good evening!', traducao: 'Boa tarde! Boa noite!' },
         { tipo: 'nota', tom: 'info', texto: '`Good evening` é usado **ao chegar**. Para se despedir à noite, o inglês usa outra expressão, que você verá mais adiante.' }
@@ -89,8 +89,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Agora que você já cumprimentou, o próximo passo é dizer quem você é. Há duas formas muito comuns.' },
         { tipo: 'vocab', titulo: 'Seu nome (2)', pares: [
-          ['My name is Ana.', 'Meu nome é Ana.'],
-          ['I am Ana.', 'Eu sou a Ana.']
+          ['My name is Ana.', 'Meu nome é Ana.', '🪪', 'primeira frase de uma entrevista de emprego'],
+          ['I am Ana.', 'Eu sou a Ana.', '🙋', 'ao se apresentar numa reunião com gente nova']
         ] },
         { tipo: 'ingles', frase: 'Hi! My name is Ana.', traducao: 'Oi! Meu nome é Ana.' }
       ]
@@ -114,7 +114,7 @@ Plataforma.registrarLicao({
       titulo: 'Perguntando o nome',
       blocos: [
         { tipo: 'vocab', titulo: 'A pergunta (1)', pares: [
-          ['What is your name?', 'Qual é o seu nome?']
+          ['What is your name?', 'Qual é o seu nome?', '❓', 'quando um colega novo entra no projeto']
         ] },
         { tipo: 'nota', tom: 'info', texto: '`my` = meu/minha; `your` = seu/sua. Repare que o inglês não muda a palavra conforme o gênero.' },
         { tipo: 'ingles', frase: 'What is your name?', traducao: 'Qual é o seu nome?' }
@@ -140,8 +140,8 @@ Plataforma.registrarLicao({
       titulo: 'Prazer em conhecer',
       blocos: [
         { tipo: 'vocab', titulo: 'Conhecendo alguém (2)', pares: [
-          ['Nice to meet you.', 'Prazer em conhecer você.'],
-          ['Nice to meet you too.', 'Prazer em conhecer você também.']
+          ['Nice to meet you.', 'Prazer em conhecer você.', '🤝', 'logo depois que o recrutador se apresenta'],
+          ['Nice to meet you too.', 'Prazer em conhecer você também.', '😊', 'resposta quando a outra pessoa disse primeiro']
         ] },
         { tipo: 'nota', tom: 'info', texto: 'A segunda frase devolve o cumprimento: use **too** (também) quando a outra pessoa fala primeiro.' },
         { tipo: 'ingles', frase: 'Nice to meet you!', traducao: 'Prazer em conhecer você!' }
@@ -177,11 +177,12 @@ Plataforma.registrarLicao({
       titulo: 'Como você está?',
       blocos: [
         { tipo: 'vocab', titulo: 'Conversa rápida (3)', pares: [
-          ['How are you?', 'Como você está?'],
-          ["I'm fine, thanks.", 'Estou bem, obrigado(a).'],
-          ['And you?', 'E você?']
+          ['How are you?', 'Como você está?', '🙂', 'nos primeiros segundos de qualquer call'],
+          ["I'm fine, thanks.", 'Estou bem, obrigado(a).', '👍', 'resposta curta e educada, sem contar a vida toda'],
+          ['And you?', 'E você?', '🔁', 'devolve a pergunta para a conversa continuar']
         ] },
-        { tipo: 'ingles', frase: "How are you? I'm fine, thanks. And you?", traducao: 'Como você está? Estou bem, obrigado. E você?' }
+        { tipo: 'ingles', frase: "How are you? I'm fine, thanks. And you?", traducao: 'Como você está? Estou bem, obrigado. E você?' },
+        { tipo: 'vida-real', emoji: '💻', titulo: 'Entrevista por vídeo com empresa de fora', texto: 'O recrutador abre a câmera e começa. Você responde com tudo o que aprendeu nesta lição: cumprimento, nome e "prazer". Esses 10 primeiros segundos já mostram que você consegue conversar.', frase: "Good morning! My name is Ana. Nice to meet you. How are you?", traducao: 'Bom dia! Meu nome é Ana. Prazer em conhecer você. Como você está?' }
       ]
     },
     {
