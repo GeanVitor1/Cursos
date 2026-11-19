@@ -9,7 +9,7 @@ Plataforma.registrarLicao({
   objetivos: [
     'Compreender termos de colaboração no GitHub',
     'Pedir e entender pedidos de code review em inglês',
-    'Identificar conflitos e status de merge'
+    'Reconhecer os status de um PR (approved, changes) e o que é uma release'
   ],
   conceitos: ['ingles.github'],
   etapas: [
@@ -32,6 +32,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en18-p1',
         tipo: 'match-pairs',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Conecte cada termo ao significado no GitHub.',
         pares: [
@@ -61,6 +62,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en18-p2',
         tipo: 'order-blocks',
+        habilidade: 'gramatica',
         dimensao: 'ordenacao',
         enunciado: 'Ordene o pedido de revisão.',
         blocos: ['Please', 'review', 'my pull request.'],
@@ -86,6 +88,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en18-p3',
         tipo: 'fill-code',
+        habilidade: 'gramatica',
         dimensao: 'preenchimento',
         enunciado: 'Complete o pedido de alterações no GitHub.',
         codigo: 'We need some {{1}} before merge.',

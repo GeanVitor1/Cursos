@@ -32,6 +32,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-p1',
         tipo: 'match-pairs',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Conecte cada palavra em inglês ao significado.',
         pares: [
@@ -61,6 +62,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-p2',
         tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
         dimensao: 'reconhecimento',
         enunciado: 'Qual é o significado de **deploy**?',
         opcoes: ['implantação / publicar', 'requisição', 'ramificação', 'erro'],
@@ -91,6 +93,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-p3',
         tipo: 'match-pairs',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Conecte cada palavra ao significado.',
         pares: [
@@ -121,6 +124,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-p4',
         tipo: 'order-blocks',
+        habilidade: 'gramatica',
         dimensao: 'ordenacao',
         enunciado: 'Ordene as palavras para formar a frase: "A requisição falhou."',
         blocos: ['The', 'request', 'failed.'],
@@ -146,6 +150,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-p5',
         tipo: 'fill-code',
+        habilidade: 'gramatica',
         dimensao: 'preenchimento',
         enunciado: 'Complete a frase com o verbo correto.',
         codigo: 'The build {{1}}.',
@@ -172,6 +177,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-p6',
         tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
         dimensao: 'reconhecimento',
         enunciado: 'O que significa **retry**?',
         opcoes: ['Tentar novamente', 'Corrigir', 'Revisar', 'Publicar'],
@@ -203,6 +209,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-p7',
         tipo: 'match-pairs',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Conecte cada palavra ao significado.',
         pares: [
@@ -232,6 +239,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-p8',
         tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
         dimensao: 'reconhecimento',
         enunciado: 'O que significa **config**?',
         opcoes: ['Configuração', 'Conexão', 'Compilação', 'Conversa'],
@@ -253,7 +261,7 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'O inglês técnico usa frases curtas e diretas. A estrutura básica é: **sujeito + verbo + complemento**.' },
         { tipo: 'codigo', linguagem: 'texto', codigo: 'The request failed.\nThe database is down.\nPlease review this change.' },
-        { tipo: 'nota', tom: 'atencao', texto: 'Em inglês, o adjetivo costuma vir antes do substantivo: **database error** = erro de banco; **pull request** = pedido de integração. Ler na ordem literal ajuda no começo.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'Em inglês, quando duas palavras formam um termo, a primeira descreve a segunda: **database error** = erro de banco (de dados); **pull request** = pedido de integração. Ao ler, comece pela última palavra (o núcleo) e volte.' }
       ]
     },
     {
@@ -261,6 +269,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-a1',
         tipo: 'translate',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Qual é o significado de **request**?',
         termo: 'request',
@@ -282,6 +291,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-a2',
         tipo: 'match-pairs',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Conecte cada palavra em inglês ao significado em português.',
         pares: [
@@ -301,6 +311,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-a3',
         tipo: 'translate',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Qual é o significado de **deploy**?',
         termo: 'deploy',
@@ -322,6 +333,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en00-a5',
         tipo: 'reading',
+        habilidade: 'reading',
         dimensao: 'reconhecimento',
         titulo: 'Mensagem do time',
         enunciado: 'Leia a mensagem e responda.',

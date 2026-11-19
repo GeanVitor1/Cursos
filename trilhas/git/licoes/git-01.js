@@ -148,13 +148,13 @@ Plataforma.registrarLicao({
         id: 'git01-a4',
         tipo: 'order-blocks',
         dimensao: 'ordenacao',
-        enunciado: 'Ordene o fluxo diário completo: do que mudou no projeto até o envio para o servidor.',
-        blocos: ['git status', 'git add .', 'git commit -m "Valida estoque negativo"', 'git pull origin main', 'git push origin main'],
+        enunciado: 'Ordene o fluxo diário completo, do primeiro comando até o envio para o servidor.',
+        blocos: ['git pull origin main', 'git status', 'git add .', 'git commit -m "Valida estoque negativo"', 'git push origin main'],
         dicas: [
-          'Primeiro você confere, depois prepara e grava.',
-          'Antes de enviar, traga o que o time tem.'
+          'Comece trazendo o que o time enviou, antes de trabalhar.',
+          'Depois confira, prepare e grave; enviar é sempre o último passo.'
         ],
-        explicacao: 'Conferir, preparar, gravar, puxar e enviar: esse é o ciclo que se repete todos os dias. O pull antes do push evita que o seu envio seja recusado.',
+        explicacao: 'Puxar, conferir, preparar, gravar e enviar: esse é o ciclo que se repete todos os dias. Começar com o pull mantém sua cópia atualizada e evita que o seu envio seja recusado.',
         conceitos: ['git.sincronizacao', 'git.repositorio']
       }
     },

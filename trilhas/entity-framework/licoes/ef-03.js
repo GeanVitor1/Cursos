@@ -21,7 +21,7 @@ Plataforma.registrarLicao({
         { tipo: 'retoma', conceito: 'linq.where', texto: 'Você já sabe filtrar coleções com `Where` e lambda. Agora o mesmo LINQ vai conversar com o banco.' },
         { tipo: 'texto', texto: 'Aqui está a ponte que faltava: o mesmo LINQ que você usou em listas funciona no `DbSet` — mas em vez de percorrer a memória, ele é **traduzido para SQL** e executado no banco.' },
         { tipo: 'conceito', id: 'ef.consultas', titulo: 'Consultas com EF', texto: 'Escrever LINQ no DbSet; o EF traduz para SQL e executa no banco.', exemplo: 'context.Produtos.Where(p => p.Ativo).ToListAsync()' },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> ativos = await context.Produtos\n    .Where(p => p.Ativo)\n    .ToListAsync();' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'using Microsoft.EntityFrameworkCore; // ToListAsync vem deste namespace\n\nList<Produto> ativos = await context.Produtos\n    .Where(p => p.Ativo)\n    .ToListAsync();' },
         { tipo: 'diagrama', arte: 'LINQ (C#)                          SQL enviado ao banco\n\ncontext.Produtos                    SELECT Id, Nome, Preco, Estoque, Ativo\n  .Where(p => p.Ativo)      ──────►  FROM Produtos\n  .ToListAsync()                     WHERE Ativo = 1;' },
         { tipo: 'nota', tom: 'info', texto: 'O `ToListAsync` só aparece no EF: ele executa a consulta no banco e transforma o resultado em lista. Em listas comuns usávamos `ToList`.' }
       ]
@@ -37,7 +37,7 @@ Plataforma.registrarLicao({
           ['Listar todos', 'ToListAsync()', 'Cuidado: pode trazer uma tabela inteira']
         ], legenda: 'A escolha do método se reflete no SQL gerado — e no custo da consulta.' },
         { tipo: 'nota', tom: 'info', texto: 'Você vai ver `TOP 1` no SQL gerado: `SELECT TOP 1` significa "traga apenas o primeiro registro". Em outros bancos aparece como `LIMIT 1`. É o "pegar o primeiro" traduzido para SQL.' },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: '// Buscar por Id\nProduto? produto = await context.Produtos.FindAsync(10);\n\n// Buscar por outra coluna\nCliente? cliente = await context.Clientes\n    .FirstOrDefaultAsync(c => c.Email == "ana@email.com");' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'using Microsoft.EntityFrameworkCore;\n\n// Buscar por Id\nProduto? produto = await context.Produtos.FindAsync(10);\n\n// Buscar por outra coluna\nCliente? cliente = await context.Clientes\n    .FirstOrDefaultAsync(c => c.Email == "ana@email.com");' },
         { tipo: 'trabalho', texto: 'Em code review, uma das primeiras verificações é se a consulta busca só o necessário. `ToListAsync()` sem filtro em uma tabela grande é um problema de desempenho real.', fonte: '💼 Em um code review' }
       ]
     },
@@ -110,13 +110,29 @@ Plataforma.registrarLicao({
         id: 'ef03-a4',
         tipo: 'write-code',
         dimensao: 'construcao',
-        enunciado: 'Escreva uma consulta assíncrona que devolva todos os produtos ativos do banco.',
-        esqueleto: 'List<Produto> ativos = // complete',
+        enunciado: 'Escreva uma consulta assíncrona que devolva todos os produtos ativos do banco. O `DbContext` se chama `context` e o resultado vai para `ativos`.',
+        esqueleto: 'List<Produto> ativos = ...;',
         validar: function (valor) {
           const t = P.dom.normalizarCodigo(valor).replace(/ /g, '');
           return t.indexOf('context.produtos') !== -1 && t.indexOf('.where(') !== -1 && t.indexOf('.tolistasync()') !== -1 && t.indexOf('await') !== -1;
         },
-        respostasAceitas: ['await context.Produtos.Where(p => p.Ativo).ToListAsync();'],
+        respostasAceitas: [
+          'List<Produto> ativos = await context.Produtos.Where(p => p.Ativo).ToListAsync();',
+          'List<Produto> ativos = await context.Produtos.Where(p => p.Ativo == true).ToListAsync();',
+          'List<Produto> ativos = await context.Produtos.Where(x => x.Ativo).ToListAsync();',
+          'List<Produto> ativos = await context.Produtos.Where(x => x.Ativo == true).ToListAsync();',
+          'List<Produto> ativos = await context.Produtos.Where(produto => produto.Ativo).ToListAsync();',
+          'List<Produto> ativos = await context.Produtos.Where(produto => produto.Ativo == true).ToListAsync();',
+          'var ativos = await context.Produtos.Where(p => p.Ativo).ToListAsync();',
+          'var ativos = await context.Produtos.Where(p => p.Ativo == true).ToListAsync();',
+          'var ativos = await context.Produtos.Where(x => x.Ativo).ToListAsync();',
+          'var ativos = await context.Produtos.Where(x => x.Ativo == true).ToListAsync();',
+          'var ativos = await context.Produtos.Where(produto => produto.Ativo).ToListAsync();',
+          'var ativos = await context.Produtos.Where(produto => produto.Ativo == true).ToListAsync();',
+          'await context.Produtos.Where(p => p.Ativo).ToListAsync();',
+          'await context.Produtos.Where(x => x.Ativo).ToListAsync();',
+          'await context.Produtos.Where(produto => produto.Ativo).ToListAsync();'
+        ],
         dicas: ['Comece por `context.Produtos`.', 'Filtre com Where e transforme em lista com `await ...ToListAsync()`.'],
         explicacao: 'Essa linha gera `SELECT ... FROM Produtos WHERE Ativo = 1` — o LINQ de memória e o SQL agora são a mesma ideia.',
         conceitos: ['ef.consultas', 'linq.where'],
@@ -140,10 +156,10 @@ Plataforma.registrarLicao({
           '+ }'
         ],
         opcoes: [
-          'A consulta traz a tabela inteira para a memória e depois filtra; o correto é filtrar no banco com FirstOrDefaultAsync',
-          'O método deveria ser síncrono',
-          'Falta converter o id para texto',
-          'O retorno deveria ser uma lista'
+          'A consulta traz a tabela inteira para a memória e filtra depois; o correto é filtrar no banco',
+          'O método deveria ser síncrono, sem await, para a consulta funcionar',
+          'Falta converter o id para texto antes de comparar na consulta',
+          'O retorno do método deveria ser uma lista de produtos'
         ],
         correta: 0,
         feedbackErro: {

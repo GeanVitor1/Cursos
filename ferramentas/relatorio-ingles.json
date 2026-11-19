@@ -1,9 +1,9 @@
 {
-  "geradoEm": "2026-10-22T12:32:46.190Z",
+  "geradoEm": "2026-11-19T10:40:39.249Z",
   "licoesPercorridas": 375,
-  "etapasPercorridas": 1434,
-  "atividadesPercorridas": 904,
-  "palavrasNoLexico": 622,
+  "etapasPercorridas": 1472,
+  "atividadesPercorridas": 939,
+  "palavrasNoLexico": 646,
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
   "introducoesDeVocabulario": [
@@ -75,7 +75,7 @@
     },
     {
       "licao": "sql-06",
-      "etapa": 9,
+      "etapa": 10,
       "termos": 1,
       "palavras": [
         "sort"
@@ -93,15 +93,16 @@
     {
       "licao": "sql-09",
       "etapa": 8,
-      "termos": 2,
+      "termos": 3,
       "palavras": [
         "phone",
+        "null",
         "empty"
       ]
     },
     {
       "licao": "sql-10",
-      "etapa": 10,
+      "etapa": 12,
       "termos": 1,
       "palavras": [
         "starts",
@@ -110,7 +111,7 @@
     },
     {
       "licao": "sql-11",
-      "etapa": 8,
+      "etapa": 9,
       "termos": 3,
       "palavras": [
         "change",
@@ -138,7 +139,7 @@
     },
     {
       "licao": "sql-16",
-      "etapa": 8,
+      "etapa": 9,
       "termos": 1,
       "palavras": [
         "product"
@@ -216,7 +217,7 @@
     },
     {
       "licao": "sql-28",
-      "etapa": 8,
+      "etapa": 12,
       "termos": 2,
       "palavras": [
         "upper",
@@ -243,7 +244,7 @@
     },
     {
       "licao": "sql-31",
-      "etapa": 7,
+      "etapa": 8,
       "termos": 3,
       "palavras": [
         "procedure",
@@ -253,7 +254,7 @@
     },
     {
       "licao": "sql-32",
-      "etapa": 6,
+      "etapa": 7,
       "termos": 1,
       "palavras": [
         "protect"
@@ -279,7 +280,7 @@
     },
     {
       "licao": "sql-35",
-      "etapa": 7,
+      "etapa": 9,
       "termos": 2,
       "palavras": [
         "window",
@@ -288,7 +289,7 @@
     },
     {
       "licao": "sql-36",
-      "etapa": 6,
+      "etapa": 8,
       "termos": 1,
       "palavras": [
         "design"
@@ -305,7 +306,7 @@
     },
     {
       "licao": "sql-38",
-      "etapa": 5,
+      "etapa": 8,
       "termos": 1,
       "palavras": [
         "payment"
@@ -376,7 +377,7 @@
       "palavras": [
         "new",
         "nome",
-        "mouse",
+        "teclado",
         "m"
       ]
     },
@@ -391,19 +392,11 @@
     },
     {
       "licao": "csharp-03",
-      "etapa": 7,
+      "etapa": 8,
       "termos": 0,
       "palavras": [
         "remove",
         "clear"
-      ]
-    },
-    {
-      "licao": "csharp-04",
-      "etapa": 4,
-      "termos": 0,
-      "palavras": [
-        "null"
       ]
     },
     {
@@ -615,17 +608,15 @@
     },
     {
       "licao": "en-a1-01",
-      "etapa": 13,
-      "termos": 2,
+      "etapa": 15,
+      "termos": 1,
       "palavras": [
-        "years",
-        "old",
         "be"
       ]
     },
     {
       "licao": "en-a1-01",
-      "etapa": 14,
+      "etapa": 16,
       "termos": 2,
       "palavras": [
         "number",
@@ -702,11 +693,12 @@
     {
       "licao": "en-a1-03",
       "etapa": 1,
-      "termos": 2,
+      "termos": 3,
       "palavras": [
         "wake",
         "up",
-        "breakfast"
+        "breakfast",
+        "at"
       ]
     },
     {
@@ -901,21 +893,21 @@
     {
       "licao": "en-a1-06",
       "etapa": 3,
-      "termos": 2,
+      "termos": 3,
       "palavras": [
         "cash",
         "credit",
         "card",
-        "dollar"
+        "dollar",
+        "pay"
       ]
     },
     {
       "licao": "en-a1-06",
       "etapa": 5,
-      "termos": 2,
+      "termos": 1,
       "palavras": [
-        "help",
-        "pay"
+        "help"
       ]
     },
     {
@@ -940,6 +932,7 @@
         "jeans",
         "hat",
         "shirt",
+        "t",
         "sale"
       ]
     },
@@ -977,9 +970,10 @@
     {
       "licao": "en-a1-07",
       "etapa": 3,
-      "termos": 2,
+      "termos": 3,
       "palavras": [
         "station",
+        "train",
         "airport",
         "hotel",
         "restaurant"
@@ -1020,8 +1014,7 @@
       "termos": 1,
       "palavras": [
         "foot",
-        "bus",
-        "train"
+        "bus"
       ]
     },
     {
@@ -1043,9 +1036,10 @@
     {
       "licao": "en-a1-08",
       "etapa": 7,
-      "termos": 1,
+      "termos": 2,
       "palavras": [
-        "developer"
+        "developer",
+        "not"
       ]
     },
     {
@@ -1065,6 +1059,194 @@
         "week",
         "month",
         "now"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "request",
+        "response"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 3,
+      "termos": 3,
+      "palavras": [
+        "error",
+        "build",
+        "deploy"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "issue",
+        "branch"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "failed",
+        "unavailable",
+        "because"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "review",
+        "merge"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "fix",
+        "retry",
+        "down"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 13,
+      "termos": 2,
+      "palavras": [
+        "connection",
+        "wrong"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 15,
+      "termos": 3,
+      "palavras": [
+        "config",
+        "configuration",
+        "hey",
+        "chat"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "connect",
+        "cannot"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 3,
+      "termos": 3,
+      "palavras": [
+        "object",
+        "instance",
+        "reference"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "resource",
+        "does",
+        "exist"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "timeout",
+        "expired",
+        "while"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "waiting",
+        "wait",
+        "for"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "file",
+        "path",
+        "found"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 14,
+      "termos": 3,
+      "palavras": [
+        "title",
+        "steps",
+        "reproduce",
+        "create"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 16,
+      "termos": 3,
+      "palavras": [
+        "after",
+        "duplicated",
+        "application"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 18,
+      "termos": 2,
+      "palavras": [
+        "client",
+        "calling",
+        "call"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 20,
+      "termos": 3,
+      "palavras": [
+        "address",
+        "bug",
+        "retrying"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 22,
+      "termos": 2,
+      "palavras": [
+        "processed",
+        "twice",
+        "expected",
+        "actual"
       ]
     },
     {
@@ -1181,7 +1363,6 @@
       "termos": 2,
       "palavras": [
         "will",
-        "call",
         "later"
       ]
     },
@@ -1240,9 +1421,10 @@
     {
       "licao": "en-a2-02",
       "etapa": 7,
-      "termos": 1,
+      "termos": 2,
       "palavras": [
-        "final"
+        "final",
+        "closing"
       ]
     },
     {
@@ -1274,26 +1456,24 @@
     },
     {
       "licao": "ingles-02",
-      "etapa": 1,
-      "termos": 3,
+      "etapa": 3,
+      "termos": 2,
       "palavras": [
         "ever",
-        "visited",
         "canada"
       ]
     },
     {
       "licao": "ingles-02",
-      "etapa": 3,
-      "termos": 2,
+      "etapa": 5,
+      "termos": 1,
       "palavras": [
-        "already",
-        "seen"
+        "already"
       ]
     },
     {
       "licao": "ingles-02",
-      "etapa": 5,
+      "etapa": 7,
       "termos": 2,
       "palavras": [
         "yet",
@@ -1368,193 +1548,6 @@
       ]
     },
     {
-      "licao": "ingles-00",
-      "etapa": 1,
-      "termos": 2,
-      "palavras": [
-        "request",
-        "response"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 3,
-      "termos": 3,
-      "palavras": [
-        "error",
-        "build",
-        "deploy"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 5,
-      "termos": 2,
-      "palavras": [
-        "issue",
-        "branch"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 7,
-      "termos": 3,
-      "palavras": [
-        "failed",
-        "unavailable",
-        "because"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 9,
-      "termos": 2,
-      "palavras": [
-        "review",
-        "merge"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 11,
-      "termos": 3,
-      "palavras": [
-        "fix",
-        "retry",
-        "down"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 13,
-      "termos": 2,
-      "palavras": [
-        "connection",
-        "wrong"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 15,
-      "termos": 3,
-      "palavras": [
-        "config",
-        "configuration",
-        "hey",
-        "chat"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 1,
-      "termos": 2,
-      "palavras": [
-        "connect",
-        "cannot",
-        "not"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 3,
-      "termos": 3,
-      "palavras": [
-        "object",
-        "instance",
-        "reference"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 5,
-      "termos": 2,
-      "palavras": [
-        "resource",
-        "does",
-        "exist"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 7,
-      "termos": 3,
-      "palavras": [
-        "timeout",
-        "expired",
-        "while"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 9,
-      "termos": 1,
-      "palavras": [
-        "waiting",
-        "wait"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 11,
-      "termos": 2,
-      "palavras": [
-        "file",
-        "path",
-        "found"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 14,
-      "termos": 3,
-      "palavras": [
-        "title",
-        "steps",
-        "reproduce",
-        "create"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 16,
-      "termos": 3,
-      "palavras": [
-        "after",
-        "duplicated",
-        "application"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 18,
-      "termos": 2,
-      "palavras": [
-        "client",
-        "calling"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 20,
-      "termos": 3,
-      "palavras": [
-        "address",
-        "bug",
-        "retrying"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 22,
-      "termos": 2,
-      "palavras": [
-        "processed",
-        "twice",
-        "expected",
-        "actual"
-      ]
-    },
-    {
       "licao": "ingles-17",
       "etapa": 1,
       "termos": 3,
@@ -1575,9 +1568,10 @@
     {
       "licao": "ingles-17",
       "etapa": 5,
-      "termos": 1,
+      "termos": 2,
       "palavras": [
-        "tests"
+        "tests",
+        "write"
       ]
     },
     {
@@ -1620,7 +1614,8 @@
       "etapa": 1,
       "termos": 0,
       "palavras": [
-        "controller"
+        "controller",
+        "middleware"
       ]
     },
     {
@@ -1628,8 +1623,13 @@
       "etapa": 1,
       "termos": 0,
       "palavras": [
-        "cache",
-        "performance"
+        "fonte",
+        "original",
+        "expiração",
+        "invalidação",
+        "latência",
+        "projeção",
+        "paginação"
       ]
     },
     {
@@ -1637,7 +1637,22 @@
       "etapa": 1,
       "termos": 0,
       "palavras": [
-        "mock"
+        "asserção",
+        "teste",
+        "unitário",
+        "integração"
+      ]
+    },
+    {
+      "licao": "ciber-fundamentos-01",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "processo",
+        "conta",
+        "serviço",
+        "root",
+        "administrador"
       ]
     },
     {
@@ -1646,7 +1661,18 @@
       "termos": 0,
       "palavras": [
         "hash",
-        "token"
+        "salt",
+        "autenticação",
+        "autorização"
+      ]
+    },
+    {
+      "licao": "ciber-fundamentos-03",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "abuso",
+        "evidência"
       ]
     },
     {
@@ -1881,11 +1907,19 @@
     },
     {
       "licao": "docker-08",
-      "etapa": 11,
+      "etapa": 12,
       "termos": 2,
       "palavras": [
         "user",
         "password"
+      ]
+    },
+    {
+      "licao": "docker-09",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "cache"
       ]
     },
     {

@@ -68,7 +68,7 @@ Plataforma.registrarSimbolosCodigo({
     'sql:with': { licao: 'sql-23', nome: 'WITH (CTE)' },
     'sql:over': { licao: 'sql-35', nome: 'OVER (window functions)' },
     'sql:partition by': { licao: 'sql-35', nome: 'PARTITION BY' },
-    'sql:create': { licao: 'sql-29', nome: 'CREATE' },
+    'sql:create': { licao: 'sql-01', nome: 'CREATE' },
     'sql:view': { licao: 'sql-30', nome: 'VIEW' },
     'sql:index': { licao: 'sql-29', nome: 'INDEX' },
     'sql:begin': { licao: 'sql-32', nome: 'BEGIN (transação)' },

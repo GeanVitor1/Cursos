@@ -46,7 +46,7 @@ Plataforma.registrarLicao({
         { tipo: 'texto', texto: 'Criar o objeto, preencher linha por linha e depois adicionar dá trabalho. O C# tem um atalho para criar o objeto **já preenchido**:' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'produtos.Add(new Produto { Nome = "Teclado", Preco = 200.00m });' },
         { tipo: 'glossario', titulo: 'Entendendo o atalho', itens: [
-          ['new Produto { Nome = "Mouse", Preco = 100.00m }', 'inicializador de objeto', 'Cria o objeto e já preenche as propriedades entre chaves.']
+          ['new Produto { Nome = "Teclado", Preco = 200.00m }', 'inicializador de objeto', 'Cria o objeto e já preenche as propriedades entre chaves.']
         ] }
       ]
     },
@@ -85,8 +85,12 @@ Plataforma.registrarLicao({
           'produtos.Add(new Produto { Nome = "Teclado" });',
           'Console.WriteLine(produtos.Count);'
         ],
-        dicas: ['Não dá para adicionar em uma lista que ainda não foi criada.', 'A contagem vem depois das inserções.'],
-        explicacao: 'Criar → adicionar → usar. Essa sequência é a mesma em qualquer coleção.',
+        ordensAceitas: [
+          ['List<Produto> produtos = new List<Produto>();', 'produtos.Add(new Produto { Nome = "Mouse" });', 'produtos.Add(new Produto { Nome = "Teclado" });', 'Console.WriteLine(produtos.Count);'],
+          ['List<Produto> produtos = new List<Produto>();', 'produtos.Add(new Produto { Nome = "Teclado" });', 'produtos.Add(new Produto { Nome = "Mouse" });', 'Console.WriteLine(produtos.Count);']
+        ],
+        dicas: ['Não dá para adicionar em uma lista que ainda não foi criada.', 'A contagem só faz sentido depois que os dois itens entraram.'],
+        explicacao: 'Criar → adicionar → usar. Os dois Add podem vir em qualquer ordem, mas ambos precisam estar entre a criação da lista e a contagem.',
         conceitos: ['csharp.list']
       }
     },
@@ -101,6 +105,28 @@ Plataforma.registrarLicao({
           ['foreach (Produto produto in produtos)', 'para cada item', 'Percorre a lista, repetindo o bloco para cada item.']
         ] }
       ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'cs03-a7',
+        tipo: 'predict-output',
+        dimensao: 'reconhecimento',
+        enunciado: 'O que este código exibe na tela?',
+        contexto: [
+          { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<string> nomes = new List<string>();\nnomes.Add("Ana");\nnomes.Add("Bruno");\n\nforeach (string nome in nomes)\n{\n    Console.WriteLine(nome);\n}' }
+        ],
+        opcoes: ['Ana e, em outra linha, Bruno', 'Apenas Bruno, o último item', 'A palavra nome duas vezes', '2'],
+        correta: 0,
+        feedbackErro: {
+          1: 'O foreach passa por todos os itens, não só pelo último.',
+          2: '`nome` é a variável do laço: a cada volta ela guarda o item atual.',
+          3: 'O número 2 seria o Count; aqui o laço escreve os nomes.'
+        },
+        dicas: ['O bloco do foreach se repete uma vez para cada item da lista.', 'A cada volta, `nome` guarda um item diferente.'],
+        explicacao: 'O foreach repete o bloco para cada item: na primeira volta `nome` vale "Ana" e na segunda "Bruno".',
+        conceitos: ['csharp.list']
+      }
     },
     {
       tipo: 'conteudo',
@@ -151,7 +177,7 @@ Plataforma.registrarLicao({
         enunciado: 'Complete para criar uma lista de produtos e adicionar um item.',
         codigo: 'List<{{1}}> produtos = new List<Produto>();\nprodutos.{{2}}(new Produto { Nome = "Webcam" });',
         lacunas: [['Produto'], ['Add']],
-        dicas: ['O tipo entre < > é o mesmo da variável declarada.', 'O método de adicionar começa com A maiúsculo.'],
+        dicas: ['O tipo entre < > na criação (`new List<...>`) mostra o que a lista guarda.', 'Reveja o glossário "Os primeiros recursos": qual método coloca um item no fim da lista?'],
         explicacao: 'A lista precisa saber que tipo guarda: `List<Produto>`. E `Add` insere o item.',
         conceitos: ['csharp.list', 'csharp.generics']
       }

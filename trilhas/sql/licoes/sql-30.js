@@ -125,14 +125,14 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql30-a4',
         tipo: 'write-code',
-        enunciado: 'Views are saved queries: crie a view Ativos.',
+        enunciado: 'Views are saved queries: crie a view **PedidosPagos** com os pedidos de Status Pago.',
         placeholder: 'CREATE ...',
         respostasAceitas: [
-          'create view ativos as select * from clientes where ativo = 1'
+          'CREATE VIEW PedidosPagos AS SELECT * FROM Pedidos WHERE Status = \'Pago\';'
         ],
         dicas: [
-          'CREATE VIEW Ativos AS ...',
-          'A consulta filtra os ativos.'
+          'CREATE VIEW PedidosPagos AS ...',
+          'A consulta guardada filtra Status = \'Pago\'.'
         ],
         explicacao: 'Nome, consulta guardada, reutilização: o ciclo da view.',
         conceitos: ['sql.views', 'sql.ingles']

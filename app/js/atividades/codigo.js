@@ -34,7 +34,12 @@ window.Plataforma = window.Plataforma || {};
 
   function validarEscrita(atv, valor) {
     const texto = String(valor || '').replace(/[\u2018\u2019]/g, "'");
-    if (typeof atv.validar === 'function' && (atv.habilidade === 'writing' || !atv.respostasAceitas || !atv.respostasAceitas.length)) return !!atv.validar(atv.habilidade === 'writing' ? P.dom.expandirContracoesIngles(texto) : P.dom.prepararTextoNatural(texto));
+    if (typeof atv.validar === 'function') {
+      let okValidar = false;
+      try { okValidar = !!atv.validar(atv.habilidade === 'writing' ? P.dom.expandirContracoesIngles(texto) : P.dom.prepararTextoNatural(texto)); } catch (e) { okValidar = false; }
+      if (okValidar) return true;
+      if (atv.habilidade === 'writing' || !atv.respostasAceitas || !atv.respostasAceitas.length) return false;
+    }
     const normalizada = respostaNormalizada(atv, texto);
     if (normalizada !== null && (atv.respostasAceitas || []).some(function (a) {
       return respostaNormalizada(atv, a) === normalizada;

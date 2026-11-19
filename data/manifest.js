@@ -613,7 +613,6 @@ Plataforma.registrarManifesto({
         "git",
         "csharp",
         "sql",
-        "engenharia-ia",
         "linq",
         "entity-framework",
         "aspnet",
@@ -622,6 +621,7 @@ Plataforma.registrarManifesto({
         "frontend",
         "docker",
         "redis",
+        "engenharia-ia",
         "mensageria",
         "cicd",
         "azure",
@@ -632,12 +632,17 @@ Plataforma.registrarManifesto({
       "nome": "Cibersegurança",
       "descricao": "Redes e sistemas → ameaças → segurança de aplicações → identidade → infraestrutura. Os laboratórios usam dados fictícios e ambientes locais autorizados.",
       "trilhas": [
-        "ciber-fundamentos",
         "terminal",
+        "ciber-fundamentos",
+        "csharp",
+        "sql",
+        "linq",
+        "entity-framework",
         "aspnet",
         "seguranca",
         "autenticacao",
         "docker",
+        "cicd",
         "azure"
       ]
     }

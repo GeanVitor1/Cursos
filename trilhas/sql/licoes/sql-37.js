@@ -55,9 +55,9 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: 'SELECT Produtos.Nome, Produtos.Estoque, COUNT(*) AS Vendas\nFROM Produtos\nJOIN ItensPedido ON ItensPedido.ProdutoId = Produtos.Id\nWHERE Produtos.Estoque < 10\nGROUP BY Produtos.Nome, Produtos.Estoque\nORDER BY Vendas DESC;'
+          codigo: 'SELECT Produtos.Nome, Produtos.Estoque, COUNT(ItensPedido.Id) AS Vendas\nFROM Produtos\nLEFT JOIN ItensPedido ON ItensPedido.ProdutoId = Produtos.Id\nWHERE Produtos.Estoque < 10\nGROUP BY Produtos.Nome, Produtos.Estoque\nORDER BY Vendas DESC;'
         },
-        { tipo: 'nota', tom: 'info', texto: 'Pouco estoque + muitas vendas = repor já. Pouco estoque + zero vendas = revisar o mix.' },
+        { tipo: 'nota', tom: 'info', texto: 'Pouco estoque + muitas vendas = repor já. Pouco estoque + zero vendas = revisar o mix. Repare no `LEFT JOIN`: com `INNER JOIN` o produto sem nenhuma venda sumiria da lista; com o `LEFT JOIN` ele aparece com `Vendas = 0`, porque `COUNT(ItensPedido.Id)` ignora os nulos.' },
         { tipo: 'trabalho', texto: 'Ruptura (produto em falta) é dinheiro perdido na hora. Por isso o alerta de estoque com giro roda todo dia de manhã no varejo.', fonte: '💼 No trabalho' }
       ]
     },
@@ -105,7 +105,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql37-a3',
         tipo: 'write-code',
-        enunciado: 'Escreva a consulta que retorna produtos com **estoque zerado**.',
+        enunciado: 'Escreva a consulta que retorna o **nome** dos produtos com **estoque zerado**.',
         respostasAceitas: [
           'select nome from produtos where estoque = 0'
         ],
@@ -131,7 +131,7 @@ Plataforma.registrarLicao({
             ['stock', 'estoque']
           ]
         },
-        { tipo: 'ingles', frase: 'Orders with low stock.', traducao: 'Pedidos com estoque baixo.' },
+        { tipo: 'ingles', frase: 'Products with low stock.', traducao: 'Produtos com estoque baixo.' },
         { tipo: 'nota', tom: 'info', texto: '**low stock** = "estoque baixo": o coração do alerta.' }
       ]
     },
@@ -140,10 +140,10 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql37-a4',
         tipo: 'write-code',
-        enunciado: 'Orders with low stock: nomes com menos de 10 unidades.',
+        enunciado: 'Products with low stock: liste os nomes dos produtos com menos de 10 unidades.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select nome from produtos where estoque < 10'
+          'SELECT Nome FROM Produtos WHERE Estoque < 10;'
         ],
         dicas: [
           'low stock = estoque baixo.',
@@ -151,6 +151,26 @@ Plataforma.registrarLicao({
         ],
         explicacao: 'O alerta em SQL direto.',
         conceitos: ['sql.estoque', 'sql.ingles']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql37-a5',
+        tipo: 'write-code',
+        enunciado: 'Escreva a consulta que lista, dos produtos com **estoque menor que 10**, o **Nome**, o **Estoque** e quantos itens de pedido cada um teve (apelide de **Vendas**), **incluindo os que nunca venderam**, do mais vendido para o menos vendido.',
+        respostasAceitas: [
+          'SELECT Produtos.Nome, Produtos.Estoque, COUNT(ItensPedido.Id) AS Vendas FROM Produtos LEFT JOIN ItensPedido ON ItensPedido.ProdutoId = Produtos.Id WHERE Produtos.Estoque < 10 GROUP BY Produtos.Nome, Produtos.Estoque ORDER BY Vendas DESC;',
+          'SELECT Produtos.Nome, Produtos.Estoque, COUNT(ItensPedido.Id) AS Vendas FROM Produtos LEFT JOIN ItensPedido ON ItensPedido.ProdutoId = Produtos.Id WHERE Produtos.Estoque < 10 GROUP BY Produtos.Estoque, Produtos.Nome ORDER BY Vendas DESC;',
+          'SELECT Produtos.Nome, Produtos.Estoque, COUNT(ItensPedido.ProdutoId) AS Vendas FROM Produtos LEFT JOIN ItensPedido ON ItensPedido.ProdutoId = Produtos.Id WHERE Produtos.Estoque < 10 GROUP BY Produtos.Nome, Produtos.Estoque ORDER BY Vendas DESC;',
+          'SELECT Produtos.Nome, Produtos.Estoque, COUNT(ItensPedido.ProdutoId) AS Vendas FROM Produtos LEFT JOIN ItensPedido ON ItensPedido.ProdutoId = Produtos.Id WHERE Produtos.Estoque < 10 GROUP BY Produtos.Estoque, Produtos.Nome ORDER BY Vendas DESC;'
+        ],
+        dicas: [
+          'Para manter os produtos sem venda, o produto fica à esquerda de um LEFT JOIN com ItensPedido.',
+          'Conte uma coluna de ItensPedido (como o Id), não o asterisco, para que os sem venda tenham 0.'
+        ],
+        explicacao: '`LEFT JOIN` preserva os produtos sem venda; `COUNT(ItensPedido.Id)` ignora os nulos e devolve 0 para eles.',
+        conceitos: ['sql.estoque', 'sql.left-join']
       }
     }
   ]

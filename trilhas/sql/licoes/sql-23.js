@@ -36,10 +36,10 @@ Plataforma.registrarLicao({
         tipo: 'multiple-choice',
         enunciado: 'O que a CTE `Ativos` representa na consulta do exemplo?',
         opcoes: [
-          'O resultado nomeado dos clientes ativos, usado pelo SELECT final',
-          'Uma tabela nova criada no banco',
-          'Um filtro aplicado depois do SELECT',
-          'A ordenação do resultado'
+          'O resultado nomeado dos clientes ativos, lido pelo SELECT final',
+          'Uma tabela nova, criada de forma permanente no banco',
+          'Um filtro que o banco aplica depois que o SELECT termina',
+          'A ordenação que será aplicada ao resultado da consulta'
         ],
         correta: 0,
         dicas: [
@@ -153,16 +153,16 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql23-a5',
         tipo: 'write-code',
-        enunciado: 'Common table expressions: CTE Ativos e seus nomes.',
+        enunciado: 'Common table expressions: crie a CTE **PedidosPagos** com os pedidos de Status Pago e liste os Ids.',
         placeholder: 'WITH ...',
         respostasAceitas: [
-          'with ativos as (select * from clientes where ativo = 1) select nome from ativos'
+          'WITH PedidosPagos AS (SELECT * FROM Pedidos WHERE Status = \'Pago\') SELECT Id FROM PedidosPagos;'
         ],
         dicas: [
-          'WITH Ativos AS (...) primeiro.',
-          'SELECT Nome FROM Ativos depois.'
+          'WITH PedidosPagos AS (...) primeiro, com o filtro de Status dentro.',
+          'O SELECT final lê o resultado pelo nome da CTE.'
         ],
-        explicacao: 'A CTE nomeia os ativos; o SELECT final lê pelo nome.',
+        explicacao: 'A CTE nomeia os pedidos pagos; o SELECT final lê os Ids pelo nome.',
         conceitos: ['sql.cte', 'sql.ingles']
       }
     }

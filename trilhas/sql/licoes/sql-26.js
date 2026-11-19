@@ -149,17 +149,43 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql26-a4',
         tipo: 'write-code',
-        enunciado: 'Exists checks customers: nomes de quem tem pedido.',
+        enunciado: 'Exists checks customers: nomes dos clientes que **não** têm pedido (use NOT EXISTS).',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select nome from clientes where exists (select 1 from pedidos where pedidos.clienteid = clientes.id)'
+          'SELECT Nome FROM Clientes WHERE NOT EXISTS (SELECT 1 FROM Pedidos WHERE Pedidos.ClienteId = Clientes.Id);'
         ],
         dicas: [
-          'EXISTS com a subquery de pedidos.',
-          'Ligue as chaves no WHERE interno.'
+          'NOT EXISTS mantém quem não tem linha na subquery.',
+          'Ligue as chaves no WHERE interno: ClienteId com Id.'
         ],
-        explicacao: 'A verificação de existência filtra os clientes com pedido.',
+        explicacao: '`NOT EXISTS` filtra os clientes para os quais a subquery não encontra nenhum pedido.',
         conceitos: ['sql.exists', 'sql.ingles']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql26-a5',
+        tipo: 'multiple-choice',
+        enunciado: 'Para filtrar pedidos cujo Status está em uma lista fixa de textos (`Pago`, `Enviado`), qual é a escolha mais natural?',
+        opcoes: [
+          'IN com a lista de valores entre parênteses',
+          'EXISTS com uma subquery sobre Pedidos',
+          'NOT EXISTS ligando Pedidos a si mesma',
+          'BETWEEN com o primeiro e o último status'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: 'EXISTS serve para perguntar se há linhas relacionadas, não para comparar com valores fixos.',
+          2: 'NOT EXISTS inverte uma verificação de existência; aqui a lista já está pronta.',
+          3: 'BETWEEN compara intervalo em ordem alfabética e traria status inesperados.'
+        },
+        dicas: [
+          'A lista de valores já está na mão, sem precisar consultar outra tabela.',
+          'EXISTS brilha quando a pergunta é sobre linhas relacionadas em outra tabela.'
+        ],
+        explicacao: '`IN` compara com uma lista de valores; `EXISTS` verifica se uma subquery relacionada devolve linhas. Cada um tem seu papel.',
+        conceitos: ['sql.exists']
       }
     }
   ]

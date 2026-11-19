@@ -18,7 +18,7 @@ Plataforma.registrarLicao({
       titulo: 'Documentos de viagem',
       introduz: ['en.viagem'],
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['passport', 'passaporte'],
           ['boarding pass', 'cartão de embarque']
         ] },
@@ -49,7 +49,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Voo e bagagem',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['luggage / bags', 'bagagem'],
           ['flight', 'voo'],
           ['check-in', 'check-in / despachar']
@@ -79,7 +79,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Embarque',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['gate', 'portão de embarque'],
           ['seat', 'assento'],
           ['boarding / to board', 'embarque / embarcar']
@@ -113,7 +113,7 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
           ['Now boarding / Final call', 'embarque agora / última chamada'],
-          ['Perfect.', 'Perfeito.']
+          ['Last call / Gate closing', 'última chamada / portão fechando']
         ] },
         { tipo: 'ingles', frase: 'Final call for flight 302!', traducao: 'Última chamada para o voo 302!' }
       ]
@@ -142,7 +142,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Check-in no hotel',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['I have a reservation.', 'Tenho uma reserva.'],
           ['a single / double room', 'quarto de solteiro / casal'],
           ['the room key', 'a chave do quarto']
@@ -201,7 +201,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Pedidos educados no hotel',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (1)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['Could I...?', 'Eu poderia...? (pedido educado)'],
           ['What time is breakfast?', 'A que horas é o café da manhã?']
         ] },
@@ -310,8 +310,11 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva duas frases: faça o check-in no hotel (reserva + pedido da chave).',
         esqueleto: 'I have a reservation. Could I have the room key, please?',
         validar: function (valor) {
-          const t = String(valor || '').toLowerCase();
-          return t.indexOf('reservation') !== -1 && /\bkey\b/.test(t) && t.indexOf('please') !== -1;
+          const t = String(valor || '').toLowerCase().replace(/\s+/g, ' ');
+          const reserva = /\b(?:i|we) have (?:a|my) reservation\b/.test(t) || /\b(?:i|we) (?:made|have made|booked|have booked) (?:a|my) reservation\b/.test(t);
+          const chave = /\b(?:could|can|may) i (?:please )?(?:have|get|take) (?:the|my|a) (?:room )?key\b/.test(t) ||
+            /\bi(?: would|'d) like (?:the|my|a) (?:room )?key\b/.test(t);
+          return reserva && chave && /\bplease\b/.test(t);
         },
         respostasAceitas: ['I have a reservation. Could I have the room key, please?'],
         dicas: ['Use "I have a reservation."', 'Peça com "Could I have... please?"'],

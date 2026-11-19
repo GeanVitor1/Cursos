@@ -32,7 +32,7 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Dentro do DbContext existem as gavetas. Cada gaveta guarda um tipo de entidade e corresponde a uma tabela. Elas são chamadas de **DbSet**.' },
         { tipo: 'conceito', id: 'ef.dbset', titulo: 'DbSet', texto: 'Uma "gaveta" de entidades de um tipo, ligada a uma tabela do banco.', exemplo: 'public DbSet<Produto> Produtos { get; set; }' },
-        { tipo: 'diagrama', arte: 'MercadoAuroraContext (DbContext)\n┌──────────────────────────────────────┐\n│  DbSet<Produto>  Produtos   ──► tabela Produtos │\n│  DbSet<Cliente>  Clientes   ──► tabela Clientes │\n│  DbSet<Pedido>   Pedidos    ──► tabela Pedidos  │\n└──────────────────────────────────────┘' },
+        { tipo: 'diagrama', arte: 'MercadoAuroraContext (DbContext)\n┌─────────────────────────────────────────────────┐\n│  DbSet<Produto>  Produtos  ──►  tabela Produtos │\n│  DbSet<Cliente>  Clientes  ──►  tabela Clientes │\n│  DbSet<Pedido>   Pedidos   ──►  tabela Pedidos  │\n└─────────────────────────────────────────────────┘' },
         { tipo: 'texto', texto: 'Com a gaveta nas mãos, você não escreve `SELECT * FROM Produtos`. Você pergunta ao DbSet:' },
         { tipo: 'nota', tom: 'info', texto: 'Antes de usar, guarde o nome: o objeto `context` é o seu DbContext — a porta de entrada do banco. É por ele que você chega aos DbSets.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'context.Produtos' },
@@ -62,13 +62,14 @@ Plataforma.registrarLicao({
       titulo: 'A classe de contexto',
       blocos: [
         { tipo: 'texto', texto: 'O contexto é uma classe que você escreve uma vez. Cada `DbSet` vira uma propriedade:' },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: 'public class MercadoAuroraContext : DbContext\n{\n    public MercadoAuroraContext(DbContextOptions<MercadoAuroraContext> options)\n        : base(options)\n    {\n    }\n\n    public DbSet<Produto> Produtos { get; set; }\n    public DbSet<Cliente> Clientes { get; set; }\n    public DbSet<Pedido> Pedidos { get; set; }\n}' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'using Microsoft.EntityFrameworkCore;\n\npublic class MercadoAuroraContext : DbContext\n{\n    public MercadoAuroraContext(DbContextOptions<MercadoAuroraContext> options)\n        : base(options)\n    {\n    }\n\n    public DbSet<Produto> Produtos { get; set; }\n    public DbSet<Cliente> Clientes { get; set; }\n    public DbSet<Pedido> Pedidos { get; set; }\n}' },
         { tipo: 'glossario', titulo: 'Decifrando a classe', itens: [
           [': DbContext', 'herda de', 'Sua classe ganha todo o comportamento do EF Core.'],
           ['DbContextOptions', 'configuração de conexão', 'Recebe o endereço e as credenciais do banco (connection string) e outras escolhas.'],
           ['construtor', 'recebe opções', 'O padrão de injeção de dependência que você já estudou.'],
           ['DbSet<X>', 'gaveta', 'Uma propriedade por tabela que você quer acessar.']
         ] },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: '// Program.cs: registra o contexto e diz onde está o banco\nusing Microsoft.EntityFrameworkCore;\n\nvar builder = WebApplication.CreateBuilder(args);\n\nbuilder.Services.AddDbContext<MercadoAuroraContext>(options =>\n    options.UseSqlServer(builder.Configuration.GetConnectionString(\"MercadoAurora\")));', legenda: '`UseSqlServer` escolhe o banco (SQL Server) e a connection string vem do appsettings.json. Exige o pacote Microsoft.EntityFrameworkCore.SqlServer.' },
         { tipo: 'nota', tom: 'info', texto: '`DbContextOptions` e `base(options)` são apenas configuração: você não precisa entender esta linha agora. Ela diz ao contexto onde o banco está — vamos detalhar mais adiante.' },
         { tipo: 'nota', tom: 'info', texto: 'O nome termina com **Context** por convenção. O `Produtos` no plural acompanha o nome da tabela.' }
       ]
@@ -116,7 +117,10 @@ Plataforma.registrarLicao({
             "Pedido"
           ]
         ],
-        dicas: ['A gaveta chama-se DbSet.', 'A entidade de pedidos é Pedido.'],
+        dicas: [
+          'A primeira lacuna é o tipo que representa uma coleção de entidades ligada a uma tabela.',
+          'A segunda lacuna é a classe da entidade, no singular, que corresponde à tabela Pedidos.'
+        ],
         explicacao: 'Cada propriedade DbSet<T> abre uma tabela para consulta e gravação.',
         conceitos: ['ef.dbcontext', 'ef.dbset']
       }
@@ -154,10 +158,10 @@ Plataforma.registrarLicao({
         cena: 'Um colega criou um novo contexto a cada linha de um método, um para ler cliente e outro para ler pedidos. A aplicação começou a dar erro ao salvar pedido com cliente lido no outro contexto.',
         enunciado: 'Qual é a explicação correta?',
         opcoes: [
-          'O DbContext acompanha os objetos que carrega; usar contextos diferentes para o mesmo fluxo quebra esse acompanhamento',
-          'O EF Core só permite ler uma tabela por vez',
-          'Contextos não podem ser criados em métodos',
-          'O problema é usar LINQ em dois contextos'
+          'O DbContext acompanha os objetos que carrega; contextos diferentes quebram esse acompanhamento',
+          'O EF Core só permite ler uma única tabela por vez em cada contexto',
+          'Contextos não podem ser criados dentro de métodos de um service',
+          'O problema é usar LINQ em dois contextos ao mesmo tempo'
         ],
         correta: 0,
         feedbackErro: {

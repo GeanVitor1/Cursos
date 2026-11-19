@@ -19,7 +19,7 @@ Plataforma.registrarLicao({
       introduz: ['en.numeros'],
       blocos: [
         { tipo: 'texto', texto: 'Vamos aprender os números **aos poucos**: primeiro de 1 a 6, com prática antes de continuar.' },
-        { tipo: 'vocab', titulo: 'Palavras novas (6)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['one, two, three', '1, 2, 3'],
           ['four, five, six', '4, 5, 6']
         ] },
@@ -48,7 +48,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Números de 7 a 10',
       blocos: [
-        { tipo: 'vocab', titulo: 'Mais quatro números (6)', pares: [
+        { tipo: 'vocab', titulo: 'Mais quatro números', pares: [
           ['seven, eight, nine, ten', '7, 8, 9, 10'],
           ['zero / oh', '0 (oh é usado em telefones)']
         ] },
@@ -79,8 +79,8 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Números de 11 a 16',
       blocos: [
-        { tipo: 'texto', texto: 'Agora a faixa de 11 a 16. Repare que todos terminam com o mesmo som.' },
-        { tipo: 'vocab', titulo: 'Palavras novas (6)', pares: [
+        { tipo: 'texto', texto: 'Agora a faixa de 11 a 16. Repare: de 13 a 19 os números terminam em **-teen**; `eleven` e `twelve` são formas especiais.' },
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['eleven, twelve, thirteen', '11, 12, 13'],
           ['fourteen, fifteen, sixteen', '14, 15, 16']
         ] },
@@ -100,7 +100,7 @@ Plataforma.registrarLicao({
           ['fourteen', '14'],
           ['fifteen', '15']
         ],
-        dicas: ['Twelve é o único que não segue o padrão da faixa.', 'Fifteen é o 15.'],
+        dicas: ['Twelve não termina em -teen: é uma forma especial.', 'Fifteen é o 15.'],
         explicacao: 'Eleven, twelve, thirteen, fourteen, fifteen e sixteen: a primeira faixa dos números maiores.',
         conceitos: ['en.numeros']
       }
@@ -139,7 +139,7 @@ Plataforma.registrarLicao({
       titulo: 'Dezenas: 30 a 60',
       blocos: [
         { tipo: 'texto', texto: 'As dezenas fechadas têm terminação **-ty**. Vamos em blocos: primeiro 30, 40, 50 e 60.' },
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['thirty, forty, fifty', '30, 40, 50'],
           ['sixty', '60']
         ] },
@@ -170,7 +170,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Dezenas: 70 a 100',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['seventy, eighty, ninety', '70, 80, 90'],
           ['one hundred', '100']
         ] },
@@ -198,9 +198,42 @@ Plataforma.registrarLicao({
 
     {
       tipo: 'conteudo',
+      titulo: 'Números de 21 a 99',
+      blocos: [
+        { tipo: 'texto', texto: 'Para os números entre as dezenas, junte a **dezena** e a **unidade** com um hífen: `twenty` + `one` = `twenty-one` (21). A ordem é a mesma do português: 35 = `thirty-five`.' },
+        { tipo: 'vocab', titulo: 'Exemplos', pares: [
+          ['twenty-one', '21'],
+          ['thirty-five', '35'],
+          ['forty-two', '42'],
+          ['ninety-nine', '99']
+        ] },
+        { tipo: 'ingles', frase: 'I am thirty-five years old.', traducao: 'Eu tenho trinta e cinco anos.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'en-a1-01-p7',
+        tipo: 'match-pairs',
+        habilidade: 'vocabulario',
+        dimensao: 'associacao',
+        enunciado: 'Conecte o número à palavra em inglês.',
+        pares: [
+          ['21', 'twenty-one'],
+          ['35', 'thirty-five'],
+          ['42', 'forty-two'],
+          ['99', 'ninety-nine']
+        ],
+        dicas: ['Dezena primeiro, unidade depois.', '42 = forty + two.'],
+        explicacao: 'Dezena + hífen + unidade: twenty-one, thirty-five, forty-two, ninety-nine.',
+        conceitos: ['en.numeros']
+      }
+    },
+    {
+      tipo: 'conteudo',
       titulo: 'Falando de idade',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['years old', 'anos de idade'],
           ['to be (am / is / are)', 'ser / estar (eu sou, ele é, eles são)']
         ] },
@@ -212,7 +245,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Número de telefone',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['my phone number', 'meu número de telefone'],
           ['double five', 'cinco repetido (55)']
         ] },
@@ -319,11 +352,12 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva a sua idade em uma frase completa (use a sua idade, qualquer uma).',
         esqueleto: 'I am ... years old.',
         validar: function (valor) {
-          const t = String(valor || '').toLowerCase();
-          const temVerbo = /\bi am\b/.test(t) || /\bi'm\b/.test(t);
-          const temIdade = /\d/.test(t) ||
-            /\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred)\b/.test(t);
-          return temVerbo && /\byears? old\b/.test(t) && temIdade;
+          const t = String(valor || '').toLowerCase().replace(/[.!]+\s*$/, '').replace(/\s+/g, ' ').trim();
+          const unidade = '(?:one|two|three|four|five|six|seven|eight|nine)';
+          const dezena = '(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)';
+          const especiais = '(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)';
+          const idade = '(?:\\d{1,3}|' + especiais + '|' + dezena + '(?:[ -]' + unidade + ')?|one hundred)';
+          return new RegExp('^i am ' + idade + '(?: years old)?$').test(t);
         },
         respostasAceitas: ['I am [sua idade] years old.'],
         dicas: ['Use I am + número + years old.', 'Nada do verbo "ter" nesta frase.', 'Escreva a sua idade — qualquer valor é aceito.'],

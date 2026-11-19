@@ -19,11 +19,13 @@ Plataforma.registrarLicao({
       introduz: ['en.rotina'],
       blocos: [
         { tipo: 'texto', texto: 'Para falar do que você faz todos os dias, o inglês usa uma forma simples do verbo. Vamos começar pelas ações da manhã.' },
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['wake up / get up', 'acordar / levantar'],
-          ['have breakfast', 'tomar café da manhã']
+          ['have breakfast', 'tomar café da manhã'],
+          ['at seven', 'às sete (horas)']
         ] },
-        { tipo: 'ingles', frase: 'I wake up at seven.', traducao: 'Eu acordo às sete.' }
+        { tipo: 'ingles', frase: 'I wake up at seven.', traducao: 'Eu acordo às sete.' },
+        { tipo: 'nota', tom: 'info', texto: 'Para dizer **a que horas** você faz algo, use `at` + a hora: `at seven` (às sete), `at eight` (às oito). Os números você já viu na unidade anterior.' }
       ]
     },
     {
@@ -48,7 +50,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Trabalho e estudo',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (5)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['go to work / study', 'ir ao trabalho / estudar'],
           ['come home', 'voltar para casa']
         ] },
@@ -79,7 +81,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Fim do dia',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['have lunch', 'almoçar'],
           ['go to bed / sleep', 'ir para a cama / dormir']
         ] },
@@ -108,7 +110,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'De manhã, de tarde, à noite',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['with', 'com'],
           ['in the morning / in the afternoon', 'de manhã / de tarde'],
           ['in the evening / at night', 'à noite']
@@ -135,7 +137,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Nós, eles e todos os dias',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['every day', 'todos os dias'],
           ['We / They', 'nós / eles, elas']
         ] },
@@ -166,7 +168,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Usually: a frequência',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['usually', 'geralmente'],
           ['present simple', 'presente simples']
         ] },
@@ -260,8 +262,9 @@ Plataforma.registrarLicao({
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
           const frases = t.split(/[.!?\n]/).filter(function (f) { return f.trim().length > 3; });
-          const comI = frases.filter(function (f) { return /\bi\b/.test(f); });
-          return frases.length >= 2 && comI.length >= 2;
+          const rotina = /^(?:and )?i (?:usually |always |often |sometimes |also )?(?:wake up|get up|have (?:breakfast|lunch|dinner|coffee)|go to (?:work|school|bed|class)|go home|come home|study|work|sleep|eat|take a shower|brush my teeth|watch|read|play|cook|leave|arrive|walk|run|drive|clean|exercise|start|finish|listen|talk|call|meet)\b/;
+          const validas = frases.filter(function (f) { return rotina.test(f.trim()); });
+          return validas.length >= 2;
         },
         respostasAceitas: ['I usually wake up at seven. I go to work at eight.'],
         dicas: ['Use verbos da unidade: wake up, study, work, have breakfast...', 'Duas frases terminadas com ponto.'],

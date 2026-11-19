@@ -207,6 +207,23 @@ Plataforma.registrarLicao({
         conceitos: ['sql.left-join', 'sql.ingles'],
         desafio: true
       }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql15-a6',
+        tipo: 'write-code',
+        enunciado: 'Escreva uma consulta com **RIGHT JOIN**, partindo de Pedidos (`FROM Pedidos`), que traga o **nome de todos os clientes** e o valor dos pedidos (quando existirem).',
+        respostasAceitas: [
+          'SELECT Clientes.Nome, Pedidos.ValorTotal FROM Pedidos RIGHT JOIN Clientes ON Pedidos.ClienteId = Clientes.Id;'
+        ],
+        dicas: [
+          'O RIGHT JOIN preserva a tabela que vem depois do JOIN.',
+          'Para preservar Clientes, ela precisa ficar à direita.'
+        ],
+        explicacao: '`Pedidos RIGHT JOIN Clientes` preserva todos os clientes: é o espelho de `Clientes LEFT JOIN Pedidos`.',
+        conceitos: ['sql.left-join']
+      }
     }
   ]
 });

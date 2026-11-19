@@ -31,7 +31,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cp-i1',
+        id: 'cp-m1',
         tipo: 'multiple-choice',
         enunciado: 'Qual é a diferença prática entre subquery e CTE?',
         opcoes: [
@@ -52,7 +52,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cp-i2',
+        id: 'cp-m2',
         tipo: 'fill-code',
         enunciado: 'Complete a CTE de pedidos acima de 100.',
         codigo: '{{1}} Altos AS (\n  SELECT * FROM Pedidos WHERE ValorTotal > 100\n)\nSELECT COUNT(*) AS Total FROM Altos;',
@@ -68,7 +68,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cp-i3',
+        id: 'cp-m3',
         tipo: 'predict-output',
         enunciado: 'O que aparece em Faixa para um produto de 150?',
         contexto: [
@@ -97,14 +97,14 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cp-i4',
+        id: 'cp-m4',
         tipo: 'multiple-choice',
         enunciado: 'Quando usar UNION ALL em vez de UNION?',
         opcoes: [
           'Quando não há repetidos ou eles não importam, por ser mais rápido',
-          'Quando as colunas são incompatíveis',
-          'Quando precisa ordenar o resultado',
-          'Quando há apenas uma tabela'
+          'Quando as colunas das duas consultas são incompatíveis entre si',
+          'Quando é preciso ordenar o resultado de forma automática',
+          'Quando a consulta usa apenas uma tabela, sem empilhar nada'
         ],
         correta: 0,
         dicas: [
@@ -118,7 +118,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cp-i5',
+        id: 'cp-m5',
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna o **nome dos clientes sem pedido** usando NOT EXISTS.',
         respostasAceitas: [
@@ -135,7 +135,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cp-i6',
+        id: 'cp-m6',
         tipo: 'multiple-choice',
         enunciado: 'Qual consulta traz pedidos dos últimos 30 dias?',
         opcoes: [
@@ -161,7 +161,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cp-i7',
+        id: 'cp-m7',
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna **nomes em maiúsculas** dos clientes de Curitiba.',
         respostasAceitas: [
@@ -179,11 +179,11 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cp-i8',
+        id: 'cp-m8',
         tipo: 'true-false',
         enunciado: 'Avalie as afirmações.',
         afirmacoes: [
-          { texto: 'Toda CTE precisa ser usada pelo SELECT que vem depois dela.', correta: true, explicacao: 'Definir sem usar não faz sentido — e o WITH exige o SELECT seguinte.' },
+          { texto: 'Uma CTE só existe para o comando que vem logo depois dela.', correta: true, explicacao: 'A CTE vale apenas durante aquele comando; o WITH precisa ser seguido de um SELECT, INSERT, UPDATE ou DELETE.' },
           { texto: 'CASE avalia os WHENs em ordem e para no primeiro verdadeiro.', correta: true, explicacao: 'A ordem dos WHENs define as faixas.' },
           { texto: 'EXISTS devolve os valores encontrados pela subquery.', correta: false, explicacao: 'EXISTS devolve só verdadeiro/falso; valores são trabalho do IN.' }
         ],
@@ -198,7 +198,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cp-i9',
+        id: 'cp-m9',
         tipo: 'write-code',
         enunciado: 'Filter orders by date: pedidos do ano 2026.',
         placeholder: 'SELECT ...',
@@ -216,15 +216,15 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'cp-i10',
+        id: 'cp-m10',
         tipo: 'scenario',
-        enunciado: 'O relatório mensal precisa, por cidade: total de clientes, ticket médio e uma faixa (Quente acima de 1000, senão Frio). Qual estrutura resolve?',
+        enunciado: 'O relatório mensal precisa, por cidade: total de clientes, ticket médio e uma faixa (Quente se o total vendido passar de 1000, senão Frio). Qual estrutura resolve?',
         cena: 'Clientes tem Cidade; Pedidos tem ValorTotal e ClienteId. O relatório agrupa por cidade e classifica o total.',
         opcoes: [
-          'JOIN + GROUP BY com SUM e AVG, e CASE sobre a soma para a faixa',
-          'Apenas SELECT com WHERE por cidade',
-          'UNION de uma consulta por cidade',
-          'DELETE dos grupos pequenos e SELECT do resto'
+          'JOIN + GROUP BY com COUNT, AVG e SUM, e CASE sobre a soma para a faixa',
+          'Um SELECT simples com WHERE por cidade e ORDER BY',
+          'UNION de uma consulta separada para cada cidade',
+          'DELETE dos grupos pequenos e SELECT do que sobrou'
         ],
         correta: 0,
         feedbackErro: {
@@ -236,7 +236,7 @@ Plataforma.registrarLicao({
           'Agrupe e resuma primeiro.',
           'A faixa nasce de uma condição sobre o total.'
         ],
-        explicacao: 'GROUP BY com SUM/AVG monta os números; CASE classifica; tudo numa consulta só.',
+        explicacao: 'GROUP BY com COUNT, AVG e SUM monta os números; CASE classifica a faixa; tudo numa consulta só.',
         conceitos: ['sql.case', 'sql.group-by', 'sql.agregacao']
       }
     }

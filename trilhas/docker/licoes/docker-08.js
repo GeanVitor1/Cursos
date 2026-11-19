@@ -134,7 +134,7 @@ Plataforma.registrarLicao({
           tipo: 'codigo',
           linguagem: 'yaml',
           titulo: 'docker-compose.yml',
-          codigo: '  api:\n    build: .\n    ports:\n      - "8080:80"\n    depends_on:\n      banco:\n        condition: service_healthy\n  banco:\n    image: mcr.microsoft.com/mssql/server:2022-latest\n    healthcheck:\n      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P SenhaForte123 -Q \\"SELECT 1\\""]\n      interval: 10s\n      retries: 10',
+          codigo: '  api:\n    build: .\n    ports:\n      - "8080:8080"\n    depends_on:\n      banco:\n        condition: service_healthy\n  banco:\n    image: mcr.microsoft.com/mssql/server:2022-latest\n    healthcheck:\n      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P SenhaForte123 -C -Q \\"SELECT 1\\""]\n      interval: 10s\n      retries: 10',
           legenda: 'A API só sobe quando o banco responde à verificação de saúde.'
         },
         { tipo: 'nota', tom: 'info', texto: 'A verificação de saúde é um comando que o Docker executa de tempos em tempos. Enquanto ele falhar, o serviço é considerado iniciando.' },
@@ -168,6 +168,29 @@ Plataforma.registrarLicao({
         ],
         explicacao: 'A configuração precisa apontar para `banco`, o nome do serviço. `localhost`, dentro do container, é a própria API.',
         conceitos: ['docker.networks', 'docker.variaveis', 'docker.compose']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'docker08-a8',
+        tipo: 'multiple-choice',
+        enunciado: 'A API tenta conectar ao SQL Server assim que o container do banco é criado, e falha porque o banco ainda está iniciando. O que resolve a ordem de subida?',
+        opcoes: [
+          'Um healthcheck no banco e, na API, depends_on com condition: service_healthy, mais uma nova tentativa de conexão no código',
+          'Trocar a ordem em que os serviços aparecem no arquivo compose',
+          'Publicar a porta 1433 do banco no computador',
+          'Colocar o banco e a API na mesma imagem'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: 'A ordem das linhas no arquivo não controla quando o banco está pronto.',
+          2: 'Publicar a porta serve para acesso externo e não espera o banco ficar pronto.',
+          3: 'Misturar serviços em uma imagem foge do modelo de um processo por container.'
+        },
+        dicas: ['Container criado não significa banco pronto.', 'O compose precisa de um teste de saúde para saber quando o banco responde.'],
+        explicacao: 'O healthcheck informa quando o banco está pronto e depends_on com service_healthy faz a API esperar; ainda assim, vale tratar a primeira falha de conexão.',
+        conceitos: ['docker.compose']
       }
     },
     {

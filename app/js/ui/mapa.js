@@ -24,7 +24,8 @@ window.Plataforma = window.Plataforma || {};
     ]));
     cartao.appendChild(criar('div', { classe: 'mapa-card-meta' }, [
       comp.chip('Trilha ' + info.percentual + '%'),
-      comp.chip('Domínio ' + info.dominio + '%')
+      comp.chip(info.dominio ? 'Domínio ' + info.dominio + '%' : 'Domínio: sem prática ainda'),
+      info.trilhaResumo && info.trilhaResumo.emConstrucao ? comp.chip('🚧 Conteúdo em construção', 'aviso') : null
     ]));
     cartao.appendChild(comp.barra(info.dominio));
     if (c.trabalho) {

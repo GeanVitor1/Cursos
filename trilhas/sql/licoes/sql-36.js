@@ -61,7 +61,7 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: 'Id INT, Nome VARCHAR(60), Preco DECIMAL, Ativo BIT'
+          codigo: 'Id INT, Nome VARCHAR(60), Preco DECIMAL(10,2), Ativo BIT'
         },
         { tipo: 'nota', tom: 'atencao', texto: 'Preço em tipo aproximado (FLOAT) arredonda centavos no caixa. Dinheiro sempre em tipo exato.' }
       ]
@@ -112,6 +112,55 @@ Plataforma.registrarLicao({
         explicacao: 'Endereço de entrega varia por pedido: coluna de Pedidos. O fixo continua em Clientes.',
         conceitos: ['sql.modelagem'],
         desafio: true
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Do desenho ao CREATE TABLE',
+      blocos: [
+        { tipo: 'texto', texto: 'O desenho vira tabela com `CREATE TABLE`. A chave estrangeira entra com `FOREIGN KEY ... REFERENCES`, apontando para a chave primária da outra tabela:' },
+        { tipo: 'codigo', linguagem: 'sql', codigo: 'CREATE TABLE Pedidos (\n  Id INT PRIMARY KEY,\n  ClienteId INT NOT NULL,\n  ValorTotal DECIMAL(10,2) NOT NULL,\n  FOREIGN KEY (ClienteId) REFERENCES Clientes (Id)\n);', legenda: 'Pedidos só aceita ClienteId que exista em Clientes (Id).' },
+        { tipo: 'nota', tom: 'info', texto: '`DECIMAL(10,2)` guarda até 10 dígitos, 2 deles depois da vírgula: centavos exatos. A tabela Clientes precisa existir antes de Pedidos.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql36-a5',
+        tipo: 'write-code',
+        enunciado: 'Escreva o `CREATE TABLE` da tabela **Pedidos** com: **Id** (INT, chave primária), **ClienteId** (INT, chave estrangeira para `Clientes (Id)`) e **ValorTotal** (`DECIMAL(10,2)`), nessa ordem.',
+        respostasAceitas: [
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT, ValorTotal DECIMAL(10,2), FOREIGN KEY (ClienteId) REFERENCES Clientes (Id));',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT NOT NULL, ValorTotal DECIMAL(10,2), FOREIGN KEY (ClienteId) REFERENCES Clientes (Id));',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2));',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT NOT NULL REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2));',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT FOREIGN KEY REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2));',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT NOT NULL FOREIGN KEY REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2));',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT, ValorTotal DECIMAL(10,2) NOT NULL, FOREIGN KEY (ClienteId) REFERENCES Clientes (Id));',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT NOT NULL, ValorTotal DECIMAL(10,2) NOT NULL, FOREIGN KEY (ClienteId) REFERENCES Clientes (Id));',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2) NOT NULL);',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT NOT NULL REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2) NOT NULL);',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT FOREIGN KEY REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2) NOT NULL);',
+          'CREATE TABLE Pedidos (Id INT PRIMARY KEY, ClienteId INT NOT NULL FOREIGN KEY REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2) NOT NULL);',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT, ValorTotal DECIMAL(10,2), FOREIGN KEY (ClienteId) REFERENCES Clientes (Id));',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT NOT NULL, ValorTotal DECIMAL(10,2), FOREIGN KEY (ClienteId) REFERENCES Clientes (Id));',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2));',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT NOT NULL REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2));',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT FOREIGN KEY REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2));',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT NOT NULL FOREIGN KEY REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2));',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT, ValorTotal DECIMAL(10,2) NOT NULL, FOREIGN KEY (ClienteId) REFERENCES Clientes (Id));',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT NOT NULL, ValorTotal DECIMAL(10,2) NOT NULL, FOREIGN KEY (ClienteId) REFERENCES Clientes (Id));',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2) NOT NULL);',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT NOT NULL REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2) NOT NULL);',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT FOREIGN KEY REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2) NOT NULL);',
+          'CREATE TABLE Pedidos (Id INT NOT NULL PRIMARY KEY, ClienteId INT NOT NULL FOREIGN KEY REFERENCES Clientes (Id), ValorTotal DECIMAL(10,2) NOT NULL);'
+        ],
+        dicas: [
+          'Liste as três colunas na ordem pedida, separadas por vírgula.',
+          'A chave estrangeira usa FOREIGN KEY (coluna) REFERENCES tabela (coluna), ou REFERENCES logo na coluna.'
+        ],
+        explicacao: '`CREATE TABLE` declara colunas e tipos; a chave primária identifica a linha e a chave estrangeira liga Pedidos a Clientes.',
+        conceitos: ['sql.modelagem', 'sql.chave-estrangeira']
       }
     },
     {

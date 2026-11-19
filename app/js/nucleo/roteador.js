@@ -10,6 +10,12 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function processar() {
+    if (window.location.hash !== hashProcessado && hashProcessado !== null && P.ui.runner && P.ui.runner.saidaDescartaRespostas && P.ui.runner.saidaDescartaRespostas()) {
+      if (!window.confirm('Sair do teste de nivelamento? Suas respostas serão descartadas.')) {
+        window.history.pushState(null, '', hashProcessado);
+        return;
+      }
+    }
     const mudouHash = window.location.hash !== hashProcessado;
     hashProcessado = window.location.hash;
     if (mudouHash) P.ui.layout.fecharMenu();
@@ -38,7 +44,7 @@ window.Plataforma = window.Plataforma || {};
           if (atual !== versao) return;
           P.ui.layout.toast('Não foi possível abrir esta página. Tente novamente.', 'erro');
         }
-        try { Promise.resolve(rota.handler(params)).catch(tratarErro); }
+        try { Promise.resolve(rota.handler(params)).then(function () { if (atual === versao && mudouHash) aposRender(); }).catch(tratarErro); }
         catch (erro) { tratarErro(erro); }
         return;
       }
@@ -46,11 +52,32 @@ window.Plataforma = window.Plataforma || {};
     if (P.ui && P.ui.layout && P.ui.layout.naoEncontrado) P.ui.layout.naoEncontrado();
   }
 
-  function ir(hash) {
+  function aposRender() {
+    window.requestAnimationFrame(function () {
+      const h1 = document.querySelector('#conteudo h1, main h1');
+      if (h1) {
+        const texto = (h1.textContent || '').trim();
+        if (texto) document.title = texto + ' · ' + tituloBase;
+        if (!h1.hasAttribute('tabindex')) h1.setAttribute('tabindex', '-1');
+        try { h1.focus({ preventScroll: true }); } catch (e) { h1.focus(); }
+      } else {
+        document.title = tituloBase;
+      }
+    });
+  }
+  const tituloBase = document.title || 'Plataforma';
+
+  function ir(hash, opcoes) {
     P.ui.layout.fecharMenu();
-    if (window.location.hash !== hash) window.history.pushState(null, '', hash);
+    if (window.location.hash !== hash) {
+      if (opcoes && opcoes.substituir) window.history.replaceState(null, '', hash);
+      else window.history.pushState(null, '', hash);
+    }
     processar();
   }
+
+  // Redirecionamento: não deixa a rota de origem no histórico (evita Voltar preso).
+  function redirecionar(hash) { ir(hash, { substituir: true }); }
 
   function iniciar() {
     window.addEventListener('hashchange', function () {
@@ -59,5 +86,5 @@ window.Plataforma = window.Plataforma || {};
     processar();
   }
 
-  P.roteador = { registrar: registrar, ir: ir, iniciar: iniciar, processar: processar, versao: function () { return versao; } };
+  P.roteador = { registrar: registrar, ir: ir, redirecionar: redirecionar, iniciar: iniciar, processar: processar, versao: function () { return versao; } };
 })(window.Plataforma);

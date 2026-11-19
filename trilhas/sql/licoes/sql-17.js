@@ -58,7 +58,7 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: 'SELECT Nome AS Cliente, ValorTotal AS Total\nFROM Pedidos;'
+          codigo: 'SELECT c.Nome AS Cliente, p.ValorTotal AS Total\nFROM Clientes AS c\nJOIN Pedidos AS p ON p.ClienteId = c.Id;'
         },
         { tipo: 'nota', tom: 'info', texto: 'O resultado mostra as colunas como Cliente e Total. O dado não muda; só o rótulo.' }
       ]
@@ -89,10 +89,10 @@ Plataforma.registrarLicao({
           { tipo: 'codigo', linguagem: 'sql', codigo: 'SELECT Clientes.Nome\nFROM Clientes AS c;' }
         ],
         opcoes: [
-          'Depois do alias, a tabela deve ser chamada de c, não Clientes',
-          'Falta o JOIN',
-          'Alias precisa de aspas: AS "c"',
-          'Nada — a consulta está correta'
+          'Depois do alias, a tabela deve ser chamada de c, e não de Clientes',
+          'Falta o JOIN, que é obrigatório sempre que existe um alias',
+          'O alias precisa de aspas duplas: AS "c"',
+          'Nada, a consulta está correta e pode ser executada'
         ],
         correta: 0,
         feedbackErro: {

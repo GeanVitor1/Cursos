@@ -1,6 +1,84 @@
 Plataforma.registrarRegistroConceitos({
   observacao: 'Metadados pedagógicos dos conceitos: pré-requisitos conceituais, termos que representam o conceito no conteúdo e definição curta para o glossário. A introdução real é marcada no conteúdo com bloco { tipo: "conceito" } ou com etapa.introduz.',
   conceitos: {
+  "logica.variavel": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Uma variável é um nome que guarda um valor na memória e pode mudar ao longo dos passos.",
+    "exemplo": "total = 0 cria a variável total com o valor 0; depois total = total + 50 passa a valer 50."
+  },
+  "logica.condicao": {
+    "prerequisitos": ["logica.variavel"],
+    "termos": [],
+    "definicao": "Uma condição é uma pergunta de sim ou não que decide qual caminho seguir: se for verdadeira, executa um bloco; senão, executa outro.",
+    "exemplo": "se idade >= 18: permitir; senão: recusar."
+  },
+  "logica.laco": {
+    "prerequisitos": ["logica.variavel","logica.condicao"],
+    "termos": [],
+    "definicao": "Um laço repete um bloco de passos para cada item de uma lista ou enquanto uma condição valer.",
+    "exemplo": "para cada nome na lista: mostrar o nome."
+  },
+  "engenharia-ia.http": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "HTTP é o conjunto de regras para trocar mensagens entre um cliente (como o navegador) e um servidor. O cliente envia uma requisição com um método (GET para ler, POST para criar) e o servidor devolve uma resposta com um código de status, como 200 (deu certo) ou 404 (não encontrado).",
+    "exemplo": "GET /pedidos/7 → 200 e os dados do pedido 7."
+  },
+  "engenharia-ia.api": {
+    "prerequisitos": ["engenharia-ia.http"],
+    "termos": [],
+    "definicao": "Uma API é a lista de operações que um programa oferece a outros programas, com o formato do que se envia e do que se recebe. Uma API web usa HTTP para isso e aplica regras antes de gravar ou devolver dados.",
+    "exemplo": "A API de pedidos oferece \"criar pedido\", \"consultar pedido\" e \"cancelar pedido\"."
+  },
+  "engenharia-ia.ef-contexto": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "O controller é a entrada da API: recebe a requisição HTTP e encaminha o trabalho. O contexto de dados (DbContext do Entity Framework Core) é o objeto que lê e grava as tabelas do banco. Injeção de dependência significa receber esses objetos prontos pelo construtor, em vez de criá-los dentro da regra.",
+    "exemplo": "PedidosController recebe PedidoService no construtor; PedidoService recebe o contexto de dados."
+  },
+  "engenharia-ia.cache": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Cache é uma cópia de um dado guardada para ser reutilizada numa leitura futura, evitando refazer o trabalho de buscá-lo. A cópia pode ficar desatualizada, por isso o cache tem prazo de validade (expiração) e a fonte original continua sendo a referência.",
+    "exemplo": "A lista de categorias muda uma vez por semana: guardá-la por 10 minutos economiza consultas ao banco."
+  },
+  "engenharia-ia.mock": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Um mock é um substituto controlado de uma dependência, usado em teste para isolar a regra que se quer verificar. Ele simula, por exemplo, o banco, mas não comprova que o banco real funciona.",
+    "exemplo": "No teste do cancelamento, um repositório falso devolve um pedido \"enviado\" sem abrir conexão com o banco."
+  },
+  "ciber-fundamentos.http": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "HTTP define as mensagens de requisição (método e endereço) e de resposta (código de status, como 200, 403 ou 404). Uma API web é um conjunto de operações que um programa oferece a outros programas usando essas mensagens.",
+    "exemplo": "GET /pedidos/7 devolve 200 se o pedido existe e o usuário pode vê-lo."
+  },
+  "ciber-fundamentos.dns-tls": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "DNS é o serviço que traduz um nome (loja.exemplo) em um endereço IP. TLS é o protocolo que cifra a conexão e permite ao navegador conferir, pelo certificado, se o servidor é mesmo quem diz ser. HTTPS é o HTTP trafegando dentro dessa conexão protegida por TLS.",
+    "exemplo": "Cadeado no navegador = certificado válido para aquele nome; não significa que o site seja confiável ou que o usuário tenha permissão."
+  },
+  "ciber-fundamentos.permissoes": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Todo arquivo tem um dono, um grupo e permissões de leitura (r), escrita (w) e execução (x), definidas separadamente para o dono, o grupo e os demais. Um processo roda com a identidade de um usuário e só consegue o que as permissões dessa identidade permitem.",
+    "exemplo": "-rw-r----- usuario equipe relatorio.txt: o dono lê e grava; o grupo \"equipe\" só lê; os demais não acessam."
+  },
+  "ciber-fundamentos.token": {
+    "prerequisitos": ["ciber-fundamentos.http"],
+    "termos": [],
+    "definicao": "Um token é uma credencial que o cliente envia a cada requisição depois de fazer login. Ele traz declarações (por exemplo, o id do usuário) e uma assinatura que o servidor valida para ter certeza de que o conteúdo não foi alterado. A assinatura garante integridade; o conteúdo, em geral, é apenas codificado e pode ser lido por quem tiver o token.",
+    "exemplo": "Um JWT (formato comum de token) com o id da conta A: o servidor sabe que é a conta A, mas ainda precisa decidir o que a conta A pode ver."
+  },
+  "ciber-fundamentos.logs": {
+    "prerequisitos": [],
+    "termos": [],
+    "definicao": "Ativo é o que precisa de proteção (dados de pedidos, contas, chaves). Fronteira de confiança é o ponto onde os dados passam de um ambiente menos confiável para um mais confiável, como do navegador para a API. Log é o registro de eventos usado para diagnosticar e detectar problemas; ele também é um dado sensível, com acesso e retenção controlados.",
+    "exemplo": "O navegador é controlado pelo usuário, então tudo que ele envia à API precisa ser validado no servidor."
+  },
 
   "engenharia-ia.decisoes": {
     "prerequisitos": [],
@@ -104,7 +182,7 @@ Plataforma.registrarRegistroConceitos({
     'csharp.tipos': { prerequisitos: [], termos: [], definicao: 'O tipo define que espécie de valor cabe: int, decimal, string, bool e DateTime.', exemplo: 'decimal preco = 100.50m;' },
     'csharp.variaveis': { prerequisitos: [], termos: [], definicao: 'Uma caixa etiquetada que guarda um valor com um nome.', exemplo: 'int estoque = 25;' },
     'csharp.condicoes': { prerequisitos: ['csharp.variaveis'], termos: ['if ('], definicao: 'O if executa um bloco somente quando a condição é verdadeira.', exemplo: 'if (estoque < 10) { ... }' },
-    'csharp.metodos': { prerequisitos: ['csharp.variaveis'], termos: ['return', 'void'], definicao: 'Uma ação com nome que recebe entradas e pode devolver um resultado.', exemplo: 'decimal CalcularTotal(decimal preco, int quantidade)' },
+    'csharp.metodos': { prerequisitos: ['csharp.variaveis'], termos: ['void'], definicao: 'Uma ação com nome que recebe entradas e pode devolver um resultado.', exemplo: 'decimal CalcularTotal(decimal preco, int quantidade)' },
     'csharp.list': { prerequisitos: ['csharp.objetos'], termos: ['list<', 'foreach'], definicao: 'Uma coleção que guarda vários itens em sequência na mesma variável.', exemplo: 'List<Produto> produtos = new List<Produto>();' },
     'csharp.generics': { prerequisitos: ['csharp.list'], termos: ['generic'], definicao: 'Um recurso que permite reutilizar o mesmo código para vários tipos, como List<Produto> e List<string>.', exemplo: 'List<T> — o T é o tipo dos itens.' },
     'csharp.null': { prerequisitos: ['csharp.objetos'], termos: ['??', '?.'], definicao: 'Ausência de valor: a variável existe, mas não aponta para nenhum objeto.', exemplo: 'Cliente? cliente = null;' },
@@ -122,7 +200,7 @@ Plataforma.registrarRegistroConceitos({
     'en.numeros': { prerequisitos: [], termos: [], definicao: 'Números de 0 a 100, idade e preços.', exemplo: "I'm twenty-five. It costs ten dollars." },
     'en.familia': { prerequisitos: ['en.saudacoes'], termos: [], definicao: 'Falar sobre pessoas da família com my, your, his, her.', exemplo: 'This is my sister. Her name is Lia.' },
     'en.rotina': { prerequisitos: [], termos: [], definicao: 'Contar a rotina no presente simples (I work, she works).', exemplo: 'I usually wake up at seven.' },
-    'en.horarios': { prerequisitos: ['en.numeros'], termos: [], definicao: 'Dizer horas, dias da semana e datas.', exemplo: 'The meeting is at nine on Monday.' },
+    'en.horarios': { prerequisitos: ['en.numeros'], termos: [], definicao: 'Dizer e perguntar as horas e nomear os dias da semana, usando at para horas e on para dias.', exemplo: 'The meeting is at nine on Monday.' },
     'en.comida': { prerequisitos: [], termos: [], definicao: 'Pedir comida e bebida em um restaurante.', exemplo: "I'd like a coffee, please." },
     'en.compras': { prerequisitos: ['en.numeros'], termos: [], definicao: 'Comprar, perguntar preço e pagar.', exemplo: 'How much is this? It is five dollars.' },
     'en.lugares': { prerequisitos: [], termos: [], definicao: 'Falar de lugares, pedir direções e usar transporte.', exemplo: 'Where is the station? Go straight and turn left.' },
@@ -131,12 +209,13 @@ Plataforma.registrarRegistroConceitos({
     'en.futuro': { prerequisitos: ['en.rotina'], termos: [], definicao: 'Falar de planos e decisões futuras (going to, will).', exemplo: "I'm going to travel next week." },
     'en.viagem': { prerequisitos: ['en.lugares'], termos: [], definicao: 'Resolver situações de aeroporto e hotel em inglês.', exemplo: 'I have a reservation. Here is my passport.' },
     'en.a2-experiencias': { prerequisitos: ['en.passado'], termos: [], definicao: 'Falar de experiências com o present perfect (have you ever, I have visited).', exemplo: 'Have you ever visited Canada? I have worked here for two years.' },
-    'en.a2-descricao': { prerequisitos: ['en.lugares'], termos: [], definicao: 'Descrever pessoas, rotinas e lugares com adjetivos e comparações.', exemplo: 'This office is quiet and comfortable. That city is bigger.' },
+    'en.a2-descricao': { prerequisitos: ['en.lugares'], termos: [], definicao: 'Descrever lugares e pessoas com adjetivos (quiet, busy, friendly) e comparar com -er than e more ... than.', exemplo: 'This office is quiet and comfortable. That city is bigger.' },
     'en.a2-saude': { prerequisitos: ['en.rotina'], termos: [], definicao: 'Comunicação diária sobre saúde, chamadas e mensagens.', exemplo: 'I have a headache. Could you call me back later?' },
 
     // Inglês
     'ingles.vocabulario': { prerequisitos: [], termos: [], definicao: 'Palavras técnicas que se repetem em documentação, tickets e mensagens.', exemplo: 'request, response, database, error.' },
     'ingles.frases': { prerequisitos: ['ingles.vocabulario'], termos: [], definicao: 'Frases curtas do trabalho, com sujeito + verbo + complemento.', exemplo: 'The request failed.' },
+    'ingles.leitura': { prerequisitos: ['ingles.vocabulario'], termos: [], definicao: 'Ler mensagens, tickets e textos técnicos curtos em inglês identificando o problema e o pedido.', exemplo: 'Hey, the deploy failed because the database connection is wrong.' },
     'ingles.erros': { prerequisitos: ['ingles.vocabulario'], termos: [], definicao: 'Mensagens de erro em inglês e o que cada uma indica.', exemplo: 'Cannot connect to the database.' },
     'ingles.reuniao': { prerequisitos: ['ingles.frases'], termos: [], definicao: 'Participar da reunião diária (daily / standup) relatando status e impedimentos.', exemplo: 'Yesterday I worked on the API. Today I will fix the bug. I have a blocker.' },
     'ingles.github': { prerequisitos: ['ingles.vocabulario', 'ingles.frases'], termos: [], definicao: 'Interações no GitHub: pull requests, branches, conflitos e comentários de revisão.', exemplo: 'Please review my pull request. Merged to main.' },
@@ -158,12 +237,12 @@ Plataforma.registrarRegistroConceitos({
     'ef.consultas': { prerequisitos: ['ef.dbset', 'linq.where', 'csharp.async', 'linq.first'], termos: ['tolistasync', 'firstordefaultasync', 'findasync'], definicao: 'Consultar o banco com LINQ: o EF traduz para SQL.', exemplo: 'context.Produtos.Where(p => p.Ativo).ToListAsync()' },
 
     // ASP.NET
-    'aspnet.http': { prerequisitos: [], termos: ['HTTP'], definicao: 'O protocolo de comunicação da web: o cliente pede (requisição) e o servidor responde (resposta).', exemplo: 'GET /api/produtos/10' },
+    'aspnet.http': { prerequisitos: [], preview: true, termos: ['HTTP'], definicao: 'O protocolo de comunicação da web: o cliente pede (requisição) e o servidor responde (resposta).', exemplo: 'GET /api/produtos/10' },
     'aspnet.requisicao': { prerequisitos: ['aspnet.http'], termos: [], definicao: 'O pedido que o cliente envia ao servidor.', exemplo: 'GET /api/produtos/10' },
     'aspnet.resposta': { prerequisitos: ['aspnet.http'], termos: [], definicao: 'O que o servidor devolve ao cliente: dados + status code.', exemplo: '200 OK com o produto em JSON.' },
     'aspnet.status': { prerequisitos: ['aspnet.http'], termos: ['status code'], definicao: 'O número que resume o resultado: 200 OK, 201 Created, 204, 400, 404, 500.', exemplo: '404 = recurso não encontrado.' },
     'aspnet.json': { prerequisitos: [], termos: ['JSON'], definicao: 'Formato de texto simples para troca de dados, com pares "chave": valor.', exemplo: '{ "id": 1, "nome": "Mouse" }' },
-    'aspnet.api': { prerequisitos: ['aspnet.http'], termos: ['API'], definicao: 'Um conjunto de endereços que outros programas chamam para obter ou enviar dados.', exemplo: 'API de produtos.' },
+    'aspnet.api': { prerequisitos: ['aspnet.http'], preview: true, termos: ['API'], definicao: 'Um conjunto de endereços que outros programas chamam para obter ou enviar dados.', exemplo: 'API de produtos.' },
     'aspnet.rotas': { prerequisitos: ['aspnet.api'], termos: [], definicao: 'O caminho da URL que identifica o recurso, como /produtos ou /produtos/10.', exemplo: 'app.MapGet("/produtos", ...)' },
 
     // Git
@@ -194,7 +273,7 @@ Plataforma.registrarRegistroConceitos({
     'docker.compose': { prerequisitos: ['docker.dockerfile'], termos: ['docker-compose'], definicao: 'O arquivo que descreve vários serviços, redes e volumes e sobe tudo com um comando.', exemplo: 'docker compose up' },
 
     // Redis
-    'redis.cache': { prerequisitos: ['aspnet.api'], termos: ['cache'], definicao: 'Guardar o resultado de uma consulta cara em memória para responder rápido na próxima vez.', exemplo: 'Lista de produtos vinda do cache em vez do banco.' },
+    'redis.cache': { prerequisitos: ['aspnet.api'], preview: true, termos: ['cache'], definicao: 'Guardar o resultado de uma consulta cara em memória para responder rápido na próxima vez.', exemplo: 'Lista de produtos vinda do cache em vez do banco.' },
     'redis.servidor': { prerequisitos: ['redis.cache'], termos: [], definicao: 'Um banco de dados em memória, chave-valor, usado como cache e para estruturas rápidas.', exemplo: 'SET produto:10 "{...}"' },
     'redis.ttl': { prerequisitos: ['redis.servidor'], termos: ['ttl'], definicao: 'O tempo de vida de uma chave; ao expirar, ela some sozinha e o próximo acesso recarrega do banco.', exemplo: 'SET produto:10 valor EX 60' },
     'redis.cache-aside': { prerequisitos: ['redis.cache'], termos: ['cache aside'], definicao: 'O padrão mais comum: procura no cache, se não achar busca na fonte e guarda no cache.', exemplo: 'if (cache.TryGetValue(...)) { ... }' },

@@ -83,7 +83,7 @@ window.Plataforma = window.Plataforma || {};
     tabela.appendChild(corpo);
     const partes = [];
     if (bloco.titulo) partes.push(criar('div', { classe: 'tabela-titulo', texto: bloco.titulo }));
-    partes.push(criar('div', { classe: 'tabela-rolagem' }, [tabela]));
+    partes.push(criar('div', { classe: 'tabela-rolagem', tabindex: '0', role: 'region', 'aria-label': (bloco.titulo || 'Tabela') + ' (role horizontalmente se necessário)' }, [tabela]));
     if (bloco.legenda) partes.push(criar('div', { classe: 'tabela-legenda', html: d.formatar(bloco.legenda) }));
     return criar('div', { classe: 'bloco tabela-bloco' }, partes);
   }

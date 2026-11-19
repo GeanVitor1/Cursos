@@ -177,6 +177,20 @@ window.Plataforma = window.Plataforma || {};
       ])
     ]));
 
+    if (resumo.emConstrucao) {
+      pagina.appendChild(criar('div', { classe: 'bloco-nota atencao aviso-construcao', role: 'note' }, [
+        criar('span', { classe: 'nota-marca', texto: '🚧', 'aria-hidden': 'true' }),
+        criar('div', { texto: 'Conteúdo em construção: ' + resumo.planejadas + ' etapa(s) desta trilha ainda estão sendo produzidas. O percentual considera só o que já foi publicado.' })
+      ]));
+    }
+    const provisorios = (resumo.requisitos || []).filter(function (r) { return r.provisorio; });
+    if (provisorios.length) {
+      pagina.appendChild(criar('div', { classe: 'bloco-nota info', role: 'note' }, [
+        criar('span', { classe: 'nota-marca', texto: 'i', 'aria-hidden': 'true' }),
+        criar('div', { texto: 'Liberada provisoriamente: ' + provisorios.map(function (r) { return r.nome; }).join(', ') + ' ainda está em construção. Quando novas etapas forem publicadas, conclua-as para manter a base em dia.' })
+      ]));
+    }
+
     if (t.id === 'ingles') {
       pagina.appendChild(cartaoIngles());
     }

@@ -116,7 +116,40 @@ window.Plataforma = window.Plataforma || {};
       }
       lista.push(t);
     }
-    return JSON.stringify(lista);
+    return JSON.stringify(canonizarSql(lista));
+  }
+
+  // TOP (n) ≡ TOP n; igualdades simples em ON/WHERE são simétricas (a = b ≡ b = a).
+  function canonizarSql(lista) {
+    const saida = [];
+    for (let i = 0; i < lista.length; i += 1) {
+      if (lista[i] === 'top' && lista[i + 1] === '(' && /^\d+$/.test(lista[i + 2] || '') && lista[i + 3] === ')') {
+        saida.push('top', lista[i + 2]); i += 3; continue;
+      }
+      saida.push(lista[i]);
+    }
+    const ident = /^[\p{L}_@][\p{L}\p{N}_]*$/u;
+    function lerOperando(pos) {
+      const t = saida[pos];
+      if (t == null) return null;
+      if (/^['"\d]/.test(t)) return { fim: pos + 1 };
+      if (!ident.test(t) || palavrasSql.has(t)) return null;
+      if (saida[pos + 1] === '.' && saida[pos + 2] && ident.test(saida[pos + 2])) return { fim: pos + 3 };
+      return { fim: pos + 1 };
+    }
+    const antes = new Set(['on', 'where', 'and', 'or', '(', 'having', 'when']);
+    const depois = new Set(['and', 'or', ')', 'where', 'group', 'order', 'having', 'join', 'left', 'right', 'full', 'cross', 'union', 'limit', 'offset', ';', 'then', 'inner']);
+    for (let i = 1; i < saida.length; i += 1) {
+      if (!antes.has(saida[i - 1])) continue;
+      const a = lerOperando(i);
+      if (!a || saida[a.fim] !== '=') continue;
+      const b = lerOperando(a.fim + 1);
+      if (!b || (b.fim < saida.length && !depois.has(saida[b.fim]))) continue;
+      const esq = saida.slice(i, a.fim), dir = saida.slice(a.fim + 1, b.fim);
+      if (esq.join(' ') > dir.join(' ')) saida.splice(i, b.fim - i, ...dir, '=', ...esq);
+      i = b.fim - 1;
+    }
+    return saida;
   }
 
   function normalizarCSharp(texto) {

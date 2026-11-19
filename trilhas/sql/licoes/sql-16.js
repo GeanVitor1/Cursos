@@ -15,11 +15,11 @@ Plataforma.registrarLicao({
   etapas: [
     {
       tipo: 'conteudo',
-      titulo: 'Três tabelas, dois JOINs',
+      titulo: 'Quatro tabelas, três JOINs',
       introduz: ['sql.join-multiplo'],
       blocos: [
         { tipo: 'retoma', conceito: 'sql.join', texto: 'Você junta duas tabelas com `JOIN ... ON`. Perguntas reais costumam atravessar **três ou mais**.' },
-        { tipo: 'texto', texto: '"Quero o nome do cliente e o nome do produto de cada item vendido." Cliente está em Clientes, produto em Produtos, e a venda em ItensPedido — que aponta para os dois. A consulta encadeia dois `JOINs`:' },
+        { tipo: 'texto', texto: '"Quero o nome do cliente e o nome do produto de cada item vendido." Cliente está em Clientes, produto em Produtos, e a venda em ItensPedido — que aponta para Pedidos (e Pedidos aponta para Clientes) e para Produtos. A consulta encadeia três `JOINs`:' },
         { tipo: 'conceito', id: 'sql.join-multiplo', titulo: 'Múltiplos JOINs', texto: 'Cada JOIN adiciona uma tabela ao resultado, com seu próprio ON. A ordem segue o caminho do relacionamento.', exemplo: 'SELECT * FROM ItensPedido JOIN Pedidos ON ... JOIN Clientes ON ...;' },
         {
           tipo: 'codigo',
@@ -73,9 +73,9 @@ Plataforma.registrarLicao({
         ],
         opcoes: [
           'O segundo ON usa a coluna errada: ProdutoId não aponta para Clientes',
-          'Falta um terceiro JOIN',
-          'JOIN não aceita três tabelas',
-          'Nada — a consulta está correta'
+          'Falta um terceiro JOIN para completar o caminho entre as tabelas',
+          'O JOIN não aceita três tabelas na mesma consulta',
+          'Nada, a consulta está correta e pode ser executada como está'
         ],
         correta: 0,
         feedbackErro: {
@@ -98,7 +98,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna o **nome do produto** de cada item vendido (tabela ItensPedido com ProdutoId).',
         respostasAceitas: [
-          "SELECT Produtos.Nome FROM ItensPedido JOIN Produtos ON ItensPedido.ProdutoId = Produtos.Id;"
+          'SELECT Produtos.Nome FROM ItensPedido JOIN Produtos ON ItensPedido.ProdutoId = Produtos.Id;',
+          'SELECT Produtos.Nome FROM Produtos JOIN ItensPedido ON ItensPedido.ProdutoId = Produtos.Id;'
         ],
         dicas: [
           'ItensPedido aponta para Produtos por ProdutoId.',
@@ -106,6 +107,24 @@ Plataforma.registrarLicao({
         ],
         explicacao: '`SELECT Produtos.Nome FROM ItensPedido JOIN Produtos ON ItensPedido.ProdutoId = Produtos.Id;`.',
         conceitos: ['sql.join-multiplo', 'sql.join']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql16-a6',
+        tipo: 'write-code',
+        enunciado: 'Escreva a consulta que retorna a **Quantidade** de cada item e o **nome do cliente** que fez o pedido (dois JOINs a partir de ItensPedido).',
+        respostasAceitas: [
+          'SELECT ItensPedido.Quantidade, Clientes.Nome FROM ItensPedido JOIN Pedidos ON ItensPedido.PedidoId = Pedidos.Id JOIN Clientes ON Pedidos.ClienteId = Clientes.Id;',
+          'SELECT Clientes.Nome, ItensPedido.Quantidade FROM ItensPedido JOIN Pedidos ON ItensPedido.PedidoId = Pedidos.Id JOIN Clientes ON Pedidos.ClienteId = Clientes.Id;'
+        ],
+        dicas: [
+          'O caminho é ItensPedido, Pedidos e Clientes.',
+          'Cada JOIN tem o seu ON, com as chaves daquele par.'
+        ],
+        explicacao: 'Dois JOINs encadeados: ItensPedido a Pedidos (PedidoId) e Pedidos a Clientes (ClienteId).',
+        conceitos: ['sql.join-multiplo']
       }
     },
     {
@@ -127,19 +146,19 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql16-a4',
         tipo: 'multiple-choice',
-        enunciado: 'Na consulta do exemplo misto, o que acontece com um item cujo pedido foi excluído?',
+        enunciado: 'Na consulta do exemplo misto, o que acontece com um item cujo pedido ainda não tem cliente associado (`ClienteId` nulo)?',
         opcoes: [
-          'O item continua no resultado, com cliente vazio',
-          'O item some do resultado',
-          'O produto some do resultado',
-          'A consulta retorna erro'
+          'O item continua no resultado, com o nome do cliente vazio',
+          'O item some do resultado, junto com o produto',
+          'O item aparece, mas sem o nome do produto',
+          'A consulta retorna erro de chave estrangeira'
         ],
         correta: 0,
         dicas: [
           'O primeiro JOIN é INNER; os outros são LEFT.',
           'O item combina com o produto?'
         ],
-        explicacao: 'O `INNER` com Produtos segura o item; os dois `LEFT` seguintes preservam a linha mesmo sem pedido nem cliente.',
+        explicacao: 'O `INNER` com Produtos segura o item; o `LEFT JOIN` com Clientes preserva a linha mesmo sem cliente, deixando o nome vazio.',
         conceitos: ['sql.join-multiplo', 'sql.left-join', 'sql.inner-join']
       }
     },
@@ -156,7 +175,7 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Join customers, orders and products.', traducao: 'Junte clientes, pedidos e produtos.' },
-        { tipo: 'nota', tom: 'info', texto: 'A frase cresce junto com a consulta: dois `JOINs` para três tabelas.' }
+        { tipo: 'nota', tom: 'info', texto: 'A frase cresce junto com a consulta: três `JOINs` para ligar quatro tabelas.' }
       ]
     },
     {
@@ -164,14 +183,14 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql16-a5',
         tipo: 'write-code',
-        enunciado: 'Join customers, orders and products.',
+        enunciado: 'Join customers, orders and products: select the **customer name**, the **order Id** and the **product name**.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
           'select clientes.nome, pedidos.id, produtos.nome from itenspedido join pedidos on itenspedido.pedidoid = pedidos.id join clientes on pedidos.clienteid = clientes.id join produtos on itenspedido.produtoid = produtos.id'
         ],
         dicas: [
-          'Dois JOINs para Clientes e um para Produtos.',
-          'Cada ON usa o par da sua junção.'
+          'Parta de ItensPedido: ele liga Pedidos e Produtos.',
+          'Pedidos leva a Clientes; cada ON usa o par da sua junção.'
         ],
         explicacao: 'Traduzindo: junte clientes, pedidos e produtos. Três `JOINs` partindo de ItensPedido, cada um com seu `ON`.',
         conceitos: ['sql.join-multiplo', 'sql.ingles'],

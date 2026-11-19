@@ -26,10 +26,10 @@ Plataforma.registrarLicao({
           colunas: ['Id', 'Nome', 'Telefone'],
           linhas: [
             [1, 'Ana Souza', '41 99999-0001'],
-            [2, 'Bruno Lima', null],
-            [3, 'Carla Dias', null]
+            [2, 'Bruno Lima', 'NULL'],
+            [3, 'Carla Dias', 'NULL']
           ],
-          legenda: 'Bruno e Carla têm telefone nulo.'
+          legenda: 'Bruno e Carla têm telefone nulo (mostrado como NULL).'
         },
         { tipo: 'texto', texto: 'Para encontrar os nulos, use `IS NULL`; para excluí-los, `IS NOT NULL`:' },
         {
@@ -80,8 +80,8 @@ Plataforma.registrarLicao({
             colunas: ['Nome', 'Cidade', 'Telefone'],
             linhas: [
               ['Ana Souza', 'Curitiba', '41 99999-0001'],
-              ['Bruno Lima', 'Recife', null],
-              ['Carla Dias', 'Recife', null]
+              ['Bruno Lima', 'Recife', 'NULL'],
+              ['Carla Dias', 'Recife', 'NULL']
             ]
           },
           { tipo: 'codigo', linguagem: 'sql', codigo: 'SELECT Nome\nFROM Clientes\nWHERE Telefone IS NOT NULL;' }
@@ -140,7 +140,7 @@ Plataforma.registrarLicao({
         lacunas: [['is not null']],
         dicas: [
           'Você quer o contrário de "sem telefone".',
-          'A forma é IS NOT NULL.'
+          'Use o operador que verifica ausência de valor, na forma negada com NOT.'
         ],
         explicacao: '`WHERE Telefone IS NOT NULL` mantém somente as linhas com valor na coluna.',
         conceitos: ['sql.null']
@@ -196,17 +196,18 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'English corner · Empty',
       blocos: [
-        { tipo: 'texto', texto: 'Para falar de algo vazio em inglês: **empty** (vazio) e **phone** (telefone).' },
+        { tipo: 'texto', texto: 'Para falar de ausência de valor em inglês: **null** (nulo) e **phone** (telefone). **empty** (vazio) é outra coisa em SQL: um texto vazio (`\'\'`) existe e não é NULL.' },
         {
           tipo: 'vocab',
-          titulo: 'Palavras novas (2)',
+          titulo: 'Palavras novas (3)',
           pares: [
             ['phone', 'telefone'],
+            ['null', 'nulo / sem valor'],
             ['empty', 'vazio / vazia']
           ]
         },
-        { tipo: 'ingles', frase: 'The phone is empty.', traducao: 'O telefone está vazio.' },
-        { tipo: 'nota', tom: 'info', texto: '**empty** é o "não sei" dos dados: é a ideia de `NULL` contada em inglês.' }
+        { tipo: 'ingles', frase: 'The phone is null.', traducao: 'O telefone é nulo (sem valor).' },
+        { tipo: 'nota', tom: 'info', texto: '`NULL` é a ausência de valor ("não sei"). Um texto vazio, `\'\'`, é um valor conhecido e diferente de NULL.' }
       ]
     },
     {
@@ -214,14 +215,14 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql09-a6',
         tipo: 'write-code',
-        enunciado: 'Retrieve all customers where Phone is empty.',
+        enunciado: 'Retrieve all customers where Phone is null.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
           "SELECT * FROM Clientes WHERE Telefone IS NULL;"
         ],
         dicas: [
-          'customers = clientes; phone = telefone; empty = vazio.',
-          'Vazio aqui é NULL: use IS NULL.'
+          'customers = clientes; phone = telefone; null = nulo (sem valor).',
+          'Em SQL, ausência de valor se verifica com o operador específico para NULL, não com `=`.'
         ],
         explicacao: 'Traduzindo: "retrieve all customers where Phone is empty" = recupere todos os clientes em que o telefone está vazio. `SELECT * FROM Clientes WHERE Telefone IS NULL;`.',
         conceitos: ['sql.null', 'sql.ingles']

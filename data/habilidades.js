@@ -71,7 +71,7 @@ Plataforma.registrarHabilidades({
       nome: 'C# para Backend .NET',
       trilha: 'csharp',
       fase: 1,
-      dependencies: ['logica'],
+      dependencies: [],
       skills: ['classes-e-objetos', 'tipos', 'metodos', 'listas', 'null', 'interfaces', 'injeção-de-dependência', 'lambda', 'async-await'],
       conceitosChave: ['csharp.classes', 'csharp.objetos', 'csharp.propriedades', 'csharp.tipos', 'csharp.metodos', 'csharp.list', 'csharp.null', 'csharp.interfaces', 'csharp.di', 'csharp.lambda', 'csharp.async'],
       trabalho: 'C# é a linguagem em que você vai escrever entidades, services e controllers. Sem esses fundamentos, Entity Framework, LINQ e ASP.NET parecem mágica.'
@@ -91,7 +91,7 @@ Plataforma.registrarHabilidades({
       fase: 1,
       dependencies: [],
       skills: ['vocabulario-tecnico', 'mensagens-de-erro', 'documentacao', 'pull-requests', 'entrevista'],
-      conceitosChave: ['ingles.vocabulario', 'ingles.frases', 'ingles.erros', 'ingles.leitura', 'sql.ingles'],
+      conceitosChave: ['ingles.vocabulario', 'ingles.frases', 'ingles.erros', 'ingles.leitura'],
       trabalho: 'Documentação, mensagens de erro, issues e entrevistas chegam em inglês. Você não precisa ser fluente — precisa ler o que o trabalho exige.'
     },
     git: {
@@ -127,7 +127,7 @@ Plataforma.registrarHabilidades({
       fase: 3,
       dependencies: ['csharp', 'sql', 'linq', 'entity-framework'],
       skills: ['http', 'json', 'minimal-api', 'controllers', 'rotas', 'dtos', 'services', 'di', 'validacao', 'erros', 'logging', 'async'],
-      conceitosChave: ['aspnet.http', 'aspnet.json', 'aspnet.api', 'aspnet.rotas', 'aspnet.dto', 'aspnet.di'],
+      conceitosChave: ['aspnet.http', 'aspnet.json', 'aspnet.api', 'aspnet.rotas', 'aspnet.status'],
       trabalho: 'É aqui que sua aplicação vira um serviço que o frontend, o app e outros sistemas consomem.'
     },
     seguranca: {
@@ -206,7 +206,7 @@ Plataforma.registrarHabilidades({
       nome: 'CI/CD com GitHub Actions',
       trilha: 'cicd',
       fase: 8,
-      dependencies: ['git', 'docker', 'testes'],
+      dependencies: ['git', 'docker'],
       skills: ['pipeline', 'workflows', 'build', 'testes-no-pipeline', 'artifacts', 'secrets', 'deploy'],
       conceitosChave: ['cicd.pipeline', 'cicd.actions', 'cicd.secrets', 'cicd.deploy'],
       trabalho: 'Entrega profissional não é copiar arquivo por FTP. É commit → pipeline → testes → deploy, com histórico e reversão.'
@@ -224,7 +224,7 @@ Plataforma.registrarHabilidades({
       nome: 'Microsserviços & System Design',
       trilha: 'microsservicos',
       fase: 9,
-      dependencies: ['aspnet', 'arquitetura', 'mensageria', 'docker', 'azure'],
+      dependencies: ['aspnet', 'arquitetura', 'mensageria', 'docker'],
       skills: ['monolito-modular', 'comunicacao', 'consistencia-eventual', 'observabilidade', 'resiliencia', 'api-gateway'],
       conceitosChave: ['microsservicos.monolito', 'microsservicos.comunicacao', 'microsservicos.observabilidade', 'microsservicos.resiliencia'],
       trabalho: 'Você precisa saber quando NÃO usar microsserviços. A decisão certa depende de escala, time e operação — não de moda.'

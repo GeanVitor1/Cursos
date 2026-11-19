@@ -22,11 +22,11 @@ Plataforma.registrarLicao({
         { tipo: 'retoma', conceito: 'docker.container', texto: 'Container é cópia descartável: subiu, rodou, foi removido. Tudo o que foi escrito **dentro dele** some junto.' },
         { tipo: 'texto', texto: 'Para um servidor web isso não incomoda. Para um banco de dados, é fatal: cada reinício começaria do zero.' },
         { tipo: 'destaque', texto: 'O que precisa sobreviver ao container mora **fora** dele: em um volume.' },
-        { tipo: 'conceito', id: 'docker.volumes', titulo: 'Volumes', texto: 'Armazenamento que sobrevive ao container, usado para bancos e arquivos persistentes.', exemplo: 'docker run -v dados:/var/lib/postgresql/data postgres' },
+        { tipo: 'conceito', id: 'docker.volumes', titulo: 'Volumes', texto: 'Armazenamento que sobrevive ao container, usado para bancos e arquivos persistentes.', exemplo: 'docker run -e POSTGRES_PASSWORD=senha -v dados:/var/lib/postgresql/data postgres:17' },
         {
           tipo: 'codigo',
           linguagem: 'bash',
-          codigo: 'docker run -d -v dados:/var/lib/postgresql/data postgres',
+          codigo: 'docker run -d -e POSTGRES_PASSWORD=senha -v dados:/var/lib/postgresql/data postgres:17',
           legenda: 'O volume dados é montado na pasta em que o banco grava.'
         },
         { tipo: 'nota', tom: 'info', texto: 'A forma é `-v nome-do-volume:pasta-dentro-do-container`. Quem grava na pasta está gravando no volume.' }
@@ -111,8 +111,8 @@ Plataforma.registrarLicao({
         codigo: 'docker run -d -v {{1}}:/app/dados minha-api',
         lacunas: [['dados']],
         dicas: [
-          'O nome do volume vem antes dos dois pontos.',
-          'É o nome escolhido: dados.'
+          'No formato origem:destino, o nome do volume fica do lado esquerdo.',
+          'Releia o enunciado: o nome do volume aparece em negrito.'
         ],
         explicacao: '`-v dados:/app/dados` monta o volume `dados` na pasta `/app/dados` do container.',
         conceitos: ['docker.volumes']
@@ -140,7 +140,7 @@ Plataforma.registrarLicao({
         tipo: 'predict-output',
         enunciado: 'O container é removido, mas o volume **dados** continua existindo. O que acontece na próxima execução?',
         contexto: [
-          { tipo: 'codigo', linguagem: 'bash', codigo: 'docker run -d -v dados:/app/dados minha-api\ndocker rm -f minha-api\ndocker run -d -v dados:/app/dados minha-api' }
+          { tipo: 'codigo', linguagem: 'bash', codigo: 'docker run -d --name api -v dados:/app/dados minha-api\ndocker rm -f api\ndocker run -d --name api -v dados:/app/dados minha-api' }
         ],
         opcoes: [
           'Os dados gravados anteriormente continuam no volume e reaparecem na nova execução',

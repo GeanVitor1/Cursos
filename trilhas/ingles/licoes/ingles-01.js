@@ -31,6 +31,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-p1',
         tipo: 'fill-code',
+        habilidade: 'gramatica',
         dimensao: 'preenchimento',
         enunciado: 'Complete a mensagem de erro.',
         codigo: 'Cannot {{1}} to the database.',
@@ -57,6 +58,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-p2',
         tipo: 'match-pairs',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Conecte cada palavra ao significado.',
         pares: [
@@ -86,6 +88,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-p3',
         tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
         dimensao: 'reconhecimento',
         enunciado: 'O que significa **resource**?',
         opcoes: ['Recurso', 'Objeto', 'Instância', 'Referência'],
@@ -117,6 +120,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-p4',
         tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
         dimensao: 'reconhecimento',
         enunciado: 'O que significa **timeout**?',
         opcoes: ['Tempo esgotado', 'Conexão recusada', 'Recurso não encontrado', 'Objeto nulo'],
@@ -135,7 +139,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Servidor e espera',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['waiting / wait', 'esperando / esperar'],
           ['server', 'servidor'],
           ['for', 'por / para']
@@ -148,6 +152,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-p5',
         tipo: 'fill-code',
+        habilidade: 'gramatica',
         dimensao: 'preenchimento',
         enunciado: 'Complete a frase.',
         codigo: 'The {{1}} is down.',
@@ -161,7 +166,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Arquivo e caminho',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['file / path', 'arquivo / caminho'],
           ['found', 'encontrado'],
           ['of', 'de (posse / parte de)']
@@ -174,6 +179,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-p6',
         tipo: 'match-pairs',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Conecte cada palavra ao significado.',
         pares: [
@@ -204,7 +210,7 @@ Plataforma.registrarLicao({
       titulo: 'Ticket: título e passos',
       blocos: [
         { tipo: 'texto', texto: 'Issues e tickets costumam ter título curto, descrição e passos para reproduzir. Vamos pelas palavras, três de cada vez.' },
-        { tipo: 'vocab', titulo: 'Palavras novas (5)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['Title', 'título'],
           ['Steps to reproduce', 'passos para reproduzir'],
           ['Create an order', 'criar um pedido']
@@ -217,6 +223,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-p8',
         tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
         dimensao: 'reconhecimento',
         enunciado: 'O que significa **Title** em um ticket?',
         opcoes: ['Título', 'Descrição', 'Passos', 'Prioridade'],
@@ -248,6 +255,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-p9',
         tipo: 'fill-code',
+        habilidade: 'gramatica',
         dimensao: 'preenchimento',
         enunciado: 'Complete a frase.',
         codigo: 'The order is {{1}}.',
@@ -274,6 +282,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-p10',
         tipo: 'match-pairs',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Conecte cada palavra ao significado.',
         pares: [
@@ -303,6 +312,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-p11',
         tipo: 'multiple-choice',
+        habilidade: 'vocabulario',
         dimensao: 'reconhecimento',
         enunciado: 'O que é um **bug**?',
         opcoes: ['Um defeito no sistema', 'Uma nova funcionalidade', 'Um servidor', 'Um arquivo de configuração'],
@@ -321,7 +331,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Lendo um ticket de trabalho',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['processed / twice', 'processado / duas vezes'],
           ['Expected / Actual', 'esperado / real']
         ] },
@@ -341,6 +351,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-a1',
         tipo: 'match-pairs',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Conecte cada mensagem em inglês ao seu significado.',
         pares: [
@@ -359,6 +370,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-a2',
         tipo: 'multiple-choice',
+        habilidade: 'compreensao',
         dimensao: 'reconhecimento',
         enunciado: 'A mensagem é `Object reference not set to an instance of an object`. O que ela indica?',
         opcoes: [
@@ -383,6 +395,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-a3',
         tipo: 'reading',
+        habilidade: 'reading',
         dimensao: 'reconhecimento',
         titulo: 'GitHub issue #812',
         enunciado: 'Leia o ticket e responda.',
@@ -411,6 +424,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-a4',
         tipo: 'order-blocks',
+        habilidade: 'gramatica',
         dimensao: 'ordenacao',
         enunciado: 'Ordene para formar: "O banco de dados está indisponível."',
         blocos: ['The', 'database', 'is', 'unavailable.'],
@@ -424,6 +438,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en01-a5',
         tipo: 'scenario',
+        habilidade: 'compreensao',
         dimensao: 'aplicacao',
         cena: 'Um colega estrangeiro escreveu no chat: "The request failed with 404. The client is calling the wrong address. Can you fix it?"',
         enunciado: 'O que ele está pedindo?',

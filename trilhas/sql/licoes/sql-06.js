@@ -153,8 +153,8 @@ Plataforma.registrarLicao({
         codigo: 'SELECT Nome, Preco\nFROM Produtos\nORDER BY Preco {{1}};',
         lacunas: [['desc']],
         dicas: [
-          'Decrescente em inglês é descending.',
-          'São quatro letras.'
+          'A direção do maior para o menor é a oposta de ASC.',
+          'A palavra tem quatro letras e vem logo depois da coluna Preco.'
         ],
         explicacao: '`ORDER BY Preco DESC` coloca o maior preço no topo do resultado.',
         conceitos: ['sql.order-by']
@@ -175,6 +175,28 @@ Plataforma.registrarLicao({
         ],
         explicacao: '`SELECT Nome, Preco FROM Produtos ORDER BY Preco DESC;` — as colunas pedidas e a ordenação decrescente pelo preço.',
         conceitos: ['sql.order-by']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql06-a7',
+        tipo: 'write-code',
+        enunciado: 'Escreva uma consulta que retorne **Nome e Cidade** dos clientes, ordenados por **Cidade** e, em caso de empate, por **Nome**.',
+        respostasAceitas: [
+          'SELECT Nome, Cidade FROM Clientes ORDER BY Cidade, Nome;',
+          'SELECT Nome, Cidade FROM Clientes ORDER BY Cidade ASC, Nome ASC;',
+          'SELECT Cidade, Nome FROM Clientes ORDER BY Cidade, Nome;'
+        ],
+        dicas: [
+          'Depois do ORDER BY você pode listar mais de uma coluna, separadas por vírgula.',
+          'A primeira coluna da lista é o critério principal; a segunda só desempata.'
+        ],
+        explicacao: '`ORDER BY Cidade, Nome` ordena primeiro por cidade e, dentro de cada cidade, por nome.',
+        esqueleto: 'SELECT ___\nFROM ___\nORDER BY ___;',
+        conceitos: [
+          'sql.order-by'
+        ]
       }
     },
     {

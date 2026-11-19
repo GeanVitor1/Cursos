@@ -116,6 +116,8 @@ window.Plataforma = window.Plataforma || {};
             hidden: true,
             onchange: function (ev) {
               if (ev.target.files && ev.target.files[0]) importarArquivo(ev.target.files[0]);
+              // Permite reimportar o mesmo arquivo (o evento change não dispara para o mesmo valor).
+              ev.target.value = '';
             }
           })
         ]),
@@ -128,31 +130,65 @@ window.Plataforma = window.Plataforma || {};
     if (!conceitos.length) {
       cartaoTabela.appendChild(criar('p', { classe: 'muted', texto: 'Pratique uma etapa para começar a medir seu domínio.' }));
     } else {
-      const tabela = criar('table', { classe: 'tabela-conceitos' }, [
-        criar('thead', {}, [criar('tr', {}, [
-          criar('th', { texto: 'Conceito' }),
-          criar('th', { texto: 'Domínio' }),
-          criar('th', { texto: 'Acertos' }),
-          criar('th', { texto: 'Erros' }),
-          criar('th', { texto: 'Próxima revisão' }),
-          criar('th', { texto: 'Status' })
-        ])])
-      ]);
-      const corpo = criar('tbody');
+      const busca = criar('input', { type: 'search', classe: 'campo-busca', placeholder: 'Buscar conceito…', 'aria-label': 'Buscar conceito' });
+      cartaoTabela.appendChild(busca);
+      const grupos = {};
       conceitos.forEach(function (c) {
-        const agenda = c.agenda;
-        const proxima = agenda && agenda.proximaEm ? agenda.proximaEm : '—';
-        corpo.appendChild(criar('tr', {}, [
-          criar('td', { texto: P.progresso.nomeConceito(c.id) }),
-          criar('td', {}, [criar('span', { texto: ((c.dominio && c.dominio.geral) || 0) + '%' })]),
-          criar('td', { texto: String(c.acertos) }),
-          criar('td', { texto: String(c.erros) }),
-          criar('td', { texto: proxima }),
-          criar('td', {}, [statusChip(c.estado)])
-        ]));
+        const trilha = String(c.id).split('.')[0];
+        (grupos[trilha] = grupos[trilha] || []).push(c);
       });
-      tabela.appendChild(corpo);
-      cartaoTabela.appendChild(tabela);
+      const nomes = {};
+      P.progresso.trilhas().forEach(function (t) { nomes[t.id] = t.nome || t.curto || t.id; });
+      const blocos = [];
+      Object.keys(grupos).forEach(function (trilha, idx) {
+        const lista = grupos[trilha];
+        const tabela = criar('table', { classe: 'tabela-conceitos' }, [
+          criar('thead', {}, [criar('tr', {}, [
+            criar('th', { texto: 'Conceito' }),
+            criar('th', { texto: 'Domínio' }),
+            criar('th', { texto: 'Acertos' }),
+            criar('th', { texto: 'Erros' }),
+            criar('th', { texto: 'Próxima revisão' }),
+            criar('th', { texto: 'Status' })
+          ])])
+        ]);
+        const corpo = criar('tbody');
+        const linhas = lista.map(function (c) {
+          const agenda = c.agenda;
+          const proxima = agenda && agenda.proximaEm ? agenda.proximaEm : '—';
+          const nome = P.progresso.nomeConceito(c.id);
+          const tr = criar('tr', {}, [
+            criar('td', { texto: nome }),
+            criar('td', {}, [criar('span', { texto: ((c.dominio && c.dominio.geral) || 0) + '%' })]),
+            criar('td', { texto: String(c.acertos) }),
+            criar('td', { texto: String(c.erros) }),
+            criar('td', { texto: proxima }),
+            criar('td', {}, [statusChip(c.estado)])
+          ]);
+          tr.dataset.busca = P.dom.normalizar(nome + ' ' + c.id);
+          corpo.appendChild(tr);
+          return tr;
+        });
+        tabela.appendChild(corpo);
+        const resumoEl = criar('summary', { texto: (nomes[trilha] || trilha) + ' (' + lista.length + ')' });
+        const det = criar('details', { classe: 'grupo-colapsavel' }, [resumoEl, criar('div', { classe: 'tabela-rolagem' }, [tabela])]);
+        if (idx === 0) det.open = true;
+        blocos.push({ det: det, linhas: linhas, resumo: resumoEl, rotulo: nomes[trilha] || trilha });
+        cartaoTabela.appendChild(det);
+      });
+      busca.addEventListener('input', function () {
+        const termo = P.dom.normalizar(busca.value);
+        blocos.forEach(function (b) {
+          let visiveis = 0;
+          b.linhas.forEach(function (tr) {
+            const ok = !termo || tr.dataset.busca.indexOf(termo) !== -1;
+            tr.hidden = !ok;
+            if (ok) visiveis += 1;
+          });
+          b.det.hidden = !visiveis;
+          if (termo && visiveis) b.det.open = true;
+        });
+      });
     }
     pagina.appendChild(cartaoTabela);
 

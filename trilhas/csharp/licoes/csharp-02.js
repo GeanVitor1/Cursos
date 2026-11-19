@@ -93,13 +93,37 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
+        id: 'cs02-a6',
+        tipo: 'multiple-choice',
+        dimensao: 'reconhecimento',
+        enunciado: 'Na assinatura de um método com `void` e dois itens entre parênteses, o que `void` e os dois itens entre parênteses indicam?',
+        opcoes: [
+          'O método não devolve valor e recebe dois parâmetros: destino e texto',
+          'O método devolve um texto e não recebe nenhuma entrada',
+          'O método devolve dois valores: o destino e o texto',
+          'O método é privado e só pode receber números'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: 'O tipo de retorno é void (nada) e há dois parâmetros entre parênteses.',
+          2: 'Retorno e parâmetros são coisas diferentes: parâmetros entram, retorno sai.',
+          3: 'public indica que o método é acessível de fora, e string indica texto, não números.'
+        },
+        dicas: ['O que vem antes do nome é o retorno; o que vem entre parênteses são as entradas.', 'Reveja a tabela de glossário de saída: o que significa void?'],
+        explicacao: '`void` significa que o método executa uma ação sem devolver valor; os dois itens entre parênteses são parâmetros, os valores de entrada.',
+        conceitos: ['csharp.metodos']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
         id: 'cs02-a2',
         tipo: 'fill-code',
         dimensao: 'preenchimento',
         enunciado: 'Complete o método para que ele devolva o total (preço × quantidade).',
         codigo: 'public decimal CalcularTotal(decimal preco, int quantidade)\n{\n    decimal total = preco * quantidade;\n    {{1}} total;\n}',
         lacunas: [['return']],
-        dicas: ['A palavra que devolve um valor de dentro do método.', 'É a mesma palavra que aparece em `return estoque < 10;`.'],
+        dicas: ['Releia a etapa "Retorno: a saída": uma palavra-chave entrega o valor a quem chamou o método.', 'O tipo de retorno do método é decimal, então algo precisa ser devolvido no final.'],
         explicacao: 'Sem `return`, o método não entrega o resultado para quem chamou. O compilador reclama disso.',
         conceitos: ['csharp.metodos']
       }
@@ -114,14 +138,15 @@ Plataforma.registrarLicao({
         esqueleto: 'public decimal CalcularTotal(decimal preco, int quantidade)\n{\n    // seu código aqui\n}',
         validar: function (valor) {
           const t = P.dom.normalizarCodigo(valor);
-          return t.indexOf('preco*quantidade') !== -1 &&
-            /return\(?(preco\*quantidade|total)\)?/.test(t);
+          return (t.indexOf('preco*quantidade') !== -1 || t.indexOf('quantidade*preco') !== -1) &&
+            /return\(?(preco\*quantidade|quantidade\*preco|total)\)?/.test(t);
         },
         respostasAceitas: [
           "public decimal CalcularTotal(decimal preco, int quantidade) { return preco * quantidade; }",
-          "public decimal CalcularTotal(decimal preco, int quantidade) { decimal total = preco * quantidade; return total; }"
+          "public decimal CalcularTotal(decimal preco, int quantidade) { decimal total = preco * quantidade; return total; }",
+          "public decimal CalcularTotal(decimal preco, int quantidade) { return quantidade * preco; }"
         ],
-        dicas: ['A assinatura já está no esqueleto; falta o corpo.', 'O corpo pode ser uma única linha: `return preco * quantidade;`'],
+        dicas: ['A assinatura já está no esqueleto; falta o corpo.', 'O método precisa devolver o resultado da conta que usa os dois parâmetros.'],
         explicacao: 'Métodos pequenos e com uma responsabilidade clara são a base do código que outros conseguem ler. Esse é o caminho até os métodos de uma aplicação real.',
         conceitos: ['csharp.metodos']
       }
@@ -134,7 +159,7 @@ Plataforma.registrarLicao({
         dimensao: 'reconhecimento',
         enunciado: 'O que aparece na tela?',
         contexto: [
-          { tipo: 'codigo', linguagem: 'csharp', codigo: 'public int Dobrar(int valor)\n{\n    return valor * 2;\n}\n\nint resultado = Dobrar(7);\nConsole.WriteLine(resultado);' }
+          { tipo: 'codigo', linguagem: 'csharp', codigo: 'int Dobrar(int valor)\n{\n    return valor * 2;\n}\n\nint resultado = Dobrar(7);\nConsole.WriteLine(resultado);' }
         ],
         opcoes: ['14', '7', '2', 'Nada'],
         correta: 0,
@@ -162,11 +187,12 @@ Plataforma.registrarLicao({
           'Citar legibilidade ou reaproveitamento'
         ],
         palavrasChave: [
-          ['um lugar', 'unico lugar', 'um unico lugar', 'unico', 'lugar', 'centraliz'],
-          ['mud', 'alter', 'futur', 'segur'],
-          ['legi', 'legiv', 'reutiliz', 'reaproveit', 'aproveit', 'repet', 'duplic']
+          ['um lugar', 'único lugar', 'centralizar', 'centralizada', 'centraliza'],
+          ['mudar', 'mudança', 'mudanças', 'alterar', 'alteração', 'muda'],
+          ['duplicar', 'duplicação', 'duplicada', 'repetir', 'repetição', 'reutilizar', 'reaproveitar']
         ],
-        exemplo: 'Porque a regra fica em um único lugar: se ela mudar, altero o método e todos os usos passam a ter o comportamento correto. Isso evita repetir e duplicar a regra, deixa o código mais legível e permite reaproveitar a lógica.',
+        minimoChaves: 3,
+        exemplo: 'Se o imposto mudar, eu corrijo a conta uma única vez, dentro do método, e carrinho, resumo e e-mail passam a usar o valor certo. Sem o método eu teria três cópias e correria o risco de esquecer uma delas.',
         dicas: ['Pense no dia em que a regra mudar.', 'Pense em quem vai ler o código depois.'],
         explicacao: 'Centralizar a regra em um lugar é uma das primeiras boas práticas que você vai usar no trabalho: elimina duplicação e reduz o risco de bugs.',
         conceitos: ['csharp.metodos']

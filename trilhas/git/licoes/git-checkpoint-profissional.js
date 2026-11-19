@@ -116,12 +116,12 @@ Plataforma.registrarLicao({
         ticket: {
           numero: 'PR #355',
           titulo: 'Ajusta desconto do cupom',
-          corpo: 'O cupom fixo agora é somado ao total do pedido. Conferi com um pedido de exemplo.'
+          corpo: 'O cupom (um valor fixo em reais) agora é descontado do total do pedido. Conferi com um pedido de exemplo.'
         },
         diff: [
           '@@ public decimal CalcularTotal() @@',
-          '     decimal total = 0;',
-          '+    total = total + pedido.Cupom;',
+          '     decimal total = itens.Sum(i => i.Subtotal);',
+          '+    total = total - pedido.Cupom;',
           '     return total;'
         ],
         enunciado: 'Qual comentário de review é o mais adequado?',
@@ -221,7 +221,7 @@ Plataforma.registrarLicao({
           'A pausa curta é o caso de uso do stash.',
           'Nada de trabalho pode ser perdido.'
         ],
-        explicacao: 'O stash guarda o trabalho temporário, libera a pasta para a correção e devolve tudo depois com um pop.',
+        explicacao: 'O stash guarda o trabalho temporário e libera a pasta; a correção sai em uma branch própria a partir da main, e o trabalho volta depois com um pop.',
         conceitos: ['git.stash', 'git.branch']
       }
     },

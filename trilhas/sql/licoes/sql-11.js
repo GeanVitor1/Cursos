@@ -92,15 +92,15 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql11-a3',
         tipo: 'find-error',
-        enunciado: 'Esta consulta passou pela revisão e foi **recusada**. Por quê?',
+        enunciado: 'Esta consulta foi **recusada** na revisão de código. Por quê?',
         contexto: [
           { tipo: 'codigo', linguagem: 'sql', codigo: 'UPDATE Produtos\nSET Estoque = 0;' }
         ],
         opcoes: [
-          'Falta o WHERE: a consulta zeraria o estoque de todos os produtos',
-          'O SET deveria vir antes do UPDATE',
-          'Estoque = 0 precisa de aspas',
-          'Nada — a consulta está correta'
+          'Falta o WHERE: o estoque de todos os produtos seria zerado',
+          'O SET deveria vir antes da palavra UPDATE na consulta',
+          'O valor Estoque = 0 precisa de aspas para ser aceito',
+          'Nada, a consulta está correta e pode ser executada'
         ],
         correta: 0,
         feedbackErro: {
@@ -136,15 +136,33 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
+        id: 'sql11-a7',
+        tipo: 'write-code',
+        enunciado: 'Escreva a consulta que atualiza o produto de **Id 3**: preço **250** e estoque **10**, na mesma instrução.',
+        respostasAceitas: [
+          'UPDATE Produtos SET Preco = 250, Estoque = 10 WHERE Id = 3;',
+          'UPDATE Produtos SET Estoque = 10, Preco = 250 WHERE Id = 3;'
+        ],
+        dicas: [
+          'O SET aceita várias colunas separadas por vírgula.',
+          'Não esqueça o WHERE com a chave primária.'
+        ],
+        explicacao: '`UPDATE Produtos SET Preco = 250, Estoque = 10 WHERE Id = 3;` — duas colunas alteradas em uma única linha.',
+        conceitos: ['sql.update']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
         id: 'sql11-a5',
         tipo: 'scenario',
         enunciado: 'O suporte pediu para marcar o pedido 183 como "Pago". Qual é a sequência mais segura?',
         cena: 'A tabela Pedidos tem Id, Status e ValorTotal. O pedido 183 existe e o pagamento acabou de ser confirmado.',
         opcoes: [
-          'Rodar SELECT * FROM Pedidos WHERE Id = 183; conferir e depois UPDATE Pedidos SET Status = \'Pago\' WHERE Id = 183;',
-          'Rodar UPDATE Pedidos SET Status = \'Pago\'; e conferir depois.',
-          'Apagar o pedido 183 do banco e cadastrá-lo de novo com Status Pago.',
-          'Alterar direto no banco sem consulta alguma, porque o Id é conhecido.'
+          'Consultar com SELECT * FROM Pedidos WHERE Id = 183; e depois fazer o UPDATE com o mesmo WHERE',
+          'Rodar UPDATE Pedidos SET Status = \'Pago\'; e conferir o resultado depois disso',
+          'Apagar o pedido 183 do banco e cadastrá-lo de novo já com Status Pago',
+          'Alterar direto no banco, sem consulta nenhuma, porque o Id já é conhecido'
         ],
         correta: 0,
         feedbackErro: {

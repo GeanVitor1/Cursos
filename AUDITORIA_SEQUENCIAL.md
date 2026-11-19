@@ -4,11 +4,11 @@
 
 - Trilhas analisadas: **22**
 - Lições publicadas: **138**
-- Etapas percorridas: **1434**
-- Atividades percorridas: **904**
-- Conceitos registrados: **366**
-- Conceitos com introdução marcada: **161**
-- Erros: **0** · Avisos: **0**
+- Etapas percorridas: **1472**
+- Atividades percorridas: **939**
+- Conceitos registrados: **379**
+- Conceitos com introdução marcada: **174**
+- Erros: **0** · Avisos: **10**
 
 ## Evidência por conceito (introdução → prática → avaliação)
 
@@ -21,9 +21,9 @@
 | Registros (`sql.registro`) | etapa 4 · sql-00 | sql-00 etapa 6 | — | PRONTO_PARA_AVALIACAO | sql.tabela |
 | Chave primária (`sql.chave-primaria`) | etapa 8 · sql-00 | sql-00 etapa 9 | sql-checkpoint-fundamentos etapa 3 | PRONTO_PARA_AVALIACAO | sql.tabela |
 | Inglês técnico (`sql.ingles`) | etapa 12 · sql-00 | sql-00 etapa 14 | sql-02 etapa 14 | PRONTO_PARA_AVALIACAO | — |
-| Tipos de dados (`sql.tipos-dados`) | etapa 2 · sql-01 | sql-01 etapa 3 | — | PRATICADO | sql.coluna |
-| Chave estrangeira (`sql.chave-estrangeira`) | etapa 4 · sql-01 | sql-01 etapa 5 | sql-01 etapa 9 | PRONTO_PARA_AVALIACAO | sql.chave-primaria |
-| Relacionamentos (`sql.relacionamento`) | etapa 4 · sql-01 | sql-01 etapa 5 | sql-01 etapa 9 | PRONTO_PARA_AVALIACAO | sql.chave-estrangeira |
+| Tipos de dados (`sql.tipos-dados`) | etapa 2 · sql-01 | sql-01 etapa 3 | — | PRONTO_PARA_AVALIACAO | sql.coluna |
+| Chave estrangeira (`sql.chave-estrangeira`) | etapa 4 · sql-01 | sql-01 etapa 5 | sql-01 etapa 11 | PRONTO_PARA_AVALIACAO | sql.chave-primaria |
+| Relacionamentos (`sql.relacionamento`) | etapa 4 · sql-01 | sql-01 etapa 5 | sql-01 etapa 11 | PRONTO_PARA_AVALIACAO | sql.chave-estrangeira |
 | SELECT (`sql.select`) | etapa 1 · sql-02 | sql-02 etapa 2 | sql-02 etapa 14 | PRONTO_PARA_AVALIACAO | sql.tabela |
 | FROM (`sql.from`) | etapa 1 · sql-02 | sql-02 etapa 4 | sql-checkpoint-fundamentos etapa 5 | PRONTO_PARA_AVALIACAO | sql.select |
 | Seleção de colunas (`sql.colunas`) | etapa 3 · sql-02 | sql-02 etapa 5 | — | PRATICADO | sql.select |
@@ -41,13 +41,13 @@
 | Limitar resultados (TOP e LIMIT) (`sql.limite`) | etapa 1 · sql-08 | sql-08 etapa 2 | sql-checkpoint-iniciante etapa 4 | PRONTO_PARA_AVALIACAO | sql.order-by |
 | Valores nulos (NULL) e COALESCE (`sql.null`) | etapa 1 · sql-09 | sql-09 etapa 2 | sql-09 etapa 7 | PRONTO_PARA_AVALIACAO | sql.where |
 | LIKE (`sql.like`) | etapa 1 · sql-10 | sql-10 etapa 2 | sql-10 etapa 9 | PRONTO_PARA_AVALIACAO | sql.texto-aspas |
-| UPDATE e SET (`sql.update`) | etapa 1 · sql-11 | sql-11 etapa 2 | sql-11 etapa 7 | PRONTO_PARA_AVALIACAO | sql.comandos-sql, sql.where |
+| UPDATE e SET (`sql.update`) | etapa 1 · sql-11 | sql-11 etapa 2 | sql-11 etapa 8 | PRONTO_PARA_AVALIACAO | sql.comandos-sql, sql.where |
 | INSERT INTO e VALUES (`sql.insert`) | etapa 1 · sql-12 | sql-12 etapa 2 | sql-checkpoint-iniciante etapa 9 | PRONTO_PARA_AVALIACAO | sql.comandos-sql |
 | DELETE com segurança (`sql.delete`) | etapa 5 · sql-12 | sql-12 etapa 6 | sql-12 etapa 8 | PRONTO_PARA_AVALIACAO | sql.comandos-sql, sql.where |
 | JOIN (`sql.join`) | etapa 1 · sql-13 | sql-13 etapa 2 | sql-checkpoint-relacionamentos etapa 2 | PRONTO_PARA_AVALIACAO | — |
 | INNER JOIN (`sql.inner-join`) | etapa 1 · sql-14 | sql-14 etapa 2 | sql-checkpoint-relacionamentos etapa 3 | PRONTO_PARA_AVALIACAO | — |
 | LEFT JOIN (`sql.left-join`) | etapa 1 · sql-15 | sql-15 etapa 2 | sql-15 etapa 9 | PRONTO_PARA_AVALIACAO | — |
-| Múltiplos JOINs (`sql.join-multiplo`) | etapa 1 · sql-16 | sql-16 etapa 2 | sql-16 etapa 9 | PRONTO_PARA_AVALIACAO | — |
+| Múltiplos JOINs (`sql.join-multiplo`) | etapa 1 · sql-16 | sql-16 etapa 2 | sql-16 etapa 10 | PRONTO_PARA_AVALIACAO | — |
 | Aliases de tabelas (`sql.aliases`) | etapa 1 · sql-17 | sql-17 etapa 2 | sql-17 etapa 10 | PRONTO_PARA_AVALIACAO | — |
 | Agregação (`sql.agregacao`) | etapa 1 · sql-18 | sql-18 etapa 2 | sql-18 etapa 8 | PRONTO_PARA_AVALIACAO | — |
 | GROUP BY (`sql.group-by`) | etapa 1 · sql-19 | sql-19 etapa 2 | sql-19 etapa 6 | PRONTO_PARA_AVALIACAO | — |
@@ -62,7 +62,7 @@
 | Funções de string (`sql.strings`) | etapa 1 · sql-28 | sql-28 etapa 2 | sql-28 etapa 6 | PRONTO_PARA_AVALIACAO | — |
 | Índices (`sql.indices`) | etapa 1 · sql-29 | sql-29 etapa 2 | sql-29 etapa 6 | PRONTO_PARA_AVALIACAO | — |
 | Views (`sql.views`) | etapa 1 · sql-30 | sql-30 etapa 2 | sql-30 etapa 5 | PRONTO_PARA_AVALIACAO | — |
-| Stored procedures e functions (`sql.procedures`) | etapa 1 · sql-31 | sql-31 etapa 2 | sql-31 etapa 6 | PRONTO_PARA_AVALIACAO | — |
+| Stored procedures e functions (`sql.procedures`) | etapa 1 · sql-31 | sql-31 etapa 2 | sql-31 etapa 7 | PRONTO_PARA_AVALIACAO | — |
 | Transações (`sql.transacoes`) | etapa 1 · sql-32 | sql-32 etapa 2 | sql-32 etapa 5 | PRONTO_PARA_AVALIACAO | — |
 | Locks e concorrência (`sql.locks`) | etapa 1 · sql-33 | sql-33 etapa 2 | sql-33 etapa 5 | PRONTO_PARA_AVALIACAO | — |
 | Execution plans (`sql.execution-plan`) | etapa 1 · sql-34 | sql-34 etapa 2 | sql-34 etapa 5 | PRONTO_PARA_AVALIACAO | — |
@@ -75,12 +75,12 @@
 | Propriedades (`csharp.propriedades`) | etapa 4 · csharp-00 | csharp-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.classes |
 | Valores (`csharp.valor`) | etapa 6 · csharp-00 | csharp-00 etapa 7 | — | PRATICADO | csharp.propriedades |
 | Objetos (`csharp.objetos`) | etapa 8 · csharp-00 | csharp-00 etapa 9 | csharp-00 etapa 21 | PRONTO_PARA_AVALIACAO | csharp.classes |
-| Tipos de dados em C# (`csharp.tipos`) | etapa 15 · csharp-00 | csharp-00 etapa 16 | csharp-01 etapa 9 | PRONTO_PARA_AVALIACAO | — |
-| Variáveis (`csharp.variaveis`) | etapa 1 · csharp-01 | csharp-01 etapa 2 | csharp-01 etapa 9 | PRONTO_PARA_AVALIACAO | — |
-| Condições (`csharp.condicoes`) | etapa 5 · csharp-01 | csharp-01 etapa 6 | — | PRONTO_PARA_AVALIACAO | csharp.variaveis |
+| Tipos de dados em C# (`csharp.tipos`) | etapa 15 · csharp-00 | csharp-00 etapa 16 | csharp-01 etapa 10 | PRONTO_PARA_AVALIACAO | — |
+| Variáveis (`csharp.variaveis`) | etapa 1 · csharp-01 | csharp-01 etapa 2 | csharp-01 etapa 10 | PRONTO_PARA_AVALIACAO | — |
+| Condições (`csharp.condicoes`) | etapa 6 · csharp-01 | csharp-01 etapa 7 | — | PRONTO_PARA_AVALIACAO | csharp.variaveis |
 | Métodos (`csharp.metodos`) | etapa 2 · csharp-02 | csharp-02 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.variaveis |
-| List e coleções (`csharp.list`) | etapa 2 · csharp-03 | csharp-03 etapa 4 | csharp-03 etapa 12 | PRONTO_PARA_AVALIACAO | csharp.objetos |
-| Generics básicos (`csharp.generics`) | etapa 8 · csharp-03 | csharp-03 etapa 10 | — | PRONTO_PARA_AVALIACAO | csharp.list |
+| List e coleções (`csharp.list`) | etapa 2 · csharp-03 | csharp-03 etapa 4 | csharp-03 etapa 13 | PRONTO_PARA_AVALIACAO | csharp.objetos |
+| Generics básicos (`csharp.generics`) | etapa 9 · csharp-03 | csharp-03 etapa 11 | — | PRONTO_PARA_AVALIACAO | csharp.list |
 | Null e NullReferenceException (`csharp.null`) | etapa 1 · csharp-04 | csharp-04 etapa 3 | csharp-04 etapa 7 | PRONTO_PARA_AVALIACAO | csharp.objetos |
 | Interfaces (`csharp.interfaces`) | etapa 2 · csharp-05 | csharp-05 etapa 4 | csharp-05 etapa 7 | PRONTO_PARA_AVALIACAO | csharp.classes, csharp.metodos |
 | Construtores (`csharp.construtor`) | etapa 2 · csharp-06 | csharp-06 etapa 4 | — | PRONTO_PARA_AVALIACAO | csharp.classes |
@@ -88,10 +88,13 @@
 | Lambdas (`csharp.lambda`) | etapa 5 · csharp-07 | csharp-07 etapa 6 | csharp-07 etapa 10 | PRONTO_PARA_AVALIACAO | csharp.metodos |
 | Exceções (`csharp.excecoes`) | etapa 1 · csharp-08 | csharp-08 etapa 4 | csharp-08 etapa 6 | PRONTO_PARA_AVALIACAO | csharp.metodos |
 | async e await (`csharp.async`) | etapa 1 · csharp-09 | csharp-09 etapa 3 | csharp-09 etapa 6 | PRONTO_PARA_AVALIACAO | csharp.metodos, csharp.generics |
-| Total de pedido (`logica.total`) | etapa 2 · logica-00 | logica-00 etapa 3 | — | PRONTO_PARA_AVALIACAO | — |
-| Validação de regra (`logica.validacao`) | etapa 5 · logica-00 | logica-00 etapa 6 | — | PRONTO_PARA_AVALIACAO | logica.total |
-| Encontrar duplicados (`logica.duplicados`) | etapa 8 · logica-00 | logica-00 etapa 9 | — | PRATICADO | — |
-| Agrupar dados (`logica.agrupamento`) | etapa 10 · logica-00 | logica-00 etapa 11 | — | PRATICADO | — |
+| Variável (`logica.variavel`) | etapa 2 · logica-00 | logica-00 etapa 4 | — | PRATICADO | — |
+| Condição (`logica.condicao`) | etapa 2 · logica-00 | logica-00 etapa 4 | — | PRATICADO | logica.variavel |
+| Laço (repetição) (`logica.laco`) | etapa 3 · logica-00 | logica-00 etapa 4 | — | PRATICADO | logica.variavel, logica.condicao |
+| Total de pedido (`logica.total`) | etapa 5 · logica-00 | logica-00 etapa 6 | — | PRONTO_PARA_AVALIACAO | — |
+| Validação de regra (`logica.validacao`) | etapa 8 · logica-00 | logica-00 etapa 9 | — | PRONTO_PARA_AVALIACAO | logica.total |
+| Encontrar duplicados (`logica.duplicados`) | etapa 11 · logica-00 | logica-00 etapa 12 | — | PRATICADO | — |
+| Agrupar dados (`logica.agrupamento`) | etapa 13 · logica-00 | logica-00 etapa 14 | — | PRATICADO | — |
 | Comandos de navegação (`terminal.comandos`) | etapa 2 · terminal-00 | terminal-00 etapa 3 | — | PRONTO_PARA_AVALIACAO | — |
 | Comandos dotnet (`terminal.dotnet`) | etapa 5 · terminal-00 | terminal-00 etapa 6 | terminal-00 etapa 10 | PRONTO_PARA_AVALIACAO | terminal.comandos |
 | Comandos git (`terminal.git`) | etapa 7 · terminal-00 | — | — | INTRODUZIDO | terminal.comandos |
@@ -101,34 +104,44 @@
 | Números, idade e preços (`en.numeros`) | etapa 1 · en-a1-01 | en-a1-01 etapa 2 | en-a1-checkpoint etapa 4 | PRONTO_PARA_AVALIACAO | — |
 | Família e pessoas (`en.familia`) | etapa 1 · en-a1-02 | en-a1-02 etapa 2 | en-a1-02 etapa 18 | PRONTO_PARA_AVALIACAO | en.saudacoes |
 | Rotina e present simple (`en.rotina`) | etapa 1 · en-a1-03 | en-a1-03 etapa 2 | en-a1-03 etapa 16 | PRONTO_PARA_AVALIACAO | — |
-| Horas, dias e datas (`en.horarios`) | etapa 1 · en-a1-04 | en-a1-04 etapa 2 | en-a1-checkpoint etapa 6 | PRONTO_PARA_AVALIACAO | en.numeros |
+| Horas e dias da semana (`en.horarios`) | etapa 1 · en-a1-04 | en-a1-04 etapa 2 | en-a1-checkpoint etapa 6 | PRONTO_PARA_AVALIACAO | en.numeros |
 | Comida e restaurante (`en.comida`) | etapa 1 · en-a1-05 | en-a1-05 etapa 2 | en-a1-05 etapa 17 | PRONTO_PARA_AVALIACAO | — |
 | Compras e supermercado (`en.compras`) | etapa 1 · en-a1-06 | en-a1-06 etapa 2 | en-a1-06 etapa 16 | PRONTO_PARA_AVALIACAO | en.numeros |
 | Lugares, direções e transporte (`en.lugares`) | etapa 1 · en-a1-07 | en-a1-07 etapa 2 | en-a1-07 etapa 15 | PRONTO_PARA_AVALIACAO | — |
 | Perguntas básicas e conversa (`en.perguntas`) | etapa 1 · en-a1-08 | en-a1-08 etapa 2 | en-a1-08 etapa 16 | PRONTO_PARA_AVALIACAO | en.saudacoes |
+| Vocabulário técnico (`ingles.vocabulario`) | etapa 1 · ingles-00 | ingles-00 etapa 2 | redis-checkpoint-fundamentos etapa 10 | PRONTO_PARA_AVALIACAO | — |
+| Frases de trabalho (`ingles.frases`) | etapa 7 · ingles-00 | ingles-00 etapa 8 | — | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
+| Leitura técnica em inglês (`ingles.leitura`) | etapa 17 · ingles-00 | ingles-00 etapa 21 | ingles-01 etapa 25 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
+| Mensagens de erro em inglês (`ingles.erros`) | etapa 1 · ingles-01 | ingles-01 etapa 2 | ingles-01 etapa 27 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
 | Passado simples (`en.passado`) | etapa 1 · en-a2-00 | en-a2-00 etapa 2 | en-a2-00 etapa 22 | PRONTO_PARA_AVALIACAO | en.rotina |
 | Planos e futuro (`en.futuro`) | etapa 1 · en-a2-01 | en-a2-01 etapa 2 | en-a2-01 etapa 12 | PRONTO_PARA_AVALIACAO | en.rotina |
 | Viagem: aeroporto e hotel (`en.viagem`) | etapa 1 · en-a2-02 | en-a2-02 etapa 2 | en-a2-02 etapa 17 | PRONTO_PARA_AVALIACAO | en.lugares |
-| Experiências de vida (present perfect) (`en.a2-experiencias`) | etapa 1 · ingles-02 | ingles-02 etapa 2 | ingles-02 etapa 9 | PRONTO_PARA_AVALIACAO | en.passado |
+| Experiências de vida (present perfect) (`en.a2-experiencias`) | etapa 1 · ingles-02 | ingles-02 etapa 2 | ingles-02 etapa 11 | PRONTO_PARA_AVALIACAO | en.passado |
 | Descrevendo pessoas e lugares (`en.a2-descricao`) | etapa 1 · ingles-03 | ingles-03 etapa 2 | ingles-03 etapa 9 | PRONTO_PARA_AVALIACAO | en.lugares |
 | Saúde, telefone e mensagens (`en.a2-saude`) | etapa 1 · ingles-04 | ingles-04 etapa 2 | ingles-04 etapa 8 | PRONTO_PARA_AVALIACAO | en.rotina |
-| Vocabulário técnico (`ingles.vocabulario`) | etapa 1 · ingles-00 | ingles-00 etapa 2 | redis-checkpoint-fundamentos etapa 10 | PRONTO_PARA_AVALIACAO | — |
-| Frases de trabalho (`ingles.frases`) | etapa 7 · ingles-00 | ingles-00 etapa 8 | — | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
-| Leitura técnica em inglês (`ingles.leitura`) | etapa 17 · ingles-00 | ingles-00 etapa 21 | ingles-01 etapa 25 | PRONTO_PARA_AVALIACAO | — |
-| Mensagens de erro em inglês (`ingles.erros`) | etapa 1 · ingles-01 | ingles-01 etapa 2 | ingles-01 etapa 27 | PRONTO_PARA_AVALIACAO | ingles.vocabulario |
 | Frases de reunião diária (`ingles.reuniao`) | etapa 1 · ingles-17 | ingles-17 etapa 2 | ingles-17 etapa 9 | PRONTO_PARA_AVALIACAO | ingles.frases |
 | GitHub em inglês: issue, pull request, merge, release (`ingles.github`) | etapa 1 · ingles-18 | ingles-18 etapa 2 | ingles-18 etapa 9 | PRONTO_PARA_AVALIACAO | ingles.vocabulario, ingles.frases |
-| HTTP (`aspnet.http`) | etapa 1 · engenharia-ia-00 | engenharia-ia-00 etapa 2 | — | PRONTO_PARA_AVALIACAO | — |
-| API e endpoints (`aspnet.api`) | etapa 1 · engenharia-ia-00 | engenharia-ia-00 etapa 2 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
-| Da necessidade à decisão técnica (`engenharia-ia.decisoes`) | etapa 3 · engenharia-ia-00 | engenharia-ia-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | — |
-| Escolher .NET e separar responsabilidades (`engenharia-ia.dotnet`) | etapa 2 · engenharia-ia-01 | engenharia-ia-01 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
-| Cache (`redis.cache`) | etapa 1 · engenharia-ia-02 | engenharia-ia-02 etapa 2 | redis-00 etapa 9 | PRONTO_PARA_AVALIACAO | aspnet.api |
-| Investigar consultas antes de usar cache (`engenharia-ia.performance`) | etapa 3 · engenharia-ia-02 | engenharia-ia-02 etapa 5 | — | PRONTO_PARA_AVALIACAO | — |
-| Revisar, testar e depurar código gerado (`engenharia-ia.validacao`) | etapa 2 · engenharia-ia-03 | engenharia-ia-03 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
-| Da rede ao HTTPS: localizar uma falha (`ciber-fundamentos.redes`) | etapa 3 · ciber-fundamentos-00 | ciber-fundamentos-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | — |
-| Sistemas operacionais, Linux e menor privilégio (`ciber-fundamentos.linux`) | etapa 1 · ciber-fundamentos-01 | ciber-fundamentos-01 etapa 3 | — | PRONTO_PARA_AVALIACAO | — |
-| Criptografia, senhas e controle de acesso (`ciber-fundamentos.criptografia`) | etapa 2 · ciber-fundamentos-02 | ciber-fundamentos-02 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
-| Modelar ameaças e investigar com evidências (`ciber-fundamentos.ameacas`) | etapa 1 · ciber-fundamentos-03 | ciber-fundamentos-03 etapa 3 | — | PRONTO_PARA_AVALIACAO | — |
+| HTTP (`engenharia-ia.http`) | etapa 1 · engenharia-ia-00 | engenharia-ia-00 etapa 2 | — | PRATICADO | — |
+| API (`engenharia-ia.api`) | etapa 1 · engenharia-ia-00 | engenharia-ia-00 etapa 2 | — | PRATICADO | engenharia-ia.http |
+| HTTP (`aspnet.http`) | etapa 2 · engenharia-ia-00 | aspnet-00 etapa 6 | — | PRONTO_PARA_AVALIACAO | — |
+| API e endpoints (`aspnet.api`) | etapa 2 · engenharia-ia-00 | aspnet-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | aspnet.http |
+| Da necessidade à decisão técnica (`engenharia-ia.decisoes`) | etapa 3 · engenharia-ia-00 | engenharia-ia-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
+| Contexto de dados e controller (`engenharia-ia.ef-contexto`) | etapa 1 · engenharia-ia-01 | engenharia-ia-01 etapa 2 | — | PRATICADO | — |
+| Escolher .NET e separar responsabilidades (`engenharia-ia.dotnet`) | etapa 3 · engenharia-ia-01 | engenharia-ia-01 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
+| Cache (`engenharia-ia.cache`) | etapa 1 · engenharia-ia-02 | engenharia-ia-02 etapa 2 | — | PRATICADO | — |
+| Cache (`redis.cache`) | etapa 2 · engenharia-ia-02 | redis-00 etapa 2 | redis-00 etapa 9 | PRONTO_PARA_AVALIACAO | aspnet.api |
+| Investigar consultas antes de usar cache (`engenharia-ia.performance`) | etapa 3 · engenharia-ia-02 | engenharia-ia-02 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
+| Mock (`engenharia-ia.mock`) | etapa 1 · engenharia-ia-03 | engenharia-ia-03 etapa 2 | — | PRATICADO | — |
+| Revisar, testar e depurar código gerado (`engenharia-ia.validacao`) | etapa 3 · engenharia-ia-03 | engenharia-ia-03 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
+| DNS e TLS (`ciber-fundamentos.dns-tls`) | etapa 1 · ciber-fundamentos-00 | ciber-fundamentos-00 etapa 2 | — | PRONTO_PARA_AVALIACAO | — |
+| HTTP e API (`ciber-fundamentos.http`) | etapa 1 · ciber-fundamentos-00 | ciber-fundamentos-00 etapa 2 | — | PRATICADO | — |
+| Da rede ao HTTPS: localizar uma falha (`ciber-fundamentos.redes`) | etapa 3 · ciber-fundamentos-00 | ciber-fundamentos-00 etapa 4 | — | PRATICADO | — |
+| Permissões de arquivo (`ciber-fundamentos.permissoes`) | etapa 1 · ciber-fundamentos-01 | ciber-fundamentos-01 etapa 2 | — | PRATICADO | — |
+| Sistemas operacionais, Linux e menor privilégio (`ciber-fundamentos.linux`) | etapa 3 · ciber-fundamentos-01 | ciber-fundamentos-01 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
+| Token de acesso (`ciber-fundamentos.token`) | etapa 1 · ciber-fundamentos-02 | ciber-fundamentos-02 etapa 2 | — | PRATICADO | ciber-fundamentos.http |
+| Criptografia, senhas e controle de acesso (`ciber-fundamentos.criptografia`) | etapa 3 · ciber-fundamentos-02 | ciber-fundamentos-02 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
+| Ativo, fronteira de confiança e log (`ciber-fundamentos.logs`) | etapa 1 · ciber-fundamentos-03 | ciber-fundamentos-03 etapa 2 | — | PRATICADO | — |
+| Modelar ameaças e investigar com evidências (`ciber-fundamentos.ameacas`) | etapa 3 · ciber-fundamentos-03 | ciber-fundamentos-03 etapa 4 | — | PRONTO_PARA_AVALIACAO | — |
 | O que é LINQ (`linq.intro`) | etapa 1 · linq-00 | linq-00 etapa 4 | — | PRONTO_PARA_AVALIACAO | csharp.lambda, csharp.list |
 | Where (`linq.where`) | etapa 2 · linq-00 | linq-00 etapa 5 | linq-01 etapa 6 | PRONTO_PARA_AVALIACAO | linq.intro |
 | Lambda em consultas (`linq.lambda`) | etapa 2 · linq-00 | linq-00 etapa 5 | — | PRONTO_PARA_AVALIACAO | csharp.lambda |
@@ -175,6 +188,19 @@
 | Serialização de objetos (`redis.serializacao`) | etapa 1 · redis-04 | redis-04 etapa 2 | redis-04 etapa 9 | PRONTO_PARA_AVALIACAO | redis.cache-aside |
 | Invalidação de cache (`redis.invalidacao`) | etapa 1 · redis-05 | redis-05 etapa 2 | redis-05 etapa 9 | PRONTO_PARA_AVALIACAO | redis.cache-aside |
 | Redis no ASP.NET Core (`redis.integracao`) | etapa 1 · redis-06 | redis-06 etapa 2 | redis-06 etapa 10 | PRONTO_PARA_AVALIACAO | redis.cache-aside |
+
+## ⚠️ Avisos (menções antes da introdução)
+
+- **sql-32 / etapa 1** — Menção antes de ensinar (conteúdo): csharp.excecoes -> "try"
+- **sql-32 / etapa 1** — Menção antes de ensinar (conteúdo): csharp.excecoes -> "try"
+- **terminal-00 / etapa 2** — Menção antes de ensinar (conteúdo): terminal.git -> "git "
+- **engenharia-ia-00 / etapa 1** — Menção antes de ensinar (conteúdo): aspnet.http -> "HTTP"
+- **engenharia-ia-00 / etapa 1** — Menção antes de ensinar (conteúdo): aspnet.http -> "HTTP"
+- **engenharia-ia-00 / etapa 1** — Menção antes de ensinar (conteúdo): aspnet.api -> "API"
+- **engenharia-ia-01 / etapa 1** — Menção antes de ensinar (conteúdo): ef.dbcontext -> "dbcontext"
+- **engenharia-ia-02 / etapa 1** — Menção antes de ensinar (conteúdo): redis.cache -> "cache"
+- **engenharia-ia-02 / etapa 1** — Menção antes de ensinar (conteúdo): redis.cache -> "cache"
+- **engenharia-ia-02 / etapa 1** — Menção antes de ensinar (conteúdo): redis.invalidacao -> "invalidação"
 
 <!-- MANUAL -->
 ## O erro que originou esta auditoria

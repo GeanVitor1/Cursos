@@ -32,6 +32,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en17-p1',
         tipo: 'match-pairs',
+        habilidade: 'vocabulario',
         dimensao: 'associacao',
         enunciado: 'Conecte cada termo ao significado na rotina de desenvolvimento.',
         pares: [
@@ -61,6 +62,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en17-p2',
         tipo: 'order-blocks',
+        habilidade: 'gramatica',
         dimensao: 'ordenacao',
         enunciado: 'Ordene a frase de status de ontem.',
         blocos: ['Yesterday', 'I worked on', 'the service.'],
@@ -74,9 +76,10 @@ Plataforma.registrarLicao({
       titulo: 'Apresentando o plano de hoje',
       blocos: [
         { tipo: 'texto', texto: 'Para o dia de hoje, usamos o futuro com will ou going to: **Today I will...** (Hoje eu vou...).' },
-        { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['bug', 'defeito / bug'],
-          ['tests', 'testes']
+          ['tests', 'testes'],
+          ['fix / write', 'corrigir / escrever']
         ] },
         { tipo: 'ingles', frase: 'Today I will fix this bug and write tests.', traducao: 'Hoje eu vou corrigir esse bug e escrever testes.' }
       ]
@@ -86,6 +89,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en17-p3',
         tipo: 'fill-code',
+        habilidade: 'gramatica',
         dimensao: 'preenchimento',
         enunciado: 'Complete o plano de hoje com o verbo que significa corrigir.',
         codigo: 'Today I will {{1}} the bug.',

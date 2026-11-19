@@ -15,8 +15,43 @@ Plataforma.registrarLicao({
   etapas: [
     {
       tipo: 'conteudo',
-      titulo: 'Perguntando sobre experiências',
+      titulo: 'Como se forma o present perfect',
       introduz: ['en.a2-experiencias'],
+      blocos: [
+        { tipo: 'texto', texto: 'O **present perfect** fala de uma experiência ou de algo que já aconteceu, sem dizer **quando**. A estrutura é **have / has + particípio passado**.' },
+        { tipo: 'lista', itens: [
+          '`I / you / we / they` + **have** + particípio: `I have visited Canada.`',
+          '`he / she / it` + **has** + particípio: `She has visited Canada.`',
+          'Verbos regulares: o particípio é igual ao passado, com a terminação de passado (`visited`, `worked`).',
+          'Alguns irregulares: `see → seen`, `be → been`, `do → done`.'
+        ] },
+        { tipo: 'ingles', frase: 'I have seen that movie. She has visited London. I have been there. We have done it.', traducao: 'Eu já vi aquele filme. Ela já visitou Londres. Eu já estive lá. Nós já fizemos isso.' },
+        { tipo: 'nota', tom: 'atencao', texto: 'Se a frase diz o dia ("yesterday", "last year"), use o passado simples: `I visited Canada last year.` O present perfect é para quando a data não importa.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'ingles02-p6',
+        tipo: 'multiple-choice',
+        habilidade: 'gramatica',
+        dimensao: 'reconhecimento',
+        enunciado: 'Qual frase está correta?',
+        opcoes: ['She has visited Canada.', 'She have visited Canada.', 'She has visit Canada.', 'She is visited Canada.'],
+        correta: 0,
+        feedbackErro: {
+          1: 'Com she (ele/ela/it) use **has**, não have.',
+          2: 'Depois de has/have o verbo vai para o particípio: visited.',
+          3: 'O present perfect usa has/have, não is.'
+        },
+        dicas: ['She pede has.', 'O verbo vem no particípio (visited).'],
+        explicacao: 'She has visited Canada. — has + particípio para he/she/it; have + particípio para I/you/we/they.',
+        conceitos: ['en.a2-experiencias']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Perguntando sobre experiências',
       blocos: [
         { tipo: 'texto', texto: 'Quando queremos saber se alguém já viveu uma experiência em qualquer momento da vida, usamos a pergunta com **Have you ever...?**' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
@@ -31,7 +66,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'en-a2-02-p1',
+        id: 'ingles02-p1',
         tipo: 'listening',
         habilidade: 'listening',
         dimensao: 'reconhecimento',
@@ -70,7 +105,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'en-a2-02-p2',
+        id: 'ingles02-p2',
         tipo: 'order-blocks',
         habilidade: 'gramatica',
         dimensao: 'ordenacao',
@@ -96,7 +131,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'en-a2-02-p3',
+        id: 'ingles02-p3',
         tipo: 'fill-code',
         habilidade: 'gramatica',
         dimensao: 'preenchimento',
@@ -123,7 +158,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'en-a2-02-p4',
+        id: 'ingles02-p4',
         tipo: 'match-pairs',
         habilidade: 'vocabulario',
         dimensao: 'associacao',
@@ -142,7 +177,7 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
-        id: 'en-a2-02-p5',
+        id: 'ingles02-p5',
         tipo: 'dialogue',
         habilidade: 'compreensao',
         dimensao: 'aplicacao',
@@ -171,14 +206,14 @@ Plataforma.registrarLicao({
           {
             fala: 'We can travel together next year!',
             opcoes: [
-              'Great! I will call you.',
+              "Yes! Let's travel together.",
               'My room has a single bed.',
               'Good morning, my name is Ana.'
             ],
             correta: 0
           }
         ],
-        dicas: ['Responda se já visitou.', 'Confirme que já visitou London.', 'Combine a viagem com will call you.'],
+        dicas: ['Responda se já visitou.', 'Confirme que já visitou London.', "Aceite o convite com Let's (vamos)."],
         explicacao: 'O diálogo combina perguntas sobre experiências com planos futuros.',
         conceitos: ['en.a2-experiencias'],
         desafio: true

@@ -18,7 +18,7 @@ Plataforma.registrarLicao({
       titulo: 'Lugares da cidade (1)',
       introduz: ['en.lugares'],
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['bank / supermarket', 'banco / supermercado'],
           ['hospital / pharmacy', 'hospital / farmácia']
         ] },
@@ -47,8 +47,9 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Lugares da cidade (2)',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
-          ['station / airport', 'estação / aeroporto'],
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
+          ['station / train station', 'estação / estação de trem'],
+          ['airport', 'aeroporto'],
           ['hotel / restaurant', 'hotel / restaurante']
         ] },
         { tipo: 'ingles', frase: 'This is the station.', traducao: 'Esta é a estação.' }
@@ -81,7 +82,8 @@ Plataforma.registrarLicao({
         { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
           ['Where is...?', 'Onde fica...?'],
           ['Is it far?', 'É longe?'],
-          ['minute / walk', 'minuto / caminhada']
+          ['minute / walk', 'minuto / caminhada'],
+          ['It is a five-minute walk.', 'É uma caminhada de cinco minutos.']
         ] },
         { tipo: 'ingles', frase: 'Where is the hotel?', traducao: 'Onde fica o hotel?' }
       ]
@@ -104,7 +106,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Direções',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['go straight', 'siga em frente'],
           ['turn left / turn right', 'vire à esquerda / à direita']
         ] },
@@ -129,7 +131,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Ao lado de, perto de',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['next to / near', 'ao lado de / perto de'],
           ['It costs...', 'Custa...']
         ] },
@@ -160,7 +162,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Transporte',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['on foot / by bus / by train', 'a pé / de ônibus / de trem']
         ] },
         { tipo: 'ingles', frase: 'I go to work on foot.', traducao: 'Eu vou ao trabalho a pé.' }
@@ -269,9 +271,10 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva: pergunte onde fica o aeroporto e diga que vai de ônibus.',
         esqueleto: 'Where is ...? I go ...',
         validar: function (valor) {
-          const t = String(valor || '').toLowerCase();
-          const pergunta = /\bwhere('s| is)\b/.test(t) && /\bairport\b/.test(t);
-          const transporte = /\b(by bus|take the bus|taking the bus)\b/.test(t);
+          const t = String(valor || '').toLowerCase().replace(/\s+/g, ' ');
+          const pergunta = /\bwhere(?: is|'s) (?:the |an? )?airport\b/.test(t);
+          const transporte = /\bi (?:usually |always )?(?:go|get|travel|come)(?: there| to the airport)? (?:by|on) (?:the )?bus\b/.test(t) ||
+            /\bi (?:usually |always |will |can )?(?:take|am taking|want to take) the bus\b/.test(t);
           return pergunta && transporte;
         },
         respostasAceitas: ['Where is the airport? I go by bus.'],

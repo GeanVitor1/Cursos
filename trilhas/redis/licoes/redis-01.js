@@ -22,7 +22,7 @@ Plataforma.registrarLicao({
         { tipo: 'retoma', conceito: 'redis.cache', texto: 'Você já sabe o que é cache, quando ele compensa e que ele é uma cópia da verdade. Agora falta conhecer a ferramenta que guarda essa cópia.' },
         { tipo: 'texto', texto: 'O **Redis** é um **banco de dados em memória**: ele mantém os dados na memória RAM e responde em pouquíssimos milissegundos. Ele não é um banco relacional — não tem tabelas, colunas nem SQL.' },
         { tipo: 'conceito', id: 'redis.servidor', titulo: 'O servidor Redis', texto: 'Um processo separado, como o banco de dados, que guarda pares de chave e valor em memória e responde por comandos simples.', exemplo: 'SET produto:10 "Mouse"' },
-        { tipo: 'diagrama', arte: 'API --> Redis        (memoria, ~1 ms)\nAPI --> SQL Server   (disco, ~120 ms)', legenda: 'Os dois podem coexistir: o Redis acelera, o banco garante.' },
+        { tipo: 'diagrama', arte: 'API --> Redis        (memória, ~1 ms)\nAPI --> SQL Server   (disco, ~120 ms)', legenda: 'Os dois podem coexistir: o Redis acelera, o banco garante.' },
         { tipo: 'tabela', titulo: 'Banco relacional x Redis', colunas: ['Banco relacional (SQL Server)', 'Redis'], linhas: [
           ['Guarda tabelas, linhas e colunas', 'Guarda pares de chave e valor'],
           ['Lê do disco', 'Lê da memória'],
@@ -82,7 +82,7 @@ Plataforma.registrarLicao({
         enunciado: 'Complete os comandos que gravam e leem o valor da chave `produto:10`.',
         codigo: '{{1}} produto:10 "Mouse"\n{{2}} produto:10',
         lacunas: [['set'], ['get']],
-        dicas: ['Guardar um valor é o comando SET.', 'Ler um valor é o comando GET.'],
+        dicas: ['Revise os dois comandos apresentados na etapa anterior: um grava e outro lê.', 'Os dois recebem o nome da chave; só o que grava recebe também o valor.'],
         explicacao: '`SET` grava o valor na chave e `GET` devolve o valor guardado. São os dois comandos mais usados do Redis.',
         conceitos: ['redis.servidor']
       }
@@ -118,7 +118,7 @@ Plataforma.registrarLicao({
       titulo: 'Onde o Redis encaixa',
       blocos: [
         { tipo: 'texto', texto: 'O Redis fica **ao lado** da aplicação, entre a API e o banco. Ele não substitui o banco relacional: guarda cópias e estruturas rápidas que podem ser recalculadas.' },
-        { tipo: 'diagrama', arte: 'cliente --> API --> Redis      (rapido, recalculavel)\n                     \\--> SQL Server (fonte da verdade)' },
+        { tipo: 'diagrama', arte: 'cliente --> API --> Redis      (rápido, recalculável)\n                     \\--> SQL Server (fonte da verdade)' },
         { tipo: 'lista', itens: [
           'Vai para o Redis: resultado de consulta que se repete, listas de destaque, contadores.',
           'Fica no banco: dados que exigem garantia, relatórios e histórico.'

@@ -147,8 +147,8 @@ Plataforma.registrarLicao({
           {
             tipo: 'codigo',
             linguagem: 'bash',
-            titulo: 'Saída do git branch',
-            codigo: '  main\n* feature/frete'
+            titulo: 'Saída do primeiro git branch (antes do switch)',
+            codigo: '* main\n  feature/frete'
           }
         ],
         opcoes: [
@@ -164,8 +164,8 @@ Plataforma.registrarLicao({
           3: 'O push envia o commit depois de gravado; ele não interfere na gravação.'
         },
         dicas: [
-          'O asterisco mostra a branch atual.',
-          'O commit nasce na branch em que você está.'
+          'No git branch, o asterisco mostra a branch atual; mas o que muda a branch atual depois dele?',
+          'O commit nasce na branch em que você está no momento de gravar.'
         ],
         explicacao: 'Depois da troca, a branch atual é a feature/frete. O commit entra nela e só chega à main quando as duas forem unidas.',
         conceitos: ['git.branch']
@@ -239,6 +239,7 @@ Plataforma.registrarLicao({
         placeholder: 'git ...',
         respostasAceitas: [
           "git switch -c feature/preco",
+          "git switch --create feature/preco",
           "git checkout -b feature/preco"
         ],
         dicas: [
@@ -255,7 +256,7 @@ Plataforma.registrarLicao({
         id: 'git02-a7',
         tipo: 'scenario',
         dimensao: 'aplicacao',
-        cena: 'Você terminou o trabalho na branch fix/total-pedido, mas descobriu que o apressado commit anterior foi feito na main, misturado com o trabalho de um colega.',
+        cena: 'Ontem você gravou uma correção do total do pedido direto na main. Ela ficou misturada com o trabalho em andamento de um colega, e hoje a equipe precisa separar as duas coisas.',
         enunciado: 'O que deveria ter acontecido desde o início?',
         opcoes: [
           'O trabalho deveria ter sido feito em uma branch própria, criada a partir da main',

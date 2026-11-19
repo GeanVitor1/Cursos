@@ -54,13 +54,13 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Alias no agregado',
       blocos: [
-        { tipo: 'texto', texto: 'Repare que o `ORDER BY` usou `Total`, o alias da soma. Depois de nomear a coluna agregada, o resto da consulta pode chamá-la pelo apelido:' },
+        { tipo: 'texto', texto: 'Repare que o `ORDER BY` usou `Total`, o alias da soma. O `ORDER BY` roda depois do `SELECT`, por isso enxerga o alias. Já `WHERE`, `GROUP BY` e `HAVING` rodam antes e **não** enxergam apelidos: nesses, repita a função (`HAVING SUM(ValorTotal) > 500`).' },
         {
           tipo: 'codigo',
           linguagem: 'sql',
           codigo: 'SELECT Status, COUNT(*) AS Total\nFROM Pedidos\nGROUP BY Status\nORDER BY Total DESC;'
         },
-        { tipo: 'nota', tom: 'info', texto: 'Isso deixa o `ORDER BY` legível: ordenar pelo "Total" em vez de repetir a função.' }
+        { tipo: 'nota', tom: 'info', texto: 'Isso deixa o `ORDER BY` legível: ordenar pelo "Total" em vez de repetir a função. No `HAVING`, porém, `HAVING Total > 500` não funciona no SQL Server.' }
       ]
     },
     {
@@ -127,7 +127,7 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Nada novo aqui: o relatório em inglês usa só o que você já sabe.' },
         { tipo: 'ingles', frase: 'Join orders and products.', traducao: 'Junte pedidos e produtos.' },
-        { tipo: 'trabalho', texto: 'Relatório agregado com JOIN + GROUP BY + HAVING + ORDER BY é o formato de 8 em cada 10 pedidos de dados no trabalho. Dominar essa forma cobre a maioria dos chamados.', fonte: '💼 No trabalho' }
+        { tipo: 'trabalho', texto: 'Relatório agregado com JOIN + GROUP BY + HAVING + ORDER BY é um formato muito comum nos pedidos de dados no trabalho. Dominar essa forma cobre boa parte dos chamados.', fonte: '💼 No trabalho' }
       ]
     },
     {
@@ -135,10 +135,13 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql21-a4',
         tipo: 'write-code',
-        enunciado: 'Join orders and products, contando itens por produto.',
+        enunciado: 'Join orders and products: mostre o **nome do produto** e a quantidade de itens vendidos de cada um (apelide a contagem de **Total**).',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select produtos.nome, count(*) as total from itenspedido join produtos on itenspedido.produtoid = produtos.id group by produtos.nome'
+          'select produtos.nome, count(*) as total from itenspedido join produtos on itenspedido.produtoid = produtos.id group by produtos.nome',
+          'select produtos.nome, count(*) as total FROM produtos join itenspedido ON itenspedido.produtoid = produtos.id group by produtos.nome',
+          'select produtos.nome, count(*) from itenspedido join produtos on itenspedido.produtoid = produtos.id group by produtos.nome',
+          'select produtos.nome, count(*) FROM produtos join itenspedido ON itenspedido.produtoid = produtos.id group by produtos.nome'
         ],
         dicas: [
           'Junte ItensPedido com Produtos.',

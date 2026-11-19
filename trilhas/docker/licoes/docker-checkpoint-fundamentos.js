@@ -175,10 +175,10 @@ Plataforma.registrarLicao({
         tipo: 'order-blocks',
         enunciado: 'Ordene as instruções que constroem a imagem da API.',
         blocos: [
-          'FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build',
+          'FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build',
           'COPY . .',
           'RUN dotnet publish -c Release -o /app',
-          'FROM mcr.microsoft.com/dotnet/aspnet:8.0',
+          'FROM mcr.microsoft.com/dotnet/aspnet:10.0',
           'COPY --from=build /app .',
           'ENTRYPOINT ["dotnet", "MinhaApi.dll"]'
         ],

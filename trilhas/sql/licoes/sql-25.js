@@ -20,7 +20,7 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'retoma', conceito: 'sql.join', texto: 'O `JOIN` combina tabelas lado a lado. O `UNION` (união) empilha resultados **um embaixo do outro**.' },
         { tipo: 'texto', texto: 'Duas consultas com as **mesmas colunas** viram uma lista só. O `UNION` remove duplicados; o `UNION ALL` mantém tudo:' },
-        { tipo: 'conceito', id: 'sql.union', titulo: 'UNION', texto: 'Empilha os resultados de duas consultas com colunas compatíveis. UNION remove repetidos; UNION ALL mantém.', exemplo: 'SELECT Nome FROM Clientes UNION SELECT Nome FROM Fornecedores;' },
+        { tipo: 'conceito', id: 'sql.union', titulo: 'UNION', texto: 'Empilha os resultados de duas consultas com colunas compatíveis. UNION remove repetidos; UNION ALL mantém.', exemplo: 'SELECT Nome FROM Clientes UNION SELECT Nome FROM Produtos;' },
         {
           tipo: 'codigo',
           linguagem: 'sql',
@@ -58,7 +58,7 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: "SELECT Cidade FROM Clientes\nUNION ALL\nSELECT Cidade FROM Pedidos;"
+          codigo: "SELECT Nome FROM Clientes\nUNION ALL\nSELECT Nome FROM Produtos;"
         },
         { tipo: 'nota', tom: 'atencao', texto: 'Colunas incompatíveis quebram a consulta: não dá para empilhar Nome (texto) com Preco (número) na mesma posição.' },
         { tipo: 'trabalho', texto: 'Relatórios que somam "tudo que entrou e tudo que saiu" costumam nascer de um UNION ALL entre duas consultas — uma de entradas, outra de saídas.', fonte: '💼 No trabalho' }
@@ -127,15 +127,15 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql25-a4',
         tipo: 'write-code',
-        enunciado: 'Escreva a consulta que lista **todos os nomes** de clientes e produtos, sem remover repetidos.',
+        enunciado: 'Escreva a consulta que lista os **nomes** de clientes e de produtos, **sem repetições** (use UNION).',
         respostasAceitas: [
-          'select nome from clientes union all select nome from produtos'
+          'SELECT Nome FROM Clientes UNION SELECT Nome FROM Produtos;'
         ],
         dicas: [
-          'Sem remover repetidos = ALL.',
-          'Empilhe as duas listas.'
+          'Empilhe as duas listas de nomes.',
+          'O UNION sozinho já elimina os repetidos.'
         ],
-        explicacao: '`UNION ALL` empilha tudo, mais rápido que o `UNION` deduplicado.',
+        explicacao: '`UNION` empilha e remove as repetições; `UNION ALL` empilharia tudo.',
         conceitos: ['sql.union'],
         desafio: true
       }

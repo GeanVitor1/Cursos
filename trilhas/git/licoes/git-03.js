@@ -25,7 +25,7 @@ Plataforma.registrarLicao({
           arte: 'main      ●───●───●───────────●   (recebe o merge)\n               \\           /\n                ●───●───●    feature/preco',
           legenda: 'Os commits da branch voltam para a linha principal no merge.'
         },
-        { tipo: 'conceito', id: 'git.merge', titulo: 'Merge', texto: 'Une o trabalho de uma branch na outra, criando um novo ponto na história.', exemplo: 'git merge feature/preco' },
+        { tipo: 'conceito', id: 'git.merge', titulo: 'Merge', texto: 'Une o trabalho de uma branch na outra. Se as duas linhas andaram, o Git cria um commit de merge; se a main não andou, ele apenas avança o ponteiro (fast-forward), sem criar commit novo.', exemplo: 'git merge feature/preco' },
         { tipo: 'nota', tom: 'info', texto: 'O merge acontece **na branch em que você está**. Para trazer a branch para a `main`, primeiro você entra na `main` e depois roda o merge.' }
       ]
     },
@@ -79,11 +79,15 @@ Plataforma.registrarLicao({
         dimensao: 'ordenacao',
         enunciado: 'Ordene os comandos que levam o trabalho da branch para a linha principal.',
         blocos: ['git switch main', 'git merge feature/preco', 'git push origin main', 'git branch -d feature/preco'],
+        ordensAceitas: [
+          ['git switch main', 'git merge feature/preco', 'git push origin main', 'git branch -d feature/preco'],
+          ['git switch main', 'git merge feature/preco', 'git branch -d feature/preco', 'git push origin main']
+        ],
         dicas: [
           'Entre na branch que recebe antes de rodar o merge.',
-          'Apagar a branch é o último passo.'
+          'Apagar a branch só faz sentido depois que o merge aconteceu.'
         ],
-        explicacao: 'Entrar na `main`, fazer o merge, enviar para o servidor e apagar a branch já unida.',
+        explicacao: 'Entrar na `main` e fazer o merge vêm primeiro. Depois, enviar a main ao servidor e apagar a branch local já unida são passos independentes.',
         conceitos: ['git.merge', 'git.branch']
       }
     },
@@ -185,7 +189,7 @@ Plataforma.registrarLicao({
         cena: 'Um colega comentou que a branch fix/cep já foi unida à main na semana passada, mas ela continua aparecendo na lista do time.',
         enunciado: 'O que faz sentido fazer?',
         opcoes: [
-          'Apagar a branch com git branch -d, porque o trabalho dela já está na main',
+          'Apagar a branch local com git branch -d e a remota com git push origin --delete fix/cep, porque o trabalho dela já está na main',
           'Continuar commitando nela para não perder o histórico',
           'Criar uma branch nova com o mesmo nome',
           'Fazer o merge de novo para garantir'
@@ -200,7 +204,7 @@ Plataforma.registrarLicao({
           'Branch unida já cumpriu o papel.',
           'A lista de branches deve refletir o trabalho em andamento.'
         ],
-        explicacao: 'Depois do merge, apagar a branch mantém a lista limpa e evita confusão sobre o que ainda está em aberto.',
+        explicacao: 'Como a branch aparece na lista do time, ela existe no servidor: depois do merge, apague a cópia local (git branch -d) e a remota (git push origin --delete), para manter a lista limpa.',
         conceitos: ['git.merge', 'git.branch']
       }
     },

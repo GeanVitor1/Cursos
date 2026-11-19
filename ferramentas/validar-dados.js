@@ -354,6 +354,32 @@ if (!termosPortugues) {
   });
 }
 
+// Avisos (não bloqueiam o build enquanto o conteúdo é corrigido).
+(function () {
+  const vistos = {};
+  const praticados = {};
+  Object.keys(licoes).forEach(function (lid) {
+    const licao = licoes[lid];
+    (licao.conceitos || []).forEach(function (c) { praticados[c] = true; });
+    (licao.etapas || []).forEach(function (etapa) {
+      if (!etapa || etapa.tipo !== 'atividade' || !etapa.atividade) return;
+      const atv = etapa.atividade;
+      (atv.conceitos || []).forEach(function (c) { praticados[c] = true; });
+      if (!atv.id) return;
+      (vistos[atv.id] = vistos[atv.id] || []).push(lid);
+    });
+  });
+  Object.keys(vistos).forEach(function (id) {
+    if (vistos[id].length > 1) aviso('ID de atividade duplicado: ' + id + ' em ' + vistos[id].join(', '));
+  });
+  const competencias = (habilidades && habilidades.competencias) || {};
+  Object.keys(competencias).forEach(function (hid) {
+    (competencias[hid].conceitosChave || []).forEach(function (cid) {
+      if (!praticados[cid]) aviso('Habilidade ' + hid + ': conceito-chave sem lição/atividade que o pratique -> ' + cid + ' (domínio inalcançável)');
+    });
+  });
+})();
+
 console.log('Trilhas carregadas: ' + Object.keys(trilhas).length + ' de ' + ((manifesto && manifesto.trilhas) || []).length);
 console.log('Lições carregadas: ' + Object.keys(licoes).length);
 console.log('Conceitos registrados: ' + Object.keys(conceitos).length);

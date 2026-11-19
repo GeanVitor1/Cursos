@@ -13,7 +13,7 @@ window.Plataforma = window.Plataforma || {};
     const lista = criar('div', { classe: 'opcoes' });
 
     ordem.forEach(function (original, pos) {
-      const botao = criar('button', { classe: 'opcao', type: 'button' }, [
+      const botao = criar('button', { classe: 'opcao', type: 'button', 'aria-pressed': 'false' }, [
         criar('span', { classe: 'opcao-marcador', texto: marcadores[pos] || String(pos + 1) }),
         criar('span', { classe: 'opcao-texto', html: P.dom.formatar(opcoes[original]) })
       ]);
@@ -21,7 +21,10 @@ window.Plataforma = window.Plataforma || {};
       botao.addEventListener('click', function () {
         if (travado) return;
         selecionada = original;
-        botoes.forEach(function (b) { b.classList.toggle('selecionada', b === botao); });
+        botoes.forEach(function (b) {
+          b.classList.toggle('selecionada', b === botao);
+          b.setAttribute('aria-pressed', b === botao ? 'true' : 'false');
+        });
         api.marcarRespondida(true);
       });
       botoes.push(botao);
@@ -38,7 +41,8 @@ window.Plataforma = window.Plataforma || {};
           const original = ordem[pos];
           b.classList.add('travada');
           b.classList.remove('selecionada');
-          if (original === correta) b.classList.add('correta');
+          // Só destaca a correta quando o aluno acertou; após erro, a revelação fica para "Ver resposta".
+          if (original === correta && selecionada === correta) b.classList.add('correta');
           else if (original === selecionada) b.classList.add('errada');
         });
         return { correto: selecionada === correta, selecionada: selecionada };
@@ -56,6 +60,7 @@ window.Plataforma = window.Plataforma || {};
         selecionada = -1;
         botoes.forEach(function (b) {
           b.classList.remove('selecionada', 'correta', 'errada', 'travada');
+          b.setAttribute('aria-pressed', 'false');
         });
         api.marcarRespondida(false);
       }
@@ -70,10 +75,12 @@ window.Plataforma = window.Plataforma || {};
       respostas[indice] = valor;
       botoes.verdadeiro.classList.toggle('ativo', valor === true);
       botoes.falso.classList.toggle('ativo', valor === false);
+      botoes.verdadeiro.setAttribute('aria-pressed', valor === true ? 'true' : 'false');
+      botoes.falso.setAttribute('aria-pressed', valor === false ? 'true' : 'false');
       aoResponder();
     }
-    botoes.verdadeiro = criar('button', { classe: 'tf-botao', type: 'button', texto: 'Verdadeiro', onclick: function () { escolher(true); } });
-    botoes.falso = criar('button', { classe: 'tf-botao', type: 'button', texto: 'Falso', onclick: function () { escolher(false); } });
+    botoes.verdadeiro = criar('button', { classe: 'tf-botao', type: 'button', 'aria-pressed': 'false', texto: 'Verdadeiro', onclick: function () { escolher(true); } });
+    botoes.falso = criar('button', { classe: 'tf-botao', type: 'button', 'aria-pressed': 'false', texto: 'Falso', onclick: function () { escolher(false); } });
     referencias[indice] = { botoes: botoes, travar: function (t) { travado = t; } };
     return criar('div', { classe: 'tf-afirmacao' }, [
       criar('div', { classe: 'tf-linha' }, [
@@ -127,7 +134,7 @@ window.Plataforma = window.Plataforma || {};
               escolhido.classList.add('correta');
             } else {
               escolhido.classList.add('errada');
-              oposto.classList.add('correta');
+              void oposto;
             }
           });
           return { correto: correto, selecionada: null, detalhes: detalhes };

@@ -21,7 +21,7 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'retoma', conceito: 'redis.cache-aside', texto: 'Você já sabe gravar, ler e serializar valores no cache. Falta o caso em que o dado muda **depois** de já estar guardado.' },
         { tipo: 'texto', texto: 'Quando alguém altera o preço no banco, a cópia guardada não é avisada. A próxima leitura acerta o cache e mostra o valor antigo — sem nenhum erro aparente.' },
-        { tipo: 'diagrama', arte: 'banco:  Preco = 120\ncache:  Preco = 100   <-- o usuario ve isto', legenda: 'O cache continua servindo a foto antiga.' },
+        { tipo: 'diagrama', arte: 'banco:  Preco = 120\ncache:  Preco = 100   <-- o usuário vê isto', legenda: 'O cache continua servindo a foto antiga.' },
         { tipo: 'conceito', id: 'redis.invalidacao', titulo: 'Invalidação de cache', texto: 'Remover ou atualizar a cópia guardada quando o dado muda na fonte, para não servir informação velha.', exemplo: 'RemoveAsync("produto:10") depois do Update.' },
         { tipo: 'nota', tom: 'atencao', texto: 'O TTL limita o tempo do dado velho, mas durante o prazo ele continua aparecendo. TTL não substitui a invalidação.' }
       ]

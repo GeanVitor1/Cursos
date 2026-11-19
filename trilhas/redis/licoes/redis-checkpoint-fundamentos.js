@@ -109,15 +109,19 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'cp-redis-f5',
         tipo: 'order-blocks',
-        enunciado: 'Ordene a sequência que grava uma chave, define o prazo, confere o tempo restante e lê o valor.',
+        enunciado: 'Ordene a sequência que grava uma chave, define o prazo e, depois disso, confere o tempo restante e lê o valor.',
         blocos: [
           'SET produto:10 "Mouse"',
           'EXPIRE produto:10 60',
           'TTL produto:10',
           'GET produto:10'
         ],
-        dicas: ['Não se define prazo de uma chave que ainda não existe.', 'A leitura vem por último.'],
-        explicacao: 'Gravar com SET, definir prazo com EXPIRE, conferir com TTL e só então ler com GET. A ordem importa quando o prazo depende da chave existir.',
+        ordensAceitas: [
+          ['SET produto:10 "Mouse"', 'EXPIRE produto:10 60', 'TTL produto:10', 'GET produto:10'],
+          ['SET produto:10 "Mouse"', 'EXPIRE produto:10 60', 'GET produto:10', 'TTL produto:10']
+        ],
+        dicas: ['Não se define prazo de uma chave que ainda não existe.', 'Conferir o tempo restante e ler o valor só fazem sentido depois do prazo definido.'],
+        explicacao: 'Gravar com SET e definir o prazo com EXPIRE vêm primeiro, nessa ordem. Depois, TTL e GET são independentes e podem ocorrer em qualquer ordem.',
         conceitos: ['redis.servidor', 'redis.ttl']
       }
     },
@@ -171,9 +175,14 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva o comando que guarda a chave `produto:10` com o valor Mouse e prazo de 60 segundos.',
         respostasAceitas: [
-          "SET produto:10 \"Mouse\" EX 60"
+          "SET produto:10 \"Mouse\" EX 60",
+          "SET produto:10 Mouse EX 60",
+          "SETEX produto:10 60 \"Mouse\"",
+          "SETEX produto:10 60 Mouse",
+          "SET produto:10 \"Mouse\" PX 60000",
+          "SET produto:10 Mouse PX 60000"
         ],
-        dicas: ['Use a forma curta de expiração depois do valor.', 'A ordem é SET, chave, valor, EX e o tempo.'],
+        dicas: ['Um único comando pode gravar o valor e definir o prazo.', 'Em SET, as opções de expiração vêm depois do valor.'],
         explicacao: '`SET produto:10 "Mouse" EX 60` grava o valor e define o prazo em um único comando.',
         conceitos: ['redis.servidor', 'redis.ttl']
       }

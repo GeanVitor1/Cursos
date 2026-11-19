@@ -35,10 +35,18 @@ window.Plataforma = window.Plataforma || {};
       }
       premiadas = Object.assign({}, P.dados.obterEtapasPremiadas(opcoes.licao.id));
     }
-    if (opcoes.licao && opcoes.licao.tipo === 'prova' && !P.dados.estaConcluida(opcoes.licao.id)) {
+    if (opcoes.licao && opcoes.licao.tipo === 'prova') {
+      // Cada execução de checkpoint/prova é avaliada isoladamente: nunca reaproveita
+      // resultados de uma tentativa anterior.
       indice = 0; retomado = false;
       const registro = P.dados.obterRegistroLicao(opcoes.licao.id);
       if (registro) { registro.resultadosEtapas = {}; P.dados.salvar(); }
+      if (!P.dados.estaConcluida(opcoes.licao.id)) {
+        // Nova tentativa após reprovação: conceitos voltam a ser creditados
+        // (o XP continua deduplicado pela chave do prêmio).
+        P.dados.limparEtapasPremiadas(opcoes.licao.id);
+        premiadas = {};
+      }
     }
     estado = {
       modo: opcoes.modo || 'licao',
@@ -148,6 +156,14 @@ window.Plataforma = window.Plataforma || {};
     resetarPasso();
     render();
     indicarSalvo();
+    window.requestAnimationFrame(function () {
+      if (!estado || (estado.instancia && estado.instancia.focar)) return;
+      const titulo = document.querySelector('.passo .passo-titulo, .passo h2, .passo');
+      if (titulo) {
+        if (!titulo.hasAttribute('tabindex')) titulo.setAttribute('tabindex', '-1');
+        try { titulo.focus({ preventScroll: true }); } catch (e) { titulo.focus(); }
+      }
+    });
   }
 
   function percentual() {
@@ -220,6 +236,7 @@ window.Plataforma = window.Plataforma || {};
         classe: 'runner-sair',
         texto: '✕',
         title: 'Sair da etapa',
+        'aria-label': 'Sair da etapa',
         onclick: function (ev) {
           if (ev && ev.preventDefault) ev.preventDefault();
           sair();
@@ -353,7 +370,7 @@ window.Plataforma = window.Plataforma || {};
     const confiancaBox = criar('div', { classe: 'confianca', hidden: true });
     passo.appendChild(confiancaBox);
 
-    const feedback = criar('div', { classe: 'feedback', hidden: true });
+    const feedback = criar('div', { classe: 'feedback', hidden: true, role: 'status', 'aria-live': 'polite', tabindex: '-1' });
     passo.appendChild(feedback);
 
     corpo.appendChild(passo);
@@ -459,6 +476,12 @@ window.Plataforma = window.Plataforma || {};
       xp ? criar('span', { classe: 'feedback-xp', texto: xp }) : null
     ]));
     if (texto) caixa.appendChild(criar('div', { classe: 'feedback-texto', html: P.dom.formatar(texto) }));
+    window.requestAnimationFrame(function () {
+      if (caixa.isConnected && !caixa.hidden) {
+        try { caixa.focus({ preventScroll: true }); } catch (e) { caixa.focus(); }
+        if (caixa.scrollIntoView) caixa.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+    });
   }
 
   function esconderFeedback() {
@@ -522,7 +545,12 @@ window.Plataforma = window.Plataforma || {};
       const primeira = estado.tentativas === 1;
       estado.errosSeguidos = 0;
       let ganho = 0;
-      if (!jaContabil && !estado.semPontuacao) {
+      if (!jaContabil && !estado.semPontuacao && resultado.semXp) {
+        P.dados.transacao(function () {
+          estado.premiadas[estado.indice] = true;
+          if (estado.modo === 'licao' && estado.licao) P.dados.marcarEtapaPremiada(estado.licao.id, estado.indice);
+        });
+      } else if (!jaContabil && !estado.semPontuacao) {
         if (primeira) estado.acertosPrimeira += 1;
         const integro = primeira && estado.resultados[estado.indice].primeira && estado.dicasUsadas === 0 && !estado.resultados[estado.indice].dicas;
         ganho = atv.desafio
@@ -545,7 +573,8 @@ window.Plataforma = window.Plataforma || {};
       } else if (infoConceito.confianca === 'certeza' && primeira) {
         texto += '\n\nSegurança registrada: isso conta como evidência forte de domínio.';
       }
-      mostrarFeedback('correto', primeira ? 'Boa!' : 'Agora sim.', texto, jaContabil ? null : '+' + ganho + ' XP');
+      const tituloAcerto = resultado.semErros === false ? 'Concluído, com alguns erros pelo caminho.' : (primeira ? 'Boa!' : 'Agora sim.');
+      mostrarFeedback('correto', tituloAcerto, texto, jaContabil || !ganho ? null : '+' + ganho + ' XP');
       definirAcoes({ rotulo: 'Continuar', acao: avancar });
     } else {
       const jaContabil = !!estado.premiadas[estado.indice];
@@ -586,6 +615,19 @@ window.Plataforma = window.Plataforma || {};
     if (estado.instancia && estado.instancia.prepararNovaTentativa) estado.instancia.prepararNovaTentativa();
     esconderFeedback();
     definirAcoes({ rotulo: 'Verificar', acao: verificar, desabilitado: !estado.respondida });
+    focarAtividade();
+  }
+
+  function focarAtividade() {
+    window.requestAnimationFrame(function () {
+      if (!estado) return;
+      if (estado.instancia && estado.instancia.focar) { estado.instancia.focar(); return; }
+      const alvo = document.querySelector('.passo .atividade-area button:not([disabled]), .passo .atividade-area input, .passo .atividade-area textarea, .passo h2, .passo h1');
+      if (alvo) {
+        if (/^H[12]$/.test(alvo.tagName) && !alvo.hasAttribute('tabindex')) alvo.setAttribute('tabindex', '-1');
+        alvo.focus();
+      }
+    });
   }
 
   function revelar() {
@@ -761,6 +803,10 @@ window.Plataforma = window.Plataforma || {};
   P.ui.runner = {
     iniciar: iniciar,
     encerrar: encerrar,
+    // Nivelamento não salva rascunho: sair no meio descarta as respostas.
+    saidaDescartaRespostas: function () {
+      return !!(estado && !estado.finalizada && estado.modo === 'nivelamento' && estado.respostas.filter(Boolean).length > 0);
+    },
     acaoPrimaria: function (ev) { executarAcao(acaoPrimariaAtual, ev); }
   };
 })(window.Plataforma);

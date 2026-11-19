@@ -3,6 +3,41 @@ window.Plataforma = window.Plataforma || {};
 (function (P) {
   const criar = P.dom.criar;
 
+  // Casa palavra-chave por palavra inteira ou prefixo de raiz (ex.: "indice" casa "indices"),
+  // nunca por substring arbitraria ("terror" nao casa "erro").
+  function casaPalavraChave(textoLivre, alvoBruto) {
+    const alvo = P.dom.normalizar(alvoBruto || '').trim();
+    if (!alvo) return false;
+    const palavras = P.dom.normalizar(textoLivre || '').split(/[^a-z0-9#+]+/).filter(Boolean);
+    const partes = alvo.split(/[^a-z0-9#+]+/).filter(Boolean);
+    if (!partes.length) return false;
+    function casaUma(p, a) {
+      if (p === a) return true;
+      if (a.length < 4 || p.length < 4) return false;
+      const raiz = a.length >= 6 ? a.slice(0, a.length - 2) : a;
+      if (p.indexOf(raiz) === 0 && p.length - raiz.length <= 4) return true;
+      const raizP = p.length >= 6 ? p.slice(0, p.length - 2) : p;
+      return raizP.length >= 4 && a.indexOf(raizP) === 0 && a.length - raizP.length <= 4;
+    }
+    for (let i = 0; i + partes.length <= palavras.length; i++) {
+      let ok = true;
+      for (let j = 0; j < partes.length; j++) {
+        if (!casaUma(palavras[i + j], partes[j])) { ok = false; break; }
+      }
+      if (ok) return true;
+    }
+    return false;
+  }
+
+  function textoSubstantivo(textoLivre) {
+    const palavras = P.dom.normalizar(textoLivre || '').split(/[^a-z0-9#+]+/).filter(function (p) { return p.length >= 3; });
+    const unicas = new Set(palavras);
+    return palavras.length >= 8 && unicas.size >= 6 && unicas.size / palavras.length >= 0.5;
+  }
+
+  P.atividades.casaPalavraChave = casaPalavraChave;
+  P.atividades.textoSubstantivo = textoSubstantivo;
+
   function blocoDiff(diff) {
     const linhas = (diff || []).map(function (linha) {
       let classe = 'diff-linha';
@@ -153,7 +188,8 @@ window.Plataforma = window.Plataforma || {};
       controles.appendChild(botao);
 
       return {
-        verificar: function () { return { correto: concluido, selecionada: null }; },
+        // Observar a execução é demonstração, não evidência: não rende XP nem conta como domínio.
+        verificar: function () { return { correto: concluido, selecionada: null, semXp: true }; },
         revelar: function () {
           concluido = true;
           botao.disabled = true;
@@ -210,21 +246,99 @@ window.Plataforma = window.Plataforma || {};
       function palavrasPresentes() {
         const chaves = atv.palavrasChave || [];
         if (!chaves.length) return null;
-        const normalizado = P.dom.normalizar(texto.value);
-        const palavras = normalizado.split(/[^a-z0-9#+]+/).filter(function (p) { return p.length >= 3; });
-        function casa(alvo) {
-          if (!alvo) return false;
-          if (normalizado.indexOf(alvo) !== -1) return true;
-          return palavras.some(function (p) {
-            const tam = Math.min(p.length, alvo.length);
-            if (tam < 4) return false;
-            return p.indexOf(alvo.slice(0, tam)) === 0 || alvo.indexOf(p.slice(0, tam)) === 0;
-          });
-        }
         return chaves.filter(function (chave) {
           const alternativas = Array.isArray(chave) ? chave : [chave];
           return alternativas.some(function (alternativa) {
-            return casa(P.dom.normalizar(alternativa));
+            return casaPalavraChave(texto.value, alternativa);
+          });
+        });
+      }
+
+      function limpar() {
+        texto.classList.remove('correta', 'errada');
+      }
+
+      return {
+        verificar: function () {
+          const chaves = palavrasPresentes();
+          texto.readOnly = true;
+          if (chaves === null) {
+            if (textoSubstantivo(texto.value)) {
+              texto.classList.add('correta');
+              return { correto: true, selecionada: null };
+            }
+            texto.classList.add('errada');
+            return { correto: false, selecionada: null, detalhes: ['Desenvolva mais a explicação com suas próprias palavras: descreva o que acontece e por quê.'] };
+          }
+          const grupos = atv.palavrasChave || [];
+          const minimo = atv.minimoChaves || Math.ceil(grupos.length * 0.6);
+          if (chaves.length >= minimo) {
+            texto.classList.add('correta');
+            return { correto: true, selecionada: null };
+          }
+          texto.classList.add('errada');
+          return { correto: false, selecionada: null, detalhes: ['A explicação ainda não cobre os pontos centrais. Releia a lição e explique o mecanismo envolvido com mais precisão.'] };
+        },
+        revelar: function () {
+          concluido = true;
+          botao.disabled = true;
+          botao.textContent = 'Execução concluída';
+        },
+        prepararNovaTentativa: function () {
+          api.marcarRespondida(concluido);
+        }
+      };
+    }
+  });
+
+  P.atividades.registrar('explain', {
+    rotulo: 'Explique com suas palavras',
+    render: function (atv, area, api) {
+      const wrap = criar('div', { classe: 'write-area' });
+      if (atv.pergunta) {
+        wrap.appendChild(criar('div', { classe: 'pergunta-aberta', texto: atv.pergunta }));
+      }
+      const texto = criar('textarea', {
+        classe: 'write-codigo explain-texto',
+        spellcheck: 'true',
+        'aria-label': 'Sua explicação',
+        placeholder: atv.placeholder || 'Explique do seu jeito, sem decorar...'
+      });
+      wrap.appendChild(texto);
+      wrap.appendChild(criar('p', { classe: 'pequeno muted', texto: 'A correção automática verifica pontos de referência. Ela não comprova a validade técnica de uma explicação livre. Compare seu raciocínio com os critérios e a resposta modelo.' }));
+
+      const criterios = criar('div', { classe: 'criterios', hidden: true });
+      const modeloTitulo = criar('div', { classe: 'pequeno fraco', texto: 'Critérios de uma boa resposta' });
+      const lista = criar('ul', { classe: 'bloco-lista' }, (atv.criterios || []).map(function (c) {
+        return criar('li', { html: P.dom.formatar(c) });
+      }));
+      const exemplo = criar('div', { classe: 'resposta-esperada', hidden: true });
+      const botaoCriterios = criar('button', {
+        classe: 'btn-link',
+        texto: 'Ver critérios de avaliação',
+        onclick: function () {
+          criterios.hidden = !criterios.hidden;
+          botaoCriterios.textContent = criterios.hidden ? 'Ver critérios de avaliação' : 'Ocultar critérios';
+        }
+      });
+      criterios.appendChild(modeloTitulo);
+      criterios.appendChild(lista);
+      wrap.appendChild(botaoCriterios);
+      wrap.appendChild(criterios);
+      wrap.appendChild(exemplo);
+      area.appendChild(wrap);
+
+      texto.addEventListener('input', function () {
+        api.marcarRespondida(texto.value.trim().length >= (atv.minimoCaracteres || 20));
+      });
+
+      function palavrasPresentes() {
+        const chaves = atv.palavrasChave || [];
+        if (!chaves.length) return null;
+        return chaves.filter(function (chave) {
+          const alternativas = Array.isArray(chave) ? chave : [chave];
+          return alternativas.some(function (alternativa) {
+            return casaPalavraChave(texto.value, alternativa);
           });
         });
       }

@@ -160,7 +160,10 @@ Object.keys(posicoesLicao).forEach(function (licaoId) {
         const simbolo = chave.split(':').slice(1).join(':');
         if (campoInfo.natural && simbolo.replace(/[a-z0-9_.]/gi, '').length > 0 && simbolo.length === 1) return;
         const grupo = chave.split(':')[0];
-        const encontrado = campoInfo.natural ? contemNatural(campoInfo.texto, simbolo, grupo) : contem(campoInfo.texto, simbolo);
+        let textoAlvo = campoInfo.texto;
+        // BEGIN...END de corpo de FUNCTION/PROCEDURE (após AS) não é transação.
+        if (chave === 'sql:begin') textoAlvo = textoAlvo.replace(/\bAS\s+BEGIN\b/gi, 'AS');
+        const encontrado = campoInfo.natural ? contemNatural(textoAlvo, simbolo, grupo) : contem(textoAlvo, simbolo);
         if (!encontrado) return;
         const posIntro = posicoesLicao[infoSimbolo.licao];
         if (!posIntro) {

@@ -43,7 +43,7 @@ Plataforma.registrarLicao({
             "AddStackExchangeRedisCache"
           ]
         ],
-        dicas: ['O nome começa com Add.', 'O método foi apresentado no glossário acima.'],
+        dicas: ['O registro de serviços no builder usa métodos que começam com um verbo de adicionar.', 'Procure no glossário o método que liga o Redis à abstração de cache.'],
         explicacao: '`AddStackExchangeRedisCache` registra o provedor do Redis. A configuração vem em uma lambda com o endereço do servidor.',
         conceitos: ['redis.integracao']
       }
@@ -132,7 +132,8 @@ Plataforma.registrarLicao({
       titulo: 'O fluxo completo dentro do service',
       blocos: [
         { tipo: 'texto', texto: 'Dentro do service, o cache aside e a serialização aparecem juntos: procurar texto no cache, buscar no banco na falta, serializar e gravar.' },
-        { tipo: 'codigo', linguagem: 'csharp', codigo: 'public async Task<Produto> BuscarProdutoAsync(int id)\n{\n    var chave = "produto:" + id;\n    var guardado = await cache.GetStringAsync(chave);\n\n    if (guardado == null)\n    {\n        var produto = await context.Produtos.FindAsync(id);\n        await cache.SetStringAsync(chave, JsonSerializer.Serialize(produto));\n        return produto;\n    }\n\n    return JsonSerializer.Deserialize<Produto>(guardado);\n}' },
+        { tipo: 'codigo', linguagem: 'csharp', codigo: 'public async Task<Produto> BuscarProdutoAsync(int id)\n{\n    var chave = "produto:" + id;\n    var guardado = await cache.GetStringAsync(chave);\n\n    if (guardado == null)\n    {\n        var produto = await context.Produtos.FindAsync(id);\n        var opcoes = new DistributedCacheEntryOptions\n        {\n            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)\n        };\n        await cache.SetStringAsync(chave, JsonSerializer.Serialize(produto), opcoes);\n        return produto;\n    }\n\n    return JsonSerializer.Deserialize<Produto>(guardado);\n}' },
+        { tipo: 'nota', tom: 'info', texto: 'Repare no `AbsoluteExpirationRelativeToNow`: toda gravação no cache leva um prazo (TTL), como você viu na lição de expiração. Sem prazo, a cópia só sai do cache se for invalidada ou se o Redis precisar liberar memória.' },
         { tipo: 'diagrama', arte: 'endpoint --> service --> cache (acerto)\n                       \\--> banco (falta) --> cache', legenda: 'O endpoint não conhece o cache; quem decide é o service.' },
         { tipo: 'trabalho', texto: 'Em produção, o endereço do Redis não fica no código: vem de configuração e variável de ambiente, igual à string de conexão do banco. O mesmo service roda no computador do time apontando para um Redis local e no servidor apontando para o Redis de produção.', fonte: '💼 No trabalho' },
         { tipo: 'nota', tom: 'atencao', texto: 'Deixar cache espalhado pelos endpoints torna chave, prazo e invalidação difíceis de manter. A regra fica no service, em um lugar só.' }
@@ -143,12 +144,12 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'redis06-a5',
         tipo: 'find-error',
-        enunciado: 'O programador esqueceu o registro do cache no builder. O que acontece?',
+        enunciado: 'O ProdutoService está registrado, mas o programador esqueceu o registro do cache no builder. O ProdutoService recebe IDistributedCache no construtor. O que acontece quando a aplicação precisa criá-lo?',
         contexto: [
-          { tipo: 'codigo', linguagem: 'csharp', codigo: 'var builder = WebApplication.CreateBuilder(args);\nvar app = builder.Build();\n\napp.MapGet("/produtos", (ProdutoService service) => service.Listar());\n\napp.Run();' }
+          { tipo: 'codigo', linguagem: 'csharp', codigo: 'var builder = WebApplication.CreateBuilder(args);\nbuilder.Services.AddScoped<ProdutoService>();\n// (nenhum registro de cache aqui)\nvar app = builder.Build();\n\napp.MapGet("/produtos", (ProdutoService service) => service.Listar());\n\napp.Run();' }
         ],
         opcoes: [
-          'A aplicação falha ao montar o ProdutoService, porque IDistributedCache não foi registrado',
+          'A criação do ProdutoService falha com erro de dependência não resolvida, porque IDistributedCache não foi registrado',
           'O cache passa a usar um servidor padrão na nuvem automaticamente',
           'O endpoint compila e funciona sem cache, apenas mais devagar',
           'O Redis é iniciado junto com a aplicação'
@@ -159,8 +160,8 @@ Plataforma.registrarLicao({
           2: 'O parâmetro do construtor precisa ser resolvido; não há cache implícito.',
           3: 'O Redis é um processo separado; a aplicação não o inicia sozinha.'
         },
-        dicas: ['O container precisa saber como construir as dependências.', 'Sem registro, não há provedor de cache para injetar.'],
-        explicacao: 'Sem `AddStackExchangeRedisCache`, o container não sabe criar o IDistributedCache e a montagem do service falha na inicialização.',
+        dicas: ['O código registra o ProdutoService, mas e as dependências dele?', 'O container só entrega o que foi registrado antes.'],
+        explicacao: 'Sem `AddStackExchangeRedisCache` (ou outro provedor de IDistributedCache), o container não sabe criar a dependência e lança uma exceção ao resolver o service, em geral na primeira requisição.',
         conceitos: ['redis.integracao', 'csharp.di']
       }
     },

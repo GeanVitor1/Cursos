@@ -29,7 +29,7 @@ Plataforma.registrarLicao({
           tipo: 'codigo',
           linguagem: 'yaml',
           titulo: 'docker-compose.yml',
-          codigo: 'services:\n  api:\n    image: minha-api\n    ports:\n      - "8080:80"\n    environment:\n      - ASPNETCORE_ENVIRONMENT=Development\n    depends_on:\n      - banco\n  banco:\n    image: postgres',
+          codigo: 'services:\n  api:\n    image: minha-api\n    ports:\n      - "8080:8080"\n    environment:\n      - ASPNETCORE_ENVIRONMENT=Development\n    depends_on:\n      - banco\n  banco:\n    image: postgres:17\n    environment:\n      - POSTGRES_PASSWORD=senha',
           legenda: 'O mesmo comando de antes, agora descrito em um arquivo.'
         },
         { tipo: 'nota', tom: 'info', texto: 'O arquivo se chama `docker-compose.yml` e fica na raiz do projeto, ao lado do Dockerfile.' }
@@ -90,7 +90,7 @@ Plataforma.registrarLicao({
         id: 'docker07-a2',
         tipo: 'fill-code',
         enunciado: 'Complete o nome do serviço da API no arquivo.',
-        codigo: 'services:\n  {{1}}:\n    image: minha-api\n    ports:\n      - "8080:80"',
+        codigo: 'services:\n  {{1}}:\n    image: minha-api\n    ports:\n      - "8080:8080"',
         lacunas: [['api']],
         dicas: [
           'É o nome curto do serviço que expõe a porta 8080.',
@@ -169,11 +169,11 @@ Plataforma.registrarLicao({
         tipo: 'find-error',
         enunciado: 'O arquivo abaixo não sobe e o erro aponta para o serviço banco. Qual é o problema?',
         contexto: [
-          { tipo: 'codigo', linguagem: 'yaml', codigo: 'services:\n  api:\n    image: minha-api\n  banco:\n  image: postgres' }
+          { tipo: 'codigo', linguagem: 'yaml', codigo: 'services:\n  api:\n    image: minha-api\n  banco:\n  image: postgres:17' }
         ],
         opcoes: [
-          'A indentação de image: postgres está fora do bloco do serviço banco',
-          'O serviço banco não pode usar a imagem postgres',
+          'A indentação de image: postgres:17 está fora do bloco do serviço banco',
+          'O serviço banco não pode usar a imagem postgres:17',
           'Falta a chave version no começo do arquivo',
           'Todo serviço precisa declarar ports'
         ],

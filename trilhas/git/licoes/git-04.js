@@ -167,7 +167,7 @@ Plataforma.registrarLicao({
         },
         diff: [
           '@@ public decimal CalcularTotal() @@',
-          '     decimal total = 0;',
+          '     decimal total = itens.Sum(i => i.Subtotal);',
           '+    if (pedido.Cupom > 0)',
           '+    {',
           '+        total = total - (total * pedido.Cupom / 100);',

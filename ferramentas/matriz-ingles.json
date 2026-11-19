@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-10-22T12:32:46.190Z",
+  "geradoEm": "2026-11-19T10:40:39.249Z",
   "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Em todas as trilhas, cada etapa ensina no máximo 3 termos novos; na trilha de inglês, no máximo 6 palavras novas por etapa, e as frases de exemplo (bloco ingles) só usam palavras já explicadas.",
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
@@ -72,7 +72,7 @@
     },
     {
       "licao": "sql-06",
-      "etapa": 9,
+      "etapa": 10,
       "termos": 1,
       "palavras": [
         "sort"
@@ -90,15 +90,16 @@
     {
       "licao": "sql-09",
       "etapa": 8,
-      "termos": 2,
+      "termos": 3,
       "palavras": [
         "phone",
+        "null",
         "empty"
       ]
     },
     {
       "licao": "sql-10",
-      "etapa": 10,
+      "etapa": 12,
       "termos": 1,
       "palavras": [
         "starts",
@@ -107,7 +108,7 @@
     },
     {
       "licao": "sql-11",
-      "etapa": 8,
+      "etapa": 9,
       "termos": 3,
       "palavras": [
         "change",
@@ -135,7 +136,7 @@
     },
     {
       "licao": "sql-16",
-      "etapa": 8,
+      "etapa": 9,
       "termos": 1,
       "palavras": [
         "product"
@@ -213,7 +214,7 @@
     },
     {
       "licao": "sql-28",
-      "etapa": 8,
+      "etapa": 12,
       "termos": 2,
       "palavras": [
         "upper",
@@ -240,7 +241,7 @@
     },
     {
       "licao": "sql-31",
-      "etapa": 7,
+      "etapa": 8,
       "termos": 3,
       "palavras": [
         "procedure",
@@ -250,7 +251,7 @@
     },
     {
       "licao": "sql-32",
-      "etapa": 6,
+      "etapa": 7,
       "termos": 1,
       "palavras": [
         "protect"
@@ -276,7 +277,7 @@
     },
     {
       "licao": "sql-35",
-      "etapa": 7,
+      "etapa": 9,
       "termos": 2,
       "palavras": [
         "window",
@@ -285,7 +286,7 @@
     },
     {
       "licao": "sql-36",
-      "etapa": 6,
+      "etapa": 8,
       "termos": 1,
       "palavras": [
         "design"
@@ -302,7 +303,7 @@
     },
     {
       "licao": "sql-38",
-      "etapa": 5,
+      "etapa": 8,
       "termos": 1,
       "palavras": [
         "payment"
@@ -373,7 +374,7 @@
       "palavras": [
         "new",
         "nome",
-        "mouse",
+        "teclado",
         "m"
       ]
     },
@@ -388,19 +389,11 @@
     },
     {
       "licao": "csharp-03",
-      "etapa": 7,
+      "etapa": 8,
       "termos": 0,
       "palavras": [
         "remove",
         "clear"
-      ]
-    },
-    {
-      "licao": "csharp-04",
-      "etapa": 4,
-      "termos": 0,
-      "palavras": [
-        "null"
       ]
     },
     {
@@ -612,17 +605,15 @@
     },
     {
       "licao": "en-a1-01",
-      "etapa": 13,
-      "termos": 2,
+      "etapa": 15,
+      "termos": 1,
       "palavras": [
-        "years",
-        "old",
         "be"
       ]
     },
     {
       "licao": "en-a1-01",
-      "etapa": 14,
+      "etapa": 16,
       "termos": 2,
       "palavras": [
         "number",
@@ -699,11 +690,12 @@
     {
       "licao": "en-a1-03",
       "etapa": 1,
-      "termos": 2,
+      "termos": 3,
       "palavras": [
         "wake",
         "up",
-        "breakfast"
+        "breakfast",
+        "at"
       ]
     },
     {
@@ -898,21 +890,21 @@
     {
       "licao": "en-a1-06",
       "etapa": 3,
-      "termos": 2,
+      "termos": 3,
       "palavras": [
         "cash",
         "credit",
         "card",
-        "dollar"
+        "dollar",
+        "pay"
       ]
     },
     {
       "licao": "en-a1-06",
       "etapa": 5,
-      "termos": 2,
+      "termos": 1,
       "palavras": [
-        "help",
-        "pay"
+        "help"
       ]
     },
     {
@@ -937,6 +929,7 @@
         "jeans",
         "hat",
         "shirt",
+        "t",
         "sale"
       ]
     },
@@ -974,9 +967,10 @@
     {
       "licao": "en-a1-07",
       "etapa": 3,
-      "termos": 2,
+      "termos": 3,
       "palavras": [
         "station",
+        "train",
         "airport",
         "hotel",
         "restaurant"
@@ -1017,8 +1011,7 @@
       "termos": 1,
       "palavras": [
         "foot",
-        "bus",
-        "train"
+        "bus"
       ]
     },
     {
@@ -1040,9 +1033,10 @@
     {
       "licao": "en-a1-08",
       "etapa": 7,
-      "termos": 1,
+      "termos": 2,
       "palavras": [
-        "developer"
+        "developer",
+        "not"
       ]
     },
     {
@@ -1062,6 +1056,194 @@
         "week",
         "month",
         "now"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "request",
+        "response"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 3,
+      "termos": 3,
+      "palavras": [
+        "error",
+        "build",
+        "deploy"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "issue",
+        "branch"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "failed",
+        "unavailable",
+        "because"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "review",
+        "merge"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 11,
+      "termos": 3,
+      "palavras": [
+        "fix",
+        "retry",
+        "down"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 13,
+      "termos": 2,
+      "palavras": [
+        "connection",
+        "wrong"
+      ]
+    },
+    {
+      "licao": "ingles-00",
+      "etapa": 15,
+      "termos": 3,
+      "palavras": [
+        "config",
+        "configuration",
+        "hey",
+        "chat"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "connect",
+        "cannot"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 3,
+      "termos": 3,
+      "palavras": [
+        "object",
+        "instance",
+        "reference"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "resource",
+        "does",
+        "exist"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 7,
+      "termos": 3,
+      "palavras": [
+        "timeout",
+        "expired",
+        "while"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 9,
+      "termos": 2,
+      "palavras": [
+        "waiting",
+        "wait",
+        "for"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 11,
+      "termos": 2,
+      "palavras": [
+        "file",
+        "path",
+        "found"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 14,
+      "termos": 3,
+      "palavras": [
+        "title",
+        "steps",
+        "reproduce",
+        "create"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 16,
+      "termos": 3,
+      "palavras": [
+        "after",
+        "duplicated",
+        "application"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 18,
+      "termos": 2,
+      "palavras": [
+        "client",
+        "calling",
+        "call"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 20,
+      "termos": 3,
+      "palavras": [
+        "address",
+        "bug",
+        "retrying"
+      ]
+    },
+    {
+      "licao": "ingles-01",
+      "etapa": 22,
+      "termos": 2,
+      "palavras": [
+        "processed",
+        "twice",
+        "expected",
+        "actual"
       ]
     },
     {
@@ -1178,7 +1360,6 @@
       "termos": 2,
       "palavras": [
         "will",
-        "call",
         "later"
       ]
     },
@@ -1237,9 +1418,10 @@
     {
       "licao": "en-a2-02",
       "etapa": 7,
-      "termos": 1,
+      "termos": 2,
       "palavras": [
-        "final"
+        "final",
+        "closing"
       ]
     },
     {
@@ -1271,26 +1453,24 @@
     },
     {
       "licao": "ingles-02",
-      "etapa": 1,
-      "termos": 3,
+      "etapa": 3,
+      "termos": 2,
       "palavras": [
         "ever",
-        "visited",
         "canada"
       ]
     },
     {
       "licao": "ingles-02",
-      "etapa": 3,
-      "termos": 2,
+      "etapa": 5,
+      "termos": 1,
       "palavras": [
-        "already",
-        "seen"
+        "already"
       ]
     },
     {
       "licao": "ingles-02",
-      "etapa": 5,
+      "etapa": 7,
       "termos": 2,
       "palavras": [
         "yet",
@@ -1365,193 +1545,6 @@
       ]
     },
     {
-      "licao": "ingles-00",
-      "etapa": 1,
-      "termos": 2,
-      "palavras": [
-        "request",
-        "response"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 3,
-      "termos": 3,
-      "palavras": [
-        "error",
-        "build",
-        "deploy"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 5,
-      "termos": 2,
-      "palavras": [
-        "issue",
-        "branch"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 7,
-      "termos": 3,
-      "palavras": [
-        "failed",
-        "unavailable",
-        "because"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 9,
-      "termos": 2,
-      "palavras": [
-        "review",
-        "merge"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 11,
-      "termos": 3,
-      "palavras": [
-        "fix",
-        "retry",
-        "down"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 13,
-      "termos": 2,
-      "palavras": [
-        "connection",
-        "wrong"
-      ]
-    },
-    {
-      "licao": "ingles-00",
-      "etapa": 15,
-      "termos": 3,
-      "palavras": [
-        "config",
-        "configuration",
-        "hey",
-        "chat"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 1,
-      "termos": 2,
-      "palavras": [
-        "connect",
-        "cannot",
-        "not"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 3,
-      "termos": 3,
-      "palavras": [
-        "object",
-        "instance",
-        "reference"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 5,
-      "termos": 2,
-      "palavras": [
-        "resource",
-        "does",
-        "exist"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 7,
-      "termos": 3,
-      "palavras": [
-        "timeout",
-        "expired",
-        "while"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 9,
-      "termos": 1,
-      "palavras": [
-        "waiting",
-        "wait"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 11,
-      "termos": 2,
-      "palavras": [
-        "file",
-        "path",
-        "found"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 14,
-      "termos": 3,
-      "palavras": [
-        "title",
-        "steps",
-        "reproduce",
-        "create"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 16,
-      "termos": 3,
-      "palavras": [
-        "after",
-        "duplicated",
-        "application"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 18,
-      "termos": 2,
-      "palavras": [
-        "client",
-        "calling"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 20,
-      "termos": 3,
-      "palavras": [
-        "address",
-        "bug",
-        "retrying"
-      ]
-    },
-    {
-      "licao": "ingles-01",
-      "etapa": 22,
-      "termos": 2,
-      "palavras": [
-        "processed",
-        "twice",
-        "expected",
-        "actual"
-      ]
-    },
-    {
       "licao": "ingles-17",
       "etapa": 1,
       "termos": 3,
@@ -1572,9 +1565,10 @@
     {
       "licao": "ingles-17",
       "etapa": 5,
-      "termos": 1,
+      "termos": 2,
       "palavras": [
-        "tests"
+        "tests",
+        "write"
       ]
     },
     {
@@ -1617,7 +1611,8 @@
       "etapa": 1,
       "termos": 0,
       "palavras": [
-        "controller"
+        "controller",
+        "middleware"
       ]
     },
     {
@@ -1625,8 +1620,13 @@
       "etapa": 1,
       "termos": 0,
       "palavras": [
-        "cache",
-        "performance"
+        "fonte",
+        "original",
+        "expiração",
+        "invalidação",
+        "latência",
+        "projeção",
+        "paginação"
       ]
     },
     {
@@ -1634,7 +1634,22 @@
       "etapa": 1,
       "termos": 0,
       "palavras": [
-        "mock"
+        "asserção",
+        "teste",
+        "unitário",
+        "integração"
+      ]
+    },
+    {
+      "licao": "ciber-fundamentos-01",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "processo",
+        "conta",
+        "serviço",
+        "root",
+        "administrador"
       ]
     },
     {
@@ -1643,7 +1658,18 @@
       "termos": 0,
       "palavras": [
         "hash",
-        "token"
+        "salt",
+        "autenticação",
+        "autorização"
+      ]
+    },
+    {
+      "licao": "ciber-fundamentos-03",
+      "etapa": 1,
+      "termos": 0,
+      "palavras": [
+        "abuso",
+        "evidência"
       ]
     },
     {
@@ -1878,11 +1904,19 @@
     },
     {
       "licao": "docker-08",
-      "etapa": 11,
+      "etapa": 12,
       "termos": 2,
       "palavras": [
         "user",
         "password"
+      ]
+    },
+    {
+      "licao": "docker-09",
+      "etapa": 9,
+      "termos": 1,
+      "palavras": [
+        "cache"
       ]
     },
     {
@@ -1999,6 +2033,11 @@
       "primeiroUsoEmAtividade": null
     },
     {
+      "palavra": "abuso",
+      "introduzidaEm": "ciber-fundamentos-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "accept",
       "introduzidaEm": "en-a1-06",
       "primeiroUsoEmAtividade": {
@@ -2041,6 +2080,15 @@
         "licao": "redis-06",
         "atividade": "redis06-a1",
         "etapa": 2
+      }
+    },
+    {
+      "palavra": "administrador",
+      "introduzidaEm": "ciber-fundamentos-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-08",
+        "atividade": "docker08-a2",
+        "etapa": 4
       }
     },
     {
@@ -2098,8 +2146,8 @@
       "introduzidaEm": "ingles-02",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p2",
-        "etapa": 4
+        "atividade": "ingles02-p2",
+        "etapa": 6
       }
     },
     {
@@ -2122,11 +2170,11 @@
     },
     {
       "palavra": "an",
-      "introduzidaEm": "ingles-04",
+      "introduzidaEm": "ingles-00",
       "primeiroUsoEmAtividade": {
-        "licao": "ingles-04",
-        "atividade": "en-a2-04-p3",
-        "etapa": 6
+        "licao": "ingles-01",
+        "atividade": "en01-a2",
+        "etapa": 24
       }
     },
     {
@@ -2248,6 +2296,15 @@
       }
     },
     {
+      "palavra": "asserção",
+      "introduzidaEm": "engenharia-ia-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "engenharia-ia-03",
+        "atividade": "engenharia-ia-03-bases",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "at",
       "introduzidaEm": "en-a1-03",
       "primeiroUsoEmAtividade": {
@@ -2260,6 +2317,20 @@
       "palavra": "aurora",
       "introduzidaEm": "git-00",
       "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "autenticação",
+      "introduzidaEm": "ciber-fundamentos-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "autorização",
+      "introduzidaEm": "ciber-fundamentos-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "ciber-fundamentos-02",
+        "atividade": "ciber-fundamentos-02-decisao",
+        "etapa": 4
+      }
     },
     {
       "palavra": "back",
@@ -2299,7 +2370,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-01",
         "atividade": "en-a1-01-a4",
-        "etapa": 19
+        "etapa": 21
       }
     },
     {
@@ -2328,6 +2399,11 @@
         "atividade": "en-a1-03-p3",
         "etapa": 6
       }
+    },
+    {
+      "palavra": "been",
+      "introduzidaEm": "ingles-02",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "before",
@@ -2524,12 +2600,12 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-06",
         "atividade": "sql06-a6",
-        "etapa": 10
+        "etapa": 11
       }
     },
     {
       "palavra": "cache",
-      "introduzidaEm": "engenharia-ia-02",
+      "introduzidaEm": "docker-09",
       "primeiroUsoEmAtividade": {
         "licao": "redis-00",
         "atividade": "redis00-a1",
@@ -2542,12 +2618,12 @@
       "primeiroUsoEmAtividade": {
         "licao": "csharp-02",
         "atividade": "cs02-a3",
-        "etapa": 7
+        "etapa": 8
       }
     },
     {
       "palavra": "call",
-      "introduzidaEm": "en-a2-01",
+      "introduzidaEm": "ingles-01",
       "primeiroUsoEmAtividade": {
         "licao": "en-a2-01",
         "atividade": "en-a2-01-p2",
@@ -2577,8 +2653,8 @@
       "introduzidaEm": "ingles-02",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p1",
-        "etapa": 2
+        "atividade": "ingles02-p1",
+        "etapa": 4
       }
     },
     {
@@ -2632,7 +2708,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-11",
         "atividade": "sql11-a6",
-        "etapa": 9
+        "etapa": 10
       }
     },
     {
@@ -2745,6 +2821,11 @@
       }
     },
     {
+      "palavra": "closing",
+      "introduzidaEm": "en-a2-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "code",
       "introduzidaEm": "git-04",
       "primeiroUsoEmAtividade": {
@@ -2854,8 +2935,8 @@
       "palavra": "concreta",
       "introduzidaEm": "csharp-05",
       "primeiroUsoEmAtividade": {
-        "licao": "csharp-05",
-        "atividade": "cs05-a1",
+        "licao": "csharp-06",
+        "atividade": "cs06-a1",
         "etapa": 4
       }
     },
@@ -2919,6 +3000,15 @@
       }
     },
     {
+      "palavra": "conta",
+      "introduzidaEm": "ciber-fundamentos-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ciber-fundamentos-01",
+        "atividade": "ciber-fundamentos-01-bases",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "container",
       "introduzidaEm": "docker-01",
       "primeiroUsoEmAtividade": {
@@ -2939,7 +3029,11 @@
     {
       "palavra": "controller",
       "introduzidaEm": "engenharia-ia-01",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "engenharia-ia-01",
+        "atividade": "engenharia-ia-01-decisao",
+        "etapa": 4
+      }
     },
     {
       "palavra": "core",
@@ -3152,7 +3246,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-36",
         "atividade": "sql36-a4",
-        "etapa": 7
+        "etapa": 9
       }
     },
     {
@@ -3228,6 +3322,11 @@
         "atividade": "en-a1-06-p7",
         "etapa": 14
       }
+    },
+    {
+      "palavra": "done",
+      "introduzidaEm": "ingles-02",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "double",
@@ -3388,8 +3487,8 @@
       "introduzidaEm": "ingles-02",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p1",
-        "etapa": 2
+        "atividade": "ingles02-p1",
+        "etapa": 4
       }
     },
     {
@@ -3400,6 +3499,11 @@
         "atividade": "en-a1-03-p5",
         "etapa": 10
       }
+    },
+    {
+      "palavra": "evidência",
+      "introduzidaEm": "ciber-fundamentos-03",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "ex",
@@ -3446,6 +3550,15 @@
       "palavra": "expensive",
       "introduzidaEm": "en-a1-06",
       "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "expiração",
+      "introduzidaEm": "engenharia-ia-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "engenharia-ia-02",
+        "atividade": "engenharia-ia-02-bases",
+        "etapa": 2
+      }
     },
     {
       "palavra": "expire",
@@ -3687,6 +3800,15 @@
       }
     },
     {
+      "palavra": "fonte",
+      "introduzidaEm": "engenharia-ia-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "engenharia-ia-02",
+        "atividade": "engenharia-ia-02-bases",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "food",
       "introduzidaEm": "en-a1-05",
       "primeiroUsoEmAtividade": {
@@ -3706,11 +3828,11 @@
     },
     {
       "palavra": "for",
-      "introduzidaEm": "en-a2-02",
+      "introduzidaEm": "ingles-01",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p4",
-        "etapa": 8
+        "atividade": "ingles02-p4",
+        "etapa": 10
       }
     },
     {
@@ -3718,8 +3840,8 @@
       "introduzidaEm": "csharp-03",
       "primeiroUsoEmAtividade": {
         "licao": "csharp-03",
-        "atividade": "cs03-a1",
-        "etapa": 9
+        "atividade": "cs03-a7",
+        "etapa": 7
       }
     },
     {
@@ -3890,6 +4012,15 @@
       }
     },
     {
+      "palavra": "groups",
+      "introduzidaEm": "sql-20",
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-20",
+        "atividade": "sql20-a5",
+        "etapa": 8
+      }
+    },
+    {
       "palavra": "had",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -3912,8 +4043,8 @@
       "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p5",
-        "etapa": 9
+        "atividade": "ingles02-p6",
+        "etapa": 2
       }
     },
     {
@@ -3944,8 +4075,8 @@
       "introduzidaEm": "ingles-02",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p3",
-        "etapa": 6
+        "atividade": "ingles02-p3",
+        "etapa": 8
       }
     },
     {
@@ -4112,7 +4243,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-01",
         "atividade": "en-a1-01-a2",
-        "etapa": 17
+        "etapa": 19
       }
     },
     {
@@ -4208,7 +4339,11 @@
     {
       "palavra": "injeção",
       "introduzidaEm": "csharp-06",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "engenharia-ia-01",
+        "atividade": "engenharia-ia-01-bases",
+        "etapa": 2
+      }
     },
     {
       "palavra": "inner",
@@ -4243,7 +4378,16 @@
       "primeiroUsoEmAtividade": {
         "licao": "logica-00",
         "atividade": "lg00-a3",
-        "etapa": 6
+        "etapa": 9
+      }
+    },
+    {
+      "palavra": "integração",
+      "introduzidaEm": "engenharia-ia-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "engenharia-ia-03",
+        "atividade": "engenharia-ia-03-bases",
+        "etapa": 2
       }
     },
     {
@@ -4253,6 +4397,15 @@
         "licao": "csharp-05",
         "atividade": "cs05-a1",
         "etapa": 4
+      }
+    },
+    {
+      "palavra": "invalidação",
+      "introduzidaEm": "engenharia-ia-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "redis-05",
+        "atividade": "redis05-a3",
+        "etapa": 5
       }
     },
     {
@@ -4292,8 +4445,8 @@
       "introduzidaEm": "csharp-03",
       "primeiroUsoEmAtividade": {
         "licao": "csharp-03",
-        "atividade": "cs03-a3",
-        "etapa": 10
+        "atividade": "cs03-a7",
+        "etapa": 7
       }
     },
     {
@@ -4355,9 +4508,9 @@
       "palavra": "key",
       "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a2-02",
-        "atividade": "en-a2-02-p7",
-        "etapa": 14
+        "licao": "sql-01",
+        "atividade": "sql01-a6",
+        "etapa": 9
       }
     },
     {
@@ -4386,6 +4539,11 @@
         "atividade": "en-a2-04-p2",
         "etapa": 4
       }
+    },
+    {
+      "palavra": "latência",
+      "introduzidaEm": "engenharia-ia-02",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "left",
@@ -4419,8 +4577,8 @@
       "introduzidaEm": "en-a1-02",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-02",
-        "atividade": "en-a1-02-a4",
-        "etapa": 18
+        "atividade": "en-a1-02-p5",
+        "etapa": 10
       }
     },
     {
@@ -4438,7 +4596,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "csharp-03",
         "atividade": "cs03-a3",
-        "etapa": 10
+        "etapa": 11
       }
     },
     {
@@ -4478,8 +4636,8 @@
       "introduzidaEm": "ingles-02",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p3",
-        "etapa": 6
+        "atividade": "ingles02-p3",
+        "etapa": 8
       }
     },
     {
@@ -4506,7 +4664,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-28",
         "atividade": "sql28-a5",
-        "etapa": 9
+        "etapa": 13
       }
     },
     {
@@ -4641,6 +4799,11 @@
       }
     },
     {
+      "palavra": "middleware",
+      "introduzidaEm": "engenharia-ia-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "minute",
       "introduzidaEm": "en-a1-07",
       "primeiroUsoEmAtividade": {
@@ -4666,11 +4829,6 @@
         "atividade": "term00-a1",
         "etapa": 4
       }
-    },
-    {
-      "palavra": "mock",
-      "introduzidaEm": "engenharia-ia-03",
-      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "mom",
@@ -4724,15 +4882,6 @@
         "licao": "en-a1-02",
         "atividade": "en-a1-02-p2",
         "etapa": 4
-      }
-    },
-    {
-      "palavra": "mouse",
-      "introduzidaEm": "csharp-03",
-      "primeiroUsoEmAtividade": {
-        "licao": "csharp-07",
-        "atividade": "cs07-a2",
-        "etapa": 6
       }
     },
     {
@@ -4821,7 +4970,7 @@
       "introduzidaEm": "csharp-03",
       "primeiroUsoEmAtividade": {
         "licao": "csharp-03",
-        "atividade": "cs03-a5",
+        "atividade": "cs03-a3",
         "etapa": 11
       }
     },
@@ -4869,7 +5018,11 @@
     {
       "palavra": "ninety",
       "introduzidaEm": "en-a1-01",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-01",
+        "atividade": "en-a1-01-p7",
+        "etapa": 14
+      }
     },
     {
       "palavra": "no",
@@ -4885,13 +5038,13 @@
       "introduzidaEm": "csharp-03",
       "primeiroUsoEmAtividade": {
         "licao": "csharp-03",
-        "atividade": "cs03-a5",
-        "etapa": 11
+        "atividade": "cs03-a7",
+        "etapa": 7
       }
     },
     {
       "palavra": "not",
-      "introduzidaEm": "ingles-01",
+      "introduzidaEm": "en-a1-08",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-01",
         "atividade": "en01-p1",
@@ -4918,11 +5071,11 @@
     },
     {
       "palavra": "null",
-      "introduzidaEm": "csharp-04",
+      "introduzidaEm": "sql-09",
       "primeiroUsoEmAtividade": {
-        "licao": "csharp-04",
-        "atividade": "cs04-a2",
-        "etapa": 5
+        "licao": "sql-09",
+        "atividade": "sql09-a6",
+        "etapa": 9
       }
     },
     {
@@ -4931,7 +5084,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-01",
         "atividade": "en-a1-01-p8",
-        "etapa": 15
+        "etapa": 17
       }
     },
     {
@@ -4967,7 +5120,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-01",
         "atividade": "en-a1-01-a3",
-        "etapa": 18
+        "etapa": 20
       }
     },
     {
@@ -4976,7 +5129,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-01",
         "atividade": "en-a1-01-p8",
-        "etapa": 15
+        "etapa": 17
       }
     },
     {
@@ -5035,6 +5188,15 @@
       }
     },
     {
+      "palavra": "original",
+      "introduzidaEm": "engenharia-ia-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "engenharia-ia-02",
+        "atividade": "engenharia-ia-02-bases",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "orm",
       "introduzidaEm": "ef-00",
       "primeiroUsoEmAtividade": {
@@ -5061,6 +5223,11 @@
         "atividade": "en-a1-06-p6",
         "etapa": 12
       }
+    },
+    {
+      "palavra": "paginação",
+      "introduzidaEm": "engenharia-ia-02",
+      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "paid",
@@ -5124,7 +5291,11 @@
     {
       "palavra": "password",
       "introduzidaEm": "docker-08",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "docker-checkpoint-profissional",
+        "atividade": "cp-docker-pr6",
+        "etapa": 7
+      }
     },
     {
       "palavra": "past",
@@ -5182,7 +5353,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-38",
         "atividade": "sql38-a3",
-        "etapa": 6
+        "etapa": 9
       }
     },
     {
@@ -5220,11 +5391,6 @@
         "atividade": "en-a1-cp6",
         "etapa": 7
       }
-    },
-    {
-      "palavra": "performance",
-      "introduzidaEm": "engenharia-ia-02",
-      "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "pharmacy",
@@ -5305,7 +5471,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "csharp-02",
         "atividade": "cs02-a3",
-        "etapa": 7
+        "etapa": 8
       }
     },
     {
@@ -5323,13 +5489,17 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-11",
         "atividade": "sql11-a6",
-        "etapa": 9
+        "etapa": 10
       }
     },
     {
       "palavra": "primary",
       "introduzidaEm": "sql-00",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-01",
+        "atividade": "sql01-a6",
+        "etapa": 9
+      }
     },
     {
       "palavra": "private",
@@ -5342,7 +5512,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-31",
         "atividade": "sql31-a5",
-        "etapa": 8
+        "etapa": 9
       }
     },
     {
@@ -5351,7 +5521,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-31",
         "atividade": "sql31-a5",
-        "etapa": 8
+        "etapa": 9
       }
     },
     {
@@ -5360,9 +5530,22 @@
       "primeiroUsoEmAtividade": null
     },
     {
+      "palavra": "processo",
+      "introduzidaEm": "ciber-fundamentos-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ciber-fundamentos-01",
+        "atividade": "ciber-fundamentos-01-bases",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "product",
       "introduzidaEm": "sql-16",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "sql-16",
+        "atividade": "sql16-a5",
+        "etapa": 10
+      }
     },
     {
       "palavra": "products",
@@ -5370,7 +5553,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-16",
         "atividade": "sql16-a5",
-        "etapa": 9
+        "etapa": 10
       }
     },
     {
@@ -5379,7 +5562,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "csharp-03",
         "atividade": "cs03-a3",
-        "etapa": 10
+        "etapa": 11
       }
     },
     {
@@ -5388,7 +5571,16 @@
       "primeiroUsoEmAtividade": {
         "licao": "csharp-03",
         "atividade": "cs03-a3",
-        "etapa": 10
+        "etapa": 11
+      }
+    },
+    {
+      "palavra": "projeção",
+      "introduzidaEm": "engenharia-ia-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "linq-02",
+        "atividade": "lq02-a1",
+        "etapa": 2
       }
     },
     {
@@ -5397,7 +5589,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-32",
         "atividade": "sql32-a4",
-        "etapa": 7
+        "etapa": 8
       }
     },
     {
@@ -5438,7 +5630,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "csharp-02",
         "atividade": "cs02-a2",
-        "etapa": 6
+        "etapa": 7
       }
     },
     {
@@ -5502,7 +5694,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-35",
         "atividade": "sql35-a5",
-        "etapa": 8
+        "etapa": 10
       }
     },
     {
@@ -5687,7 +5879,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "csharp-02",
         "atividade": "cs02-a2",
-        "etapa": 6
+        "etapa": 7
       }
     },
     {
@@ -5730,9 +5922,9 @@
       "palavra": "right",
       "introduzidaEm": "sql-15",
       "primeiroUsoEmAtividade": {
-        "licao": "sql-checkpoint-relacionamentos",
-        "atividade": "cp-j8",
-        "etapa": 9
+        "licao": "sql-15",
+        "atividade": "sql15-a6",
+        "etapa": 10
       }
     },
     {
@@ -5742,6 +5934,15 @@
         "licao": "en-a1-06",
         "atividade": "en-a1-06-p4",
         "etapa": 8
+      }
+    },
+    {
+      "palavra": "root",
+      "introduzidaEm": "ciber-fundamentos-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ciber-fundamentos-01",
+        "atividade": "ciber-fundamentos-01-decisao",
+        "etapa": 4
       }
     },
     {
@@ -5799,6 +6000,11 @@
       }
     },
     {
+      "palavra": "salt",
+      "introduzidaEm": "ciber-fundamentos-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "same",
       "introduzidaEm": "docker-00",
       "primeiroUsoEmAtividade": {
@@ -5831,7 +6037,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-31",
         "atividade": "sql31-a5",
-        "etapa": 8
+        "etapa": 9
       }
     },
     {
@@ -5902,8 +6108,8 @@
       "introduzidaEm": "ingles-02",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p2",
-        "etapa": 4
+        "atividade": "ingles02-p2",
+        "etapa": 6
       }
     },
     {
@@ -5944,6 +6150,15 @@
       "primeiroUsoEmAtividade": {
         "licao": "ingles-17",
         "atividade": "en17-p2",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "serviço",
+      "introduzidaEm": "ciber-fundamentos-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "ciber-fundamentos-01",
+        "atividade": "ciber-fundamentos-01-decisao",
         "etapa": 4
       }
     },
@@ -6043,8 +6258,8 @@
       "introduzidaEm": "en-a2-02",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p5",
-        "etapa": 9
+        "atividade": "ingles02-p5",
+        "etapa": 11
       }
     },
     {
@@ -6144,7 +6359,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-06",
         "atividade": "sql06-a6",
-        "etapa": 10
+        "etapa": 11
       }
     },
     {
@@ -6171,7 +6386,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-10",
         "atividade": "sql10-a7",
-        "etapa": 11
+        "etapa": 13
       }
     },
     {
@@ -6328,6 +6543,15 @@
       }
     },
     {
+      "palavra": "t",
+      "introduzidaEm": "en-a1-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-a1-06",
+        "atividade": "en-a1-06-l1",
+        "etapa": 15
+      }
+    },
+    {
       "palavra": "table",
       "introduzidaEm": "sql-00",
       "primeiroUsoEmAtividade": {
@@ -6342,7 +6566,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-36",
         "atividade": "sql36-a4",
-        "etapa": 7
+        "etapa": 9
       }
     },
     {
@@ -6382,6 +6606,15 @@
       }
     },
     {
+      "palavra": "teclado",
+      "introduzidaEm": "csharp-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "csharp-07",
+        "atividade": "cs07-a2",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "temporary",
       "introduzidaEm": "git-08",
       "primeiroUsoEmAtividade": {
@@ -6397,6 +6630,15 @@
         "licao": "en-a1-01",
         "atividade": "en-a1-01-p2",
         "etapa": 4
+      }
+    },
+    {
+      "palavra": "teste",
+      "introduzidaEm": "engenharia-ia-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "engenharia-ia-03",
+        "atividade": "engenharia-ia-03-bases",
+        "etapa": 2
       }
     },
     {
@@ -6512,8 +6754,8 @@
       "introduzidaEm": "en-a1-01",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-01",
-        "atividade": "en-a1-01-l1",
-        "etapa": 16
+        "atividade": "en-a1-01-p7",
+        "etapa": 14
       }
     },
     {
@@ -6558,7 +6800,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-31",
         "atividade": "sql31-a5",
-        "etapa": 8
+        "etapa": 9
       }
     },
     {
@@ -6594,7 +6836,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-11",
         "atividade": "sql11-a6",
-        "etapa": 9
+        "etapa": 10
       }
     },
     {
@@ -6613,15 +6855,6 @@
         "licao": "en-a2-00",
         "atividade": "en-a2-00-p8",
         "etapa": 16
-      }
-    },
-    {
-      "palavra": "token",
-      "introduzidaEm": "ciber-fundamentos-02",
-      "primeiroUsoEmAtividade": {
-        "licao": "ciber-fundamentos-02",
-        "atividade": "ciber-fundamentos-02-decisao",
-        "etapa": 4
       }
     },
     {
@@ -6684,7 +6917,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-32",
         "atividade": "sql32-a4",
-        "etapa": 7
+        "etapa": 8
       }
     },
     {
@@ -6753,7 +6986,11 @@
     {
       "palavra": "twice",
       "introduzidaEm": "ingles-01",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "ingles-checkpoint-a2",
+        "atividade": "en-a2-cp4",
+        "etapa": 5
+      }
     },
     {
       "palavra": "two",
@@ -6801,6 +7038,15 @@
       }
     },
     {
+      "palavra": "unitário",
+      "introduzidaEm": "engenharia-ia-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "engenharia-ia-03",
+        "atividade": "engenharia-ia-03-bases",
+        "etapa": 2
+      }
+    },
+    {
       "palavra": "up",
       "introduzidaEm": "en-a1-03",
       "primeiroUsoEmAtividade": {
@@ -6815,7 +7061,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-28",
         "atividade": "sql28-a5",
-        "etapa": 9
+        "etapa": 13
       }
     },
     {
@@ -6923,7 +7169,7 @@
       "introduzidaEm": "ingles-02",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p1",
+        "atividade": "ingles02-p6",
         "etapa": 2
       }
     },
@@ -6931,8 +7177,8 @@
       "palavra": "void",
       "introduzidaEm": "csharp-02",
       "primeiroUsoEmAtividade": {
-        "licao": "csharp-08",
-        "atividade": "cs08-a3",
+        "licao": "csharp-02",
+        "atividade": "cs02-a6",
         "etapa": 6
       }
     },
@@ -7155,7 +7401,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-35",
         "atividade": "sql35-a5",
-        "etapa": 8
+        "etapa": 10
       }
     },
     {
@@ -7164,7 +7410,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "sql-10",
         "atividade": "sql10-a7",
-        "etapa": 11
+        "etapa": 13
       }
     },
     {
@@ -7241,16 +7487,16 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-01",
         "atividade": "en-a1-01-p8",
-        "etapa": 15
+        "etapa": 17
       }
     },
     {
       "palavra": "yes",
       "introduzidaEm": "en-a1-02",
       "primeiroUsoEmAtividade": {
-        "licao": "en-a1-02",
-        "atividade": "en-a1-02-a4",
-        "etapa": 18
+        "licao": "en-a1-05",
+        "atividade": "en-a1-05-p6",
+        "etapa": 12
       }
     },
     {
@@ -7267,8 +7513,8 @@
       "introduzidaEm": "ingles-02",
       "primeiroUsoEmAtividade": {
         "licao": "ingles-02",
-        "atividade": "en-a2-02-p3",
-        "etapa": 6
+        "atividade": "ingles02-p3",
+        "etapa": 8
       }
     },
     {
@@ -7295,7 +7541,7 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-01",
         "atividade": "en-a1-01-a3",
-        "etapa": 18
+        "etapa": 20
       }
     }
   ]

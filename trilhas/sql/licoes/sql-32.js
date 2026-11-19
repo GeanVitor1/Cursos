@@ -20,13 +20,15 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'retoma', conceito: 'sql.update', texto: 'Cada comando até agora valia sozinho. Mas uma transferência bancária são **dois** comandos: tirar de uma conta, pôr na outra. E se o sistema cair no meio?' },
         { tipo: 'texto', texto: 'Uma **transação** agrupa comandos num pacote atômico: ou **todos** valem (`COMMIT`, confirmar) ou **nenhum** vale (`ROLLBACK`, reverter):' },
-        { tipo: 'conceito', id: 'sql.transacoes', titulo: 'Transação', texto: 'Pacote atômico de comandos: BEGIN abre, COMMIT confirma tudo, ROLLBACK desfaz tudo.', exemplo: 'BEGIN; UPDATE ...; UPDATE ...; COMMIT;' },
+        { tipo: 'conceito', id: 'sql.transacoes', titulo: 'Transação', texto: 'Pacote atômico de comandos: BEGIN abre, COMMIT confirma tudo, ROLLBACK desfaz tudo.', exemplo: 'BEGIN TRANSACTION; UPDATE ...; UPDATE ...; COMMIT;' },
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: 'BEGIN;\nUPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1;\nUPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2;\nCOMMIT;'
+          codigo: 'BEGIN TRANSACTION;\nUPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1;\nUPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2;\nCOMMIT;'
         },
-        { tipo: 'nota', tom: 'info', texto: 'Entre `BEGIN` e `COMMIT`, nada é definitivo. Se qualquer comando falhar, o `ROLLBACK` apaga o rascunho inteiro.' }
+        { tipo: 'nota', tom: 'info', texto: 'Entre `BEGIN TRANSACTION` e `COMMIT`, nada é definitivo. O `ROLLBACK` **não é automático**: quem detecta o erro (um `TRY...CATCH` ou a aplicação) é que executa o `ROLLBACK`, e então o banco desfaz tudo o que a transação fez. Se a conexão cair antes do `COMMIT`, o banco também reverte a transação aberta.' },
+        { tipo: 'codigo', linguagem: 'sql', codigo: 'BEGIN TRY\n  BEGIN TRANSACTION;\n  UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1;\n  UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2;\n  COMMIT TRANSACTION;\nEND TRY\nBEGIN CATCH\n  ROLLBACK TRANSACTION;\nEND CATCH;', legenda: 'Padrão T-SQL: se um UPDATE falhar, o CATCH executa o ROLLBACK e nada fica pela metade.' },
+        { tipo: 'nota', tom: 'atencao', texto: 'Dialeto T-SQL: no SQL Server a transação abre com `BEGIN TRANSACTION` (ou `BEGIN TRAN`). O `BEGIN;` puro é de PostgreSQL, e `START TRANSACTION` é de MySQL.' }
       ]
     },
     {
@@ -36,17 +38,17 @@ Plataforma.registrarLicao({
         tipo: 'multiple-choice',
         enunciado: 'O segundo UPDATE falha no meio da transação. O que acontece com o primeiro?',
         opcoes: [
-          'É desfeito pelo ROLLBACK: nada vale',
-          'Continua valendo normalmente',
-          'Vale pela metade',
-          'O banco escolhe aleatoriamente'
+          'É desfeito quando ocorre o ROLLBACK: nada vale',
+          'Continua valendo, sem nenhuma conferência',
+          'Vale pela metade, com o saldo parcial',
+          'O banco escolhe ao acaso qual manter'
         ],
         correta: 0,
         dicas: [
           'Transação é atômica.',
           'Pense em "tudo ou nada".'
         ],
-        explicacao: 'Atomicidade: ou os dois UPDATEs valem, ou nenhum. O `ROLLBACK` restaura o estado anterior.',
+        explicacao: 'Atomicidade: ou os dois UPDATEs valem, ou nenhum. Quando o erro é tratado com `ROLLBACK` (pelo tratamento de erro ou pela aplicação), o estado anterior é restaurado.',
         conceitos: ['sql.transacoes']
       }
     },
@@ -58,7 +60,7 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: 'BEGIN;\nINSERT INTO Pedidos (ClienteId, ValorTotal) VALUES (1, 250);\nUPDATE Produtos SET Estoque = Estoque - 1 WHERE Id = 7;\nCOMMIT;'
+          codigo: 'BEGIN TRANSACTION;\nINSERT INTO Pedidos (ClienteId, ValorTotal) VALUES (1, 250);\nUPDATE Produtos SET Estoque = Estoque - 1 WHERE Id = 7;\nCOMMIT;'
         },
         { tipo: 'nota', tom: 'atencao', texto: 'Leituras (`SELECT`) sozinhas não precisam de transação. E transação aberta por muito tempo prende recursos — abra, execute, confirme, feche.' },
         { tipo: 'trabalho', texto: 'Pagamentos, estoque e saldos sempre rodam em transação. Revisar código financeiro sem ela é reprovar na hora.', fonte: '💼 No trabalho' }
@@ -71,7 +73,7 @@ Plataforma.registrarLicao({
         tipo: 'order-blocks',
         enunciado: 'Ordene os blocos de uma transferência segura de 100 entre contas.',
         blocos: [
-          'BEGIN;',
+          'BEGIN TRANSACTION;',
           'UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1;',
           'UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2;',
           'COMMIT;'
@@ -115,6 +117,26 @@ Plataforma.registrarLicao({
       }
     },
     {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql32-a5',
+        tipo: 'write-code',
+        enunciado: 'Algo deu errado no meio da transação aberta. Escreva o comando que **desfaz** tudo o que ela fez (T-SQL).',
+        respostasAceitas: [
+          'ROLLBACK;',
+          'ROLLBACK TRANSACTION;',
+          'ROLLBACK TRAN;',
+          'ROLLBACK WORK;'
+        ],
+        dicas: [
+          'É o comando que faz o papel contrário do COMMIT.',
+          'Pode ser escrito só com essa palavra.'
+        ],
+        explicacao: '`ROLLBACK` desfaz todas as alterações feitas desde o `BEGIN TRANSACTION`, devolvendo o banco ao estado anterior.',
+        conceitos: ['sql.transacoes']
+      }
+    },
+    {
       tipo: 'conteudo',
       titulo: 'English corner · Protect',
       blocos: [
@@ -138,12 +160,22 @@ Plataforma.registrarLicao({
         enunciado: 'Transactions protect orders: transfira 100 da conta 1 para a 2.',
         placeholder: 'BEGIN ...',
         respostasAceitas: [
+          'BEGIN TRANSACTION; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT;',
+          'BEGIN TRANSACTION; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT TRANSACTION;',
+          'BEGIN TRANSACTION; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT TRAN;',
+          'BEGIN TRAN; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT;',
+          'BEGIN TRAN; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT TRANSACTION;',
+          'BEGIN TRAN; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT TRAN;',
+          'START TRANSACTION; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT;',
+          'START TRANSACTION; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT TRANSACTION;',
+          'START TRANSACTION; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT TRAN;',
           'BEGIN; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT;',
-          'BEGIN TRANSACTION; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT;'
+          'BEGIN; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT TRANSACTION;',
+          'BEGIN; UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1; UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2; COMMIT TRAN;'
         ],
         dicas: [
-          'BEGIN abre, COMMIT fecha.',
-          'Dois UPDATEs no meio.'
+          'A transação abre antes dos UPDATEs e confirma depois deles.',
+          'Dois UPDATEs no meio: um tira da conta 1, o outro põe na conta 2.'
         ],
         explicacao: 'Pacote atômico: tira de uma, põe na outra, confirma junto.',
         conceitos: ['sql.transacoes', 'sql.ingles']

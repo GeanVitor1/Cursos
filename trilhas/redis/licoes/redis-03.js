@@ -29,7 +29,7 @@ Plataforma.registrarLicao({
           'Devolva o resultado ao cliente.'
         ] },
         { tipo: 'conceito', id: 'redis.cache-aside', titulo: 'Cache aside', texto: 'O padrão em que a aplicação procura primeiro no cache, busca na fonte quando falta e guarda o resultado para as próximas leituras.', exemplo: 'if (cache.Get(chave) == null) { buscarNoBanco(); cache.Set(chave, valor); }' },
-        { tipo: 'diagrama', arte: 'requisicao --> cache? --acerto--> resposta\n                   |\n                 falta\n                   |\n                 banco --> cache --> resposta', legenda: 'O cache fica ao lado do fluxo; quem coordena é o código.' },
+        { tipo: 'diagrama', arte: 'requisição --> cache? --acerto--> resposta\n                   |\n                 falta\n                   |\n                 banco --> cache --> resposta', legenda: 'O cache fica ao lado do fluxo; quem coordena é o código.' },
         { tipo: 'nota', tom: 'info', texto: '**aside** significa "ao lado": o cache não intercepta a requisição sozinho, ele é consultado pelo código da aplicação.' }
       ]
     },
@@ -67,7 +67,8 @@ Plataforma.registrarLicao({
           ['Falta', 'API -> banco -> cache', '125 ms']
         ] },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'var valor = cache.Get("produto:10");\nif (valor == null)\n{\n    valor = BuscarNoBanco(10);\n    cache.Set("produto:10", valor, TimeSpan.FromMinutes(5));\n}\nreturn valor;' },
-        { tipo: 'nota', tom: 'atencao', texto: 'O cache só é preenchido quando alguém pede: a primeira chamada é sempre uma falta. Quem chega depois aproveita o resultado.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'O cache só é preenchido quando alguém pede: a primeira chamada é sempre uma falta. Quem chega depois aproveita o resultado.' },
+        { tipo: 'nota', tom: 'info', texto: 'Os trechos desta lição usam `cache.Get` e `cache.Set` como **pseudocódigo** para mostrar o fluxo. No ASP.NET Core, o `IDistributedCache` oferece `GetStringAsync` e `SetStringAsync`, que você usará na lição de integração.' }
       ]
     },
     {

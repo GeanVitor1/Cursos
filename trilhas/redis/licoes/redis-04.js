@@ -59,13 +59,13 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'retoma', conceito: 'aspnet.json', texto: 'Sua API já devolve JSON nas respostas. Esse mesmo formato é o mais usado para guardar objetos no cache.' },
         { tipo: 'texto', texto: 'O JSON é legível, simples de depurar e suportado por praticamente todas as linguagens. O texto guardado é uma **foto** do objeto no momento da gravação.' },
-        { tipo: 'codigo', linguagem: 'json', codigo: '{\n  "id": 10,\n  "nome": "Mouse",\n  "preco": 99.90\n}' },
+        { tipo: 'codigo', linguagem: 'json', codigo: '{\n  "Id": 10,\n  "Nome": "Mouse",\n  "Preco": 99.90\n}' },
         { tipo: 'lista', itens: [
           'Mudar o objeto original **não** altera a cópia guardada.',
           'O JSON ocupa mais bytes que um formato binário, mas é fácil de ler e investigar.',
           'No Redis, o valor é só texto: quem dá significado ao JSON é a aplicação.'
         ] },
-        { tipo: 'nota', tom: 'info', texto: 'Nomear as chaves no mesmo padrão da API (`id`, `nome`, `preco`) ajuda a comparar o que está no cache com o que a API devolve.' }
+        { tipo: 'nota', tom: 'info', texto: 'O `JsonSerializer` usa, por padrão, os nomes exatos das propriedades da classe (`Id`, `Nome`, `Preco`), enquanto a API do ASP.NET costuma devolver em camelCase (`id`, `nome`, `preco`). Grave e leia o cache com as mesmas `JsonSerializerOptions` (por exemplo `PropertyNameCaseInsensitive = true` na leitura) para não perder campos.' }
       ]
     },
     {
@@ -115,7 +115,7 @@ Plataforma.registrarLicao({
         id: 'redis04-a3',
         tipo: 'fill-code',
         enunciado: 'Complete o código que serializa antes de gravar e desserializa depois de ler.',
-        codigo: 'var texto = JsonSerializer.{{1}}(produto);\nawait cache.SetStringAsync("produto:10", texto);\n\nvar guardado = await cache.GetStringAsync("produto:10");\nvar produto = JsonSerializer.{{2}}<Produto>(guardado);',
+        codigo: 'var texto = JsonSerializer.{{1}}(produto);\nawait cache.SetStringAsync("produto:10", texto);\n\nvar guardado = await cache.GetStringAsync("produto:10");\nvar produtoLido = JsonSerializer.{{2}}<Produto>(guardado);',
         lacunas: [
           [
             "Serialize"

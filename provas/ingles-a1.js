@@ -121,7 +121,7 @@ Plataforma.registrarLicao({
         interlocutor: 'Waiter',
         turnos: [
           { fala: 'Good afternoon! Are you ready to order?', opcoes: ["I'd like a chicken sandwich, please.", 'I am from Brazil.', 'It is on Monday.'], correta: 0 },
-          { fala: 'Anything to drink?', opcoes: ['A juice, please.', 'I am twenty-five.', 'Nice to meet you.'], correta: 0 },
+          { fala: 'Anything to drink?', opcoes: ['Water, please.', 'I am twenty-five.', 'Nice to meet you.'], correta: 0 },
           { fala: 'Perfect. Here is your food. Enjoy!', opcoes: ['Thank you! Can I have the bill, please?', 'Where are you from?', 'She is my sister.'], correta: 0 }
         ],
         dicas: ['Peça com I\'d like.', 'No final, peça a conta: the bill.'],
@@ -178,10 +178,18 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva uma mini-apresentação sua com nome, idade e origem.',
         esqueleto: 'Hi! My name is ... . I am ... years old. I am from ... .',
         validar: function (valor) {
-          const t = String(valor || '').toLowerCase();
-          return /\bmy name('s| is)\s+\p{L}+/u.test(t) && /\bi am\b/.test(t) && /\byears? old\b/.test(t) && /\bfrom\s+\p{L}+/u.test(t);
+          const t = String(valor || '').toLowerCase().replace(/\s+/g, ' ');
+          const nome = t.match(/\bmy name(?:'s| is) (\p{L}{2,})/u);
+          const naoNomes = ['hello', 'hi', 'nice', 'to', 'meet', 'you', 'my', 'name', 'is', 'the', 'a', 'an', 'i', 'am', 'from'];
+          const unidade = '(?:one|two|three|four|five|six|seven|eight|nine)';
+          const dezena = '(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)';
+          const especiais = '(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)';
+          const idade = '(?:\\d{1,3}|' + especiais + '|' + dezena + '(?:[ -]' + unidade + ')?)';
+          const temIdade = new RegExp('\\bi am ' + idade + '(?: years old)?(?! years)(?![a-z0-9-])').test(t);
+          const origem = /\bi am from (\p{L}{2,})/u.exec(t);
+          return !!nome && naoNomes.indexOf(nome[1]) === -1 && temIdade && !!origem && ['the', 'a', 'an', 'my'].indexOf(origem[1]) === -1;
         },
-        respostasAceitas: ['Hi! My name is Ana. I am 30 years old. I am from Brazil.'],
+        respostasAceitas: ['Hi! My name is Ana. I am 30 years old. I am from Brazil.', "Hi! My name is Ana. I'm 30. I'm from Brazil."],
         dicas: ['Use as três estruturas que você aprendeu.', 'Não esqueça years old.'],
         explicacao: 'Nome + idade + origem: a apresentação pessoal completa, que abre qualquer conversa.',
         conceitos: ['en.saudacoes', 'en.numeros'],

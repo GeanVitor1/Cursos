@@ -18,7 +18,7 @@ Plataforma.registrarLicao({
       titulo: 'Quanto custa?',
       introduz: ['en.compras'],
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['How much is this?', 'Quanto custa isto?'],
           ["It's twenty dollars.", 'São vinte dólares.'],
           ['expensive / cheap', 'caro / barato']
@@ -44,9 +44,10 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Dinheiro e cartão',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['cash / credit card', 'dinheiro / cartão de crédito'],
-          ['$ = dollar', 'símbolo do dólar']
+          ['$ = dollar', 'símbolo do dólar'],
+          ['How would you like to pay?', 'Como você gostaria de pagar?']
         ] },
         { tipo: 'ingles', frase: "It's twenty dollars.", traducao: 'São vinte dólares.' }
       ]
@@ -104,10 +105,13 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (5)', pares: [
           ['Do you have this in another size?', 'Você tem isto em outro tamanho?'],
+          ['Do you want to try it on?', 'Você quer experimentar?'],
           ['try it on', 'experimentar (a roupa)'],
-          ['the fitting room', 'o provador']
+          ['the fitting room', 'o provador'],
+          ['Where is the fitting room?', 'Onde fica o provador?']
         ] },
-        { tipo: 'ingles', frase: 'Do you have this in another size?', traducao: 'Você tem isto em outro tamanho?' }
+        { tipo: 'ingles', frase: 'Do you have this in another size?', traducao: 'Você tem isto em outro tamanho?' },
+        { tipo: 'nota', tom: 'info', texto: '`Do you...?` é a forma de perguntar no present simple: `Do you have...?` (você tem...?) e `Do you want...?` (você quer...?). Já `Where is...?` pergunta **onde fica** algo: `Where is the fitting room?`.' }
       ]
     },
     {
@@ -134,9 +138,9 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Roupas e promoção',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (5)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['jacket / jeans / hat', 'jaqueta / calça jeans / chapéu'],
-          ['shirt / sale', 'camisa / promoção']
+          ['shirt / T-shirt / sale', 'camisa / camiseta / promoção']
         ] },
         { tipo: 'ingles', frase: 'The shirt is on sale.', traducao: 'A camisa está em promoção.' }
       ]
@@ -163,7 +167,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Ali, lá e a sacola',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['over there', 'ali / lá'],
           ['We accept cash.', 'Nós aceitamos dinheiro.'],
           ['a bag', 'uma bolsa / uma sacola']
@@ -195,7 +199,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Lista e total',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['shopping list', 'lista de compras'],
           ['total', 'total']
         ] },
@@ -211,7 +215,7 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete a frase com a palavra que fecha a compra.',
         codigo: 'The {{1}} is twenty dollars.',
-        lacunas: [['total']],
+        lacunas: [['total', 'bill', 'price']],
         dicas: ['É o valor final da compra.', 'A palavra é igual em inglês e português.'],
         explicacao: 'The total is twenty dollars. — a frase que resume a compra no caixa.',
         conceitos: ['en.compras']
@@ -297,14 +301,15 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva uma pergunta educada perguntando o preço de algo e como pagar por cartão.',
         esqueleto: 'How much is ...? Can I pay by ...?',
         validar: function (valor) {
-          const t = String(valor || '').toLowerCase();
-          const perguntaPreco = /\bhow much\b/.test(t) || /\bwhat('s| is) the price\b/.test(t);
-          const formaPagamento = /\bpay(ing)?\s+(by|with|using)\s+(a\s+|an\s+)?(credit\s+|debit\s+)?card\b/.test(t) ||
-            /\b(can|could|may) i use (a |my )?(credit |debit )?card\b/.test(t) ||
-            /\bdo you accept (credit |debit )?cards?\b/.test(t);
+          const t = String(valor || '').toLowerCase().replace(/\s+/g, ' ');
+          const perguntaPreco = /\bhow much (is|are|does|do|would)\b/.test(t) || /\bwhat(?:'s| is) the price\b/.test(t);
+          const forma = '(?:(?:a|an|my|the|your) )?(?:(?:credit|debit) )?cards?';
+          const formaPagamento = new RegExp('\\bpay(?:ing)? (?:by|with|using) ' + forma + '\\b').test(t) ||
+            new RegExp('\\b(?:can|could|may) i use ' + forma + '\\b').test(t) ||
+            new RegExp('\\bdo you (?:accept|take) ' + forma + '\\b').test(t);
           return perguntaPreco && formaPagamento;
         },
-        respostasAceitas: ['How much is this jacket? Can I pay by card?'],
+        respostasAceitas: ['How much is this jacket? Can I pay by card?', 'How much is this jacket? Can I pay with my card?'],
         dicas: ['Use How much is + item.', 'Use Can I pay by card?'],
         explicacao: 'How much is this jacket? Can I pay by card? — duas perguntas que você vai usar em qualquer loja.',
         conceitos: ['en.compras']

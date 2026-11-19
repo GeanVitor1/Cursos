@@ -44,7 +44,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Pai e mãe',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['mother / mom', 'mãe'],
           ['father / dad', 'pai']
         ] },
@@ -66,7 +66,7 @@ Plataforma.registrarLicao({
           2: 'Irmão é **brother**.',
           3: 'Filho é **son**.'
         },
-        dicas: ['Father aparece em "pai".', 'Dad é a forma informal.'],
+        dicas: ['Father é o pai da família.', 'Dad é a forma informal de father.'],
         explicacao: 'father = pai; mother = mãe. Mom e dad são as formas carinhosas do dia a dia.',
         conceitos: ['en.familia']
       }
@@ -104,11 +104,12 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Filhos',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['son / daughter', 'filho / filha'],
           ['I have two brothers.', 'Eu tenho dois irmãos.']
         ] },
-        { tipo: 'ingles', frase: 'I have two brothers.', traducao: 'Eu tenho dois irmãos.' }
+        { tipo: 'ingles', frase: 'I have two brothers.', traducao: 'Eu tenho dois irmãos.' },
+        { tipo: 'nota', tom: 'info', texto: '`I have` = eu tenho. Para falar de quantas pessoas da família você tem, use `have`; para mais de um, use **-s** (`two brothers`).' }
       ]
     },
     {
@@ -122,7 +123,7 @@ Plataforma.registrarLicao({
         codigo: 'I {{1}} two brothers.',
         lacunas: [['have']],
         dicas: ['"Ter" em inglês, para I, é have.', 'A frase fala de dois irmãos.'],
-        explicacao: 'I have two brothers. — have = tenho. Aqui a idade continua usando to be, mas posse usa have.',
+        explicacao: 'I have two brothers. — have = tenho. Idade usa to be (I am 25), mas posse e família usam have (I have two brothers).',
         conceitos: ['en.familia']
       }
     },
@@ -130,7 +131,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Dele e dela',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['his / her', 'dele / dela']
         ] },
         { tipo: 'nota', tom: 'info', texto: '`my` = meu/minha · `your` = seu/sua · `his` = dele · `her` = dela. Use `her` para falar de uma mulher e `his` para um homem.' },
@@ -145,9 +146,9 @@ Plataforma.registrarLicao({
         habilidade: 'gramatica',
         dimensao: 'preenchimento',
         enunciado: 'Complete com o possessivo correto (his ou her).',
-        codigo: 'This is Ana. {{1}} name is Ana.',
+        codigo: 'This is my sister. {{1}} name is Lia.',
         lacunas: [['her']],
-        dicas: ['Ana é mulher: use o possessivo dela.', 'O possessivo acompanha quem possui.'],
+        dicas: ['Sister é uma mulher: use o possessivo dela.', 'O possessivo acompanha quem possui.'],
         explicacao: 'her = dela; his = dele. O possessivo acompanha **quem possui**, não o que é possuído.',
         conceitos: ['en.familia']
       }
@@ -156,7 +157,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Quem é esta pessoa?',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['Who is this?', 'Quem é esta pessoa?'],
           ['She is... / He is...', 'Ela é... / Ele é...']
         ] },
@@ -264,7 +265,7 @@ Plataforma.registrarLicao({
         habilidade: 'gramatica',
         dimensao: 'preenchimento',
         enunciado: 'Complete com o possessivo correto (my, his ou her).',
-        codigo: 'This is Ana. {{1}} name is Ana. This is Paulo. {{2}} name is Paulo.',
+        codigo: 'This is Ana. {{1}} brother is Tom. This is Paulo. {{2}} sister is Lia.',
         lacunas: [['her'], ['his']],
         dicas: ['Ana é mulher: use o possessivo dela.', 'Paulo é homem: use o possessivo dele.'],
         explicacao: 'her = dela; his = dele. O possessivo acompanha **quem possui**, não o que é possuído.',
@@ -284,10 +285,10 @@ Plataforma.registrarLicao({
         turnos: [
           { fala: 'Who is this?', opcoes: ['She is my sister, Lia.', 'My name is Lia.', 'Nice to meet you.'], correta: 0 },
           { fala: 'How old is she?', opcoes: ['She is ten years old.', 'Her name is Lia.', "I'm fine, thanks."], correta: 0 },
-          { fala: 'Is she your sister?', opcoes: ['Yes, she is. And this is my brother, Tom.', 'No, I have two brothers too.', 'My name is Ana.'], correta: 0 }
+          { fala: 'And who is he?', opcoes: ['He is my brother, Tom.', 'She is my sister, Lia.', "I'm fine, thanks."], correta: 0 }
         ],
-        dicas: ['Who is this? pede uma pessoa.', 'How old is she? pede idade.'],
-        explicacao: 'Você praticou perguntas sobre pessoas (Who is this?), idade (How old is she?) e respostas com possessivos.',
+        dicas: ['Who is this? pede uma pessoa.', 'How old is she? pede idade.', 'Para um homem, responda com He is...'],
+        explicacao: 'Você praticou perguntas sobre pessoas (Who is this? / who is he?), idade (How old is she?) e respostas com She is... / He is...',
         conceitos: ['en.familia'],
         desafio: true
       }
@@ -303,8 +304,15 @@ Plataforma.registrarLicao({
         esqueleto: 'This is my ... . Her/His name is ...',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return t.indexOf('this is my') !== -1 &&
-            /(her|his) name('s| is)\s+[a-záéíóúâêôãõç]{2,}/.test(t);
+          const parente = t.match(/\bthis is my (mother|mom|father|dad|sister|brother|son|daughter|grandmother|grandfather|aunt|uncle|cousin|wife|husband)\b/);
+          const nome = t.match(/\b(her|his) name(?:'s| is)\s+([a-záéíóúâêôãõç]{2,})/);
+          if (!parente || !nome) return false;
+          if (['is', 'my', 'her', 'his', 'name', 'the', 'a', 'an', 'sister', 'brother', 'mother', 'father', 'mom', 'dad'].indexOf(nome[2]) !== -1) return false;
+          const feminino = ['mother', 'mom', 'sister', 'daughter', 'grandmother', 'aunt', 'wife'];
+          const masculino = ['father', 'dad', 'brother', 'son', 'grandfather', 'uncle', 'husband'];
+          if (feminino.indexOf(parente[1]) !== -1) return nome[1] === 'her';
+          if (masculino.indexOf(parente[1]) !== -1) return nome[1] === 'his';
+          return true;
         },
         respostasAceitas: ['This is my sister. Her name is Lia.'],
         dicas: ['Escolha sister ou brother.', 'Use Her name is para mulher e His name is para homem.'],

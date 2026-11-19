@@ -19,7 +19,7 @@ Plataforma.registrarLicao({
       introduz: ['en.passado'],
       blocos: [
         { tipo: 'texto', texto: 'Para contar o que aconteceu, o inglês usa o **passado simples**. Vamos começar pelos verbos regulares: eles ganham **-ed**.' },
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['work → worked', 'trabalhar → trabalhei'],
           ['study → studied', 'estudar → estudei'],
           ['watch → watched', 'assistir → assisti']
@@ -49,7 +49,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Mais verbos regulares',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['stay → stayed', 'ficar → fiquei'],
           ['rain → rained', 'chover → choveu']
         ] },
@@ -76,7 +76,7 @@ Plataforma.registrarLicao({
       titulo: 'Irregulares: went, had, saw',
       blocos: [
         { tipo: 'texto', texto: 'Alguns verbos muito comuns são **irregulares**: não usam -ed e têm forma própria. Vamos aos poucos.' },
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['go → went', 'ir → fui'],
           ['have → had', 'ter → tive'],
           ['see → saw', 'ver → vi']
@@ -106,7 +106,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Irregulares: bought e took',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (6)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['buy → bought', 'comprar → comprei'],
           ['take → took', 'pegar / tirar → peguei / tirei'],
           ['some / fruit', 'algum / fruta']
@@ -168,7 +168,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Marcadores de tempo',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (6)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['yesterday / today / tomorrow', 'ontem / hoje / amanhã'],
           ['last week / last weekend', 'semana passada / fim de semana passado'],
           ['two days ago', 'dois dias atrás']
@@ -373,11 +373,19 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva duas frases sobre o que você fez ontem.',
         esqueleto: 'Yesterday I ... . Then I ... .',
         validar: function (valor) {
-          const t = String(valor || '').toLowerCase();
-          const marcador = /\b(yesterday|last night)\b/.test(t);
-          const frases = t.split(/[.!?\n]/).filter(function (f) { return f.trim().length > 5; });
-          const passado = /\b(was|were|had|went|did|saw|ate|got|made|took|came|bought|drank|slept|wrote|met|ran|said|told|thought|felt|left|found|gave|knew|put|sat|stood|spoke|wore|won|read)\b/.test(t) || /\b[a-z]{3,}ed\b/.test(t);
-          return marcador && frases.length >= 2 && passado;
+          const t = String(valor || '').toLowerCase().replace(/\s+/g, ' ');
+          const marcador = /\b(?:yesterday|last (?:night|week|weekend|month|year)|this morning|earlier|(?:two|three|four|five|a few) days ago|ago)\b/.test(t);
+          const irregulares = 'was were had went did saw ate got made took came bought drank slept wrote met ran said told thought felt left found gave knew put sat stood spoke wore won read woke drove began brought built caught chose drew flew forgot heard held kept lost paid sang sent spent swam taught understood sold rode cut hit became fell lay'.split(' ');
+          const naoPassado = ['hundred', 'speed', 'indeed', 'bleed', 'breed', 'proceed', 'succeed', 'exceed', 'sacred', 'naked', 'wicked', 'kindred'];
+          function temPassado(frase) {
+            return frase.split(' ').some(function (w) {
+              return irregulares.indexOf(w) !== -1 || (/^[a-z]{3,}ed$/.test(w) && naoPassado.indexOf(w) === -1);
+            });
+          }
+          // Presente depois de sujeito ("I go", "we work") contradiz o passado.
+          const presenteErrado = /\b(?:i|we|they|you) (?:go|have|see|buy|take|work|study|eat|get|make|come|do|watch|play|visit|cook|clean|meet|drink|sleep|read|write|run|walk|talk|call|stay|start|finish|am|are)\b/.test(t);
+          const frases = t.split(/[.!?\n]/).map(function (f) { return f.trim(); }).filter(function (f) { return f.length > 5; });
+          return marcador && !presenteErrado && frases.length >= 2 && frases.filter(temPassado).length >= 2;
         },
         respostasAceitas: ['Yesterday I worked. Then I went home.'],
         dicas: ['Use o marcador yesterday.', 'Use verbos no passado (worked, went, had...).'],

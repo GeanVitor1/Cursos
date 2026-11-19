@@ -58,7 +58,7 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: 'SELECT Nome, TotalDoPedido(Id) AS Total\nFROM Pedidos;'
+          codigo: 'CREATE FUNCTION dbo.TotalDoPedido (@PedidoId INT)\nRETURNS DECIMAL(10,2)\nAS\nBEGIN\n  RETURN (SELECT SUM(Quantidade * PrecoUnitario)\n          FROM ItensPedido\n          WHERE PedidoId = @PedidoId);\nEND;\n\n-- Usando a função (note o prefixo dbo.):\nSELECT Id, dbo.TotalDoPedido(Id) AS Total\nFROM Pedidos;'
         },
         { tipo: 'nota', tom: 'info', texto: 'A função declara o tipo do valor calculado. Functions puras (só cálculo) são as mais seguras de usar.' },
         { tipo: 'trabalho', texto: 'Regras de cálculo repetidas em vários relatórios (desconto, imposto, conversão) costumam virar functions: um lugar só para corrigir quando a regra muda.', fonte: '💼 No trabalho' }
@@ -72,9 +72,9 @@ Plataforma.registrarLicao({
         enunciado: 'Qual é a diferença prática entre procedure e function?',
         opcoes: [
           'Function devolve um valor usável em consultas; procedure executa passos',
-          'Procedure é mais rápida que function sempre',
-          'Function não recebe valores de entrada',
-          'Não há diferença prática'
+          'A procedure é sempre mais rápida do que qualquer function',
+          'A function não consegue receber nenhum valor de entrada',
+          'Não há diferença prática entre as duas no dia a dia'
         ],
         correta: 0,
         dicas: [
@@ -98,6 +98,25 @@ Plataforma.registrarLicao({
           'Nove letras.'
         ],
         explicacao: '`CREATE PROCEDURE nome ... AS ...`: rotina guardada com entrada.',
+        conceitos: ['sql.procedures']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql31-a6',
+        tipo: 'fill-code',
+        enunciado: 'Complete a function que devolve o dobro de um valor.',
+        codigo: 'CREATE {{1}} dbo.Dobro (@Valor INT)\n{{2}} INT\nAS\nBEGIN\n  RETURN @Valor * 2;\nEND;',
+        lacunas: [
+          ['function'],
+          ['returns']
+        ],
+        dicas: [
+          'A primeira lacuna é o tipo de objeto criado: uma rotina que devolve valor.',
+          'A segunda lacuna declara o tipo do valor devolvido; a palavra termina em S.'
+        ],
+        explicacao: '`CREATE FUNCTION nome (@entradas) RETURNS tipo AS BEGIN ... RETURN valor; END;` — a function declara o tipo que devolve e usa RETURN.',
         conceitos: ['sql.procedures']
       }
     },
@@ -144,10 +163,13 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql31-a5',
         tipo: 'write-code',
-        enunciado: 'Procedures save time: crie a procedure de busca.',
+        enunciado: 'Procedures save time: crie a procedure **BuscarPorCidade**, com a entrada **@Cidade VARCHAR(60)**, que devolve os clientes da cidade informada.',
         placeholder: 'CREATE ...',
         respostasAceitas: [
-          'create procedure buscarporcidade @cidade varchar(60) as select * from clientes where cidade = @cidade'
+          'CREATE PROCEDURE BuscarPorCidade @Cidade VARCHAR(60) AS SELECT * FROM Clientes WHERE Cidade = @Cidade;',
+          'CREATE PROC BuscarPorCidade @Cidade VARCHAR(60) AS SELECT * FROM Clientes WHERE Cidade = @Cidade;',
+          'CREATE PROCEDURE BuscarPorCidade @Cidade VARCHAR(60) AS BEGIN SELECT * FROM Clientes WHERE Cidade = @Cidade; END;',
+          'CREATE PROCEDURE dbo.BuscarPorCidade @Cidade VARCHAR(60) AS SELECT * FROM Clientes WHERE Cidade = @Cidade;'
         ],
         dicas: [
           'CREATE PROCEDURE nome ... AS ...',

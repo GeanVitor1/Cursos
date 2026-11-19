@@ -48,7 +48,8 @@ window.Plataforma = window.Plataforma || {};
       habilidades: {},
       sessoes: [],
       revisoes: [],
-      configuracoes: { tema: 'claro', nivelIngles: null }
+      configuracoes: { tema: 'claro', nivelIngles: null },
+      requisitosCumpridos: {}
     };
   }
 
@@ -101,7 +102,7 @@ window.Plataforma = window.Plataforma || {};
       return valor;
     });
     contadores(dados, ['xp', 'xpBase']);
-    ['licoes', 'conceitos', 'agenda', 'habilidades', 'configuracoes', 'premios', 'eventosPratica', 'praticaBase'].forEach(function (campo) {
+    ['licoes', 'conceitos', 'agenda', 'habilidades', 'configuracoes', 'premios', 'eventosPratica', 'praticaBase', 'requisitosCumpridos'].forEach(function (campo) {
       if (dados[campo] != null) exigir(objeto(dados[campo]), campo);
     });
     mapa(dados.licoes || {}, function (l) {
@@ -122,6 +123,7 @@ window.Plataforma = window.Plataforma || {};
       if (a.proximaEm != null) exigir(typeof a.proximaEm === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(a.proximaEm) && Number.isFinite(Date.parse(a.proximaEm)), 'data da revisão');
     });
     mapa(dados.premios || {}, function (v) { exigir(Number.isFinite(v) && v >= 0, 'prêmio'); });
+    mapa(dados.requisitosCumpridos || {}, function (v) { exigir(typeof v === 'string' && Number.isFinite(Date.parse(v)), 'requisito cumprido'); });
     mapa(dados.eventosPratica || {}, function (ev) {
       exigir(objeto(ev) && typeof ev.correto === 'boolean' && typeof ev.em === 'string' && Number.isFinite(Date.parse(ev.em)), 'evento');
       if (ev.habilidade) exigir(Object.prototype.hasOwnProperty.call(P.habilidades, ev.habilidade), 'habilidade');
@@ -159,6 +161,61 @@ window.Plataforma = window.Plataforma || {};
     });
   }
 
+  // Recuperação tolerante do armazenamento local: descarta apenas os registros
+  // inválidos em vez de perder todo o progresso por causa de um campo ruim.
+  function sanearEstado(dados) {
+    function objeto(v) { return v !== null && typeof v === 'object' && !Array.isArray(v); }
+    function valido(parcial) { try { validarEstado(parcial); return true; } catch (e) { return false; } }
+    function com(campo, valor) { const o = {}; o[campo] = valor; return o; }
+    if (!objeto(dados)) return { dados: null, descartados: 1 };
+    const proibidas = ['__proto__', 'constructor', 'prototype'];
+    const mapas = ['licoes', 'conceitos', 'agenda', 'habilidades', 'premios', 'eventosPratica', 'requisitosCumpridos'];
+    const limpo = {};
+    let descartados = 0;
+    function filtrarMapa(valor, teste) {
+      const saida = {};
+      Object.keys(valor).forEach(function (id) {
+        if (proibidas.indexOf(id) === -1 && valido(teste(com(id, valor[id])))) saida[id] = valor[id];
+        else descartados += 1;
+      });
+      return saida;
+    }
+    Object.keys(dados).forEach(function (campo) {
+      if (proibidas.indexOf(campo) !== -1) { descartados += 1; return; }
+      const valor = dados[campo];
+      if (valido(com(campo, valor))) { limpo[campo] = valor; return; }
+      if (mapas.indexOf(campo) !== -1 && objeto(valor)) {
+        limpo[campo] = filtrarMapa(valor, function (m) { return com(campo, m); });
+      } else if ((campo === 'sessoes' || campo === 'revisoes') && Array.isArray(valor)) {
+        limpo[campo] = valor.filter(function (item) { const ok = valido(com(campo, [item])); if (!ok) descartados += 1; return ok; });
+      } else if (campo === 'praticaBase' && objeto(valor)) {
+        limpo.praticaBase = {};
+        ['conceitos', 'habilidades'].forEach(function (sub) {
+          if (objeto(valor[sub])) limpo.praticaBase[sub] = filtrarMapa(valor[sub], function (m) { return { praticaBase: com(sub, m) }; });
+        });
+      } else if (campo === 'configuracoes' && objeto(valor)) {
+        const c = Object.assign({}, valor);
+        ['metaMinutos', 'percurso'].forEach(function (k) { if (!valido({ configuracoes: c })) { delete c[k]; descartados += 1; } });
+        if (valido({ configuracoes: c })) limpo.configuracoes = c;
+      } else if (campo === 'atividade' && objeto(valor)) {
+        const a = Object.assign({}, valor);
+        const base = Object.assign({}, a, { eventos: {}, intervalos: {} });
+        if (objeto(a.eventos)) a.eventos = filtrarMapa(a.eventos, function (m) { return { atividade: Object.assign({}, base, { eventos: m }) }; });
+        if (objeto(a.intervalos)) a.intervalos = filtrarMapa(a.intervalos, function (m) { return { atividade: Object.assign({}, base, { intervalos: m }) }; });
+        if (valido({ atividade: a })) limpo.atividade = a; else descartados += 1;
+      } else {
+        descartados += 1;
+      }
+    });
+    return { dados: limpo, descartados: descartados };
+  }
+
+  function guardarBackupCorrompido(bruto, motivo) {
+    try {
+      window.localStorage.setItem(CHAVE + '.corrompido', JSON.stringify({ em: new Date().toISOString(), motivo: String(motivo || ''), bruto: bruto }));
+    } catch (e) { console.error('[Progresso] Não foi possível guardar a cópia do progresso corrompido:', e); }
+  }
+
   function normalizarEstado(dados) {
     if (dados != null) validarEstado(dados);
     dados = dados ? JSON.parse(JSON.stringify(dados)) : null;
@@ -177,6 +234,7 @@ window.Plataforma = window.Plataforma || {};
     estado.premios = estado.premios || {};
     estado.xpBase = dados && typeof dados.xpBase === 'number' ? dados.xpBase : Math.max(0, estado.xp - Object.values(estado.premios).reduce(function (n, p) { return n + p; }, 0));
     estado.eventosPratica = estado.eventosPratica || {};
+    estado.requisitosCumpridos = estado.requisitosCumpridos || {};
     estado.praticaBase = dados && dados.praticaBase ? dados.praticaBase : JSON.parse(JSON.stringify({ conceitos: estado.conceitos, habilidades: estado.habilidades }));
     estado.praticaBase.conceitos = estado.praticaBase.conceitos || {};
     estado.praticaBase.habilidades = estado.praticaBase.habilidades || {};
@@ -195,15 +253,34 @@ window.Plataforma = window.Plataforma || {};
   }
 
   function carregar() {
+    let bruto;
     try {
-      const bruto = window.localStorage.getItem(CHAVE);
-      const carregado = bruto ? normalizarEstado(JSON.parse(bruto)) : criaPadrao();
+      bruto = window.localStorage.getItem(CHAVE);
+    } catch (e) {
+      // Só a falta de acesso ao armazenamento desliga a persistência.
+      disponivel = false;
+      console.error('[Progresso] Armazenamento local indisponível:', e);
+      return criaPadrao();
+    }
+    if (!bruto) return criaPadrao();
+    let lido;
+    try { lido = JSON.parse(bruto); } catch (e) {
+      guardarBackupCorrompido(bruto, 'json');
+      console.error('[Progresso] Progresso salvo ilegível; cópia guardada em ' + CHAVE + '.corrompido:', e);
+      return criaPadrao();
+    }
+    try {
+      const carregado = normalizarEstado(lido);
       ultimoLocal = bruto;
       return carregado;
     } catch (e) {
-      disponivel = false;
-      console.error('[Progresso] Não foi possível ler o progresso salvo:', e);
-      return criaPadrao();
+      const saneado = sanearEstado(lido);
+      guardarBackupCorrompido(bruto, e && e.message);
+      console.warn('[Progresso] ' + saneado.descartados + ' registro(s) inválido(s) descartado(s); cópia original em ' + CHAVE + '.corrompido.');
+      try { return normalizarEstado(saneado.dados); } catch (e2) {
+        console.error('[Progresso] Não foi possível recuperar o progresso salvo:', e2);
+        return criaPadrao();
+      }
     }
   }
 
@@ -315,6 +392,7 @@ window.Plataforma = window.Plataforma || {};
       if (tx !== ty) resultado.agenda[id] = tx > ty ? x : y;
     });
     resultado.eventosPratica = Object.assign({}, a.eventosPratica || {}, b.eventosPratica || {});
+    resultado.requisitosCumpridos = Object.assign({}, b.requisitosCumpridos || {}, a.requisitosCumpridos || {});
     resultado.praticaBase = { conceitos: {}, habilidades: {} };
     ['conceitos', 'habilidades'].forEach(function (campo) {
       const x = (a.praticaBase || {})[campo] || a[campo] || {};
@@ -712,13 +790,16 @@ window.Plataforma = window.Plataforma || {};
     const licao = P.interno.licoes[id] || {};
     const registro = estado.licoes[id] || { tentativas: 0, melhorAproveitamento: 0 };
     const primeiraVez = registro.status !== 'concluida' && !registro.concluidaEm;
+    const prova = licao.tipo === 'prova';
     if (!primeiraVez) {
       registro.rascunho = null;
       registro.melhorAproveitamento = Math.max(registro.melhorAproveitamento || 0, info.aproveitamento || 0);
       salvar();
-      return { primeiraVez: false, bonus: 0 };
+      const retorno = { primeiraVez: false, bonus: 0 };
+      // Refazer checkpoint já aprovado: o resultado exibido é o da execução atual.
+      if (prova) retorno.aprovado = (info.aproveitamento || 0) >= (licao.minimoAprovacao || 70);
+      return retorno;
     }
-    const prova = licao.tipo === 'prova';
     if (prova && (info.aproveitamento || 0) < (licao.minimoAprovacao || 70)) {
       registro.tentativas = (registro.tentativas || 0) + 1;
       registro.melhorAproveitamento = Math.max(registro.melhorAproveitamento || 0, info.aproveitamento || 0);
@@ -732,20 +813,42 @@ window.Plataforma = window.Plataforma || {};
     registro.melhorAproveitamento = Math.max(registro.melhorAproveitamento || 0, info.aproveitamento || 0);
     registro.rascunho = null;
     estado.licoes[id] = registro;
-    emTransacao = true;
-    registrarAtividade('conclusao', 'conclusao:' + id, id);
     const bonus = prova ? P.conf.xpProva : (licao.xp || P.conf.xpAula);
-    adicionarXp(bonus, 'conclusao:' + id);
-    estado.sessoes.push({
-      data: new Date().toISOString(),
-      tipo: prova ? 'prova' : 'licao',
-      id: id,
-      minutos: licao.duracaoMin || 30,
-      xp: bonus
-    });
-    emTransacao = false;
+    emTransacao = true;
+    try {
+      registrarAtividade('conclusao', 'conclusao:' + id, id);
+      adicionarXp(bonus, 'conclusao:' + id);
+      estado.sessoes.push({
+        data: new Date().toISOString(),
+        tipo: prova ? 'prova' : 'licao',
+        id: id,
+        minutos: licao.duracaoMin || 30,
+        xp: bonus
+      });
+    } finally {
+      emTransacao = false;
+    }
     salvar();
     return { primeiraVez: primeiraVez, bonus: bonus };
+  }
+
+  function limparEtapasPremiadas(id) {
+    const l = estado.licoes[id];
+    if (!l) return;
+    l.etapasPremiadas = {};
+    l.resultadosEtapas = {};
+    salvar();
+  }
+
+  function requisitoCumprido(trilhaId) {
+    return !!(estado.requisitosCumpridos && estado.requisitosCumpridos[trilhaId]);
+  }
+
+  function marcarRequisitoCumprido(trilhaId) {
+    estado.requisitosCumpridos = estado.requisitosCumpridos || {};
+    if (estado.requisitosCumpridos[trilhaId]) return;
+    estado.requisitosCumpridos[trilhaId] = new Date().toISOString();
+    salvar();
   }
 
   function registrarRevisao(info) {
@@ -851,8 +954,9 @@ window.Plataforma = window.Plataforma || {};
   function tema() { return estado.configuracoes.tema || 'claro'; }
   function exportar() { return JSON.parse(JSON.stringify(estado)); }
 
+  const XP_MAXIMO_IMPORTADO = 10000000;
   function importar(dados, naoEnviarNuvem) {
-    if (!dados || typeof dados !== 'object' || Array.isArray(dados) || !Number.isFinite(dados.xp) || dados.xp < 0 || !dados.licoes || typeof dados.licoes !== 'object' || Array.isArray(dados.licoes)) throw new Error('Formato de arquivo inválido. Exporte um backup da plataforma.');
+    if (!dados || typeof dados !== 'object' || Array.isArray(dados) || !Number.isFinite(dados.xp) || dados.xp < 0 || dados.xp > XP_MAXIMO_IMPORTADO || !dados.licoes || typeof dados.licoes !== 'object' || Array.isArray(dados.licoes)) throw new Error('Formato de arquivo inválido. Exporte um backup da plataforma.');
     const candidato = normalizarEstado(dados);
     if (!naoEnviarNuvem) candidato.reiniciadoEm = new Date().toISOString();
     if (naoEnviarNuvem && JSON.stringify(candidato) === JSON.stringify(estado)) return;
@@ -893,6 +997,9 @@ window.Plataforma = window.Plataforma || {};
     marcarEtapaPremiada: marcarEtapaPremiada,
     registrarResultadoEtapa: registrarResultadoEtapa,
     concluirLicao: concluirLicao,
+    limparEtapasPremiadas: limparEtapasPremiadas,
+    requisitoCumprido: requisitoCumprido,
+    marcarRequisitoCumprido: marcarRequisitoCumprido,
     registrarRevisao: registrarRevisao,
     resumoConceitos: resumoConceitos,
     estadoConceito: estadoConceito,

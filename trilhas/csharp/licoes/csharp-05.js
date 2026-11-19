@@ -63,12 +63,12 @@ Plataforma.registrarLicao({
         dimensao: 'associacao',
         enunciado: 'Conecte cada termo ao seu papel.',
         pares: [
-          ['Interface', 'Contrato: o que deve existir'],
-          ['Classe concreta', 'Implementação: como funciona de verdade'],
-          ['EmailNotificador : INotificador', 'Uma implementação do contrato'],
-          ['Trocar a implementação', 'Mudança sem reescrever quem usa']
+          ['Interface', 'Lista o que deve existir, sem código que execute'],
+          ['Classe concreta', 'Contém o código que de fato realiza a ação'],
+          ['EmailNotificador : INotificador', 'Declara que a classe cumpre o que a interface exige'],
+          ['Trocar a implementação', 'Mudar o que acontece sem reescrever quem usa a interface']
         ],
-        dicas: ['A interface não executa nada; ela promete.', 'A classe concreta é quem tem o código de verdade.'],
+        dicas: ['Uma das opções descreve o código que executa; outra descreve apenas o que se exige.', 'O símbolo ":" depois do nome da classe indica que ela cumpre uma interface.'],
         explicacao: 'Quem usa a interface não se importa com a implementação. Essa separação é o coração de um código testável (fácil de testar e de trocar depois).',
         conceitos: ['csharp.interfaces']
       }
@@ -129,8 +129,9 @@ Plataforma.registrarLicao({
           '     public void FinalizarPedido(Pedido pedido)',
           '     {',
           '-        EmailService email = new EmailService();',
+          '-        email.Enviar("Pedido confirmado");',
           '+        INotificador notificador = new EmailNotificador();',
-          '         notificador.Enviar("Pedido confirmado");',
+          '+        notificador.Enviar("Pedido confirmado");',
           '     }',
           ' }'
         ],
@@ -165,9 +166,14 @@ Plataforma.registrarLicao({
           'Classe = implementação (como funciona)',
           'Citar que dá para trocar a implementação sem mudar quem usa'
         ],
-        palavrasChave: ['contrato', 'o que', 'implement', 'como', 'trocar', 'substitu', 'combinado', 'promessa'],
-        exemplo: 'A interface diz o que deve existir (o contrato) e a classe diz como funciona (a implementação concreta). Posso substituir a implementação (por exemplo, trocar e-mail por SMS) sem mudar quem usa a interface.',
-        dicas: ['Pense em "o que" versus "como".', 'Pense na possibilidade de substituir uma implementação.'],
+        palavrasChave: [
+          ['contrato', 'promessa', 'combinado', 'regra'],
+          ['implementa', 'implementação', 'executa', 'código', 'concreta'],
+          ['trocar', 'substituir', 'trocada', 'substituída', 'substituição']
+        ],
+        minimoChaves: 3,
+        exemplo: 'INotificador só combina que existe um Enviar; EmailNotificador é quem escreve o código que manda o e-mail de verdade. Se amanhã o time quiser SMS, cria outra classe com o mesmo combinado e o resto do sistema nem percebe.',
+        dicas: ['Uma das duas apenas descreve; a outra faz.', 'O que acontece com o resto do sistema se uma das duas for trocada por outra?'],
         explicacao: 'Separar contrato de implementação é o que permite testar e evoluir o sistema sem reescrever as classes que dependem dele.',
         conceitos: ['csharp.interfaces']
       }

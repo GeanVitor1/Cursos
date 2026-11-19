@@ -18,27 +18,64 @@ window.Plataforma = window.Plataforma || {};
     return !!l && (l.disponivel === true || (l.etapas && l.etapas.length > 0));
   }
 
+  function ehCheckpoint(e) {
+    const l = P.interno.licoes[e.licao];
+    return e.tipo === 'prova' || (!!l && l.tipo === 'prova');
+  }
+
+  // percentual: sobre as lições publicadas (exibição).
+  // percentualPlanejado: sobre o total planejado da trilha, incluindo checkpoints.
   function percentualTrilha(t) {
-    const comLicao = etapasDaTrilha(t).filter(function (e) { return publicada(e.licao); });
+    const todas = etapasDaTrilha(t).filter(function (e) { return !!e.licao; });
+    const comLicao = todas.filter(function (e) { return publicada(e.licao); });
     const concluidas = comLicao.filter(function (e) { return P.dados.estaConcluida(e.licao); });
+    const checkpoints = comLicao.filter(ehCheckpoint);
     return {
       comLicao: comLicao,
       concluidas: concluidas,
-      percentual: comLicao.length ? Math.round((concluidas.length / comLicao.length) * 100) : 0
+      percentual: comLicao.length ? Math.round((concluidas.length / comLicao.length) * 100) : 0,
+      totalPlanejado: todas.length,
+      percentualPlanejado: todas.length ? Math.round((concluidas.length / todas.length) * 100) : 0,
+      emConstrucao: todas.length > comLicao.length,
+      checkpointsPublicados: checkpoints.length,
+      checkpointsAprovados: checkpoints.filter(function (e) { return P.dados.estaConcluida(e.licao); }).length
     };
+  }
+
+  // Regra de pré-requisito (decisão documentada):
+  // 1. Já cumprido antes (persistido em estado.requisitosCumpridos) => atendido para sempre;
+  //    publicar lições novas na trilha não rebloqueia quem já tinha cumprido.
+  // 2. Trilha completa: exige min% sobre o total planejado (checkpoints incluídos).
+  // 3. Trilha em construção (há etapas não publicadas): libera provisoriamente quando
+  //    min% do publicado foi concluído E existe ao menos um checkpoint publicado E todos
+  //    os checkpoints publicados foram aprovados. Sem checkpoint publicado não libera,
+  //    para que um punhado de lições introdutórias não destrave trilhas dependentes.
+  function avaliarRequisito(trilhaId, minimo) {
+    const alvo = trilha(trilhaId);
+    if (!alvo) return { alvo: null, dados: { percentual: 0, percentualPlanejado: 0 }, atendido: false, provisorio: false };
+    const dados = percentualTrilha(alvo);
+    const persistido = !!(P.dados.requisitoCumprido && P.dados.requisitoCumprido(trilhaId));
+    const completo = dados.totalPlanejado > 0 && dados.percentualPlanejado >= minimo;
+    const provisorio = !completo && dados.emConstrucao && dados.comLicao.length > 0 && dados.percentual >= minimo &&
+      dados.checkpointsPublicados > 0 && dados.checkpointsAprovados === dados.checkpointsPublicados;
+    const atendido = persistido || completo || provisorio;
+    if (atendido && !persistido && P.dados.marcarRequisitoCumprido) P.dados.marcarRequisitoCumprido(trilhaId);
+    return { alvo: alvo, dados: dados, atendido: atendido, provisorio: !completo && atendido && dados.emConstrucao };
   }
 
   function listaRequisitos(t) {
     return (t.prerequisitos || []).map(function (req) {
-      const alvo = trilha(req.trilha);
-      const dados = alvo ? percentualTrilha(alvo) : { percentual: 0 };
       const minimo = typeof req.min === 'number' ? req.min : 100;
+      const r = avaliarRequisito(req.trilha, minimo);
       return {
         trilha: req.trilha,
-        nome: alvo ? (alvo.nome || req.trilha) : req.trilha,
+        nome: r.alvo ? (r.alvo.nome || req.trilha) : req.trilha,
         min: minimo,
-        percentual: alvo ? dados.percentual : 0,
-        atendido: alvo ? dados.percentual >= minimo : false
+        percentual: r.alvo ? r.dados.percentual : 0,
+        percentualPlanejado: r.alvo ? r.dados.percentualPlanejado : 0,
+        emConstrucao: !!(r.alvo && r.dados.emConstrucao),
+        provisorio: r.provisorio,
+        atendido: r.atendido
       };
     });
   }
@@ -64,6 +101,8 @@ window.Plataforma = window.Plataforma || {};
       percentual: dados.percentual,
       total: dados.comLicao.length,
       planejadas: etapas.length - dados.comLicao.length,
+      percentualPlanejado: dados.percentualPlanejado,
+      emConstrucao: dados.emConstrucao,
       status: status,
       requisitos: requisitos,
       requisitosAtendidos: requisitosAtendidos,
@@ -208,26 +247,50 @@ window.Plataforma = window.Plataforma || {};
       });
   }
 
+  // Índice conceito → atividades, recalculado só quando o conjunto de lições carregadas muda.
+  let cacheIndice = null;
+  function indiceAtividadesPorConceito() {
+    const ids = Object.keys(P.interno.licoes);
+    const assinatura = ids.length + ':' + ids.filter(function (id) { return P.interno.licoes[id] && P.interno.licoes[id].etapas; }).length;
+    if (cacheIndice && cacheIndice.licoes === P.interno.licoes && cacheIndice.assinatura === assinatura) return cacheIndice.mapa;
+    const mapa = new Map();
+    ids.forEach(function (id) {
+      ((P.interno.licoes[id] || {}).etapas || []).forEach(function (etapa) {
+        if (!etapa || etapa.tipo !== 'atividade' || !etapa.atividade) return;
+        const atv = etapa.atividade;
+        (atv.conceitos || []).forEach(function (cid) {
+          if (!mapa.has(cid)) mapa.set(cid, []);
+          mapa.get(cid).push({ licao: id, atv: atv });
+        });
+      });
+    });
+    cacheIndice = { licoes: P.interno.licoes, assinatura: assinatura, mapa: mapa };
+    return mapa;
+  }
+
   function atividadesDeRevisao(limite, incluirHoje) {
     const alvoLimite = limite || 8;
     const alvos = conceitosParaRevisar(incluirHoje).slice(0, 8);
     const usados = {};
+    const indice = indiceAtividadesPorConceito();
+    const acessoCache = {};
+    function acessivel(id) {
+      if (!(id in acessoCache)) {
+        const acesso = statusLicao(id);
+        acessoCache[id] = !(acesso && acesso.status === 'bloqueada' && !P.dados.obterRegistroLicao(id));
+      }
+      return acessoCache[id];
+    }
     const baldes = alvos.map(function (conceito) {
       const encontradas = [];
-      Object.keys(P.interno.licoes).forEach(function (id) {
+      (indice.get(conceito.id) || []).forEach(function (ref) {
         if (encontradas.length >= P.conf.maxAtividadesPorConceitoRevisao) return;
-        const licao = P.interno.licoes[id];
-        const acesso = statusLicao(id);
-        if (acesso && acesso.status === 'bloqueada' && !P.dados.obterRegistroLicao(id)) return;
-        (licao.etapas || []).forEach(function (etapa) {
-          if (encontradas.length >= P.conf.maxAtividadesPorConceitoRevisao) return;
-          if (etapa.tipo !== 'atividade' || !etapa.atividade) return;
-          const atv = etapa.atividade;
-          if (!atv.conceitos || atv.conceitos.indexOf(conceito.id) === -1) return;
-          if (usados[atv.id]) return;
-          usados[atv.id] = true;
-          encontradas.push(atv);
-        });
+        if (!acessivel(ref.licao)) return;
+        // IDs de atividade podem se repetir entre lições: a chave é lição + id.
+        const chave = ref.licao + '::' + ref.atv.id;
+        if (usados[chave]) return;
+        usados[chave] = true;
+        encontradas.push(ref.atv);
       });
       return encontradas.sort(function (a, b) {
         const pesoTipo = { 'scenario': 3, 'code-review': 3, 'debug': 3, 'interpret-code': 2, 'write-code': 2, 'fill-code': 1, 'explain': 1 };
@@ -254,6 +317,17 @@ window.Plataforma = window.Plataforma || {};
       rodada += 1;
     }
     return intercaladas;
+  }
+
+  // Sessões anteriores à medição por intervalos (versões antigas) só têm minutos estimados.
+  function minutosLegados(estado) {
+    const intervalos = (estado.atividade && estado.atividade.intervalos) || {};
+    let inicio = Infinity;
+    Object.keys(intervalos).forEach(function (k) { inicio = Math.min(inicio, Number(k) * 10000); });
+    return (estado.sessoes || []).reduce(function (soma, s) {
+      const em = Date.parse(s && s.data);
+      return (Number.isFinite(em) && em < inicio) ? soma + (Number(s.minutos) || 0) : soma;
+    }, 0);
   }
 
   function dominioTrilha(id) {
@@ -291,7 +365,7 @@ window.Plataforma = window.Plataforma || {};
         nome: dc ? dc.nome : dep,
         percentual: dr ? dr.percentual : 0,
         dominio: dr ? dr.dominio : 0,
-        atendida: dr ? dr.percentual >= 100 : true
+        atendida: dc && dc.trilha ? avaliarRequisito(dc.trilha, 100).atendido : true
       };
     });
     const bloqueada = dependencias.some(function (d) { return !d.atendida; });
@@ -349,13 +423,14 @@ window.Plataforma = window.Plataforma || {};
     }).length;
     const tempo = estado.sessoes.reduce(function (soma, s) { return soma + (s.minutos || 0); }, 0);
     const conceitos = P.dados.resumoConceitos();
+    const legado = minutosLegados(estado);
     const vencidas = conceitosParaRevisar();
     return {
       xp: estado.xp,
       nivel: P.dados.nivelInfo(),
       streak: estado.streak,
       licoesConcluidas: concluidas,
-      tempoMinutos: Math.floor(P.dados.resumoAtividade().segundos / 60),
+      tempoMinutos: Math.floor(P.dados.resumoAtividade().segundos / 60) + legado,
       tempoEstimadoLegado: tempo,
       dominados: conceitos.filter(function (c) { return c.estado === 'dominado'; }).length,
       revisar: conceitos.filter(function (c) { return c.estado === 'revisar' || c.estado === 'aprendendo'; }).length,

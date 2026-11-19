@@ -66,7 +66,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Limite sem ordem é sorteio',
       blocos: [
-        { tipo: 'texto', texto: 'Esta consulta é legal, mas imprevisível: ela devolve 3 produtos quaisquer, na ordem que o banco quiser.' },
+        { tipo: 'texto', texto: 'Esta consulta é válida, mas imprevisível: ela devolve 3 produtos quaisquer, na ordem que o banco quiser.' },
         {
           tipo: 'codigo',
           linguagem: 'sql',
@@ -101,7 +101,7 @@ Plataforma.registrarLicao({
         tipo: 'fill-code',
         enunciado: 'Complete para listar os **5 produtos mais caros** no SQL Server.',
         codigo: 'SELECT {{1}} 5 Nome, Preco\nFROM Produtos\nORDER BY Preco DESC;',
-        lacunas: [['top', 'limit']],
+        lacunas: [['top']],
         dicas: [
           'No SQL Server a palavra vem entre SELECT e o número.',
           'São três letras.'

@@ -86,10 +86,10 @@ Plataforma.registrarLicao({
           { tipo: 'codigo', linguagem: 'csharp', codigo: 'Produto produto = produtos.First(p => p.Id == id);\nreturn produto;' }
         ],
         opcoes: [
-          'Usar FirstOrDefault e tratar o null antes de responder (ex.: responder que não encontrou)',
-          'Trocar para Single',
-          'Envolver tudo em try/catch vazio',
-          'Remover o filtro para nunca ficar vazio'
+          'Usar FirstOrDefault e tratar o null antes de responder ao usuário',
+          'Trocar o FirstOrDefault por Single para o erro aparecer logo',
+          'Envolver tudo em um try/catch vazio para engolir o erro',
+          'Remover o filtro da consulta para nunca ficar vazio'
         ],
         correta: 0,
         feedbackErro: {

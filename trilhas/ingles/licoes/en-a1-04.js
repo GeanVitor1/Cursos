@@ -2,7 +2,7 @@ Plataforma.registrarLicao({
   id: 'en-a1-04',
   trilha: 'ingles',
   tipo: 'licao',
-  titulo: 'Horas, dias e datas',
+  titulo: 'Horas e dias da semana',
   subtitulo: 'English A1 · Unidade 5',
   duracaoMin: 35,
   xp: 30,
@@ -19,7 +19,7 @@ Plataforma.registrarLicao({
       introduz: ['en.horarios'],
       blocos: [
         { tipo: 'texto', texto: 'Para perguntar as horas, o inglês tem uma frase fixa. Vamos aprender primeiro a pergunta e a hora exata.' },
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['What time is it?', 'Que horas são?'],
           ["It's seven o'clock.", 'São sete horas em ponto.']
         ] },
@@ -47,6 +47,7 @@ Plataforma.registrarLicao({
         { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
           ["It's seven thirty.", 'São sete e trinta.'],
           ["It's half past seven.", 'São sete e meia.'],
+          ["It's a quarter past seven.", 'São sete e quinze.'],
           ["It's a quarter to eight.", 'São quinze para as oito.']
         ] },
         { tipo: 'ingles', frase: "It's half past seven.", traducao: 'São sete e meia.' }
@@ -57,7 +58,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'en-a1-04-p2',
         tipo: 'multiple-choice',
-        habilidade: 'listening',
+        habilidade: 'vocabulario',
         dimensao: 'reconhecimento',
         enunciado: 'O que significa **half past seven**?',
         opcoes: ['Sete e meia', 'Sete e quinze', 'Sete em ponto', 'Quinze para as sete'],
@@ -76,7 +77,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Os três primeiros dias',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['Monday, Tuesday, Wednesday', 'segunda, terça, quarta']
         ] },
         { tipo: 'ingles', frase: 'Monday, Tuesday, Wednesday!', traducao: 'Segunda, terça, quarta!' },
@@ -105,7 +106,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'O resto da semana',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['Thursday, Friday', 'quinta, sexta'],
           ['Saturday, Sunday', 'sábado, domingo']
         ] },
@@ -134,7 +135,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Compromissos',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['the meeting', 'a reunião'],
           ['the class starts', 'a aula começa']
         ] },
@@ -273,10 +274,14 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva uma frase com um compromisso seu: use at + hora e on + dia.',
         esqueleto: 'I have ... at ... on ... .',
         validar: function (valor) {
-          const t = String(valor || '').toLowerCase();
-          const temDia = /\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b/.test(t);
-          const temHora = /\bat\s+\d/.test(t) || /\bat\s+(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|noon|midnight|half|quarter)\b/.test(t);
-          return /\bat\b/.test(t) && /\bon\b/.test(t) && temDia && temHora;
+          const t = String(valor || '').toLowerCase().replace(/[,.!?]/g, ' ').replace(/\s+/g, ' ');
+          const dia = '(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)';
+          const num = '(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)';
+          const hora = '(?:(?:half past |a quarter past |a quarter to |quarter past |quarter to )?' + num + '(?: (?:o.clock|thirty|fifteen|forty five|forty-five|twenty|ten|oh five))?|\\d{1,2}(?::\\d{2})?(?: o.clock)?|noon|midnight)';
+          const temHora = new RegExp('\\bat ' + hora + '(?: |$)').test(t);
+          const temDia = new RegExp('\\bon ' + dia + '\\b').test(t);
+          const temFrase = /\b(i|we|my|the|our|it|she|he|they)\b/.test(t) && /\b(have|has|go|work|study|start|starts|begin|begins|is|are|meet|see|play|call)\b/.test(t);
+          return temHora && temDia && temFrase;
         },
         respostasAceitas: ["I have English class at 7 o'clock on Monday."],
         dicas: ['Ex.: I have a meeting at 9 on Monday.', 'Inclua um dia da semana em inglês.'],

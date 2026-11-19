@@ -97,6 +97,21 @@ window.Plataforma = window.Plataforma || {};
     }
   });
 
+  // Compara pelo texto dos blocos (linhas idênticas são intercambiáveis) e aceita `ordensAceitas`
+  // opcionais: lista de ordens alternativas, cada uma com índices (0-based) ou textos dos blocos.
+  function ordemAceita(atv, ordem) {
+    const blocos = atv.blocos || [];
+    if (ordem.length !== blocos.length) return false;
+    const montado = ordem.map(function (i) { return String(blocos[i]).trim(); });
+    const candidatas = [blocos.map(function (b) { return String(b).trim(); })];
+    (Array.isArray(atv.ordensAceitas) ? atv.ordensAceitas : []).forEach(function (alt) {
+      if (!Array.isArray(alt) || alt.length !== blocos.length) return;
+      candidatas.push(alt.map(function (x) { return typeof x === 'number' ? String(blocos[x]).trim() : String(x).trim(); }));
+    });
+    return candidatas.some(function (cand) { return cand.every(function (t, pos) { return t === montado[pos]; }); });
+  }
+  P.atividades.ordemAceita = ordemAceita;
+
   P.atividades.registrar('order-blocks', {
     rotulo: 'Ordenar código',
     render: function (atv, area, api) {
@@ -115,14 +130,44 @@ window.Plataforma = window.Plataforma || {};
 
       const itens = P.dom.embaralhar(corretos.map(function (texto, i) { return { texto: texto, indice: i }; }));
 
-      function botaoItem(item, encaixado) {
-        const botao = criar('button', { classe: 'bloco-item' + (encaixado ? ' encaixado' : ''), type: 'button', texto: item.texto });
+      const limparBtn = criar('button', {
+        classe: 'btn-link ordenar-limpar', type: 'button', texto: 'Limpar montagem',
+        onclick: function () { if (travado) return; ordem = []; atualizar(); }
+      });
+      container.appendChild(criar('div', { classe: 'ordenar-acoes' }, [
+        criar('span', { classe: 'ordenar-instrucao', texto: 'Dica: na montagem, use Alt + ↑/↓ para mover um bloco.' }),
+        limparBtn
+      ]));
+
+      function mover(indice, delta) {
+        const pos = ordem.indexOf(indice);
+        const alvo = pos + delta;
+        if (pos < 0 || alvo < 0 || alvo >= ordem.length) return;
+        ordem.splice(pos, 1);
+        ordem.splice(alvo, 0, indice);
+        atualizar();
+        const novo = encaixe.querySelectorAll('.bloco-item')[alvo];
+        if (novo) novo.focus();
+      }
+
+      function botaoItem(item, encaixado, posicao) {
+        const botao = criar('button', {
+          classe: 'bloco-item' + (encaixado ? ' encaixado' : ''), type: 'button', texto: item.texto,
+          'aria-label': encaixado ? 'Posição ' + (posicao + 1) + ': ' + item.texto + '. Enter remove; Alt+setas reordena.' : 'Adicionar: ' + item.texto
+        });
         botao.addEventListener('click', function () {
           if (travado) return;
           if (encaixado) ordem = ordem.filter(function (i) { return i !== item.indice; });
           else ordem.push(item.indice);
           atualizar();
         });
+        if (encaixado) {
+          botao.addEventListener('keydown', function (ev) {
+            if (travado || !ev.altKey) return;
+            if (ev.key === 'ArrowUp') { ev.preventDefault(); mover(item.indice, -1); }
+            else if (ev.key === 'ArrowDown') { ev.preventDefault(); mover(item.indice, 1); }
+          });
+        }
         return botao;
       }
 
@@ -132,10 +177,11 @@ window.Plataforma = window.Plataforma || {};
         itens.forEach(function (item) {
           if (ordem.indexOf(item.indice) === -1) pool.appendChild(botaoItem(item, false));
         });
-        ordem.forEach(function (indice) {
+        ordem.forEach(function (indice, pos) {
           const item = itens.filter(function (i) { return i.indice === indice; })[0];
-          encaixe.appendChild(botaoItem(item, true));
+          encaixe.appendChild(botaoItem(item, true, pos));
         });
+        limparBtn.disabled = !ordem.length;
         api.marcarRespondida(ordem.length === corretos.length);
       }
 
@@ -144,7 +190,7 @@ window.Plataforma = window.Plataforma || {};
       return {
         verificar: function () {
           travado = true;
-          const ok = ordem.length === corretos.length && ordem.every(function (indice, pos) { return indice === pos; });
+          const ok = ordemAceita(atv, ordem);
           encaixe.classList.add('verificada');
           encaixe.classList.add(ok ? 'correta' : 'errada');
           return { correto: ok };

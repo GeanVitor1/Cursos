@@ -105,9 +105,9 @@ Plataforma.registrarLicao({
         ],
         correta: 0,
         feedbackErro: {
-          1: 'Diego Souza Lima termina com "Lima", não com "Souza".',
-          2: 'Bruno Lima não tem Souza no nome.',
-          3: 'Carla Souza também termina com Souza.'
+          1: 'Diego Souza Lima termina com "Lima", não com "Souza": ele não casa com o padrão.',
+          2: 'Carla Souza também termina com "Souza" e entra no resultado.',
+          3: 'Bruno Lima não termina com "Souza", e Diego também não: o filtro exclui os dois.'
         },
         dicas: [
           'O padrão termina com Souza, sem % depois.',
@@ -202,6 +202,50 @@ Plataforma.registrarLicao({
       }
     },
     {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql10-a8',
+        tipo: 'multiple-choice',
+        enunciado: 'Quais nomes casam com o padrão `LIKE \'Ma_a\'`?',
+        opcoes: [
+          'Mara e Maya',
+          'Maria e Marta',
+          'Ma e Maa',
+          'Marcia e Maiara'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: 'Maria e Marta têm cinco letras; o padrão pede exatamente quatro.',
+          2: 'Ma e Maa são curtos demais: faltam letras para o `_` e para o "a" final.',
+          3: 'Marcia e Maiara têm seis letras; o `_` vale um único caractere.'
+        },
+        dicas: [
+          'O `_` vale exatamente um caractere, nem mais nem menos.',
+          'Conte as letras do padrão: M, a, um caractere qualquer, a.'
+        ],
+        explicacao: 'O padrão tem quatro posições: duas letras fixas, um caractere qualquer e uma letra fixa. Mara e Maya cabem; nomes com mais ou menos letras não.',
+        conceitos: ['sql.like']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql10-a9',
+        tipo: 'write-code',
+        enunciado: 'Escreva uma consulta que retorne os clientes cujo nome **não começa com "A"** (use NOT LIKE).',
+        respostasAceitas: [
+          'SELECT * FROM Clientes WHERE Nome NOT LIKE \'A%\';',
+          'SELECT * FROM Clientes WHERE NOT Nome LIKE \'A%\';'
+        ],
+        dicas: [
+          'O NOT vem antes do LIKE e inverte o resultado do padrão.',
+          'O padrão de "começa com A" é a letra seguida do coringa de vários caracteres.'
+        ],
+        explicacao: '`SELECT * FROM Clientes WHERE Nome NOT LIKE \'A%\';` — exclui todo nome que casa com o padrão "começa com A".',
+        conceitos: ['sql.like']
+      }
+    },
+    {
       tipo: 'conteudo',
       titulo: 'English corner · Starts with',
       blocos: [
@@ -229,7 +273,7 @@ Plataforma.registrarLicao({
         ],
         dicas: [
           'starts with A = começa com A.',
-          'Use LIKE com o padrão A%.'
+          'Use LIKE com a letra A seguida do coringa que aceita qualquer texto depois.'
         ],
         explicacao: 'Traduzindo: "retrieve all customers where the name starts with A" = recupere todos os clientes cujo nome começa com A. `SELECT * FROM Clientes WHERE Nome LIKE \'A%\';`.',
         conceitos: ['sql.like', 'sql.ingles']

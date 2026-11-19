@@ -91,12 +91,12 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'docker09-a2',
         tipo: 'fill-code',
-        enunciado: 'Complete o serviço do Redis com a **porta padrão** dentro do container.',
+        enunciado: 'Complete a **porta externa** (a do seu computador) do Redis, usando o mesmo número da porta interna 6379 do container.',
         codigo: '  redis:\n    image: redis:7-alpine\n    ports:\n      - "{{1}}:6379"',
         lacunas: [['6379']],
         dicas: [
-          'É a porta que aparece na tabela desta lição.',
-          'São quatro dígitos, começando com 6.'
+          'No formato "externa:interna", o número que falta fica à esquerda dos dois pontos.',
+          'Aqui a porta externa repete a interna, que já aparece à direita.'
         ],
         explicacao: '`- "6379:6379"` publica a porta padrão do Redis, usada pela aplicação para conversar com o serviço.',
         conceitos: ['docker.compose', 'docker.portas']
@@ -109,7 +109,7 @@ Plataforma.registrarLicao({
         tipo: 'match-pairs',
         enunciado: 'Conecte cada serviço do projeto à sua porta interna e ao seu papel.',
         pares: [
-          ['api', 'Porta 80; atende as requisições'],
+          ['api', 'Porta 8080; atende as requisições'],
           ['banco', 'Porta 1433; guarda os dados'],
           ['redis', 'Porta 6379; guarda respostas rápidas']
         ],
@@ -168,7 +168,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'docker09-a5',
         tipo: 'predict-output',
-        enunciado: 'O container do serviço de memória é derrubado. O que acontece com a API?',
+        enunciado: 'O container do Redis é derrubado. O código da API foi escrito para tratar a falha do cache e consultar o banco. O que acontece com a API?',
         contexto: [
           { tipo: 'codigo', linguagem: 'bash', codigo: 'docker compose stop redis' }
         ],
@@ -188,7 +188,7 @@ Plataforma.registrarLicao({
           'O que o serviço de memória guarda é uma cópia da resposta.',
           'A fonte da verdade continua sendo o banco.'
         ],
-        explicacao: 'Sem o serviço de memória, a API perde a aceleração, mas continua funcionando: consulta o banco e recarrega as respostas quando ele voltar.',
+        explicacao: 'O Docker não derruba a API por causa disso. Como o código trata a falha, ela perde a aceleração, mas continua funcionando consultando o banco. Se o código não tratasse a exceção, a API devolveria erro.',
         conceitos: ['docker.compose']
       }
     },

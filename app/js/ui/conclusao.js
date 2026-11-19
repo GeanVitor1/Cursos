@@ -52,7 +52,7 @@ window.Plataforma = window.Plataforma || {};
   function avisoDominio() {
     return criar('div', { classe: 'bloco-nota info' }, [
       criar('span', { classe: 'nota-marca', texto: 'i' }),
-      criar('div', { html: 'Etapa concluída **não** significa conceito dominado. O quadro abaixo mostra em quais formas de conhecimento você já foi bem (reconhecer, associar, ordenar, preencher, construir, aplicar) e o que volta na revisão.' })
+      criar('div', { html: P.dom.formatar('Etapa concluída **não** significa conceito dominado. O quadro abaixo mostra em quais formas de conhecimento você já foi bem (reconhecer, associar, ordenar, preencher, construir, aplicar) e o que volta na revisão.') })
     ]);
   }
 
@@ -76,7 +76,8 @@ window.Plataforma = window.Plataforma || {};
     const trilhaTodaConcluida = !!(resumoTrilha && resumoTrilha.total > 0 && resumoTrilha.concluidas.length >= resumoTrilha.total);
     const pagina = criar('div', { classe: 'conclusao' });
 
-    pagina.appendChild(criar('div', { classe: 'conclusao-icone' + (prova ? ' prova' : ''), texto: '✓' }));
+    const reprovado = prova && resumo.aprovado === false;
+    pagina.appendChild(criar('div', { classe: 'conclusao-icone' + (prova ? ' prova' : '') + (reprovado ? ' reprovado' : ''), texto: reprovado ? '↻' : '✓', 'aria-hidden': 'true' }));
     pagina.appendChild(criar('h1', { texto: prova ? (resumo.aprovado === false ? 'Checkpoint: vamos revisar' : 'Checkpoint aprovado') : 'Etapa concluída' }));
     pagina.appendChild(criar('p', { classe: 'muted', texto: licao.titulo || '' }));
 
@@ -92,7 +93,7 @@ window.Plataforma = window.Plataforma || {};
 
     if (licao.objetivos && licao.objetivos.length) {
       pagina.appendChild(criar('div', { classe: 'cartao' }, [
-        criar('h3', { texto: 'Objetivos trabalhados nesta etapa' }),
+        criar('h3', { texto: reprovado ? 'Objetivos para revisar antes de refazer' : 'Objetivos trabalhados nesta etapa' }),
         criar('ul', { classe: 'objetivos' }, licao.objetivos.map(function (objetivo) {
           return criar('li', { texto: objetivo });
         }))

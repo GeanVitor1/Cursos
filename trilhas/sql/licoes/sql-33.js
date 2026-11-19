@@ -53,9 +53,9 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: 'BEGIN;\nUPDATE Produtos SET Estoque = Estoque - 1 WHERE Id = 7;'
+          codigo: '-- Sessão A\nBEGIN TRANSACTION;\nUPDATE Produtos SET Estoque = Estoque - 1 WHERE Id = 7;   -- A tranca o produto 7\nUPDATE Pedidos SET Status = \'Pago\' WHERE Id = 183;  -- A espera o pedido 183\n\n-- Sessão B (ao mesmo tempo)\nBEGIN TRANSACTION;\nUPDATE Pedidos SET Status = \'Pago\' WHERE Id = 183;  -- B tranca o pedido 183\nUPDATE Produtos SET Estoque = Estoque - 1 WHERE Id = 7;   -- B espera o produto 7'
         },
-        { tipo: 'texto', texto: 'Se outra transação trancou o pedido 183 e agora quer o produto 7 — enquanto esta quer o pedido 183 —, as duas travam para sempre. O banco escolhe uma vítima e reverte.' },
+        { tipo: 'texto', texto: 'A trancou o produto 7 e agora quer o pedido 183; B trancou o pedido 183 e agora quer o produto 7. Cada uma espera a outra, e nenhuma anda. O SQL Server detecta o impasse, escolhe uma **vítima** (erro 1205), reverte a transação dela e deixa a outra terminar. A aplicação deve tentar a transação de novo.' },
         { tipo: 'nota', tom: 'atencao', texto: 'A defesa é ordem e brevidade: acesse recursos sempre na mesma ordem e confirme rápido. Transação longa é convite a deadlock.' }
       ]
     },
@@ -86,10 +86,10 @@ Plataforma.registrarLicao({
         enunciado: 'Dois caixas vendem o último item do estoque ao mesmo tempo. Qual comportamento protege a venda?',
         cena: 'O produto 7 tem Estoque = 1. Cada caixa roda uma transação que baixa o estoque e confirma.',
         opcoes: [
-          'O banco tranca a linha: o primeiro confirma, o segundo espera e depois vê estoque 0',
-          'Os dois confirmam e o estoque fica -1 sem problema',
-          'O banco duplica o item para atender os dois',
-          'As transações se cancelam sozinhas'
+          'O banco tranca a linha: a segunda venda espera e depois vê estoque 0',
+          'Os dois confirmam juntos e o estoque fica -1 sem nenhum problema',
+          'O banco duplica o último item para conseguir atender os dois caixas',
+          'As duas transações se cancelam sozinhas e nenhuma venda acontece'
         ],
         correta: 0,
         feedbackErro: {

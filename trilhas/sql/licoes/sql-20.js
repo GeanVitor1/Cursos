@@ -18,7 +18,7 @@ Plataforma.registrarLicao({
       titulo: 'Filtrando depois de agrupar',
       introduz: ['sql.having'],
       blocos: [
-        { tipo: 'retoma', conceito: 'sql.group-by', texto: 'O `GROUP BY` resume por grupos. Mas e se você quiser só os grupos grandes — "cidades com mais de 10 pedidos"?' },
+        { tipo: 'retoma', conceito: 'sql.group-by', texto: 'O `GROUP BY` resume por grupos. Mas e se você quiser só os grupos grandes — "cidades com mais de 10 clientes"?' },
         { tipo: 'texto', texto: 'O `WHERE` filtra **linhas**, antes de agrupar. O `HAVING` (tendo) filtra **grupos**, depois de agrupar:' },
         { tipo: 'conceito', id: 'sql.having', titulo: 'HAVING', texto: 'Filtra grupos depois do GROUP BY, usando condições sobre funções de agregação.', exemplo: 'SELECT Cidade, COUNT(*) AS Total FROM Clientes GROUP BY Cidade HAVING COUNT(*) > 10;' },
         {
@@ -68,7 +68,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql20-a2',
         tipo: 'order-blocks',
-        enunciado: 'Ordene os blocos: cidades com mais de 5 pedidos.',
+        enunciado: 'Ordene os blocos: cidades com mais de 5 clientes.',
         blocos: [
           'SELECT Cidade, COUNT(*) AS Total',
           'FROM Clientes',
@@ -93,10 +93,10 @@ Plataforma.registrarLicao({
           { tipo: 'codigo', linguagem: 'sql', codigo: 'SELECT Cidade, COUNT(*) AS Total\nFROM Clientes\nWHERE COUNT(*) > 5\nGROUP BY Cidade;' }
         ],
         opcoes: [
-          'WHERE não pode usar função agregada; o filtro de grupo é HAVING',
-          'Falta o ORDER BY',
-          'COUNT precisa de DISTINCT',
-          'Nada — a consulta está correta'
+          'O WHERE não pode usar função agregada; o filtro de grupo é HAVING',
+          'Falta o ORDER BY no final, que é obrigatório com COUNT',
+          'O COUNT precisa de DISTINCT para funcionar no filtro',
+          'Nada, a consulta está correta e pode ser executada'
         ],
         correta: 0,
         feedbackErro: {
@@ -117,9 +117,12 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql20-a4',
         tipo: 'write-code',
-        enunciado: 'Escreva a consulta que retorna as **cidades com mais de 2 pedidos** e suas quantidades.',
+        enunciado: 'Escreva a consulta que retorna as **cidades com mais de 2 pedidos** e suas quantidades (apelide a contagem de **Total**).',
         respostasAceitas: [
-          'select cidade, count(*) as total from clientes join pedidos on pedidos.clienteid = clientes.id group by cidade having count(*) > 2'
+          'select cidade, count(*) as total from clientes join pedidos on pedidos.clienteid = clientes.id group by cidade having count(*) > 2',
+          'select cidade, count(*) as total FROM pedidos join clientes ON pedidos.clienteid = clientes.id group by cidade having count(*) > 2',
+          'select cidade, count(*) from clientes join pedidos on pedidos.clienteid = clientes.id group by cidade having count(*) > 2',
+          'select cidade, count(*) FROM pedidos join clientes ON pedidos.clienteid = clientes.id group by cidade having count(*) > 2'
         ],
         dicas: [
           'Junte, agrupe por Cidade e filtre o grupo.',
@@ -134,16 +137,17 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'English corner · Having',
       blocos: [
-        { tipo: 'texto', texto: 'Duas palavras para o filtro de grupos: **having** (tendo) e **filter** (filtrar).' },
+        { tipo: 'texto', texto: 'Palavras para o filtro de grupos: **having** (tendo), **filter** (filtrar) e **group** (grupo).' },
         {
           tipo: 'vocab',
-          titulo: 'Palavras novas (2)',
+          titulo: 'Palavras novas (3)',
           pares: [
             ['having', 'tendo'],
-            ['filter', 'filtrar']
+            ['filter', 'filtrar'],
+            ['group', 'grupo']
           ]
         },
-        { tipo: 'ingles', frase: 'Having filters rows.', traducao: 'Tendo filtra linhas.' },
+        { tipo: 'ingles', frase: 'Having filters groups.', traducao: 'Tendo filtra grupos.' },
         { tipo: 'nota', tom: 'info', texto: 'Na prática leia como "o HAVING filtra os grupos".' }
       ]
     },
@@ -152,7 +156,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql20-a5',
         tipo: 'write-code',
-        enunciado: 'Having filters rows: cidades com mais de 3 clientes.',
+        enunciado: 'Having filters groups: cidades com mais de 3 clientes.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
           'SELECT Cidade, COUNT(*) AS Total FROM Clientes GROUP BY Cidade HAVING COUNT(*) > 3;',

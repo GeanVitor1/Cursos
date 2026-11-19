@@ -32,10 +32,12 @@ window.Plataforma = window.Plataforma || {};
         liberada
           ? comp.chip('Disponível para treinar', 'sucesso')
           : comp.chip('Libera com ' + (area.desbloqueio || 50) + '% da trilha', 'aviso'),
-        criar('ul', { classe: 'entrevista-perguntas' }, (area.perguntas || []).map(function (pergunta) {
-          return criar('li', { texto: pergunta });
-        })),
-        criar('p', { classe: 'pequeno fraco', texto: liberada ? 'Leia a pergunta em voz alta e responda como se fosse uma entrevista real.' : 'Perguntas ilustrativas — responda mentalmente quando chegar lá.' })
+        liberada
+          ? criar('ul', { classe: 'entrevista-perguntas' }, (area.perguntas || []).map(function (pergunta) {
+            return criar('li', { texto: pergunta });
+          }))
+          : null,
+        criar('p', { classe: 'pequeno fraco', texto: liberada ? 'Leia a pergunta em voz alta e responda como se fosse uma entrevista real.' : (area.perguntas || []).length + ' perguntas liberam quando você avançar na trilha.' })
       ]);
       grid.appendChild(cartao);
     });

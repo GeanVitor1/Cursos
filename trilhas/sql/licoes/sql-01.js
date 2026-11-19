@@ -9,7 +9,8 @@ Plataforma.registrarLicao({
   objetivos: [
     'Ler a estrutura de uma tabela e seus tipos de dados',
     'Entender chave primária e chave estrangeira na prática',
-    'Reconhecer o relacionamento um-para-muitos'
+    'Reconhecer o relacionamento um-para-muitos',
+    'Criar uma tabela simples com CREATE TABLE'
   ],
   conceitos: ['sql.tabela', 'sql.tipos-dados', 'sql.chave-primaria', 'sql.chave-estrangeira', 'sql.relacionamento'],
   etapas: [
@@ -123,10 +124,10 @@ Plataforma.registrarLicao({
         tipo: 'multiple-choice',
         enunciado: 'Por que a tabela Pedidos não guarda o nome e o e-mail do cliente diretamente?',
         opcoes: [
-          'Porque ClienteId aponta para o cliente na tabela Clientes, evitando repetir dados e inconsistências',
-          'Porque o banco não aceita colunas de texto em duas tabelas',
-          'Porque isso deixaria o banco mais bonito',
-          'Porque o e-mail é secreto e não pode ser gravado'
+          'Porque ClienteId aponta para a tabela Clientes, sem repetir dados',
+          'Porque o banco não aceita colunas de texto em duas tabelas ao mesmo tempo',
+          'Porque isso deixaria a estrutura do banco visualmente mais bonita',
+          'Porque o e-mail é secreto e nenhuma tabela pode gravá-lo'
         ],
         correta: 0,
         dicas: [
@@ -174,6 +175,54 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
+      titulo: 'Criando uma tabela: CREATE TABLE',
+      blocos: [
+        {
+          tipo: 'texto',
+          texto: 'Até aqui você leu tabelas prontas. Quem as cria é o comando `CREATE TABLE`: você dá o nome da tabela e, entre parênteses, lista cada coluna com o seu tipo.'
+        },
+        {
+          tipo: 'codigo',
+          linguagem: 'sql',
+          codigo: 'CREATE TABLE Categorias (\n  Id INT PRIMARY KEY,\n  Nome VARCHAR(50)\n)',
+          legenda: 'Cria a tabela Categorias com duas colunas: Id (chave primária) e Nome (texto de até 50 caracteres).'
+        },
+        {
+          tipo: 'lista',
+          itens: [
+            '`PRIMARY KEY` marca a chave primária: o valor não repete e não fica vazio.',
+            '`VARCHAR(50)` define o tamanho máximo do texto.',
+            'As colunas são separadas por vírgula; a última não leva vírgula.'
+          ]
+        },
+        {
+          tipo: 'nota',
+          tom: 'info',
+          texto: 'Neste curso usamos a sintaxe do SQL Server (T-SQL). Em outros bancos, nomes de tipos e detalhes de `CREATE TABLE` mudam um pouco, mas a estrutura é a mesma.'
+        }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql01-a6',
+        tipo: 'fill-code',
+        enunciado: 'Complete o comando para criar a tabela **Categorias**, com `Id` como chave primária.',
+        codigo: 'CREATE {{1}} Categorias (\n  Id INT {{2}},\n  Nome VARCHAR(50)\n)',
+        lacunas: [
+          ['table'],
+          ['primary key']
+        ],
+        dicas: [
+          'A primeira lacuna é o tipo de objeto que está sendo criado: uma estrutura de linhas e colunas.',
+          'A segunda lacuna é a restrição que marca a coluna Id como identificador único, formada por duas palavras.'
+        ],
+        explicacao: '`CREATE TABLE nome (coluna tipo, ...)` cria a tabela. `Id INT PRIMARY KEY` declara a coluna Id como chave primária.',
+        conceitos: ['sql.tipos-dados', 'sql.chave-primaria']
+      }
+    },
+    {
+      tipo: 'conteudo',
       titulo: 'O banco da loja: Mercado Aurora',
       blocos: [
         { tipo: 'texto', texto: 'Você vai trabalhar com este esquema pelas próximas etapas. Vale memorizar:' },
@@ -201,7 +250,7 @@ Plataforma.registrarLicao({
           ],
           legenda: 'PedidoId e ProdutoId são chaves estrangeiras: ligam o item ao pedido e ao produto.'
         },
-        { tipo: 'nota', tom: 'sucesso', texto: 'Na próxima etapa você escreve sua **primeira consulta SQL** nesse banco. Antes disso, um desafio de criar as tabelas.' }
+        { tipo: 'nota', tom: 'sucesso', texto: 'Na próxima etapa você escreve sua **primeira consulta SQL** nesse banco. Antes disso, você cria uma tabela e resolve dois desafios de modelagem.' }
       ]
     },
     {
@@ -209,13 +258,13 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql01-a4',
         tipo: 'scenario',
-        cena: 'O time de produto pediu uma novidade: cada cliente poderá cadastrar vários endereços de entrega (casa, trabalho, endereço dos pais). Hoje o endereço é uma coluna na tabela Clientes.',
+        cena: 'O time de produto pediu uma novidade: cada cliente poderá cadastrar vários endereços de entrega (casa, trabalho, endereço dos pais). Hoje a tabela Clientes guarda só a cidade, sem endereço completo.',
         enunciado: 'Como modelar isso corretamente no banco?',
         opcoes: [
-          'Criar uma tabela Enderecos com ClienteId como chave estrangeira, permitindo vários endereços por cliente',
-          'Criar as colunas Endereco1, Endereco2, Endereco3 em Clientes',
-          'Guardar todos os endereços em uma única coluna de texto separada por vírgulas',
-          'Duplicar o cliente inteiro para cada endereço'
+          'Criar uma tabela Enderecos com ClienteId como chave estrangeira',
+          'Criar as colunas Endereco1, Endereco2 e Endereco3 dentro de Clientes',
+          'Guardar todos os endereços numa única coluna de texto, separados por vírgula',
+          'Duplicar o cadastro inteiro do cliente para cada novo endereço'
         ],
         correta: 0,
         dicas: [
@@ -240,20 +289,20 @@ Plataforma.registrarLicao({
             colunas: ['Id', 'ClienteId', 'ValorTotal'],
             linhas: [
               [101, 1, 250.0],
-              [102, 2, 89.9],
+              [102, 1, 89.9],
               [103, 99, 430.5]
             ]
           }
         ],
         opcoes: [
-          'O pedido 103 aponta para um ClienteId 99 que não existe na tabela Clientes',
-          'O valor 89.9 deveria ter duas casas decimais',
-          'Pedidos deveriam ter apenas dois registros',
-          'O Id do pedido deveria ser igual ao ClienteId'
+          'O pedido 103 aponta para o ClienteId 99, que não existe em Clientes',
+          'O valor 89.9 deveria ser escrito com duas casas decimais',
+          'A tabela Pedidos deveria ter apenas dois registros no máximo',
+          'O Id de cada pedido deveria ser igual ao ClienteId dele'
         ],
         correta: 0,
         dicas: [
-          'Observe os clientes existentes: 1 e 2.',
+          'Observe os clientes existentes: Ana (1), Bruno (2) e Carla (3).',
           'Uma chave estrangeira precisa apontar para uma chave primária que realmente existe.'
         ],
         explicacao: 'A chave estrangeira impede que um pedido aponte para um cliente que não existe: o banco rejeita referências inválidas. Sem isso, sobrariam pedidos órfãos.',

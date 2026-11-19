@@ -107,10 +107,10 @@ Plataforma.registrarLicao({
         dimensao: 'reconhecimento',
         enunciado: 'Na tabela Clientes, o que a linha inteira "2 | Bruno Lima | bruno@email.com | Recife | 1" representa?',
         opcoes: [
-          'Um registro completo de cliente, com todos os seus dados',
-          'A coluna do nome',
-          'O servidor onde os dados ficam',
-          'Apenas o e-mail do Bruno'
+          'Um registro completo de cliente, com todos os dados',
+          'A coluna do nome, que mostra só um dos campos',
+          'O servidor onde os dados do sistema ficam guardados',
+          'Apenas o e-mail do Bruno, sem os outros campos'
         ],
         correta: 0,
         feedbackErro: {
@@ -172,9 +172,9 @@ Plataforma.registrarLicao({
         ],
         opcoes: [
           'Há dois registros com Id 1, e a chave primária não pode repetir',
-          'A tabela tem poucas linhas para ser um banco',
-          'O e-mail deveria ser um número',
-          'Falta a coluna de telefone'
+          'A tabela tem poucas linhas para ser considerada um banco',
+          'O e-mail deveria ser um número em vez de um texto',
+          'Falta a coluna de telefone para completar o cadastro'
         ],
         correta: 0,
         feedbackErro: {
@@ -255,10 +255,10 @@ Plataforma.registrarLicao({
         cena: 'Uma loja online registra cerca de 40 mil pedidos por mês. No começo, a equipe controlava tudo em uma planilha compartilhada — mas começou a perder dados: duas pessoas editavam a mesma linha, valores sumiam e ninguém sabia qual versão era a correta.',
         enunciado: 'Por que migrar para um banco de dados resolve esse cenário?',
         opcoes: [
-          'Porque o banco controla acessos simultâneos, impede dados inválidos e permite consultas rápidas em grande volume',
-          'Porque a planilha é mais lenta para digitar',
-          'Porque banco de dados é sempre gratuito',
-          'Porque assim ninguém mais precisa de senha'
+          'Porque o banco controla acessos simultâneos e impede dados inválidos',
+          'Porque a planilha é mais lenta para digitar os dados do que um banco',
+          'Porque banco de dados é sempre gratuito e não precisa de manutenção',
+          'Porque assim ninguém mais precisa de senha para entrar no sistema'
         ],
         correta: 0,
         feedbackErro: {

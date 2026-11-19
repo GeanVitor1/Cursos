@@ -79,12 +79,12 @@ Plataforma.registrarLicao({
         id: 'cp-git-c3',
         tipo: 'order-blocks',
         enunciado: 'Ordene o ciclo completo de uma tarefa: do primeiro comando até a branch encerrada.',
-        blocos: ['git switch -c feature/frete', 'git add .', 'git commit -m "Cria cálculo de frete"', 'git push origin feature/frete', 'git switch main', 'git merge feature/frete', 'git branch -d feature/frete'],
+        blocos: ['git switch -c feature/frete', 'git add .', 'git commit -m "Cria cálculo de frete"', 'git push origin feature/frete', 'Abrir o pull request, obter a aprovação e fazer o merge na plataforma', 'git switch main', 'git pull origin main', 'git branch -d feature/frete'],
         dicas: [
-          'A branch nasce antes do primeiro commit dela.',
-          'Apagar a branch vem depois do merge.'
+          'A branch nasce antes do primeiro commit dela, e o merge passa pela revisão do pull request.',
+          'Só depois que o merge está na main remota você atualiza a main local e apaga a branch.'
         ],
-        explicacao: 'Criar, trabalhar, enviar, voltar para a main, unir e apagar: o ciclo completo de uma tarefa.',
+        explicacao: 'Criar, trabalhar, enviar, unir pelo pull request, atualizar a main local e apagar a branch: o ciclo completo de uma tarefa em equipe. O merge local direto na main pula a revisão.',
         conceitos: ['git.branch', 'git.merge', 'git.repositorio']
       }
     },
@@ -253,6 +253,7 @@ Plataforma.registrarLicao({
         placeholder: 'git ...',
         respostasAceitas: [
           "git switch -c fix/total-pedido",
+          "git switch --create fix/total-pedido",
           "git checkout -b fix/total-pedido"
         ],
         dicas: [

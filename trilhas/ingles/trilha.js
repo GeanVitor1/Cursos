@@ -19,12 +19,21 @@ Plataforma.registrarTrilha({
         { id: 'en-a1-01', titulo: 'Números, idade e telefone', duracao: 30, licao: 'en-a1-01' },
         { id: 'en-a1-02', titulo: 'Família e pessoas', duracao: 30, licao: 'en-a1-02' },
         { id: 'en-a1-03', titulo: 'Minha rotina: falando do dia a dia', duracao: 35, licao: 'en-a1-03' },
-        { id: 'en-a1-04', titulo: 'Horas, dias e datas', duracao: 35, licao: 'en-a1-04' },
+        { id: 'en-a1-04', titulo: 'Horas e dias da semana', duracao: 35, licao: 'en-a1-04' },
         { id: 'en-a1-05', titulo: 'Comida e restaurante', duracao: 35, licao: 'en-a1-05' },
         { id: 'en-a1-06', titulo: 'Compras: preços e pagamento', duracao: 35, licao: 'en-a1-06' },
         { id: 'en-a1-07', titulo: 'Lugares, direções e transporte', duracao: 35, licao: 'en-a1-07' },
         { id: 'en-a1-08', titulo: 'Perguntas básicas e conversa informal', duracao: 35, licao: 'en-a1-08' },
         { id: 'en-a1-checkpoint', titulo: 'Checkpoint A1 — Inglês geral', duracao: 35, licao: 'en-a1-checkpoint', tipo: 'prova' }
+      ]
+    },
+    {
+      id: 'developer-base',
+      nome: 'English for Developers — Base',
+      descricao: 'Vocabulário técnico essencial e leitura de mensagens de erro. Pode ser feito em paralelo ao A1/A2, assim que você domina as frases básicas.',
+      etapas: [
+        { id: 'ingles-00', titulo: 'Vocabulário essencial: request, response, database', duracao: 35, licao: 'ingles-00' },
+        { id: 'ingles-01', titulo: 'Mensagens de erro e leitura técnica', duracao: 35, licao: 'ingles-01' },
       ]
     },
     {
@@ -79,11 +88,9 @@ Plataforma.registrarTrilha({
     },
     {
       id: 'developer',
-      nome: 'English for Developers',
+      nome: 'English for Developers — Dia a dia',
       descricao: 'Inglês técnico conectado ao que você já sabe: documentação, mensagens de erro, GitHub, tickets, reuniões, entrevistas e comunicação profissional.',
       etapas: [
-        { id: 'ingles-00', titulo: 'Vocabulário essencial: request, response, database', duracao: 35, licao: 'ingles-00' },
-        { id: 'ingles-01', titulo: 'Mensagens de erro e leitura técnica', duracao: 35, licao: 'ingles-01' },
         { id: 'ingles-17', titulo: 'Frases de reunião diária', duracao: 35, licao: 'ingles-17' },
         { id: 'ingles-18', titulo: 'GitHub: issue, pull request, merge, release', duracao: 40, licao: 'ingles-18' },
         { id: 'ingles-19', titulo: 'Lendo documentação da Microsoft', duracao: 45, licao: 'ingles-19' },

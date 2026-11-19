@@ -86,6 +86,30 @@ Plataforma.registrarLicao({
       }
     },
     {
+      tipo: 'atividade',
+      atividade: {
+        id: 'cs01-a6',
+        tipo: 'multiple-choice',
+        dimensao: 'reconhecimento',
+        enunciado: 'Na linha `var preco = 100.50m;`, qual é o tipo da variável `preco`?',
+        opcoes: [
+          'decimal: o compilador descobre o tipo pelo valor 100.50m',
+          'Nenhum: var cria uma variável sem tipo que aceita qualquer valor',
+          'string: var sempre guarda texto',
+          'object: var troca de tipo conforme o valor é alterado'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: 'var não é "sem tipo": o tipo é fixado na declaração e não muda depois.',
+          2: 'var não significa texto; o tipo vem do valor, e 100.50m é decimal.',
+          3: 'var não cria uma variável que muda de tipo; o tipo é decidido uma vez pelo compilador.'
+        },
+        dicas: ['O sufixo m no valor indica qual tipo numérico?', 'Depois de declarada, a variável mantém o mesmo tipo.'],
+        explicacao: '`var` pede ao compilador que infira o tipo a partir do valor. Aqui o valor 100.50m é decimal, então `preco` é decimal.',
+        conceitos: ['csharp.tipos']
+      }
+    },
+    {
       tipo: 'conteudo',
       titulo: 'Decidindo com if',
       introduz: ['csharp.condicoes'],
@@ -151,13 +175,17 @@ Plataforma.registrarLicao({
         esqueleto: 'decimal preco = 150.00m;\ndecimal precoFinal = preco;\n\n// seu if aqui',
         validar: function (valor) {
           const t = P.dom.normalizarCodigo(valor);
-          return t.indexOf('preco>100') !== -1 && t.indexOf('preco*0.9') !== -1;
+          const condicao = t.indexOf('preco>100') !== -1;
+          const desconto = ['precofinal=preco*0.9m', 'precofinal=0.9m*preco', 'precofinal*=0.9m', 'precofinal=preco-preco*0.1m', 'precofinal=preco-preco*0.10m', 'precofinal=preco-0.1m*preco', 'precofinal=preco*(1-0.1m', 'precofinal=preco*(1-0.10m']
+            .some(function (trecho) { return t.indexOf(trecho) !== -1; });
+          return condicao && desconto;
         },
         respostasAceitas: [
           "if (preco > 100) { precoFinal = preco * 0.9m; }",
-          "if (preco > 100) precoFinal = preco * 0.9m;"
+          "if (preco > 100) precoFinal = preco * 0.9m;",
+          "if (preco > 100) { precoFinal *= 0.9m; }"
         ],
-        dicas: ['A condição é `preco > 100`.', '10% de desconto significa multiplicar por 0.9.'],
+        dicas: ['Compare o preço com 100 dentro dos parênteses do if.', 'Pagar 90% do preço equivale a aplicar 10% de desconto; qual operação produz isso?'],
         explicacao: '`if (preco > 100) { precoFinal = preco * 0.9m; }` — a decisão fica no código, não na cabeça de quem usa.',
         conceitos: ['csharp.condicoes', 'csharp.variaveis']
       }

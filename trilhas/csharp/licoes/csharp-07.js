@@ -177,9 +177,14 @@ Plataforma.registrarLicao({
           'Depois da seta está a condição avaliada para aquele item',
           'O resultado é verdadeiro/falso para decidir se o item entra ou não'
         ],
-        palavrasChave: ['item', 'cada', 'tempor', 'condi', 'verdade', 'falso', 'true', 'false', 'entra', 'mantém', 'mantem', 'filtra'],
-        exemplo: 'O primeiro x é um nome temporário para cada item que está sendo testado. A condição depois da seta (x.Ativo) devolve verdadeiro para ativos e falso para inativos; assim o item entra no resultado, e quem filtra mantém apenas os aprovados.',
-        dicas: ['Não se prenda à palavra lambda: explique o comportamento.', 'Pense no item e no teste que ele passa.'],
+        palavrasChave: [
+          ['cada item', 'cada elemento', 'temporário', 'temporária', 'representa cada'],
+          ['condição', 'teste', 'testa', 'compara', 'avalia', 'expressão'],
+          ['verdadeiro', 'falso', 'true', 'false', 'entra', 'mantém', 'mantem', 'filtra']
+        ],
+        minimoChaves: 3,
+        exemplo: 'O x que aparece antes da seta é um apelido para cada elemento da lista, um por vez. Depois da seta vem a pergunta feita a ele: x.Ativo é um bool, e só quem responde true passa pelo filtro.',
+        dicas: ['O x muda de valor a cada volta ou é sempre o mesmo item?', 'O que a parte depois da seta precisa devolver para o filtro decidir?'],
         explicacao: 'Entender a lambda por dentro é o que permite ler qualquer filtro de dados sem decorar.',
         conceitos: ['csharp.lambda'],
         desafio: true

@@ -209,10 +209,11 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql13-a5',
         tipo: 'write-code',
-        enunciado: 'Join customers and orders.',
+        enunciado: 'Join customers and orders: select the **order Id** and the **customer name**.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          "SELECT Pedidos.Id, Clientes.Nome FROM Pedidos JOIN Clientes ON Pedidos.ClienteId = Clientes.Id;"
+          'SELECT Pedidos.Id, Clientes.Nome FROM Pedidos JOIN Clientes ON Pedidos.ClienteId = Clientes.Id;',
+          'SELECT Pedidos.Id, Clientes.Nome FROM Clientes JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id;'
         ],
         dicas: [
           'customers = clientes; orders = pedidos.',

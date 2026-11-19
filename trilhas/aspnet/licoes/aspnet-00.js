@@ -61,10 +61,10 @@ Plataforma.registrarLicao({
         dimensao: 'reconhecimento',
         enunciado: 'O que é uma API, neste contexto?',
         opcoes: [
-          'Um conjunto de endereços que outros programas chamam para obter ou enviar dados',
-          'Um banco de dados na nuvem',
-          'Um aplicativo de celular',
-          'Uma linguagem de programação'
+          'Um conjunto de endereços que outros programas chamam para obter dados',
+          'Um banco de dados hospedado na nuvem para guardar informações',
+          'Um aplicativo de celular que mostra dados para o usuário final',
+          'Uma linguagem de programação usada só no servidor'
         ],
         correta: 0,
         feedbackErro: {
@@ -183,10 +183,10 @@ Plataforma.registrarLicao({
         cena: 'O aplicativo cliente envia um cadastro com preço negativo. A API recebe o POST e grava o produto mesmo assim. O cliente reclama que o catálogo exibe dados impossíveis.',
         enunciado: 'Qual é o problema e como a API deveria responder?',
         opcoes: [
-          'A API deveria validar os dados e responder 400, informando qual campo é inválido',
-          'Deveria responder 500, porque houve erro',
-          'Deveria ignorar a requisição sem responder nada',
-          'Deveria gravar mesmo assim e corrigir depois'
+          'A API deveria validar os dados e responder 400, apontando o campo inválido',
+          'A API deveria responder 500, porque houve um erro no servidor',
+          'A API deveria ignorar a requisição, sem responder coisa alguma',
+          'A API deveria gravar mesmo assim e corrigir os dados depois'
         ],
         correta: 0,
         feedbackErro: {

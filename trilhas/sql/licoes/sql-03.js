@@ -46,10 +46,10 @@ Plataforma.registrarLicao({
         tipo: 'multiple-choice',
         enunciado: 'O que o `WHERE` faz em uma consulta?',
         opcoes: [
-          'Define a condição que cada linha precisa satisfazer para entrar no resultado',
-          'Ordena as linhas do resultado',
-          'Escolhe quais colunas aparecem',
-          'Remove colunas vazias'
+          'Define a condição que cada linha precisa atender para entrar no resultado',
+          'Ordena as linhas do resultado pela coluna que for informada depois dele',
+          'Escolhe quais colunas vão aparecer no resultado da consulta',
+          'Remove do resultado todas as colunas que estiverem vazias'
         ],
         correta: 0,
         dicas: [
@@ -220,7 +220,7 @@ Plataforma.registrarLicao({
     },
     {
       tipo: 'conteudo',
-      titulo: 'Diferente e nulos',
+      titulo: 'Diferente de um valor',
       blocos: [
         { tipo: 'texto', texto: 'Para excluir um valor específico do resultado, use `<>`:' },
         {
@@ -243,7 +243,7 @@ Plataforma.registrarLicao({
         ],
         dicas: [
           'A tabela é Produtos; a coluna é Estoque.',
-          'Estrutura: SELECT * FROM Produtos WHERE Estoque < 10;'
+          'Use o asterisco para trazer todas as colunas e compare Estoque com 10 usando o operador "menor que".'
         ],
         explicacao: '`SELECT * FROM Produtos WHERE Estoque < 10;` — o banco filtra as linhas e devolve só as que satisfazem a condição.',
         conceitos: ['sql.where', 'sql.operadores']

@@ -110,10 +110,10 @@ Plataforma.registrarLicao({
           { tipo: 'codigo', linguagem: 'csharp', codigo: 'app.MapGet("/produtos/{id}", (int id) =>\n{\n    var produto = produtos.FirstOrDefault(p => p.Id == id);\n    return produto is null ? Results.NotFound() : Results.Ok(produto);\n});' }
         ],
         opcoes: [
-          'Busca um produto pelo Id; devolve 404 se não existir e 200 com o produto se existir',
-          'Devolve sempre a lista completa de produtos',
-          'Cria um produto novo com o id recebido',
-          'Apaga o produto com o id recebido'
+          'Busca um produto pelo Id: 200 se existir e 404 se não existir',
+          'Devolve sempre a lista completa de produtos cadastrados',
+          'Cria um produto novo usando o id que foi recebido',
+          'Apaga o produto que tiver o id que foi recebido'
         ],
         correta: 0,
         feedbackErro: {
@@ -136,6 +136,7 @@ Plataforma.registrarLicao({
         blocos: [
           'var builder = WebApplication.CreateBuilder(args);',
           'var app = builder.Build();',
+          'var produtos = new List<Produto>();',
           'app.MapGet("/produtos", () => produtos);',
           'app.Run();'
         ],
@@ -160,7 +161,10 @@ Plataforma.registrarLicao({
             "=>"
           ]
         ],
-        dicas: ['Mapear um GET chama-se MapGet.', 'A função que devolve a lista é uma lambda.'],
+        dicas: [
+          'O método de mapeamento começa com Map e termina com o verbo HTTP usado para ler dados.',
+          'Ele recebe a rota e a função que responde.'
+        ],
         explicacao: '`MapGet("/produtos", () => produtos)` — rota e resposta. O ASP.NET converte a lista em JSON automaticamente.',
         conceitos: ['aspnet.api', 'aspnet.json']
       }
@@ -178,8 +182,24 @@ Plataforma.registrarLicao({
           return t.indexOf('produtos.add(produto)') !== -1 &&
             (t.indexOf('results.created') !== -1 || t.indexOf('created(') !== -1);
         },
-        respostasAceitas: ['app.MapPost("/produtos", (Produto produto) => { produtos.Add(produto); return Results.Created("/produtos", produto); });'],
-        dicas: ['Adicione o produto na lista com `produtos.Add(produto)`.', 'O status correto para criação é 201, via `Results.Created`. O primeiro argumento é o endereço do recurso criado.'],
+        respostasAceitas: [
+          'app.MapPost("/produtos", (Produto produto) => { produtos.Add(produto); return Results.Created("/produtos", produto); });',
+          'produtos.Add(produto); return Results.Created("/produtos", produto);',
+          'app.MapPost("/produtos", (Produto produto) => { produtos.Add(produto); return TypedResults.Created("/produtos", produto); });',
+          'produtos.Add(produto); return TypedResults.Created("/produtos", produto);',
+          'app.MapPost("/produtos", (Produto produto) => { produtos.Add(produto); return Results.Created($"/produtos/{produto.Id}", produto); });',
+          'produtos.Add(produto); return Results.Created($"/produtos/{produto.Id}", produto);',
+          'app.MapPost("/produtos", (Produto produto) => { produtos.Add(produto); return TypedResults.Created($"/produtos/{produto.Id}", produto); });',
+          'produtos.Add(produto); return TypedResults.Created($"/produtos/{produto.Id}", produto);',
+          'app.MapPost("/produtos", (Produto produto) => { produtos.Add(produto); return Results.Created("/produtos/" + produto.Id, produto); });',
+          'produtos.Add(produto); return Results.Created("/produtos/" + produto.Id, produto);',
+          'app.MapPost("/produtos", (Produto produto) => { produtos.Add(produto); return TypedResults.Created("/produtos/" + produto.Id, produto); });',
+          'produtos.Add(produto); return TypedResults.Created("/produtos/" + produto.Id, produto);'
+        ],
+        dicas: [
+          'Adicione o produto na lista com `produtos.Add(produto)`.',
+          'O status correto para criação é 201, via `Results.Created`. O primeiro argumento é o endereço do recurso criado, como `/produtos/{produto.Id}`.'
+        ],
         explicacao: 'POST cria o recurso e responde 201 Created, normalmente com a localização do novo recurso. É a tradução exata do INSERT.',
         conceitos: ['aspnet.api', 'aspnet.status']
       }

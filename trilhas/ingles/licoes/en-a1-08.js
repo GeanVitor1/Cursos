@@ -19,7 +19,7 @@ Plataforma.registrarLicao({
       introduz: ['en.perguntas'],
       blocos: [
         { tipo: 'texto', texto: 'Estas são as palavras que abrem quase toda pergunta em inglês. Vamos em grupos pequenos.' },
-        { tipo: 'vocab', titulo: 'Perguntas novas (1)', pares: [
+        { tipo: 'vocab', titulo: 'Perguntas novas', pares: [
           ['What...?', 'O que...?'],
           ['Where...?', 'Onde...?'],
           ['When...?', 'Quando...?']
@@ -49,7 +49,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Palavras de pergunta (2)',
       blocos: [
-        { tipo: 'vocab', titulo: 'Perguntas novas (1)', pares: [
+        { tipo: 'vocab', titulo: 'Perguntas novas', pares: [
           ['Who...?', 'Quem...?'],
           ['Why...? / How...?', 'Por que...? / Como...?']
         ] },
@@ -80,7 +80,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'De onde você é?',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (1)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['Where are you from?', 'De onde você é?'],
           ['I am from Brazil.', 'Eu sou do Brasil.']
         ] },
@@ -105,11 +105,14 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'O que você faz?',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['What do you do?', 'O que você faz (trabalho)?'],
-          ['I am a developer.', 'Eu sou desenvolvedor(a).']
+          ['I am a developer.', 'Eu sou desenvolvedor(a).'],
+          ['Do you like it here?', 'Você gosta daqui?'],
+          ['Yes, I do. / No, I do not.', 'Sim, gosto. / Não, não gosto.']
         ] },
-        { tipo: 'ingles', frase: 'What do you do? I am a developer.', traducao: 'O que você faz? Eu sou desenvolvedor.' }
+        { tipo: 'ingles', frase: 'What do you do? I am a developer.', traducao: 'O que você faz? Eu sou desenvolvedor.' },
+        { tipo: 'nota', tom: 'info', texto: '`do` é o auxiliar das perguntas no present simple: `Do you like it here?` (você gosta daqui?) e `What do you do?`. A estrutura é **Do + you + verbo**. A resposta curta repete o `do`: `Yes, I do.` ou `No, I do not.`' }
       ]
     },
     {
@@ -163,7 +166,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Semana, mês e agora',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['week / month', 'semana / mês'],
           ['now', 'agora']
         ] },
@@ -290,12 +293,13 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva duas perguntas de conversa informal que você faria a alguém novo.',
         esqueleto: 'Where ...? What ...?',
         validar: function (valor) {
-          const t = String(valor || '').toLowerCase();
-          const perguntas = t.split('?').filter(function (p) { return p.trim().length > 3; });
-          const comInterrogativa = perguntas.filter(function (p) {
-            return /\b(where|what|who|how|when|why|which|do|does|are|is|can|could|would|did|have)\b/.test(p);
-          });
-          return perguntas.length >= 2 && comInterrogativa.length >= 2;
+          const t = String(valor || '').toLowerCase().replace(/\s+/g, ' ');
+          if (t.indexOf('?') === -1) return false;
+          const wh = /^(?:where|what|who|how|when|why|which)(?: [a-z]+)? (?:is|are|do|does|did|can|will|would|was|were) [a-z]+/;
+          const aux = /^(?:do|does|are|is|can|could|would|did|have) (?:you|he|she|they|we|it|this|that|there|your) [a-z]+/;
+          const perguntas = t.split('?').slice(0, -1).map(function (p) { return p.split(/[.!]/).pop().trim(); });
+          const validas = perguntas.filter(function (p) { return p.split(' ').length >= 3 && (wh.test(p) || aux.test(p)); });
+          return validas.length >= 2;
         },
         respostasAceitas: ['Where are you from? What do you do?'],
         dicas: ['Use as palavras de pergunta da unidade.', 'Termine cada pergunta com ponto de interrogação.'],

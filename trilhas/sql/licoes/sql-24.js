@@ -128,7 +128,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql24-a4',
         tipo: 'write-code',
-        enunciado: 'Paid and pending orders: classifique o Status em Pago/Outros.',
+        enunciado: 'Paid and pending orders: classifique o Status em **Pago** ou **Outros**, nomeando a coluna como **Classe**.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
           "select status, case when status = 'Pago' then 'Pago' else 'Outros' end as classe from pedidos"

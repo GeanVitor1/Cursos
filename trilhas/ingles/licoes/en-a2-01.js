@@ -19,7 +19,7 @@ Plataforma.registrarLicao({
       introduz: ['en.futuro'],
       blocos: [
         { tipo: 'texto', texto: 'Para o futuro, o inglês usa duas formas muito comuns. A primeira é **going to**, para planos já decididos.' },
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ["I'm going to travel next week.", 'Vou viajar na próxima semana.'],
           ["She's going to study tonight.", 'Ela vai estudar hoje à noite.']
         ] },
@@ -45,7 +45,7 @@ Plataforma.registrarLicao({
       titulo: 'will: decisões e promessas',
       blocos: [
         { tipo: 'texto', texto: 'A segunda forma é **will**, usada em decisões de última hora, promessas e previsões.' },
-        { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['I will call you tomorrow.', 'Eu vou te ligar amanhã.'],
           ['It will rain later.', 'Vai chover mais tarde.']
         ] },
@@ -62,7 +62,7 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete com a forma de futuro para decisão na hora.',
         codigo: 'I {{1}} call you tomorrow.',
-        lacunas: [['will']],
+        lacunas: [['will', "'ll"]],
         dicas: ['Decisão de última hora usa will.', 'Going to seria para plano já decidido.'],
         explicacao: 'I will call you tomorrow. — a promessa feita na hora usa will.',
         conceitos: ['en.futuro']
@@ -102,7 +102,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Palavras úteis do futuro (2)',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['the city', 'a cidade'],
           ["Let's...", 'Vamos... (convite)'],
           ['also', 'também']
@@ -183,7 +183,7 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete com a forma correta do futuro.',
         codigo: 'She {{1}} going to study tonight.\nI {{2}} call you tomorrow. (decisão na hora)',
-        lacunas: [['is'], ['will']],
+        lacunas: [['is'], ['will', "'ll"]],
         dicas: ['She é terceira pessoa do singular do verbo to be.', 'Decisão de última hora usa will.'],
         explicacao: 'She is going to (plano) + I will (decisão). Cada forma tem seu contexto.',
         conceitos: ['en.futuro']
@@ -217,12 +217,16 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         habilidade: 'writing',
         dimensao: 'construcao',
-        enunciado: 'Escreva dois planos para a próxima semana usando going to.',
+        enunciado: 'Escreva dois planos para a próxima semana (ou próximo fim de semana) usando going to + verbo.',
         esqueleto: "Next week I'm going to ... . I'm also going to ... .",
         validar: function (valor) {
-          const t = String(valor || '').toLowerCase();
-          const planos = (t.match(/\bgoing to\s+[a-z]+/g) || []).length;
-          return /\bnext week\b/.test(t) && planos >= 2;
+          const t = String(valor || '').toLowerCase().replace(/\s+/g, ' ');
+          const marcador = /\b(?:next (?:week|weekend|month|year|monday|tuesday|wednesday|thursday|friday|saturday|sunday)|tomorrow|tonight|this weekend)\b/.test(t);
+          const naoVerbo = ['the', 'a', 'an', 'my', 'your', 'our', 'his', 'her', 'their', 'this', 'that', 'these', 'those', 'school', 'bed', 'church', 'town', 'university', 'home', 'it', 'him', 'them', 'us', 'me'];
+          const planos = (t.match(/\b(?:am|is|are|'s|'re) (?:also |just |not )?going to [a-z]+/g) || []).filter(function (p) {
+            return naoVerbo.indexOf(p.split(' ').pop()) === -1;
+          }).length;
+          return marcador && planos >= 2;
         },
         respostasAceitas: ["Next week I'm going to study English. I'm also going to work."],
         dicas: ['Use next week.', 'Use I\'m going to + verbo.'],

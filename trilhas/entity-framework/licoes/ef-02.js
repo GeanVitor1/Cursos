@@ -123,14 +123,22 @@ Plataforma.registrarLicao({
         id: 'ef02-a4',
         tipo: 'write-code',
         dimensao: 'construcao',
-        enunciado: 'Escreva o código que adiciona um novo produto e salva no banco de forma assíncrona. O objeto `produto` já existe.',
+        enunciado: 'Escreva o código que adiciona um novo produto e salva no banco de forma assíncrona. O objeto `produto` já existe e o `DbContext` se chama `context`.',
         esqueleto: '// adicione e salve',
         validar: function (valor) {
           const t = P.dom.normalizarCodigo(valor).replace(/ /g, '');
           return t.indexOf('context.produtos.add(produto)') !== -1 && t.indexOf('savechangesasync()') !== -1 && t.indexOf('await') !== -1;
         },
-        respostasAceitas: ['context.Produtos.Add(produto); await context.SaveChangesAsync();'],
-        dicas: ['Use a gaveta `context.Produtos`.', 'O método de salvar é assíncrono: use await.'],
+        respostasAceitas: [
+          'context.Produtos.Add(produto); await context.SaveChangesAsync();',
+          'await context.Produtos.AddAsync(produto); await context.SaveChangesAsync();',
+          'context.Add(produto); await context.SaveChangesAsync();',
+          'await context.AddAsync(produto); await context.SaveChangesAsync();'
+        ],
+        dicas: [
+          'Adicione o objeto ao DbSet (`Add`) e depois envie ao banco.',
+          'O método de salvar é assíncrono: use await.'
+        ],
         explicacao: 'Essas duas linhas, acompanhadas do `await`, aparecem em todo service que insere dados.',
         conceitos: ['ef.savechanges', 'csharp.async']
       }
@@ -153,10 +161,10 @@ Plataforma.registrarLicao({
           ' }'
         ],
         opcoes: [
-          'Falta `await context.SaveChangesAsync()` antes de retornar; o Add não grava no banco',
-          'Falta usar `new Produto()`',
-          'O retorno deveria ser void',
-          'O método deveria ser público'
+          'Falta `await context.SaveChangesAsync()`; o Add não grava no banco',
+          'Falta criar o objeto com `new Produto()` antes de adicionar',
+          'O tipo de retorno do método deveria ser void em vez de Task',
+          'O método deveria ser declarado como public para funcionar'
         ],
         correta: 0,
         feedbackErro: {

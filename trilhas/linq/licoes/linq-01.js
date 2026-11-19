@@ -79,9 +79,9 @@ Plataforma.registrarLicao({
         opcoes: ['Mouse e Teclado', 'Monitor', 'Mouse, Teclado e Cabo', 'Nenhum produto'],
         correta: 0,
         feedbackErro: {
-          1: 'Apenas um item tem essa categoria? Confira a tabela.',
-          2: 'Cabo pertence a Acessórios.',
-          3: 'Dois itens são de Periféricos.'
+          1: 'Há mais de um item em Periféricos: Mouse e Teclado. Confira a tabela.',
+          2: 'Cabo pertence a Acessórios, não a Periféricos.',
+          3: 'Existem dois itens de Periféricos, então o resultado não é vazio.'
         },
         dicas: ['Filtre mentalmente pela coluna Categoria.', 'Procure "Periféricos" na tabela.'],
         explicacao: 'Mouse e Teclado atendem à condição; Monitor (Monitores) e Cabo (Acessórios) ficam de fora.',
@@ -94,17 +94,24 @@ Plataforma.registrarLicao({
         id: 'lq01-a3',
         tipo: 'write-code',
         dimensao: 'construcao',
-        enunciado: 'Escreva uma consulta LINQ que mantenha apenas os produtos com estoque menor que 10 em uma lista chamada `resultado`.',
-        esqueleto: 'List<Produto> resultado = produtos\n    // seu código aqui\n    .ToList();',
+        enunciado: 'Escreva uma consulta LINQ que mantenha apenas os produtos com estoque menor que 10 e guarde em uma lista chamada `resultado` (a coleção de origem é `produtos`).',
+        esqueleto: 'List<Produto> resultado = ...;',
         validar: function (valor) {
           const t = P.dom.normalizarCodigo(valor).replace(/ /g, '');
           return t.indexOf('.where(') !== -1 && t.indexOf('=>') !== -1 && t.indexOf('estoque<10') !== -1;
         },
         respostasAceitas: [
-          "List<Produto> resultado = produtos.Where(p => p.Estoque < 10).ToList();",
-          "var resultado = produtos.Where(p => p.Estoque < 10).ToList();"
+          'List<Produto> resultado = produtos.Where(p => p.Estoque < 10).ToList();',
+          'List<Produto> resultado = produtos.Where(x => x.Estoque < 10).ToList();',
+          'List<Produto> resultado = produtos.Where(produto => produto.Estoque < 10).ToList();',
+          'var resultado = produtos.Where(p => p.Estoque < 10).ToList();',
+          'var resultado = produtos.Where(x => x.Estoque < 10).ToList();',
+          'var resultado = produtos.Where(produto => produto.Estoque < 10).ToList();'
         ],
-        dicas: ['Where + lambda + ToList.', 'Use `p => p.Estoque < 10`.'],
+        dicas: [
+          'Combine Where com uma lambda e termine com ToList.',
+          'A lambda compara o Estoque de cada produto com 10.'
+        ],
         explicacao: '`produtos.Where(p => p.Estoque < 10).ToList()` — a estrutura que você vai repetir centenas de vezes no trabalho.',
         conceitos: ['linq.where', 'linq.lambda']
       }

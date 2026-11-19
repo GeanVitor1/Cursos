@@ -170,7 +170,8 @@ Plataforma.registrarLicao({
         enunciado: 'Inner join de Clientes com Pedidos, trazendo Nome e ValorTotal.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          "SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes INNER JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id;"
+          'SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes INNER JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id;',
+          'SELECT Clientes.Nome, Pedidos.ValorTotal FROM Pedidos INNER JOIN Clientes ON Pedidos.ClienteId = Clientes.Id;'
         ],
         dicas: [
           'INNER JOIN com ON ligando ClienteId ao Id.',

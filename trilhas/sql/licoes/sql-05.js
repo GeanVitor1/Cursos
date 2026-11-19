@@ -124,7 +124,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql05-a1',
         tipo: 'match-pairs',
-        enunciado: 'Agora que você viu os três, conecte cada operador ao seu uso.',
+        enunciado: 'Agora que você viu IN, BETWEEN e NOT, conecte cada operador ao seu uso (AND e OR vêm da lição anterior).',
         pares: [
           ['IN', 'Lista de valores possíveis'],
           ['BETWEEN', 'Intervalo entre dois valores'],
@@ -152,7 +152,7 @@ Plataforma.registrarLicao({
         ],
         dicas: [
           'Combine a condição de ativo com AND.',
-          'Use `Preco BETWEEN 100 AND 500`.'
+          'O filtro de preço usa o operador de intervalo que inclui os dois extremos.'
         ],
         explicacao: '`WHERE Ativo = 1 AND Preco BETWEEN 100 AND 500` — duas condições, uma com BETWEEN, unidas por AND.',
         conceitos: ['sql.between', 'sql.and-or']

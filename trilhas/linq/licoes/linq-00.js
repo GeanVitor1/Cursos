@@ -60,10 +60,10 @@ Plataforma.registrarLicao({
         dimensao: 'reconhecimento',
         enunciado: 'Qual problema o LINQ resolve?',
         opcoes: [
-          'Escrever consultas em C# de forma padronizada, no lugar de laços manuais repetidos',
-          'Substituir o banco de dados',
-          'Melhorar a aparência do código sem mudar o comportamento',
-          'Executar código de outra linguagem dentro do C#'
+          'Escrever consultas em C# de forma padronizada, sem laços manuais',
+          'Substituir por completo o banco de dados da aplicação',
+          'Melhorar a aparência do código sem mudar o comportamento dele',
+          'Executar código de outra linguagem de programação dentro do C#'
         ],
         correta: 0,
         feedbackErro: {

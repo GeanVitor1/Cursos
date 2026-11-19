@@ -85,18 +85,13 @@ Plataforma.registrarLicao({
             colunas: ['Status', 'ValorTotal'],
             linhas: [
               ['Pago', 150.0],
-              ['Cancelado', 400.0],
+              ['Cancelado', 300.0],
               ['Pago', 250.0]
             ]
           },
           { tipo: 'codigo', linguagem: 'sql', codigo: 'SELECT Status, SUM(ValorTotal) AS Total\nFROM Pedidos\nGROUP BY Status;' }
         ],
-        opcoes: [
-          '400',
-          '800',
-          '150',
-          '250'
-        ],
+        opcoes: ['400', '700', '150', '250'],
         correta: 0,
         feedbackErro: {
           1: 'Cancelado soma em outro grupo.',
@@ -107,7 +102,7 @@ Plataforma.registrarLicao({
           'Some os valores do grupo Pago.',
           '150 + 250.'
         ],
-        explicacao: 'Pago soma 400; Cancelado soma 400 em outro grupo.',
+        explicacao: 'Pago soma 400; Cancelado soma 300 em outro grupo.',
         conceitos: ['sql.pagamento', 'sql.group-by']
       }
     },
@@ -168,7 +163,8 @@ Plataforma.registrarLicao({
         tipo: 'write-code',
         enunciado: 'Escreva a consulta que retorna o **total vendido por cidade**, só acima de 1000, do maior para o menor.',
         respostasAceitas: [
-          'select cidade, sum(valortotal) as total from clientes join pedidos on pedidos.clienteid = clientes.id group by cidade having sum(valortotal) > 1000 order by total desc'
+          'select cidade, sum(valortotal) as total from clientes join pedidos on pedidos.clienteid = clientes.id group by cidade having sum(valortotal) > 1000 order by total desc',
+          'select cidade, sum(valortotal) as total FROM pedidos join clientes ON pedidos.clienteid = clientes.id group by cidade having sum(valortotal) > 1000 order by total desc'
         ],
         dicas: [
           'JOIN, GROUP BY, HAVING, ORDER BY.',
@@ -228,7 +224,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'cp-p9',
         tipo: 'write-code',
-        enunciado: 'Design tables first: crie a view de clientes ativos.',
+        enunciado: 'Design tables first: crie a view **Ativos** com os clientes ativos.',
         placeholder: 'CREATE ...',
         respostasAceitas: [
           'create view ativos as select * from clientes where ativo = 1'
@@ -250,9 +246,9 @@ Plataforma.registrarLicao({
         cena: 'O alerta de estoque roda a cada 5 minutos varrendo Produtos inteira; o plano mostra Table Scan; dois caixas vendem o último item juntos.',
         opcoes: [
           'Índice na coluna filtrada + transação curta na venda + alerta com colunas listadas',
-          'Apagar o alerta e vender no escuro',
-          'Travar a tabela inteira o dia todo',
-          'Pedir para um caixa esperar o dia acabar'
+          'Apagar o alerta de ruptura e continuar vendendo no escuro',
+          'Travar a tabela inteira durante o dia todo para evitar conflitos',
+          'Pedir para um caixa esperar o dia acabar antes de vender'
         ],
         correta: 0,
         feedbackErro: {

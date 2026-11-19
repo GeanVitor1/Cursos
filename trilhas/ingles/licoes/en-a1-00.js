@@ -193,7 +193,7 @@ Plataforma.registrarLicao({
         dimensao: 'preenchimento',
         enunciado: 'Complete a resposta.',
         codigo: "I'm {{1}}, thanks. And {{2}}?",
-        lacunas: [['fine'], ['you']],
+        lacunas: [['fine', 'good', 'great', 'well'], ['you']],
         dicas: ['Estou bem = I am ___.', 'A pergunta de volta é And ___?'],
         explicacao: "I'm fine, thanks. And you? — o par pergunta/resposta mais comum em inglês.",
         conceitos: ['en.saudacoes']
@@ -265,7 +265,7 @@ Plataforma.registrarLicao({
         interlocutor: 'Alex',
         turnos: [
           { fala: 'Hi! How are you?', opcoes: ["I'm fine, thanks. And you?", 'My name is Ana.', 'Good morning, Ana.'], correta: 0 },
-          { fala: "I'm fine too! What is your name?", opcoes: ['My name is Ana.', "I'm fine, thanks. And you?", 'Good evening.'], correta: 0 },
+          { fala: 'Hello! What is your name?', opcoes: ['My name is Ana.', "I'm fine, thanks. And you?", 'Good evening.'], correta: 0 },
           { fala: 'Nice to meet you, Ana!', opcoes: ['Nice to meet you too.', 'Good morning, Ana.', "I'm fine, thanks."], correta: 0 }
         ],
         dicas: ['Responda à pergunta feita, sem mudar de assunto.', 'A última fala devolve o cumprimento: Nice to meet you too.'],
@@ -285,8 +285,10 @@ Plataforma.registrarLicao({
         esqueleto: 'Hello, my name is ... Nice to meet you.',
         validar: function (valor) {
           const t = String(valor || '').toLowerCase();
-          return /\bhello\b/.test(t) &&
-            /my name('s| is)\s+[a-záéíóúâêôãõç]{2,}/.test(t) &&
+          const nome = t.match(/\bmy name(?:'s| is)\s+([a-záéíóúâêôãõç]{2,})/);
+          const naoNomes = ['hello', 'hi', 'nice', 'to', 'meet', 'you', 'my', 'name', 'is', 'the', 'a', 'an', 'good', 'fine', 'thanks', 'your'];
+          return /\b(hello|hi)\b/.test(t) &&
+            !!nome && naoNomes.indexOf(nome[1]) === -1 &&
             /\bnice to meet you\b/.test(t);
         },
         respostasAceitas: ['Hello, my name is [seu nome]. Nice to meet you.'],

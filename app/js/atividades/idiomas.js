@@ -38,9 +38,9 @@ window.Plataforma = window.Plataforma || {};
     const textoNorm = P.dom.normalizarIngles(textoBruto);
     const audioNorm = atv.audio ? P.dom.normalizarIngles(atv.audio) : '';
 
-    if (audioNorm && (textoNorm === audioNorm || audioNorm.indexOf(textoNorm) !== -1 || textoNorm.indexOf(audioNorm) !== -1)) {
-      if (textoNorm.length >= 3 && !/^\d+$/.test(textoNorm.replace(/\s+/g, ''))) return true;
-    }
+    // Transcrição completa do áudio: exige igualdade normalizada (caixa/pontuação),
+    // nunca fragmento ("seven" não vale para "seventeen", "cof" não vale para "coffee").
+    if (audioNorm && textoNorm === audioNorm && !/^\d+$/.test(textoNorm.replace(/\s+/g, ''))) return true;
 
     if (/^\d+$/.test(resposta)) {
       const digitos = textoBruto.replace(/[^\d]/g, '');
@@ -57,8 +57,14 @@ window.Plataforma = window.Plataforma || {};
       const partesResposta = resposta.split(':');
       const h = Number(partesResposta[0]), m = Number(partesResposta[1]);
       const horaNome = Object.keys(numerosIngles).find(function (k) { return numerosIngles[k] === h; });
-      const resto = textoNorm.replace(new RegExp('^' + horaNome + '\\s*'), '');
-      if (textoNorm.startsWith(horaNome) && converterTextoParaNumero(resto) === String(m)) return true;
+      const palavrasHora = textoNorm.split(/\s+/).filter(Boolean);
+      if (horaNome && palavrasHora[0] === horaNome) {
+        let resto = palavrasHora.slice(1);
+        // "seven oh five" = 7:05; "seven o clock" = 7:00.
+        if ((resto.join(' ') === 'o clock' || resto.join(' ') === 'oclock') && m === 0) return true;
+        if (resto[0] === 'oh' && resto.length === 2 && m < 10) resto = resto.slice(1);
+        if (resto.length && converterTextoParaNumero(resto.join(' ')) === String(m)) return true;
+      }
       return false;
     }
 
@@ -293,7 +299,7 @@ window.Plataforma = window.Plataforma || {};
       const turnos = atv.turnos || [];
       const conversa = criar('div', { classe: 'dialogo' });
       if (atv.cena) conversa.appendChild(criar('div', { classe: 'dialogo-cena', texto: atv.cena }));
-      const linhas = criar('div', { classe: 'dialogo-linhas' });
+      const linhas = criar('div', { classe: 'dialogo-linhas', role: 'log', 'aria-live': 'polite' });
       const opcoesBox = criar('div', { classe: 'dialogo-opcoes' });
       conversa.appendChild(linhas);
       conversa.appendChild(opcoesBox);
@@ -305,10 +311,12 @@ window.Plataforma = window.Plataforma || {};
       let timerTurno = null;
       let destruida = false;
 
-      function bolha(quem, texto) {
-        return criar('div', { classe: 'dialogo-bolha ' + (quem === 'outro' ? 'outro' : 'jogador') }, [
-          criar('span', { classe: 'dialogo-quem', texto: quem === 'outro' ? (atv.interlocutor || 'A') : 'Você' }),
-          criar('span', { texto: texto })
+      function bolha(quem, texto, extra) {
+        const rotulo = quem === 'outro' ? (atv.interlocutor || 'A') : (extra === 'errada' ? 'Você (resposta incorreta)' : (extra === 'corrigida' ? 'Resposta adequada' : 'Você'));
+        return criar('div', { classe: 'dialogo-bolha ' + (quem === 'outro' ? 'outro' : 'jogador') + (extra ? ' dialogo-' + extra : '') }, [
+          criar('span', { classe: 'dialogo-quem', texto: (extra === 'errada' ? '✗ ' : '') + rotulo }),
+          criar('span', { texto: texto }),
+          quem === 'outro' ? criar('button', { classe: 'btn-link btn-ouvir dialogo-ouvir', type: 'button', texto: '🔊', 'aria-label': 'Ouvir de novo', title: 'Ouvir de novo', onclick: function () { falarIngles(texto, false); } }) : null
         ]);
       }
 
@@ -316,6 +324,7 @@ window.Plataforma = window.Plataforma || {};
         travado = false;
         P.dom.limpar(opcoesBox);
         if (indice >= turnos.length) {
+          opcoesBox.appendChild(criar('p', { classe: 'dialogo-fim', role: 'status', texto: erros ? 'Conversa concluída com ' + erros + (erros === 1 ? ' resposta incorreta' : ' respostas incorretas') + '. Clique em Verificar.' : 'Conversa concluída. Clique em Verificar.' }));
           api.marcarRespondida(true);
           return;
         }
@@ -337,9 +346,10 @@ window.Plataforma = window.Plataforma || {};
                 if (Number(b.dataset.indiceOriginal) === turno.correta) b.classList.add('correta');
               });
               if (!certo) botao.classList.add('errada');
-              linhas.appendChild(bolha('jogador', turno.opcoes[turno.correta]));
+              if (!certo) linhas.appendChild(bolha('jogador', turno.opcoes[original], 'errada'));
+              linhas.appendChild(bolha('jogador', turno.opcoes[turno.correta], certo ? null : 'corrigida'));
               indice += 1;
-              timerTurno = window.setTimeout(function () { if (!destruida) renderTurno(); }, certo ? 550 : 900);
+              timerTurno = window.setTimeout(function () { if (!destruida) renderTurno(); }, certo ? 550 : 1600);
             }
           }, [
             criar('span', { classe: 'opcao-marcador', texto: String.fromCharCode(65 + pos) }),

@@ -68,8 +68,8 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'bash',
-          codigo: 'docker run nginx\ndocker ps',
-          legenda: 'A primeira linha cria e executa um container; a segunda lista os que estão rodando.'
+          codigo: 'docker run -d --name web nginx\ndocker ps',
+          legenda: 'A primeira linha cria e executa um container em segundo plano (-d) com o nome web (--name); a segunda lista os que estão rodando.'
         },
         {
           tipo: 'tabela',
@@ -115,9 +115,9 @@ Plataforma.registrarLicao({
           tipo: 'passos',
           itens: [
             '`docker pull nginx` — traz a imagem para a máquina',
-            '`docker run -d nginx` — cria e executa um container em segundo plano (o `-d` libera o terminal)',
+            '`docker run -d --name web nginx` — cria e executa um container em segundo plano (o `-d` libera o terminal) com o nome web (`--name`)',
             '`docker ps` — mostra os containers em execução',
-            '`docker stop <nome ou id>` — para o container sem apagar nada'
+            '`docker stop web` — para o container pelo nome, sem apagar nada'
           ]
         },
         {
@@ -172,15 +172,15 @@ Plataforma.registrarLicao({
         enunciado: 'Ordene o ciclo completo: trazer a imagem, criar o container, conferir a lista e parar.',
         blocos: [
           'docker pull nginx',
-          'docker run nginx',
+          'docker run -d --name web nginx',
           'docker ps',
-          'docker stop nginx'
+          'docker stop web'
         ],
         dicas: [
           'Nada roda antes de a imagem chegar.',
-          'Conferir vem antes de parar.'
+          'Conferir vem antes de parar, e o nome dado ao criar é o que se usa para parar.'
         ],
-        explicacao: '`docker pull` traz a imagem, `docker run` cria o container, `docker ps` confere e `docker stop` encerra a execução.',
+        explicacao: 'O comando de baixar traz a imagem, o de executar cria o container em segundo plano com um nome, o de listar confere e o de parar encerra a execução. Sem a opção de segundo plano, o terminal ficaria preso ao container; sem a opção de nome, seria preciso descobrir o nome gerado antes de parar.',
         conceitos: ['docker.imagem', 'docker.container']
       }
     },
@@ -206,14 +206,16 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'docker01-a5',
         tipo: 'write-code',
-        enunciado: 'Escreva o comando que cria e executa um container a partir da imagem **minha-api**.',
+        enunciado: 'Escreva o comando que cria e executa um container a partir da imagem **minha-api**, sem opções extras.',
         placeholder: 'docker ...',
         respostasAceitas: [
-          'docker run minha-api'
+          'docker run minha-api',
+          'docker container run minha-api',
+          'docker run -d minha-api'
         ],
         dicas: [
-          'A imagem é executada com docker run.',
-          'Só a imagem, sem opções extras.'
+          'Revise a tabela de comandos desta lição: qual deles cria um container a partir de uma imagem?',
+          'Depois do comando, informe apenas o nome da imagem.'
         ],
         explicacao: '`docker run minha-api` cria um container a partir da imagem `minha-api` e já o executa.',
         conceitos: ['docker.container', 'docker.imagem']

@@ -36,10 +36,10 @@ Plataforma.registrarLicao({
         tipo: 'multiple-choice',
         enunciado: 'Para que serve `LOWER(Email)` numa comparação?',
         opcoes: [
-          'Padronizar a caixa para comparar sem depender de digitação',
-          'Apagar o e-mail da tabela',
-          'Ordenar os e-mails',
-          'Remover espaços do e-mail'
+          'Padronizar a caixa, comparando sem depender da digitação',
+          'Apagar o e-mail da tabela depois da comparação',
+          'Ordenar os e-mails em ordem alfabética crescente',
+          'Remover os espaços do começo e do fim do e-mail'
         ],
         correta: 0,
         dicas: [
@@ -65,7 +65,8 @@ Plataforma.registrarLicao({
           linguagem: 'sql',
           codigo: "SELECT SUBSTRING(Nome, 1, 3) AS Iniciais\nFROM Clientes;"
         },
-        { tipo: 'nota', tom: 'info', texto: '`SUBSTRING(Nome, 1, 3)` pega da posição 1 (a primeira letra) os 3 caracteres seguintes.' }
+        { tipo: 'nota', tom: 'info', texto: '`SUBSTRING(Nome, 1, 3)` pega da posição 1 (a primeira letra) os 3 caracteres seguintes.' },
+        { tipo: 'nota', tom: 'atencao', texto: '**Dialeto T-SQL:** `LEN` e `SUBSTRING` são do SQL Server (`TRIM` exige SQL Server 2017+). Em PostgreSQL e MySQL, o tamanho é `LENGTH` ou `CHAR_LENGTH`.' }
       ]
     },
     {
@@ -97,7 +98,7 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: "SELECT REPLACE(Telefone, ' ', '') AS TelefoneLimpo,\n       CAST(Preco AS VARCHAR) AS PrecoTexto\nFROM Clientes;"
+          codigo: "SELECT REPLACE(Email, '@', ' [at] ') AS EmailLegivel,\n       CAST(Id AS VARCHAR(10)) AS IdTexto\nFROM Clientes;"
         },
         { tipo: 'nota', tom: 'atencao', texto: 'Função dentro de `WHERE` impede o uso de índice naquela coluna (assunto da Etapa 35). Em tabelas grandes, prefira calcular no `SELECT`.' },
         { tipo: 'trabalho', texto: 'Padronizar e-mail e telefone com UPPER/TRIM/REPLACE antes de comparar evita duplicados fantasmas no cadastro — um clássico de base suja.', fonte: '💼 No trabalho' }
@@ -152,6 +153,84 @@ Plataforma.registrarLicao({
       }
     },
     {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql28-a6',
+        tipo: 'write-code',
+        enunciado: 'Escreva a consulta que retorna o **Nome dos clientes sem espaços nas pontas** (não precisa apelidar a coluna).',
+        respostasAceitas: [
+          'SELECT TRIM(Nome) FROM Clientes;',
+          'SELECT LTRIM(RTRIM(Nome)) FROM Clientes;'
+        ],
+        dicas: [
+          'A função que remove espaços do começo e do fim do texto vem de "trim" (aparar).',
+          'Ela recebe a coluna entre parênteses.'
+        ],
+        explicacao: '`TRIM(Nome)` remove espaços das bordas. Antes do SQL Server 2017, combinava-se `LTRIM(RTRIM(...))`.',
+        conceitos: ['sql.strings']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql28-a7',
+        tipo: 'predict-output',
+        enunciado: 'O que `SELECT SUBSTRING(\'Curitiba\', 1, 4)` devolve, e quanto vale `LEN(\'Recife\')`?',
+        opcoes: [
+          'Curi e 6',
+          'Curit e 6',
+          'Curi e 5',
+          'uriti e 7'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: 'Com tamanho 4 saem quatro caracteres, e não cinco.',
+          2: '"Recife" tem 6 caracteres e LEN conta todos.',
+          3: 'A posição inicial é 1 (a primeira letra), não 2, e "Recife" não tem sete letras.'
+        },
+        dicas: [
+          'SUBSTRING(texto, posição inicial, quantidade): começa na posição 1 e leva 4 caracteres.',
+          'LEN conta todas as letras do texto.'
+        ],
+        explicacao: '`SUBSTRING` com tamanho 4 pega 4 caracteres a partir da primeira letra. `LEN(\'Recife\')` conta 6 caracteres.',
+        conceitos: ['sql.strings']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql28-a8',
+        tipo: 'write-code',
+        enunciado: 'Escreva a consulta que mostra o **Telefone** dos clientes trocando cada `-` por nada (texto vazio), sem apelido.',
+        respostasAceitas: [
+          'SELECT REPLACE(Telefone, \'-\', \'\') FROM Clientes;'
+        ],
+        dicas: [
+          'REPLACE recebe o texto, o trecho a trocar e o trecho novo.',
+          'O trecho novo é um texto vazio, escrito com duas aspas simples coladas.'
+        ],
+        explicacao: '`REPLACE(Telefone, \'-\', \'\')` remove todos os hífens do telefone.',
+        conceitos: ['sql.strings']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql28-a9',
+        tipo: 'write-code',
+        enunciado: 'Escreva a consulta que mostra o **Id** dos clientes convertido para texto com `VARCHAR(10)`, sem apelido.',
+        respostasAceitas: [
+          'SELECT CAST(Id AS VARCHAR(10)) FROM Clientes;'
+        ],
+        dicas: [
+          'CAST recebe o valor, a palavra AS e o tipo de destino.',
+          'O tipo de destino é VARCHAR com o tamanho entre parênteses.'
+        ],
+        explicacao: '`CAST(Id AS VARCHAR(10))` converte o número em texto de até 10 caracteres.',
+        conceitos: ['sql.strings']
+      }
+    },
+    {
       tipo: 'conteudo',
       titulo: 'English corner · Upper e lower',
       blocos: [
@@ -173,7 +252,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql28-a5',
         tipo: 'write-code',
-        enunciado: 'Upper and lower names: as duas versões do nome.',
+        enunciado: 'Upper and lower names: mostre as duas versões do nome, apelidadas de **Maiusculas** e **Minusculas**.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
           'select upper(nome) as maiusculas, lower(nome) as minusculas from clientes',

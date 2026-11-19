@@ -73,7 +73,7 @@ Plataforma.registrarLicao({
           tipo: 'codigo',
           linguagem: 'dockerfile',
           titulo: 'Dockerfile',
-          codigo: 'FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build\nWORKDIR /src',
+          codigo: 'FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build\nWORKDIR /src',
           legenda: 'A base sdk traz o compilador; o AS build dá um nome a essa etapa.'
         },
         { tipo: 'texto', texto: 'O build de uma API .NET costuma usar **duas etapas**: primeiro uma imagem com o SDK, que compila e publica o projeto; depois uma imagem menor, só com o runtime, que recebe o resultado publicado.' },
@@ -119,7 +119,7 @@ Plataforma.registrarLicao({
         tipo: 'order-blocks',
         enunciado: 'Ordene as instruções do Dockerfile da API .NET.',
         blocos: [
-          'FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build',
+          'FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build',
           'WORKDIR /src',
           'COPY *.csproj .',
           'RUN dotnet restore',
@@ -143,10 +143,11 @@ Plataforma.registrarLicao({
           tipo: 'codigo',
           linguagem: 'dockerfile',
           titulo: 'Dockerfile',
-          codigo: 'FROM mcr.microsoft.com/dotnet/aspnet:8.0\nWORKDIR /app\nCOPY --from=build /app .\nENTRYPOINT ["dotnet", "MinhaApi.dll"]',
+          codigo: 'FROM mcr.microsoft.com/dotnet/aspnet:10.0\nWORKDIR /app\nCOPY --from=build /app .\nENTRYPOINT ["dotnet", "MinhaApi.dll"]',
           legenda: 'A imagem final é menor e já sabe como iniciar a API.'
         },
         { tipo: 'texto', texto: 'O `ENTRYPOINT` é a porta de entrada: toda vez que esse container sobe, o Docker executa esse comando. Sem ele, o container liga e desliga sem fazer nada.' },
+        { tipo: 'nota', tom: 'info', texto: 'Usamos as imagens do .NET 10 (LTS atual). Versões anteriores, como `8.0`, seguem o mesmo formato; ajuste a tag ao `TargetFramework` do seu projeto.' },
         { tipo: 'nota', tom: 'info', texto: 'O `--from=build` copia o resultado da etapa anterior. O nome vem do `AS build` que você escreveu no primeiro `FROM`.' }
       ]
     },

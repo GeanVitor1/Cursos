@@ -18,6 +18,8 @@ window.Plataforma = window.Plataforma || {};
   let conteudoEl = null;
   let chipSessao = null;
   let focoAntesMenu = null;
+  let ignorarProximaMudanca = false;
+  let ultimoHashRender = null;
 
   function itemNav(rota, rotulo, icone, hash, pct) {
     const filhos = [
@@ -66,7 +68,7 @@ window.Plataforma = window.Plataforma || {};
     const stats = criar('div', { classe: 'rodape-stats' });
     const rodape = criar('div', { classe: 'sidebar-rodape' }, [
       stats,
-      criar('button', { classe: 'btn-link', texto: 'Alternar tema', onclick: alternarTema })
+      criar('button', { classe: 'btn-link btn-tema', type: 'button', texto: 'Alternar tema', 'aria-label': 'Alternar entre tema claro e escuro', onclick: alternarTema })
     ]);
 
     return criar('aside', { classe: 'sidebar' }, [marca, nav, rodape]);
@@ -81,6 +83,7 @@ window.Plataforma = window.Plataforma || {};
       'aria-expanded': 'false',
       'aria-controls': 'menu-lateral',
       title: 'Abrir menu',
+      'aria-label': 'Abrir menu',
       texto: '☰',
       onclick: abrirMenu
     });
@@ -119,7 +122,17 @@ window.Plataforma = window.Plataforma || {};
       ]),
       criar('div', { classe: 'topo-direita' }, [chipNuvem, chipSessao])
     ]);
-    conteudoEl = criar('main', { classe: 'conteudo', id: 'conteudo' });
+    conteudoEl = criar('main', { classe: 'conteudo', id: 'conteudo', tabindex: '-1' });
+    const pular = criar('a', {
+      classe: 'skip-link', href: '#conteudo', texto: 'Pular para o conteúdo',
+      onclick: function (ev) {
+        ev.preventDefault();
+        const alvo = conteudoEl.querySelector('h1') || conteudoEl;
+        if (alvo !== conteudoEl && !alvo.hasAttribute('tabindex')) alvo.setAttribute('tabindex', '-1');
+        alvo.focus();
+      }
+    });
+    app.appendChild(pular);
     const area = criar('div', { classe: 'area' }, [topo, conteudoEl]);
     const fundo = criar('div', { classe: 'drawer-fundo', onclick: fecharMenu });
     const navInferior = criar('nav', { classe: 'bottom-nav' }, [
@@ -148,6 +161,7 @@ window.Plataforma = window.Plataforma || {};
     P.dados.aoMudar(function () {
       aplicarTema(P.dados.tema());
       atualizarEstatisticas();
+      if (ignorarProximaMudanca) { ignorarProximaMudanca = false; return; }
       if (!document.querySelector('.runner') && !document.querySelector('.conclusao')) {
         queueMicrotask(function () {
           if (!document.querySelector('.runner') && !document.querySelector('.conclusao')) P.roteador.processar();
@@ -176,7 +190,7 @@ window.Plataforma = window.Plataforma || {};
       'aria-controls': 'menu-lateral',
       onclick: abrirMenu
     }, [
-      criar('span', { classe: 'bottom-icone', texto: '☰' }),
+      criar('span', { classe: 'bottom-icone', texto: '☰', 'aria-hidden': 'true' }),
       criar('span', { classe: 'bottom-rotulo', texto: 'Menu' })
     ]);
   }
@@ -206,8 +220,12 @@ window.Plataforma = window.Plataforma || {};
   function definirConteudo(elemento) {
     if (!conteudoEl) return;
     P.dom.limpar(conteudoEl);
+    const mesmaRota = ultimoHashRender === window.location.hash;
+    const rolagem = window.scrollY || 0;
     if (elemento) conteudoEl.appendChild(elemento);
-    window.scrollTo(0, 0);
+    ultimoHashRender = window.location.hash;
+    // Re-render da mesma rota (sincronização, metas) preserva a rolagem.
+    window.scrollTo(0, mesmaRota ? rolagem : 0);
   }
 
   function marcarAtivo(rota, param) {
@@ -279,6 +297,7 @@ window.Plataforma = window.Plataforma || {};
     chipSessao.appendChild(criar('button', {
       texto: '×',
       title: 'Encerrar sessão',
+      'aria-label': 'Encerrar sessão de estudo',
       onclick: function () { P.sessao.encerrar(); }
     }));
   }
@@ -286,13 +305,25 @@ window.Plataforma = window.Plataforma || {};
   function toast(mensagem, tipo) {
     const container = document.getElementById('toasts');
     if (!container) return;
-    const el = criar('div', { classe: 'toast' + (tipo ? ' ' + tipo : ''), texto: mensagem, role: tipo === 'erro' ? 'alert' : 'status' });
-    container.appendChild(el);
-    window.requestAnimationFrame(function () { el.classList.add('visivel'); });
-    window.setTimeout(function () {
+    const el = criar('div', { classe: 'toast' + (tipo ? ' ' + tipo : ''), role: tipo === 'erro' ? 'alert' : 'status' });
+    el.appendChild(criar('span', { classe: 'toast-texto', texto: mensagem }));
+    let timer = null;
+    function remover() {
+      window.clearTimeout(timer);
       el.classList.remove('visivel');
       window.setTimeout(function () { el.remove(); }, 250);
-    }, 3200);
+    }
+    el.appendChild(criar('button', { classe: 'toast-fechar', type: 'button', texto: '×', 'aria-label': 'Fechar aviso', onclick: remover }));
+    const duracao = Math.max(6000, String(mensagem || '').length * 70);
+    function agendar() { window.clearTimeout(timer); timer = window.setTimeout(remover, duracao); }
+    // Pausa enquanto o aluno lê (hover/foco).
+    el.addEventListener('mouseenter', function () { window.clearTimeout(timer); });
+    el.addEventListener('mouseleave', agendar);
+    el.addEventListener('focusin', function () { window.clearTimeout(timer); });
+    el.addEventListener('focusout', agendar);
+    container.appendChild(el);
+    window.requestAnimationFrame(function () { el.classList.add('visivel'); });
+    agendar();
   }
 
   function aplicarTema(tema) {
@@ -301,7 +332,9 @@ window.Plataforma = window.Plataforma || {};
 
   function alternarTema() {
     const novo = P.dados.tema() === 'escuro' ? 'claro' : 'escuro';
+    ignorarProximaMudanca = true;
     P.dados.definirTema(novo);
+    ignorarProximaMudanca = false;
     aplicarTema(novo);
   }
 

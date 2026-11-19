@@ -88,17 +88,17 @@ Plataforma.registrarLicao({
           'Mouse e Teclado',
           'Todos os produtos'
         ],
-        correta: 0,
+        correta: 1,
         feedbackErro: {
-          1: 'A média é 200; Teclado (200) não é maior que 200.',
-          2: 'Compare com a média, não com o máximo.',
-          3: 'Mouse (100) está abaixo da média.'
+          0: 'A média é 200; Teclado (200) não é maior que 200 (o operador > é estrito).',
+          2: 'Mouse (100) está abaixo da média e Teclado é igual a ela; nenhum dos dois passa.',
+          3: 'Mouse (100) e Teclado (200) não são maiores que a média (200).'
         },
         dicas: [
           'Calcule a média primeiro: (100 + 200 + 300) / 3.',
           'Maior que a média, estritamente.'
         ],
-        explicacao: 'A média é 200. Teclado e Monitor passam; Mouse fica de fora.',
+        explicacao: 'A média é 200. Só Monitor (300) é estritamente maior; Teclado (200) é igual à média e Mouse (100) fica abaixo.',
         conceitos: ['sql.subquery', 'sql.agregacao']
       }
     },

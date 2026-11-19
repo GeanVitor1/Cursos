@@ -168,9 +168,9 @@ Plataforma.registrarLicao({
         ],
         opcoes: [
           'Misturou alias com nome original: deveria ser c.Id, não Clientes.Id',
-          'Falta o INNER antes do JOIN',
-          'Alias precisa de aspas',
-          'Nada — a consulta está correta'
+          'Falta escrever INNER antes do JOIN para a consulta funcionar',
+          'O alias precisa estar entre aspas na cláusula FROM',
+          'Nada, a consulta está correta e pode ser executada'
         ],
         correta: 0,
         feedbackErro: {
@@ -228,16 +228,18 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'cp-j9',
         tipo: 'write-code',
-        enunciado: 'Left join de Clientes com Pedidos filtrando ValorTotal acima de 200.',
+        enunciado: 'Left join de Clientes com Pedidos: traga **todos os clientes**, mas só com os pedidos acima de 200 (Nome e ValorTotal).',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          "SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes LEFT JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id WHERE Pedidos.ValorTotal > 200;"
+          'SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes LEFT JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id AND Pedidos.ValorTotal > 200;',
+          'SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes LEFT JOIN Pedidos ON Clientes.Id = Pedidos.ClienteId AND Pedidos.ValorTotal > 200;',
+          'SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes LEFT JOIN Pedidos ON Pedidos.ValorTotal > 200 AND Pedidos.ClienteId = Clientes.Id;'
         ],
         dicas: [
-          'LEFT JOIN preserva os clientes.',
-          'O WHERE filtra o resultado montado.'
+          'Para não perder clientes sem pedido, o filtro do pedido entra no ON.',
+          'Um WHERE sobre Pedidos descartaria as linhas sem pedido e anularia o LEFT JOIN.'
         ],
-        explicacao: '`SELECT Clientes.Nome, Pedidos.ValorTotal FROM Clientes LEFT JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id WHERE Pedidos.ValorTotal > 200;`.',
+        explicacao: 'A condição sobre Pedidos fica no `ON`: clientes sem pedido acima de 200 continuam no resultado, com ValorTotal vazio. No `WHERE`, eles sumiriam.',
         conceitos: ['sql.left-join', 'sql.where', 'sql.ingles']
       }
     },

@@ -149,8 +149,15 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: '-- O banco lê assim:\nSELECT *\nFROM Clientes\nWHERE Ativo = 1\n  AND (Cidade = \'Curitiba\' OR Cidade = \'Recife\');'
+          codigo: '-- Escrito SEM parênteses:\nSELECT *\nFROM Clientes\nWHERE Ativo = 1 AND Cidade = \'Curitiba\' OR Cidade = \'Recife\';'
         },
+        { tipo: 'texto', texto: 'O banco avalia o `AND` primeiro, então a consulta acima é lida assim:' },
+        {
+          tipo: 'codigo',
+          linguagem: 'sql',
+          codigo: '-- Como o banco interpreta:\nWHERE (Ativo = 1 AND Cidade = \'Curitiba\')\n   OR Cidade = \'Recife\';'
+        },
+        { tipo: 'nota', tom: 'atencao', texto: 'Resultado inesperado: clientes **inativos** de Recife também entram. Para exigir Ativo = 1 nas duas cidades, use parênteses: `WHERE Ativo = 1 AND (Cidade = \'Curitiba\' OR Cidade = \'Recife\')`.' },
         { tipo: 'nota', tom: 'info', texto: 'Linhas que começam com `--` são comentários: o banco ignora.' },
         { tipo: 'texto', texto: 'Para deixar a intenção explícita, use parênteses. Eles eliminam qualquer dúvida — inclusive para quem revisa seu código:' },
         {

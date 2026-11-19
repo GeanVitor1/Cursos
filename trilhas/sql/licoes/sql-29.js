@@ -20,13 +20,13 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'retoma', conceito: 'sql.where', texto: 'Todo `WHERE` que você escreveu varreu linhas. Em tabelas pequenas isso é instantâneo; em milhões de linhas, não.' },
         { tipo: 'texto', texto: 'Um **índice** funciona como o sumário de um livro: uma estrutura extra que leva direto às linhas, sem varrer tudo:' },
-        { tipo: 'conceito', id: 'sql.indices', titulo: 'Índice', texto: 'Estrutura auxiliar que acelera buscas por uma coluna, ao custo de escrita mais lenta e espaço extra.', exemplo: 'CREATE INDEX idx_clientes_cidade ON Clientes (Cidade);' },
+        { tipo: 'conceito', id: 'sql.indices', titulo: 'Índice', texto: 'Estrutura auxiliar que acelera buscas por uma coluna, ao custo de escrita mais lenta e espaço extra.', exemplo: 'CREATE INDEX IX_Clientes_Cidade ON Clientes (Cidade);' },
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: 'CREATE INDEX idx_clientes_cidade\nON Clientes (Cidade);'
+          codigo: 'CREATE INDEX IX_Clientes_Cidade\nON Clientes (Cidade);'
         },
-        { tipo: 'nota', tom: 'info', texto: 'O nome do índice (`idx_clientes_cidade`) é convenção: prefixo idx + tabela + coluna. O banco cria e mantém a estrutura sozinho.' }
+        { tipo: 'nota', tom: 'info', texto: 'O nome do índice (`IX_Clientes_Cidade`) é convenção: prefixo IX + tabela + coluna. O banco cria e mantém a estrutura sozinho.' }
       ]
     },
     {
@@ -58,7 +58,7 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'sql',
-          codigo: 'CREATE INDEX idx_pedidos_cliente\nON Pedidos (ClienteId);'
+          codigo: 'CREATE INDEX IX_Pedidos_ClienteId\nON Pedidos (ClienteId);'
         },
         { tipo: 'nota', tom: 'atencao', texto: 'ClienteId é filtrado e juntado o tempo todo: ótimo candidato. Já indexar *todas* as colunas deixa a escrita lenta e o banco inchado.' },
         { tipo: 'trabalho', texto: 'A primeira suspeita de consulta lenta no banco de verdade é a falta de índice na coluna do WHERE ou do JOIN. DBA começa quase toda investigação por aí.', fonte: '💼 No trabalho' }
@@ -96,7 +96,7 @@ Plataforma.registrarLicao({
         id: 'sql29-a3',
         tipo: 'fill-code',
         enunciado: 'Complete para criar um índice na coluna Cidade de Clientes.',
-        codigo: '{{1}} INDEX idx_clientes_cidade\nON Clientes (Cidade);',
+        codigo: '{{1}} INDEX IX_Clientes_Cidade\nON Clientes (Cidade);',
         lacunas: [['create']],
         dicas: [
           'O verbo que cria objetos no banco.',
@@ -148,14 +148,16 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql29-a5',
         tipo: 'write-code',
-        enunciado: 'Queries with index are fast: crie o índice de Cidade.',
+        enunciado: 'Queries with index are fast: crie o índice **IX_Clientes_Cidade** na coluna Cidade de Clientes.',
         placeholder: 'CREATE ...',
         respostasAceitas: [
-          'create index idx_clientes_cidade on clientes (cidade)'
+          'CREATE INDEX IX_Clientes_Cidade ON Clientes (Cidade);',
+          'CREATE NONCLUSTERED INDEX IX_Clientes_Cidade ON Clientes (Cidade);',
+          'CREATE INDEX idx_clientes_cidade ON Clientes (Cidade);'
         ],
         dicas: [
           'CREATE INDEX nome ON tabela (coluna).',
-          'Siga a convenção idx_tabela_coluna.'
+          'O nome do índice já está no enunciado; a coluna vai entre parênteses.'
         ],
         explicacao: 'O atalho de Cidade nasce com `CREATE INDEX`.',
         conceitos: ['sql.indices', 'sql.ingles']

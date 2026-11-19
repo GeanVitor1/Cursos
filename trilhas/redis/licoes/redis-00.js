@@ -21,7 +21,7 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'retoma', conceito: 'aspnet.api', texto: 'Sua API já responde a vários endereços: `GET /produtos` devolve a lista e `GET /produtos/10` devolve um item. Hoje, cada uma dessas chamadas faz o trabalho completo, do começo ao fim.' },
         { tipo: 'texto', texto: 'Esse trabalho tem um custo. O banco interpreta o SQL, busca as linhas no disco e devolve o resultado — e isso leva **dezenas de milissegundos**. Quando milhares de pessoas pedem a mesma lista, o mesmo esforço se repete milhares de vezes.' },
-        { tipo: 'diagrama', arte: 'cliente --> API --> banco de dados\n                  <-- 120 ms\n\nA cada requisicao, o caminho inteiro se repete.', legenda: 'Sem cache, o banco participa de todas as chamadas.' },
+        { tipo: 'diagrama', arte: 'cliente --> API --> banco de dados\n                  <-- 120 ms\n\nA cada requisição, o caminho inteiro se repete.', legenda: 'Sem cache, o banco participa de todas as chamadas.' },
         { tipo: 'tabela', titulo: 'Onde o tempo é gasto em um GET /produtos', colunas: ['Etapa', 'Tempo médio'], linhas: [
           ['API recebe e valida a requisição', '1 ms'],
           ['Consulta ao banco de dados', '120 ms'],

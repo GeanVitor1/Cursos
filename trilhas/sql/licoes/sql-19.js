@@ -141,10 +141,16 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql19-a4',
         tipo: 'write-code',
-        enunciado: 'Escreva a consulta que retorna o **total vendido por cidade** (tabelas Clientes e Pedidos).',
+        enunciado: 'Escreva a consulta que retorna o **total vendido por cidade** (tabelas Clientes e Pedidos), com a soma apelidada de **Total**.',
         respostasAceitas: [
           'select cidade, sum(valortotal) as total from clientes join pedidos on pedidos.clienteid = clientes.id group by cidade',
-          'select clientes.cidade, sum(pedidos.valortotal) as total from clientes join pedidos on pedidos.clienteid = clientes.id group by clientes.cidade'
+          'select clientes.cidade, sum(pedidos.valortotal) as total from clientes join pedidos on pedidos.clienteid = clientes.id group by clientes.cidade',
+          'select cidade, sum(valortotal) as total FROM pedidos join clientes ON pedidos.clienteid = clientes.id group by cidade',
+          'select cidade, sum(valortotal) from clientes join pedidos on pedidos.clienteid = clientes.id group by cidade',
+          'select cidade, sum(valortotal) FROM pedidos join clientes ON pedidos.clienteid = clientes.id group by cidade',
+          'select clientes.cidade, sum(pedidos.valortotal) as total FROM pedidos join clientes ON pedidos.clienteid = clientes.id group by clientes.cidade',
+          'select clientes.cidade, sum(pedidos.valortotal) from clientes join pedidos on pedidos.clienteid = clientes.id group by clientes.cidade',
+          'select clientes.cidade, sum(pedidos.valortotal) FROM pedidos join clientes ON pedidos.clienteid = clientes.id group by clientes.cidade'
         ],
         dicas: [
           'Junte as tabelas, agrupe por Cidade e some ValorTotal.',

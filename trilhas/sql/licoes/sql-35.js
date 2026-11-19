@@ -123,9 +123,10 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql35-a4',
         tipo: 'write-code',
-        enunciado: 'Escreva a consulta que numera os **pedidos do maior para o menor valor**.',
+        enunciado: 'Escreva a consulta que mostra o **Id** de cada pedido e sua posição (apelide de **Posicao**), numerando do maior para o menor valor.',
         respostasAceitas: [
-          'select id, row_number() over (order by valortotal desc) as posicao from pedidos'
+          'select id, row_number() over (order by valortotal desc) as posicao from pedidos',
+          'select id, row_number() over (order by valortotal desc) from pedidos'
         ],
         dicas: [
           'ROW_NUMBER() OVER (...) com ORDER BY.',
@@ -134,6 +135,56 @@ Plataforma.registrarLicao({
         explicacao: 'Cada pedido ganha sua posição no ranking de valores.',
         conceitos: ['sql.window', 'sql.order-by'],
         desafio: true
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Comparando cada linha com o total',
+      blocos: [
+        {
+          tipo: 'texto',
+          texto: '`SUM`, `AVG` e `COUNT` também funcionam como função de janela: com `OVER ()` elas calculam sobre **todas as linhas** sem esconder nenhuma. Assim cada linha pode ser comparada com o total:'
+        },
+        {
+          tipo: 'codigo',
+          linguagem: 'sql',
+          codigo: 'SELECT Nome, Preco,\n       SUM(Preco) OVER () AS TotalGeral\nFROM Produtos;',
+          legenda: 'O mesmo TotalGeral aparece em todas as linhas, ao lado do preço de cada produto.'
+        },
+        {
+          tipo: 'tabela',
+          titulo: 'Resultado',
+          colunas: ['Nome', 'Preco', 'TotalGeral'],
+          linhas: [
+            ['Mouse', 100, 600],
+            ['Teclado', 200, 600],
+            ['Monitor', 300, 600]
+          ],
+          legenda: '100 + 200 + 300 = 600, repetido em cada linha.'
+        },
+        {
+          tipo: 'nota',
+          tom: 'info',
+          texto: 'Com `PARTITION BY` dentro do `OVER`, o total passa a ser por grupo: `SUM(Preco) OVER (PARTITION BY Categoria)`.'
+        }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql35-a6',
+        tipo: 'write-code',
+        enunciado: 'Escreva a consulta que mostra **Nome**, **Preco** e, em cada linha, a **soma de todos os preços** (apelide de **TotalGeral**), usando uma window function.',
+        respostasAceitas: [
+          'SELECT Nome, Preco, SUM(Preco) OVER () AS TotalGeral FROM Produtos;',
+          'SELECT Nome, Preco, SUM(Preco) OVER () FROM Produtos;'
+        ],
+        dicas: [
+          'A função de soma recebe a coluna e é seguida de OVER.',
+          'Sem PARTITION BY nem ORDER BY, o OVER fica com parênteses vazios.'
+        ],
+        explicacao: '`SUM(Preco) OVER ()` soma todos os preços sem resumir o resultado: cada produto continua na sua linha.',
+        conceitos: ['sql.window']
       }
     },
     {
@@ -161,7 +212,8 @@ Plataforma.registrarLicao({
         enunciado: 'Window ranks rows: numere os produtos por preço decrescente.',
         placeholder: 'SELECT ...',
         respostasAceitas: [
-          'select nome, row_number() over (order by preco desc) as posicao from produtos'
+          'select nome, row_number() over (order by preco desc) as posicao from produtos',
+          'select nome, row_number() over (order by preco desc) from produtos'
         ],
         dicas: [
           'ROW_NUMBER() OVER com ORDER BY Preco DESC.',

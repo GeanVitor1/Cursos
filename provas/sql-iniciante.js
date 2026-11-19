@@ -97,7 +97,7 @@ Plataforma.registrarLicao({
         tipo: 'fill-code',
         enunciado: 'Complete para listar os **3 produtos mais caros**.',
         codigo: 'SELECT {{1}} 3 Nome, Preco\nFROM Produtos\nORDER BY Preco DESC;',
-        lacunas: [['top', 'limit']],
+        lacunas: [['top']],
         dicas: [
           'No SQL Server a quantidade vem entre SELECT e as colunas.',
           'São três letras.'
@@ -225,7 +225,7 @@ Plataforma.registrarLicao({
         afirmacoes: [
           { texto: 'DELETE FROM Clientes; sem WHERE apaga todos os clientes.', correta: true, explicacao: 'Sem filtro, o comando atinge a tabela inteira.' },
           { texto: 'O caminho seguro antes de um UPDATE é rodar um SELECT com o mesmo WHERE.', correta: true, explicacao: 'Conferir as linhas antes evita alterar mais do que o esperado.' },
-          { texto: 'INSERT INTO Clientes VALUES (\'Ana\'); funciona mesmo sem informar as colunas.', correta: true, explicacao: 'Funciona quando os valores estão na ordem exata de todas as colunas — mas informar as colunas é mais seguro e legível.' }
+          { texto: 'INSERT INTO Clientes VALUES (\'Ana\'); funciona mesmo que a tabela tenha várias colunas.', correta: false, explicacao: 'Sem informar as colunas, o INSERT exige um valor para cada coluna da tabela (inclusive Id, se não for automático). Com um único valor, o banco rejeita por número de colunas incompatível; por isso informe as colunas.' }
         ],
         dicas: [
           'Sem WHERE não existe filtro.',

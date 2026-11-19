@@ -118,3 +118,132 @@
 @media (prefers-reduced-motion: reduce) {
   .percurso-cabecalho, .percurso-link, .expansivel-seta, .painel-expansivel > summary::after, .atividade-select select { transition: none; }
 }
+
+/* ============================================================
+   Correções da auditoria 17/11/2026 (acessibilidade e visual)
+   ============================================================ */
+:root {
+  --primaria-botao: #0062cc;      /* branco sobre ele: 5,9:1 */
+  --primaria-botao-forte: #0050a8;
+  --primaria-texto: #0052ad;      /* sobre branco e sobre --primaria-suave: >= 5,5:1 */
+}
+[data-tema="escuro"] {
+  --primaria-botao: #0062cc;
+  --primaria-botao-forte: #0a6fe0;
+  --primaria-texto: #6cb4ff;      /* sobre #1c1c1e e sobre --primaria-suave: >= 6:1 */
+}
+
+/* Contraste do botão primário e dos textos azuis */
+.btn-primario { background: var(--primaria-botao); color: #fff; }
+.btn-primario:hover:not(:disabled) { background: var(--primaria-botao-forte); }
+.btn-suave, .chip-primaria, .trilha-sigla, .nav-sigla,
+.percurso-etapa.em-andamento .percurso-status, .percurso-etapa.disponivel .percurso-status,
+.dica-caixa .dica-marca, .caixa-dica .dica-marca, .caixa-socratica .dica-marca { color: var(--primaria-texto); }
+.dialogo-bolha.jogador { background: var(--primaria-botao); }
+
+/* Botões de confiança: parecem botões (borda visível) */
+.confianca-botao { border: 1px solid var(--borda-forte); background: var(--superficie); min-height: 44px; }
+.confianca-botao.ativa { border-color: var(--primaria-texto); }
+
+/* Dicas e guia socrático (classes criadas pelo runner) */
+.caixa-dica, .caixa-socratica {
+  border: 1px dashed var(--primaria-borda);
+  background: var(--primaria-suave);
+  color: var(--texto);
+  border-radius: var(--radius-sm);
+  padding: 12px 15px;
+  font-size: 14.5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 9px;
+  align-items: baseline;
+}
+.caixa-socratica { border-left: 3px solid var(--primaria-texto); }
+.caixa-dica .dica-marca, .caixa-socratica .dica-marca { font-weight: 800; flex-shrink: 0; }
+.caixa-dica .dica-marca::after, .caixa-socratica .dica-marca::after { content: ':'; }
+.caixa-socratica .dica-marca + span { flex: 1 1 80%; }
+.socratica-fim { flex-basis: 100%; font-size: 13px; color: var(--texto-suave); font-style: italic; }
+.etapa-meta { font-size: 12.5px; color: var(--texto-fraco); margin-top: 2px; }
+.english-painel { display: flex; flex-direction: column; gap: 10px; }
+.retoma-icone, .futuro-icone { font-size: 20px; line-height: 1; flex-shrink: 0; width: 28px; text-align: center; }
+
+/* Estado das opções além da cor */
+.opcao.correta .opcao-marcador, .tf-botao.correta { position: relative; }
+.opcao.correta .opcao-texto::after, .tf-botao.correta::after, .match-item.pareado::after { content: ' ✓'; font-weight: 800; color: var(--sucesso); }
+.opcao.errada .opcao-texto::after, .tf-botao.errada::after { content: ' ✗'; font-weight: 800; color: var(--erro); }
+.opcao.selecionada, .opcao[aria-pressed="true"] { outline: 2px solid var(--primaria-texto); outline-offset: -2px; }
+.tf-botao[aria-pressed="true"] { font-weight: 750; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Diálogo: resposta errada visível */
+.dialogo-bolha.dialogo-errada { background: var(--erro-suave); color: var(--texto); border: 1px solid var(--erro); text-decoration: line-through; text-decoration-color: var(--erro); }
+.dialogo-bolha.dialogo-errada .dialogo-quem { color: var(--erro); text-decoration: none; }
+.dialogo-bolha.dialogo-corrigida { box-shadow: 0 0 0 2px var(--sucesso); }
+.dialogo-fim { margin: 8px 0 0; font-size: 13.5px; color: var(--texto-suave); }
+.dialogo-ouvir { margin-left: 6px; min-width: 44px; min-height: 44px; }
+
+/* Order-blocks: ações */
+.ordenar-acoes { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.ordenar-instrucao { font-size: 12.5px; color: var(--texto-fraco); }
+.ordenar-limpar { min-height: 44px; }
+
+/* Skip link */
+.skip-link {
+  position: absolute; left: 12px; top: -60px; z-index: 1000;
+  background: var(--primaria-botao); color: #fff; padding: 10px 16px; border-radius: 10px;
+  font-weight: 700; text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
+main.conteudo:focus, h1[tabindex="-1"]:focus, .passo-titulo:focus, .feedback:focus { outline: none; }
+.feedback:focus-visible { outline: 2px solid var(--primaria-texto); outline-offset: 2px; }
+
+/* Toasts: no topo (não cobrem o botão Continuar), com botão fechar */
+.toasts { top: 16px; bottom: auto; pointer-events: none; }
+.toast { display: flex; align-items: center; gap: 10px; pointer-events: auto; max-width: min(560px, calc(100vw - 32px)); }
+.toast-fechar { background: transparent; border: none; color: inherit; font-size: 20px; line-height: 1; min-width: 32px; min-height: 32px; cursor: pointer; opacity: .85; }
+.toast-fechar:hover { opacity: 1; }
+
+/* Alvos de toque >= 44px */
+.btn-tema, .chip-nuvem, .btn-ouvir { min-height: 44px; display: inline-flex; align-items: center; }
+.runner-anterior { min-height: 44px; min-width: 44px; }
+.chip-sessao button { min-width: 32px; min-height: 32px; }
+
+/* Ícone do Glossário (emoji) alinhado aos demais */
+.nav-icone { display: inline-flex; justify-content: center; align-items: center; width: 22px; height: 18px; font-size: 14px; line-height: 1; overflow: hidden; flex-shrink: 0; }
+
+/* Tabela de dados: rolagem indicada e descrição que quebra */
+.tabela-rolagem { overflow-x: auto; -webkit-overflow-scrolling: touch;
+  background:
+    linear-gradient(to right, var(--superficie) 30%, transparent) left / 24px 100% no-repeat local,
+    linear-gradient(to left, var(--superficie) 30%, transparent) right / 24px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.18), transparent) left / 10px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.18), transparent) right / 10px 100% no-repeat scroll;
+}
+.tabela-dados td:last-child { white-space: normal; min-width: 160px; }
+
+/* Cards de estatística em grade 2x2 no celular */
+@media (max-width: 480px) {
+  .dados-grid, .home-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Rodapé do runner sempre fixo, inclusive em altura baixa (zoom 200%) */
+.runner-rodape { position: sticky; bottom: 0; }
+@media (max-height: 520px) {
+  .runner-rodape { position: sticky; bottom: 0; padding: 6px 0; }
+  .runner-xp { display: none; }
+}
+
+/* Nivelamento: margem entre botões */
+.conclusao-acoes { margin-top: 16px; gap: 12px; }
+.pagina .cartao + .conclusao-acoes, .cartao .conclusao-acoes { margin-top: 16px; }
+
+/* Conclusão reprovada */
+.conclusao-icone.reprovado { background: var(--aviso-suave); color: var(--aviso); }
+
+/* Busca e grupos colapsáveis (Glossário, Meu progresso) */
+.campo-busca { width: 100%; min-height: 44px; padding: 10px 14px; border: 1px solid var(--borda-forte); border-radius: var(--radius-sm); background: var(--superficie); color: var(--texto); font: inherit; margin: 4px 0 12px; box-sizing: border-box; }
+.grupo-colapsavel { border-top: 1px solid var(--borda); padding: 6px 0; }
+.grupo-colapsavel > summary { cursor: pointer; font-weight: 650; min-height: 44px; display: flex; align-items: center; }
+.grupo-colapsavel[open] > summary { margin-bottom: 8px; }
+
+/* Aviso de conteúdo em construção */
+.aviso-construcao { margin: 12px 0; }

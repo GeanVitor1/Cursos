@@ -9,7 +9,7 @@ Plataforma.registrarLicao({
   objetivos: [
     'Expressar como se sente com tired e headache',
     'Pedir para retornar ligação com call me back',
-    'Enviar mensagens rápidas do dia a dia'
+    'Falar de compromissos e consultas com appointment e doctor'
   ],
   conceitos: ['en.a2-saude'],
   etapas: [

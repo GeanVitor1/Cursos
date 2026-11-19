@@ -193,7 +193,7 @@ Plataforma.registrarLicao({
           { tipo: 'codigo', linguagem: 'bash', codigo: 'git commit -m "Corrige total do pedido"' }
         ],
         opcoes: [
-          'Faltou o `git add`: sem mudanças preparadas, o commit fica vazio',
+          'Faltou o `git add`: sem mudanças preparadas, o commit não tem o que gravar',
           'O `git commit` precisa vir antes do `git status`',
           'A mensagem precisa estar em inglês',
           'Falta o `git push` antes do commit'
@@ -205,7 +205,7 @@ Plataforma.registrarLicao({
           3: 'O push envia commits que já existem; sem commit, não há o que enviar.'
         },
         dicas: [
-          'O commit não varre a pasta sozinho.',
+          'O commit grava apenas o que já foi escolhido para entrar nele.',
           'Existe uma etapa que escolhe as mudanças antes do commit.'
         ],
         explicacao: 'O `git add` é quem coloca as mudanças na área de preparação. Sem ele, o commit não tem o que gravar.',
@@ -233,7 +233,7 @@ Plataforma.registrarLicao({
           3: 'A correção pode ser gravada agora; o rascunho segue local e entra depois.'
         },
         dicas: [
-          'O add aceita um arquivo por vez.',
+          'O add aceita o nome de um ou mais arquivos específicos, e não só o ponto.',
           'Você escolhe o que entra na área de preparação.'
         ],
         explicacao: 'Preparar apenas o arquivo certo mantém o commit focado e o histórico compreensível. O rascunho continua na sua máquina até estar pronto.',

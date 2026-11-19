@@ -9,7 +9,7 @@ Plataforma.registrarLicao({
   objetivos: [
     'Descrever lugares com quiet e busy',
     'Comparar lugares com bigger e more comfortable',
-    'Descrever pessoas e rotinas no trabalho'
+    'Descrever pessoas com friendly e very'
   ],
   conceitos: ['en.a2-descricao'],
   etapas: [
@@ -159,7 +159,7 @@ Plataforma.registrarLicao({
             correta: 0
           },
           {
-            fala: 'Is your room comfortable?',
+            fala: 'Is your room bigger now?',
             opcoes: [
               'Yes, it is bigger than my room at home.',
               'No, I have not visited Canada.',

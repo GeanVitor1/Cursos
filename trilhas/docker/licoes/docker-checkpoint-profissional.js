@@ -65,8 +65,8 @@ Plataforma.registrarLicao({
         codigo: '    depends_on:\n      banco:\n        condition: service_{{1}}',
         lacunas: [['healthy']],
         dicas: [
-          'A verificação de saúde usa o termo healthy.',
-          'É o estado do serviço que responde à verificação.'
+          'Releia a lição do compose: o serviço passa por um estado depois que a verificação de saúde dá certo.',
+          'A palavra completa o nome da condição, depois de service_.'
         ],
         explicacao: 'A condição de saúde faz o compose esperar o banco responder à verificação antes de iniciar a API.',
         conceitos: ['docker.compose']
@@ -99,7 +99,7 @@ Plataforma.registrarLicao({
         enunciado: 'Qual conjunto de ajustes resolve o problema?',
         cena: 'A aplicação completa sobe, mas a API recebe erro de conexão com o banco. Ao conferir o estado, o serviço do banco está saudável e a API está em execução. Nos registros da API aparece a tentativa de conectar em localhost.',
         opcoes: [
-          'Trocar o endereço da conexão para o nome do serviço do banco e reconstruir a API',
+          'Trocar o endereço da conexão para o nome do serviço do banco e recriar a API com `docker compose up -d`',
           'Remover o volume do banco para a conexão voltar a funcionar',
           'Publicar a porta 1433 do banco na máquina e manter localhost',
           'Parar o serviço de memória para liberar a rede do projeto'
@@ -112,9 +112,9 @@ Plataforma.registrarLicao({
         },
         dicas: [
           'Dentro da rede do compose, o endereço é o nome do serviço.',
-          'Mudou configuração? A imagem precisa ser reconstruída.'
+          'Mudou só o `environment:`? Não precisa reconstruir a imagem; basta recriar o container.'
         ],
-        explicacao: 'A conexão deve apontar para o nome do serviço do banco. Como a variável mudou, a imagem da API precisa ser reconstruída com `--build`.',
+        explicacao: 'A conexão deve apontar para o nome do serviço do banco. Como só a variável de ambiente mudou, não é preciso `--build`: `docker compose up -d` recria o container da API com a nova configuração (o `--build` só é necessário quando o código ou o Dockerfile mudam).',
         conceitos: ['docker.networks', 'docker.variaveis', 'docker.compose'],
         desafio: true
       }
@@ -126,7 +126,7 @@ Plataforma.registrarLicao({
         tipo: 'match-pairs',
         enunciado: 'Conecte cada necessidade do projeto à configuração correspondente no compose.',
         pares: [
-          ['Acessar a API em localhost:8080', 'ports com "8080:80" no serviço da API'],
+          ['Acessar a API em localhost:8080', 'ports com "8080:8080" no serviço da API'],
           ['Manter os dados do banco entre execuções', 'volumes com um volume nomeado no serviço do banco'],
           ['Entregar a string de conexão', 'environment com a variável de conexão'],
           ['Encontrar o banco pelo nome', 'Serviços na mesma rede do projeto']
@@ -146,25 +146,25 @@ Plataforma.registrarLicao({
         tipo: 'find-error',
         enunciado: 'O arquivo abaixo foi recusado na revisão. Qual é o problema?',
         contexto: [
-          { tipo: 'codigo', linguagem: 'yaml', codigo: 'services:\n  api:\n    build: .\n    ports:\n    - "8080:80"\n  banco:\n    image: mcr.microsoft.com/mssql/server:2022-latest\n    volumes:\n      - dados:/var/opt/mssql\nvolumes:\n  dados:' }
+          { tipo: 'codigo', linguagem: 'yaml', codigo: 'services:\n  api:\n    build: .\n    ports:\n    - "8080:8080"\n  banco:\n    image: mcr.microsoft.com/mssql/server:2022-latest\n    environment:\n      - ACCEPT_EULA=Y\n      - MSSQL_SA_PASSWORD=SenhaForte123\n    healthcheck:\n      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P SenhaForte123 -C -Q \\"SELECT 1\\""]\n      interval: 10s\n      retries: 10\n    volumes:\n      - dados:/var/opt/mssql\nvolumes:\n  dados:' }
         ],
         opcoes: [
-          'Nada: o arquivo está correto e descreve API, banco e volume',
+          'Nada: o arquivo está correto e descreve API, banco (com variáveis e healthcheck) e volume',
           'O volume dados não pode ser usado pelo SQL Server',
-          'A porta deveria ser 80:8080',
+          'A porta deveria ser invertida para 8080:80',
           'O bloco volumes no fim deveria vir antes de services'
         ],
         correta: 0,
         feedbackErro: {
           1: 'O SQL Server grava os arquivos do banco no volume normalmente.',
-          2: 'A ordem correta é externa:interna; 8080:80 está certo.',
+          2: 'A ordem correta é externa:interna e a API .NET escuta na 8080; "8080:8080" está certo.',
           3: 'O bloco volumes pode ficar no fim do arquivo; a ordem entre blocos de primeiro nível é livre.'
         },
         dicas: [
           'Confira a indentação, a ordem das portas e a declaração do volume.',
           'Compare cada chave com o que você aprendeu.'
         ],
-        explicacao: 'O arquivo está correto: a API é construída, a porta está no formato certo e o volume é usado pelo banco e declarado no fim.',
+        explicacao: 'O arquivo está correto: a API é construída, a porta está no formato certo, o banco tem as variáveis obrigatórias (ACCEPT_EULA e MSSQL_SA_PASSWORD) e um healthcheck, e o volume é usado pelo banco e declarado no fim.',
         conceitos: ['docker.compose', 'docker.portas', 'docker.volumes']
       }
     },

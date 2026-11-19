@@ -8,11 +8,12 @@ Plataforma.registrarLicao({
   xp: 30,
   objetivos: [
     'Transformar uma regra de negócio em passos',
+    'Usar variável, condição e laço (repetição) para escrever esses passos',
     'Somar valores de uma lista',
     'Impedir estados inválidos (estoque negativo)',
     'Encontrar duplicados e agrupar dados'
   ],
-  conceitos: ['logica.total', 'logica.validacao', 'logica.duplicados', 'logica.agrupamento'],
+  conceitos: ['logica.variavel', 'logica.condicao', 'logica.laco', 'logica.total', 'logica.validacao', 'logica.duplicados', 'logica.agrupamento'],
   etapas: [
     {
       tipo: 'conteudo',
@@ -22,6 +23,42 @@ Plataforma.registrarLicao({
         { tipo: 'trabalho', texto: 'No dia a dia, um ticket chega assim: "o total do pedido está errado quando o cliente usa cupom". Seu trabalho é decompor a regra, não decorar fórmulas.', fonte: '💼 Em uma vaga de desenvolvedor' },
         { tipo: 'diagrama', arte: 'Regra em português\n   "Some os itens do pedido"\n          │\n          ▼\nPassos sem ambiguidade\n   1. Comece o total em 0\n   2. Para cada item, multiplique preço × quantidade\n   3. Some ao total\n   4. Devolva o total' }
       ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Duas ferramentas de todo algoritmo',
+      introduz: ['logica.variavel', 'logica.condicao'],
+      blocos: [
+        { tipo: 'texto', texto: 'Quase todo algoritmo é feito de três peças. Você vai usá-las nos quatro raciocínios abaixo, então vale conhecê-las agora.' },
+        { tipo: 'conceito', id: 'logica.variavel', titulo: 'Variável', texto: 'Uma variável é um nome que guarda um valor na memória e pode mudar ao longo dos passos.', exemplo: 'total = 0 cria a variável total com o valor 0; depois total = total + 50 passa a valer 50.' },
+        { tipo: 'conceito', id: 'logica.condicao', titulo: 'Condição', texto: 'Uma condição é uma pergunta de sim ou não que decide qual caminho seguir: se for verdadeira, executa um bloco; senão, executa outro.', exemplo: 'se idade >= 18: permitir; senão: recusar.' },
+      ]
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'A terceira ferramenta: o laço',
+      introduz: ['logica.laco'],
+      blocos: [
+        { tipo: 'conceito', id: 'logica.laco', titulo: 'Laço (repetição)', texto: 'Um laço repete um bloco de passos para cada item de uma lista ou enquanto uma condição valer.', exemplo: 'para cada nome na lista: mostrar o nome.' },
+        { tipo: 'codigo', linguagem: 'texto', codigo: 'total = 0                      # variável\npara cada item do pedido:      # laço\n    se item.quantidade > 0:    # condição\n        total = total + item.preco' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'lg00-a0',
+        tipo: 'match-pairs',
+        dimensao: 'associacao',
+        enunciado: 'Associe cada linha de pseudocódigo à ferramenta que ela usa.',
+        pares: [
+          ['contador = 0', 'Variável: guarda um valor que pode mudar'],
+          ['se saldo < 0:', 'Condição: escolhe o caminho a seguir'],
+          ['para cada cliente da lista:', 'Laço: repete o bloco para cada item']
+        ],
+        dicas: ['Uma linha guarda, outra pergunta, outra repete.', 'A palavra "se" abre uma pergunta; "para cada" abre uma repetição.'],
+        explicacao: 'Variável guarda, condição decide e laço repete. Os raciocínios a seguir combinam essas três peças.',
+        conceitos: ['logica.variavel', 'logica.condicao', 'logica.laco']
+      }
     },
     {
       tipo: 'conteudo',
@@ -42,14 +79,14 @@ Plataforma.registrarLicao({
         contexto: [
           { tipo: 'tabela', titulo: 'Itens do pedido', colunas: ['Produto', 'Preço', 'Quantidade'], linhas: [['Mouse', 100.0, 2], ['Teclado', 200.0, 1], ['Cabo', 25.0, 4]] }
         ],
-        opcoes: ['R$ 500,00', 'R$ 325,00', 'R$ 400,00', 'R$ 550,00'],
+        opcoes: ['R$ 500,00', 'R$ 325,00', 'R$ 400,00', 'R$ 425,00'],
         correta: 0,
         feedbackErro: {
-          1: 'Você somou os preços sem multiplicar pelas quantidades?',
-          2: 'Confira o cabo: 25 × 4 = 100.',
-          3: 'Confira o mouse: 100 × 2 = 200, não 100.'
+          1: 'Você somou os preços (100 + 200 + 25) sem multiplicar pelas quantidades?',
+          2: 'Esse valor deixa o cabo de fora; todo item do pedido entra na soma.',
+          3: 'Confira o cabo: ele aparece 4 vezes, então vale 25 × 4, não só 25.'
         },
-        dicas: ['Total = preço × quantidade, item por item.', 'Some: mouse (200) + teclado (200) + cabo (100).'],
+        dicas: ['Cada linha da tabela contribui com preço × quantidade.', 'Calcule linha por linha e só então some os três resultados.'],
         explicacao: 'Total do pedido = soma de (preço × quantidade) de cada item. 200 + 200 + 100 = 500.',
         conceitos: ['logica.total']
       }
@@ -67,7 +104,7 @@ Plataforma.registrarLicao({
           'total = total + (item.preco * item.quantidade)',
           'devolva total'
         ],
-        dicas: ['Antes de somar, o total precisa começar em zero.', 'A soma acontece dentro do "para cada".'],
+        dicas: ['Uma variável precisa de um valor inicial antes de acumular.', 'O que se repete para cada item deve ficar dentro do laço.'],
         explicacao: 'Iniciar → percorrer → acumular → devolver. Esse padrão de acumulador volta em praticamente toda soma que você fizer.',
         conceitos: ['logica.total']
       }
@@ -89,13 +126,13 @@ Plataforma.registrarLicao({
         dimensao: 'reconhecimento',
         enunciado: 'A regra é: o estoque nunca pode ficar negativo. O código está errado. Qual é o problema?',
         contexto: [
-          { tipo: 'codigo', linguagem: 'csharp', codigo: 'public void DarBaixa(int estoqueAtual, int quantidade)\n{\n    int novoEstoque = estoqueAtual - quantidade;\n    produto.Estoque = novoEstoque;\n}' }
+          { tipo: 'codigo', linguagem: 'csharp', codigo: 'public void DarBaixa(Produto produto, int quantidade)\n{\n    int novoEstoque = produto.Estoque - quantidade;\n    produto.Estoque = novoEstoque;\n}' }
         ],
         opcoes: [
           'Falta validar se a quantidade é maior que o estoque antes de gravar; assim o estoque pode ficar negativo',
-          'A validação deveria vir depois de gravar',
-          'Falta um Console.WriteLine',
-          'O tipo int não aceita subtração'
+          'A validação deveria vir depois de gravar, para conferir o valor já salvo',
+          'Falta escrever o novo estoque na tela com Console.WriteLine',
+          'O tipo int não permite subtração entre dois números'
         ],
         correta: 0,
         feedbackErro: {
@@ -103,8 +140,8 @@ Plataforma.registrarLicao({
           2: 'Escrever na tela não valida a regra.',
           3: 'int aceita subtração; o problema é a falta de verificação.'
         },
-        dicas: ['A regra diz "nunca negativo". O código impede isso?', 'O que acontece se quantidade for maior que estoqueAtual?'],
-        explicacao: 'Validar antes de alterar: se `quantidade > estoqueAtual`, lance erro ou recuse. Regras de negócio precisam de guardas explícitas.',
+        dicas: ['A regra diz "nunca negativo". O código impede isso?', 'Imagine um produto com estoque 2 e uma baixa de 5: o que o código grava?'],
+        explicacao: 'Validar antes de alterar: se `quantidade > produto.Estoque`, lance erro ou recuse. Regras de negócio precisam de guardas explícitas.',
         conceitos: ['logica.validacao']
       }
     },
@@ -133,6 +170,8 @@ Plataforma.registrarLicao({
       introduz: ['logica.duplicados'],
       blocos: [
         { tipo: 'texto', texto: 'O terceiro raciocínio é **encontrar repetidos**: percorrer uma lista guardando o que já foi visto e sinalizar o que se repete.' },
+        { tipo: 'diagrama', arte: 'vistos = {}                       (começa vazio)\npara cada email da lista:\n    se email já está em vistos:   -> duplicado!\n    senão: guardar email em vistos' },
+        { tipo: 'texto', texto: 'Esse conjunto de "vistos" é uma coleção que só guarda cada valor uma vez e responde rápido se um valor já está nela.' },
         { tipo: 'conceito', id: 'logica.duplicados', titulo: 'Duplicados', texto: 'Encontrar itens repetidos em uma lista, guardando o que já foi visto.', exemplo: 'Dois clientes com o mesmo e-mail.' }
       ]
     },
@@ -146,14 +185,14 @@ Plataforma.registrarLicao({
         enunciado: 'Qual abordagem encontra os e-mails duplicados?',
         opcoes: [
           'Percorrer a lista guardando os e-mails já vistos; se um e-mail se repetir, marcá-lo como duplicado',
-          'Somar todos os e-mails',
-          'Ordenar por nome e pegar o primeiro',
-          'Contar quantos clientes existem'
+          'Somar o tamanho de todos os e-mails e comparar com o número de clientes',
+          'Ordenar os clientes por nome e olhar apenas o primeiro registro da lista',
+          'Contar quantos clientes existem e comparar com o total do mês anterior'
         ],
         correta: 0,
         feedbackErro: {
-          1: 'E-mail é texto: não faz sentido somar.',
-          2: 'Ordenar por nome não revela e-mails repetidos.',
+          1: 'O tamanho dos e-mails não indica se algum se repete.',
+          2: 'Ordenar por nome não revela e-mails repetidos, e olhar um só registro não basta.',
           3: 'A contagem total não identifica quem se repete.'
         },
         dicas: ['Você precisa comparar cada item com os anteriores.', 'Guardar "já vistos" evita comparar todos contra todos.'],
@@ -179,9 +218,9 @@ Plataforma.registrarLicao({
         enunciado: 'O relatório precisa mostrar quantos pedidos cada cliente fez. Qual é o raciocínio correto?',
         opcoes: [
           'Agrupar os pedidos por cliente e contar quantos pedidos há em cada grupo',
-          'Somar os ids dos pedidos de cada cliente',
-          'Listar todos os pedidos em ordem alfabética',
-          'Dividir o total de pedidos pelo número de clientes'
+          'Somar os ids dos pedidos de cada cliente e mostrar o resultado',
+          'Listar todos os pedidos em ordem alfabética pelo nome do cliente',
+          'Dividir o total de pedidos pelo número de clientes e mostrar a média'
         ],
         correta: 0,
         feedbackErro: {
@@ -189,7 +228,7 @@ Plataforma.registrarLicao({
           2: 'Ordenar não agrupa nem conta.',
           3: 'A média não mostra quantos por cliente.'
         },
-        dicas: ['"Quantos por cliente" = agrupar por cliente e contar.', 'É o mesmo raciocínio de agrupar e contar linhas em uma tabela.'],
+        dicas: ['Cada cliente precisa do seu próprio número, não de um número só.', 'Separe os pedidos em grupos e depois conte cada grupo.'],
         explicacao: 'Agrupar e contar é um dos raciocínios mais usados em relatórios — em um banco de dados, isso vira uma contagem por grupo (você verá mais adiante na trilha de SQL).',
         conceitos: ['logica.agrupamento']
       }

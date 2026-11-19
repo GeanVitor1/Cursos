@@ -18,7 +18,7 @@ Plataforma.registrarLicao({
       titulo: 'Refeições e bebidas',
       introduz: ['en.comida'],
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['breakfast / lunch / dinner', 'café da manhã / almoço / jantar'],
           ['water / coffee / juice', 'água / café / suco']
         ] },
@@ -47,7 +47,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Comidas',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (5)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['bread / rice / chicken', 'pão / arroz / frango'],
           ['sandwich / apple', 'sanduíche / maçã']
         ] },
@@ -78,7 +78,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'No restaurante',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['the menu / the bill', 'o cardápio / a conta'],
           ['the table', 'a mesa'],
           ['Perfect.', 'Perfeito.']
@@ -108,7 +108,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Pedindo educadamente',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (5)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['I would like... / I want...', 'Eu gostaria... / Eu quero...'],
           ['Can I have...?', 'Posso ter...?'],
           ['please', 'por favor']
@@ -141,7 +141,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'O que o garçom pergunta',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (5)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['Are you ready to order?', 'Você está pronto para fazer o pedido?'],
           ['Anything to drink?', 'Algo para beber?'],
           ['Anything else?', 'Mais alguma coisa?']
@@ -165,7 +165,7 @@ Plataforma.registrarLicao({
           3: 'Para mais comida, ele pergunta **Anything else?**.'
         },
         dicas: ['Drink é bebida.', 'É uma pergunta feita logo depois do pedido principal.'],
-        explicacao: 'Anything to drink? = Algo para beber? Responda com A water, please ou apenas No.',
+        explicacao: 'Anything to drink? = Algo para beber? Responda com Water, please. ou apenas No, thanks.',
         conceitos: ['en.comida']
       }
     },
@@ -173,7 +173,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Respondendo e agradecendo',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['Sure.', 'Claro.'],
           ["No, that's all.", 'Não, é só isso.'],
           ['Thank you.', 'Obrigado(a).']
@@ -205,7 +205,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'A comida chegou',
       blocos: [
-        { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
+        { tipo: 'vocab', titulo: 'Palavras novas', pares: [
           ['Here is your food.', 'Aqui está sua comida.'],
           ['Enjoy!', 'Bom apetite! / Aproveite!'],
           ['Great!', 'Ótimo!']
@@ -286,7 +286,7 @@ Plataforma.registrarLicao({
         interlocutor: 'Waiter',
         turnos: [
           { fala: 'Good evening! Are you ready to order?', opcoes: ["Yes. I'd like a sandwich, please.", 'I am fine, thank you.', 'The bill is on the table.'], correta: 0 },
-          { fala: 'Sure. Anything to drink?', opcoes: ['A water, please.', 'Yes, I am twenty.', 'On Monday.'], correta: 0 },
+          { fala: 'Sure. Anything to drink?', opcoes: ['Water, please.', 'Yes, I am twenty.', 'On Monday.'], correta: 0 },
           { fala: 'Great. Anything else?', opcoes: ["No, that's all. Thank you.", 'My name is Ana.', 'I go to bed at ten.'], correta: 0 }
         ],
         dicas: ['"Anything to drink?" pergunta se você quer bebida.', '"Anything else?" pergunta se quer mais alguma coisa.'],
@@ -320,9 +320,12 @@ Plataforma.registrarLicao({
         enunciado: 'Escreva um pedido educado: use I would like + uma comida + please.',
         esqueleto: "I would like ... , please.",
         validar: function (valor) {
-          const t = String(valor || '').toLowerCase();
-          const pedido = /(i would like|i'd like)\s+([a-z][a-z' -]*?)\s*,?\s*please/.exec(t);
-          return !!pedido && pedido[2].trim().length >= 2;
+          const t = String(valor || '').toLowerCase().replace(/[,.!?]/g, ' ').replace(/\s+/g, ' ').trim();
+          const comidas = ['water', 'coffee', 'juice', 'bread', 'rice', 'chicken', 'sandwich', 'sandwiches', 'apple', 'apples', 'tea', 'milk', 'soup', 'salad', 'pizza', 'burger', 'hamburger', 'cake', 'fish', 'beef', 'pasta', 'egg', 'eggs', 'cheese', 'fruit', 'orange', 'banana', 'potato', 'potatoes', 'steak', 'soda', 'beer', 'wine', 'lunch', 'dinner', 'breakfast', 'fries', 'noodles', 'beans', 'meat', 'pork', 'ice cream', 'cookie', 'cookies'];
+          const pedido = /\b(?:i would like|i'd like|can i have|could i have)\b(.*?)\bplease\b/.exec(t);
+          if (!pedido) return false;
+          const resto = ' ' + pedido[1].trim() + ' ';
+          return comidas.some(function (c) { return resto.indexOf(' ' + c + ' ') !== -1; });
         },
         respostasAceitas: ['I would like a sandwich, please.'],
         dicas: ["Comece com I would like (ou I'd like).", 'Diga a comida e termine com please.'],

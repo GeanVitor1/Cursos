@@ -17,7 +17,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'O caminho manual é longo',
       blocos: [
-        { tipo: 'retoma', conceito: 'sql.tabela', texto: 'Você já sabe criar tabelas e consultar com SQL. Agora imagine fazer essa ponte **à mão**, para cada operação da aplicação.' },
+        { tipo: 'retoma', conceito: 'sql.tabela', texto: 'Você já viu como criar tabelas com `CREATE TABLE` e como consultá-las com SQL. Agora imagine fazer essa ponte **à mão**, para cada operação da aplicação.' },
         { tipo: 'texto', texto: 'Você já sabe que a tabela Produtos guarda os dados e que a classe Produto representa o produto em C#. O problema é fazer a ponte entre os dois.' },
         { tipo: 'codigo', linguagem: 'texto', codigo: '// Jeito manual: cada operação exige uma sequência longa de passos\n//\n// 1. Abrir a conexão com o banco\n// 2. Montar o comando SQL:\n//    INSERT INTO Produtos (Nome, Preco, Estoque) VALUES (...)\n// 3. Preencher os parâmetros com os valores do objeto produto\n// 4. Executar o comando e converter o que o banco devolver' },
         { tipo: 'nota', tom: 'info', texto: 'No comando acima, `INSERT INTO Produtos (Nome, Preco, Estoque) VALUES (...)` se lê assim: **insira dentro** de Produtos, nas colunas Nome, Preco e Estoque, os **valores** correspondentes. É tudo escrito à mão, coluna por coluna.' },
@@ -84,10 +84,10 @@ Plataforma.registrarLicao({
         dimensao: 'reconhecimento',
         enunciado: 'Qual problema o ORM resolve?',
         opcoes: [
-          'Evita escrever e converter SQL manualmente para cada operação, mantendo o mapeamento entre classes e tabelas',
-          'Elimina a necessidade de banco de dados',
-          'Faz o banco ficar mais rápido do que com SQL nativo em qualquer situação',
-          'Permite usar C# sem aprender SQL'
+          'Evita escrever e converter SQL à mão, mapeando classes e tabelas',
+          'Elimina por completo a necessidade de ter um banco de dados',
+          'Faz o banco ficar sempre mais rápido do que o SQL nativo',
+          'Permite usar C# em um projeto sem nunca aprender SQL'
         ],
         correta: 0,
         feedbackErro: {

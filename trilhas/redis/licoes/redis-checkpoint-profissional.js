@@ -146,7 +146,8 @@ Plataforma.registrarLicao({
         tipo: 'find-error',
         enunciado: 'O produto mudou e a chave `produto:10` foi removida, mas a vitrine continua com o preço antigo. Por quê?',
         contexto: [
-          { tipo: 'codigo', linguagem: 'csharp', codigo: 'produto.Preco = 120;\nawait context.SaveChangesAsync();\nawait cache.RemoveAsync("produto:10");' }
+          { tipo: 'codigo', linguagem: 'csharp', codigo: 'produto.Preco = 120;\nawait context.SaveChangesAsync();\nawait cache.RemoveAsync("produto:10");' },
+          { tipo: 'codigo', linguagem: 'csharp', codigo: '// Código da vitrine\nvar lista = await cache.GetStringAsync("produtos:lista");' }
         ],
         opcoes: [
           'A vitrine lê a chave da lista de produtos, que também precisa ser removida',

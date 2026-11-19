@@ -84,9 +84,9 @@ Plataforma.registrarLicao({
         ],
         opcoes: [
           'SELECT * traz tudo e a função no WHERE desliga o índice da data',
-          'Falta o GROUP BY',
-          'YEAR não existe em SQL',
-          'Nada — a consulta está ótima'
+          'Falta o GROUP BY para o banco conseguir agrupar os anos',
+          'A função YEAR não existe em SQL e causa erro de sintaxe',
+          'Nada, a consulta já está ótima e não precisa de mudança'
         ],
         correta: 0,
         feedbackErro: {
@@ -101,6 +101,62 @@ Plataforma.registrarLicao({
         explicacao: 'Colunas listadas + comparação direta de data: a reescrita que o plano aprovaria.',
         conceitos: ['sql.otimizacao', 'sql.datas'],
         desafio: true
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql39-a4',
+        tipo: 'multiple-choice',
+        enunciado: 'Qual reescrita de `WHERE YEAR(DataPedido) = 2026` permite ao banco usar um índice em `DataPedido`?',
+        opcoes: [
+          'WHERE DataPedido >= \'2026-01-01\' AND DataPedido < \'2027-01-01\'',
+          'WHERE CAST(DataPedido AS VARCHAR(4)) = \'2026\'',
+          'WHERE LEFT(DataPedido, 4) = \'2026\'',
+          'WHERE YEAR(DataPedido) + 0 = 2026'
+        ],
+        correta: 0,
+        feedbackErro: {
+          1: 'O CAST é uma função aplicada em cada linha: o índice continua desligado.',
+          2: 'LEFT também é função na coluna e impede o uso do índice.',
+          3: 'Somar zero mantém a função YEAR na coluna: nada muda para o índice.'
+        },
+        dicas: [
+          'Qualquer função aplicada na coluna desliga o índice.',
+          'Compare a coluna direto com um intervalo de datas.'
+        ],
+        explicacao: 'Comparar `DataPedido` direto com um intervalo mantém a coluna sem função e deixa o índice utilizável.',
+        conceitos: ['sql.otimizacao']
+      }
+    },
+    {
+      tipo: 'conteudo',
+      titulo: 'Reescrever o filtro e paginar',
+      blocos: [
+        { tipo: 'texto', texto: '`YEAR(DataPedido) = 2026` aplica a função em **cada linha** e impede o uso do índice. A reescrita compara a coluna direto, com um intervalo:' },
+        { tipo: 'codigo', linguagem: 'sql', codigo: 'SELECT Id, ValorTotal\nFROM Pedidos\nWHERE DataPedido >= \'2026-01-01\'\n  AND DataPedido < \'2027-01-01\';' },
+        { tipo: 'texto', texto: 'Outra defesa é **paginar**: em vez de devolver milhões de linhas, devolva uma página por vez. No SQL Server isso exige `ORDER BY` com `OFFSET` e `FETCH`:' },
+        { tipo: 'codigo', linguagem: 'sql', codigo: 'SELECT Id, Nome\nFROM Clientes\nORDER BY Id\nOFFSET 20 ROWS\nFETCH NEXT 10 ROWS ONLY;', legenda: 'Pula as 20 primeiras linhas e devolve as 10 seguintes: a terceira página, com 10 itens por página.' }
+      ]
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
+        id: 'sql39-a5',
+        tipo: 'write-code',
+        enunciado: 'Escreva a consulta (SQL Server) que traz **Id e Nome** dos clientes ordenados por Id, pulando os **20 primeiros** e devolvendo os **10 seguintes** (terceira página).',
+        respostasAceitas: [
+          'SELECT Id, Nome FROM Clientes ORDER BY Id OFFSET 20 ROWS FETCH NEXT 10 ROWS ONLY;',
+          'SELECT Id, Nome FROM Clientes ORDER BY Id OFFSET 20 ROWS FETCH FIRST 10 ROWS ONLY;',
+          'SELECT Id, Nome FROM Clientes ORDER BY Id OFFSET 20 ROW FETCH NEXT 10 ROWS ONLY;',
+          'SELECT Id, Nome FROM Clientes ORDER BY Id LIMIT 10 OFFSET 20;'
+        ],
+        dicas: [
+          'A paginação do SQL Server exige ORDER BY seguido de OFFSET e FETCH.',
+          'OFFSET diz quantas linhas pular; FETCH NEXT diz quantas devolver.'
+        ],
+        explicacao: 'A paginação com OFFSET e FETCH descarta 20 linhas e devolve 10: a terceira página de 10 itens.',
+        conceitos: ['sql.otimizacao']
       }
     },
     {

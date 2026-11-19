@@ -157,10 +157,10 @@ Plataforma.registrarLicao({
         feedbackErro: {
           1: 'A classe já foi declarada antes; `new` cria uma cópia dela.',
           2: 'Aqui não há gravação em banco: o objeto existe apenas na memória do programa.',
-          3: 'O objeto nasce vazio; você preenche as propriedades depois.'
+          3: 'As propriedades começam com valores padrão (zero, falso e vazio), e você as preenche depois.'
         },
         dicas: ['`new` cria uma cópia do molde.', 'A classe já existia; o que nasce agora é o objeto.'],
-        explicacao: '`new Produto()` cria um objeto a partir da classe. Ele nasce sem valores preenchidos.',
+        explicacao: '`new Produto()` cria um objeto a partir da classe. As propriedades começam com valores padrão (zero, falso e vazio) até você atribuir os valores reais.',
         conceitos: ['csharp.objetos']
       }
     },
@@ -189,7 +189,7 @@ Plataforma.registrarLicao({
         enunciado: 'Complete a criação de um produto chamado "Teclado", com preço 200.00 e estoque 10.',
         codigo: 'Produto produto = {{1}} Produto();\nproduto.Nome = "Teclado";\nproduto.{{2}} = 200.00m;\nproduto.Estoque = 10;',
         lacunas: [['new'], ['Preco']],
-        dicas: ['A palavra que cria uma cópia do molde tem 3 letras.', 'A propriedade de valor no código está em maiúscula.'],
+        dicas: ['Releia como o objeto foi criado na etapa anterior: uma palavra reservada vem antes do nome da classe.', 'Veja a tabela "Propriedade x valor": qual propriedade guarda dinheiro? Lembre que C# diferencia maiúsculas de minúsculas.'],
         explicacao: '`new Produto()` cria o objeto e `produto.Preco = 200.00m` preenche a propriedade com um decimal.',
         conceitos: ['csharp.objetos', 'csharp.propriedades']
       }
@@ -207,8 +207,16 @@ Plataforma.registrarLicao({
           'produto.Nome = "Monitor";',
           'produto.Preco = 900.00m;'
         ],
-        dicas: ['Primeiro você cria o objeto, depois preenche.', 'Sem o new, não existe objeto para preencher.'],
-        explicacao: 'A ordem é: criar com `new` e depois preencher as propriedades. Sempre.',
+        ordensAceitas: [
+          ['Produto produto = new Produto();', 'produto.Id = 7;', 'produto.Nome = "Monitor";', 'produto.Preco = 900.00m;'],
+          ['Produto produto = new Produto();', 'produto.Id = 7;', 'produto.Preco = 900.00m;', 'produto.Nome = "Monitor";'],
+          ['Produto produto = new Produto();', 'produto.Nome = "Monitor";', 'produto.Id = 7;', 'produto.Preco = 900.00m;'],
+          ['Produto produto = new Produto();', 'produto.Nome = "Monitor";', 'produto.Preco = 900.00m;', 'produto.Id = 7;'],
+          ['Produto produto = new Produto();', 'produto.Preco = 900.00m;', 'produto.Id = 7;', 'produto.Nome = "Monitor";'],
+          ['Produto produto = new Produto();', 'produto.Preco = 900.00m;', 'produto.Nome = "Monitor";', 'produto.Id = 7;']
+        ],
+        dicas: ['Uma das linhas precisa vir antes de todas as outras: qual delas cria o objeto?', 'As atribuições de Id, Nome e Preco são independentes entre si.'],
+        explicacao: 'O objeto precisa ser criado com `new` antes de qualquer atribuição; depois, a ordem das propriedades é livre.',
         conceitos: ['csharp.objetos', 'csharp.propriedades']
       }
     },
@@ -241,7 +249,7 @@ Plataforma.registrarLicao({
         enunciado: 'Complete a propriedade que guarda o nome do cliente como texto.',
         codigo: 'public {{1}} Nome { {{2}}; set; }',
         lacunas: [['string'], ['get']],
-        dicas: ['Texto em C# é o tipo `string`.', 'A parte que lê o valor se chama `get`.'],
+        dicas: ['Consulte a tabela de tipos da etapa anterior: qual deles guarda texto?', 'Na tabela "Cada parte da linha", veja qual das duas partes entre chaves permite ler o valor.'],
         explicacao: '`public string Nome { get; set; }` — tipo `string`, nome `Nome`, leitura (`get`) e gravação (`set`).',
         conceitos: ['csharp.propriedades']
       }
@@ -290,6 +298,7 @@ Plataforma.registrarLicao({
           ['public', 'acessível de fora', 'Permite usar a classe e as propriedades de outros lugares.']
         ] },
         { tipo: 'nota', tom: 'info', texto: 'Uma propriedade de cada vez: `public int Id { get; set; }` é uma propriedade chamada Id, do tipo int.' },
+        { tipo: 'nota', tom: 'atencao', texto: 'Em projetos novos, o compilador pode exibir avisos como CS8618 ("propriedade não anulável deve conter um valor") em `public string Nome { get; set; }`. Isso é o recurso de tipos *anuláveis* (nullable): uma `string` comum não deveria ficar `null`. O código continua funcionando; mais adiante você verá como resolver (valor inicial, `required` ou `string?`).' },
         { tipo: 'futuro', conceitos: ['ef.entidade'], texto: 'Guarde a ideia de classe. Quando chegarmos ao Entity Framework, você verá como uma classe C# pode representar uma tabela do banco — e cada propriedade, uma coluna.' }
       ]
     },

@@ -84,7 +84,7 @@ Plataforma.registrarLicao({
           tipo: 'codigo',
           linguagem: 'yaml',
           titulo: 'docker-compose.yml',
-          codigo: 'services:\n  api:\n    build: .\n    ports:\n      - "8080:80"\n    environment:\n      - ASPNETCORE_ENVIRONMENT=Development\n      - ConnectionStrings__Default=Server=banco,1433;Database=Pedidos;User Id=sa;Password=SenhaForte123;TrustServerCertificate=True\n      - ConnectionStrings__Redis=redis:6379\n    depends_on:\n      banco:\n        condition: service_healthy\n      redis:\n        condition: service_started\n\n  banco:\n    image: mcr.microsoft.com/mssql/server:2022-latest\n    environment:\n      - ACCEPT_EULA=Y\n      - MSSQL_SA_PASSWORD=SenhaForte123\n    volumes:\n      - dados:/var/opt/mssql\n\n  redis:\n    image: redis:7-alpine\n    ports:\n      - "6379:6379"\n\nvolumes:\n  dados:',
+          codigo: 'services:\n  api:\n    build: .\n    ports:\n      - "8080:8080"\n    environment:\n      - ASPNETCORE_ENVIRONMENT=Development\n      - ConnectionStrings__Default=Server=banco,1433;Database=Pedidos;User Id=sa;Password=SenhaForte123;TrustServerCertificate=True\n      - ConnectionStrings__Redis=redis:6379\n    depends_on:\n      banco:\n        condition: service_healthy\n      redis:\n        condition: service_started\n\n  banco:\n    image: mcr.microsoft.com/mssql/server:2022-latest\n    environment:\n      - ACCEPT_EULA=Y\n      - MSSQL_SA_PASSWORD=SenhaForte123\n    healthcheck:\n      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P SenhaForte123 -C -Q \\"SELECT 1\\""]\n      interval: 10s\n      retries: 10\n    volumes:\n      - dados:/var/opt/mssql\n\n  redis:\n    image: redis:7-alpine\n    ports:\n      - "6379:6379"\n\nvolumes:\n  dados:',
           legenda: 'Um arquivo descreve a aplicação inteira.'
         },
         { tipo: 'nota', tom: 'info', texto: 'Repare que o serviço `api` não declara rede: no compose, todos os serviços entram automaticamente na mesma rede do projeto e se encontram pelo nome.' }
@@ -114,7 +114,7 @@ Plataforma.registrarLicao({
         enunciado: 'Conecte cada parte do arquivo à sua função no projeto completo.',
         pares: [
           ['build: .', 'Constrói a imagem da API a partir do Dockerfile do projeto'],
-          ['ports: 8080:80', 'Publica a API para acesso de fora'],
+          ['ports: 8080:8080', 'Publica a API para acesso de fora'],
           ['depends_on com condition', 'Organiza a ordem de subida entre os serviços'],
           ['volumes: dados', 'Declara o armazenamento que persiste os dados do banco']
         ],

@@ -144,7 +144,7 @@ Plataforma.registrarLicao({
         cena: 'Você está no meio de uma alteração e um chamado urgente exige corrigir a main agora. A sua pasta tem mudanças pela metade que ainda não fazem sentido sozinhas.',
         enunciado: 'Qual é a sequência mais segura?',
         opcoes: [
-          'Guardar as mudanças com git stash, corrigir na main e depois devolver com git stash pop',
+          'Guardar as mudanças com git stash, corrigir em uma branch própria criada a partir da main e depois devolver com git stash pop',
           'Apagar as mudanças e refazer tudo depois',
           'Commitar as mudanças pela metade em um commit temporário na main',
           'Clonar o projeto de novo em outra pasta para a correção'
@@ -157,7 +157,7 @@ Plataforma.registrarLicao({
         },
         dicas: [
           'O trabalho atual precisa continuar existindo.',
-          'A correção urgente acontece em outra branch.'
+          'A correção urgente não vai direto na main: ela segue o fluxo de branch e pull request.'
         ],
         explicacao: 'O stash pausa o trabalho com segurança, libera a pasta para a correção e devolve tudo depois.',
         conceitos: ['git.stash', 'git.branch']

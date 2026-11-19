@@ -77,7 +77,7 @@ Plataforma.registrarLicao({
         feedbackErro: {
           1: 'O GROUP BY resume por preço, não por produto.',
           2: 'Com GROUP BY há uma linha por grupo.',
-          3: 'Teclado e Monitor formam um grupo de preço 200.'
+          3: 'A tabela tem produtos, então existe ao menos um grupo.'
         },
         dicas: [
           'Conte os preços diferentes.',
@@ -158,7 +158,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'cp-g6',
         tipo: 'write-code',
-        enunciado: 'Escreva a consulta que retorna o **ticket médio** (média de ValorTotal) dos pedidos.',
+        enunciado: 'Escreva a consulta que retorna o **ticket médio** (média de ValorTotal, apelide de **Ticket**) dos pedidos.',
         respostasAceitas: [
           'select avg(valortotal) as ticket from pedidos',
           'select avg(valortotal) from pedidos'
@@ -195,7 +195,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'cp-g8',
         tipo: 'write-code',
-        enunciado: 'Escreva o relatório: **total vendido por status**, só status acima de 100, do maior para o menor.',
+        enunciado: 'Escreva o relatório: **total vendido por status** (apelide de **Total**), só status acima de 100, do maior para o menor.',
         respostasAceitas: [
           'select status, sum(valortotal) as total from pedidos group by status having sum(valortotal) > 100 order by total desc'
         ],
@@ -235,9 +235,9 @@ Plataforma.registrarLicao({
         cena: 'Clientes tem Cidade; Pedidos tem ValorTotal e ClienteId. O relatório deve mostrar cidade e total, só acima de 1000, ordenado.',
         opcoes: [
           'SELECT Cidade, SUM(ValorTotal) AS Total FROM Clientes JOIN Pedidos ON Pedidos.ClienteId = Clientes.Id GROUP BY Cidade HAVING SUM(ValorTotal) > 1000 ORDER BY Total DESC;',
-          'SELECT Cidade, SUM(ValorTotal) AS Total FROM Clientes WHERE SUM(ValorTotal) > 1000 GROUP BY Cidade;',
+          'SELECT Cidade, SUM(ValorTotal) AS Total FROM Clientes WHERE SUM(ValorTotal) > 1000 GROUP BY Cidade ORDER BY Total DESC;',
           'SELECT Cidade FROM Clientes ORDER BY Cidade;',
-          'SELECT Cidade, COUNT(*) AS Total FROM Clientes GROUP BY Cidade;'
+          'SELECT Cidade, COUNT(*) AS Total FROM Clientes GROUP BY Cidade ORDER BY Total DESC;'
         ],
         correta: 0,
         feedbackErro: {

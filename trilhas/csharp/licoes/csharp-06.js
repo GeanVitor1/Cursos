@@ -148,6 +148,20 @@ Plataforma.registrarLicao({
     {
       tipo: 'atividade',
       atividade: {
+        id: 'cs06-a5',
+        tipo: 'fill-code',
+        dimensao: 'preenchimento',
+        enunciado: 'Complete o registro que diz ao ASP.NET: quando alguém pedir um `INotificador`, entregue o notificador de e-mail.',
+        codigo: 'builder.Services.AddScoped<{{1}}, EmailNotificador>();',
+        lacunas: [['INotificador']],
+        dicas: ['O primeiro tipo entre < > é o que as classes pedem; o segundo é o que será entregue.', 'As classes pedem a interface no construtor, não a classe concreta.'],
+        explicacao: 'O registro liga a interface (o que se pede) à classe concreta (o que se entrega). O método de registro define o tempo de vida do objeto, assunto da trilha de ASP.NET.',
+        conceitos: ['csharp.di']
+      }
+    },
+    {
+      tipo: 'atividade',
+      atividade: {
         id: 'cs06-a4',
         tipo: 'explain',
         dimensao: 'construcao',
@@ -158,9 +172,14 @@ Plataforma.registrarLicao({
           'Fica possível trocar a implementação sem reescrever a classe',
           'Fica possível testar com uma implementação falsa'
         ],
-        palavrasChave: ['new', 'constr', 'cri', 'trocar', 'substitu', 'test', 'fals', 'simular', 'implementa', 'receb', 'injet', 'fora'],
-        exemplo: 'Sem DI, o PedidoService constrói o EmailNotificador com new e fica preso a ele. Com DI, o service recebe um INotificador pelo construtor: posso trocar ou substituir a implementação em produção, ou simular em testes com um notificador falso. A criação sai de dentro da classe e a dependência vem de fora.',
-        dicas: ['Comece pelo problema: quem construía a dependência?', 'Depois diga o que muda: trocar e testar.'],
+        palavrasChave: [
+          ['new', 'construía', 'constrói', 'criava', 'cria', 'decide'],
+          ['recebe', 'receber', 'construtor', 'fora', 'injetada', 'injetado'],
+          ['teste', 'testes', 'testar', 'falso', 'falsa', 'simular']
+        ],
+        minimoChaves: 3,
+        exemplo: 'Antes, o PedidoService fazia new EmailNotificador() e ficava preso a esse envio. Com DI, o construtor pede um INotificador e quem monta a aplicação entrega o objeto pronto, o que permite usar um notificador de mentira nos testes sem enviar e-mail real.',
+        dicas: ['Quem decidia qual objeto usar antes, e quem decide agora?', 'Que vantagem isso traz na hora de escrever um teste automatizado?'],
         explicacao: 'Entender o problema é mais importante do que decorar o nome. DI é apenas a técnica de fornecer dependências de fora.',
         conceitos: ['csharp.di']
       }

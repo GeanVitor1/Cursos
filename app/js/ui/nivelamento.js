@@ -87,7 +87,7 @@ window.Plataforma = window.Plataforma || {};
     if (nivelAtual) {
       pagina.appendChild(criar('div', { classe: 'bloco-nota sucesso' }, [
         criar('span', { classe: 'nota-marca', texto: '✓' }),
-        criar('div', { texto: 'Seu nível de partida atual é **' + nivelAtual + '**. Você pode refazer o teste ou mudar a recomendação.' })
+        criar('div', { html: P.dom.formatar('Seu nível de partida atual é **' + nivelAtual + '**. Você pode refazer o teste ou mudar a recomendação.') })
       ]));
     }
 

@@ -26,7 +26,8 @@ Plataforma.registrarLicao({
           linguagem: 'sql',
           codigo: 'SELECT YEAR(DataPedido) AS Ano,\n       MONTH(DataPedido) AS Mes\nFROM Pedidos;'
         },
-        { tipo: 'nota', tom: 'info', texto: '`YEAR`, `MONTH` e `DAY` recebem a data e devolvem números. Servem no `SELECT`, no `WHERE` e no `GROUP BY`.' }
+        { tipo: 'nota', tom: 'info', texto: '`YEAR`, `MONTH` e `DAY` recebem a data e devolvem números. Servem no `SELECT`, no `WHERE` e no `GROUP BY`.' },
+        { tipo: 'nota', tom: 'atencao', texto: '**Dialeto T-SQL:** `GETDATE`, `DATEADD` e `DATEDIFF` (com a unidade como primeiro argumento) são do SQL Server. Em PostgreSQL usa-se `NOW()` e intervalos; em MySQL, `NOW()` e `DATE_ADD`. A ideia é a mesma, a escrita muda.' }
       ]
     },
     {
@@ -129,7 +130,7 @@ Plataforma.registrarLicao({
       atividade: {
         id: 'sql27-a4',
         tipo: 'write-code',
-        enunciado: 'Escreva a consulta que retorna o **ano de cada pedido**.',
+        enunciado: 'Escreva a consulta que retorna o **ano de cada pedido** (pode apelidar a coluna de **Ano**).',
         respostasAceitas: [
           'select year(datapedido) as ano from pedidos',
           'select year(datapedido) from pedidos'

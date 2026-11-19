@@ -5,11 +5,13 @@ window.Plataforma = window.Plataforma || {};
   const comp = P.ui.componentes;
 
   function menorProgresso(trilhas) {
-    if (!trilhas || !trilhas.length) return 100;
+    // Sem trilhas definidas ou com trilha inexistente não há como estar pronto.
+    if (!trilhas || !trilhas.length) return 0;
     let menor = 100;
     trilhas.forEach(function (id) {
       const r = P.progresso.daTrilha(id);
-      if (r && r.percentual < menor) menor = r.percentual;
+      const pct = r ? r.percentual : 0;
+      if (pct < menor) menor = pct;
     });
     return menor;
   }
@@ -33,7 +35,7 @@ window.Plataforma = window.Plataforma || {};
         criar('div', { classe: 'requisitos' }, (projeto.trilhas || []).map(function (id) {
           const t = P.progresso.trilha(id);
           const r = P.progresso.daTrilha(id);
-          return t ? comp.chip((t.curto || t.nome) + ' · ' + r.percentual + '%') : null;
+          return t ? comp.chip((t.curto || t.nome) + ' · ' + (r ? r.percentual : 0) + '%') : null;
         })),
         pronto
           ? comp.chip('Você já pode começar', 'sucesso')

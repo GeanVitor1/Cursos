@@ -28,7 +28,7 @@ Plataforma.registrarLicao({
       introduz: ['terminal.comandos'],
       blocos: [
         { tipo: 'texto', texto: 'Quando você abre o terminal, você está sempre situado dentro de uma pasta específica do seu sistema (chamada de diretório atual de trabalho).' },
-        { tipo: 'codigo', linguagem: 'texto', codigo: '# 1. Saber onde você está:\npwd\n# Saída de exemplo: /c/Users/voce/Projetos\n\n# 2. Ver o que existe dentro da pasta atual:\nls               # no PowerShell/Linux (ou dir)\n\n# 3. Entrar em uma subpasta:\ncd MeuProjeto    # "change directory" para entrar em MeuProjeto\n\n# 4. Voltar uma pasta para trás:\ncd ..            # os dois pontos (..) representam a pasta acima/pai\n\n# 5. Criar uma nova pasta para organizar seu código:\nmkdir NovoApp    # "make directory"' },
+        { tipo: 'codigo', linguagem: 'texto', codigo: '# 1. Saber onde você está:\npwd\n# Saída de exemplo no PowerShell (cabeçalho Path):\n#   C:\Users\voce\Projetos\n# No Linux/macOS/Git Bash: /home/voce/Projetos\n\n# 2. Ver o que existe dentro da pasta atual:\nls               # no PowerShell/Linux (ou dir)\n\n# 3. Entrar em uma subpasta:\ncd MeuProjeto    # "change directory" para entrar em MeuProjeto\n\n# 4. Voltar uma pasta para trás:\ncd ..            # os dois pontos (..) representam a pasta acima/pai\n\n# 5. Criar uma nova pasta para organizar seu código:\nmkdir NovoApp    # "make directory"' },
         { tipo: 'glossario', titulo: 'Por que esses nomes estranhos?', itens: [
           ['pwd', 'print working directory', 'Imprime na tela a pasta em que você se encontra.'],
           ['ls / dir', 'list', 'Lista todos os arquivos e subpastas do local atual.'],
@@ -48,7 +48,7 @@ Plataforma.registrarLicao({
         enunciado: 'Pratique a escrita dos comandos: escreva o comando para entrar na pasta Projetos e, em seguida, o comando para listar o conteúdo.',
         codigo: '{{1}} Projetos\n{{2}}',
         lacunas: [['cd'], ['ls', 'dir']],
-        dicas: ['Para entrar em uma pasta usamos cd seguido do nome dela.', 'Para listar o conteúdo usamos ls ou dir.'],
+        dicas: ['O nome do comando que muda de pasta vem do inglês "change directory".', 'Listar vem do inglês "list"; no Windows existe um sinônimo curto de três letras.'],
         explicacao: 'Excelente! Usamos `cd` seguido do nome da pasta para entrar nela, e `ls` (ou `dir` no Windows) para inspecionar os arquivos existentes.',
         conceitos: ['terminal.comandos']
       }
@@ -66,7 +66,7 @@ Plataforma.registrarLicao({
           ['mkdir MeuProjeto', 'Criar uma pasta'],
           ['cd ..', 'Voltar para a pasta anterior']
         ],
-        dicas: ['cd seguido do nome entra em uma pasta.', 'mkdir seguido do nome cria uma pasta.'],
+        dicas: ['Pense no que cada nome abreviado quer dizer em inglês: change directory, list, make directory.', 'Dois pares envolvem mover-se entre pastas: um avança escolhendo o destino, o outro sobe um nível.'],
         explicacao: 'Estes são os comandos fundamentais de movimentação: `cd <pasta>` para avançar, `cd ..` para retornar, `mkdir` para criar novas pastas e `ls` para inspecionar o conteúdo.',
         conceitos: ['terminal.comandos']
       }
@@ -97,7 +97,7 @@ Plataforma.registrarLicao({
         enunciado: 'Complete para compilar e, em seguida, rodar os testes do projeto.',
         codigo: 'dotnet {{1}}\ndotnet {{2}}',
         lacunas: [['build'], ['test']],
-        dicas: ['Compilar sem executar é "build".', 'Rodar testes é "test".'],
+        dicas: ['O primeiro comando só confere se o projeto compila; veja a tabela da etapa anterior.', 'O segundo roda os testes automatizados; a mesma tabela traz o subcomando.'],
         explicacao: '`dotnet build` compila e `dotnet test` executa os testes. Esses dois comandos aparecem em toda verificação automática de um projeto.',
         conceitos: ['terminal.dotnet']
       }
@@ -136,7 +136,7 @@ Plataforma.registrarLicao({
         tipo: 'scenario',
         dimensao: 'aplicacao',
         cena: 'Um projeto .NET já está no seu computador. O líder pediu para rodar a aplicação e os testes antes de começar a alterar o código.',
-        enunciado: 'Quais comandos você usa?',
+        enunciado: 'Quais comandos você roda no terminal, na pasta do projeto, para executar a aplicação e para rodar os testes?',
         opcoes: [
           'dotnet run para executar e dotnet test para os testes',
           'git push e git commit',
@@ -145,11 +145,11 @@ Plataforma.registrarLicao({
         ],
         correta: 0,
         feedbackErro: {
-          1: 'git commit/push envia código; não executa a aplicação.',
+          1: 'git commit grava mudanças e git push as envia ao servidor; nenhum dos dois executa a aplicação.',
           2: 'docker/npm podem existir no projeto, mas não são os comandos de executar e testar .NET.',
           3: 'ls e cd servem para navegar, não para rodar o projeto.'
         },
-        dicas: ['Rodar a aplicação e rodar testes têm comandos próprios do .NET.', 'Ambos começam com dotnet.'],
+        dicas: ['Executar e testar são ações do SDK do .NET, não do Git nem do Docker.', 'Releia a tabela de comandos dotnet: cada ação tem um subcomando próprio.'],
         explicacao: 'Esse é o fluxo de chegada em qualquer projeto: rodar, testar, e só então alterar. Criar essa rotina evita "consertar" algo que já estava funcionando.',
         conceitos: ['terminal.dotnet'],
         desafio: true

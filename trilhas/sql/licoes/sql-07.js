@@ -28,6 +28,18 @@ Plataforma.registrarLicao({
         },
         {
           tipo: 'tabela',
+          titulo: 'Tabela de origem: Clientes',
+          colunas: ['Id', 'Nome', 'Cidade'],
+          linhas: [
+            [1, 'Ana Souza', 'Curitiba'],
+            [2, 'Bruno Lima', 'Recife'],
+            [3, 'Carla Dias', 'Curitiba'],
+            [4, 'Diego Alves', 'Curitiba']
+          ],
+          legenda: 'Sem DISTINCT, Curitiba apareceria três vezes.'
+        },
+        {
+          tipo: 'tabela',
           titulo: 'Resultado',
           colunas: ['Cidade'],
           linhas: [['Curitiba'], ['Recife']],

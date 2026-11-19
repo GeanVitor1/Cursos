@@ -65,7 +65,7 @@ Plataforma.registrarLicao({
         {
           tipo: 'codigo',
           linguagem: 'bash',
-          codigo: 'docker run -d --network minha-rede --name banco postgres\ndocker run -d --network minha-rede --name api minha-api',
+          codigo: 'docker run -d --network minha-rede --name banco -e POSTGRES_PASSWORD=senha postgres:17\ndocker run -d --network minha-rede --name api minha-api',
           legenda: 'Os dois containers entram na mesma rede e ganham nomes.'
         },
         {
@@ -104,7 +104,7 @@ Plataforma.registrarLicao({
         tipo: 'predict-output',
         enunciado: 'A API e o banco estão na mesma rede, com o container do banco chamado **banco**. Qual string de conexão funciona?',
         contexto: [
-          { tipo: 'codigo', linguagem: 'bash', codigo: 'docker run -d --network minha-rede --name banco postgres\ndocker run -d --network minha-rede --name api minha-api' }
+          { tipo: 'codigo', linguagem: 'bash', codigo: 'docker run -d --network minha-rede --name banco -e POSTGRES_PASSWORD=senha postgres:17\ndocker run -d --network minha-rede --name api minha-api' }
         ],
         opcoes: [
           'Server=banco;Database=Pedidos',

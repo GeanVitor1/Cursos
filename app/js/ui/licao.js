@@ -11,7 +11,11 @@ window.Plataforma = window.Plataforma || {};
     if (licao.disponivel === false) {
       P.ui.layout.definirConteudo(P.dom.criar('div', { classe: 'estado-vazio' }, [
         P.dom.criar('h3', { texto: 'Etapa sem conteúdo ainda' }),
-        P.dom.criar('p', { texto: 'Esta etapa faz parte do roadmap planejado.' })
+        P.dom.criar('p', { texto: 'Esta etapa faz parte do roadmap planejado.' }),
+        P.ui.componentes.botao('Voltar para a trilha', { onclick: function () {
+          if (licao.trilha || licao.trilhaId) P.roteador.ir('#/trilha/' + (licao.trilha || licao.trilhaId));
+          else P.roteador.ir('#/');
+        } })
       ]));
       return;
     }
@@ -38,7 +42,7 @@ window.Plataforma = window.Plataforma || {};
           : 'Etapa ainda em produção — não há o que concluir nela agora.',
         'aviso'
       );
-      P.roteador.ir('#/trilha/' + info.trilhaId);
+      P.roteador.redirecionar('#/trilha/' + info.trilhaId);
       return;
     }
     P.ui.runner.iniciar({

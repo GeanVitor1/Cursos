@@ -161,9 +161,9 @@ Plataforma.registrarLicao({
         cena: 'A tabela Pedidos guarda ClienteId como chave estrangeira apontando para Clientes. Apagar o cliente pode deixar pedidos órfãos.',
         opcoes: [
           'Se existem pedidos vinculados ao cliente antes de apagar o cadastro',
-          'Se o cliente tem e-mail cadastrado',
-          'Quantas colunas a tabela Clientes possui',
-          'Se existe outro cliente com o mesmo nome'
+          'Se o cliente tem um e-mail cadastrado na tabela Clientes',
+          'Quantas colunas a tabela Clientes possui no total',
+          'Se existe outro cliente com o mesmo nome no cadastro'
         ],
         correta: 0,
         feedbackErro: {

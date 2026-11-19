@@ -22,7 +22,7 @@ Plataforma.registrarLicao({
         { tipo: 'retoma', conceito: 'redis.servidor', texto: 'Você já grava e lê valores por chave com `SET` e `GET`. Falta decidir **por quanto tempo** esse valor pode ficar guardado.' },
         { tipo: 'texto', texto: 'A cópia não pode viver para sempre. Se a lista de produtos ficar guardada indefinidamente, o usuário vê preço e estoque velhos. A solução é dar um **prazo de validade** a cada chave: o **TTL** (time to live, tempo de vida).' },
         { tipo: 'conceito', id: 'redis.ttl', titulo: 'TTL', texto: 'O tempo de vida de uma chave. Quando ele termina, a chave some sozinha e a próxima leitura recarrega o dado do banco.', exemplo: 'SET produto:10 "Mouse" EX 60' },
-        { tipo: 'diagrama', arte: 'SET ... EX 60\n0 s ........ 60 s  --> chave removida --> proxima leitura vai ao banco', legenda: 'O TTL é um cronômetro que roda dentro do Redis.' },
+        { tipo: 'diagrama', arte: 'SET ... EX 60\n0 s ........ 60 s  --> chave removida --> próxima leitura vai ao banco', legenda: 'O TTL é um cronômetro que roda dentro do Redis.' },
         { tipo: 'codigo', linguagem: 'bash', codigo: 'SET produto:10 "Mouse" EX 60' },
         { tipo: 'nota', tom: 'atencao', texto: 'Sem prazo, a chave fica para sempre e o cache vira uma cópia velha do banco. Todo cache profissional tem algum limite de tempo.' }
       ]
@@ -155,7 +155,7 @@ Plataforma.registrarLicao({
         enunciado: 'Marque verdadeiro ou falso sobre TTL.',
         afirmacoes: [
           { texto: 'TTL é o tempo de vida de uma chave; ao terminar, ela é removida sozinha.', correta: true, explicacao: 'É um cronômetro que roda dentro do Redis.' },
-          { texto: 'Uma chave sem TTL nunca é removida pelo Redis.', correta: true, explicacao: 'Ela permanece até alguém removê-la — o risco é servir dado velho para sempre.' },
+          { texto: 'Uma chave sem TTL não expira sozinha: fica até ser apagada ou até o Redis liberar memória.', correta: true, explicacao: 'Sem prazo, nada a remove por tempo; ela só sai se alguém apagá-la ou se uma política de memória (eviction) a descartar. O risco é servir dado velho por muito tempo.' },
           { texto: 'Prazo muito curto aumenta o número de consultas ao banco.', correta: true, explicacao: 'Se a chave expira o tempo todo, a aplicação volta ao banco com frequência.' }
         ],
         dicas: ['Pense no cronômetro.', 'TTL é um equilíbrio entre dado velho e consulta repetida.'],

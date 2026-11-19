@@ -95,13 +95,29 @@ Plataforma.registrarLicao({
         id: 'lq02-a4',
         tipo: 'write-code',
         dimensao: 'construcao',
-        enunciado: 'Escreva uma consulta que devolva apenas os nomes dos produtos ativos, em uma lista de strings.',
-        esqueleto: 'List<string> nomes = produtos\n    // seu código aqui\n    .ToList();',
+        enunciado: 'Escreva uma consulta que devolva apenas os nomes dos produtos ativos, em uma lista de strings chamada `nomes` (a coleção de origem é `produtos`).',
+        esqueleto: 'List<string> nomes = ...;',
         validar: function (valor) {
           const t = P.dom.normalizarCodigo(valor).replace(/ /g, '');
           return t.indexOf('.where(') !== -1 && t.indexOf('ativo') !== -1 && t.indexOf('.select(') !== -1 && t.indexOf('.nome') !== -1;
         },
-        respostasAceitas: ['produtos.Where(p => p.Ativo).Select(p => p.Nome).ToList()'],
+        respostasAceitas: [
+          'List<string> nomes = produtos.Where(p => p.Ativo).Select(p => p.Nome).ToList();',
+          'List<string> nomes = produtos.Where(p => p.Ativo == true).Select(p => p.Nome).ToList();',
+          'List<string> nomes = produtos.Where(x => x.Ativo).Select(x => x.Nome).ToList();',
+          'List<string> nomes = produtos.Where(x => x.Ativo == true).Select(x => x.Nome).ToList();',
+          'List<string> nomes = produtos.Where(produto => produto.Ativo).Select(produto => produto.Nome).ToList();',
+          'List<string> nomes = produtos.Where(produto => produto.Ativo == true).Select(produto => produto.Nome).ToList();',
+          'var nomes = produtos.Where(p => p.Ativo).Select(p => p.Nome).ToList();',
+          'var nomes = produtos.Where(p => p.Ativo == true).Select(p => p.Nome).ToList();',
+          'var nomes = produtos.Where(x => x.Ativo).Select(x => x.Nome).ToList();',
+          'var nomes = produtos.Where(x => x.Ativo == true).Select(x => x.Nome).ToList();',
+          'var nomes = produtos.Where(produto => produto.Ativo).Select(produto => produto.Nome).ToList();',
+          'var nomes = produtos.Where(produto => produto.Ativo == true).Select(produto => produto.Nome).ToList();',
+          'produtos.Where(p => p.Ativo).Select(p => p.Nome).ToList();',
+          'produtos.Where(x => x.Ativo).Select(x => x.Nome).ToList();',
+          'produtos.Where(produto => produto.Ativo).Select(produto => produto.Nome).ToList();'
+        ],
         dicas: ['Filtre com Where e projete com Select.', 'A ordem é filtro primeiro, formato depois.'],
         explicacao: 'Where + Select + ToList: uma das combinações mais frequentes de LINQ, e que vira uma consulta SQL eficiente quando usada com ferramentas de banco.',
         conceitos: ['linq.select', 'linq.where'],
