@@ -20,9 +20,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'No dia a dia do desenvolvimento, quando você termina uma funcionalidade em uma branch, você abre um **pull request** para a equipe revisar o código.' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['pull request', 'pedido de integração'],
-          ['open', 'abrir / aberto'],
-          ['close', 'fechar / fechado']
+          ['pull request', 'pedido de integração', '🔀', 'anunciando um pull request'],
+          ['open', 'abrir / aberto', '🔓', 'abrindo um PR'],
+          ['close', 'fechar / fechado', '🔒', 'fechando um PR']
         ] },
         { tipo: 'ingles', frase: 'Please open a pull request.', traducao: 'Por favor abra um pull request.' }
       ]
@@ -51,8 +51,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Antes de juntar as alterações na branch principal, pedimos que um colega revise o código com **Please review my pull request**.' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['approved', 'aprovado'],
-          ['changes', 'alterações / mudanças']
+          ['approved', 'aprovado', '✅', 'aprovando um PR'],
+          ['changes', 'alterações / mudanças', '📝', 'pedindo ajustes no código']
         ] },
         { tipo: 'ingles', frase: 'The pull request is approved.', traducao: 'O pull request está aprovado.' }
       ]
@@ -77,8 +77,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Quando alguém analisa seu código, pode solicitar alterações ou deixar comentários antes de integrar.' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['comment', 'comentário'],
-          ['need', 'precisar / necessidade']
+          ['comment', 'comentário', '💬', 'deixando comentário no código'],
+          ['need', 'precisar / necessidade', '🆘', 'pedindo ajuda ao time']
         ] },
         { tipo: 'ingles', frase: 'We need some changes before merge.', traducao: 'Precisamos de algumas alterações antes de integrar.' }
       ]
@@ -104,10 +104,11 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Depois de juntar todos os PRs aprovados na branch principal, a equipe cria uma **release** (versão de publicação).' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['release', 'versão publicada / lançamento'],
-          ['ready', 'pronto']
+          ['release', 'versão publicada / lançamento', '📦', 'publicando uma versão'],
+          ['ready', 'pronto', '🏁', 'dizendo que está pronto']
         ] },
-        { tipo: 'ingles', frase: 'The new release is ready.', traducao: 'A nova versão está pronta.' }
+        { tipo: 'ingles', frase: 'The new release is ready.', traducao: 'A nova versão está pronta.' },
+        { tipo: 'vida-real', emoji: '🔀', titulo: 'Revisando um pull request', texto: 'Um colega abre um PR e você revisa. Frases curtas de aprovação ou pedido de mudança deixam o fluxo rápido.', frase: 'Approved. Ready for release.', traducao: 'Aprovado. Pronto para a versão.' }
       ]
     },
     {

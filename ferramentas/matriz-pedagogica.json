@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-11-19T12:04:34.752Z",
+  "geradoEm": "2026-11-19T12:08:56.371Z",
   "regra": "Estados de conteúdo: NAO_ENSINADO → INTRODUZIDO → PRATICADO → PRONTO_PARA_AVALIACAO. MASTERED é calculado em tempo real pelo motor (confiança + dimensões + revisão espaçada), não pelo conteúdo estático.",
   "conceitos": [
     {

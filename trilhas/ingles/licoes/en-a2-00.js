@@ -20,9 +20,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para contar o que aconteceu, o inglês usa o **passado simples**. Vamos começar pelos verbos regulares: eles ganham **-ed**.' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['work → worked', 'trabalhar → trabalhei'],
-          ['study → studied', 'estudar → estudei'],
-          ['watch → watched', 'assistir → assisti']
+          ['work → worked', 'trabalhar → trabalhei', '💼', 'contando o que fez no trabalho ontem'],
+          ['study → studied', 'estudar → estudei', '📚', 'falando do estudo do fim de semana'],
+          ['watch → watched', 'assistir → assisti', '📺', 'contando uma série que assistiu']
         ] },
         { tipo: 'ingles', frase: 'I worked and studied.', traducao: 'Eu trabalhei e estudei.' }
       ]
@@ -50,8 +50,8 @@ Plataforma.registrarLicao({
       titulo: 'Mais verbos regulares',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['stay → stayed', 'ficar → fiquei'],
-          ['rain → rained', 'chover → choveu']
+          ['stay → stayed', 'ficar → fiquei', '🏨', 'contando onde ficou na viagem'],
+          ['rain → rained', 'chover → choveu', '🌧️', 'falando do tempo durante a viagem']
         ] },
         { tipo: 'ingles', frase: 'It rained a lot.', traducao: 'Choveu muito.' }
       ]
@@ -77,9 +77,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Alguns verbos muito comuns são **irregulares**: não usam -ed e têm forma própria. Vamos aos poucos.' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['go → went', 'ir → fui'],
-          ['have → had', 'ter → tive'],
-          ['see → saw', 'ver → vi']
+          ['go → went', 'ir → fui', '🚶', 'contando um passeio de ontem'],
+          ['have → had', 'ter → tive', '🍔', 'contando o que comeu'],
+          ['see → saw', 'ver → vi', '👀', 'contando o que viu']
         ] },
         { tipo: 'ingles', frase: 'I went to work.', traducao: 'Eu fui ao trabalho.' }
       ]
@@ -107,9 +107,9 @@ Plataforma.registrarLicao({
       titulo: 'Irregulares: bought e took',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['buy → bought', 'comprar → comprei'],
-          ['take → took', 'pegar / tirar → peguei / tirei'],
-          ['some / fruit', 'algum / fruta']
+          ['buy → bought', 'comprar → comprei', '🛒', 'contando uma compra recente'],
+          ['take → took', 'pegar / tirar → peguei / tirei', '📷', 'contando uma foto que tirou'],
+          ['some / fruit', 'algum / fruta', '🍎', 'listando o que comprou no mercado']
         ] },
         { tipo: 'ingles', frase: 'I bought some fruit.', traducao: 'Eu comprei algumas frutas.' }
       ]
@@ -139,8 +139,8 @@ Plataforma.registrarLicao({
       titulo: 'O verbo to be no passado',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['I was / he was / she was', 'eu era, eu estava / ele era / ela era'],
-          ['you were / we were / they were', 'você era / nós éramos / eles eram']
+          ['I was / he was / she was', 'eu era, eu estava / ele era / ela era', '🕰️', 'contando como era algo no passado'],
+          ['you were / we were / they were', 'você era / nós éramos / eles eram', '👫', 'falando de ontem com amigos']
         ] },
         { tipo: 'lista', itens: [
           '`I was` / `he was` / `she was` / `it was`',
@@ -169,9 +169,9 @@ Plataforma.registrarLicao({
       titulo: 'Marcadores de tempo',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['yesterday / today / tomorrow', 'ontem / hoje / amanhã'],
-          ['last week / last weekend', 'semana passada / fim de semana passado'],
-          ['two days ago', 'dois dias atrás']
+          ['yesterday / today / tomorrow', 'ontem / hoje / amanhã', '📅', 'situando um fato no tempo'],
+          ['last week / last weekend', 'semana passada / fim de semana passado', '⏪', 'contando o que fez antes'],
+          ['two days ago', 'dois dias atrás', '🔙', 'contando algo recente']
         ] },
         { tipo: 'ingles', frase: 'Yesterday I worked.', traducao: 'Ontem eu trabalhei.' },
         { tipo: 'nota', tom: 'info', texto: 'Atenção: `yesterday I go` está errado. Se a frase tem marcador de passado, o verbo também fica no passado.' }
@@ -202,9 +202,9 @@ Plataforma.registrarLicao({
       titulo: 'Palavras de um fim de semana (1)',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['the beach', 'a praia'],
-          ['photos', 'fotos'],
-          ['a lot of', 'muitos / muitas']
+          ['the beach', 'a praia', '🏖️', 'contando as férias'],
+          ['photos', 'fotos', '📸', 'mostrando fotos da viagem'],
+          ['a lot of', 'muitos / muitas', '🌟', 'dizendo que viu muita coisa']
         ] },
         { tipo: 'ingles', frase: 'I took photos at the beach.', traducao: 'Eu tirei fotos na praia.' }
       ]
@@ -232,9 +232,9 @@ Plataforma.registrarLicao({
       titulo: 'Palavras de um fim de semana (2)',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['parents', 'pais (pai e mãe)'],
-          ['house / home', 'casa / lar'],
-          ['together', 'juntos']
+          ['parents', 'pais (pai e mãe)', '👨‍👩‍👦', 'contando de uma visita à família'],
+          ['house / home', 'casa / lar', '🏡', 'falando de onde ficou'],
+          ['together', 'juntos', '🤗', 'contando que passaram tempo juntos']
         ] },
         { tipo: 'ingles', frase: 'I was at my parents\' house.', traducao: 'Eu estava na casa dos meus pais.' }
       ]
@@ -264,11 +264,12 @@ Plataforma.registrarLicao({
       titulo: 'Palavras de um fim de semana (3)',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['a movie', 'um filme'],
-          ['then', 'depois / em seguida'],
-          ['so', 'então / por isso']
+          ['a movie', 'um filme', '🎬', 'contando o que fez no fim de semana'],
+          ['then', 'depois / em seguida', '➡️', 'encadeando os fatos de uma história'],
+          ['so', 'então / por isso', '🔗', 'explicando a consequência de algo']
         ] },
-        { tipo: 'ingles', frase: 'We watched a movie together.', traducao: 'Nós assistimos a um filme juntos.' }
+        { tipo: 'ingles', frase: 'We watched a movie together.', traducao: 'Nós assistimos a um filme juntos.' },
+        { tipo: 'vida-real', emoji: '🏖️', titulo: 'Contando o fim de semana a um colega', texto: 'Na segunda-feira, um colega pergunta como foi seu fim de semana. Com o passado simples você conta o que fez, onde foi e com quem.', frase: 'Last weekend I went to the beach with my parents.', traducao: 'No fim de semana passado eu fui à praia com meus pais.' }
       ]
     },
     {

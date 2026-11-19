@@ -20,8 +20,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Vamos aprender os números **aos poucos**: primeiro de 1 a 6, com prática antes de continuar.' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['one, two, three', '1, 2, 3'],
-          ['four, five, six', '4, 5, 6']
+          ['one, two, three', '1, 2, 3', '🔢', 'contando os itens de um pedido na loja'],
+          ['four, five, six', '4, 5, 6', '🖐️', 'contando as pessoas ao redor de uma mesa']
         ] },
         { tipo: 'ingles', frase: 'One, two, three!', traducao: 'Um, dois, três!' }
       ]
@@ -49,8 +49,8 @@ Plataforma.registrarLicao({
       titulo: 'Números de 7 a 10',
       blocos: [
         { tipo: 'vocab', titulo: 'Mais quatro números', pares: [
-          ['seven, eight, nine, ten', '7, 8, 9, 10'],
-          ['zero / oh', '0 (oh é usado em telefones)']
+          ['seven, eight, nine, ten', '7, 8, 9, 10', '🔟', 'lendo o número do quarto no hotel'],
+          ['zero / oh', '0 (oh é usado em telefones)', '📞', 'ditando um telefone: oh no lugar de zero']
         ] },
         { tipo: 'ingles', frase: 'Seven, eight, nine, ten!', traducao: 'Sete, oito, nove, dez!' }
       ]
@@ -81,8 +81,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Agora a faixa de 11 a 16. Repare: de 13 a 19 os números terminam em **-teen**; `eleven` e `twelve` são formas especiais.' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['eleven, twelve, thirteen', '11, 12, 13'],
-          ['fourteen, fifteen, sixteen', '14, 15, 16']
+          ['eleven, twelve, thirteen', '11, 12, 13', '🚌', 'lendo o número da linha de ônibus'],
+          ['fourteen, fifteen, sixteen', '14, 15, 16', '🧾', 'conferindo os itens de uma nota fiscal']
         ] },
         { tipo: 'ingles', frase: 'Eleven, twelve, thirteen!', traducao: 'Onze, doze, treze!' }
       ]
@@ -110,7 +110,7 @@ Plataforma.registrarLicao({
       titulo: 'Números de 17 a 20',
       blocos: [
         { tipo: 'vocab', titulo: 'Fechando a faixa (1)', pares: [
-          ['seventeen, eighteen, nineteen, twenty', '17, 18, 19, 20']
+          ['seventeen, eighteen, nineteen, twenty', '17, 18, 19, 20', '🎂', 'dizendo a idade de um amigo no aniversário']
         ] },
         { tipo: 'ingles', frase: 'Seventeen, eighteen, nineteen, twenty!', traducao: 'Dezessete, dezoito, dezenove, vinte!' }
       ]
@@ -140,8 +140,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'As dezenas fechadas têm terminação **-ty**. Vamos em blocos: primeiro 30, 40, 50 e 60.' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['thirty, forty, fifty', '30, 40, 50'],
-          ['sixty', '60']
+          ['thirty, forty, fifty', '30, 40, 50', '💵', 'lendo o preço na vitrine'],
+          ['sixty', '60', '⏱️', 'um minuto tem sessenta segundos']
         ] },
         { tipo: 'ingles', frase: 'Thirty, forty, fifty, sixty!', traducao: 'Trinta, quarenta, cinquenta, sessenta!' }
       ]
@@ -171,8 +171,8 @@ Plataforma.registrarLicao({
       titulo: 'Dezenas: 70 a 100',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['seventy, eighty, ninety', '70, 80, 90'],
-          ['one hundred', '100']
+          ['seventy, eighty, ninety', '70, 80, 90', '🧮', 'somando valores na conta'],
+          ['one hundred', '100', '💯', 'tirando a nota máxima numa prova']
         ] },
         { tipo: 'ingles', frase: 'Seventy, eighty, ninety, one hundred!', traducao: 'Setenta, oitenta, noventa, cem!' }
       ]
@@ -202,10 +202,10 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para os números entre as dezenas, junte a **dezena** e a **unidade** com um hífen: `twenty` + `one` = `twenty-one` (21). A ordem é a mesma do português: 35 = `thirty-five`.' },
         { tipo: 'vocab', titulo: 'Exemplos', pares: [
-          ['twenty-one', '21'],
-          ['thirty-five', '35'],
-          ['forty-two', '42'],
-          ['ninety-nine', '99']
+          ['twenty-one', '21', '🎉', 'dizendo sua idade numa festa'],
+          ['thirty-five', '35', '🪑', 'contando cadeiras na sala de reunião'],
+          ['forty-two', '42', '🚗', 'lendo o número de uma placa'],
+          ['ninety-nine', '99', '🏆', 'falando uma pontuação num jogo']
         ] },
         { tipo: 'ingles', frase: 'I am thirty-five years old.', traducao: 'Eu tenho trinta e cinco anos.' }
       ]
@@ -234,8 +234,8 @@ Plataforma.registrarLicao({
       titulo: 'Falando de idade',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['years old', 'anos de idade'],
-          ['to be (am / is / are)', 'ser / estar (eu sou, ele é, eles são)']
+          ['years old', 'anos de idade', '🎈', 'ao dizer quantos anos você tem'],
+          ['to be (am / is / are)', 'ser / estar (eu sou, ele é, eles são)', '🔗', 'ao se apresentar: ser ou estar em toda frase']
         ] },
         { tipo: 'ingles', frase: "I'm twenty-five years old.", traducao: 'Eu tenho vinte e cinco anos.' },
         { tipo: 'texto', texto: 'Em inglês, **idade usa o verbo to be**: `I am 25` ou `I am 25 years old` — diferente do português, que usaria o verbo "ter".' }
@@ -246,11 +246,12 @@ Plataforma.registrarLicao({
       titulo: 'Número de telefone',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['my phone number', 'meu número de telefone'],
-          ['double five', 'cinco repetido (55)']
+          ['my phone number', 'meu número de telefone', '☎️', 'passando seu contato a um cliente'],
+          ['double five', 'cinco repetido (55)', '🔁', 'ditando números repetidos sem errar']
         ] },
         { tipo: 'ingles', frase: 'My phone number is 555-0134.', traducao: 'Meu telefone é 555-0134.' },
-        { tipo: 'nota', tom: 'info', texto: 'Em telefones, o `0` costuma ser lido como "oh" e números repetidos como "double 5" (em vez de "five five").' }
+        { tipo: 'nota', tom: 'info', texto: 'Em telefones, o `0` costuma ser lido como "oh" e números repetidos como "double 5" (em vez de "five five").' },
+        { tipo: 'vida-real', emoji: '📱', titulo: 'Trocando telefone em um evento de tecnologia', texto: 'Você conhece alguém num evento e quer trocar contato. Com os números que aprendeu, você dita o telefone e diz a idade sem travar.', frase: 'My phone number is double five, seven, eight.', traducao: 'Meu número de telefone é cinco cinco, sete, oito.' }
       ]
     },
     {

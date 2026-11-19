@@ -19,8 +19,8 @@ Plataforma.registrarLicao({
       introduz: ['en.viagem'],
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['passport', 'passaporte'],
-          ['boarding pass', 'cartão de embarque']
+          ['passport', 'passaporte', '🛂', 'mostrando o documento na imigração'],
+          ['boarding pass', 'cartão de embarque', '🎫', 'mostrando o cartão no portão']
         ] },
         { tipo: 'ingles', frase: 'This is my passport.', traducao: 'Este é o meu passaporte.' }
       ]
@@ -50,9 +50,9 @@ Plataforma.registrarLicao({
       titulo: 'Voo e bagagem',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['luggage / bags', 'bagagem'],
-          ['flight', 'voo'],
-          ['check-in', 'check-in / despachar']
+          ['luggage / bags', 'bagagem', '🧳', 'despachando a mala no balcão'],
+          ['flight', 'voo', '🛫', 'conferindo o horário do voo'],
+          ['check-in', 'check-in / despachar', '💻', 'fazendo o check-in pelo app']
         ] },
         { tipo: 'ingles', frase: 'The flight is at nine.', traducao: 'O voo é às nove.' }
       ]
@@ -80,9 +80,9 @@ Plataforma.registrarLicao({
       titulo: 'Embarque',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['gate', 'portão de embarque'],
-          ['seat', 'assento'],
-          ['boarding / to board', 'embarque / embarcar']
+          ['gate', 'portão de embarque', '🚪', 'procurando o portão de embarque'],
+          ['seat', 'assento', '💺', 'achando seu assento'],
+          ['boarding / to board', 'embarque / embarcar', '📣', 'ouvindo o aviso de embarque']
         ] },
         { tipo: 'ingles', frase: 'Now boarding at gate 12.', traducao: 'Embarque agora no portão 12.' }
       ]
@@ -112,8 +112,8 @@ Plataforma.registrarLicao({
       titulo: 'Avisos do aeroporto',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['Now boarding / Final call', 'embarque agora / última chamada'],
-          ['Last call / Gate closing', 'última chamada / portão fechando']
+          ['Now boarding / Final call', 'embarque agora / última chamada', '📢', 'ouvindo o aviso no alto-falante'],
+          ['Last call / Gate closing', 'última chamada / portão fechando', '🏃', 'correndo para não perder o voo']
         ] },
         { tipo: 'ingles', frase: 'Final call for flight 302!', traducao: 'Última chamada para o voo 302!' }
       ]
@@ -143,9 +143,9 @@ Plataforma.registrarLicao({
       titulo: 'Check-in no hotel',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['I have a reservation.', 'Tenho uma reserva.'],
-          ['a single / double room', 'quarto de solteiro / casal'],
-          ['the room key', 'a chave do quarto']
+          ['I have a reservation.', 'Tenho uma reserva.', '🛎️', 'chegando ao hotel'],
+          ['a single / double room', 'quarto de solteiro / casal', '🛏️', 'pedindo o tipo de quarto'],
+          ['the room key', 'a chave do quarto', '🗝️', 'recebendo a chave na recepção']
         ] },
         { tipo: 'ingles', frase: 'I have a reservation.', traducao: 'Tenho uma reserva.' }
       ]
@@ -170,9 +170,9 @@ Plataforma.registrarLicao({
       titulo: 'Bem-vindo ao hotel',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['breakfast is included', 'o café da manhã está incluso'],
-          ['Welcome.', 'Bem-vindo(a).'],
-          ['under the name', 'no nome de']
+          ['breakfast is included', 'o café da manhã está incluso', '🍳', 'confirmando o café com a recepção'],
+          ['Welcome.', 'Bem-vindo(a).', '👋', 'sendo recebido na recepção'],
+          ['under the name', 'no nome de', '📇', 'informando o nome da reserva']
         ] },
         { tipo: 'ingles', frase: 'Welcome! Breakfast is included.', traducao: 'Bem-vindo! O café da manhã está incluso.' }
       ]
@@ -202,10 +202,11 @@ Plataforma.registrarLicao({
       titulo: 'Pedidos educados no hotel',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['Could I...?', 'Eu poderia...? (pedido educado)'],
-          ['What time is breakfast?', 'A que horas é o café da manhã?']
+          ['Could I...?', 'Eu poderia...? (pedido educado)', '🙏', 'pedindo um favor ao recepcionista'],
+          ['What time is breakfast?', 'A que horas é o café da manhã?', '☕', 'perguntando o horário do café']
         ] },
-        { tipo: 'ingles', frase: 'Could I have the room key, please?', traducao: 'Eu poderia pegar a chave do quarto, por favor?' }
+        { tipo: 'ingles', frase: 'Could I have the room key, please?', traducao: 'Eu poderia pegar a chave do quarto, por favor?' },
+        { tipo: 'vida-real', emoji: '🏨', titulo: 'Chegando ao hotel de uma viagem', texto: 'Você chega cansado ao hotel. Com frases curtas você confirma a reserva, pega a chave e descobre o horário do café.', frase: 'I have a reservation. What time is breakfast?', traducao: 'Eu tenho uma reserva. A que horas é o café da manhã?' }
       ]
     },
     {

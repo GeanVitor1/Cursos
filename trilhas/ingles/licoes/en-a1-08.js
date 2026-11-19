@@ -20,9 +20,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Estas são as palavras que abrem quase toda pergunta em inglês. Vamos em grupos pequenos.' },
         { tipo: 'vocab', titulo: 'Perguntas novas', pares: [
-          ['What...?', 'O que...?'],
-          ['Where...?', 'Onde...?'],
-          ['When...?', 'Quando...?']
+          ['What...?', 'O que...?', '❓', 'perguntando o que é algo na reunião'],
+          ['Where...?', 'Onde...?', '📍', 'perguntando onde é a sala'],
+          ['When...?', 'Quando...?', '📆', 'perguntando quando é a entrega']
         ] },
         { tipo: 'ingles', frase: 'What? Where? When?', traducao: 'O que? Onde? Quando?' }
       ]
@@ -50,8 +50,8 @@ Plataforma.registrarLicao({
       titulo: 'Palavras de pergunta (2)',
       blocos: [
         { tipo: 'vocab', titulo: 'Perguntas novas', pares: [
-          ['Who...?', 'Quem...?'],
-          ['Why...? / How...?', 'Por que...? / Como...?']
+          ['Who...?', 'Quem...?', '🧑', 'perguntando quem vai à reunião'],
+          ['Why...? / How...?', 'Por que...? / Como...?', '🤔', 'pedindo uma explicação do problema']
         ] },
         { tipo: 'ingles', frase: 'Who? Why?', traducao: 'Quem? Por que?' }
       ]
@@ -81,8 +81,8 @@ Plataforma.registrarLicao({
       titulo: 'De onde você é?',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['Where are you from?', 'De onde você é?'],
-          ['I am from Brazil.', 'Eu sou do Brasil.']
+          ['Where are you from?', 'De onde você é?', '🌎', 'numa apresentação em evento internacional'],
+          ['I am from Brazil.', 'Eu sou do Brasil.', '🇧🇷', 'respondendo de onde você é']
         ] },
         { tipo: 'ingles', frase: 'Where are you from?', traducao: 'De onde você é?' }
       ]
@@ -106,10 +106,10 @@ Plataforma.registrarLicao({
       titulo: 'O que você faz?',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['What do you do?', 'O que você faz (trabalho)?'],
-          ['I am a developer.', 'Eu sou desenvolvedor(a).'],
-          ['Do you like it here?', 'Você gosta daqui?'],
-          ['Yes, I do. / No, I do not.', 'Sim, gosto. / Não, não gosto.']
+          ['What do you do?', 'O que você faz (trabalho)?', '💼', 'conversando num evento de networking'],
+          ['I am a developer.', 'Eu sou desenvolvedor(a).', '💻', 'dizendo sua profissão'],
+          ['Do you like it here?', 'Você gosta daqui?', '🏙️', 'puxando papo com um visitante'],
+          ['Yes, I do. / No, I do not.', 'Sim, gosto. / Não, não gosto.', '✅', 'respondendo com simpatia']
         ] },
         { tipo: 'ingles', frase: 'What do you do? I am a developer.', traducao: 'O que você faz? Eu sou desenvolvedor.' },
         { tipo: 'nota', tom: 'info', texto: '`do` é o auxiliar das perguntas no present simple: `Do you like it here?` (você gosta daqui?) e `What do you do?`. A estrutura é **Do + you + verbo**. A resposta curta repete o `do`: `Yes, I do.` ou `No, I do not.`' }
@@ -135,9 +135,9 @@ Plataforma.registrarLicao({
       titulo: 'Tempo e conversa',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['How is the weather?', 'Como está o tempo?'],
-          ['What about you?', 'E você?'],
-          ['here', 'aqui']
+          ['How is the weather?', 'Como está o tempo?', '⛅', 'papo rápido no elevador'],
+          ['What about you?', 'E você?', '🔄', 'devolvendo a pergunta ao outro'],
+          ['here', 'aqui', '📌', 'falando do lugar onde você está']
         ] },
         { tipo: 'ingles', frase: 'How is the weather?', traducao: 'Como está o tempo?' }
       ]
@@ -167,10 +167,11 @@ Plataforma.registrarLicao({
       titulo: 'Semana, mês e agora',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['week / month', 'semana / mês'],
-          ['now', 'agora']
+          ['week / month', 'semana / mês', '🗓️', 'falando de prazos do projeto'],
+          ['now', 'agora', '⏳', 'falando do que acontece neste momento']
         ] },
-        { tipo: 'ingles', frase: 'I study English every week.', traducao: 'Eu estudo inglês toda semana.' }
+        { tipo: 'ingles', frase: 'I study English every week.', traducao: 'Eu estudo inglês toda semana.' },
+        { tipo: 'vida-real', emoji: '🌍', titulo: 'Conversando em um evento de tecnologia', texto: 'Você encontra alguém de outro país no coffee break. Perguntas simples mantêm a conversa viva e mostram interesse.', frase: 'Hi! Where are you from? I am from Brazil.', traducao: 'Oi! De onde você é? Eu sou do Brasil.' }
       ]
     },
     {

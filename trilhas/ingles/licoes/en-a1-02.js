@@ -20,8 +20,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para apresentar alguém, você vai usar uma estrutura muito simples: **This is...** (Este é... / Esta é...).' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['my family', 'minha família'],
-          ['This is...', 'Este é... / Esta é...']
+          ['my family', 'minha família', '👨‍👩‍👧', 'mostrando a foto da família no celular'],
+          ['This is...', 'Este é... / Esta é...', '👉', 'apresentando alguém numa foto']
         ] },
         { tipo: 'ingles', frase: 'This is my family.', traducao: 'Esta é a minha família.' }
       ]
@@ -45,8 +45,8 @@ Plataforma.registrarLicao({
       titulo: 'Pai e mãe',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['mother / mom', 'mãe'],
-          ['father / dad', 'pai']
+          ['mother / mom', 'mãe', '👩', 'falando da sua mãe num almoço com colegas'],
+          ['father / dad', 'pai', '👨', 'contando que seu pai trabalha com TI']
         ] },
         { tipo: 'ingles', frase: 'This is my mother.', traducao: 'Esta é a minha mãe.' }
       ]
@@ -76,8 +76,8 @@ Plataforma.registrarLicao({
       titulo: 'Irmãos',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['sister', 'irmã'],
-          ['brother', 'irmão']
+          ['sister', 'irmã', '👧', 'mostrando a foto da sua irmã'],
+          ['brother', 'irmão', '👦', 'falando do irmão mais novo']
         ] },
         { tipo: 'ingles', frase: 'This is my brother.', traducao: 'Este é o meu irmão.' }
       ]
@@ -105,8 +105,8 @@ Plataforma.registrarLicao({
       titulo: 'Filhos',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['son / daughter', 'filho / filha'],
-          ['I have two brothers.', 'Eu tenho dois irmãos.']
+          ['son / daughter', 'filho / filha', '👶', 'apresentando os filhos num encontro'],
+          ['I have two brothers.', 'Eu tenho dois irmãos.', '✌️', 'contando quantos irmãos você tem']
         ] },
         { tipo: 'ingles', frase: 'I have two brothers.', traducao: 'Eu tenho dois irmãos.' },
         { tipo: 'nota', tom: 'info', texto: '`I have` = eu tenho. Para falar de quantas pessoas da família você tem, use `have`; para mais de um, use **-s** (`two brothers`).' }
@@ -132,7 +132,7 @@ Plataforma.registrarLicao({
       titulo: 'Dele e dela',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['his / her', 'dele / dela']
+          ['his / her', 'dele / dela', '🏷️', 'dizendo de quem é o carro ou o celular']
         ] },
         { tipo: 'nota', tom: 'info', texto: '`my` = meu/minha · `your` = seu/sua · `his` = dele · `her` = dela. Use `her` para falar de uma mulher e `his` para um homem.' },
         { tipo: 'ingles', frase: 'Her name is Lia.', traducao: 'O nome dela é Lia.' }
@@ -158,8 +158,8 @@ Plataforma.registrarLicao({
       titulo: 'Quem é esta pessoa?',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['Who is this?', 'Quem é esta pessoa?'],
-          ['She is... / He is...', 'Ela é... / Ele é...']
+          ['Who is this?', 'Quem é esta pessoa?', '🖼️', 'perguntando sobre uma foto na parede'],
+          ['She is... / He is...', 'Ela é... / Ele é...', '🗣️', 'respondendo quem é a pessoa da foto']
         ] },
         { tipo: 'ingles', frase: 'Who is this? She is my sister.', traducao: 'Quem é esta pessoa? Ela é a minha irmã.' }
       ]
@@ -189,11 +189,12 @@ Plataforma.registrarLicao({
       titulo: 'Perguntando a idade',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['How old is she?', 'Quantos anos ela tem?'],
-          ['Yes. / No.', 'Sim. / Não.'],
-          ['too', 'também']
+          ['How old is she?', 'Quantos anos ela tem?', '🎂', 'perguntando a idade de um parente'],
+          ['Yes. / No.', 'Sim. / Não.', '✅', 'respondendo curto numa conversa'],
+          ['too', 'também', '➕', 'concordando: eu também']
         ] },
-        { tipo: 'ingles', frase: 'How old is she? She is ten years old.', traducao: 'Quantos anos ela tem? Ela tem dez anos.' }
+        { tipo: 'ingles', frase: 'How old is she? She is ten years old.', traducao: 'Quantos anos ela tem? Ela tem dez anos.' },
+        { tipo: 'vida-real', emoji: '👨‍👩‍👧', titulo: 'Mostrando a foto da família a um colega novo', texto: 'Na hora do café, um colega pergunta sobre sua família. Você mostra a foto e apresenta cada pessoa com frases simples.', frase: 'This is my mother. She is fifty years old.', traducao: 'Esta é minha mãe. Ela tem cinquenta anos.' }
       ]
     },
     {

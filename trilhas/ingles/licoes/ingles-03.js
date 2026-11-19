@@ -20,9 +20,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'No dia a dia, precisamos descrever se um lugar é agitado, calmo ou confortável. Vamos ver dois adjetivos essenciais.' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['quiet', 'tranquilo / silencioso'],
-          ['busy', 'movimentado / ocupado'],
-          ['place', 'lugar']
+          ['quiet', 'tranquilo / silencioso', '🤫', 'descrevendo um café tranquilo'],
+          ['busy', 'movimentado / ocupado', '🏙️', 'descrevendo o centro da cidade'],
+          ['place', 'lugar', '📍', 'falando de um lugar']
         ] },
         { tipo: 'ingles', frase: 'This is a quiet place.', traducao: 'Este é um lugar tranquilo.' }
       ]
@@ -51,9 +51,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para dizer que algo é **maior que** outro, o inglês acrescenta **-er** e usa a palavra **than**.' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['bigger', 'maior'],
-          ['than', 'do que / que'],
-          ['room', 'quarto / sala']
+          ['bigger', 'maior', '⬆️', 'comparando dois apartamentos'],
+          ['than', 'do que / que', '⚖️', 'comparando duas coisas'],
+          ['room', 'quarto / sala', '🛋️', 'descrevendo um quarto de hotel']
         ] },
         { tipo: 'ingles', frase: 'This room is bigger than that room.', traducao: 'Este quarto é maior do que aquele quarto.' }
       ]
@@ -78,8 +78,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Com adjetivos mais longos, usamos **more** antes da palavra, em vez de colocar -er no final.' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['comfortable', 'confortável'],
-          ['more', 'mais']
+          ['comfortable', 'confortável', '🛏️', 'descrevendo uma cama de hotel'],
+          ['more', 'mais', '➕', 'comparando duas opções']
         ] },
         { tipo: 'ingles', frase: 'The hotel is more comfortable.', traducao: 'O hotel é mais confortável.' }
       ]
@@ -105,11 +105,12 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Ao falar das pessoas ou de amigos, descrevemos como eles são.' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['friendly', 'amigável / simpático'],
-          ['very', 'muito'],
-          ['people', 'pessoas']
+          ['friendly', 'amigável / simpático', '😄', 'descrevendo um colega'],
+          ['very', 'muito', '💯', 'dando ênfase a uma opinião'],
+          ['people', 'pessoas', '👥', 'falando de gente de uma cidade']
         ] },
-        { tipo: 'ingles', frase: 'The people are very friendly.', traducao: 'As pessoas são muito simpáticas.' }
+        { tipo: 'ingles', frase: 'The people are very friendly.', traducao: 'As pessoas são muito simpáticas.' },
+        { tipo: 'vida-real', emoji: '🏨', titulo: 'Comparando dois hotéis', texto: 'Você escolhe onde se hospedar e compara as opções com um amigo. Os comparativos mostram qual lugar é maior, mais calmo ou mais confortável.', frase: 'This place is quiet. The people are very friendly.', traducao: 'Este lugar é tranquilo. As pessoas são muito simpáticas.' }
       ]
     },
     {

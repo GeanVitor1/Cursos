@@ -19,8 +19,8 @@ Plataforma.registrarLicao({
       introduz: ['en.comida'],
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['breakfast / lunch / dinner', 'café da manhã / almoço / jantar'],
-          ['water / coffee / juice', 'água / café / suco']
+          ['breakfast / lunch / dinner', 'café da manhã / almoço / jantar', '🍳', 'pedindo as refeições num hotel'],
+          ['water / coffee / juice', 'água / café / suco', '☕', 'pedindo bebida no balcão']
         ] },
         { tipo: 'ingles', frase: 'I have coffee with breakfast.', traducao: 'Eu tomo café com o café da manhã.' }
       ]
@@ -48,8 +48,8 @@ Plataforma.registrarLicao({
       titulo: 'Comidas',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['bread / rice / chicken', 'pão / arroz / frango'],
-          ['sandwich / apple', 'sanduíche / maçã']
+          ['bread / rice / chicken', 'pão / arroz / frango', '🍞', 'escolhendo comida no buffet'],
+          ['sandwich / apple', 'sanduíche / maçã', '🥪', 'pedindo um lanche rápido no aeroporto']
         ] },
         { tipo: 'ingles', frase: 'Bread, rice, chicken!', traducao: 'Pão, arroz, frango!' }
       ]
@@ -79,9 +79,9 @@ Plataforma.registrarLicao({
       titulo: 'No restaurante',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['the menu / the bill', 'o cardápio / a conta'],
-          ['the table', 'a mesa'],
-          ['Perfect.', 'Perfeito.']
+          ['the menu / the bill', 'o cardápio / a conta', '📖', 'pedindo o cardápio ao garçom'],
+          ['the table', 'a mesa', '🪑', 'pedindo uma mesa perto da janela'],
+          ['Perfect.', 'Perfeito.', '👌', 'confirmando que está tudo certo']
         ] },
         { tipo: 'ingles', frase: 'This is the menu.', traducao: 'Este é o cardápio.' }
       ]
@@ -109,9 +109,9 @@ Plataforma.registrarLicao({
       titulo: 'Pedindo educadamente',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['I would like... / I want...', 'Eu gostaria... / Eu quero...'],
-          ['Can I have...?', 'Posso ter...?'],
-          ['please', 'por favor']
+          ['I would like... / I want...', 'Eu gostaria... / Eu quero...', '🙋', 'fazendo o pedido com educação'],
+          ['Can I have...?', 'Posso ter...?', '🥤', 'pedindo uma bebida no balcão'],
+          ['please', 'por favor', '😊', 'suavizando qualquer pedido']
         ] },
         { tipo: 'ingles', frase: "I'd like a coffee, please.", traducao: 'Eu gostaria de um café, por favor.' },
         { tipo: 'lista', itens: [
@@ -142,9 +142,9 @@ Plataforma.registrarLicao({
       titulo: 'O que o garçom pergunta',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['Are you ready to order?', 'Você está pronto para fazer o pedido?'],
-          ['Anything to drink?', 'Algo para beber?'],
-          ['Anything else?', 'Mais alguma coisa?']
+          ['Are you ready to order?', 'Você está pronto para fazer o pedido?', '📝', 'o garçom vem anotar o pedido'],
+          ['Anything to drink?', 'Algo para beber?', '🥂', 'o garçom pergunta sobre bebidas'],
+          ['Anything else?', 'Mais alguma coisa?', '➕', 'o garçom oferece mais alguma coisa']
         ] },
         { tipo: 'ingles', frase: 'Are you ready to order?', traducao: 'Você está pronto para fazer o pedido?' }
       ]
@@ -174,9 +174,9 @@ Plataforma.registrarLicao({
       titulo: 'Respondendo e agradecendo',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['Sure.', 'Claro.'],
-          ["No, that's all.", 'Não, é só isso.'],
-          ['Thank you.', 'Obrigado(a).']
+          ['Sure.', 'Claro.', '👍', 'respondendo que sim ao garçom'],
+          ["No, that's all.", 'Não, é só isso.', '🧾', 'fechando o pedido'],
+          ['Thank you.', 'Obrigado(a).', '🙌', 'agradecendo ao ser servido']
         ] },
         { tipo: 'ingles', frase: "No, that's all. Thank you.", traducao: 'Não, é só isso. Obrigado.' }
       ]
@@ -206,11 +206,12 @@ Plataforma.registrarLicao({
       titulo: 'A comida chegou',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['Here is your food.', 'Aqui está sua comida.'],
-          ['Enjoy!', 'Bom apetite! / Aproveite!'],
-          ['Great!', 'Ótimo!']
+          ['Here is your food.', 'Aqui está sua comida.', '🍲', 'o garçom entrega o prato'],
+          ['Enjoy!', 'Bom apetite! / Aproveite!', '😋', 'desejo antes de comer'],
+          ['Great!', 'Ótimo!', '🎉', 'reagindo ao ver a comida']
         ] },
-        { tipo: 'ingles', frase: 'Here is your food. Enjoy!', traducao: 'Aqui está sua comida. Bom apetite!' }
+        { tipo: 'ingles', frase: 'Here is your food. Enjoy!', traducao: 'Aqui está sua comida. Bom apetite!' },
+        { tipo: 'vida-real', emoji: '🍽️', titulo: 'Pedindo comida num restaurante em Londres', texto: 'Você está viajando e o garçom chega para anotar o pedido. Com poucas frases você pede, agradece e paga sem depender de tradutor.', frase: 'Can I have a sandwich and water, please?', traducao: 'Posso pedir um sanduíche e água, por favor?' }
       ]
     },
     {

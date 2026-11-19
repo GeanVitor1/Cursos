@@ -20,8 +20,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Mensagens de erro em inglês parecem assustadoras, mas quase sempre seguem o mesmo padrão: **o que falhou + onde + por quê**. Vamos destrinchar as mais comuns.' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['connect / connection', 'conectar / conexão'],
-          ['cannot', 'não consegue']
+          ['connect / connection', 'conectar / conexão', '🔌', 'depurando o login no banco'],
+          ['cannot', 'não consegue', '🚫', 'relatando a falha ao time']
         ] },
         { tipo: 'ingles', frase: 'Cannot connect to the database.', traducao: 'Não é possível conectar ao banco de dados.' }
       ]
@@ -46,9 +46,9 @@ Plataforma.registrarLicao({
       titulo: 'Objeto e referência',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['object', 'objeto'],
-          ['instance', 'instância'],
-          ['reference', 'referência']
+          ['object', 'objeto', '📦', 'lendo uma exceção no log'],
+          ['instance', 'instância', '🧬', 'explicando uma classe'],
+          ['reference', 'referência', '🔗', 'vendo um erro de referência nula']
         ] },
         { tipo: 'ingles', frase: 'This is the object.', traducao: 'Este é o objeto.' }
       ]
@@ -76,9 +76,9 @@ Plataforma.registrarLicao({
       titulo: 'Recurso e existência',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['set', 'definido'],
-          ['resource', 'recurso'],
-          ['does not exist', 'não existe']
+          ['set', 'definido', '📐', 'lendo mensagem de variável não definida'],
+          ['resource', 'recurso', '🗂️', 'erro ao buscar recurso em um sistema'],
+          ['does not exist', 'não existe', '🔍', 'recebendo um erro 404']
         ] },
         { tipo: 'ingles', frase: 'The resource does not exist.', traducao: 'O recurso não existe.' }
       ]
@@ -108,9 +108,9 @@ Plataforma.registrarLicao({
       titulo: 'Tempo esgotado',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['timeout', 'tempo esgotado'],
-          ['expired', 'expirou'],
-          ['while', 'enquanto']
+          ['timeout', 'tempo esgotado', '⏱️', 'vendo timeout em um sistema'],
+          ['expired', 'expirou', '⌛', 'sessão de login vencida'],
+          ['while', 'enquanto', '⏳', 'explicando o que ocorre durante o processamento']
         ] },
         { tipo: 'ingles', frase: 'The connection expired.', traducao: 'A conexão expirou.' }
       ]
@@ -140,9 +140,9 @@ Plataforma.registrarLicao({
       titulo: 'Servidor e espera',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['waiting / wait', 'esperando / esperar'],
-          ['server', 'servidor'],
-          ['for', 'por / para']
+          ['waiting / wait', 'esperando / esperar', '😴', 'esperando a resposta do servidor'],
+          ['server', 'servidor', '🖥️', 'conversando com a infraestrutura'],
+          ['for', 'por / para', '➡️', 'dizendo por quanto tempo algo demorou']
         ] },
         { tipo: 'ingles', frase: 'The server is waiting.', traducao: 'O servidor está esperando.' }
       ]
@@ -167,9 +167,9 @@ Plataforma.registrarLicao({
       titulo: 'Arquivo e caminho',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['file / path', 'arquivo / caminho'],
-          ['found', 'encontrado'],
-          ['of', 'de (posse / parte de)']
+          ['file / path', 'arquivo / caminho', '📄', 'erro em caminho de arquivo'],
+          ['found', 'encontrado', '✅', 'confirmando que o arquivo existe'],
+          ['of', 'de (posse / parte de)', '🧩', 'descrevendo parte de um sistema']
         ] },
         { tipo: 'ingles', frase: 'The file does not exist.', traducao: 'O arquivo não existe.' }
       ]
@@ -211,9 +211,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Issues e tickets costumam ter título curto, descrição e passos para reproduzir. Vamos pelas palavras, três de cada vez.' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['Title', 'título'],
-          ['Steps to reproduce', 'passos para reproduzir'],
-          ['Create an order', 'criar um pedido']
+          ['Title', 'título', '🏷️', 'escrevendo o título de um bug'],
+          ['Steps to reproduce', 'passos para reproduzir', '🪜', 'descrevendo como reproduzir o erro'],
+          ['Create an order', 'criar um pedido', '🛒', 'exemplo de bug numa loja virtual']
         ] },
         { tipo: 'ingles', frase: 'Create an order.', traducao: 'Crie um pedido.' }
       ]
@@ -243,9 +243,9 @@ Plataforma.registrarLicao({
       titulo: 'Ticket: o que aconteceu',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['after', 'depois de'],
-          ['duplicated', 'duplicado'],
-          ['application', 'aplicação']
+          ['after', 'depois de', '⏭️', 'descrevendo quando o bug acontece'],
+          ['duplicated', 'duplicado', '👯', 'relatando um pedido repetido'],
+          ['application', 'aplicação', '📱', 'falando do app que falhou']
         ] },
         { tipo: 'ingles', frase: 'The application is down.', traducao: 'A aplicação está fora do ar.' }
       ]
@@ -270,9 +270,9 @@ Plataforma.registrarLicao({
       titulo: 'Ticket: quem chama',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['returns', 'retorna'],
-          ['client', 'cliente'],
-          ['calling / to call', 'chamando / chamar']
+          ['returns', 'retorna', '↩️', 'explicando o retorno de um serviço'],
+          ['client', 'cliente', '🧑‍💻', 'falando do app que usa o serviço'],
+          ['calling / to call', 'chamando / chamar', '📞', 'explicando que o cliente chama o serviço']
         ] },
         { tipo: 'ingles', frase: 'The application returns duplicated orders.', traducao: 'A aplicação retorna pedidos duplicados.' }
       ]
@@ -300,9 +300,9 @@ Plataforma.registrarLicao({
       titulo: 'Ticket: endereço e bug',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['wrong address', 'endereço errado'],
-          ['bug', 'defeito / erro no sistema'],
-          ['retrying', 'tentando novamente']
+          ['wrong address', 'endereço errado', '📍', 'bug de entrega com endereço errado'],
+          ['bug', 'defeito / erro no sistema', '🪲', 'registrando o defeito'],
+          ['retrying', 'tentando novamente', '🔄', 'relatando tentativas repetidas']
         ] },
         { tipo: 'ingles', frase: 'The client is calling the wrong address.', traducao: 'O cliente está chamando o endereço errado.' }
       ]
@@ -332,8 +332,8 @@ Plataforma.registrarLicao({
       titulo: 'Lendo um ticket de trabalho',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['processed / twice', 'processado / duas vezes'],
-          ['Expected / Actual', 'esperado / real']
+          ['processed / twice', 'processado / duas vezes', '2️⃣', 'relatando cobrança em dobro'],
+          ['Expected / Actual', 'esperado / real', '⚖️', 'comparando esperado e real num ticket']
         ] },
         { tipo: 'ingles', frase: 'The orders are processed twice.', traducao: 'Os pedidos são processados duas vezes.' },
         { tipo: 'codigo', linguagem: 'texto', codigo: 'Title: Orders are processed twice after retrying the request\n\nSteps to reproduce:\n1. Create an order\n2. Retry the request\n\nExpected: one order\nActual: duplicated orders' },
@@ -343,7 +343,8 @@ Plataforma.registrarLicao({
           ['retrying', 'tentando novamente', 'Retry = tentar de novo.'],
           ['Expected / Actual', 'esperado / real', 'O que deveria acontecer e o que acontece de fato.']
         ] },
-        { tipo: 'nota', tom: 'info', texto: '"Steps to reproduce" são os passos para reproduzir o bug. Sem eles, a investigação fica muito mais difícil — e aprender a lê-los é metade do trabalho.' }
+        { tipo: 'nota', tom: 'info', texto: '"Steps to reproduce" são os passos para reproduzir o bug. Sem eles, a investigação fica muito mais difícil — e aprender a lê-los é metade do trabalho.' },
+        { tipo: 'vida-real', emoji: '🪲', titulo: 'Escrevendo um bug report para o time', texto: 'Você achou um erro e precisa registrar. Título, passos, esperado e real deixam o time entender sem perguntar nada.', frase: 'Title: Order processed twice.', traducao: 'Título: pedido processado duas vezes.' }
       ]
     },
     {

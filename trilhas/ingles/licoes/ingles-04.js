@@ -20,9 +20,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Quando você precisa avisar que não está se sentindo bem para uma reunião ou aula, usamos expressões simples de saúde.' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['tired', 'cansado / cansada'],
-          ['headache', 'dor de cabeça'],
-          ['feel', 'sentir']
+          ['tired', 'cansado / cansada', '😩', 'explicando que não rende hoje'],
+          ['headache', 'dor de cabeça', '🤕', 'avisando o gestor'],
+          ['feel', 'sentir', '🤒', 'dizendo como está se sentindo']
         ] },
         { tipo: 'ingles', frase: 'I have a headache and I feel tired.', traducao: 'Estou com dor de cabeça e me sinto cansado.' },
         { tipo: 'nota', tom: 'info', texto: 'Em inglês, para dor de cabeça dizemos "I have a headache" (literalmente "eu tenho uma dor de cabeça").' }
@@ -52,8 +52,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Ao telefone, se a pessoa estiver ocupada ou não puder falar no momento, pedimos para ela retornar mais tarde.' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['call me back', 'me retorne a ligação'],
-          ['later', 'mais tarde']
+          ['call me back', 'me retorne a ligação', '📞', 'pedindo retorno de uma ligação'],
+          ['later', 'mais tarde', '🕑', 'combinando conversar mais tarde']
         ] },
         { tipo: 'ingles', frase: 'Could you call me back later?', traducao: 'Você poderia me ligar de volta mais tarde?' }
       ]
@@ -78,11 +78,12 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para avisar sobre um compromisso ou enviar um recado rápido por mensagem de texto.' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['message', 'mensagem'],
-          ['appointment', 'consulta / compromisso'],
-          ['doctor', 'médico']
+          ['message', 'mensagem', '✉️', 'deixando um recado'],
+          ['appointment', 'consulta / compromisso', '📆', 'marcando uma consulta'],
+          ['doctor', 'médico', '🩺', 'falando com a recepção da clínica']
         ] },
-        { tipo: 'ingles', frase: 'I have an appointment with the doctor.', traducao: 'Tenho uma consulta com o médico.' }
+        { tipo: 'ingles', frase: 'I have an appointment with the doctor.', traducao: 'Tenho uma consulta com o médico.' },
+        { tipo: 'vida-real', emoji: '🩺', titulo: 'Ligando para marcar uma consulta', texto: 'Você não está bem e precisa falar com a clínica. Dizer como se sente e pedir retorno resolve a ligação.', frase: 'I feel tired. Call me back later.', traducao: 'Eu me sinto cansado. Me ligue de volta mais tarde.' }
       ]
     },
     {

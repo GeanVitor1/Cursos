@@ -20,9 +20,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para falar do que você faz todos os dias, o inglês usa uma forma simples do verbo. Vamos começar pelas ações da manhã.' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['wake up / get up', 'acordar / levantar'],
-          ['have breakfast', 'tomar café da manhã'],
-          ['at seven', 'às sete (horas)']
+          ['wake up / get up', 'acordar / levantar', '⏰', 'quando o despertador toca antes da aula'],
+          ['have breakfast', 'tomar café da manhã', '🥐', 'falando da rotina da manhã'],
+          ['at seven', 'às sete (horas)', '🕖', 'marcando um horário da rotina']
         ] },
         { tipo: 'ingles', frase: 'I wake up at seven.', traducao: 'Eu acordo às sete.' },
         { tipo: 'nota', tom: 'info', texto: 'Para dizer **a que horas** você faz algo, use `at` + a hora: `at seven` (às sete), `at eight` (às oito). Os números você já viu na unidade anterior.' }
@@ -51,8 +51,8 @@ Plataforma.registrarLicao({
       titulo: 'Trabalho e estudo',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['go to work / study', 'ir ao trabalho / estudar'],
-          ['come home', 'voltar para casa']
+          ['go to work / study', 'ir ao trabalho / estudar', '💼', 'contando como é seu dia de trabalho'],
+          ['come home', 'voltar para casa', '🏠', 'ao falar do fim do expediente']
         ] },
         { tipo: 'ingles', frase: 'I go to work at eight.', traducao: 'Eu vou ao trabalho às oito.' }
       ]
@@ -82,8 +82,8 @@ Plataforma.registrarLicao({
       titulo: 'Fim do dia',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['have lunch', 'almoçar'],
-          ['go to bed / sleep', 'ir para a cama / dormir']
+          ['have lunch', 'almoçar', '🍽️', 'combinando o almoço com colegas'],
+          ['go to bed / sleep', 'ir para a cama / dormir', '🛏️', 'explicando sua rotina à noite']
         ] },
         { tipo: 'ingles', frase: 'I go to bed at ten.', traducao: 'Eu vou para a cama às dez.' }
       ]
@@ -111,9 +111,9 @@ Plataforma.registrarLicao({
       titulo: 'De manhã, de tarde, à noite',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['with', 'com'],
-          ['in the morning / in the afternoon', 'de manhã / de tarde'],
-          ['in the evening / at night', 'à noite']
+          ['with', 'com', '🤝', 'falando com quem você estuda ou trabalha'],
+          ['in the morning / in the afternoon', 'de manhã / de tarde', '🌅', 'dizendo quando você faz academia'],
+          ['in the evening / at night', 'à noite', '🌃', 'falando de estudos depois do trabalho']
         ] },
         { tipo: 'ingles', frase: 'I work in the morning.', traducao: 'Eu trabalho de manhã.' }
       ]
@@ -138,8 +138,8 @@ Plataforma.registrarLicao({
       titulo: 'Nós, eles e todos os dias',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['every day', 'todos os dias'],
-          ['We / They', 'nós / eles, elas']
+          ['every day', 'todos os dias', '📆', 'contando um hábito diário'],
+          ['We / They', 'nós / eles, elas', '👥', 'falando de um grupo, como o seu time']
         ] },
         { tipo: 'ingles', frase: 'We study every day.', traducao: 'Nós estudamos todos os dias.' }
       ]
@@ -169,8 +169,8 @@ Plataforma.registrarLicao({
       titulo: 'Usually: a frequência',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['usually', 'geralmente'],
-          ['present simple', 'presente simples']
+          ['usually', 'geralmente', '🔄', 'falando do que você costuma fazer'],
+          ['present simple', 'presente simples', '📚', 'estudando a gramática do dia a dia']
         ] },
         { tipo: 'ingles', frase: 'I usually wake up at seven and have breakfast.', traducao: 'Eu geralmente acordo às sete e tomo café da manhã.' },
         { tipo: 'ingles', frase: 'I usually work in the morning and study at night.', traducao: 'Eu geralmente trabalho de manhã e estudo à noite.' },
@@ -179,7 +179,8 @@ Plataforma.registrarLicao({
           '`You work` / `We work` / `They work` — também sem mudança.',
           '`He works` / `She works` — atenção: ganha **-s** no final.'
         ] },
-        { tipo: 'nota', tom: 'atencao', texto: '`usually` (geralmente) vem antes do verbo: I **usually** work. É uma palavra de frequência muito usada.' }
+        { tipo: 'nota', tom: 'atencao', texto: '`usually` (geralmente) vem antes do verbo: I **usually** work. É uma palavra de frequência muito usada.' },
+        { tipo: 'vida-real', emoji: '🗓️', titulo: 'Contando sua rotina num papo de intercâmbio', texto: 'Um colega estrangeiro pergunta como é o seu dia. Com o presente simples você descreve a rotina inteira em poucas frases.', frase: 'I wake up at seven. I go to work.', traducao: 'Eu acordo às sete. Eu vou ao trabalho.' }
       ]
     },
     {

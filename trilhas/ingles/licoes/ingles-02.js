@@ -55,9 +55,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Quando queremos saber se alguém já viveu uma experiência em qualquer momento da vida, usamos a pergunta com **Have you ever...?**' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['ever', 'já / alguma vez'],
-          ['visited', 'visitou / visitado'],
-          ['Canada', 'Canadá']
+          ['ever', 'já / alguma vez', '❔', 'perguntando sobre experiências numa conversa'],
+          ['visited', 'visitou / visitado', '🧳', 'contando viagem anterior'],
+          ['Canada', 'Canadá', '🍁', 'falando do Canadá']
         ] },
         { tipo: 'ingles', frase: 'Have you ever visited Canada?', traducao: 'Você já visitou o Canadá alguma vez?' },
         { tipo: 'nota', tom: 'info', texto: '`visited` vem do verbo `visit`. Não importa a data, e sim a experiência.' }
@@ -95,9 +95,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para responder que você já realizou uma ação, usamos **I have already**.' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['already', 'já (afirmativo)'],
-          ['seen', 'visto / viu'],
-          ['movie', 'filme']
+          ['already', 'já (afirmativo)', '✔️', 'contando que já fez algo'],
+          ['seen', 'visto / viu', '👁️', 'falando de um filme já assistido'],
+          ['movie', 'filme', '🎬', 'conversando sobre filmes']
         ] },
         { tipo: 'ingles', frase: 'I have already seen that movie.', traducao: 'Eu já vi aquele filme.' }
       ]
@@ -122,8 +122,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Quando você ainda não teve a experiência, usamos **yet** no fim da frase negativa.' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['yet', 'ainda (com negação)'],
-          ["haven't", 'não (have not)']
+          ['yet', 'ainda (com negação)', '⏳', 'falando do que ainda falta fazer'],
+          ["haven't", 'não (have not)', '🙅', 'dizendo que ainda não fez algo']
         ] },
         { tipo: 'ingles', frase: "I haven't visited London yet.", traducao: 'Eu ainda não visitei Londres.' }
       ]
@@ -149,10 +149,11 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para falar de uma ação que começou no passado e continua, usamos **have worked** com **for**.' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['for', 'por / durante'],
-          ['years', 'anos']
+          ['for', 'por / durante', '🕰️', 'falando de há quanto tempo algo acontece'],
+          ['years', 'anos', '🎂', 'contando por quantos anos fez algo']
         ] },
-        { tipo: 'ingles', frase: 'I have worked here for two years.', traducao: 'Eu trabalho aqui há dois anos.' }
+        { tipo: 'ingles', frase: 'I have worked here for two years.', traducao: 'Eu trabalho aqui há dois anos.' },
+        { tipo: 'vida-real', emoji: '✈️', titulo: 'Conversa sobre viagens em uma entrevista', texto: 'O entrevistador quer saber se você já morou ou viajou para fora. O present perfect conta a sua experiência sem dizer a data.', frase: 'Have you ever visited Canada? Yes, I have.', traducao: 'Você já visitou o Canadá? Sim, já.' }
       ]
     },
     {

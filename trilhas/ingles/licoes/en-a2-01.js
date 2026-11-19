@@ -20,8 +20,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para o futuro, o inglês usa duas formas muito comuns. A primeira é **going to**, para planos já decididos.' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ["I'm going to travel next week.", 'Vou viajar na próxima semana.'],
-          ["She's going to study tonight.", 'Ela vai estudar hoje à noite.']
+          ["I'm going to travel next week.", 'Vou viajar na próxima semana.', '🧳', 'contando planos de viagem'],
+          ["She's going to study tonight.", 'Ela vai estudar hoje à noite.', '📖', 'falando dos estudos da noite']
         ] },
         { tipo: 'ingles', frase: "I'm going to travel next week.", traducao: 'Vou viajar na próxima semana.' }
       ]
@@ -46,8 +46,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'A segunda forma é **will**, usada em decisões de última hora, promessas e previsões.' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['I will call you tomorrow.', 'Eu vou te ligar amanhã.'],
-          ['It will rain later.', 'Vai chover mais tarde.']
+          ['I will call you tomorrow.', 'Eu vou te ligar amanhã.', '☎️', 'prometendo retornar a ligação'],
+          ['It will rain later.', 'Vai chover mais tarde.', '🌦️', 'vendo a previsão do tempo']
         ] },
         { tipo: 'ingles', frase: 'I will call you tomorrow.', traducao: 'Eu vou te ligar amanhã.' },
         { tipo: 'nota', tom: 'atencao', texto: 'A contração é muito comum na fala: `I am` → `I\'m` e `I will` → `I\'ll`.' }
@@ -73,9 +73,9 @@ Plataforma.registrarLicao({
       titulo: 'Palavras úteis do futuro (1)',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['send → sent', 'enviar → enviei'],
-          ['visit', 'visitar'],
-          ['a photo', 'uma foto']
+          ['send → sent', 'enviar → enviei', '📤', 'contando que enviou algo'],
+          ['visit', 'visitar', '🧭', 'falando de um passeio turístico'],
+          ['a photo', 'uma foto', '📷', 'fotografando um ponto turístico']
         ] },
         { tipo: 'ingles', frase: 'I will send a photo.', traducao: 'Eu vou enviar uma foto.' }
       ]
@@ -103,16 +103,17 @@ Plataforma.registrarLicao({
       titulo: 'Palavras úteis do futuro (2)',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['the city', 'a cidade'],
-          ["Let's...", 'Vamos... (convite)'],
-          ['also', 'também']
+          ['the city', 'a cidade', '🏙️', 'falando da cidade onde você mora'],
+          ["Let's...", 'Vamos... (convite)', '🎟️', 'convidando um amigo para sair'],
+          ['also', 'também', '➕', 'acrescentando uma ideia ao plano']
         ] },
         { tipo: 'ingles', frase: "Let's visit the city!", traducao: 'Vamos visitar a cidade!' },
         { tipo: 'lista', itens: [
           '`going to` = plano: I am going to + verbo.',
           '`will` = decisão/promessa/previsão: I will + verbo.',
           'Marcadores: `tomorrow`, `next week`, `next month`, `tonight`.'
-        ] }
+        ] },
+        { tipo: 'vida-real', emoji: '🧳', titulo: 'Planejando uma viagem com amigos', texto: 'Vocês estão decidindo o roteiro da próxima viagem. Convites e planos com going to e will ajudam a combinar tudo.', frase: 'Let us visit the city. I will send you a photo.', traducao: 'Vamos visitar a cidade. Eu vou te enviar uma foto.' }
       ]
     },
     {

@@ -19,8 +19,8 @@ Plataforma.registrarLicao({
       introduz: ['en.lugares'],
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['bank / supermarket', 'banco / supermercado'],
-          ['hospital / pharmacy', 'hospital / farmácia']
+          ['bank / supermarket', 'banco / supermercado', '🏦', 'procurando um caixa eletrônico'],
+          ['hospital / pharmacy', 'hospital / farmácia', '🏥', 'buscando atendimento de saúde']
         ] },
         { tipo: 'ingles', frase: 'This is the bank.', traducao: 'Este é o banco.' }
       ]
@@ -48,9 +48,9 @@ Plataforma.registrarLicao({
       titulo: 'Lugares da cidade (2)',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['station / train station', 'estação / estação de trem'],
-          ['airport', 'aeroporto'],
-          ['hotel / restaurant', 'hotel / restaurante']
+          ['station / train station', 'estação / estação de trem', '🚉', 'pegando o trem para o trabalho'],
+          ['airport', 'aeroporto', '✈️', 'chegando numa viagem'],
+          ['hotel / restaurant', 'hotel / restaurante', '🏨', 'procurando onde ficar na viagem']
         ] },
         { tipo: 'ingles', frase: 'This is the station.', traducao: 'Esta é a estação.' }
       ]
@@ -80,10 +80,10 @@ Plataforma.registrarLicao({
       titulo: 'Onde fica?',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
-          ['Where is...?', 'Onde fica...?'],
-          ['Is it far?', 'É longe?'],
-          ['minute / walk', 'minuto / caminhada'],
-          ['It is a five-minute walk.', 'É uma caminhada de cinco minutos.']
+          ['Where is...?', 'Onde fica...?', '🗺️', 'perguntando a um desconhecido na rua'],
+          ['Is it far?', 'É longe?', '📏', 'vendo se vale ir a pé'],
+          ['minute / walk', 'minuto / caminhada', '⏱️', 'estimando o tempo do trajeto'],
+          ['It is a five-minute walk.', 'É uma caminhada de cinco minutos.', '🚶', 'ouvindo a resposta de um desconhecido']
         ] },
         { tipo: 'ingles', frase: 'Where is the hotel?', traducao: 'Onde fica o hotel?' }
       ]
@@ -107,8 +107,8 @@ Plataforma.registrarLicao({
       titulo: 'Direções',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['go straight', 'siga em frente'],
-          ['turn left / turn right', 'vire à esquerda / à direita']
+          ['go straight', 'siga em frente', '⬆️', 'ouvindo a direção do taxista'],
+          ['turn left / turn right', 'vire à esquerda / à direita', '↩️', 'seguindo instruções no mapa']
         ] },
         { tipo: 'ingles', frase: 'Go straight and turn left.', traducao: 'Siga em frente e vire à esquerda.' }
       ]
@@ -132,8 +132,8 @@ Plataforma.registrarLicao({
       titulo: 'Ao lado de, perto de',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['next to / near', 'ao lado de / perto de'],
-          ['It costs...', 'Custa...']
+          ['next to / near', 'ao lado de / perto de', '📍', 'dizendo que o hotel fica perto da estação'],
+          ['It costs...', 'Custa...', '💲', 'perguntando o custo do metrô']
         ] },
         { tipo: 'ingles', frase: 'The bank is next to the supermarket.', traducao: 'O banco fica ao lado do supermercado.' }
       ]
@@ -163,9 +163,10 @@ Plataforma.registrarLicao({
       titulo: 'Transporte',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['on foot / by bus / by train', 'a pé / de ônibus / de trem']
+          ['on foot / by bus / by train', 'a pé / de ônibus / de trem', '🚌', 'explicando como você vai ao trabalho']
         ] },
-        { tipo: 'ingles', frase: 'I go to work on foot.', traducao: 'Eu vou ao trabalho a pé.' }
+        { tipo: 'ingles', frase: 'I go to work on foot.', traducao: 'Eu vou ao trabalho a pé.' },
+        { tipo: 'vida-real', emoji: '🧭', titulo: 'Pedindo ajuda para achar o hotel', texto: 'Você desceu na estação e não acha o hotel. Pergunta onde fica e entende a direção para chegar a pé.', frase: 'Where is the train station? It is a five-minute walk.', traducao: 'Onde fica a estação de trem? É uma caminhada de cinco minutos.' }
       ]
     },
     {

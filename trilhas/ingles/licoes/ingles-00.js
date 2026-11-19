@@ -20,9 +20,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Você não precisa ser fluente para trabalhar. Precisa reconhecer o vocabulário que se repete em documentação, mensagens de erro, tickets e reuniões. Vamos em grupos de três palavras.' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['request', 'requisição / pedido'],
-          ['response', 'resposta'],
-          ['database', 'banco de dados']
+          ['request', 'requisição / pedido', '📨', 'lendo a documentação do sistema'],
+          ['response', 'resposta', '📬', 'lendo a resposta do servidor'],
+          ['database', 'banco de dados', '🗄️', 'conversando com o time de backend']
         ] },
         { tipo: 'ingles', frase: 'The request and the response.', traducao: 'A requisição e a resposta.' }
       ]
@@ -50,9 +50,9 @@ Plataforma.registrarLicao({
       titulo: 'As palavras que aparecem todo dia (2)',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['error', 'erro'],
-          ['build', 'compilação / construir'],
-          ['deploy', 'implantação / publicar']
+          ['error', 'erro', '❌', 'lendo uma mensagem no terminal'],
+          ['build', 'compilação / construir', '🔨', 'esperando o pipeline terminar'],
+          ['deploy', 'implantação / publicar', '🚀', 'publicando uma nova versão']
         ] },
         { tipo: 'ingles', frase: 'The deploy has an error.', traducao: 'A implantação tem um erro.' }
       ]
@@ -82,8 +82,8 @@ Plataforma.registrarLicao({
       titulo: 'As palavras que aparecem todo dia (3)',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['issue', 'problema / tarefa registrada'],
-          ['branch', 'ramificação (Git)']
+          ['issue', 'problema / tarefa registrada', '🐞', 'abrindo um ticket no Jira'],
+          ['branch', 'ramificação (Git)', '🌿', 'criando uma branch no Git']
         ] },
         { tipo: 'ingles', frase: 'The issue is here.', traducao: 'O problema está aqui.' }
       ]
@@ -111,9 +111,9 @@ Plataforma.registrarLicao({
       introduz: ['ingles.frases'],
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['failed', 'falhou'],
-          ['unavailable', 'indisponível'],
-          ['because', 'porque']
+          ['failed', 'falhou', '💥', 'vendo o pipeline vermelho'],
+          ['unavailable', 'indisponível', '🔌', 'avisando que o serviço está fora'],
+          ['because', 'porque', '❓', 'explicando a causa num relatório']
         ] },
         { tipo: 'ingles', frase: 'The request failed because the database is unavailable.', traducao: 'A requisição falhou porque o banco de dados está indisponível.' },
         { tipo: 'nota', tom: 'info', texto: 'A estrutura da mensagem é sempre a mesma: **o que falhou + because + por quê**.' }
@@ -138,9 +138,9 @@ Plataforma.registrarLicao({
       titulo: 'Verbos de mensagens (1)',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['works', 'funciona'],
-          ['review', 'revisar'],
-          ['merge', 'mesclar / juntar alterações']
+          ['works', 'funciona', '⚙️', 'dizendo que o código roda'],
+          ['review', 'revisar', '👀', 'pedindo code review a um colega'],
+          ['merge', 'mesclar / juntar alterações', '🔀', 'juntando branches no repositório']
         ] },
         { tipo: 'ingles', frase: 'The build works.', traducao: 'A compilação funciona.' }
       ]
@@ -165,9 +165,9 @@ Plataforma.registrarLicao({
       titulo: 'Verbos de mensagens (2)',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['fix', 'corrigir'],
-          ['retry', 'tentar novamente'],
-          ['down', 'fora do ar / caído']
+          ['fix', 'corrigir', '🔧', 'corrigindo um erro em produção'],
+          ['retry', 'tentar novamente', '🔁', 'refazendo uma chamada que falhou'],
+          ['down', 'fora do ar / caído', '⬇️', 'avisando que o serviço caiu']
         ] },
         { tipo: 'ingles', frase: 'Please fix the build.', traducao: 'Por favor, corrija a compilação.' }
       ]
@@ -197,9 +197,9 @@ Plataforma.registrarLicao({
       titulo: 'Mudanças e conexão',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['change', 'mudança / alteração'],
-          ['connection', 'conexão'],
-          ['wrong', 'errado / errada']
+          ['change', 'mudança / alteração', '✏️', 'descrevendo um commit'],
+          ['connection', 'conexão', '🌐', 'ficando sem internet numa call'],
+          ['wrong', 'errado / errada', '⚠️', 'apontando um valor errado']
         ] },
         { tipo: 'ingles', frase: 'The connection is wrong.', traducao: 'A conexão está errada.' }
       ]
@@ -227,9 +227,9 @@ Plataforma.registrarLicao({
       titulo: 'Palavras da conversa do time',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['config (configuration)', 'configuração'],
-          ['Hey', 'Oi (informal)'],
-          ['chat', 'bate-papo / conversa online']
+          ['config (configuration)', 'configuração', '🛠️', 'editando um arquivo de ambiente'],
+          ['Hey', 'Oi (informal)', '👋', 'abrindo uma mensagem no chat do time'],
+          ['chat', 'bate-papo / conversa online', '💬', 'conversando no Slack']
         ] },
         { tipo: 'ingles', frase: 'Hey, the database connection is wrong.', traducao: 'Oi, a conexão com o banco está errada.' }
       ]
@@ -261,7 +261,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'O inglês técnico usa frases curtas e diretas. A estrutura básica é: **sujeito + verbo + complemento**.' },
         { tipo: 'codigo', linguagem: 'texto', codigo: 'The request failed.\nThe database is down.\nPlease review this change.' },
-        { tipo: 'nota', tom: 'atencao', texto: 'Em inglês, quando duas palavras formam um termo, a primeira descreve a segunda: **database error** = erro de banco (de dados); **pull request** = pedido de integração. Ao ler, comece pela última palavra (o núcleo) e volte.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'Em inglês, quando duas palavras formam um termo, a primeira descreve a segunda: **database error** = erro de banco (de dados); **pull request** = pedido de integração. Ao ler, comece pela última palavra (o núcleo) e volte.' },
+        { tipo: 'vida-real', emoji: '💬', titulo: 'Avisando o time de um erro em produção', texto: 'O deploy quebrou e você precisa avisar o time no chat. Uma frase curta e clara já explica o problema e evita perda de tempo.', frase: 'Hey, the deploy failed because the database is down.', traducao: 'Ei, o deploy falhou porque o banco de dados está fora do ar.' }
       ]
     },
     {

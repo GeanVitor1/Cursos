@@ -20,9 +20,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'A reunião diária de alinhamento com a equipe segue sempre três perguntas: **o que você fez ontem**, **o que vai fazer hoje** e **se há algum impedimento**.' },
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['standup', 'reunião diária / daily'],
-          ['blocker', 'impedimento / trava'],
-          ['task', 'tarefa']
+          ['standup', 'reunião diária / daily', '🧍', 'na daily do time'],
+          ['blocker', 'impedimento / trava', '🚧', 'avisando um impedimento'],
+          ['task', 'tarefa', '📋', 'dizendo sua tarefa']
         ] },
         { tipo: 'ingles', frase: 'I have a blocker on this task.', traducao: 'Eu tenho um impedimento nesta tarefa.' }
       ]
@@ -51,8 +51,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para relatar o dia anterior, usamos o passado simples com **Yesterday I worked on...** (Ontem eu trabalhei em...).' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['worked on', 'trabalhou em'],
-          ['service', 'serviço']
+          ['worked on', 'trabalhou em', '🛠️', 'contando o que fez ontem'],
+          ['service', 'serviço', '🧩', 'falando de um microsserviço']
         ] },
         { tipo: 'ingles', frase: 'Yesterday I worked on the service.', traducao: 'Ontem eu trabalhei no serviço.' }
       ]
@@ -77,9 +77,9 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para o dia de hoje, usamos o futuro com will ou going to: **Today I will...** (Hoje eu vou...).' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['bug', 'defeito / bug'],
-          ['tests', 'testes'],
-          ['fix / write', 'corrigir / escrever']
+          ['bug', 'defeito / bug', '🐛', 'falando do bug do dia'],
+          ['tests', 'testes', '🧪', 'falando de testes'],
+          ['fix / write', 'corrigir / escrever', '✍️', 'dizendo o que vai fazer hoje']
         ] },
         { tipo: 'ingles', frase: 'Today I will fix this bug and write tests.', traducao: 'Hoje eu vou corrigir esse bug e escrever testes.' }
       ]
@@ -105,10 +105,11 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Se o seu trabalho está fluindo sem travamento, você diz claramente que não tem impedimentos.' },
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['no blockers', 'sem impedimentos'],
-          ['all good', 'tudo certo']
+          ['no blockers', 'sem impedimentos', '🟢', 'fechando sua fala na daily'],
+          ['all good', 'tudo certo', '👍', 'encerrando a daily']
         ] },
-        { tipo: 'ingles', frase: 'No blockers, all good.', traducao: 'Sem impedimentos, tudo certo.' }
+        { tipo: 'ingles', frase: 'No blockers, all good.', traducao: 'Sem impedimentos, tudo certo.' },
+        { tipo: 'vida-real', emoji: '🧍', titulo: 'Na daily do time', texto: 'Todo dia às 9h cada pessoa fala em poucos segundos. Com frases prontas, você mostra o que fez, o que vai fazer e se tem bloqueio.', frase: 'Yesterday I worked on the service. No blockers.', traducao: 'Ontem eu trabalhei no serviço. Sem impedimentos.' }
       ]
     },
     {

@@ -20,8 +20,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Para perguntar as horas, o inglês tem uma frase fixa. Vamos aprender primeiro a pergunta e a hora exata.' },
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['What time is it?', 'Que horas são?'],
-          ["It's seven o'clock.", 'São sete horas em ponto.']
+          ['What time is it?', 'Que horas são?', '🕒', 'perguntando a hora a um colega'],
+          ["It's seven o'clock.", 'São sete horas em ponto.', '🕖', 'dizendo a hora cheia']
         ] },
         { tipo: 'ingles', frase: "It's seven o'clock.", traducao: 'São sete horas em ponto.' }
       ]
@@ -45,10 +45,10 @@ Plataforma.registrarLicao({
       titulo: 'Meia e quinze',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (4)', pares: [
-          ["It's seven thirty.", 'São sete e trinta.'],
-          ["It's half past seven.", 'São sete e meia.'],
-          ["It's a quarter past seven.", 'São sete e quinze.'],
-          ["It's a quarter to eight.", 'São quinze para as oito.']
+          ["It's seven thirty.", 'São sete e trinta.', '⌚', 'marcando uma call às sete e trinta'],
+          ["It's half past seven.", 'São sete e meia.', '🕢', 'combinando o horário do ônibus'],
+          ["It's a quarter past seven.", 'São sete e quinze.', '🕐', 'alinhando o começo de uma reunião'],
+          ["It's a quarter to eight.", 'São quinze para as oito.', '🕗', 'avisando que falta pouco para a aula']
         ] },
         { tipo: 'ingles', frase: "It's half past seven.", traducao: 'São sete e meia.' }
       ]
@@ -78,7 +78,7 @@ Plataforma.registrarLicao({
       titulo: 'Os três primeiros dias',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['Monday, Tuesday, Wednesday', 'segunda, terça, quarta']
+          ['Monday, Tuesday, Wednesday', 'segunda, terça, quarta', '📅', 'organizando a agenda no começo da semana']
         ] },
         { tipo: 'ingles', frase: 'Monday, Tuesday, Wednesday!', traducao: 'Segunda, terça, quarta!' },
         { tipo: 'nota', tom: 'info', texto: 'Os dias da semana em inglês começam com **letra maiúscula**.' }
@@ -107,8 +107,8 @@ Plataforma.registrarLicao({
       titulo: 'O resto da semana',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['Thursday, Friday', 'quinta, sexta'],
-          ['Saturday, Sunday', 'sábado, domingo']
+          ['Thursday, Friday', 'quinta, sexta', '🗓️', 'marcando uma entrega no fim da semana'],
+          ['Saturday, Sunday', 'sábado, domingo', '🏖️', 'planejando o fim de semana']
         ] },
         { tipo: 'ingles', frase: 'Thursday, Friday, Saturday, Sunday!', traducao: 'Quinta, sexta, sábado, domingo!' }
       ]
@@ -136,8 +136,8 @@ Plataforma.registrarLicao({
       titulo: 'Compromissos',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['the meeting', 'a reunião'],
-          ['the class starts', 'a aula começa']
+          ['the meeting', 'a reunião', '👥', 'chamando o time para a reunião'],
+          ['the class starts', 'a aula começa', '🎓', 'avisando a hora da aula']
         ] },
         { tipo: 'ingles', frase: 'The meeting is at nine on Monday.', traducao: 'A reunião é às nove na segunda-feira.' }
       ]
@@ -167,11 +167,12 @@ Plataforma.registrarLicao({
       titulo: 'at e on',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (2)', pares: [
-          ['at', 'às (antes de horas)'],
-          ['on', 'na, no (antes de dias)']
+          ['at', 'às (antes de horas)', '⏲️', 'marcando horário de consulta'],
+          ['on', 'na, no (antes de dias)', '📌', 'fixando um dia no calendário']
         ] },
         { tipo: 'ingles', frase: 'The class starts at six forty-five.', traducao: 'A aula começa às seis e quarenta e cinco.' },
-        { tipo: 'nota', tom: 'atencao', texto: 'Use **at** para horas (`at 9 o\'clock`) e **on** para dias (`on Monday`).' }
+        { tipo: 'nota', tom: 'atencao', texto: 'Use **at** para horas (`at 9 o\'clock`) e **on** para dias (`on Monday`).' },
+        { tipo: 'vida-real', emoji: '📅', titulo: 'Marcando uma reunião com colegas de outro país', texto: 'Você precisa combinar dia e hora com o time. Com horas e dias da semana, você marca a reunião sem confusão de fuso.', frase: 'The meeting is on Monday at ten.', traducao: 'A reunião é na segunda-feira às dez.' }
       ]
     },
     {

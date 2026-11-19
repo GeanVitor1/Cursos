@@ -19,9 +19,9 @@ Plataforma.registrarLicao({
       introduz: ['en.compras'],
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['How much is this?', 'Quanto custa isto?'],
-          ["It's twenty dollars.", 'São vinte dólares.'],
-          ['expensive / cheap', 'caro / barato']
+          ['How much is this?', 'Quanto custa isto?', '💲', 'perguntando o preço numa vitrine'],
+          ["It's twenty dollars.", 'São vinte dólares.', '💰', 'ouvindo o preço no caixa'],
+          ['expensive / cheap', 'caro / barato', '🏷️', 'comparando duas camisetas']
         ] },
         { tipo: 'ingles', frase: 'How much is this?', traducao: 'Quanto custa isto?' }
       ]
@@ -45,9 +45,9 @@ Plataforma.registrarLicao({
       titulo: 'Dinheiro e cartão',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['cash / credit card', 'dinheiro / cartão de crédito'],
-          ['$ = dollar', 'símbolo do dólar'],
-          ['How would you like to pay?', 'Como você gostaria de pagar?']
+          ['cash / credit card', 'dinheiro / cartão de crédito', '💳', 'pagando a compra no caixa'],
+          ['$ = dollar', 'símbolo do dólar', '🪙', 'lendo preços em dólar num site de fora'],
+          ['How would you like to pay?', 'Como você gostaria de pagar?', '🧾', 'a atendente pergunta como você vai pagar']
         ] },
         { tipo: 'ingles', frase: "It's twenty dollars.", traducao: 'São vinte dólares.' }
       ]
@@ -77,9 +77,9 @@ Plataforma.registrarLicao({
       titulo: 'Atendimento na loja',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (3)', pares: [
-          ['Can I help you?', 'Posso ajudar?'],
-          ['Can I pay by card?', 'Posso pagar com cartão?'],
-          ['by card', 'com cartão']
+          ['Can I help you?', 'Posso ajudar?', '🛍️', 'a atendente oferece ajuda na loja'],
+          ['Can I pay by card?', 'Posso pagar com cartão?', '🏧', 'perguntando se aceitam cartão'],
+          ['by card', 'com cartão', '📲', 'pagando por aproximação']
         ] },
         { tipo: 'ingles', frase: 'Can I pay by card?', traducao: 'Posso pagar com cartão?' }
       ]
@@ -104,11 +104,11 @@ Plataforma.registrarLicao({
       titulo: 'Experimentando a roupa',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas (5)', pares: [
-          ['Do you have this in another size?', 'Você tem isto em outro tamanho?'],
-          ['Do you want to try it on?', 'Você quer experimentar?'],
-          ['try it on', 'experimentar (a roupa)'],
-          ['the fitting room', 'o provador'],
-          ['Where is the fitting room?', 'Onde fica o provador?']
+          ['Do you have this in another size?', 'Você tem isto em outro tamanho?', '📏', 'procurando seu tamanho na arara'],
+          ['Do you want to try it on?', 'Você quer experimentar?', '🙋', 'a vendedora oferece para você experimentar'],
+          ['try it on', 'experimentar (a roupa)', '👕', 'provando uma camiseta'],
+          ['the fitting room', 'o provador', '🚪', 'procurando o provador'],
+          ['Where is the fitting room?', 'Onde fica o provador?', '📍', 'pedindo ajuda para achar o provador']
         ] },
         { tipo: 'ingles', frase: 'Do you have this in another size?', traducao: 'Você tem isto em outro tamanho?' },
         { tipo: 'nota', tom: 'info', texto: '`Do you...?` é a forma de perguntar no present simple: `Do you have...?` (você tem...?) e `Do you want...?` (você quer...?). Já `Where is...?` pergunta **onde fica** algo: `Where is the fitting room?`.' }
@@ -139,8 +139,8 @@ Plataforma.registrarLicao({
       titulo: 'Roupas e promoção',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['jacket / jeans / hat', 'jaqueta / calça jeans / chapéu'],
-          ['shirt / T-shirt / sale', 'camisa / camiseta / promoção']
+          ['jacket / jeans / hat', 'jaqueta / calça jeans / chapéu', '🧥', 'comprando agasalho no inverno'],
+          ['shirt / T-shirt / sale', 'camisa / camiseta / promoção', '👔', 'comprando camisa para o trabalho']
         ] },
         { tipo: 'ingles', frase: 'The shirt is on sale.', traducao: 'A camisa está em promoção.' }
       ]
@@ -168,9 +168,9 @@ Plataforma.registrarLicao({
       titulo: 'Ali, lá e a sacola',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['over there', 'ali / lá'],
-          ['We accept cash.', 'Nós aceitamos dinheiro.'],
-          ['a bag', 'uma bolsa / uma sacola']
+          ['over there', 'ali / lá', '👉', 'apontando onde fica o caixa'],
+          ['We accept cash.', 'Nós aceitamos dinheiro.', '🏪', 'lendo um aviso na porta da loja'],
+          ['a bag', 'uma bolsa / uma sacola', '👜', 'pedindo uma sacola no caixa']
         ] },
         { tipo: 'ingles', frase: 'The fitting room is over there.', traducao: 'O provador fica ali.' }
       ]
@@ -200,10 +200,11 @@ Plataforma.registrarLicao({
       titulo: 'Lista e total',
       blocos: [
         { tipo: 'vocab', titulo: 'Palavras novas', pares: [
-          ['shopping list', 'lista de compras'],
-          ['total', 'total']
+          ['shopping list', 'lista de compras', '📋', 'preparando a ida ao mercado'],
+          ['total', 'total', '🧮', 'conferindo o valor final no caixa']
         ] },
-        { tipo: 'ingles', frase: 'The total is twenty dollars.', traducao: 'O total é vinte dólares.' }
+        { tipo: 'ingles', frase: 'The total is twenty dollars.', traducao: 'O total é vinte dólares.' },
+        { tipo: 'vida-real', emoji: '🛍️', titulo: 'Comprando uma camiseta numa loja em Nova York', texto: 'Você gostou de uma camiseta na vitrine. Pergunta o preço e a forma de pagamento e fecha a compra sem passar vergonha.', frase: 'How much is this T-shirt? Can I pay by card?', traducao: 'Quanto custa esta camiseta? Posso pagar com cartão?' }
       ]
     },
     {
