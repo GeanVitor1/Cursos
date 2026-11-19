@@ -26,7 +26,8 @@ Plataforma.registrarLicao({
           linguagem: 'sql',
           codigo: 'BEGIN TRANSACTION;\nUPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1;\nUPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2;\nCOMMIT;'
         },
-        { tipo: 'nota', tom: 'info', texto: 'Entre `BEGIN TRANSACTION` e `COMMIT`, nada é definitivo. O `ROLLBACK` **não é automático**: quem detecta o erro (um `TRY...CATCH` ou a aplicação) é que executa o `ROLLBACK`, e então o banco desfaz tudo o que a transação fez. Se a conexão cair antes do `COMMIT`, o banco também reverte a transação aberta.' },
+        { tipo: 'nota', tom: 'info', texto: 'Entre `BEGIN TRANSACTION` e `COMMIT`, nada é definitivo. O `ROLLBACK` **não é automático**: quem detecta o erro (um tratamento de erro, como o mostrado abaixo, ou a aplicação) é que executa o `ROLLBACK`, e então o banco desfaz tudo o que a transação fez. Se a conexão cair antes do `COMMIT`, o banco também reverte a transação aberta.' },
+        { tipo: 'futuro', conceitos: ['csharp.excecoes'], titulo: 'Prévia: TRY...CATCH', texto: '`BEGIN TRY ... END TRY` agrupa comandos que podem falhar. Se qualquer um deles der erro, a execução pula direto para o bloco `BEGIN CATCH ... END CATCH`, onde você decide o que fazer — aqui, desfazer a transação. A ideia de tratar erros dessa forma será aprofundada quando você estudar exceções.' },
         { tipo: 'codigo', linguagem: 'sql', codigo: 'BEGIN TRY\n  BEGIN TRANSACTION;\n  UPDATE Contas SET Saldo = Saldo - 100 WHERE Id = 1;\n  UPDATE Contas SET Saldo = Saldo + 100 WHERE Id = 2;\n  COMMIT TRANSACTION;\nEND TRY\nBEGIN CATCH\n  ROLLBACK TRANSACTION;\nEND CATCH;', legenda: 'Padrão T-SQL: se um UPDATE falhar, o CATCH executa o ROLLBACK e nada fica pela metade.' },
         { tipo: 'nota', tom: 'atencao', texto: 'Dialeto T-SQL: no SQL Server a transação abre com `BEGIN TRANSACTION` (ou `BEGIN TRAN`). O `BEGIN;` puro é de PostgreSQL, e `START TRANSACTION` é de MySQL.' }
       ]

@@ -8,7 +8,7 @@
 - Atividades percorridas: **939**
 - Conceitos registrados: **379**
 - Conceitos com introdução marcada: **174**
-- Erros: **0** · Avisos: **10**
+- Erros: **0** · Avisos: **0**
 
 ## Evidência por conceito (introdução → prática → avaliação)
 
@@ -188,19 +188,6 @@
 | Serialização de objetos (`redis.serializacao`) | etapa 1 · redis-04 | redis-04 etapa 2 | redis-04 etapa 9 | PRONTO_PARA_AVALIACAO | redis.cache-aside |
 | Invalidação de cache (`redis.invalidacao`) | etapa 1 · redis-05 | redis-05 etapa 2 | redis-05 etapa 9 | PRONTO_PARA_AVALIACAO | redis.cache-aside |
 | Redis no ASP.NET Core (`redis.integracao`) | etapa 1 · redis-06 | redis-06 etapa 2 | redis-06 etapa 10 | PRONTO_PARA_AVALIACAO | redis.cache-aside |
-
-## ⚠️ Avisos (menções antes da introdução)
-
-- **sql-32 / etapa 1** — Menção antes de ensinar (conteúdo): csharp.excecoes -> "try"
-- **sql-32 / etapa 1** — Menção antes de ensinar (conteúdo): csharp.excecoes -> "try"
-- **terminal-00 / etapa 2** — Menção antes de ensinar (conteúdo): terminal.git -> "git "
-- **engenharia-ia-00 / etapa 1** — Menção antes de ensinar (conteúdo): aspnet.http -> "HTTP"
-- **engenharia-ia-00 / etapa 1** — Menção antes de ensinar (conteúdo): aspnet.http -> "HTTP"
-- **engenharia-ia-00 / etapa 1** — Menção antes de ensinar (conteúdo): aspnet.api -> "API"
-- **engenharia-ia-01 / etapa 1** — Menção antes de ensinar (conteúdo): ef.dbcontext -> "dbcontext"
-- **engenharia-ia-02 / etapa 1** — Menção antes de ensinar (conteúdo): redis.cache -> "cache"
-- **engenharia-ia-02 / etapa 1** — Menção antes de ensinar (conteúdo): redis.cache -> "cache"
-- **engenharia-ia-02 / etapa 1** — Menção antes de ensinar (conteúdo): redis.invalidacao -> "invalidação"
 
 <!-- MANUAL -->
 ## O erro que originou esta auditoria

@@ -16,6 +16,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Termos antes do cenário',
       blocos: [
+        { tipo: 'futuro', conceitos: ['redis.cache','redis.invalidacao'], titulo: 'Onde aprofundar', texto: 'Aqui você só decide se o cache vale a pena. A trilha de Redis mostra como implementar o cache e a invalidação (remover a cópia antiga quando o dado muda).' },
         { tipo: 'conceito', id: 'engenharia-ia.cache', titulo: 'Cache', texto: 'Cache é uma cópia de um dado guardada para ser reutilizada numa leitura futura, evitando refazer o trabalho de buscá-lo. A cópia pode ficar desatualizada, por isso o cache tem prazo de validade (expiração) e a fonte original continua sendo a referência.', exemplo: 'A lista de categorias muda uma vez por semana: guardá-la por 10 minutos economiza consultas ao banco.' },
         { tipo: 'glossario', titulo: 'Termos desta etapa', itens: [
           ['fonte original', 'onde está o dado de verdade', 'O banco de dados ou serviço que decide qual é a informação correta; o cache é só uma cópia dele.'],

@@ -16,6 +16,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Peças que aparecem no cenário',
       blocos: [
+        { tipo: 'futuro', conceitos: ['ef.dbcontext'], titulo: 'Onde aprofundar', texto: 'Por enquanto, basta saber que o DbContext lê e grava no banco. A trilha de Entity Framework Core mostra como configurá-lo e usá-lo.' },
         { tipo: 'conceito', id: 'engenharia-ia.ef-contexto', titulo: 'Contexto de dados e controller', texto: 'O controller é a entrada da API: recebe a requisição HTTP e encaminha o trabalho. O contexto de dados (DbContext do Entity Framework Core) é o objeto que lê e grava as tabelas do banco. Injeção de dependência significa receber esses objetos prontos pelo construtor, em vez de criá-los dentro da regra.', exemplo: 'PedidosController recebe PedidoService no construtor; PedidoService recebe o contexto de dados.' },
         { tipo: 'glossario', titulo: 'Termos desta etapa', itens: [
           ['controller', 'entrada da aplicação', 'Traduz a requisição HTTP e chama a regra da aplicação.'],

@@ -28,7 +28,7 @@ Plataforma.registrarLicao({
       introduz: ['terminal.comandos'],
       blocos: [
         { tipo: 'texto', texto: 'Quando você abre o terminal, você está sempre situado dentro de uma pasta específica do seu sistema (chamada de diretório atual de trabalho).' },
-        { tipo: 'codigo', linguagem: 'texto', codigo: '# 1. Saber onde você está:\npwd\n# Saída de exemplo no PowerShell (cabeçalho Path):\n#   C:\Users\voce\Projetos\n# No Linux/macOS/Git Bash: /home/voce/Projetos\n\n# 2. Ver o que existe dentro da pasta atual:\nls               # no PowerShell/Linux (ou dir)\n\n# 3. Entrar em uma subpasta:\ncd MeuProjeto    # "change directory" para entrar em MeuProjeto\n\n# 4. Voltar uma pasta para trás:\ncd ..            # os dois pontos (..) representam a pasta acima/pai\n\n# 5. Criar uma nova pasta para organizar seu código:\nmkdir NovoApp    # "make directory"' },
+        { tipo: 'codigo', linguagem: 'texto', codigo: '# 1. Saber onde você está:\npwd\n# Saída de exemplo no PowerShell (cabeçalho Path):\n#   C:\Users\voce\Projetos\n# No Linux/macOS (terminal Bash): /home/voce/Projetos\n\n# 2. Ver o que existe dentro da pasta atual:\nls               # no PowerShell/Linux (ou dir)\n\n# 3. Entrar em uma subpasta:\ncd MeuProjeto    # "change directory" para entrar em MeuProjeto\n\n# 4. Voltar uma pasta para trás:\ncd ..            # os dois pontos (..) representam a pasta acima/pai\n\n# 5. Criar uma nova pasta para organizar seu código:\nmkdir NovoApp    # "make directory"' },
         { tipo: 'glossario', titulo: 'Por que esses nomes estranhos?', itens: [
           ['pwd', 'print working directory', 'Imprime na tela a pasta em que você se encontra.'],
           ['ls / dir', 'list', 'Lista todos os arquivos e subpastas do local atual.'],

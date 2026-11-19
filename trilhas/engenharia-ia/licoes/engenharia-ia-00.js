@@ -16,6 +16,7 @@ Plataforma.registrarLicao({
       tipo: 'conteudo',
       titulo: 'Dois termos antes do cenário',
       blocos: [
+        { tipo: 'futuro', conceitos: ['aspnet.http','aspnet.api'], titulo: 'Onde aprofundar', texto: 'Aqui basta a ideia geral de HTTP e API. A trilha de ASP.NET mostra como construir e testar uma API completa.' },
         { tipo: 'conceito', id: 'engenharia-ia.http', titulo: 'HTTP', texto: 'HTTP é o conjunto de regras para trocar mensagens entre um cliente (como o navegador) e um servidor. O cliente envia uma requisição com um método (GET para ler, POST para criar) e o servidor devolve uma resposta com um código de status, como 200 (deu certo) ou 404 (não encontrado).', exemplo: 'GET /pedidos/7 → 200 e os dados do pedido 7.' },
         { tipo: 'conceito', id: 'engenharia-ia.api', titulo: 'API', texto: 'Uma API é a lista de operações que um programa oferece a outros programas, com o formato do que se envia e do que se recebe. Uma API web usa HTTP para isso e aplica regras antes de gravar ou devolver dados.', exemplo: 'A API de pedidos oferece "criar pedido", "consultar pedido" e "cancelar pedido".' }
       ]
