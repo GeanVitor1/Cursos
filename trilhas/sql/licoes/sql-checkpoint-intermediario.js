@@ -25,7 +25,8 @@ Plataforma.registrarLicao({
             'Pode usar dicas — o resultado continua contando.',
             'Ao final, você verá seu domínio conceito por conceito.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '🔎', titulo: 'A gerente pede clientes com pedido pago e nenhum cancelado', texto: '`EXISTS` resolve um lado da regra e `NOT EXISTS` o outro. Uma CTE com nome deixa a consulta legível para quem for assumir depois, e a lógica fica fácil de explicar em voz alta.' }
       ]
     },
     {

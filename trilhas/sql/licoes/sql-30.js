@@ -117,7 +117,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Views are saved queries.', traducao: 'Views são consultas salvas.' },
-        { tipo: 'nota', tom: 'info', texto: '**saved queries** = "consultas salvas": exatamente o que uma view é.' }
+        { tipo: 'nota', tom: 'info', texto: '**saved queries** = "consultas salvas": exatamente o que uma view é.' },
+        { tipo: 'vida-real', emoji: '👁️', titulo: 'O estagiário erra o filtro dos clientes ativos todo dia', texto: 'Você cria a view `ClientesAtivos` com a consulta já pronta. Ele passa a escrever `SELECT * FROM ClientesAtivos` e não precisa mais lembrar do `WHERE`. Se a regra de "ativo" mudar, você altera a view uma vez e todo mundo recebe a regra nova.' }
       ]
     },
     {

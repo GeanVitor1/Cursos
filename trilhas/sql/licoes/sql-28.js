@@ -244,7 +244,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Upper and lower names.', traducao: 'Nomes em maiúsculas e minúsculas.' },
-        { tipo: 'nota', tom: 'info', texto: 'As mesmas palavras das funções `UPPER` e `LOWER`.' }
+        { tipo: 'nota', tom: 'info', texto: 'As mesmas palavras das funções `UPPER` e `LOWER`.' },
+        { tipo: 'vida-real', emoji: '🏷️', titulo: 'A etiqueta de entrega precisa do nome do cliente em maiúsculas', texto: 'A impressora só aceita letras maiúsculas e os nomes foram cadastrados de qualquer jeito. `SELECT UPPER(Nome) FROM Clientes;` já devolve tudo no formato da etiqueta, sem alterar os dados gravados.' }
       ]
     },
     {

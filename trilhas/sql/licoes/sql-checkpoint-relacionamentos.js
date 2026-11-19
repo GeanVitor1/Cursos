@@ -25,7 +25,8 @@ Plataforma.registrarLicao({
             'Pode usar dicas — o resultado continua contando.',
             'Ao final, você verá seu domínio conceito por conceito.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '🕵️', titulo: 'O relatório de clientes não traz quem nunca comprou', texto: 'A causa era um `INNER JOIN` onde devia estar um `LEFT JOIN`. Trocando o tipo de junção, todos os clientes aparecem, e os que nunca compraram saem com os campos do pedido vazios. Um detalhe da condição do `ON` muda o que o relatório mostra.' }
       ]
     },
     {

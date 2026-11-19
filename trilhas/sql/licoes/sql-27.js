@@ -150,7 +150,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Nada novo: filtre por data só com o que você já sabe.' },
         { tipo: 'ingles', frase: 'Filter orders by date.', traducao: 'Filtre pedidos por data.' },
-        { tipo: 'trabalho', texto: '"Últimos 30 dias", "este mês", "este ano": filtros de período com `DATEADD` e `MONTH`/`YEAR` sustentam painéis de vendas, relatórios financeiros e campanhas.', fonte: '💼 No trabalho' }
+        { tipo: 'trabalho', texto: '"Últimos 30 dias", "este mês", "este ano": filtros de período com `DATEADD` e `MONTH`/`YEAR` sustentam painéis de vendas, relatórios financeiros e campanhas.', fonte: '💼 No trabalho' },
+        { tipo: 'vida-real', emoji: '📅', titulo: 'O financeiro quer conferir os pedidos da liquidação de novembro', texto: 'Você filtra com `WHERE MONTH(DataPedido) = 11 AND YEAR(DataPedido) = 2025`. O ano entra no filtro para não misturar com os pedidos de novembro do ano anterior, um erro que dá um total gigante sem avisar.' }
       ]
     },
     {

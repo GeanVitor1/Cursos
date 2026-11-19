@@ -52,7 +52,8 @@ Plataforma.registrarLicao({
         { tipo: 'glossario', titulo: 'Quem implementa', itens: [
           [': INotificador', 'implementa', 'A classe assina o contrato e precisa cumprir tudo.'],
           ['classe concreta', 'implementação', 'A classe de verdade, que contém o código que executa a ação.']
-        ] }
+        ] },
+        { tipo: 'vida-real', emoji: '📱', titulo: 'A loja avisa o pedido por e-mail e agora quer avisar por SMS', texto: 'O `PedidoService` conhece apenas o contrato `INotificador`. Você cria a classe `SmsNotificador` cumprindo o mesmo contrato e entrega no lugar do `EmailNotificador`. O serviço de pedidos continua igual, porque só depende da interface.' }
       ]
     },
     {

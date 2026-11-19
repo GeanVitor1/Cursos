@@ -140,7 +140,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Queries with index are fast.', traducao: 'Consultas com índice são rápidas.' },
-        { tipo: 'nota', tom: 'info', texto: '**with index are fast** = "com índice são rápidas".' }
+        { tipo: 'nota', tom: 'info', texto: '**with index are fast** = "com índice são rápidas".' },
+        { tipo: 'vida-real', emoji: '⏱️', titulo: 'A busca de cliente por e-mail leva 8 segundos no balcão', texto: 'O banco lê a tabela inteira a cada busca porque a coluna do `WHERE` não tem índice. Criando um índice em `Email`, ele acha o cliente direto, como quem usa o índice de um livro, e a atendente atende sem deixar a fila esperando.' }
       ]
     },
     {

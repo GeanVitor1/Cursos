@@ -297,7 +297,8 @@ Plataforma.registrarLicao({
         },
         { tipo: 'ingles', frase: 'Customers from Brazil.', traducao: 'Clientes do Brasil.' },
         { tipo: 'ingles', frase: 'Retrieve all customers from São Paulo.', traducao: 'Retorne todos os clientes de São Paulo.' },
-        { tipo: 'nota', tom: 'info', texto: 'Aqui **from** marca a **origem**: de onde o cliente vem. Repare na ordem: **customers from São Paulo** = clientes de São Paulo.' }
+        { tipo: 'nota', tom: 'info', texto: 'Aqui **from** marca a **origem**: de onde o cliente vem. Repare na ordem: **customers from São Paulo** = clientes de São Paulo.' },
+        { tipo: 'vida-real', emoji: '🚚', titulo: 'A transportadora só entrega hoje em São Paulo', texto: 'O motorista precisa da lista de quem mora na cidade. Você usa `SELECT Nome FROM Clientes WHERE Cidade = \'São Paulo\';` e só as linhas que passam na condição aparecem. O texto vai entre aspas simples, senão o banco procura uma coluna.' }
       ]
     },
     {

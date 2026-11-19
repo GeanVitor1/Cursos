@@ -127,7 +127,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Nada novo aqui: o relatório em inglês usa só o que você já sabe.' },
         { tipo: 'ingles', frase: 'Join orders and products.', traducao: 'Junte pedidos e produtos.' },
-        { tipo: 'trabalho', texto: 'Relatório agregado com JOIN + GROUP BY + HAVING + ORDER BY é um formato muito comum nos pedidos de dados no trabalho. Dominar essa forma cobre boa parte dos chamados.', fonte: '💼 No trabalho' }
+        { tipo: 'trabalho', texto: 'Relatório agregado com JOIN + GROUP BY + HAVING + ORDER BY é um formato muito comum nos pedidos de dados no trabalho. Dominar essa forma cobre boa parte dos chamados.', fonte: '💼 No trabalho' },
+        { tipo: 'vida-real', emoji: '📈', titulo: 'Toda segunda a diretora pede o faturamento por cidade', texto: 'Ela quer só as cidades que passaram de R$ 10 mil, da maior para a menor. Você junta Pedidos e Clientes, soma o `ValorTotal` por `Cidade`, filtra os grupos com `HAVING` e ordena com `ORDER BY`. A mesma consulta serve toda semana.' }
       ]
     },
     {

@@ -232,7 +232,8 @@ Plataforma.registrarLicao({
         },
         { tipo: 'ingles', frase: 'Retrieve all orders.', traducao: 'Recupere todos os pedidos.' },
         { tipo: 'ingles', frase: 'Retrieve all orders where Status = \'Pendente\'.', traducao: 'Recupere todos os pedidos em que o Status é Pendente.' },
-        { tipo: 'nota', tom: 'info', texto: '**where** é a mesma palavra que você usa no SQL: lá ela filtra linhas; aqui, aprenda o sentido "onde / em que".' }
+        { tipo: 'nota', tom: 'info', texto: '**where** é a mesma palavra que você usa no SQL: lá ela filtra linhas; aqui, aprenda o sentido "onde / em que".' },
+        { tipo: 'vida-real', emoji: '🎟️', titulo: 'Cupom só para clientes ativos de São Paulo ou do Rio', texto: 'Sem parênteses, `Cidade = \'São Paulo\' OR Cidade = \'Rio de Janeiro\' AND Ativo = 1` deixa passar paulistas inativos, porque o AND é resolvido antes do OR. Com `(Cidade = \'São Paulo\' OR Cidade = \'Rio de Janeiro\') AND Ativo = 1` a lista sai como a campanha pediu.' }
       ]
     },
     {

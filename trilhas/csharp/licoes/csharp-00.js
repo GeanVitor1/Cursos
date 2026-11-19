@@ -299,7 +299,8 @@ Plataforma.registrarLicao({
         ] },
         { tipo: 'nota', tom: 'info', texto: 'Uma propriedade de cada vez: `public int Id { get; set; }` é uma propriedade chamada Id, do tipo int.' },
         { tipo: 'nota', tom: 'atencao', texto: 'Em projetos novos, o compilador pode exibir avisos como CS8618 ("propriedade não anulável deve conter um valor") em `public string Nome { get; set; }`. Isso é o recurso de tipos *anuláveis* (nullable): uma `string` comum não deveria ficar `null`. O código continua funcionando; mais adiante você verá como resolver (valor inicial, `required` ou `string?`).' },
-        { tipo: 'futuro', conceitos: ['ef.entidade'], texto: 'Guarde a ideia de classe. Quando chegarmos ao Entity Framework, você verá como uma classe C# pode representar uma tabela do banco — e cada propriedade, uma coluna.' }
+        { tipo: 'futuro', conceitos: ['ef.entidade'], texto: 'Guarde a ideia de classe. Quando chegarmos ao Entity Framework, você verá como uma classe C# pode representar uma tabela do banco — e cada propriedade, uma coluna.' },
+        { tipo: 'vida-real', emoji: '🏪', titulo: 'O dono quer cadastrar os produtos da planilha no sistema', texto: 'A planilha dele tem as colunas Id, Nome, Preço e Estoque. Você cria a classe `Produto` com uma propriedade para cada coluna. A partir daí, cada linha da planilha vira um objeto `Produto`, com os valores certos nos tipos certos.' }
       ]
     },
     {

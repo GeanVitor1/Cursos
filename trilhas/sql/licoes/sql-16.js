@@ -175,7 +175,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Join customers, orders and products.', traducao: 'Junte clientes, pedidos e produtos.' },
-        { tipo: 'nota', tom: 'info', texto: 'A frase cresce junto com a consulta: três `JOINs` para ligar quatro tabelas.' }
+        { tipo: 'nota', tom: 'info', texto: 'A frase cresce junto com a consulta: três `JOINs` para ligar quatro tabelas.' },
+        { tipo: 'vida-real', emoji: '🚛', titulo: 'O motorista precisa da nota de entrega com cliente, produto e quantidade', texto: 'Os dados estão em quatro tabelas: ItensPedido liga a Pedidos, que liga a Clientes, e ItensPedido também liga a Produtos. Três `JOIN` em sequência trazem o nome do cliente, o nome do produto e a quantidade em uma única consulta.' }
       ]
     },
     {

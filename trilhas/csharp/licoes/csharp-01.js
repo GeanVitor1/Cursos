@@ -126,7 +126,8 @@ Plataforma.registrarLicao({
         { tipo: 'glossario', titulo: 'Operadores matemáticos', itens: [
           ['+', 'somar ou juntar textos', 'Soma números ou junta textos (concatenação).'],
           ['*', 'multiplicar', 'Multiplica dois valores, como em `preco * 0.9m`.']
-        ] }
+        ] },
+        { tipo: 'vida-real', emoji: '📦', titulo: 'O gerente quer um aviso quando o estoque ficar baixo', texto: 'Você guarda a quantidade em uma variável `int estoque` e escreve `if (estoque < 10)` para exibir "Estoque baixo". Com 4 unidades a condição é verdadeira e o aviso aparece; com 50, o programa segue em silêncio.' }
       ]
     },
     {

@@ -176,7 +176,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Sem palavra nova: a frase usa só o que você já sabe — e a palavra **count** (contar) você já usa no SQL.' },
         { tipo: 'ingles', frase: 'Count all orders.', traducao: 'Conte todos os pedidos.' },
-        { tipo: 'nota', tom: 'info', texto: '**count** = "conte". A frase inteira vira `SELECT COUNT(*) FROM Pedidos;`.' }
+        { tipo: 'nota', tom: 'info', texto: '**count** = "conte". A frase inteira vira `SELECT COUNT(*) FROM Pedidos;`.' },
+        { tipo: 'vida-real', emoji: '📊', titulo: 'A dona da loja pergunta quantos pedidos houve, quanto vendeu e qual o valor médio', texto: 'Você responde de uma vez com `SELECT COUNT(*), SUM(ValorTotal), AVG(ValorTotal) FROM Pedidos;`. Cada função resume milhares de linhas em um número, e ela não precisa abrir a tabela.' }
       ]
     },
     {

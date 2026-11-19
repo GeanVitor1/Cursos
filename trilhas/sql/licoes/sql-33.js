@@ -119,7 +119,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Locks protect rows.', traducao: 'Travas protegem linhas.' },
-        { tipo: 'trabalho', texto: 'Em dia de pico (liquidação, lançamento), a concorrência no estoque decide quem vende e quem pede desculpas. Entender locks é entender o gargalo.', fonte: '💼 No trabalho' }
+        { tipo: 'trabalho', texto: 'Em dia de pico (liquidação, lançamento), a concorrência no estoque decide quem vende e quem pede desculpas. Entender locks é entender o gargalo.', fonte: '💼 No trabalho' },
+        { tipo: 'vida-real', emoji: '🔒', titulo: 'Duas atendentes abrem o mesmo pedido para alterar ao mesmo tempo', texto: 'O banco coloca uma trava no pedido e a segunda espera a primeira terminar a transação. Se a primeira deixar a transação aberta e sair para o almoço, a segunda fica parada. Por isso as transações devem ser curtas.' }
       ]
     },
     {

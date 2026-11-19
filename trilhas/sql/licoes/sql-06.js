@@ -212,7 +212,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Sort all customers by name.', traducao: 'Ordene todos os clientes por nome.' },
-        { tipo: 'nota', tom: 'info', texto: '**sort by** = "ordenar por". Repare que **by** aparece nas duas línguas: `ORDER BY` no SQL e **sort by** na frase em inglês.' }
+        { tipo: 'nota', tom: 'info', texto: '**sort by** = "ordenar por". Repare que **by** aparece nas duas línguas: `ORDER BY` no SQL e **sort by** na frase em inglês.' },
+        { tipo: 'vida-real', emoji: '🔤', titulo: 'A atendente quer a lista de clientes em ordem alfabética', texto: 'Sem ordem, os clientes aparecem na sequência em que foram gravados e ela perde tempo procurando um nome. Com `SELECT Nome FROM Clientes ORDER BY Nome;` a lista já sai de A a Z e a busca com o olho fica rápida.' }
       ]
     },
     {

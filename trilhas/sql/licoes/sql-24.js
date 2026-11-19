@@ -120,7 +120,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Paid and pending orders.', traducao: 'Pedidos pagos e pendentes.' },
-        { tipo: 'nota', tom: 'info', texto: 'As duas categorias que um `CASE` sobre Status separaria.' }
+        { tipo: 'nota', tom: 'info', texto: 'As duas categorias que um `CASE` sobre Status separaria.' },
+        { tipo: 'vida-real', emoji: '🏷️', titulo: 'A tela de produtos precisa mostrar Barato, Médio ou Caro', texto: 'Em vez de calcular a faixa de preço no programa, você cria a coluna na própria consulta com `CASE WHEN Preco < 50 THEN \'Barato\' ... END`. Cada produto sai com o rótulo certo, e a regra fica no banco.' }
       ]
     },
     {

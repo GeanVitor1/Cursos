@@ -60,7 +60,8 @@ Plataforma.registrarLicao({
           ['void', 'não devolve nada', 'Usado quando o método executa algo, mas não devolve valor.']
         ] },
         { tipo: 'texto', texto: 'Quando o método não devolve nada, usamos `void` no lugar do tipo de retorno. É o caso de ações como enviar um e-mail.' },
-        { tipo: 'texto', texto: 'Chamamos o método assim: `decimal total = CalcularTotal(100.00m, 3);` — o resultado (300.00) é devolvido e guardado em `total`.' }
+        { tipo: 'texto', texto: 'Chamamos o método assim: `decimal total = CalcularTotal(100.00m, 3);` — o resultado (300.00) é devolvido e guardado em `total`.' },
+        { tipo: 'vida-real', emoji: '🛒', titulo: 'O total do carrinho saiu diferente em duas telas', texto: 'A conta de preço vezes quantidade estava copiada em três lugares, e alguém digitou uma delas errada. Você cria o método `CalcularTotal` com retorno `decimal` e todas as telas passam a chamar o mesmo método. Corrigir a regra passa a ser mexer em um lugar só.' }
       ]
     },
     {

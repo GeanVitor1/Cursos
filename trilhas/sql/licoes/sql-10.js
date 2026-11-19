@@ -258,7 +258,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The name starts with A.', traducao: 'O nome começa com A.' },
-        { tipo: 'nota', tom: 'info', texto: '**starts with A** = "começa com A" — exatamente a ideia de `LIKE \'A%\'`.' }
+        { tipo: 'nota', tom: 'info', texto: '**starts with A** = "começa com A" — exatamente a ideia de `LIKE \'A%\'`.' },
+        { tipo: 'vida-real', emoji: '📧', titulo: 'O cliente liga e só lembra que o e-mail termina com gmail.com', texto: 'A atendente usa `WHERE Email LIKE \'%gmail.com\'`: o `%` no começo aceita qualquer texto antes e a busca encontra todos os e-mails daquele final. Depois ela confere o nome com o cliente ainda na linha.' }
       ]
     },
     {

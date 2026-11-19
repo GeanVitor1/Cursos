@@ -186,7 +186,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Left join and right join.', traducao: 'Junção à esquerda e à direita.' },
-        { tipo: 'nota', tom: 'info', texto: '**left join** = "junção à esquerda". O lado nomeado é o lado preservado.' }
+        { tipo: 'nota', tom: 'info', texto: '**left join** = "junção à esquerda". O lado nomeado é o lado preservado.' },
+        { tipo: 'vida-real', emoji: '📦', titulo: 'A gerente quer ver os produtos que nunca foram vendidos', texto: 'Com `Produtos LEFT JOIN ItensPedido` todos os produtos aparecem, mesmo os sem venda, e `WHERE ItensPedido.Id IS NULL` deixa só esses. Um `INNER JOIN` esconderia justamente os produtos que ela quer tirar do catálogo.' }
       ]
     },
     {

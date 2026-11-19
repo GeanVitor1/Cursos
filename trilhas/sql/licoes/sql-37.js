@@ -132,7 +132,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Products with low stock.', traducao: 'Produtos com estoque baixo.' },
-        { tipo: 'nota', tom: 'info', texto: '**low stock** = "estoque baixo": o coração do alerta.' }
+        { tipo: 'nota', tom: 'info', texto: '**low stock** = "estoque baixo": o coração do alerta.' },
+        { tipo: 'vida-real', emoji: '📉', titulo: 'A compradora precisa saber o que pedir ao fornecedor hoje', texto: 'Você lista os produtos com `WHERE Estoque < 10 ORDER BY Estoque`, do mais crítico para o menos crítico. Ela abre a lista de manhã, liga para o fornecedor e começa pelos produtos que estão para acabar.' }
       ]
     },
     {

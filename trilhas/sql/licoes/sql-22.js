@@ -149,7 +149,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Query with subquery.', traducao: 'Consulta com subconsulta.' },
-        { tipo: 'nota', tom: 'info', texto: '**queries with subqueries** = "consultas com subconsultas".' }
+        { tipo: 'nota', tom: 'info', texto: '**queries with subqueries** = "consultas com subconsultas".' },
+        { tipo: 'vida-real', emoji: '💲', titulo: 'O comprador quer os produtos mais caros que o preço médio da loja', texto: 'O preço médio muda toda vez que um produto é cadastrado, então você não digita um número fixo. `WHERE Preco > (SELECT AVG(Preco) FROM Produtos)` calcula a média na hora e usa o resultado como filtro.' }
       ]
     },
     {

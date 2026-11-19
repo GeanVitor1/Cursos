@@ -142,7 +142,8 @@ Plataforma.registrarLicao({
         { tipo: 'nota', tom: 'info', texto: 'Você não precisa entender esta linha agora: ela é a configuração que o ASP.NET usa para entregar a dependência. Vamos detalhá-la na trilha de ASP.NET Core.' },
         { tipo: 'texto', texto: 'A partir do registro, o próprio ASP.NET cria o PedidoService e entrega o notificador certo. Você não escreve `new PedidoService()` em lugar nenhum.' },
         { tipo: 'nota', tom: 'info', texto: 'Você vai estudar `AddScoped`, `AddTransient` e `AddSingleton` na trilha de ASP.NET Core, depois de entender por que eles existem.' },
-        { tipo: 'trabalho', texto: 'Injeção de dependência aparece o tempo todo em projetos .NET. Em entrevistas, é quase certo perguntarem qual problema ela resolve — agora você sabe responder com um caso concreto.', fonte: '💼 Em uma entrevista .NET' }
+        { tipo: 'trabalho', texto: 'Injeção de dependência aparece o tempo todo em projetos .NET. Em entrevistas, é quase certo perguntarem qual problema ela resolve — agora você sabe responder com um caso concreto.', fonte: '💼 Em uma entrevista .NET' },
+        { tipo: 'vida-real', emoji: '🧪', titulo: 'Testar o PedidoService sem mandar e-mail de verdade ao cliente', texto: 'Como o notificador chega pelo construtor, no teste você entrega um notificador falso que só anota a mensagem. Se o `PedidoService` criasse o `EmailNotificador` por conta própria, cada teste dispararia um e-mail real. A dependência entregue de fora resolve isso.' }
       ]
     },
     {

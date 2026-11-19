@@ -83,7 +83,8 @@ Plataforma.registrarLicao({
           ['?.', 'null-conditional', 'Acessa a propriedade apenas se o objeto existir.'],
           ['??', 'null-coalescing', 'Usa um valor alternativo quando o primeiro é null.'],
           ['?', 'tipo anulável', 'Em `string? Nome`, avisa que a propriedade pode ser null.']
-        ] }
+        ] },
+        { tipo: 'vida-real', emoji: '👤', titulo: 'Um cliente antigo sem nome cadastrado derruba a tela do recibo', texto: 'O cadastro antigo permitia deixar o nome em branco e o recibo quebrava ao tentar mostrá-lo. Com `string nome = cliente?.Nome ?? "Sem nome";` o programa mostra "Sem nome" quando o valor não existe, em vez de parar com erro.' }
       ]
     },
     {

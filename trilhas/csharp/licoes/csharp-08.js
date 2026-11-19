@@ -55,7 +55,8 @@ Plataforma.registrarLicao({
         ] },
         { tipo: 'texto', texto: 'E o catch genérico, sem fazer nada, esconde o problema:' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'catch (Exception)\n{\n    // não faça isso: engole qualquer erro\n}' },
-        { tipo: 'destaque', texto: 'Capturar tudo e não fazer nada é pior do que não tratar: o erro desaparece da tela e reaparece como bug misterioso em produção.' }
+        { tipo: 'destaque', texto: 'Capturar tudo e não fazer nada é pior do que não tratar: o erro desaparece da tela e reaparece como bug misterioso em produção.' },
+        { tipo: 'vida-real', emoji: '🚫', titulo: 'O cliente tenta comprar 5 unidades e só há 3 no estoque', texto: 'O método lança `throw new InvalidOperationException("Estoque insuficiente")` e quem chamou trata o erro mostrando um aviso claro. Sem isso o sistema venderia o que não tem. E um `catch` vazio esconderia o problema até virar bug misterioso em produção.' }
       ]
     },
     {

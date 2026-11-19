@@ -222,7 +222,8 @@ Plataforma.registrarLicao({
         },
         { tipo: 'ingles', frase: 'A table has rows and columns.', traducao: 'Uma tabela tem linhas e colunas.' },
         { tipo: 'ingles', frase: 'The table has a primary key.', traducao: 'A tabela tem uma chave primária.' },
-        { tipo: 'nota', tom: 'info', texto: '**a** = um/uma; **has** = tem; **and** = e. O plural em inglês quase sempre leva **s**: row → rows, column → columns.' }
+        { tipo: 'nota', tom: 'info', texto: '**a** = um/uma; **has** = tem; **and** = e. O plural em inglês quase sempre leva **s**: row → rows, column → columns.' },
+        { tipo: 'vida-real', emoji: '🗄️', titulo: 'Os pedidos da loja sumiram quando o sistema reiniciou', texto: 'Os pedidos ficavam só na memória do programa, então reiniciar significava perder tudo. Gravados em tabelas de um banco no servidor, cada pedido é um registro que continua lá depois de qualquer reinicialização. A chave primária garante que nenhum seja confundido com outro.' }
       ]
     },
     {

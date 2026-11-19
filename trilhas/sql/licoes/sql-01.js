@@ -250,7 +250,8 @@ Plataforma.registrarLicao({
           ],
           legenda: 'PedidoId e ProdutoId são chaves estrangeiras: ligam o item ao pedido e ao produto.'
         },
-        { tipo: 'nota', tom: 'sucesso', texto: 'Na próxima etapa você escreve sua **primeira consulta SQL** nesse banco. Antes disso, você cria uma tabela e resolve dois desafios de modelagem.' }
+        { tipo: 'nota', tom: 'sucesso', texto: 'Na próxima etapa você escreve sua **primeira consulta SQL** nesse banco. Antes disso, você cria uma tabela e resolve dois desafios de modelagem.' },
+        { tipo: 'vida-real', emoji: '📋', titulo: 'A planilha única do dono vira tabelas separadas', texto: 'Na planilha dele, o nome do cliente se repete em cada compra e basta um erro de digitação para o mesmo cliente aparecer de dois jeitos. Você separa em Clientes e Pedidos e liga as duas por uma chave estrangeira: o nome fica em um lugar só e cada pedido aponta para o cliente pelo Id.' }
       ]
     },
     {

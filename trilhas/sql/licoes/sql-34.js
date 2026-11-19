@@ -122,7 +122,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Plans explain slow queries.', traducao: 'Planos explicam consultas lentas.' },
-        { tipo: 'nota', tom: 'info', texto: '**explain slow queries** = "explicar consultas lentas": o trabalho do plano.' }
+        { tipo: 'nota', tom: 'info', texto: '**explain slow queries** = "explicar consultas lentas": o trabalho do plano.' },
+        { tipo: 'vida-real', emoji: '🐌', titulo: 'O relatório do financeiro demora 40 segundos e ninguém sabe por quê', texto: 'Você abre o plano de execução em vez de adivinhar. Ele mostra que o banco lê a tabela Pedidos inteira porque a coluna do `WHERE` não tem índice. Com o diagnóstico em mãos, a correção deixa de ser tentativa e erro.' }
       ]
     },
     {

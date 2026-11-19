@@ -194,7 +194,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Change the price to 250.', traducao: 'Altere o preço para 250.' },
-        { tipo: 'nota', tom: 'info', texto: '**change the price to 250** = "altere o preço para 250" — o verbo que o `UPDATE` executa em inglês.' }
+        { tipo: 'nota', tom: 'info', texto: '**change the price to 250** = "altere o preço para 250" — o verbo que o `UPDATE` executa em inglês.' },
+        { tipo: 'vida-real', emoji: '✏️', titulo: 'O preço da cadeira foi cadastrado como 25 em vez de 250', texto: 'Você roda `UPDATE Produtos SET Preco = 250 WHERE Id = 7;` e só aquela linha muda. Se esquecesse o `WHERE`, todos os produtos da loja passariam a custar 250 de uma vez, e a loja venderia tudo pelo mesmo preço.' }
       ]
     },
     {

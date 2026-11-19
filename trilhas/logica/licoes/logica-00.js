@@ -206,7 +206,8 @@ Plataforma.registrarLicao({
       introduz: ['logica.agrupamento'],
       blocos: [
         { tipo: 'texto', texto: 'O quarto raciocínio é **agrupar e contar**: separar os itens em grupos e contar quantos há em cada grupo.' },
-        { tipo: 'conceito', id: 'logica.agrupamento', titulo: 'Agrupamento', texto: 'Separar os itens em grupos e contar quantos há em cada um.', exemplo: 'Quantos pedidos cada cliente fez.' }
+        { tipo: 'conceito', id: 'logica.agrupamento', titulo: 'Agrupamento', texto: 'Separar os itens em grupos e contar quantos há em cada um.', exemplo: 'Quantos pedidos cada cliente fez.' },
+        { tipo: 'vida-real', emoji: '🧾', titulo: 'A dona da padaria quer saber quantas vendas foram em dinheiro, cartão e pix', texto: 'O caixa entrega a lista do dia com 200 vendas, cada uma com a forma de pagamento. Você separa as vendas em três grupos, um por forma de pagamento, e conta quantas há em cada grupo. Esse é o agrupamento, e o raciocínio é o mesmo se os dados estiverem numa planilha ou num banco.' }
       ]
     },
     {

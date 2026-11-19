@@ -141,7 +141,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Exists checks customers.', traducao: 'Existe verifica clientes.' },
-        { tipo: 'nota', tom: 'info', texto: 'Leia como "verifique se existem clientes (com pedido)".' }
+        { tipo: 'nota', tom: 'info', texto: 'Leia como "verifique se existem clientes (com pedido)".' },
+        { tipo: 'vida-real', emoji: '🔍', titulo: 'A gerente quer só os clientes que compraram pelo menos uma vez', texto: 'Você usa `WHERE EXISTS` com uma subconsulta que procura pedidos do cliente. Para o contrário, quem nunca comprou, basta trocar por `NOT EXISTS`. O banco para de procurar assim que acha o primeiro pedido de cada cliente.' }
       ]
     },
     {

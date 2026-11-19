@@ -201,7 +201,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'A palavra **join** (juntar) você já usa no SQL. Veja como ela aparece num pedido de trabalho — sem palavra nova, só combinando o que você já sabe:' },
         { tipo: 'ingles', frase: 'Join customers and orders.', traducao: 'Junte clientes e pedidos.' },
-        { tipo: 'nota', tom: 'info', texto: '**join** = "junte". A frase inteira vira `... JOIN ...`: juntar clientes e pedidos.' }
+        { tipo: 'nota', tom: 'info', texto: '**join** = "junte". A frase inteira vira `... JOIN ...`: juntar clientes e pedidos.' },
+        { tipo: 'vida-real', emoji: '🔗', titulo: 'A lista de pedidos mostra o número do cliente, mas o gerente quer o nome', texto: 'A tabela Pedidos só guarda `ClienteId`, um número que ele não reconhece. O `JOIN` liga Pedidos a Clientes pela chave estrangeira e traz o Nome ao lado de cada pedido, sem copiar o nome para dentro dos pedidos.' }
       ]
     },
     {

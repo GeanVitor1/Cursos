@@ -155,7 +155,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Procedures save time.', traducao: 'Procedimentos economizam tempo.' },
-        { tipo: 'nota', tom: 'info', texto: '**save time** = "economizar tempo": o motivo de guardar rotinas.' }
+        { tipo: 'nota', tom: 'info', texto: '**save time** = "economizar tempo": o motivo de guardar rotinas.' },
+        { tipo: 'vida-real', emoji: '🌙', titulo: 'O fechamento do dia roda três comandos na mesma ordem toda noite', texto: 'Você guarda os três comandos em uma stored procedure chamada `FecharDia`. A operadora chama pelo nome e o banco executa tudo na ordem certa. Ninguém precisa copiar e colar os comandos, e ninguém esquece um deles.' }
       ]
     },
     {

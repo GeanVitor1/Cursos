@@ -201,7 +201,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Window ranks rows.', traducao: 'Janela classifica linhas.' },
-        { tipo: 'trabalho', texto: '"Top 3 por categoria", "última compra de cada cliente", "posição no ranking": window functions resolvem o que GROUP BY sozinho não alcança.', fonte: '💼 No trabalho' }
+        { tipo: 'trabalho', texto: '"Top 3 por categoria", "última compra de cada cliente", "posição no ranking": window functions resolvem o que GROUP BY sozinho não alcança.', fonte: '💼 No trabalho' },
+        { tipo: 'vida-real', emoji: '🏆', titulo: 'A loja quer premiar os 5 clientes que mais gastaram', texto: 'Com `RANK() OVER (ORDER BY ValorTotal DESC)` cada linha ganha uma coluna de posição sem esconder as demais. Quem empata em valor recebe a mesma posição, e a lista final é só filtrar as posições de 1 a 5.' }
       ]
     },
     {

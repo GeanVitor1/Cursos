@@ -176,7 +176,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Design tables first.', traducao: 'Projete as tabelas primeiro.' },
-        { tipo: 'trabalho', texto: 'Modelagem vem antes do código em todo projeto sério: errar tabela no início custa migração dolorosa depois.', fonte: '💼 No trabalho' }
+        { tipo: 'trabalho', texto: 'Modelagem vem antes do código em todo projeto sério: errar tabela no início custa migração dolorosa depois.', fonte: '💼 No trabalho' },
+        { tipo: 'vida-real', emoji: '👕', titulo: 'A loja vai vender camisetas e o texto "Camisetas" se repete em cada produto', texto: 'Você cria a tabela `Categorias` e coloca uma chave estrangeira em Produtos. Renomear a categoria vira alterar uma linha, e não milhares de produtos. A modelagem feita antes do código evita corrigir os dados depois.' }
       ]
     },
     {

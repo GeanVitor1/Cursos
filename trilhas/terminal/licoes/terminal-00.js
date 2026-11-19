@@ -126,7 +126,8 @@ Plataforma.registrarLicao({
       introduz: ['terminal.npm'],
       blocos: [
         { tipo: 'codigo', linguagem: 'texto', codigo: 'npm install           # instala as dependências da parte visual (frontend)' },
-        { tipo: 'nota', tom: 'info', texto: '**npm** = gerenciador de pacotes do frontend. `npm install` é apenas **preview**: você vai estudá-lo na trilha de Frontend (a parte visual).' }
+        { tipo: 'nota', tom: 'info', texto: '**npm** = gerenciador de pacotes do frontend. `npm install` é apenas **preview**: você vai estudá-lo na trilha de Frontend (a parte visual).' },
+        { tipo: 'vida-real', emoji: '🖥️', titulo: 'A tela do projeto não abre na sua máquina', texto: 'A colega da parte visual pergunta: "você rodou o `npm install`?". Faltava instalar as dependências do frontend. Dentro da pasta certa, um único comando resolve em poucos minutos e a tela volta a abrir.' }
       ]
     },
     {

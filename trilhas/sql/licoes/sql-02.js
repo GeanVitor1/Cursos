@@ -297,7 +297,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The name and email of a customer.', traducao: 'O nome e o e-mail de um cliente.' },
-        { tipo: 'nota', tom: 'info', texto: 'Ligação: **the** = o/a; **and** = e; **a** = um/uma. Repare como **of a customer** equivale a "de um cliente".' }
+        { tipo: 'nota', tom: 'info', texto: 'Ligação: **the** = o/a; **and** = e; **a** = um/uma. Repare como **of a customer** equivale a "de um cliente".' },
+        { tipo: 'vida-real', emoji: '📞', titulo: 'A atendente quer só nome e e-mail dos clientes', texto: 'A tabela Clientes tem várias colunas e ela só precisa de duas para o contato. Você escreve `SELECT Nome, Email FROM Clientes;` e a resposta traz apenas essas colunas, sem poluir a tela com o resto.' }
       ]
     },
     {

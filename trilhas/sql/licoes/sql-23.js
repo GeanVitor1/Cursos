@@ -145,7 +145,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Common table expressions.', traducao: 'Expressões de tabela comuns.' },
-        { tipo: 'nota', tom: 'info', texto: '**common table expression** = "expressão de tabela comum": um resultado com nome.' }
+        { tipo: 'nota', tom: 'info', texto: '**common table expression** = "expressão de tabela comum": um resultado com nome.' },
+        { tipo: 'vida-real', emoji: '👑', titulo: 'A campanha VIP precisa de clientes que já gastaram mais de R$ 1.000', texto: 'Primeiro você calcula o total por cliente em uma CTE chamada `TotaisPorCliente`; depois filtra só quem passou de 1.000. Cada etapa tem nome, e o colega que assumir a consulta lê o raciocínio de cima para baixo.' }
       ]
     },
     {

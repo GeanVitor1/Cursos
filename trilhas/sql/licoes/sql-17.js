@@ -179,7 +179,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Use short alias names.', traducao: 'Use nomes de apelido curtos.' },
-        { tipo: 'nota', tom: 'info', texto: '**short alias** = "apelido curto". É o resumo desta lição em duas palavras.' }
+        { tipo: 'nota', tom: 'info', texto: '**short alias** = "apelido curto". É o resumo desta lição em duas palavras.' },
+        { tipo: 'vida-real', emoji: '🏷️', titulo: 'O banco reclama que Nome é ambíguo na consulta de pedidos', texto: 'Clientes e Produtos têm uma coluna Nome, e o banco não sabe de qual falar. Com os apelidos `c` e `p`, você escreve `c.Nome` e `p.Nome`; a consulta fica curta e o colega que ler depois sabe de que tabela cada coluna vem.' }
       ]
     },
     {

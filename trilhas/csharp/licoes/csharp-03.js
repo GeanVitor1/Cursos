@@ -147,7 +147,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'O `<Produto>` entre `<` e `>` diz que **tipo** de item a lista aceita. Isso é um **generic**: o mesmo `List` funciona para qualquer tipo, mas cada lista fica restrita a um.' },
         { tipo: 'conceito', id: 'csharp.generics', titulo: 'Generics', texto: 'Um recurso que permite usar o mesmo código com vários tipos, mantendo a segurança de tipos.', exemplo: 'List<Produto> aceita produtos; List<int> aceita inteiros.' },
-        { tipo: 'diagrama', arte: 'List<T>  (molde genérico)\n   │\n   ├── List<Produto>  → aceita produtos\n   ├── List<string>   → aceita textos\n   └── List<int>      → aceita inteiros' }
+        { tipo: 'diagrama', arte: 'List<T>  (molde genérico)\n   │\n   ├── List<Produto>  → aceita produtos\n   ├── List<string>   → aceita textos\n   └── List<int>      → aceita inteiros' },
+        { tipo: 'vida-real', emoji: '🏷️', titulo: 'A lista de ofertas da semana cresce todo dia', texto: 'O dono do mercado inclui produtos em promoção sem parar e não dá para criar uma variável nova para cada um. Você usa uma `List<Produto>`: uma única variável guarda todas as ofertas. O `<Produto>` garante que só produtos entram na lista, nunca um texto solto por engano.' }
       ]
     },
     {

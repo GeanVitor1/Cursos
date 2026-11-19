@@ -175,7 +175,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Payments with status paid.', traducao: 'Pagamentos com status pago.' },
-        { tipo: 'nota', tom: 'info', texto: '**payments** = "pagamentos". O filtro da análise financeira.' }
+        { tipo: 'nota', tom: 'info', texto: '**payments** = "pagamentos". O filtro da análise financeira.' },
+        { tipo: 'vida-real', emoji: '💰', titulo: 'O financeiro quer separar o dinheiro que entrou do que ainda está pendente', texto: 'Uma consulta só calcula `SUM(CASE WHEN Status = \'Pago\' THEN ValorTotal ELSE 0 END)` para o que entrou, e outra soma equivalente para o pendente. Cancelados ficam de fora, e os dois números saem lado a lado.' }
       ]
     },
     {

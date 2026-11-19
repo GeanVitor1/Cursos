@@ -207,7 +207,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The phone is null.', traducao: 'O telefone é nulo (sem valor).' },
-        { tipo: 'nota', tom: 'info', texto: '`NULL` é a ausência de valor ("não sei"). Um texto vazio, `\'\'`, é um valor conhecido e diferente de NULL.' }
+        { tipo: 'nota', tom: 'info', texto: '`NULL` é a ausência de valor ("não sei"). Um texto vazio, `\'\'`, é um valor conhecido e diferente de NULL.' },
+        { tipo: 'vida-real', emoji: '📵', titulo: 'A equipe quer a lista de clientes sem telefone para pedir atualização', texto: 'Você escreve `WHERE Telefone IS NULL` para achar quem não tem o dado. Se usasse `= NULL`, a consulta não devolveria nenhuma linha, porque NULL é ausência de valor e não se compara com igual. Esse erro é o primeiro que quase todo mundo comete.' }
       ]
     },
     {

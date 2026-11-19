@@ -206,7 +206,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'O verbo **delete** (excluir) você já usa no SQL. Repare como ele aparece em um pedido de trabalho:' },
         { tipo: 'ingles', frase: 'Delete the customer with Id 10.', traducao: 'Exclua o cliente de Id 10.' },
-        { tipo: 'nota', tom: 'info', texto: '**Delete the customer with Id 10** = "exclua o cliente de Id 10" — a frase inteira vira `DELETE FROM Clientes WHERE Id = 10;`.' }
+        { tipo: 'nota', tom: 'info', texto: '**Delete the customer with Id 10** = "exclua o cliente de Id 10" — a frase inteira vira `DELETE FROM Clientes WHERE Id = 10;`.' },
+        { tipo: 'vida-real', emoji: '🗑️', titulo: 'Um cliente novo se cadastra e outro pede para sair do cadastro', texto: '`INSERT` grava a linha do cliente novo e `DELETE FROM Clientes WHERE Id = 10;` apaga só quem pediu. Sem o `WHERE`, o `DELETE` esvaziaria a tabela inteira, então você confere o Id com um `SELECT` antes de apagar.' }
       ]
     },
     {

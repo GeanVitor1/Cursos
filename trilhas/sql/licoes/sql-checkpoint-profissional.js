@@ -25,7 +25,8 @@ Plataforma.registrarLicao({
             'Pode usar dicas — o resultado continua contando.',
             'Ao final, você verá seu domínio conceito por conceito.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '🧰', titulo: 'Na primeira semana, o líder entrega três tarefas sobre o banco da loja', texto: 'Ele pede o alerta de estoque baixo, o relatório de pedidos pagos por mês e a revisão de uma consulta lenta. Cada tarefa usa uma parte da trilha: `WHERE` com `ORDER BY`, `GROUP BY` e o plano de execução. Nada ali é novidade para você.' }
       ]
     },
     {

@@ -165,7 +165,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Fechando o ciclo com palavras que você já domina.' },
         { tipo: 'ingles', frase: 'Explain slow queries.', traducao: 'Explique consultas lentas.' },
-        { tipo: 'nota', tom: 'info', texto: 'Explicar a lentidão (plano) antes de corrigir: a ordem profissional.' }
+        { tipo: 'nota', tom: 'info', texto: 'Explicar a lentidão (plano) antes de corrigir: a ordem profissional.' },
+        { tipo: 'vida-real', emoji: '🔧', titulo: 'A busca de pedidos do ano ignora o índice de DataPedido', texto: 'A consulta usa `YEAR(DataPedido) = 2025`, e a função no `WHERE` impede o banco de usar o índice. Reescrita como `DataPedido >= \'2025-01-01\' AND DataPedido < \'2026-01-01\'`, a coluna fica livre e o plano passa a usar o índice.' }
       ]
     },
     {

@@ -83,7 +83,8 @@ Plataforma.registrarLicao({
           '`=>` — a seta que separa o item da regra. Lê-se "tal que".',
           '`p.Ativo` — acessa a propriedade Ativo daquele item (verdadeiro ou falso).'
         ] },
-        { tipo: 'nota', tom: 'atencao', texto: 'Leia `p => p.Ativo` assim: "para um produto p, o critério é p.Ativo". Você vai reencontrar essa forma na trilha de consultas de dados.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'Leia `p => p.Ativo` assim: "para um produto p, o critério é p.Ativo". Você vai reencontrar essa forma na trilha de consultas de dados.' },
+        { tipo: 'vida-real', emoji: '💰', titulo: 'A cliente quer só os produtos acima de R$ 100, e amanhã só os ativos', texto: 'Você escreve o método `Filtrar` uma vez e muda apenas a regra de cada pedido: `p => p.Preco > 100` hoje, `p => p.Ativo` amanhã. A lista original continua igual e cada chamada recebe a regra escrita na hora.' }
       ]
     },
     {

@@ -159,7 +159,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Inner and outer join.', traducao: 'Junção interna e externa.' },
-        { tipo: 'nota', tom: 'info', texto: '**inner join** = "junção interna". O `OUTER` aparece nos próximos tipos de `JOIN`.' }
+        { tipo: 'nota', tom: 'info', texto: '**inner join** = "junção interna". O `OUTER` aparece nos próximos tipos de `JOIN`.' },
+        { tipo: 'vida-real', emoji: '🧾', titulo: 'O financeiro quer pedidos pagos com o nome de cada cliente', texto: 'Um `INNER JOIN` entre Pedidos e Clientes, com `ON Pedidos.ClienteId = Clientes.Id`, devolve só as linhas que têm par nos dois lados. Clientes que nunca compraram ficam de fora, que é exatamente o que ele pediu: relatório de quem comprou.' }
       ]
     },
     {

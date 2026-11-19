@@ -149,7 +149,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: '**first** (primeiro) aparece nas frases de trabalho para pedir as primeiras linhas de um resultado.' },
         { tipo: 'ingles', frase: 'Retrieve the first 10 rows.', traducao: 'Recupere as primeiras 10 linhas.' },
-        { tipo: 'nota', tom: 'info', texto: '**the first 10 rows** = "as primeiras 10 linhas". É a ideia do `TOP 10` / `LIMIT 10`.' }
+        { tipo: 'nota', tom: 'info', texto: '**the first 10 rows** = "as primeiras 10 linhas". É a ideia do `TOP 10` / `LIMIT 10`.' },
+        { tipo: 'vida-real', emoji: '🔟', titulo: 'O gerente quer ver só os 10 pedidos de maior valor', texto: 'Ele vai conferir esses pedidos na reunião e não precisa da tabela inteira. Você ordena por `ValorTotal DESC` e limita com `TOP 10` (ou `LIMIT 10`, conforme o banco): só dez linhas voltam, e a consulta termina mais rápido.' }
       ]
     },
     {

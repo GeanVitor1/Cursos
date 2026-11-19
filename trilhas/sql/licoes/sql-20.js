@@ -148,7 +148,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Having filters groups.', traducao: 'Tendo filtra grupos.' },
-        { tipo: 'nota', tom: 'info', texto: 'Na prática leia como "o HAVING filtra os grupos".' }
+        { tipo: 'nota', tom: 'info', texto: 'Na prática leia como "o HAVING filtra os grupos".' },
+        { tipo: 'vida-real', emoji: '⭐', titulo: 'O programa de fidelidade premia quem comprou mais de 3 vezes', texto: 'Você agrupa os pedidos por `ClienteId` e filtra os grupos com `HAVING COUNT(*) > 3`. O `WHERE` não serve aqui, porque ele age nas linhas antes de agrupar, e a contagem só existe depois do agrupamento.' }
       ]
     },
     {

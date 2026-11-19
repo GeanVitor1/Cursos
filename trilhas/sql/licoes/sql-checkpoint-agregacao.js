@@ -25,7 +25,8 @@ Plataforma.registrarLicao({
             'Pode usar dicas — o resultado continua contando.',
             'Ao final, você verá seu domínio conceito por conceito.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '🧐', titulo: 'O relatório mensal sai na segunda e você revisa antes de enviar', texto: 'Você confere se o `GROUP BY` agrupa pela coluna certa e se o `HAVING` filtra os grupos, não as linhas. Um filtro no lugar errado muda o total sem dar erro, e a diretoria só percebe depois.' }
       ]
     },
     {

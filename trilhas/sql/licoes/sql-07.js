@@ -212,7 +212,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Retrieve only different names.', traducao: 'Recupere somente nomes diferentes.' },
-        { tipo: 'nota', tom: 'info', texto: '**only different** = "somente diferentes". É a ideia do `DISTINCT`: cada valor uma única vez.' }
+        { tipo: 'nota', tom: 'info', texto: '**only different** = "somente diferentes". É a ideia do `DISTINCT`: cada valor uma única vez.' },
+        { tipo: 'vida-real', emoji: '🧮', titulo: 'A diretora pergunta quais status de pedido existem hoje', texto: 'A tabela tem milhares de pedidos e a resposta cabe em três palavras. `SELECT DISTINCT Status FROM Pedidos;` devolve Pago, Pendente e Cancelado, cada um uma única vez, em vez de repetir o status de cada pedido.' }
       ]
     },
     {

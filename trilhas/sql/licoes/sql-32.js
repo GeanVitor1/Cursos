@@ -150,7 +150,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Transactions protect orders.', traducao: 'Transações protegem pedidos.' },
-        { tipo: 'nota', tom: 'info', texto: '**protect** = "proteger": a transação protege a integridade.' }
+        { tipo: 'nota', tom: 'info', texto: '**protect** = "proteger": a transação protege a integridade.' },
+        { tipo: 'vida-real', emoji: '💳', titulo: 'A luz cai depois de gravar o pagamento e antes de baixar o estoque', texto: 'Sem transação, o cliente pagou e o estoque continua igual, o que gera venda de produto que não existe. Com `BEGIN TRANSACTION` e `COMMIT`, os dois passos acontecem juntos ou nenhum acontece. Se algo falhar no meio, o `ROLLBACK` desfaz o que foi gravado.' }
       ]
     },
     {

@@ -40,7 +40,8 @@ Plataforma.registrarLicao({
         ] },
         { tipo: 'nota', tom: 'atencao', texto: 'Métodos assíncronos sem resultado usam só `Task`; métodos com resultado usam `Task<string>`, `Task<Produto>` etc.' },
         { tipo: 'nota', tom: 'atencao', texto: '`await` só pode ser usado dentro de um método marcado com `async`.' },
-        { tipo: 'futuro', conceitos: ['ef.dbcontext', 'ef.dbset', 'ef.consultas'], texto: 'Guardou a ideia de `async` e `await`? Na trilha de Entity Framework você vai ver `await context.Produtos.ToListAsync()`: é exatamente este mesmo mecanismo aplicado a consultas no banco. Lá explicaremos `context`, `DbSet` e `ToListAsync` com calma.' }
+        { tipo: 'futuro', conceitos: ['ef.dbcontext', 'ef.dbset', 'ef.consultas'], texto: 'Guardou a ideia de `async` e `await`? Na trilha de Entity Framework você vai ver `await context.Produtos.ToListAsync()`: é exatamente este mesmo mecanismo aplicado a consultas no banco. Lá explicaremos `context`, `DbSet` e `ToListAsync` com calma.' },
+        { tipo: 'vida-real', emoji: '⏳', titulo: 'A tela de confirmação do pedido congela esperando o pagamento', texto: 'A resposta do sistema de pagamento demora alguns segundos e a tela trava junto. Marcando o método como `async` e usando `await` na espera, ele devolve uma `Task` e a aplicação continua respondendo enquanto o pagamento é confirmado.' }
       ]
     },
     {

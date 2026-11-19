@@ -174,7 +174,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Group rows by status.', traducao: 'Agrupe as linhas por status.' },
-        { tipo: 'nota', tom: 'info', texto: '**group by** = "agrupe por". A frase descreve exatamente o `GROUP BY`.' }
+        { tipo: 'nota', tom: 'info', texto: '**group by** = "agrupe por". A frase descreve exatamente o `GROUP BY`.' },
+        { tipo: 'vida-real', emoji: '🗂️', titulo: 'A diretora quer ver quantos pedidos estão pagos, pendentes e cancelados', texto: '`SELECT Status, COUNT(*) FROM Pedidos GROUP BY Status;` devolve uma linha por status, já com a contagem. Sem o `GROUP BY` seriam três consultas separadas, e a conta teria que ser refeita se surgisse um status novo.' }
       ]
     },
     {

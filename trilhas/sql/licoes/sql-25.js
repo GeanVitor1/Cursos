@@ -153,7 +153,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Union all rows.', traducao: 'Una todas as linhas.' },
-        { tipo: 'nota', tom: 'info', texto: '**union all** = "una tudo": a ideia do `UNION ALL`.' }
+        { tipo: 'nota', tom: 'info', texto: '**union all** = "una tudo": a ideia do `UNION ALL`.' },
+        { tipo: 'vida-real', emoji: '🏬', titulo: 'A loja do shopping guardou os clientes dela em outra tabela', texto: 'As duas tabelas têm as mesmas colunas e a campanha precisa de um e-mail por pessoa. `UNION` empilha as duas listas e elimina as repetidas; `UNION ALL` manteria quem aparece nas duas, e esse cliente receberia a mensagem em dobro.' }
       ]
     },
     {

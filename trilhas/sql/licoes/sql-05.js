@@ -199,7 +199,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Retrieve all rows where ValorTotal between 100 and 1000.', traducao: 'Recupere todas as linhas em que o ValorTotal esteja entre 100 e 1000.' },
-        { tipo: 'nota', tom: 'info', texto: '**between ... and ...** = "entre ... e ...". É o mesmo desenho do `BETWEEN ... AND ...` no SQL.' }
+        { tipo: 'nota', tom: 'info', texto: '**between ... and ...** = "entre ... e ...". É o mesmo desenho do `BETWEEN ... AND ...` no SQL.' },
+        { tipo: 'vida-real', emoji: '💵', titulo: 'O financeiro quer pedidos de R$ 100 a R$ 500 sem os cancelados', texto: 'Em vez de montar várias comparações com AND e OR, você escreve `ValorTotal BETWEEN 100 AND 500 AND Status NOT IN (\'Cancelado\')`. A consulta fica curta e a faixa de valores inclui os extremos, o que evita discussão sobre um pedido de exatamente R$ 500.' }
       ]
     },
     {
