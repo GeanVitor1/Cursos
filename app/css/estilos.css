@@ -331,12 +331,13 @@ p { margin: 0 0 12px; }
 
 .barra {
   height: 8px;
+  max-height: 8px;
   background: var(--superficie-3);
   border-radius: 999px;
   overflow: hidden;
-  flex: 1;
+  flex: 1 0 auto;
 }
-.barra-fina { height: 6px; }
+.barra-fina { height: 6px; max-height: 6px; }
 .barra-preenchimento {
   height: 100%;
   border-radius: 999px;

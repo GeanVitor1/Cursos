@@ -143,8 +143,8 @@ button { -webkit-user-select: none; user-select: none; }
 
 /* ---------- 8. Chips e barras de progresso ---------- */
 .chip { font-weight: 600; }
-.barra { height: 6px; }
-.barra-fina { height: 4px; }
+.barra { height: 6px; max-height: 6px; }
+.barra-fina { height: 4px; max-height: 4px; }
 .barra-preenchimento { background: var(--primaria); }
 .barra-preenchimento.sucesso { background: var(--sucesso); }
 .barra-preenchimento.aviso { background: var(--aviso); }

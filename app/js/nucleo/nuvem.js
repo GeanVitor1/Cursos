@@ -10,6 +10,7 @@
   let escrita = null;
   let pendente = false;
   let timer = null;
+  const INTERVALO_ENVIO = 30000;
   function status(nome, mensagem) {
     statusAtual = { status: nome, mensagem: mensagem };
     ouvintes.forEach(function (cb) { cb(statusAtual); });
@@ -75,11 +76,13 @@
   }
   function salvarRemoto(ignorado, imediato) {
     pendente = true;
-    if (timer) { clearTimeout(timer); timer = null; }
     if (!imediato) {
-      timer = setTimeout(function () { timer = null; enviar(); }, 1000);
+      // Agrupa alterações: no máximo um envio a cada INTERVALO_ENVIO (o timer não é reiniciado
+      // a cada alteração, senão o registro de tempo de estudo adiaria o envio para sempre).
+      if (!timer) timer = setTimeout(function () { timer = null; enviar(); }, INTERVALO_ENVIO);
       return Promise.resolve();
     }
+    if (timer) { clearTimeout(timer); timer = null; }
     return enviar();
   }
   function enviar() {
@@ -125,6 +128,10 @@
     return resultado;
   }
   window.addEventListener('online', function () { sincronizar(); });
+  // Ao sair ou ocultar a aba, envia o que estiver pendente sem esperar o intervalo.
+  function descarregar() { if (pendente && !escrita) salvarRemoto(null, true); }
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') descarregar(); });
+  window.addEventListener('pagehide', descarregar);
   P.nuvem = {
     carregarRemoto: carregarRemoto, salvarRemoto: salvarRemoto, sincronizar: sincronizar,
     aoMudarStatus: function (cb) { ouvintes.push(cb); cb(statusAtual); },
