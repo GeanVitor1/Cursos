@@ -130,7 +130,9 @@
   window.addEventListener('online', function () { sincronizar(); });
   // Ao sair ou ocultar a aba, envia o que estiver pendente sem esperar o intervalo.
   function descarregar() { if (pendente && !escrita) salvarRemoto(null, true); }
-  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') descarregar(); });
+  if (typeof document !== 'undefined') {
+    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') descarregar(); });
+  }
   window.addEventListener('pagehide', descarregar);
   P.nuvem = {
     carregarRemoto: carregarRemoto, salvarRemoto: salvarRemoto, sincronizar: sincronizar,
