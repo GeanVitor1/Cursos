@@ -218,7 +218,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'A soft reset is safe for the changes.', traducao: 'Um reset suave é seguro para as mudanças.' },
-        { tipo: 'nota', tom: 'info', texto: 'O modo `--hard` também é uma palavra comum: **hard** quer dizer duro, severo. Compare com **soft**, o modo suave.' }
+        { tipo: 'nota', tom: 'info', texto: 'O modo `--hard` também é uma palavra comum: **hard** quer dizer duro, severo. Compare com **soft**, o modo suave.' },
+        { tipo: 'vida-real', emoji: '🧪', titulo: 'Um experimento de desconto deu errado e ainda não foi enviado', texto: 'Você fez um commit com uma ideia nova, viu que não funciona e nada saiu da sua máquina. `git reset --hard HEAD~1` volta o projeto ao estado anterior e descarta o experimento.' }
       ]
     },
     {

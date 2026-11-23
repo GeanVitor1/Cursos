@@ -245,7 +245,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The port connects the container to the outside.', traducao: 'A porta liga o container ao lado de fora.' },
-        { tipo: 'nota', tom: 'info', texto: '**to the outside** = "para o lado de fora" — exatamente o papel da porta publicada.' }
+        { tipo: 'nota', tom: 'info', texto: '**to the outside** = "para o lado de fora" — exatamente o papel da porta publicada.' },
+        { tipo: 'vida-real', emoji: '🚪', titulo: 'O container está rodando, mas o navegador não abre a API', texto: 'O endereço `localhost:8080` não responde porque a porta de dentro do container não foi publicada. Ao rodar com `-p 8080:80`, a porta 8080 da sua máquina passa a levar até a porta 80 do container.' }
       ]
     },
     {

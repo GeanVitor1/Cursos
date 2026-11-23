@@ -27,7 +27,8 @@ Plataforma.registrarLicao({
             'Use as dicas quando precisar; elas não afetam o resultado.',
             'O retorno final mostra seu domínio conceito por conceito.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '📦', titulo: 'Entregar o projeto completo para o time rodar com um comando', texto: 'Você revisa o arquivo compose da loja: portas, volumes, variáveis e redes precisam combinar. Quando algo não sobe, `docker compose logs` mostra o motivo, e esta prova treina esse raciocínio.' }
       ]
     },
     {

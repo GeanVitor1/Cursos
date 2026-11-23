@@ -210,7 +210,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The network connects the containers by name.', traducao: 'A rede conecta os containers pelo nome.' },
-        { tipo: 'nota', tom: 'info', texto: '**connects by name** = "conecta pelo nome" — a tradução exata do que você montou nesta lição.' }
+        { tipo: 'nota', tom: 'info', texto: '**connects by name** = "conecta pelo nome" — a tradução exata do que você montou nesta lição.' },
+        { tipo: 'vida-real', emoji: '🔗', titulo: 'A API não consegue falar com o banco', texto: 'A conexão usa `localhost` e falha, porque dentro do container esse nome aponta para ele mesmo. Com os dois na mesma rede criada com `docker network create`, a API chama o banco pelo nome do serviço.' }
       ]
     },
     {

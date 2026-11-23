@@ -281,7 +281,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'A frase de fechamento usa só palavras já conhecidas e resume o projeto: **together** (juntos).' },
         { tipo: 'ingles', frase: 'The API, the database and the cache run together.', traducao: 'A API, o banco e o cache rodam juntos.' },
-        { tipo: 'nota', tom: 'info', texto: '**run together** = "rodam juntos" — exatamente o que o arquivo compose entrega ao time.' }
+        { tipo: 'nota', tom: 'info', texto: '**run together** = "rodam juntos" — exatamente o que o arquivo compose entrega ao time.' },
+        { tipo: 'vida-real', emoji: '🙋', titulo: 'Uma pessoa nova precisa rodar o sistema completo no primeiro dia', texto: 'Ela clona o repositório e roda `docker compose up`: API, banco e cache sobem na ordem certa, com a saúde verificada. Em minutos ela testa a loja inteira sem instalar nada além do Docker.' }
       ]
     },
     {

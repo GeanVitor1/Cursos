@@ -206,7 +206,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The cache is fast.', traducao: 'O cache é rápido.' },
-        { tipo: 'nota', tom: 'info', texto: '**fast** descreve justamente o motivo de o cache existir: responder sem esperar o banco.' }
+        { tipo: 'nota', tom: 'info', texto: '**fast** descreve justamente o motivo de o cache existir: responder sem esperar o banco.' },
+        { tipo: 'vida-real', emoji: '⚡', titulo: 'A página de produtos mais acessada está lenta', texto: 'Toda visita consulta o banco para listar os mesmos produtos. Com o serviço de cache no arquivo compose, a API guarda o resultado em memória e responde bem mais rápido nas próximas vezes.' }
       ]
     },
     {

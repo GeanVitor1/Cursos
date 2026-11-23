@@ -26,7 +26,8 @@ Plataforma.registrarLicao({
             'Quando faltar contexto, use as dicas.',
             'O resultado mostra qual área da prática precisa de revisão.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '🔧', titulo: 'O container sobe, mas faltam dados, porta e configuração', texto: 'Para o serviço ficar utilizável, você publica a porta, guarda os dados em um volume, passa as senhas por variáveis e conecta os containers pela rede. Esta prova treina essas quatro peças.' }
       ]
     },
     {

@@ -24,7 +24,8 @@ Plataforma.registrarLicao({
           ['Select', 'Como cada item aparece no resultado? (formato)']
         ], legenda: 'É o mesmo contraste do SQL: SELECT escolhe colunas, WHERE escolhe linhas.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: '// Apenas os nomes\nList<string> nomes = produtos\n    .Select(p => p.Nome)\n    .ToList();' },
-        { tipo: 'diagrama', arte: 'Produto (antes)              string (depois)\n┌────────────────────┐        ┌───────────┐\n│ Id, Nome, Preco... │  ───►  │ "Mouse"   │\n└────────────────────┘        └───────────┘\nSelect transforma cada item em outra coisa.' }
+        { tipo: 'diagrama', arte: 'Produto (antes)              string (depois)\n┌────────────────────┐        ┌───────────┐\n│ Id, Nome, Preco... │  ───►  │ "Mouse"   │\n└────────────────────┘        └───────────┘\nSelect transforma cada item em outra coisa.' },
+        { tipo: 'vida-real', emoji: '📋', titulo: 'A tela de busca só precisa do nome do produto', texto: 'Em vez de carregar o produto inteiro para cada linha da lista, `produtos.Select(p => p.Nome)` devolve apenas os nomes. O resultado é menor e a tela fica mais simples de montar.' }
       ]
     },
     {

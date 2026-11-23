@@ -55,7 +55,8 @@ Plataforma.registrarLicao({
           ['Entidade', 'classe mapeada', 'Classe como Produto, ligada a uma tabela.'],
           ['Mapeamento', 'regra de correspondência', 'Diz qual classe vira qual tabela e qual propriedade vira qual coluna.']
         ] },
-        { tipo: 'trabalho', texto: 'Em projetos .NET profissionais, EF Core (ou um ORM equivalente) é a forma padrão de acessar o banco. O SQL continua existindo por baixo — e você já sabe lê-lo, o que é uma vantagem enorme.', fonte: '💼 Em uma vaga .NET' }
+        { tipo: 'trabalho', texto: 'Em projetos .NET profissionais, EF Core (ou um ORM equivalente) é a forma padrão de acessar o banco. O SQL continua existindo por baixo — e você já sabe lê-lo, o que é uma vantagem enorme.', fonte: '💼 Em uma vaga .NET' },
+        { tipo: 'vida-real', emoji: '🗃️', titulo: 'O cadastro de clientes era montado com texto de SQL escrito à mão', texto: 'Um erro de digitação em uma tela quebrava o cadastro inteiro. Com uma entidade `Cliente`, a classe representa a tabela e o ORM cuida da conversa com o banco.' }
       ]
     },
     {

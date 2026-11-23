@@ -259,7 +259,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Resolve the conflict before the merge.', traducao: 'Resolva o conflito antes do merge.' },
-        { tipo: 'nota', tom: 'info', texto: 'A mensagem **You have unmerged paths** avisa que existem caminhos não unidos esperando a sua decisão.' }
+        { tipo: 'nota', tom: 'info', texto: 'A mensagem **You have unmerged paths** avisa que existem caminhos não unidos esperando a sua decisão.' },
+        { tipo: 'vida-real', emoji: '⚔️', titulo: 'Dois devs mudam o valor do frete grátis na mesma linha', texto: 'Você colocou 150 e o colega colocou 200. No merge, o Git para e marca o arquivo com `<<<<<<<`: vocês conversam, escolhem o valor certo, apagam os marcadores e concluem com um commit.' }
       ]
     },
     {

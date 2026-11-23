@@ -197,7 +197,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Stash the temporary changes for later.', traducao: 'Guarde as mudanças temporárias para depois.' },
-        { tipo: 'nota', tom: 'info', texto: '**temporary** é o adjetivo do que dura pouco — exatamente o tipo de trabalho que vai para o stash.' }
+        { tipo: 'nota', tom: 'info', texto: '**temporary** é o adjetivo do que dura pouco — exatamente o tipo de trabalho que vai para o stash.' },
+        { tipo: 'vida-real', emoji: '🧳', titulo: 'O pull reclama que suas mudanças seriam sobrescritas', texto: 'Você tem arquivos alterados pela metade e não quer commitar código incompleto. Com `git stash` você guarda tudo, atualiza o projeto com `git pull` e recupera o trabalho depois com `git stash pop`.' }
       ]
     },
     {

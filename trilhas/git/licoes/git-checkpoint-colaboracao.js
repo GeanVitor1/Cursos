@@ -25,7 +25,8 @@ Plataforma.registrarLicao({
             'Pode usar dicas — o resultado continua contando.',
             'Ao final, você verá seu domínio conceito por conceito.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '🤝', titulo: 'Fim de sprint: três pessoas entregando no mesmo dia', texto: 'Cada uma trabalhou na sua branch, abriu um pull request e passou por review. Quando duas mudanças tocam a mesma linha, o conflito aparece no merge e se resolve conversando.' }
       ]
     },
     {

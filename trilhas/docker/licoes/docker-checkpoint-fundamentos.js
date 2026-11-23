@@ -26,7 +26,8 @@ Plataforma.registrarLicao({
             'As dicas continuam disponíveis e não tiram pontos.',
             'Ao final, o resultado aponta o seu domínio conceito por conceito.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '🐳', titulo: 'Sua primeira tarefa com Docker no time', texto: 'Você explica ao colega a diferença entre imagem e container, constrói a imagem pelo Dockerfile e sobe um container para testar a API. É esse caminho que esta prova confere.' }
       ]
     },
     {

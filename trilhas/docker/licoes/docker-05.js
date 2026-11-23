@@ -209,7 +209,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The environment variable has a value.', traducao: 'A variável de ambiente tem um valor.' },
-        { tipo: 'nota', tom: 'info', texto: '**has a value** = "tem um valor" — toda variável de ambiente é um nome com um valor.' }
+        { tipo: 'nota', tom: 'info', texto: '**has a value** = "tem um valor" — toda variável de ambiente é um nome com um valor.' },
+        { tipo: 'vida-real', emoji: '🔐', titulo: 'A senha do banco não pode ficar escrita no código', texto: 'Em desenvolvimento a senha é uma e em produção é outra. Passando `-e POSTGRES_PASSWORD=valor` ou um arquivo `.env` ao rodar o container, a mesma imagem serve aos dois ambientes sem mexer no código.' }
       ]
     },
     {

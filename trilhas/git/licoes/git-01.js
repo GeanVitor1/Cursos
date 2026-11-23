@@ -202,7 +202,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Push the changes to the remote repository.', traducao: 'Envie as mudanças para o repositório remoto.' },
-        { tipo: 'nota', tom: 'info', texto: 'Repare que os próprios comandos vêm dessas palavras: `pull` (puxar) traz, `push` (empurrar) envia. O **remote** é o servidor compartilhado.' }
+        { tipo: 'nota', tom: 'info', texto: 'Repare que os próprios comandos vêm dessas palavras: `pull` (puxar) traz, `push` (empurrar) envia. O **remote** é o servidor compartilhado.' },
+        { tipo: 'vida-real', emoji: '🌅', titulo: 'Você volta de uma semana de folga e o projeto mudou muito', texto: 'Antes de mexer em qualquer coisa, `git pull` traz os commits que o time enviou enquanto você estava fora. Só depois de atualizar você faz o seu trabalho e envia com `git push`, sem começar em cima de código velho.' }
       ]
     },
     {

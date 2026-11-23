@@ -228,7 +228,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Add a tag to the release version.', traducao: 'Adicione uma tag à versão do lançamento.' },
-        { tipo: 'nota', tom: 'info', texto: 'No GitHub, cada tag pode virar um **release** com notas da versão — o anúncio oficial da entrega.' }
+        { tipo: 'nota', tom: 'info', texto: 'No GitHub, cada tag pode virar um **release** com notas da versão — o anúncio oficial da entrega.' },
+        { tipo: 'vida-real', emoji: '🏷️', titulo: 'O cliente pergunta qual versão está em produção', texto: 'Quando a versão foi ao ar, o time criou `git tag v1.4.2` no commit certo. Agora, ao ouvir que o erro começou na 1.4.2, dá para voltar a esse ponto exato, e a correção pequena vira a 1.4.3.' }
       ]
     },
     {

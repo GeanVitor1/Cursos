@@ -198,7 +198,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'A container runs from an image.', traducao: 'Um contêiner roda a partir de uma imagem.' },
-        { tipo: 'nota', tom: 'info', texto: '**runs from an image** = "roda a partir de uma imagem" — exatamente a relação que você acabou de aprender.' }
+        { tipo: 'nota', tom: 'info', texto: '**runs from an image** = "roda a partir de uma imagem" — exatamente a relação que você acabou de aprender.' },
+        { tipo: 'vida-real', emoji: '🧑‍🤝‍🧑', titulo: 'Três colegas precisam rodar exatamente a mesma versão', texto: 'A imagem é a receita pronta e cada container é uma cópia dela em execução. O mesmo `docker run` na máquina de qualquer pessoa cria um container igual, e `docker ps` mostra o que está funcionando.' }
       ]
     },
     {

@@ -255,7 +255,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Clone the repository https://github.com/mercado-aurora/painel.git to see the history.', traducao: 'Clone o repositório https://github.com/mercado-aurora/painel.git para ver o histórico.' },
-        { tipo: 'nota', tom: 'info', texto: '**repository** (repositório) é a origem da abreviação `repo`, que você vai encontrar em conversas e ferramentas.' }
+        { tipo: 'nota', tom: 'info', texto: '**repository** (repositório) é a origem da abreviação `repo`, que você vai encontrar em conversas e ferramentas.' },
+        { tipo: 'vida-real', emoji: '🆕', titulo: 'Primeiro dia no time e a pasta do projeto está vazia', texto: 'O líder manda o endereço do repositório da loja online. Com `git clone` você ganha o projeto inteiro e o histórico na sua máquina; depois, `git add` e `git commit` gravam a sua primeira correção com uma mensagem clara.' }
       ]
     },
     {

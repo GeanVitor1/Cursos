@@ -227,7 +227,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The dockerfile has the commands to build the image.', traducao: 'O Dockerfile tem os comandos para construir a imagem.' },
-        { tipo: 'nota', tom: 'info', texto: '**the commands to build** = "os comandos para construir" — a função exata do arquivo que você escreveu.' }
+        { tipo: 'nota', tom: 'info', texto: '**the commands to build** = "os comandos para construir" — a função exata do arquivo que você escreveu.' },
+        { tipo: 'vida-real', emoji: '🚢', titulo: 'A API precisa ir para o servidor de testes', texto: 'Você escreve um Dockerfile que parte de `FROM`, copia o código com `COPY` e define o `ENTRYPOINT`. Com `docker build`, a API vira uma imagem que a infraestrutura roda sem instalar nada além do Docker.' }
       ]
     },
     {

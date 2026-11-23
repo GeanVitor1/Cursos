@@ -25,7 +25,8 @@ Plataforma.registrarLicao({
             'Pode usar dicas — o resultado continua contando.',
             'Ao final, você verá seu domínio conceito por conceito.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '🏁', titulo: 'Seu primeiro mês em um projeto real', texto: 'Você cria branches pequenas, escreve commits que contam a história, abre pull requests, resolve conflitos e marca versões com tags. Com um `.gitignore` bem feito, é isso que o time espera de quem usa Git todos os dias.' }
       ]
     },
     {

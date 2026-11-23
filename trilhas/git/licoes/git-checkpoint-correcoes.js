@@ -25,7 +25,8 @@ Plataforma.registrarLicao({
             'Pode usar dicas — o resultado continua contando.',
             'Ao final, você verá seu domínio conceito por conceito.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '🛟', titulo: 'Sexta à tarde: algo deu errado e você precisa escolher a ferramenta', texto: 'Se o erro já foi para o servidor, usa-se `git revert`; se ainda é só local, `git reset` resolve; e se você está no meio de outra tarefa, `git stash` guarda o trabalho. Escolher entre eles é o que esta prova treina.' }
       ]
     },
     {

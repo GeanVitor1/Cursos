@@ -226,7 +226,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Switch to a new branch feature/preco for the feature.', traducao: 'Troque para uma branch nova feature/preco para a funcionalidade.' },
-        { tipo: 'nota', tom: 'info', texto: 'O próprio comando usa a palavra: `git switch` = trocar. E **feature** virou o prefixo padrão de branches de funcionalidade.' }
+        { tipo: 'nota', tom: 'info', texto: 'O próprio comando usa a palavra: `git switch` = trocar. E **feature** virou o prefixo padrão de branches de funcionalidade.' },
+        { tipo: 'vida-real', emoji: '🌿', titulo: 'Duas pessoas mexem no carrinho de compras ao mesmo tempo', texto: 'Você cria o desconto do cupom enquanto a colega ajusta o frete, e as duas mudanças ainda estão pela metade. Cada uma trabalha na sua branch, criada com `git switch -c`, e uma não quebra o que a outra está fazendo.' }
       ]
     },
     {

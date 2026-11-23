@@ -205,7 +205,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The same app runs in every environment.', traducao: 'A mesma aplicação roda em todo ambiente.' },
-        { tipo: 'nota', tom: 'info', texto: '**runs in every environment** = "roda em todo ambiente" — a promessa que o Docker persegue.' }
+        { tipo: 'nota', tom: 'info', texto: '**runs in every environment** = "roda em todo ambiente" — a promessa que o Docker persegue.' },
+        { tipo: 'vida-real', emoji: '💻', titulo: 'Funciona na minha máquina, mas não na da colega', texto: 'O sistema roda para você, mas na máquina dela falta uma versão do .NET e o banco não sobe. Com um ambiente reproduzível, todos rodam exatamente a mesma configuração, e essa discussão desaparece.' }
       ]
     },
     {

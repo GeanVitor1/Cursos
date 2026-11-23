@@ -255,7 +255,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The team will review the code and approve the changes.', traducao: 'A equipe vai revisar o código e aprovar as mudanças.' },
-        { tipo: 'nota', tom: 'info', texto: '**approve** é a ação de aprovar; no GitHub o botão de aprovação aparece como *Approve*. **team** (equipe) e **code** (código) completam o vocabulário do fluxo.' }
+        { tipo: 'nota', tom: 'info', texto: '**approve** é a ação de aprovar; no GitHub o botão de aprovação aparece como *Approve*. **team** (equipe) e **code** (código) completam o vocabulário do fluxo.' },
+        { tipo: 'vida-real', emoji: '🔎', titulo: 'Seu primeiro pull request volta cheio de comentários', texto: 'A colega revisou o código e pediu para renomear uma variável e tratar um caso de erro. Você ajusta na mesma branch, o pull request se atualiza e ela aprova antes do merge.' }
       ]
     },
     {

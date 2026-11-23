@@ -38,7 +38,8 @@ Plataforma.registrarLicao({
         ], legenda: 'A escolha do método se reflete no SQL gerado — e no custo da consulta.' },
         { tipo: 'nota', tom: 'info', texto: 'Você vai ver `TOP 1` no SQL gerado: `SELECT TOP 1` significa "traga apenas o primeiro registro". Em outros bancos aparece como `LIMIT 1`. É o "pegar o primeiro" traduzido para SQL.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'using Microsoft.EntityFrameworkCore;\n\n// Buscar por Id\nProduto? produto = await context.Produtos.FindAsync(10);\n\n// Buscar por outra coluna\nCliente? cliente = await context.Clientes\n    .FirstOrDefaultAsync(c => c.Email == "ana@email.com");' },
-        { tipo: 'trabalho', texto: 'Em code review, uma das primeiras verificações é se a consulta busca só o necessário. `ToListAsync()` sem filtro em uma tabela grande é um problema de desempenho real.', fonte: '💼 Em um code review' }
+        { tipo: 'trabalho', texto: 'Em code review, uma das primeiras verificações é se a consulta busca só o necessário. `ToListAsync()` sem filtro em uma tabela grande é um problema de desempenho real.', fonte: '💼 Em um code review' },
+        { tipo: 'vida-real', emoji: '📦', titulo: 'Abrir os detalhes de um único pedido', texto: '`context.Pedidos.FindAsync(10)` traz só uma linha do banco. Usar `ToListAsync()` para carregar todos os pedidos e escolher um na memória seria muito mais lento quando a loja cresce.' }
       ]
     },
     {

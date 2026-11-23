@@ -47,7 +47,8 @@ Plataforma.registrarLicao({
         { tipo: 'nota', tom: 'info', texto: 'Leia a forma do comando: `INSERT INTO Produtos (Nome, Preco, Estoque)` = "insira dentro de Produtos, nas colunas Nome, Preco e Estoque"; `VALUES (\'Mouse\', 100.00, 25)` = "os valores". É essa ordem que você vai reconhecer na atividade.' },
         { tipo: 'texto', texto: 'Depois da gravação, o EF atualiza o objeto em memória com o Id que o banco gerou:' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'Console.WriteLine(produto.Id); // ex.: 1' },
-        { tipo: 'trabalho', texto: 'Entender esse ciclo permite investigar bugs reais: "salvei mas não aparece no banco" quase sempre é SaveChanges esquecido ou falha silenciosa.', fonte: '💼 Em produção' }
+        { tipo: 'trabalho', texto: 'Entender esse ciclo permite investigar bugs reais: "salvei mas não aparece no banco" quase sempre é SaveChanges esquecido ou falha silenciosa.', fonte: '💼 Em produção' },
+        { tipo: 'vida-real', emoji: '🧾', titulo: 'A tela de confirmação precisa mostrar o número do pedido', texto: 'Você faz `context.Pedidos.Add(pedido)` e `SaveChangesAsync()`. Só depois do `SaveChangesAsync()` o `Id` gerado pelo banco aparece no objeto, e é ele que vai para a tela do cliente.' }
       ]
     },
     {

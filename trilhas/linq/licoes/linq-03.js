@@ -27,7 +27,8 @@ Plataforma.registrarLicao({
           ['SingleOrDefault', 'devolve null', 'lança exceção']
         ], legenda: 'Regra de ouro: buscas por Id usam FirstOrDefault; quando o dado é único por contrato, Single.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'Produto? produto = produtos\n    .FirstOrDefault(p => p.Id == 10);\n\nif (produto == null)\n{\n    return null;\n}' },
-        { tipo: 'nota', tom: 'atencao', texto: 'O `Produto?` (com interrogação) avisa que a variável pode ser null — exatamente o conceito da etapa de C# sobre null.' }
+        { tipo: 'nota', tom: 'atencao', texto: 'O `Produto?` (com interrogação) avisa que a variável pode ser null — exatamente o conceito da etapa de C# sobre null.' },
+        { tipo: 'vida-real', emoji: '🔎', titulo: 'O cliente abre a página de um produto que já foi removido', texto: 'A tela precisa de exatamente um item, e `produtos.First(p => p.Id == 42)` derruba a página com erro se ele não existir. Com `FirstOrDefault`, o resultado vem nulo e você mostra uma mensagem amigável.' }
       ]
     },
     {

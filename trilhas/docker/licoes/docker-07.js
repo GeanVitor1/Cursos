@@ -225,7 +225,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'A frase desta lição usa só palavras que você já viu: **compose**, **containers**, **command**.' },
         { tipo: 'ingles', frase: 'Compose runs all the containers with one command.', traducao: 'O Compose executa todos os containers com um comando.' },
-        { tipo: 'nota', tom: 'info', texto: '**with one command** = "com um comando" — o resumo do que o arquivo faz pelo time.' }
+        { tipo: 'nota', tom: 'info', texto: '**with one command** = "com um comando" — o resumo do que o arquivo faz pelo time.' },
+        { tipo: 'vida-real', emoji: '🎛️', titulo: 'Cada pessoa digitava vários comandos longos e sempre esquecia um', texto: 'Subir API, banco e cache exigia vários `docker run` com portas e variáveis. Com um arquivo compose, `docker compose up` sobe tudo de uma vez e `docker compose down` derruba o ambiente inteiro.' }
       ]
     },
     {

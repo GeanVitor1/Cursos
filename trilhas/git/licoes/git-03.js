@@ -221,7 +221,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Combine the branch with main when it is ready.', traducao: 'Una a branch à main quando ela estiver pronta.' },
-        { tipo: 'nota', tom: 'info', texto: 'O comando `git merge` vem de *merge* (fundir), que é quase um sinônimo de **combine** no contexto de unir linhas de trabalho.' }
+        { tipo: 'nota', tom: 'info', texto: 'O comando `git merge` vem de *merge* (fundir), que é quase um sinônimo de **combine** no contexto de unir linhas de trabalho.' },
+        { tipo: 'vida-real', emoji: '🔀', titulo: 'O cupom de desconto está pronto e precisa chegar à versão principal', texto: 'Você testou tudo na sua branch e agora a funcionalidade precisa entrar na main para ir ao ar. Estando na main, `git merge` traz o trabalho para lá, e a branch pode ser encerrada depois.' }
       ]
     },
     {

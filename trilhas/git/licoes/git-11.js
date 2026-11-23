@@ -190,7 +190,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Write a message to explain the change.', traducao: 'Escreva uma mensagem para explicar a mudança.' },
-        { tipo: 'nota', tom: 'info', texto: '**message** é a mesma palavra que aparece no `-m` do commit: ele abrevia *message*.' }
+        { tipo: 'nota', tom: 'info', texto: '**message** é a mesma palavra que aparece no `-m` do commit: ele abrevia *message*.' },
+        { tipo: 'vida-real', emoji: '✂️', titulo: 'O review pede para separar a mudança do botão da correção do frete', texto: 'Tudo foi junto em um commit chamado "ajustes", difícil de revisar. Você divide em dois commits no imperativo, como "Corrige frete para pedidos acima de 100", e o review fica rápido e claro.' }
       ]
     },
     {

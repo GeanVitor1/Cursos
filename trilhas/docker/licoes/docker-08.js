@@ -290,7 +290,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The API connects to the database with a user and a password.', traducao: 'A API se conecta ao banco com um usuário e uma senha.' },
-        { tipo: 'nota', tom: 'info', texto: '**connects to the database** = "conecta ao banco" — a frase que descreve o que a string de conexão faz.' }
+        { tipo: 'nota', tom: 'info', texto: '**connects to the database** = "conecta ao banco" — a frase que descreve o que a string de conexão faz.' },
+        { tipo: 'vida-real', emoji: '🏪', titulo: 'A API da loja sobe antes do SQL Server e dá erro', texto: 'O banco leva alguns segundos para ficar pronto e a API tenta conectar cedo demais. Cuidar da ordem de subida e usar o nome do serviço, como `Server=banco`, na string de conexão resolve a falha de início.' }
       ]
     },
     {

@@ -180,7 +180,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Ignore the secret files.', traducao: 'Ignore os arquivos de segredos.' },
-        { tipo: 'nota', tom: 'info', texto: 'O nome do arquivo vem daí: **gitignore** é o "git, ignore isto".' }
+        { tipo: 'nota', tom: 'info', texto: 'O nome do arquivo vem daí: **gitignore** é o "git, ignore isto".' },
+        { tipo: 'vida-real', emoji: '🔑', titulo: 'A senha do banco quase foi parar no repositório', texto: 'O colega criou o arquivo `.env` com as senhas e o `git status` já o mostra como novo. Ao escrever `.env` no `.gitignore`, o Git deixa de oferecer o arquivo e o segredo não chega ao servidor.' }
       ]
     },
     {

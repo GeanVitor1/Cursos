@@ -25,7 +25,8 @@ Plataforma.registrarLicao({
             'Pode usar dicas — o resultado continua contando.',
             'Ao final, você verá seu domínio conceito por conceito.'
           ]
-        }
+        },
+        { tipo: 'vida-real', emoji: '🧰', titulo: 'A rotina de quem entrou ontem no time', texto: 'Você clona o projeto, altera um arquivo, usa `git add` e `git commit` e envia com `git push`. Na manhã seguinte, `git pull` traz o que os colegas fizeram, e essa rotina é a base de tudo o que vem depois.' }
       ]
     },
     {

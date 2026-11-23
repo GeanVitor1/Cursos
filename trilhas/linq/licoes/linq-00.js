@@ -49,7 +49,8 @@ Plataforma.registrarLicao({
         { tipo: 'conceito', id: 'linq.tolist', titulo: 'ToList', texto: 'Transforma o resultado de uma consulta em uma lista de verdade.', exemplo: 'produtos.Where(p => p.Ativo).ToList()' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> ativos = produtos.Where(p => p.Ativo).ToList();' },
         { tipo: 'diagrama', arte: 'produtos.Where(p => p.Ativo).ToList()\n   │          │              └─ transforma em lista\n   │          └─ mantém apenas os que passam na regra\n   └─ coleção original (não é alterada)' },
-        { tipo: 'trabalho', texto: 'LINQ aparece em praticamente todo código .NET: filtrar produtos, ordenar pedidos, somar valores, projetar relatórios. E é a mesma linguagem usada nas consultas de banco com ferramentas de acesso a banco.', fonte: '💼 Em uma vaga .NET' }
+        { tipo: 'trabalho', texto: 'LINQ aparece em praticamente todo código .NET: filtrar produtos, ordenar pedidos, somar valores, projetar relatórios. E é a mesma linguagem usada nas consultas de banco com ferramentas de acesso a banco.', fonte: '💼 Em uma vaga .NET' },
+        { tipo: 'vida-real', emoji: '🛍️', titulo: 'A tela da loja só deve mostrar produtos em estoque', texto: 'Antes você escrevia um laço e um `if` para percorrer a lista. Com LINQ, `produtos.Where(p => p.Estoque > 0).ToList()` diz a mesma coisa em uma linha que o time lê de relance.' }
       ]
     },
     {

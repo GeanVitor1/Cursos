@@ -208,7 +208,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Revert the commit to undo the change.', traducao: 'Reverta o commit para desfazer a mudança.' },
-        { tipo: 'nota', tom: 'info', texto: 'A mensagem que o Git escreve começa com **Revert**, seguida da mensagem original do commit. Assim o histórico explica sozinho o que aconteceu.' }
+        { tipo: 'nota', tom: 'info', texto: 'A mensagem que o Git escreve começa com **Revert**, seguida da mensagem original do commit. Assim o histórico explica sozinho o que aconteceu.' },
+        { tipo: 'vida-real', emoji: '🚨', titulo: 'Um commit com os preços zerados já está no servidor', texto: 'O colega percebeu que o commit trocou o preço de todos os produtos por zero e o time inteiro já baixou. `git revert` cria um novo commit que desfaz o erro, sem reescrever a história que todos têm.' }
       ]
     },
     {

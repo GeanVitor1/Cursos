@@ -71,7 +71,8 @@ Plataforma.registrarLicao({
         ] },
         { tipo: 'codigo', linguagem: 'csharp', codigo: '// Program.cs: registra o contexto e diz onde está o banco\nusing Microsoft.EntityFrameworkCore;\n\nvar builder = WebApplication.CreateBuilder(args);\n\nbuilder.Services.AddDbContext<MercadoAuroraContext>(options =>\n    options.UseSqlServer(builder.Configuration.GetConnectionString(\"MercadoAurora\")));', legenda: '`UseSqlServer` escolhe o banco (SQL Server) e a connection string vem do appsettings.json. Exige o pacote Microsoft.EntityFrameworkCore.SqlServer.' },
         { tipo: 'nota', tom: 'info', texto: '`DbContextOptions` e `base(options)` são apenas configuração: você não precisa entender esta linha agora. Ela diz ao contexto onde o banco está — vamos detalhar mais adiante.' },
-        { tipo: 'nota', tom: 'info', texto: 'O nome termina com **Context** por convenção. O `Produtos` no plural acompanha o nome da tabela.' }
+        { tipo: 'nota', tom: 'info', texto: 'O nome termina com **Context** por convenção. O `Produtos` no plural acompanha o nome da tabela.' },
+        { tipo: 'vida-real', emoji: '🗺️', titulo: 'Você entra em um projeto novo e quer saber quais dados ele usa', texto: 'A classe que herda de `DbContext` mostra a conexão com o banco, e cada `DbSet<Pedido>` indica uma tabela disponível. Lendo essa classe, você descobre em minutos o que o sistema acessa.' }
       ]
     },
     {

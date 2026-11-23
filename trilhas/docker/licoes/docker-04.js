@@ -205,7 +205,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The volume keeps the data.', traducao: 'O volume guarda os dados.' },
-        { tipo: 'nota', tom: 'info', texto: '**keeps the data** = "guarda os dados" — a promessa que o container não faz sozinho.' }
+        { tipo: 'nota', tom: 'info', texto: '**keeps the data** = "guarda os dados" — a promessa que o container não faz sozinho.' },
+        { tipo: 'vida-real', emoji: '🗄️', titulo: 'O banco de testes perdeu todos os pedidos ao reiniciar', texto: 'Você apagou o container para atualizar a imagem e os dados sumiram junto. Guardando-os em um volume nomeado, como `-v dados:/var/lib/postgresql/data`, o container novo continua com tudo o que estava salvo.' }
       ]
     },
     {

@@ -199,7 +199,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'A simple workflow is good for the team.', traducao: 'Um fluxo de trabalho simples é bom para a equipe.' },
-        { tipo: 'nota', tom: 'info', texto: '**workflow** aparece em toda documentação de projeto: é literalmente a palavra *work* (trabalho) com *flow* (fluxo).' }
+        { tipo: 'nota', tom: 'info', texto: '**workflow** aparece em toda documentação de projeto: é literalmente a palavra *work* (trabalho) com *flow* (fluxo).' },
+        { tipo: 'vida-real', emoji: '🧭', titulo: 'Você entra em um projeto e não sabe onde abrir o seu trabalho', texto: 'Na primeira semana, o time explica que usa trunk-based, com branches curtas que voltam rápido para a main. Outro projeto usa Git Flow, com uma branch de desenvolvimento separada; ler o fluxo antes evita abrir o pull request no lugar errado.' }
       ]
     },
     {

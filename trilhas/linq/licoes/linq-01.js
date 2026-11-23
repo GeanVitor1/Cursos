@@ -19,7 +19,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'O `Where` percorre a coleção e faz uma pergunta para cada item: **a regra é verdadeira?** Se for, o item permanece; se não, ele é descartado do resultado.' },
         { tipo: 'codigo', linguagem: 'csharp', codigo: 'List<Produto> ativos = produtos\n    .Where(p => p.Ativo)\n    .ToList();' },
-        { tipo: 'nota', tom: 'info', texto: 'No SQL você escrevia `WHERE Ativo = 1`. No LINQ, a ideia é a mesma — muda a sintaxe e o fato de a regra ser um trecho de código C#.' }
+        { tipo: 'nota', tom: 'info', texto: 'No SQL você escrevia `WHERE Ativo = 1`. No LINQ, a ideia é a mesma — muda a sintaxe e o fato de a regra ser um trecho de código C#.' },
+        { tipo: 'vida-real', emoji: '💸', titulo: 'O gerente quer ver só os pedidos acima de R$ 500', texto: '`pedidos.Where(p => p.Total > 500)` devolve apenas esses pedidos e deixa o resto da lista de fora. É o mesmo raciocínio do WHERE que você já usou no SQL, agora dentro do C#.' }
       ]
     },
     {
