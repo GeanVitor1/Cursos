@@ -574,6 +574,7 @@ window.Plataforma = window.Plataforma || {};
         texto += '\n\nSegurança registrada: isso conta como evidência forte de domínio.';
       }
       const tituloAcerto = resultado.semErros === false ? 'Concluído, com alguns erros pelo caminho.' : (primeira ? 'Boa!' : 'Agora sim.');
+      if (P.sons) P.sons.tocar('acerto');
       mostrarFeedback('correto', tituloAcerto, texto, jaContabil || !ganho ? null : '+' + ganho + ' XP');
       definirAcoes({ rotulo: 'Continuar', acao: avancar });
     } else {
@@ -591,11 +592,13 @@ window.Plataforma = window.Plataforma || {};
         else if (estado.caixaDica) estado.caixaDica.hidden = false;
         let mensagem = detalhe || 'Leia a dica com atenção e tente novamente. Errar faz parte do método.';
         if (pressao) mensagem += '\n\nVamos com calma: use a dica abaixo e resolva por partes.';
+        if (P.sons) P.sons.tocar('erro');
         mostrarFeedback('errado', pressao ? 'Sem pressa.' : 'Não exatamente.', mensagem, null);
         definirAcoes({ rotulo: 'Tentar novamente', acao: tentarNovamente });
       } else {
         let mensagem = detalhe ? detalhe + '\n\n' : '';
         mensagem += 'Você pode tentar de novo ou ver a resposta — o conceito volta na revisão.';
+        if (P.sons) P.sons.tocar('erro');
         mostrarFeedback('errado', 'Ainda não.', mensagem, null);
         definirAcoes(
           { rotulo: 'Tentar novamente', acao: tentarNovamente },

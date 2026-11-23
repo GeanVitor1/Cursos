@@ -68,6 +68,17 @@ window.Plataforma = window.Plataforma || {};
     const stats = criar('div', { classe: 'rodape-stats' });
     const rodape = criar('div', { classe: 'sidebar-rodape' }, [
       stats,
+      criar('button', {
+        classe: 'btn-link btn-tema', type: 'button',
+        texto: (P.sons && !P.sons.ligado()) ? '🔇 Sons desligados' : '🔊 Sons ligados',
+        'aria-label': 'Ligar ou desligar sons de acerto e erro',
+        onclick: function (ev) {
+          const novo = !P.sons.ligado();
+          P.sons.definir(novo);
+          ev.currentTarget.textContent = novo ? '🔊 Sons ligados' : '🔇 Sons desligados';
+          if (novo) P.sons.tocar('acerto');
+        }
+      }),
       criar('button', { classe: 'btn-link btn-tema', type: 'button', texto: 'Alternar tema', 'aria-label': 'Alternar entre tema claro e escuro', onclick: alternarTema })
     ]);
 
