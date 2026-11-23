@@ -62,6 +62,18 @@
     return Object.keys(m).filter(function (w) { return m[w].proxima <= hoje(); });
   }
 
+  let apiYouTube = null;
+  function carregarApiYouTube(pronto) {
+    if (window.YT && window.YT.Player) { pronto(); return; }
+    if (!apiYouTube) {
+      apiYouTube = [];
+      const anterior = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = function () { if (anterior) anterior(); apiYouTube.forEach(function (f) { f(); }); apiYouTube = []; };
+      const s = document.createElement('script'); s.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(s);
+    }
+    apiYouTube.push(pronto);
+  }
+
   function normalizar(p) { return String(p || '').toLowerCase().replace(/[’']/g, "'").replace(/[^a-z0-9']/g, ''); }
 
   function render(def) {
@@ -82,6 +94,30 @@
         if (!area.value.trim()) { area.focus(); return; }
         dados.letra = area.value; persistir(); telaPartes();
       } }));
+      raiz.appendChild(transferencia());
+    }
+
+    // Levar o estudo (letra, traduções, trechos e palavras) para outro aparelho.
+    function transferencia() {
+      const area = el('div', { classe: 'letra-botoes' });
+      area.appendChild(el('button', { type: 'button', classe: 'btn-link', texto: '📤 Copiar meu estudo', onclick: function (ev) {
+        const codigo = JSON.stringify({ v: 1, id: id, dados: dados, palavras: lerPalavras() });
+        const ok = function () { ev.target.textContent = '✅ Copiado! Cole no outro aparelho'; };
+        if (navigator.clipboard) navigator.clipboard.writeText(codigo).then(ok, function () { window.prompt('Copie este código:', codigo); });
+        else window.prompt('Copie este código:', codigo);
+      } }));
+      area.appendChild(el('button', { type: 'button', classe: 'btn-link', texto: '📥 Colar estudo de outro aparelho', onclick: function () {
+        const codigo = window.prompt('Cole o código copiado no outro aparelho:');
+        if (!codigo) return;
+        try {
+          const o = JSON.parse(codigo);
+          if (!o || o.id !== id || !o.dados) { window.alert('Esse código é de outra música.'); return; }
+          dados = o.dados; persistir();
+          const m = lerPalavras(); Object.keys(o.palavras || {}).forEach(function (w) { if (!m[w]) m[w] = o.palavras[w]; }); salvarPalavras(m);
+          if (dados.letra) telaPartes(); else telaColar();
+        } catch (e) { window.alert('Código inválido.'); }
+      } }));
+      return area;
     }
 
     function telaPartes() {
@@ -102,49 +138,92 @@
       const n = pendentes().length;
       raiz.appendChild(el('button', { type: 'button', classe: 'btn btn-secundario', texto: '🧠 Revisar palavras salvas (' + n + ' para hoje)', onclick: telaRevisao }));
       raiz.appendChild(el('button', { type: 'button', classe: 'btn-link', texto: 'Editar / trocar a letra', onclick: telaColar }));
+      raiz.appendChild(transferencia());
     }
 
     function fmt(t) { t = Math.max(0, Math.round(t || 0)); return Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0'); }
 
-    // Player do vídeo local (assets/videos/<id>.mp4) que toca só o trecho desta parte.
+    // Player que toca só o trecho desta parte. Usa o vídeo local (assets/videos/<id>.mp4)
+    // quando existe; no site publicado cai para o vídeo do YouTube com a mesma lógica de trechos.
     function playerParte(i, total) {
       const caixa = el('div', { classe: 'letra-video' });
-      const video = el('video', { src: '../assets/videos/' + id + '.mp4', preload: 'metadata', playsinline: '', controls: '' });
-      const info = el('div', { classe: 'letra-video-info' });
+      const palco = el('div', { classe: 'letra-video-palco' });
+      const info = el('div', { classe: 'letra-video-info', texto: 'Carregando vídeo…' });
       let repetir = false;
+      let midia = null;
       dados.trechos = dados.trechos || {};
       function trecho() {
-        const d = video.duration || 0;
+        const d = midia ? midia.duracao() : 0;
         return dados.trechos[i] || { ini: d * i / total, fim: d * (i + 1) / total };
       }
       function atualizar() { const t = trecho(); info.textContent = 'Trecho da parte ' + (i + 1) + ': ' + fmt(t.ini) + ' → ' + fmt(t.fim); }
-      function tocar() { video.currentTime = trecho().ini; video.play(); }
-      video.addEventListener('loadedmetadata', function () { video.currentTime = trecho().ini; atualizar(); });
-      video.addEventListener('timeupdate', function () {
-        if (video.currentTime >= trecho().fim) { if (repetir) video.currentTime = trecho().ini; else video.pause(); }
+      function vigiar() {
+        if (!midia || !midia.tocando()) return;
+        if (midia.tempo() >= trecho().fim) { if (repetir) midia.ir(trecho().ini); else midia.pausar(); }
+      }
+      function pronto(m) { midia = m; midia.ir(trecho().ini); atualizar(); }
+
+      function usarYouTube() {
+        palco.innerHTML = '';
+        const alvo = el('div');
+        palco.appendChild(alvo);
+        carregarApiYouTube(function () {
+          const yt = new window.YT.Player(alvo, {
+            host: 'https://www.youtube-nocookie.com', videoId: id,
+            playerVars: { playsinline: 1, rel: 0, modestbranding: 1 },
+            events: { onReady: function () {
+              pronto({
+                duracao: function () { return yt.getDuration() || 0; },
+                tempo: function () { return yt.getCurrentTime() || 0; },
+                ir: function (t) { yt.seekTo(t, true); },
+                tocar: function () { yt.playVideo(); },
+                pausar: function () { yt.pauseVideo(); },
+                tocando: function () { return yt.getPlayerState() === 1; },
+                velocidade: function (v) { yt.setPlaybackRate(v); }
+              });
+            } }
+          });
+          const relogio = setInterval(function () { if (!document.body.contains(caixa)) clearInterval(relogio); else vigiar(); }, 200);
+        });
+      }
+
+      const video = el('video', { src: '../assets/videos/' + id + '.mp4', preload: 'metadata', playsinline: '', controls: '' });
+      video.addEventListener('loadedmetadata', function () {
+        pronto({
+          duracao: function () { return video.duration || 0; },
+          tempo: function () { return video.currentTime; },
+          ir: function (t) { video.currentTime = t; },
+          tocar: function () { video.play(); },
+          pausar: function () { video.pause(); },
+          tocando: function () { return !video.paused; },
+          velocidade: function (v) { video.playbackRate = v; }
+        });
       });
-      video.addEventListener('error', function () {
-        caixa.innerHTML = '';
-        caixa.appendChild(el('p', { classe: 'letra-ajuda', texto: 'Vídeo local não encontrado (assets/videos/' + id + '.mp4). Use o vídeo do YouTube acima.' }));
-      });
+      video.addEventListener('timeupdate', vigiar);
+      video.addEventListener('error', usarYouTube);
+      palco.appendChild(video);
+
       function ajustar(campo, delta) {
+        if (!midia) return;
         const t = trecho(); const novo = { ini: t.ini, fim: t.fim };
-        novo[campo] = delta === null ? video.currentTime : Math.max(0, novo[campo] + delta);
+        novo[campo] = delta === null ? midia.tempo() : Math.max(0, novo[campo] + delta);
         if (novo.fim <= novo.ini) novo.fim = novo.ini + 1;
         dados.trechos[i] = novo; persistir(); atualizar();
       }
+      let taxa = 1;
       const velocidade = el('button', { type: 'button', classe: 'btn btn-secundario', texto: 'Velocidade 1x', onclick: function () {
-        video.playbackRate = video.playbackRate === 1 ? 0.75 : (video.playbackRate === 0.75 ? 0.5 : 1);
-        velocidade.textContent = 'Velocidade ' + video.playbackRate + 'x';
+        taxa = taxa === 1 ? 0.75 : (taxa === 0.75 ? 0.5 : 1);
+        if (midia) midia.velocidade(taxa);
+        velocidade.textContent = 'Velocidade ' + taxa + 'x';
       } });
       const rep = el('button', { type: 'button', classe: 'btn btn-secundario', texto: '🔁 Repetir: não', onclick: function () {
         repetir = !repetir; rep.textContent = '🔁 Repetir: ' + (repetir ? 'sim' : 'não');
       } });
-      caixa.appendChild(video);
+      caixa.appendChild(palco);
       caixa.appendChild(info);
       caixa.appendChild(gravador());
       caixa.appendChild(el('div', { classe: 'letra-botoes' }, [
-        el('button', { type: 'button', classe: 'btn btn-primario', texto: '▶ Tocar esta parte', onclick: tocar }), rep, velocidade
+        el('button', { type: 'button', classe: 'btn btn-primario', texto: '▶ Tocar esta parte', onclick: function () { if (midia) { midia.ir(trecho().ini); midia.tocar(); } } }), rep, velocidade
       ]));
       caixa.appendChild(el('details', { classe: 'letra-ajuste' }, [
         el('summary', { texto: 'Ajustar o trecho (se a parte não bater com a letra)' }),

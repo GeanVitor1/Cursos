@@ -1649,3 +1649,4 @@ button.vocab-en:hover { background: var(--primaria-suave); }
 .letra-ditado-palavra.errado { background: rgba(248,81,73,.2); }
 .letra-cartao { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px; border-radius: 12px; border: 1px solid var(--borda, #ccc); }
 .letra-cartao-palavra { font-size: 1.8rem; font-weight: 700; }
+.letra-video-palco iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; }
