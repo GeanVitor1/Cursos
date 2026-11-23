@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-11-23T17:37:47.868Z",
+  "geradoEm": "2026-11-23T18:48:42.891Z",
   "regra": "Estados de conteúdo: NAO_ENSINADO → INTRODUZIDO → PRATICADO → PRONTO_PARA_AVALIACAO. MASTERED é calculado em tempo real pelo motor (confiança + dimensões + revisão espaçada), não pelo conteúdo estático.",
   "conceitos": [
     {
@@ -6830,7 +6830,7 @@
       ]
     },
     {
-      "licao": "en-mus-03",
+      "licao": "en-mus-04",
       "trilha": "ingles",
       "etapa": 1,
       "ensina": [
@@ -6838,7 +6838,7 @@
       ]
     },
     {
-      "licao": "en-mus-04",
+      "licao": "en-mus-03",
       "trilha": "ingles",
       "etapa": 1,
       "ensina": [
@@ -15519,84 +15519,6 @@
       ]
     },
     {
-      "licao": "en-mus-03",
-      "trilha": "ingles",
-      "etapa": 3,
-      "id": "en-mus-03-p1",
-      "tipo": "multiple-choice",
-      "dimensao": "reconhecimento",
-      "prova": false,
-      "desafio": false,
-      "exige": [
-        "en.musica"
-      ]
-    },
-    {
-      "licao": "en-mus-03",
-      "trilha": "ingles",
-      "etapa": 4,
-      "id": "en-mus-03-p2",
-      "tipo": "multiple-choice",
-      "dimensao": "reconhecimento",
-      "prova": false,
-      "desafio": false,
-      "exige": [
-        "en.musica"
-      ]
-    },
-    {
-      "licao": "en-mus-03",
-      "trilha": "ingles",
-      "etapa": 6,
-      "id": "en-mus-03-p3",
-      "tipo": "match-pairs",
-      "dimensao": "associacao",
-      "prova": false,
-      "desafio": false,
-      "exige": [
-        "en.musica"
-      ]
-    },
-    {
-      "licao": "en-mus-03",
-      "trilha": "ingles",
-      "etapa": 7,
-      "id": "en-mus-03-l1",
-      "tipo": "listening",
-      "dimensao": "reconhecimento",
-      "prova": false,
-      "desafio": false,
-      "exige": [
-        "en.musica"
-      ]
-    },
-    {
-      "licao": "en-mus-03",
-      "trilha": "ingles",
-      "etapa": 8,
-      "id": "en-mus-03-p4",
-      "tipo": "fill-code",
-      "dimensao": "preenchimento",
-      "prova": false,
-      "desafio": false,
-      "exige": [
-        "en.musica"
-      ]
-    },
-    {
-      "licao": "en-mus-03",
-      "trilha": "ingles",
-      "etapa": 9,
-      "id": "en-mus-03-p5",
-      "tipo": "order-blocks",
-      "dimensao": "ordenacao",
-      "prova": false,
-      "desafio": false,
-      "exige": [
-        "en.musica"
-      ]
-    },
-    {
       "licao": "en-mus-04",
       "trilha": "ingles",
       "etapa": 3,
@@ -15668,6 +15590,84 @@
       "id": "en-mus-04-p5",
       "tipo": "fill-code",
       "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-mus-03-p1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-mus-03-p2",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-mus-03-p3",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-mus-03-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-mus-03-p4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-mus-03-p5",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
       "prova": false,
       "desafio": false,
       "exige": [

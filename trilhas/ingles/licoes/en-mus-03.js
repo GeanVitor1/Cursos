@@ -3,7 +3,7 @@ Plataforma.registrarLicao({
   "trilha": "ingles",
   "tipo": "licao",
   "titulo": "Firestarter — K/DA (MIYEON, SOYEON, Sophie Powers, Mimi Webb)",
-  "subtitulo": "Inglês pela música · Unidade 3",
+  "subtitulo": "Inglês pela música · Unidade 4",
   "duracaoMin": 35,
   "xp": 30,
   "objetivos": [

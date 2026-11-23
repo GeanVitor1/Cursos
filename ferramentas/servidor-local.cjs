@@ -2,7 +2,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '..');
-const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp' };
+const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.mp4': 'video/mp4', '.mp3': 'audio/mpeg' };
 
 function criarServidor(diretorio = root) {
   const raiz = fs.realpathSync.native(diretorio);
@@ -29,15 +29,24 @@ function criarServidor(diretorio = root) {
       const stat = await fs.promises.stat(target);
       if (!stat.isFile()) { res.writeHead(404).end(); return; }
       const tipo = types[path.extname(target).toLowerCase()] || 'application/octet-stream';
-      res.writeHead(200, {
+      const faixa = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+      let inicio = 0, fim = stat.size - 1;
+      if (faixa && (faixa[1] || faixa[2])) {
+        if (faixa[1]) { inicio = Number(faixa[1]); if (faixa[2]) fim = Math.min(Number(faixa[2]), fim); }
+        else inicio = Math.max(0, stat.size - Number(faixa[2]));
+        if (inicio > fim) { res.writeHead(416, { 'Content-Range': 'bytes */' + stat.size }).end(); return; }
+      }
+      const parcial = Boolean(faixa && (faixa[1] || faixa[2]));
+      res.writeHead(parcial ? 206 : 200, Object.assign(parcial ? { 'Content-Range': 'bytes ' + inicio + '-' + fim + '/' + stat.size } : {}, {
+        'Accept-Ranges': 'bytes',
         'Content-Type': tipo + (/^(text\/|application\/json)/.test(tipo) ? '; charset=utf-8' : ''),
-        'Content-Length': stat.size,
+        'Content-Length': fim - inicio + 1,
         'X-Content-Type-Options': 'nosniff',
         'X-Frame-Options': 'DENY',
         'Cache-Control': 'no-cache',
-      });
+      }));
       if (req.method === 'HEAD') { res.end(); return; }
-      const stream = fs.createReadStream(target);
+      const stream = fs.createReadStream(target, { start: inicio, end: fim });
       stream.on('error', () => res.destroy());
       res.on('close', () => stream.destroy());
       stream.pipe(res);

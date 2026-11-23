@@ -3,7 +3,7 @@ Plataforma.registrarLicao({
   "trilha": "ingles",
   "tipo": "licao",
   "titulo": "GUY.exe — Superfruit",
-  "subtitulo": "Inglês pela música · Unidade 4",
+  "subtitulo": "Inglês pela música · Unidade 3",
   "duracaoMin": 35,
   "xp": 30,
   "objetivos": [

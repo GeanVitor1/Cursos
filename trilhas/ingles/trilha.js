@@ -57,8 +57,8 @@ Plataforma.registrarTrilha({
       etapas: [
         { id: 'en-mus-01', titulo: 'Dandelions — Ruth B.', duracao: 35, licao: 'en-mus-01' },
         { id: 'en-mus-02', titulo: 'Outside — Calvin Harris ft. Ellie Goulding', duracao: 35, licao: 'en-mus-02' },
-        { id: 'en-mus-03', titulo: 'Firestarter — K/DA', duracao: 35, licao: 'en-mus-03' },
         { id: 'en-mus-04', titulo: 'GUY.exe — Superfruit', duracao: 35, licao: 'en-mus-04' },
+        { id: 'en-mus-03', titulo: 'Firestarter — K/DA', duracao: 35, licao: 'en-mus-03' },
         { id: 'en-mus-05', titulo: 'Paint The Town Red — Doja Cat', duracao: 35, licao: 'en-mus-05' },
         { id: 'en-mus-06', titulo: 'Fala conectada: gonna, wanna, gotta', duracao: 30, licao: 'en-mus-06' },
         { id: 'en-mus-07', titulo: 'Séries: frases de todo episódio', duracao: 35, licao: 'en-mus-07' }

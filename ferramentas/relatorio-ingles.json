@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-11-23T17:37:51.465Z",
+  "geradoEm": "2026-11-23T18:48:43.539Z",
   "licoesPercorridas": 382,
   "etapasPercorridas": 1542,
   "atividadesPercorridas": 980,
@@ -1588,25 +1588,6 @@
       ]
     },
     {
-      "licao": "en-mus-03",
-      "etapa": 2,
-      "termos": 3,
-      "palavras": [
-        "fire",
-        "burn",
-        "light"
-      ]
-    },
-    {
-      "licao": "en-mus-03",
-      "etapa": 5,
-      "termos": 2,
-      "palavras": [
-        "firestarter",
-        "something"
-      ]
-    },
-    {
       "licao": "en-mus-04",
       "etapa": 2,
       "termos": 3,
@@ -1626,6 +1607,25 @@
         "strong",
         "sweet",
         "guy"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "etapa": 2,
+      "termos": 3,
+      "palavras": [
+        "fire",
+        "burn",
+        "light"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "firestarter",
+        "something"
       ]
     },
     {

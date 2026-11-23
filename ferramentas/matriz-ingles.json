@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-11-23T17:37:51.465Z",
+  "geradoEm": "2026-11-23T18:48:43.539Z",
   "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Em todas as trilhas, cada etapa ensina no máximo 3 termos novos; na trilha de inglês, no máximo 6 palavras novas por etapa, e as frases de exemplo (bloco ingles) só usam palavras já explicadas.",
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
@@ -1585,25 +1585,6 @@
       ]
     },
     {
-      "licao": "en-mus-03",
-      "etapa": 2,
-      "termos": 3,
-      "palavras": [
-        "fire",
-        "burn",
-        "light"
-      ]
-    },
-    {
-      "licao": "en-mus-03",
-      "etapa": 5,
-      "termos": 2,
-      "palavras": [
-        "firestarter",
-        "something"
-      ]
-    },
-    {
       "licao": "en-mus-04",
       "etapa": 2,
       "termos": 3,
@@ -1623,6 +1604,25 @@
         "strong",
         "sweet",
         "guy"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "etapa": 2,
+      "termos": 3,
+      "palavras": [
+        "fire",
+        "burn",
+        "light"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "firestarter",
+        "something"
       ]
     },
     {
