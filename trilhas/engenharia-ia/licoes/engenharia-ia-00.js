@@ -80,7 +80,8 @@ Plataforma.registrarLicao({
       titulo: 'Orientar e revisar a IA',
       blocos: [
         { tipo: 'texto', texto: '**Como pedir:** descreva o serviço de pedidos com cancelamento antes do envio; liste as regras, os estados inválidos, os dados sensíveis, as alternativas e os testes de aceitação; peça as hipóteses antes do código e não deixe a IA inventar requisitos.' },
-        { tipo: 'texto', texto: '**Como validar:** confira autorização, persistência e concorrência. Rode o caso de sucesso e cada caso proibido, comparando o estado salvo antes e depois. Uma mensagem de sucesso, sozinha, não é evidência.' }
+        { tipo: 'texto', texto: '**Como validar:** confira autorização, persistência e concorrência. Rode o caso de sucesso e cada caso proibido, comparando o estado salvo antes e depois. Uma mensagem de sucesso, sozinha, não é evidência.' },
+        { tipo: 'vida-real', emoji: '📝', titulo: '"Quero cancelar pedido fácil", disse o gerente', texto: 'O gerente pede cancelamento de pedido "fácil", e isso ainda não é uma regra. Você transforma o pedido em regras (só antes do envio), falhas (pedido já enviado) e critérios de aceitação, pede o código com testes à IA e confere que o teste falha quando a regra é violada.' }
       ]
     },
     {

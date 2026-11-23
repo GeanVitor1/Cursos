@@ -182,7 +182,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Get the value by key.', traducao: 'Pegue o valor pela chave.' },
-        { tipo: 'nota', tom: 'info', texto: '**by** significa "por"; no Redis, você sempre busca o dado **pela chave**.' }
+        { tipo: 'nota', tom: 'info', texto: '**by** significa "por"; no Redis, você sempre busca o dado **pela chave**.' },
+        { tipo: 'vida-real', emoji: '🎟️', titulo: 'Contador de ingressos restantes em uma venda disputada', texto: 'Numa venda de ingressos, a tela mostra quantos lugares sobraram e todo mundo atualiza a página sem parar. O time guarda o número em `SET evento:7 "120"`, lê com `GET evento:7` direto da memória e, quando o evento termina, limpa com `DEL evento:7`.' }
       ]
     },
     {

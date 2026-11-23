@@ -89,7 +89,8 @@ Plataforma.registrarLicao({
       titulo: 'Orientar e revisar a IA',
       blocos: [
         { tipo: 'texto', texto: '**Como pedir:** analise esta listagem sem adicionar cache de início; proponha como medir consultas, volume e latência; compare projeção com carregamento relacionado. Se sugerir cache, peça chave por usuário, expiração, remoção da cópia antiga e o comportamento quando o cache estiver indisponível.' },
-        { tipo: 'texto', texto: '**Como validar:** confira o SQL gerado e a contagem de consultas; teste dois usuários com permissões diferentes; verifique se um dado atualizado aparece depois de uma escrita; compare medições em condições equivalentes.' }
+        { tipo: 'texto', texto: '**Como validar:** confira o SQL gerado e a contagem de consultas; teste dois usuários com permissões diferentes; verifique se um dado atualizado aparece depois de uma escrita; compare medições em condições equivalentes.' },
+        { tipo: 'vida-real', emoji: '🐢', titulo: 'A tela de pedidos demora 8 segundos', texto: 'A tela carrega 200 pedidos e faz uma consulta extra para os itens de cada um: é o padrão N+1, com 201 consultas. Antes de falar em cache, você mede consultas e tempo e corrige a consulta; só se sobrar custo repetitivo avalia um cache, com chave por usuário e expiração.' }
       ]
     },
     {

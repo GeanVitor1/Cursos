@@ -212,7 +212,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Serialize and save the value as JSON.', traducao: 'Serialize e salve o valor como JSON.' },
-        { tipo: 'nota', tom: 'info', texto: '**as JSON** = como JSON. **and** junta as duas ações: serializar e salvar.' }
+        { tipo: 'nota', tom: 'info', texto: '**as JSON** = como JSON. **and** junta as duas ações: serializar e salvar.' },
+        { tipo: 'vida-real', emoji: '📦', titulo: 'O pedido que o cache não aceitava gravar', texto: 'Ana tentou guardar o objeto `Pedido` direto no cache e deu erro, porque o Redis só guarda texto. Ela passou a usar `JsonSerializer.Serialize(pedido)` na gravação e `Deserialize<Pedido>` na leitura, e o objeto voltou inteiro para a tela de acompanhamento.' }
       ]
     },
     {

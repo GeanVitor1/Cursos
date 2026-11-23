@@ -82,7 +82,8 @@ Plataforma.registrarLicao({
       titulo: 'Orientar e revisar a IA',
       blocos: [
         { tipo: 'texto', texto: '**Como pedir:** faça um modelo de ameaças deste fluxo local; para cada ativo e fronteira, proponha abuso, controle e teste com dados fictícios; inclua logs sem segredos, falha de dependência e recuperação, restringindo qualquer teste ao laboratório autorizado.' },
-        { tipo: 'texto', texto: '**Como validar:** confira se cada risco tem evidência reproduzível e uma medida concreta. Revise também o acesso dos operadores, a exposição dos logs e a restauração de backups em ambiente isolado.' }
+        { tipo: 'texto', texto: '**Como validar:** confira se cada risco tem evidência reproduzível e uma medida concreta. Revise também o acesso dos operadores, a exposição dos logs e a restauração de backups em ambiente isolado.' },
+        { tipo: 'vida-real', emoji: '🕵️', titulo: 'Um token inteiro apareceu numa linha de log', texto: 'Ao revisar os logs do app de entregas, você encontra um token completo gravado numa linha. Remove o valor do registro, limita quem consegue ler esses logs, avalia se o token precisa ser revogado e passa a registrar só o id de correlação e o resultado.' }
       ]
     },
     {

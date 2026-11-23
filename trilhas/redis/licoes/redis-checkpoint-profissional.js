@@ -23,7 +23,8 @@ Plataforma.registrarLicao({
           'Os cenários misturam os conceitos, como no dia a dia.',
           'Pode usar dicas — o resultado continua contando.',
           'Ao final, você verá seu domínio conceito por conceito.'
-        ] }
+        ] },
+        { tipo: 'vida-real', emoji: '🚀', titulo: 'Revisão final antes de publicar a API de ofertas', texto: 'Antes de publicar a API de ofertas, você revisa o fluxo inteiro: lê do cache e, na falta, busca no banco e guarda o JSON; ao editar uma oferta, remove a chave; e o endereço do servidor vem de configuração, não do código. Esse roteiro evita oferta velha na tela e a API apontando para a máquina errada.' }
       ]
     },
     {

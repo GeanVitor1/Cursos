@@ -177,7 +177,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The key expires in sixty seconds.', traducao: 'A chave expira em sessenta segundos.' },
-        { tipo: 'nota', tom: 'info', texto: '**in** marca o tempo até acontecer: **in sixty seconds** = em sessenta segundos.' }
+        { tipo: 'nota', tom: 'info', texto: '**in** marca o tempo até acontecer: **in sixty seconds** = em sessenta segundos.' },
+        { tipo: 'vida-real', emoji: '📱', titulo: 'O código de confirmação que precisa morrer sozinho', texto: 'Um app manda por mensagem um código de verificação que só pode valer 5 minutos. O dev grava com `SET codigo:ana "4821" EX 300`, e o próprio Redis apaga a chave depois do prazo; `TTL codigo:ana` mostra quantos segundos ainda faltam, sem nenhuma rotina de limpeza.' }
       ]
     },
     {

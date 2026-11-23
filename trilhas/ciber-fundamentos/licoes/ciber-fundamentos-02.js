@@ -83,7 +83,8 @@ Plataforma.registrarLicao({
       titulo: 'Orientar e revisar a IA',
       blocos: [
         { tipo: 'texto', texto: '**Como pedir:** revise a autorização de acesso a pedidos nesta API de teste; diferencie token válido de permissão sobre o recurso; proponha um teste com duas contas fictícias e confirme que nenhum segredo ou senha aparece na resposta ou no log.' },
-        { tipo: 'texto', texto: '**Como validar:** procure a verificação do recurso no servidor e teste o caso negado. Apenas decodificar um token não valida a assinatura. Nunca cole tokens reais em ferramentas públicas.' }
+        { tipo: 'texto', texto: '**Como validar:** procure a verificação do recurso no servidor e teste o caso negado. Apenas decodificar um token não valida a assinatura. Nunca cole tokens reais em ferramentas públicas.' },
+        { tipo: 'vida-real', emoji: '🧾', titulo: 'Um cliente vê o pedido de outra pessoa', texto: 'Um cliente reclama que, ao trocar o número na URL, abriu o pedido de outra pessoa. O token estava válido, então a autenticação funcionou, mas faltou a autorização: o teste com duas contas passa a exigir que a conta A receba negado ao pedir o pedido da conta B.' }
       ]
     },
     {

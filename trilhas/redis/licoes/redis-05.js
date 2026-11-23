@@ -197,7 +197,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Remove the stale value from the cache.', traducao: 'Remova o valor desatualizado do cache.' },
-        { tipo: 'nota', tom: 'info', texto: '**stale** aparece junto de cache o tempo todo: **stale cache** é a cópia que já não corresponde ao banco.' }
+        { tipo: 'nota', tom: 'info', texto: '**stale** aparece junto de cache o tempo todo: **stale cache** é a cópia que já não corresponde ao banco.' },
+        { tipo: 'vida-real', emoji: '🛵', titulo: 'Cancelei o pedido, mas o app diz que está em preparo', texto: 'Um cliente cancelou o pedido, o banco foi atualizado, mas a tela continuou mostrando a cópia velha do cache. O time passou a remover a chave logo depois de gravar o cancelamento, e a próxima leitura já busca o dado novo no banco.' }
       ]
     },
     {

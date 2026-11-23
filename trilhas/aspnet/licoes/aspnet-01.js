@@ -27,7 +27,8 @@ Plataforma.registrarLicao({
           'Listas usam `[ ]`.'
         ] },
         { tipo: 'codigo', linguagem: 'json', codigo: '[\n  { "id": 1, "nome": "Mouse", "preco": 100.00 },\n  { "id": 2, "nome": "Teclado", "preco": 200.00 }\n]' },
-        { tipo: 'nota', tom: 'info', texto: 'JSON é um formato de **dados**, não de programação. Ele apenas descreve valores — quem decide o significado é a aplicação.' }
+        { tipo: 'nota', tom: 'info', texto: 'JSON é um formato de **dados**, não de programação. Ele apenas descreve valores — quem decide o significado é a aplicação.' },
+        { tipo: 'vida-real', emoji: '📲', titulo: 'O preço chegou vazio do app do celular', texto: 'O time do app manda `{ "nome": "Mouse", "valor": 100 }`, mas a API espera `"preco"`, e o produto chega sem preço. Comparando o JSON com a classe C# campo a campo, você acha a diferença de nome em minutos e combina o formato com o time.' }
       ]
     },
     {

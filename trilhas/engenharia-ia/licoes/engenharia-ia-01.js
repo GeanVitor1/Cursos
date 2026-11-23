@@ -83,7 +83,8 @@ Plataforma.registrarLicao({
       titulo: 'Orientar e revisar a IA',
       blocos: [
         { tipo: 'texto', texto: '**Como pedir:** proponha uma API ASP.NET Core para pedidos; separe transporte e regra de cancelamento, receba dependências pelo construtor e compare usar o contexto de dados diretamente com adicionar um repository, justificando custo e testes de cada escolha.' },
-        { tipo: 'texto', texto: '**Como validar:** siga uma requisição do início ao fim, ache onde a regra é aplicada e veja como a dependência seria trocada num teste. Desconfie de interfaces que só duplicam métodos e de regra de autorização existente apenas no navegador.' }
+        { tipo: 'texto', texto: '**Como validar:** siga uma requisição do início ao fim, ache onde a regra é aplicada e veja como a dependência seria trocada num teste. Desconfie de interfaces que só duplicam métodos e de regra de autorização existente apenas no navegador.' },
+        { tipo: 'vida-real', emoji: '🧩', titulo: 'A IA colocou a regra do cupom dentro do controller', texto: 'O código gerado pela IA calculava o desconto do cupom no controller, misturado com o acesso aos dados. Na revisão, você move a regra para o service, confere que a dependência pode ser trocada em teste e pergunta se um repository resolve algo concreto ou só cria arquivos.' }
       ]
     },
     {

@@ -222,7 +222,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'Connect the API to the local cache server.', traducao: 'Conecte a API ao servidor de cache local.' },
-        { tipo: 'nota', tom: 'info', texto: '**local** indica a própria máquina; **environment** é o que separa desenvolvimento de produção.' }
+        { tipo: 'nota', tom: 'info', texto: '**local** indica a própria máquina; **environment** é o que separa desenvolvimento de produção.' },
+        { tipo: 'vida-real', emoji: '🧑‍💻', titulo: 'A nova pessoa do time abre o ProdutoService', texto: 'Quem entra no time e abre o `ProdutoService` vê que ele recebe `IDistributedCache` no construtor e não precisa saber onde o servidor está. O cache aside, a serialização e a remoção da chave ficam todos no service, e as rotas continuam curtas e fáceis de ler.' }
       ]
     },
     {

@@ -23,7 +23,8 @@ Plataforma.registrarLicao({
           'Leia cada cenário como se fosse um chamado real.',
           'Pode usar dicas — o resultado continua contando.',
           'Ao final, você verá seu domínio conceito por conceito.'
-        ] }
+        ] },
+        { tipo: 'vida-real', emoji: '📋', titulo: 'Acelerar a lista de categorias que quase não muda', texto: 'Na primeira semana de trabalho, pedem para acelerar a lista de categorias da loja, que muda poucas vezes por mês. Você justifica o cache, grava com `SET categorias "..." EX 600` e usa `TTL categorias` para conferir quanto tempo falta, escolhendo um prazo coerente com a frequência de mudança.' }
       ]
     },
     {

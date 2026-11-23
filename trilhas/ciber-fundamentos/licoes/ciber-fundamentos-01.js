@@ -83,7 +83,8 @@ Plataforma.registrarLicao({
       titulo: 'Orientar e revisar a IA',
       blocos: [
         { tipo: 'texto', texto: '**Como pedir:** investigue uma permissão negada numa máquina virtual de teste; peça a identidade do processo, o caminho e a operação; sugira a menor mudança e um teste de leitura e escrita; não recomende executar tudo como administrador.' },
-        { tipo: 'texto', texto: '**Como validar:** confirme que a solução limita a conta e o diretório corretos, teste um acesso permitido e um proibido e verifique se os logs registram a falha sem expor conteúdo sensível.' }
+        { tipo: 'texto', texto: '**Como validar:** confirme que a solução limita a conta e o diretório corretos, teste um acesso permitido e um proibido e verifique se os logs registram a falha sem expor conteúdo sensível.' },
+        { tipo: 'vida-real', emoji: '🗂️', titulo: 'O robô de relatórios que podia mexer em tudo', texto: 'Um script automático que exporta relatórios rodava com uma conta que tinha acesso a todas as pastas do servidor, e um erro dele apagou arquivos de outra área. No menor privilégio, a conta recebe só a pasta de relatórios, e você confere que a leitura ali funciona e que a escrita fora dela é negada.' }
       ]
     },
     {

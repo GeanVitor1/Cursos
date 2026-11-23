@@ -22,7 +22,8 @@ Plataforma.registrarLicao({
         { tipo: 'lista', itens: [
           'Ouça os áudios com atenção.',
           'Dicas continuam disponíveis durante a prova.'
-        ] }
+        ] },
+        { tipo: 'vida-real', emoji: '✈️', titulo: 'Contando a um colega como foi a viagem', texto: 'Na volta de uma viagem, um colega pergunta como foi. Você conta o que fez no passado e o que vai fazer depois, misturando passado simples e planos com will.', frase: 'I went to the hotel. I will call you tomorrow.', traducao: 'Eu fui ao hotel. Eu vou te ligar amanhã.' }
       ]
     },
     {

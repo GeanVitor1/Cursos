@@ -153,7 +153,8 @@ Plataforma.registrarLicao({
       blocos: [
         { tipo: 'texto', texto: 'Nas requisições GET, o cliente só pede dados. Para **criar** ou **atualizar**, ele também envia informações — e essas informações viajam no **corpo** da requisição. É o caso do POST: o endereço é `/api/produtos` e o corpo leva os dados do novo produto.' },
         { tipo: 'futuro', conceitos: ['aspnet.json'], titulo: 'Prévia: o formato do corpo', texto: 'No exemplo abaixo, o corpo está em **JSON** — um texto com pares "chave": valor. Você vai estudá-lo na próxima lição; por enquanto, basta saber que o corpo leva os dados enviados, como no POST.' },
-        { tipo: 'codigo', linguagem: 'http', codigo: 'POST /api/produtos\nCorpo:\n{\n  "nome": "Mouse",\n  "preco": 100.00\n}' }
+        { tipo: 'codigo', linguagem: 'http', codigo: 'POST /api/produtos\nCorpo:\n{\n  "nome": "Mouse",\n  "preco": 100.00\n}' },
+        { tipo: 'vida-real', emoji: '🛠️', titulo: '"O cadastro de produto não salva", disse o suporte', texto: 'O suporte relata que o cadastro de produto não salva. Você olha a requisição `POST /api/produtos` e vê a resposta com status 400: o servidor não caiu, ele está dizendo que o corpo enviado pelo cliente é que está errado.' }
       ]
     },
     {

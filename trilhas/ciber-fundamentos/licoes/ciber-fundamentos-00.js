@@ -81,7 +81,8 @@ Plataforma.registrarLicao({
       titulo: 'Orientar e revisar a IA',
       blocos: [
         { tipo: 'texto', texto: '**Como pedir:** ajude a investigar uma falha de acesso em ambiente local; organize hipóteses por DNS, transporte, certificado e HTTP; peça uma evidência por camada; não sugira desabilitar a validação de certificado como correção.' },
-        { tipo: 'texto', texto: '**Como validar:** veja se a proposta distingue falha de conexão de resposta HTTP. Nunca publique tokens capturados e não aceite "ignorar certificado" como solução permanente.' }
+        { tipo: 'texto', texto: '**Como validar:** veja se a proposta distingue falha de conexão de resposta HTTP. Nunca publique tokens capturados e não aceite "ignorar certificado" como solução permanente.' },
+        { tipo: 'vida-real', emoji: '🔒', titulo: 'Sexta à noite: "o site da loja não abre"', texto: 'O suporte avisa que clientes não conseguem abrir o site. Você investiga por camadas: o nome resolve no DNS? a conexão abre? o certificado ainda vale? Se a IA sugerir desligar a validação do certificado para "funcionar", você recusa e renova o certificado.' }
       ]
     },
     {

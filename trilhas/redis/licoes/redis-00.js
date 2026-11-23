@@ -201,7 +201,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'The cache is fast.', traducao: 'O cache é rápido.' },
-        { tipo: 'nota', tom: 'info', texto: 'Em times de tecnologia, **cache** aparece em expressões como **cache hit** (acerto) e **cache miss** (falta) — você vai aprender as duas mais adiante.' }
+        { tipo: 'nota', tom: 'info', texto: 'Em times de tecnologia, **cache** aparece em expressões como **cache hit** (acerto) e **cache miss** (falta) — você vai aprender as duas mais adiante.' },
+        { tipo: 'vida-real', emoji: '🍔', titulo: 'A lista de restaurantes que todo mundo abre ao mesmo tempo', texto: 'Em um app de delivery, na hora do almoço, milhares de pessoas abrem a mesma lista de restaurantes da cidade, e cada abertura vira uma consulta de 120 ms ao banco. Com a resposta pronta guardada em cache, só a primeira pessoa espera o banco; as outras recebem a cópia quase na hora.' }
       ]
     },
     {

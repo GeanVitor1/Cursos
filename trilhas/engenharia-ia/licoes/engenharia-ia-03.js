@@ -83,7 +83,8 @@ Plataforma.registrarLicao({
       titulo: 'Orientar e revisar a IA',
       blocos: [
         { tipo: 'texto', texto: '**Como pedir:** a partir destas regras, escreva testes de comportamento independentes da implementação, cobrindo sucesso, usuário sem permissão, pedido enviado e falha de persistência. Explique o que é mock e o que é real, e não consulte dados de produção.' },
-        { tipo: 'texto', texto: '**Como validar:** leia as asserções e pergunte se falhariam caso a implementação não salvasse nada. Rode o teste antes da correção (deve falhar) e depois (deve passar). Revise se erros e logs expõem tokens ou dados pessoais.' }
+        { tipo: 'texto', texto: '**Como validar:** leia as asserções e pergunte se falhariam caso a implementação não salvasse nada. Rode o teste antes da correção (deve falhar) e depois (deve passar). Revise se erros e logs expõem tokens ou dados pessoais.' },
+        { tipo: 'vida-real', emoji: '🚚', titulo: 'Testar o cálculo de frete sem chamar o serviço externo', texto: 'O frete depende de um serviço externo, que você não quer chamar a cada teste. Com um mock no lugar dele, o teste de unidade confere o cálculo e, quando algo falha, você depura em ciclo: reproduzir, observar, levantar uma hipótese, mudar uma causa e repetir o teste.' }
       ]
     },
     {

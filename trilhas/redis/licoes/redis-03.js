@@ -186,7 +186,8 @@ Plataforma.registrarLicao({
           ]
         },
         { tipo: 'ingles', frase: 'On a cache miss, get the value from the database.', traducao: 'Em uma falta no cache, pegue o valor do banco de dados.' },
-        { tipo: 'nota', tom: 'info', texto: 'As duas palavras também aparecem juntas com cache: **cache hit** e **cache miss**.' }
+        { tipo: 'nota', tom: 'info', texto: 'As duas palavras também aparecem juntas com cache: **cache hit** e **cache miss**.' },
+        { tipo: 'vida-real', emoji: '⚡', titulo: 'Promoção relâmpago: um cliente espera, os outros não', texto: 'Quando uma promoção abre, o primeiro cliente a ver o produto faz o código procurar no cache e não achar: é uma falta. O código busca no banco e guarda a cópia, e os milhares de clientes seguintes já encontram a resposta pronta, em acertos que quase não encostam no banco.' }
       ]
     },
     {

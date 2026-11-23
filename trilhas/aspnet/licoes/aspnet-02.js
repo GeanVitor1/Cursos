@@ -96,7 +96,8 @@ Plataforma.registrarLicao({
           ['Results.Created(endereco, dados)', 'Um novo recurso foi criado (201)'],
           ['Results.BadRequest(erro)', 'O cliente enviou dados inválidos (400)']
         ], legenda: 'Use o status certo: ele é um contrato com quem consome a API.' },
-        { tipo: 'nota', tom: 'info', texto: 'Nos próximos exemplos: `produto is null` verifica se o produto não existe; e `condição ? A : B` devolve A quando a condição é verdadeira e B quando é falsa (operador condicional). Leia como "se não existe, NotFound; senão, Ok".' }
+        { tipo: 'nota', tom: 'info', texto: 'Nos próximos exemplos: `produto is null` verifica se o produto não existe; e `condição ? A : B` devolve A quando a condição é verdadeira e B quando é falsa (operador condicional). Leia como "se não existe, NotFound; senão, Ok".' },
+        { tipo: 'vida-real', emoji: '🚦', titulo: 'Primeiro dia: a API da loja responde de verdade', texto: 'No primeiro dia, você mapeia `app.MapGet("/produtos", ...)` e o app já lista os produtos em JSON. Para um id que não existe, devolve `Results.NotFound()` em vez de um 200 vazio, e o cadastro novo responde `Results.Created`, com o status que cada situação merece.' }
       ]
     },
     {
