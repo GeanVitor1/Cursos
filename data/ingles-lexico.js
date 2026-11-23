@@ -2,6 +2,7 @@ Plataforma.registrarLexicoIngles({
   observacao: 'Configuração do linter de inglês. O léxico real é construído em ordem: cada lição ensina palavras por blocos vocab/ingles/glossario e por introduzVocab. O linter verifica TODO texto em inglês exibido ao aluno (enunciado, alternativas erradas, áudio, dicas citadas, feedback, leitura) contra o léxico acumulado até aquela etapa.',
 
   nomesProprios: [
+    'brooklyn', 'friends', 'league', 'legends', 'modern', 'office', 'exe',
     'ana', 'bruno', 'alex', 'sara', 'tom', 'lia', 'paulo', 'chris', 'leo',
     'silva', 'souza', 'lima', 'carla', 'diego', 'marcos', 'julia', 'beatriz',
     'brazil', 'brasil', 'canada', 'london', 'lisbon', 'lisboa', 'chile',
@@ -98,6 +99,9 @@ Plataforma.registrarLexicoIngles({
   },
 
   palavrasPortuguesas: [
+    'fundo', 'tocando', 'passar',
+    'entendi', 'sei', 'curtir', 'estudou', 'chega', 'ouvido', 'conectada', 'sendo', 'esbarra', 'num', 'amigo', 'estudada', 'assim', 'vale', 'topo', 'comum', 'apaixonado', 'agitar', 'dormir', 'arquivo', 'entender', 'saber', 'poder', 'isso', 'ruim', 'importo', 'muito',
+    'adjetivos', 'agitar', 'apaixonando', 'arrasando', 'assistir', 'cenas', 'computador', 'contexto', 'cuidar', 'customizar', 'deixa', 'demais', 'dentes', 'desejo', 'entrar', 'estar', 'estou', 'feito', 'figurado', 'fora', 'iluminar', 'indo', 'me', 'medida', 'mistura', 'olhar', 'olhe', 'ouvi', 'pause', 'pelo', 'personalizado', 'procurar', 'queimada', 'quero', 'reduza', 'responde', 'resto', 'sair', 'sentido', 'sob', 'soprando', 'sozinho', 'te', 'torrada', 'ver', 'vez',
     'a', 'o', 'as', 'os', 'de', 'da', 'do', 'das', 'dos', 'em', 'no', 'na',
     'nos', 'nas', 'um', 'uma', 'uns', 'umas', 'que', 'nao', 'não', 'e', 'eh',
     'é', 'para', 'com', 'por', 'se', 'sem', 'ao', 'aos', 'como', 'mais',

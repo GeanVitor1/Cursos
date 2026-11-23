@@ -3,11 +3,11 @@
 > Relatório gerado por `ferramentas/linter-pedagogico.js`. Ele percorre as trilhas na ordem real do aluno e verifica se cada conceito é ensinado antes de ser praticado ou cobrado.
 
 - Trilhas analisadas: **22**
-- Lições publicadas: **138**
-- Etapas percorridas: **1472**
-- Atividades percorridas: **939**
-- Conceitos registrados: **379**
-- Conceitos com introdução marcada: **174**
+- Lições publicadas: **145**
+- Etapas percorridas: **1542**
+- Atividades percorridas: **980**
+- Conceitos registrados: **382**
+- Conceitos com introdução marcada: **177**
 - Erros: **0** · Avisos: **0**
 
 ## Evidência por conceito (introdução → prática → avaliação)
@@ -119,6 +119,9 @@
 | Experiências de vida (present perfect) (`en.a2-experiencias`) | etapa 1 · ingles-02 | ingles-02 etapa 2 | ingles-02 etapa 11 | PRONTO_PARA_AVALIACAO | en.passado |
 | Descrevendo pessoas e lugares (`en.a2-descricao`) | etapa 1 · ingles-03 | ingles-03 etapa 2 | ingles-03 etapa 9 | PRONTO_PARA_AVALIACAO | en.lugares |
 | Saúde, telefone e mensagens (`en.a2-saude`) | etapa 1 · ingles-04 | ingles-04 etapa 2 | ingles-04 etapa 8 | PRONTO_PARA_AVALIACAO | en.rotina |
+| Inglês com músicas (`en.musica`) | etapa 1 · en-mus-01 | en-mus-01 etapa 3 | en-mus-05 etapa 9 | PRONTO_PARA_AVALIACAO | en.saudacoes |
+| Fala conectada (gonna, wanna) (`en.fala-conectada`) | etapa 1 · en-mus-06 | en-mus-06 etapa 3 | — | PRONTO_PARA_AVALIACAO | en.musica |
+| Frases de séries (`en.series`) | etapa 1 · en-mus-07 | en-mus-07 etapa 3 | en-mus-07 etapa 9 | PRONTO_PARA_AVALIACAO | en.musica |
 | Frases de reunião diária (`ingles.reuniao`) | etapa 1 · ingles-17 | ingles-17 etapa 2 | ingles-17 etapa 9 | PRONTO_PARA_AVALIACAO | ingles.frases |
 | GitHub em inglês: issue, pull request, merge, release (`ingles.github`) | etapa 1 · ingles-18 | ingles-18 etapa 2 | ingles-18 etapa 9 | PRONTO_PARA_AVALIACAO | ingles.vocabulario, ingles.frases |
 | HTTP (`engenharia-ia.http`) | etapa 1 · engenharia-ia-00 | engenharia-ia-00 etapa 2 | — | PRATICADO | — |

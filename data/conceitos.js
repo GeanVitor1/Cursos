@@ -111,6 +111,9 @@ Plataforma.registrarConceitos({
   'en.passado': 'Passado simples',
   'en.futuro': 'Planos e futuro',
   'en.viagem': 'Viagem: aeroporto e hotel',
+  'en.musica': 'Inglês com músicas',
+  'en.fala-conectada': 'Fala conectada (gonna, wanna)',
+  'en.series': 'Frases de séries',
 
   // Inglês para desenvolvedores
   'ingles.vocabulario': 'Vocabulário técnico',

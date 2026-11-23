@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-11-23T11:21:25.983Z",
+  "geradoEm": "2026-11-23T17:37:51.465Z",
   "regra": "Cada palavra entra no léxico na lição em que é ensinada (blocos vocab/ingles/glossario/introduzVocab) e o linter garante que nenhuma atividade a use antes disso, inclusive em distratores, áudio e feedback. Em todas as trilhas, cada etapa ensina no máximo 3 termos novos; na trilha de inglês, no máximo 6 palavras novas por etapa, e as frases de exemplo (bloco ingles) só usam palavras já explicadas.",
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
@@ -1545,6 +1545,191 @@
       ]
     },
     {
+      "licao": "en-mus-01",
+      "etapa": 2,
+      "termos": 3,
+      "palavras": [
+        "dandelion",
+        "wish",
+        "field"
+      ]
+    },
+    {
+      "licao": "en-mus-01",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "fall",
+        "love",
+        "i've",
+        "heard"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "etapa": 2,
+      "termos": 3,
+      "palavras": [
+        "outside",
+        "inside",
+        "look"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "know",
+        "someone"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "etapa": 2,
+      "termos": 3,
+      "palavras": [
+        "fire",
+        "burn",
+        "light"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "firestarter",
+        "something"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "etapa": 2,
+      "termos": 3,
+      "palavras": [
+        "custom",
+        "made",
+        "download",
+        "install"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "tall",
+        "strong",
+        "sweet",
+        "guy"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "etapa": 1,
+      "termos": 1,
+      "palavras": [
+        "paint",
+        "town",
+        "red"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "etapa": 2,
+      "termos": 2,
+      "palavras": [
+        "don't",
+        "care",
+        "vibe"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "etapa": 5,
+      "termos": 3,
+      "palavras": [
+        "mad",
+        "myself",
+        "whatever"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "gonna",
+        "wanna"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "etapa": 2,
+      "termos": 2,
+      "palavras": [
+        "gotta",
+        "got"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "etapa": 5,
+      "termos": 3,
+      "palavras": [
+        "kinda",
+        "lemme",
+        "dunno"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "etapa": 6,
+      "termos": 2,
+      "palavras": [
+        "gimme",
+        "ya",
+        "y'all"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "what's",
+        "way"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "etapa": 2,
+      "termos": 2,
+      "palavras": [
+        "real",
+        "bad"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "etapa": 4,
+      "termos": 1,
+      "palavras": [
+        "hang",
+        "out"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "etapa": 5,
+      "termos": 1,
+      "palavras": [
+        "never",
+        "mind"
+      ]
+    },
+    {
       "licao": "ingles-17",
       "etapa": 1,
       "termos": 3,
@@ -1869,10 +2054,9 @@
     {
       "licao": "docker-03",
       "etapa": 10,
-      "termos": 2,
+      "termos": 1,
       "palavras": [
-        "port",
-        "outside"
+        "port"
       ]
     },
     {
@@ -2030,7 +2214,11 @@
     {
       "palavra": "about",
       "introduzidaEm": "en-a1-08",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-a1",
+        "etapa": 9
+      }
     },
     {
       "palavra": "abuso",
@@ -2342,6 +2530,15 @@
       }
     },
     {
+      "palavra": "bad",
+      "introduzidaEm": "en-mus-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-07",
+        "atividade": "en-mus-07-p1",
+        "etapa": 3
+      }
+    },
+    {
       "palavra": "bag",
       "introduzidaEm": "en-a1-06",
       "primeiroUsoEmAtividade": {
@@ -2568,6 +2765,15 @@
       }
     },
     {
+      "palavra": "burn",
+      "introduzidaEm": "en-mus-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-03",
+        "atividade": "en-mus-03-p1",
+        "etapa": 3
+      }
+    },
+    {
       "palavra": "bus",
       "introduzidaEm": "en-a1-07",
       "primeiroUsoEmAtividade": {
@@ -2672,6 +2878,15 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-06",
         "atividade": "en-a1-06-p2",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "care",
+      "introduzidaEm": "en-mus-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-p2",
         "etapa": 4
       }
     },
@@ -3095,6 +3310,15 @@
       }
     },
     {
+      "palavra": "custom",
+      "introduzidaEm": "en-mus-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-04",
+        "atividade": "en-mus-04-p1",
+        "etapa": 3
+      }
+    },
+    {
       "palavra": "customer",
       "introduzidaEm": "sql-02",
       "primeiroUsoEmAtividade": {
@@ -3119,6 +3343,15 @@
         "licao": "en-a1-02",
         "atividade": "en-a1-02-p2",
         "etapa": 4
+      }
+    },
+    {
+      "palavra": "dandelion",
+      "introduzidaEm": "en-mus-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-01",
+        "atividade": "en-mus-01-p1",
+        "etapa": 3
       }
     },
     {
@@ -3324,6 +3557,15 @@
       }
     },
     {
+      "palavra": "don't",
+      "introduzidaEm": "en-mus-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-p2",
+        "etapa": 4
+      }
+    },
+    {
       "palavra": "done",
       "introduzidaEm": "ingles-02",
       "primeiroUsoEmAtividade": null
@@ -3343,12 +3585,30 @@
       }
     },
     {
+      "palavra": "download",
+      "introduzidaEm": "en-mus-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-04",
+        "atividade": "en-mus-04-p2",
+        "etapa": 4
+      }
+    },
+    {
       "palavra": "drink",
       "introduzidaEm": "en-a1-05",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-05",
         "atividade": "en-a1-05-p5",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "dunno",
+      "introduzidaEm": "en-mus-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-06",
+        "atividade": "en-mus-06-p2",
+        "etapa": 7
       }
     },
     {
@@ -3549,7 +3809,11 @@
     {
       "palavra": "expensive",
       "introduzidaEm": "en-a1-06",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-04",
+        "atividade": "en-mus-04-p1",
+        "etapa": 3
+      }
     },
     {
       "palavra": "expiração",
@@ -3620,6 +3884,15 @@
       }
     },
     {
+      "palavra": "fall",
+      "introduzidaEm": "en-mus-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-01",
+        "atividade": "en-mus-01-p3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "family",
       "introduzidaEm": "en-a1-02",
       "primeiroUsoEmAtividade": {
@@ -3671,6 +3944,15 @@
         "licao": "ingles-04",
         "atividade": "en-a2-04-p1",
         "etapa": 2
+      }
+    },
+    {
+      "palavra": "field",
+      "introduzidaEm": "en-mus-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-01",
+        "atividade": "en-mus-01-p1",
+        "etapa": 3
       }
     },
     {
@@ -3752,6 +4034,24 @@
         "licao": "en-a1-00",
         "atividade": "en-a1-00-p6",
         "etapa": 12
+      }
+    },
+    {
+      "palavra": "fire",
+      "introduzidaEm": "en-mus-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-03",
+        "atividade": "en-mus-03-p2",
+        "etapa": 4
+      }
+    },
+    {
+      "palavra": "firestarter",
+      "introduzidaEm": "en-mus-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-03",
+        "atividade": "en-mus-03-p3",
+        "etapa": 6
       }
     },
     {
@@ -3953,6 +4253,11 @@
       }
     },
     {
+      "palavra": "gimme",
+      "introduzidaEm": "en-mus-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "git",
       "introduzidaEm": "git-00",
       "primeiroUsoEmAtividade": {
@@ -3985,12 +4290,39 @@
       }
     },
     {
+      "palavra": "gonna",
+      "introduzidaEm": "en-mus-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-06",
+        "atividade": "en-mus-06-p1",
+        "etapa": 3
+      }
+    },
+    {
       "palavra": "good",
       "introduzidaEm": "en-a1-00",
       "primeiroUsoEmAtividade": {
         "licao": "en-a1-00",
         "atividade": "en-a1-00-p1",
         "etapa": 2
+      }
+    },
+    {
+      "palavra": "got",
+      "introduzidaEm": "en-mus-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-06",
+        "atividade": "en-mus-06-p2",
+        "etapa": 7
+      }
+    },
+    {
+      "palavra": "gotta",
+      "introduzidaEm": "en-mus-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-06",
+        "atividade": "en-mus-06-p2",
+        "etapa": 7
       }
     },
     {
@@ -4021,6 +4353,15 @@
       }
     },
     {
+      "palavra": "guy",
+      "introduzidaEm": "en-mus-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-04",
+        "atividade": "en-mus-04-p3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "had",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -4036,6 +4377,15 @@
         "licao": "en-a1-04",
         "atividade": "en-a1-04-p2",
         "etapa": 4
+      }
+    },
+    {
+      "palavra": "hang",
+      "introduzidaEm": "en-mus-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-07",
+        "atividade": "en-mus-07-p2",
+        "etapa": 6
       }
     },
     {
@@ -4104,6 +4454,15 @@
         "licao": "ingles-04",
         "atividade": "en-a2-04-p1",
         "etapa": 2
+      }
+    },
+    {
+      "palavra": "heard",
+      "introduzidaEm": "en-mus-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-01",
+        "atividade": "en-mus-01-p5",
+        "etapa": 9
       }
     },
     {
@@ -4274,6 +4633,15 @@
       }
     },
     {
+      "palavra": "i've",
+      "introduzidaEm": "en-mus-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-01",
+        "atividade": "en-mus-01-p5",
+        "etapa": 9
+      }
+    },
+    {
       "palavra": "id",
       "introduzidaEm": "sql-12",
       "primeiroUsoEmAtividade": {
@@ -4364,6 +4732,24 @@
       }
     },
     {
+      "palavra": "inside",
+      "introduzidaEm": "en-mus-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-02",
+        "atividade": "en-mus-02-p1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "install",
+      "introduzidaEm": "en-mus-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-04",
+        "atividade": "en-mus-04-p2",
+        "etapa": 4
+      }
+    },
+    {
       "palavra": "instance",
       "introduzidaEm": "ingles-01",
       "primeiroUsoEmAtividade": {
@@ -4438,7 +4824,11 @@
     {
       "palavra": "it's",
       "introduzidaEm": "en-a1-04",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-a1",
+        "etapa": 9
+      }
     },
     {
       "palavra": "item",
@@ -4514,6 +4904,24 @@
       }
     },
     {
+      "palavra": "kinda",
+      "introduzidaEm": "en-mus-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-06",
+        "atividade": "en-mus-06-l2",
+        "etapa": 9
+      }
+    },
+    {
+      "palavra": "know",
+      "introduzidaEm": "en-mus-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-02",
+        "atividade": "en-mus-02-l1",
+        "etapa": 7
+      }
+    },
+    {
       "palavra": "lançar",
       "introduzidaEm": "csharp-08",
       "primeiroUsoEmAtividade": {
@@ -4555,6 +4963,15 @@
       }
     },
     {
+      "palavra": "lemme",
+      "introduzidaEm": "en-mus-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-06",
+        "atividade": "en-mus-06-p2",
+        "etapa": 7
+      }
+    },
+    {
       "palavra": "let",
       "introduzidaEm": "en-a2-01",
       "primeiroUsoEmAtividade": {
@@ -4579,6 +4996,15 @@
         "licao": "en-a1-02",
         "atividade": "en-a1-02-p5",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "light",
+      "introduzidaEm": "en-mus-03",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-03",
+        "atividade": "en-mus-03-p3",
+        "etapa": 6
       }
     },
     {
@@ -4641,12 +5067,30 @@
       }
     },
     {
+      "palavra": "look",
+      "introduzidaEm": "en-mus-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-02",
+        "atividade": "en-mus-02-p2",
+        "etapa": 4
+      }
+    },
+    {
       "palavra": "lot",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
         "licao": "en-a2-00",
         "atividade": "en-a2-00-p7",
         "etapa": 14
+      }
+    },
+    {
+      "palavra": "love",
+      "introduzidaEm": "en-mus-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-01",
+        "atividade": "en-mus-01-p3",
+        "etapa": 6
       }
     },
     {
@@ -4704,12 +5148,39 @@
       }
     },
     {
+      "palavra": "mad",
+      "introduzidaEm": "en-mus-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-p3",
+        "etapa": 6
+      }
+    },
+    {
+      "palavra": "made",
+      "introduzidaEm": "en-mus-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-04",
+        "atividade": "en-mus-04-l1",
+        "etapa": 7
+      }
+    },
+    {
       "palavra": "main",
       "introduzidaEm": "git-03",
       "primeiroUsoEmAtividade": {
         "licao": "git-04",
         "atividade": "git04-a1",
         "etapa": 2
+      }
+    },
+    {
+      "palavra": "make",
+      "introduzidaEm": "en-mus-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-01",
+        "atividade": "en-mus-01-p4",
+        "etapa": 8
       }
     },
     {
@@ -4802,6 +5273,15 @@
       "palavra": "middleware",
       "introduzidaEm": "engenharia-ia-01",
       "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "mind",
+      "introduzidaEm": "en-mus-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-07",
+        "atividade": "en-mus-07-p2",
+        "etapa": 6
+      }
     },
     {
       "palavra": "minute",
@@ -4912,6 +5392,15 @@
       }
     },
     {
+      "palavra": "myself",
+      "introduzidaEm": "en-mus-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-l1",
+        "etapa": 7
+      }
+    },
+    {
       "palavra": "método",
       "introduzidaEm": "csharp-02",
       "primeiroUsoEmAtividade": {
@@ -4963,6 +5452,15 @@
         "licao": "docker-06",
         "atividade": "docker06-a6",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "never",
+      "introduzidaEm": "en-mus-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-07",
+        "atividade": "en-mus-07-p2",
+        "etapa": 6
       }
     },
     {
@@ -5206,14 +5704,27 @@
       }
     },
     {
+      "palavra": "out",
+      "introduzidaEm": "en-mus-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-07",
+        "atividade": "en-mus-07-p2",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "outer",
       "introduzidaEm": "sql-14",
       "primeiroUsoEmAtividade": null
     },
     {
       "palavra": "outside",
-      "introduzidaEm": "docker-03",
-      "primeiroUsoEmAtividade": null
+      "introduzidaEm": "en-mus-02",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-02",
+        "atividade": "en-mus-02-p1",
+        "etapa": 3
+      }
     },
     {
       "palavra": "over",
@@ -5245,6 +5756,15 @@
         "licao": "redis-00",
         "atividade": "redis00-a5",
         "etapa": 9
+      }
+    },
+    {
+      "palavra": "paint",
+      "introduzidaEm": "en-mus-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-p1",
+        "etapa": 3
       }
     },
     {
@@ -5440,7 +5960,11 @@
     {
       "palavra": "plan",
       "introduzidaEm": "sql-34",
-      "primeiroUsoEmAtividade": null
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-a1",
+        "etapa": 9
+      }
     },
     {
       "palavra": "plans",
@@ -5709,6 +6233,24 @@
         "licao": "en-a1-05",
         "atividade": "en-a1-05-a3",
         "etapa": 17
+      }
+    },
+    {
+      "palavra": "real",
+      "introduzidaEm": "en-mus-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-07",
+        "atividade": "en-mus-07-a1",
+        "etapa": 9
+      }
+    },
+    {
+      "palavra": "red",
+      "introduzidaEm": "en-mus-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-p1",
+        "etapa": 3
       }
     },
     {
@@ -6349,6 +6891,16 @@
       }
     },
     {
+      "palavra": "someone",
+      "introduzidaEm": "en-mus-02",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "something",
+      "introduzidaEm": "en-mus-03",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "son",
       "introduzidaEm": "en-a1-02",
       "primeiroUsoEmAtividade": null
@@ -6471,6 +7023,11 @@
       }
     },
     {
+      "palavra": "strong",
+      "introduzidaEm": "en-mus-04",
+      "primeiroUsoEmAtividade": null
+    },
+    {
       "palavra": "studied",
       "introduzidaEm": "en-a2-00",
       "primeiroUsoEmAtividade": {
@@ -6522,6 +7079,15 @@
         "licao": "en-a1-05",
         "atividade": "en-a1-05-p6",
         "etapa": 12
+      }
+    },
+    {
+      "palavra": "sweet",
+      "introduzidaEm": "en-mus-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-04",
+        "atividade": "en-mus-04-p3",
+        "etapa": 6
       }
     },
     {
@@ -6584,6 +7150,15 @@
       "primeiroUsoEmAtividade": {
         "licao": "en-a2-00",
         "atividade": "en-a2-00-p4",
+        "etapa": 8
+      }
+    },
+    {
+      "palavra": "tall",
+      "introduzidaEm": "en-mus-04",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-04",
+        "atividade": "en-mus-04-p4",
         "etapa": 8
       }
     },
@@ -6903,6 +7478,15 @@
       }
     },
     {
+      "palavra": "town",
+      "introduzidaEm": "en-mus-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-p1",
+        "etapa": 3
+      }
+    },
+    {
       "palavra": "train",
       "introduzidaEm": "en-a1-07",
       "primeiroUsoEmAtividade": {
@@ -7138,6 +7722,15 @@
       }
     },
     {
+      "palavra": "vibe",
+      "introduzidaEm": "en-mus-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-p3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "view",
       "introduzidaEm": "sql-30",
       "primeiroUsoEmAtividade": {
@@ -7220,6 +7813,15 @@
       }
     },
     {
+      "palavra": "wanna",
+      "introduzidaEm": "en-mus-06",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-06",
+        "atividade": "en-mus-06-p1",
+        "etapa": 3
+      }
+    },
+    {
       "palavra": "want",
       "introduzidaEm": "en-a1-05",
       "primeiroUsoEmAtividade": {
@@ -7262,6 +7864,15 @@
         "licao": "en-a1-05",
         "atividade": "en-a1-05-p1",
         "etapa": 2
+      }
+    },
+    {
+      "palavra": "way",
+      "introduzidaEm": "en-mus-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-07",
+        "atividade": "en-mus-07-p1",
+        "etapa": 3
       }
     },
     {
@@ -7346,6 +7957,24 @@
       }
     },
     {
+      "palavra": "what's",
+      "introduzidaEm": "en-mus-07",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-07",
+        "atividade": "en-mus-07-p1",
+        "etapa": 3
+      }
+    },
+    {
+      "palavra": "whatever",
+      "introduzidaEm": "en-mus-05",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-05",
+        "atividade": "en-mus-05-p3",
+        "etapa": 6
+      }
+    },
+    {
       "palavra": "when",
       "introduzidaEm": "en-a1-08",
       "primeiroUsoEmAtividade": {
@@ -7402,6 +8031,15 @@
         "licao": "sql-35",
         "atividade": "sql35-a5",
         "etapa": 10
+      }
+    },
+    {
+      "palavra": "wish",
+      "introduzidaEm": "en-mus-01",
+      "primeiroUsoEmAtividade": {
+        "licao": "en-mus-01",
+        "atividade": "en-mus-01-p1",
+        "etapa": 3
       }
     },
     {
@@ -7479,6 +8117,16 @@
     {
       "palavra": "x",
       "introduzidaEm": "ef-01",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "y'all",
+      "introduzidaEm": "en-mus-06",
+      "primeiroUsoEmAtividade": null
+    },
+    {
+      "palavra": "ya",
+      "introduzidaEm": "en-mus-06",
       "primeiroUsoEmAtividade": null
     },
     {

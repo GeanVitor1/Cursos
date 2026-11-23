@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-11-23T11:21:25.657Z",
+  "geradoEm": "2026-11-23T17:37:47.868Z",
   "regra": "Estados de conteúdo: NAO_ENSINADO → INTRODUZIDO → PRATICADO → PRONTO_PARA_AVALIACAO. MASTERED é calculado em tempo real pelo motor (confiança + dimensões + revisão espaçada), não pelo conteúdo estático.",
   "conceitos": [
     {
@@ -2925,7 +2925,7 @@
         "licao": "redis-checkpoint-fundamentos",
         "etapa": 10,
         "titulo": "",
-        "pos": 1416
+        "pos": 1486
       },
       "praticas": 18,
       "dimensoes": [
@@ -3260,6 +3260,107 @@
       ]
     },
     {
+      "id": "en.musica",
+      "nome": "Inglês com músicas",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-mus-01",
+        "etapa": 1,
+        "titulo": "A música",
+        "pos": 890
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-mus-01",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 892
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-mus-05",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 938
+      },
+      "praticas": 30,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento",
+        "ordenacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.saudacoes"
+      ]
+    },
+    {
+      "id": "en.fala-conectada",
+      "nome": "Fala conectada (gonna, wanna)",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-mus-06",
+        "etapa": 1,
+        "titulo": "Por que eu não entendo o inglês rápido?",
+        "pos": 940
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-mus-06",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 942
+      },
+      "avaliadoEm": null,
+      "praticas": 6,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "preenchimento"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.musica"
+      ]
+    },
+    {
+      "id": "en.series",
+      "nome": "Frases de séries",
+      "introduzidoEm": {
+        "trilha": "ingles",
+        "licao": "en-mus-07",
+        "etapa": 1,
+        "titulo": "Reações rápidas",
+        "pos": 950
+      },
+      "praticadoEm": {
+        "trilha": "ingles",
+        "licao": "en-mus-07",
+        "etapa": 3,
+        "titulo": "",
+        "pos": 952
+      },
+      "avaliadoEm": {
+        "trilha": "ingles",
+        "licao": "en-mus-07",
+        "etapa": 9,
+        "titulo": "",
+        "pos": 958
+      },
+      "praticas": 5,
+      "dimensoes": [
+        "reconhecimento",
+        "associacao",
+        "aplicacao"
+      ],
+      "estado": "PRONTO_PARA_AVALIACAO",
+      "prerequisitos": [
+        "en.musica"
+      ]
+    },
+    {
       "id": "ingles.reuniao",
       "nome": "Frases de reunião diária",
       "introduzidoEm": {
@@ -3267,21 +3368,21 @@
         "licao": "ingles-17",
         "etapa": 1,
         "titulo": "A estrutura de uma Daily (Standup)",
-        "pos": 890
+        "pos": 960
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "ingles-17",
         "etapa": 2,
         "titulo": "",
-        "pos": 891
+        "pos": 961
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "ingles-17",
         "etapa": 9,
         "titulo": "",
-        "pos": 898
+        "pos": 968
       },
       "praticas": 5,
       "dimensoes": [
@@ -3304,21 +3405,21 @@
         "licao": "ingles-18",
         "etapa": 1,
         "titulo": "Colaboração no GitHub: Pull Request",
-        "pos": 899
+        "pos": 969
       },
       "praticadoEm": {
         "trilha": "ingles",
         "licao": "ingles-18",
         "etapa": 2,
         "titulo": "",
-        "pos": 900
+        "pos": 970
       },
       "avaliadoEm": {
         "trilha": "ingles",
         "licao": "ingles-18",
         "etapa": 9,
         "titulo": "",
-        "pos": 907
+        "pos": 977
       },
       "praticas": 5,
       "dimensoes": [
@@ -3342,14 +3443,14 @@
         "licao": "engenharia-ia-00",
         "etapa": 1,
         "titulo": "Dois termos antes do cenário",
-        "pos": 908
+        "pos": 978
       },
       "praticadoEm": {
         "trilha": "engenharia-ia",
         "licao": "engenharia-ia-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 909
+        "pos": 979
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3367,14 +3468,14 @@
         "licao": "engenharia-ia-00",
         "etapa": 1,
         "titulo": "Dois termos antes do cenário",
-        "pos": 908
+        "pos": 978
       },
       "praticadoEm": {
         "trilha": "engenharia-ia",
         "licao": "engenharia-ia-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 909
+        "pos": 979
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3394,14 +3495,14 @@
         "licao": "engenharia-ia-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 909
+        "pos": 979
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 6,
         "titulo": "",
-        "pos": 1204
+        "pos": 1274
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -3421,14 +3522,14 @@
         "licao": "engenharia-ia-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 909
+        "pos": 979
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 1202
+        "pos": 1272
       },
       "avaliadoEm": null,
       "praticas": 6,
@@ -3452,14 +3553,14 @@
         "licao": "engenharia-ia-00",
         "etapa": 3,
         "titulo": "Da necessidade à decisão técnica",
-        "pos": 910
+        "pos": 980
       },
       "praticadoEm": {
         "trilha": "engenharia-ia",
         "licao": "engenharia-ia-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 911
+        "pos": 981
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -3478,14 +3579,14 @@
         "licao": "engenharia-ia-01",
         "etapa": 1,
         "titulo": "Peças que aparecem no cenário",
-        "pos": 914
+        "pos": 984
       },
       "praticadoEm": {
         "trilha": "engenharia-ia",
         "licao": "engenharia-ia-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 915
+        "pos": 985
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3503,14 +3604,14 @@
         "licao": "engenharia-ia-01",
         "etapa": 3,
         "titulo": "Escolher .NET e separar responsabilidades",
-        "pos": 916
+        "pos": 986
       },
       "praticadoEm": {
         "trilha": "engenharia-ia",
         "licao": "engenharia-ia-01",
         "etapa": 4,
         "titulo": "",
-        "pos": 917
+        "pos": 987
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -3529,14 +3630,14 @@
         "licao": "engenharia-ia-02",
         "etapa": 1,
         "titulo": "Termos antes do cenário",
-        "pos": 920
+        "pos": 990
       },
       "praticadoEm": {
         "trilha": "engenharia-ia",
         "licao": "engenharia-ia-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 921
+        "pos": 991
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3554,21 +3655,21 @@
         "licao": "engenharia-ia-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 921
+        "pos": 991
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 1377
+        "pos": 1447
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-00",
         "etapa": 9,
         "titulo": "",
-        "pos": 1384
+        "pos": 1454
       },
       "praticas": 7,
       "dimensoes": [],
@@ -3585,14 +3686,14 @@
         "licao": "engenharia-ia-02",
         "etapa": 3,
         "titulo": "Investigar consultas antes de usar cache",
-        "pos": 922
+        "pos": 992
       },
       "praticadoEm": {
         "trilha": "engenharia-ia",
         "licao": "engenharia-ia-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 923
+        "pos": 993
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -3611,14 +3712,14 @@
         "licao": "engenharia-ia-03",
         "etapa": 1,
         "titulo": "O que é um mock",
-        "pos": 926
+        "pos": 996
       },
       "praticadoEm": {
         "trilha": "engenharia-ia",
         "licao": "engenharia-ia-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 927
+        "pos": 997
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3636,14 +3737,14 @@
         "licao": "engenharia-ia-03",
         "etapa": 3,
         "titulo": "Revisar, testar e depurar código gerado",
-        "pos": 928
+        "pos": 998
       },
       "praticadoEm": {
         "trilha": "engenharia-ia",
         "licao": "engenharia-ia-03",
         "etapa": 4,
         "titulo": "",
-        "pos": 929
+        "pos": 999
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -3662,14 +3763,14 @@
         "licao": "ciber-fundamentos-00",
         "etapa": 1,
         "titulo": "O caminho de uma página, passo a passo",
-        "pos": 932
+        "pos": 1002
       },
       "praticadoEm": {
         "trilha": "ciber-fundamentos",
         "licao": "ciber-fundamentos-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 933
+        "pos": 1003
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -3688,14 +3789,14 @@
         "licao": "ciber-fundamentos-00",
         "etapa": 1,
         "titulo": "O caminho de uma página, passo a passo",
-        "pos": 932
+        "pos": 1002
       },
       "praticadoEm": {
         "trilha": "ciber-fundamentos",
         "licao": "ciber-fundamentos-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 933
+        "pos": 1003
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3713,14 +3814,14 @@
         "licao": "ciber-fundamentos-00",
         "etapa": 3,
         "titulo": "Da rede ao HTTPS: localizar uma falha",
-        "pos": 934
+        "pos": 1004
       },
       "praticadoEm": {
         "trilha": "ciber-fundamentos",
         "licao": "ciber-fundamentos-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 935
+        "pos": 1005
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3738,14 +3839,14 @@
         "licao": "ciber-fundamentos-01",
         "etapa": 1,
         "titulo": "Usuários, grupos e permissões",
-        "pos": 938
+        "pos": 1008
       },
       "praticadoEm": {
         "trilha": "ciber-fundamentos",
         "licao": "ciber-fundamentos-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 939
+        "pos": 1009
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3763,14 +3864,14 @@
         "licao": "ciber-fundamentos-01",
         "etapa": 3,
         "titulo": "Sistemas operacionais, Linux e menor privilégio",
-        "pos": 940
+        "pos": 1010
       },
       "praticadoEm": {
         "trilha": "ciber-fundamentos",
         "licao": "ciber-fundamentos-01",
         "etapa": 4,
         "titulo": "",
-        "pos": 941
+        "pos": 1011
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -3789,14 +3890,14 @@
         "licao": "ciber-fundamentos-02",
         "etapa": 1,
         "titulo": "O que é um token",
-        "pos": 944
+        "pos": 1014
       },
       "praticadoEm": {
         "trilha": "ciber-fundamentos",
         "licao": "ciber-fundamentos-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 945
+        "pos": 1015
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3816,14 +3917,14 @@
         "licao": "ciber-fundamentos-02",
         "etapa": 3,
         "titulo": "Criptografia, senhas e controle de acesso",
-        "pos": 946
+        "pos": 1016
       },
       "praticadoEm": {
         "trilha": "ciber-fundamentos",
         "licao": "ciber-fundamentos-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 947
+        "pos": 1017
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -3842,14 +3943,14 @@
         "licao": "ciber-fundamentos-03",
         "etapa": 1,
         "titulo": "Ativos, fronteiras e logs",
-        "pos": 950
+        "pos": 1020
       },
       "praticadoEm": {
         "trilha": "ciber-fundamentos",
         "licao": "ciber-fundamentos-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 951
+        "pos": 1021
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -3867,14 +3968,14 @@
         "licao": "ciber-fundamentos-03",
         "etapa": 3,
         "titulo": "Modelar ameaças e investigar com evidências",
-        "pos": 952
+        "pos": 1022
       },
       "praticadoEm": {
         "trilha": "ciber-fundamentos",
         "licao": "ciber-fundamentos-03",
         "etapa": 4,
         "titulo": "",
-        "pos": 953
+        "pos": 1023
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -3893,14 +3994,14 @@
         "licao": "linq-00",
         "etapa": 1,
         "titulo": "Você já escreveu LINQ sem saber",
-        "pos": 956
+        "pos": 1026
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 959
+        "pos": 1029
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -3922,21 +4023,21 @@
         "licao": "linq-00",
         "etapa": 2,
         "titulo": "Where: o filtro ganha um nome",
-        "pos": 957
+        "pos": 1027
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 960
+        "pos": 1030
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-01",
         "etapa": 6,
         "titulo": "",
-        "pos": 968
+        "pos": 1038
       },
       "praticas": 13,
       "dimensoes": [
@@ -3959,14 +4060,14 @@
         "licao": "linq-00",
         "etapa": 2,
         "titulo": "Where: o filtro ganha um nome",
-        "pos": 957
+        "pos": 1027
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 5,
         "titulo": "",
-        "pos": 960
+        "pos": 1030
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -3988,14 +4089,14 @@
         "licao": "linq-00",
         "etapa": 3,
         "titulo": "ToList: o resultado vira lista",
-        "pos": 958
+        "pos": 1028
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-00",
         "etapa": 6,
         "titulo": "",
-        "pos": 961
+        "pos": 1031
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -4015,21 +4116,21 @@
         "licao": "linq-02",
         "etapa": 1,
         "titulo": "Where escolhe linhas. Select escolhe o formato",
-        "pos": 969
+        "pos": 1039
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 970
+        "pos": 1040
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-02",
         "etapa": 5,
         "titulo": "",
-        "pos": 973
+        "pos": 1043
       },
       "praticas": 4,
       "dimensoes": [
@@ -4051,21 +4152,21 @@
         "licao": "linq-03",
         "etapa": 1,
         "titulo": "Buscando um produto específico",
-        "pos": 974
+        "pos": 1044
       },
       "praticadoEm": {
         "trilha": "linq",
         "licao": "linq-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 975
+        "pos": 1045
       },
       "avaliadoEm": {
         "trilha": "linq",
         "licao": "linq-03",
         "etapa": 4,
         "titulo": "",
-        "pos": 977
+        "pos": 1047
       },
       "praticas": 9,
       "dimensoes": [
@@ -4089,21 +4190,21 @@
         "licao": "ef-00",
         "etapa": 2,
         "titulo": "ORM: o tradutor entre C# e o banco",
-        "pos": 981
+        "pos": 1051
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 983
+        "pos": 1053
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 7,
         "titulo": "",
-        "pos": 986
+        "pos": 1056
       },
       "praticas": 4,
       "dimensoes": [
@@ -4126,14 +4227,14 @@
         "licao": "ef-00",
         "etapa": 3,
         "titulo": "Entidade: a classe que representa uma tabela",
-        "pos": 982
+        "pos": 1052
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-00",
         "etapa": 4,
         "titulo": "",
-        "pos": 983
+        "pos": 1053
       },
       "avaliadoEm": null,
       "praticas": 2,
@@ -4154,14 +4255,14 @@
         "licao": "ef-01",
         "etapa": 1,
         "titulo": "A porta de entrada para o banco",
-        "pos": 987
+        "pos": 1057
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-01",
         "etapa": 3,
         "titulo": "",
-        "pos": 989
+        "pos": 1059
       },
       "avaliadoEm": null,
       "praticas": 3,
@@ -4185,14 +4286,14 @@
         "licao": "ef-01",
         "etapa": 2,
         "titulo": "DbSet: uma gaveta para cada tipo de coisa",
-        "pos": 988
+        "pos": 1058
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-01",
         "etapa": 3,
         "titulo": "",
-        "pos": 989
+        "pos": 1059
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -4215,21 +4316,21 @@
         "licao": "ef-02",
         "etapa": 3,
         "titulo": "SaveChanges: agora sim, o INSERT",
-        "pos": 997
+        "pos": 1067
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-02",
         "etapa": 4,
         "titulo": "",
-        "pos": 998
+        "pos": 1068
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-02",
         "etapa": 8,
         "titulo": "",
-        "pos": 1002
+        "pos": 1072
       },
       "praticas": 5,
       "dimensoes": [
@@ -4253,21 +4354,21 @@
         "licao": "ef-03",
         "etapa": 1,
         "titulo": "LINQ no DbSet vira SQL",
-        "pos": 1003
+        "pos": 1073
       },
       "praticadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-03",
         "etapa": 3,
         "titulo": "",
-        "pos": 1005
+        "pos": 1075
       },
       "avaliadoEm": {
         "trilha": "entity-framework",
         "licao": "ef-03",
         "etapa": 6,
         "titulo": "",
-        "pos": 1008
+        "pos": 1078
       },
       "praticas": 5,
       "dimensoes": [
@@ -4293,21 +4394,21 @@
         "licao": "git-00",
         "etapa": 1,
         "titulo": "Um projeto com memória",
-        "pos": 1010
+        "pos": 1080
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 1011
+        "pos": 1081
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-checkpoint-fundamentos",
         "etapa": 2,
         "titulo": "",
-        "pos": 1034
+        "pos": 1104
       },
       "praticas": 13,
       "dimensoes": [
@@ -4331,21 +4432,21 @@
         "licao": "git-01",
         "etapa": 1,
         "titulo": "Duas cópias do mesmo projeto",
-        "pos": 1022
+        "pos": 1092
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 1023
+        "pos": 1093
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-01",
         "etapa": 8,
         "titulo": "",
-        "pos": 1029
+        "pos": 1099
       },
       "praticas": 7,
       "dimensoes": [
@@ -4369,21 +4470,21 @@
         "licao": "git-02",
         "etapa": 1,
         "titulo": "Uma linha paralela de trabalho",
-        "pos": 1043
+        "pos": 1113
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 1044
+        "pos": 1114
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 1054
+        "pos": 1124
       },
       "praticas": 19,
       "dimensoes": [
@@ -4407,21 +4508,21 @@
         "licao": "git-03",
         "etapa": 1,
         "titulo": "Juntando os dois caminhos",
-        "pos": 1055
+        "pos": 1125
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 1056
+        "pos": 1126
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-05",
         "etapa": 13,
         "titulo": "",
-        "pos": 1091
+        "pos": 1161
       },
       "praticas": 12,
       "dimensoes": [
@@ -4444,21 +4545,21 @@
         "licao": "git-04",
         "etapa": 1,
         "titulo": "A proposta de juntar o trabalho",
-        "pos": 1066
+        "pos": 1136
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 1067
+        "pos": 1137
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 13,
         "titulo": "",
-        "pos": 1078
+        "pos": 1148
       },
       "praticas": 8,
       "dimensoes": [
@@ -4478,21 +4579,21 @@
         "licao": "git-04",
         "etapa": 5,
         "titulo": "Code review: o olhar de outra pessoa",
-        "pos": 1070
+        "pos": 1140
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 6,
         "titulo": "",
-        "pos": 1071
+        "pos": 1141
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-04",
         "etapa": 13,
         "titulo": "",
-        "pos": 1078
+        "pos": 1148
       },
       "praticas": 5,
       "dimensoes": [
@@ -4512,21 +4613,21 @@
         "licao": "git-05",
         "etapa": 1,
         "titulo": "Quando o Git não decide sozinho",
-        "pos": 1079
+        "pos": 1149
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 1080
+        "pos": 1150
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-05",
         "etapa": 13,
         "titulo": "",
-        "pos": 1091
+        "pos": 1161
       },
       "praticas": 8,
       "dimensoes": [
@@ -4548,21 +4649,21 @@
         "licao": "git-06",
         "etapa": 1,
         "titulo": "Errar depois de enviar",
-        "pos": 1102
+        "pos": 1172
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-06",
         "etapa": 2,
         "titulo": "",
-        "pos": 1103
+        "pos": 1173
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-06",
         "etapa": 8,
         "titulo": "",
-        "pos": 1109
+        "pos": 1179
       },
       "praticas": 7,
       "dimensoes": [
@@ -4583,21 +4684,21 @@
         "licao": "git-07",
         "etapa": 1,
         "titulo": "Voltando o ponteiro sem apagar o trabalho",
-        "pos": 1113
+        "pos": 1183
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-07",
         "etapa": 2,
         "titulo": "",
-        "pos": 1114
+        "pos": 1184
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-07",
         "etapa": 11,
         "titulo": "",
-        "pos": 1123
+        "pos": 1193
       },
       "praticas": 7,
       "dimensoes": [
@@ -4619,21 +4720,21 @@
         "licao": "git-08",
         "etapa": 1,
         "titulo": "Interrompido no meio do trabalho",
-        "pos": 1124
+        "pos": 1194
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-08",
         "etapa": 2,
         "titulo": "",
-        "pos": 1125
+        "pos": 1195
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-08",
         "etapa": 11,
         "titulo": "",
-        "pos": 1134
+        "pos": 1204
       },
       "praticas": 7,
       "dimensoes": [
@@ -4656,21 +4757,21 @@
         "licao": "git-09",
         "etapa": 1,
         "titulo": "O que não pertence ao repositório",
-        "pos": 1135
+        "pos": 1205
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-09",
         "etapa": 2,
         "titulo": "",
-        "pos": 1136
+        "pos": 1206
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-09",
         "etapa": 7,
         "titulo": "",
-        "pos": 1141
+        "pos": 1211
       },
       "praticas": 6,
       "dimensoes": [
@@ -4692,21 +4793,21 @@
         "licao": "git-10",
         "etapa": 1,
         "titulo": "Acordos do time, não regras do Git",
-        "pos": 1155
+        "pos": 1225
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-10",
         "etapa": 2,
         "titulo": "",
-        "pos": 1156
+        "pos": 1226
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-10",
         "etapa": 11,
         "titulo": "",
-        "pos": 1165
+        "pos": 1235
       },
       "praticas": 6,
       "dimensoes": [
@@ -4728,21 +4829,21 @@
         "licao": "git-11",
         "etapa": 1,
         "titulo": "A mensagem é para quem vai ler depois",
-        "pos": 1166
+        "pos": 1236
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-11",
         "etapa": 2,
         "titulo": "",
-        "pos": 1167
+        "pos": 1237
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-11",
         "etapa": 10,
         "titulo": "",
-        "pos": 1175
+        "pos": 1245
       },
       "praticas": 6,
       "dimensoes": [
@@ -4762,21 +4863,21 @@
         "licao": "git-12",
         "etapa": 1,
         "titulo": "Marcos nomeados na história",
-        "pos": 1176
+        "pos": 1246
       },
       "praticadoEm": {
         "trilha": "git",
         "licao": "git-12",
         "etapa": 2,
         "titulo": "",
-        "pos": 1177
+        "pos": 1247
       },
       "avaliadoEm": {
         "trilha": "git",
         "licao": "git-12",
         "etapa": 12,
         "titulo": "",
-        "pos": 1187
+        "pos": 1257
       },
       "praticas": 8,
       "dimensoes": [
@@ -4799,14 +4900,14 @@
         "licao": "aspnet-00",
         "etapa": 2,
         "titulo": "Requisição e resposta",
-        "pos": 1200
+        "pos": 1270
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 1201
+        "pos": 1271
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -4826,14 +4927,14 @@
         "licao": "aspnet-00",
         "etapa": 2,
         "titulo": "Requisição e resposta",
-        "pos": 1200
+        "pos": 1270
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 3,
         "titulo": "",
-        "pos": 1201
+        "pos": 1271
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -4853,14 +4954,14 @@
         "licao": "aspnet-00",
         "etapa": 7,
         "titulo": "A resposta conta o que aconteceu",
-        "pos": 1205
+        "pos": 1275
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-00",
         "etapa": 8,
         "titulo": "",
-        "pos": 1206
+        "pos": 1276
       },
       "avaliadoEm": null,
       "praticas": 4,
@@ -4882,14 +4983,14 @@
         "licao": "aspnet-01",
         "etapa": 1,
         "titulo": "Um formato que todo mundo entende",
-        "pos": 1210
+        "pos": 1280
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 1211
+        "pos": 1281
       },
       "avaliadoEm": null,
       "praticas": 5,
@@ -4910,14 +5011,14 @@
         "licao": "aspnet-02",
         "etapa": 1,
         "titulo": "O que é um endpoint",
-        "pos": 1215
+        "pos": 1285
       },
       "praticadoEm": {
         "trilha": "aspnet",
         "licao": "aspnet-02",
         "etapa": 8,
         "titulo": "",
-        "pos": 1222
+        "pos": 1292
       },
       "avaliadoEm": null,
       "praticas": 1,
@@ -4937,21 +5038,21 @@
         "licao": "docker-00",
         "etapa": 1,
         "titulo": "A frase que todo time conhece",
-        "pos": 1227
+        "pos": 1297
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-00",
         "etapa": 2,
         "titulo": "",
-        "pos": 1228
+        "pos": 1298
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-00",
         "etapa": 8,
         "titulo": "",
-        "pos": 1234
+        "pos": 1304
       },
       "praticas": 5,
       "dimensoes": [],
@@ -4968,21 +5069,21 @@
         "licao": "docker-01",
         "etapa": 1,
         "titulo": "O molde e a cópia",
-        "pos": 1237
+        "pos": 1307
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 1238
+        "pos": 1308
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 1257
+        "pos": 1327
       },
       "praticas": 9,
       "dimensoes": [],
@@ -4999,21 +5100,21 @@
         "licao": "docker-01",
         "etapa": 3,
         "titulo": "Do molde nasce o container",
-        "pos": 1239
+        "pos": 1309
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-01",
         "etapa": 4,
         "titulo": "",
-        "pos": 1240
+        "pos": 1310
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 1257
+        "pos": 1327
       },
       "praticas": 13,
       "dimensoes": [],
@@ -5030,21 +5131,21 @@
         "licao": "docker-02",
         "etapa": 1,
         "titulo": "A receita da imagem",
-        "pos": 1246
+        "pos": 1316
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 1247
+        "pos": 1317
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-02",
         "etapa": 12,
         "titulo": "",
-        "pos": 1257
+        "pos": 1327
       },
       "praticas": 6,
       "dimensoes": [],
@@ -5061,21 +5162,21 @@
         "licao": "docker-03",
         "etapa": 1,
         "titulo": "A porta de fora",
-        "pos": 1268
+        "pos": 1338
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 1269
+        "pos": 1339
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-checkpoint-pratica",
         "etapa": 2,
         "titulo": "",
-        "pos": 1310
+        "pos": 1380
       },
       "praticas": 10,
       "dimensoes": [],
@@ -5092,21 +5193,21 @@
         "licao": "docker-04",
         "etapa": 1,
         "titulo": "O container é descartável",
-        "pos": 1279
+        "pos": 1349
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 1280
+        "pos": 1350
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-04",
         "etapa": 8,
         "titulo": "",
-        "pos": 1286
+        "pos": 1356
       },
       "praticas": 13,
       "dimensoes": [],
@@ -5123,21 +5224,21 @@
         "licao": "docker-05",
         "etapa": 1,
         "titulo": "A mesma imagem, configurações diferentes",
-        "pos": 1289
+        "pos": 1359
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 1290
+        "pos": 1360
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-checkpoint-pratica",
         "etapa": 4,
         "titulo": "",
-        "pos": 1312
+        "pos": 1382
       },
       "praticas": 14,
       "dimensoes": [],
@@ -5154,21 +5255,21 @@
         "licao": "docker-06",
         "etapa": 1,
         "titulo": "Containers que precisam conversar",
-        "pos": 1299
+        "pos": 1369
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-06",
         "etapa": 2,
         "titulo": "",
-        "pos": 1300
+        "pos": 1370
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-checkpoint-pratica",
         "etapa": 5,
         "titulo": "",
-        "pos": 1313
+        "pos": 1383
       },
       "praticas": 10,
       "dimensoes": [],
@@ -5185,21 +5286,21 @@
         "licao": "docker-07",
         "etapa": 1,
         "titulo": "Vários comandos viram um arquivo",
-        "pos": 1318
+        "pos": 1388
       },
       "praticadoEm": {
         "trilha": "docker",
         "licao": "docker-07",
         "etapa": 2,
         "titulo": "",
-        "pos": 1319
+        "pos": 1389
       },
       "avaliadoEm": {
         "trilha": "docker",
         "licao": "docker-07",
         "etapa": 9,
         "titulo": "",
-        "pos": 1326
+        "pos": 1396
       },
       "praticas": 29,
       "dimensoes": [],
@@ -5216,21 +5317,21 @@
         "licao": "redis-01",
         "etapa": 1,
         "titulo": "Um banco de dados em memória",
-        "pos": 1387
+        "pos": 1457
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-01",
         "etapa": 2,
         "titulo": "",
-        "pos": 1388
+        "pos": 1458
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-checkpoint-fundamentos",
         "etapa": 3,
         "titulo": "",
-        "pos": 1409
+        "pos": 1479
       },
       "praticas": 6,
       "dimensoes": [],
@@ -5247,21 +5348,21 @@
         "licao": "redis-02",
         "etapa": 1,
         "titulo": "Nada vive para sempre",
-        "pos": 1397
+        "pos": 1467
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-02",
         "etapa": 2,
         "titulo": "",
-        "pos": 1398
+        "pos": 1468
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-checkpoint-fundamentos",
         "etapa": 4,
         "titulo": "",
-        "pos": 1410
+        "pos": 1480
       },
       "praticas": 8,
       "dimensoes": [],
@@ -5278,21 +5379,21 @@
         "licao": "redis-03",
         "etapa": 1,
         "titulo": "O padrão mais comum",
-        "pos": 1417
+        "pos": 1487
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-03",
         "etapa": 2,
         "titulo": "",
-        "pos": 1418
+        "pos": 1488
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-03",
         "etapa": 11,
         "titulo": "",
-        "pos": 1427
+        "pos": 1497
       },
       "praticas": 11,
       "dimensoes": [],
@@ -5309,21 +5410,21 @@
         "licao": "redis-04",
         "etapa": 1,
         "titulo": "O Redis não conhece o seu objeto",
-        "pos": 1428
+        "pos": 1498
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-04",
         "etapa": 2,
         "titulo": "",
-        "pos": 1429
+        "pos": 1499
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-04",
         "etapa": 9,
         "titulo": "",
-        "pos": 1436
+        "pos": 1506
       },
       "praticas": 8,
       "dimensoes": [],
@@ -5340,21 +5441,21 @@
         "licao": "redis-05",
         "etapa": 1,
         "titulo": "O dado mudou, a cópia não",
-        "pos": 1439
+        "pos": 1509
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-05",
         "etapa": 2,
         "titulo": "",
-        "pos": 1440
+        "pos": 1510
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-05",
         "etapa": 9,
         "titulo": "",
-        "pos": 1447
+        "pos": 1517
       },
       "praticas": 7,
       "dimensoes": [],
@@ -5371,21 +5472,21 @@
         "licao": "redis-06",
         "etapa": 1,
         "titulo": "Registrar o Redis no builder",
-        "pos": 1450
+        "pos": 1520
       },
       "praticadoEm": {
         "trilha": "redis",
         "licao": "redis-06",
         "etapa": 2,
         "titulo": "",
-        "pos": 1451
+        "pos": 1521
       },
       "avaliadoEm": {
         "trilha": "redis",
         "licao": "redis-06",
         "etapa": 10,
         "titulo": "",
-        "pos": 1459
+        "pos": 1529
       },
       "praticas": 8,
       "dimensoes": [],
@@ -6710,6 +6811,62 @@
       "etapa": 1,
       "ensina": [
         "en.a2-saude"
+      ]
+    },
+    {
+      "licao": "en-mus-01",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.fala-conectada"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "trilha": "ingles",
+      "etapa": 1,
+      "ensina": [
+        "en.series"
       ]
     },
     {
@@ -15203,6 +15360,539 @@
       "exige": [
         "en.passado",
         "en.futuro"
+      ]
+    },
+    {
+      "licao": "en-mus-01",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-mus-01-p1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-01",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-mus-01-p2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-01",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-mus-01-p3",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-01",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-mus-01-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-01",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-mus-01-p4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-01",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-mus-01-p5",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-mus-02-p1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-mus-02-p2",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-mus-02-p3",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-mus-02-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-mus-02-p4",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-mus-02-p5",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-mus-03-p1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-mus-03-p2",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-mus-03-p3",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-mus-03-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-mus-03-p4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-mus-03-p5",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-mus-04-p1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-mus-04-p2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-mus-04-p3",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-mus-04-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-mus-04-p4",
+      "tipo": "order-blocks",
+      "dimensao": "ordenacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-mus-04-p5",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-mus-05-p1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-mus-05-p2",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-mus-05-p3",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-mus-05-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-mus-05-p4",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-mus-05-a1",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.musica"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-mus-06-p1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.fala-conectada"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "trilha": "ingles",
+      "etapa": 4,
+      "id": "en-mus-06-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.fala-conectada"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-mus-06-p2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.fala-conectada"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "trilha": "ingles",
+      "etapa": 8,
+      "id": "en-mus-06-p3",
+      "tipo": "fill-code",
+      "dimensao": "preenchimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.fala-conectada"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-mus-06-l2",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.fala-conectada"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "trilha": "ingles",
+      "etapa": 10,
+      "id": "en-mus-06-p4",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.fala-conectada"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "trilha": "ingles",
+      "etapa": 3,
+      "id": "en-mus-07-p1",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.series"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "trilha": "ingles",
+      "etapa": 6,
+      "id": "en-mus-07-p2",
+      "tipo": "match-pairs",
+      "dimensao": "associacao",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.series"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "trilha": "ingles",
+      "etapa": 7,
+      "id": "en-mus-07-l1",
+      "tipo": "listening",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.series"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "trilha": "ingles",
+      "etapa": 9,
+      "id": "en-mus-07-a1",
+      "tipo": "dialogue",
+      "dimensao": "aplicacao",
+      "prova": false,
+      "desafio": true,
+      "exige": [
+        "en.series"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "trilha": "ingles",
+      "etapa": 10,
+      "id": "en-mus-07-p3",
+      "tipo": "multiple-choice",
+      "dimensao": "reconhecimento",
+      "prova": false,
+      "desafio": false,
+      "exige": [
+        "en.series"
       ]
     },
     {

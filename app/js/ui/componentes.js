@@ -259,6 +259,42 @@ window.Plataforma = window.Plataforma || {};
     return criar('div', { classe: 'bloco bloco-vida-real' }, partes);
   }
 
+  function blocoMusica(def) {
+    const id = String(def.youtube || '').replace(/[^A-Za-z0-9_-]/g, '');
+    const partes = [
+      criar('div', { classe: 'musica-topo' }, [
+        criar('div', { classe: 'musica-emoji', texto: def.emoji || '🎵' }),
+        criar('div', {}, [
+          criar('div', { classe: 'musica-titulo', texto: def.titulo || '' }),
+          def.artista ? criar('div', { classe: 'musica-artista', texto: def.artista }) : null
+        ])
+      ])
+    ];
+    if (id) {
+      const area = criar('div', { classe: 'musica-video' });
+      const abrir = criar('button', {
+        type: 'button', classe: 'btn btn-secundario', texto: '▶ Carregar vídeo com a letra',
+        onclick: function () {
+          area.innerHTML = '';
+          area.appendChild(criar('iframe', {
+            src: 'https://www.youtube-nocookie.com/embed/' + id + '?cc_load_policy=1&hl=en',
+            title: def.titulo || 'Vídeo', allow: 'encrypted-media; picture-in-picture', allowfullscreen: 'true', loading: 'lazy'
+          }));
+        }
+      });
+      area.appendChild(abrir);
+      partes.push(area);
+      partes.push(criar('a', { classe: 'btn-link', href: 'https://www.youtube.com/watch?v=' + id, target: '_blank', rel: 'noopener', texto: 'Abrir no YouTube ↗' }));
+    }
+    if (def.texto) partes.push(criar('p', { classe: 'musica-texto', html: d.formatar(def.texto) }));
+    if (def.missao && def.missao.length) {
+      partes.push(criar('div', { classe: 'musica-missao-rotulo', texto: 'Missão de escuta' }));
+      partes.push(criar('ol', { classe: 'musica-missao' }, def.missao.map(function (m) { return criar('li', { html: d.formatar(m) }); })));
+    }
+    if (def.estudarLetra && window.Plataforma && window.Plataforma.letraMusica) partes.push(window.Plataforma.letraMusica.render(def));
+    return criar('div', { classe: 'bloco bloco-musica' }, partes);
+  }
+
   function blocoIngles(def) {
     const partes = [
       criar('div', { classe: 'ingles-topo' }, [
@@ -342,6 +378,8 @@ window.Plataforma = window.Plataforma || {};
         return blocoFuturo(bloco);
       case 'ingles':
         return blocoIngles(bloco);
+      case 'musica':
+        return blocoMusica(bloco);
       default:
         return criar('p', { classe: 'bloco bloco-texto', html: d.formatar(bloco.texto || '') });
     }

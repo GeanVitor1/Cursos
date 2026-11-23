@@ -1,9 +1,9 @@
 {
-  "geradoEm": "2026-11-23T11:21:25.983Z",
-  "licoesPercorridas": 375,
-  "etapasPercorridas": 1472,
-  "atividadesPercorridas": 939,
-  "palavrasNoLexico": 646,
+  "geradoEm": "2026-11-23T17:37:51.465Z",
+  "licoesPercorridas": 382,
+  "etapasPercorridas": 1542,
+  "atividadesPercorridas": 980,
+  "palavrasNoLexico": 698,
   "limiteNovasPorEtapa": 3,
   "limitePalavrasNovasPorEtapaIngles": 6,
   "introducoesDeVocabulario": [
@@ -1548,6 +1548,191 @@
       ]
     },
     {
+      "licao": "en-mus-01",
+      "etapa": 2,
+      "termos": 3,
+      "palavras": [
+        "dandelion",
+        "wish",
+        "field"
+      ]
+    },
+    {
+      "licao": "en-mus-01",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "fall",
+        "love",
+        "i've",
+        "heard"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "etapa": 2,
+      "termos": 3,
+      "palavras": [
+        "outside",
+        "inside",
+        "look"
+      ]
+    },
+    {
+      "licao": "en-mus-02",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "know",
+        "someone"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "etapa": 2,
+      "termos": 3,
+      "palavras": [
+        "fire",
+        "burn",
+        "light"
+      ]
+    },
+    {
+      "licao": "en-mus-03",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "firestarter",
+        "something"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "etapa": 2,
+      "termos": 3,
+      "palavras": [
+        "custom",
+        "made",
+        "download",
+        "install"
+      ]
+    },
+    {
+      "licao": "en-mus-04",
+      "etapa": 5,
+      "termos": 2,
+      "palavras": [
+        "tall",
+        "strong",
+        "sweet",
+        "guy"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "etapa": 1,
+      "termos": 1,
+      "palavras": [
+        "paint",
+        "town",
+        "red"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "etapa": 2,
+      "termos": 2,
+      "palavras": [
+        "don't",
+        "care",
+        "vibe"
+      ]
+    },
+    {
+      "licao": "en-mus-05",
+      "etapa": 5,
+      "termos": 3,
+      "palavras": [
+        "mad",
+        "myself",
+        "whatever"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "gonna",
+        "wanna"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "etapa": 2,
+      "termos": 2,
+      "palavras": [
+        "gotta",
+        "got"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "etapa": 5,
+      "termos": 3,
+      "palavras": [
+        "kinda",
+        "lemme",
+        "dunno"
+      ]
+    },
+    {
+      "licao": "en-mus-06",
+      "etapa": 6,
+      "termos": 2,
+      "palavras": [
+        "gimme",
+        "ya",
+        "y'all"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "etapa": 1,
+      "termos": 2,
+      "palavras": [
+        "what's",
+        "way"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "etapa": 2,
+      "termos": 2,
+      "palavras": [
+        "real",
+        "bad"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "etapa": 4,
+      "termos": 1,
+      "palavras": [
+        "hang",
+        "out"
+      ]
+    },
+    {
+      "licao": "en-mus-07",
+      "etapa": 5,
+      "termos": 1,
+      "palavras": [
+        "never",
+        "mind"
+      ]
+    },
+    {
       "licao": "ingles-17",
       "etapa": 1,
       "termos": 3,
@@ -1872,10 +2057,9 @@
     {
       "licao": "docker-03",
       "etapa": 10,
-      "termos": 2,
+      "termos": 1,
       "palavras": [
-        "port",
-        "outside"
+        "port"
       ]
     },
     {

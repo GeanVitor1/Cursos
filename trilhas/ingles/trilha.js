@@ -51,6 +51,20 @@ Plataforma.registrarTrilha({
       ]
     },
     {
+      id: 'musica',
+      nome: 'Inglês pela música e séries',
+      descricao: 'Aprenda com músicas que você curte e com séries: vocabulário de cada letra, ciclo de 5 escutas, shadowing, fala conectada (gonna, wanna) e frases de série. Recomendado logo após o A2 — e depois siga usando junto com o B1.',
+      etapas: [
+        { id: 'en-mus-01', titulo: 'Dandelions — Ruth B.', duracao: 35, licao: 'en-mus-01' },
+        { id: 'en-mus-02', titulo: 'Outside — Calvin Harris ft. Ellie Goulding', duracao: 35, licao: 'en-mus-02' },
+        { id: 'en-mus-03', titulo: 'Firestarter — K/DA', duracao: 35, licao: 'en-mus-03' },
+        { id: 'en-mus-04', titulo: 'GUY.exe — Superfruit', duracao: 35, licao: 'en-mus-04' },
+        { id: 'en-mus-05', titulo: 'Paint The Town Red — Doja Cat', duracao: 35, licao: 'en-mus-05' },
+        { id: 'en-mus-06', titulo: 'Fala conectada: gonna, wanna, gotta', duracao: 30, licao: 'en-mus-06' },
+        { id: 'en-mus-07', titulo: 'Séries: frases de todo episódio', duracao: 35, licao: 'en-mus-07' }
+      ]
+    },
+    {
       id: 'b1',
       nome: 'B1 — Intermediário',
       descricao: 'Opinar, explicar problemas, contar histórias, participar de reuniões e escrever e-mails profissionais.',
