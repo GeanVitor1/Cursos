@@ -1651,3 +1651,10 @@ button.vocab-en:hover { background: var(--primaria-suave); }
 .letra-cartao { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px; border-radius: 12px; border: 1px solid var(--borda, #ccc); }
 .letra-cartao-palavra { font-size: 1.8rem; font-weight: 700; }
 .letra-video-palco iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 8px; }
+
+/* Lembrança rápida entre itens de vocabulário (ritmo de aprendizagem) */
+.lembrar { border: 1px dashed var(--borda); border-radius: var(--radius-sm); padding: 12px 14px; background: var(--superficie-2); display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.lembrar-rotulo { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--texto-suave); }
+.lembrar-pergunta { margin: 0; font-size: 15px; }
+.lembrar-resposta { display: flex; flex-wrap: wrap; gap: 8px; }
+.lembrar-resposta .vocab-en { border: 1px solid var(--borda); border-radius: var(--radius-sm); background: transparent; cursor: pointer; }

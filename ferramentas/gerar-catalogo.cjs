@@ -23,7 +23,7 @@ for (const trilha of P.interno.manifesto.trilhas) {
     if (!id) throw new Error('Registro de lição ausente ou duplicado: ' + arquivo);
     const l = P.interno.licoes[id];
     const assinatura = l.etapas.length + ':' + l.etapas.map((e, i) => e.tipo === 'atividade' && e.atividade && e.atividade.id ? e.atividade.id : 'c:' + String(e.titulo || i)).join('|');
-    const hash = crypto.createHash('sha256').update(fs.readFileSync(path.resolve(root, 'app', arquivo))).digest('hex').slice(0, 16);
+    const hash = crypto.createHash('sha256').update(fs.readFileSync(path.resolve(root, 'app', arquivo))).update(l.ritmoDividido ? 'ritmo:1' : '').digest('hex').slice(0, 16);
     catalogo.push({ id, trilha: l.trilha, tipo: l.tipo, titulo: l.titulo, xp: l.xp, duracaoMin: l.duracaoMin, conceitos: l.conceitos || [], arquivo, disponivel: l.etapas.length > 0, assinaturaConteudo: hash, assinaturaLegada: assinatura });
     l.etapas.forEach(e => (e.blocos || []).forEach(b => {
       if (b.tipo === 'conceito' && !definicoes[b.id]) definicoes[b.id] = { definicao: b.texto, exemplo: b.exemplo, licao: id, titulo: b.titulo };

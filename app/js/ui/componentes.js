@@ -236,6 +236,28 @@ window.Plataforma = window.Plataforma || {};
     return criar('div', { classe: 'bloco tabela-bloco' }, partes);
   }
 
+  // Lembrança rápida (sem nota): pede o item da tela anterior antes do próximo.
+  function blocoLembrar(bloco) {
+    const pares = bloco.pares || [];
+    if (!pares.length) return null;
+    const resposta = criar('div', { classe: 'lembrar-resposta', hidden: true }, pares.map(function (par) {
+      return criar('button', {
+        type: 'button', classe: 'vocab-en', texto: '🔊 ' + par[0],
+        title: 'Ouvir a pronúncia', onclick: function () { falar(par[0]); }
+      });
+    }));
+    const botao = criar('button', {
+      type: 'button', classe: 'btn btn-fantasma', texto: 'Mostrar resposta',
+      onclick: function () { resposta.hidden = false; botao.remove(); falar(pares.map(function (p) { return p[0]; }).join('. ')); }
+    });
+    return criar('div', { classe: 'bloco lembrar' }, [
+      criar('div', { classe: 'lembrar-rotulo', texto: '🧠 Antes de seguir, tente lembrar' }),
+      criar('p', { classe: 'lembrar-pergunta', texto: 'Como se diz em inglês: ' + pares.map(function (p) { return '“' + p[1] + '”'; }).join(' e ') + '?' }),
+      botao,
+      resposta
+    ]);
+  }
+
   function blocoVidaReal(bloco) {
     const partes = [
       criar('div', { classe: 'vida-real-topo' }, [
@@ -364,6 +386,8 @@ window.Plataforma = window.Plataforma || {};
         return blocoTabela(bloco);
       case 'vocab':
         return blocoVocab(bloco);
+      case 'lembrar':
+        return blocoLembrar(bloco);
       case 'vida-real':
         return blocoVidaReal(bloco);
       case 'trabalho':
