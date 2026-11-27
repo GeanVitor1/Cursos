@@ -230,9 +230,21 @@ window.Plataforma = window.Plataforma || {};
     return c.erros > 0 || c.estado === 'revisar';
   }
 
-  function conceitosParaRevisar(incluirHoje) {
+  // Conceitos ensinados nas lições de uma trilha (curso).
+  function conceitosDaTrilha(trilhaId) {
+    const set = new Set();
+    Object.keys(P.interno.licoes).forEach(function (id) {
+      const l = P.interno.licoes[id];
+      if (l && l.trilha === trilhaId) (l.conceitos || []).forEach(function (c) { set.add(c); });
+    });
+    return set;
+  }
+
+  function conceitosParaRevisar(incluirHoje, trilhaId) {
+    const daTrilha = trilhaId ? conceitosDaTrilha(trilhaId) : null;
     return P.dados.resumoConceitos()
       .filter(function (c) {
+        if (daTrilha && !daTrilha.has(c.id)) return false;
         if (c.acertos === 0 && c.erros === 0) return false;
         return revisaoVencida(c, incluirHoje);
       })
@@ -268,9 +280,9 @@ window.Plataforma = window.Plataforma || {};
     return mapa;
   }
 
-  function atividadesDeRevisao(limite, incluirHoje) {
+  function atividadesDeRevisao(limite, incluirHoje, trilhaId) {
     const alvoLimite = limite || 8;
-    const alvos = conceitosParaRevisar(incluirHoje).slice(0, 8);
+    const alvos = conceitosParaRevisar(incluirHoje, trilhaId).slice(0, 8);
     const usados = {};
     const indice = indiceAtividadesPorConceito();
     const acessoCache = {};
@@ -286,6 +298,7 @@ window.Plataforma = window.Plataforma || {};
       (indice.get(conceito.id) || []).forEach(function (ref) {
         if (encontradas.length >= P.conf.maxAtividadesPorConceitoRevisao) return;
         if (!acessivel(ref.licao)) return;
+        if (trilhaId && (P.interno.licoes[ref.licao] || {}).trilha !== trilhaId) return;
         // IDs de atividade podem se repetir entre lições: a chave é lição + id.
         const chave = ref.licao + '::' + ref.atv.id;
         if (usados[chave]) return;

@@ -38,6 +38,7 @@ window.Plataforma = window.Plataforma || {};
     P.roteador.registrar('/revisao', function () { return P.ui.revisao.render(); });
     P.roteador.registrar('/revisao/:min', function (params) { return P.ui.revisao.render(params); });
     P.roteador.registrar('/revisao/:min/:escopo', function (params) { return P.ui.revisao.render(params); });
+    P.roteador.registrar('/revisao/:min/:escopo/:trilha', function (params) { return P.ui.revisao.render(params); });
     P.roteador.registrar('/certificacoes', function () { P.ui.certificacoes.render(); });
     P.roteador.registrar('/projetos', function () { P.ui.projetos.render(); });
     P.roteador.registrar('/entrevistas', function () { P.ui.entrevistas.render(); });

@@ -1420,6 +1420,7 @@ details.cartao > summary::-webkit-details-marker { display: none; }
    MOBILE FIRST (referência 430x932)
    ============================================================ */
 html, body { max-width: 100%; overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
 
 .menu-botao { display: none; }
 .drawer-fundo { display: none; }

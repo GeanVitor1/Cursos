@@ -9,7 +9,9 @@ window.Plataforma = window.Plataforma || {};
     const numero = params && Number(params.min);
     const limite = Number.isFinite(numero) && numero > 0 ? Math.max(3, Math.min(20, numero)) : 8;
     const incluirHoje = !!(params && params.escopo === 'hoje');
-    const conceitos = P.progresso.conceitosParaRevisar(incluirHoje).slice(0, 8);
+    const trilhaId = params && params.trilha && P.interno.trilhas[params.trilha] ? params.trilha : null;
+    const trilha = trilhaId ? P.interno.trilhas[trilhaId] : null;
+    const conceitos = P.progresso.conceitosParaRevisar(incluirHoje, trilhaId).slice(0, 8);
     if (conceitos.length) {
       P.ui.layout.definirConteudo(criar('div', { classe: 'estado-vazio', texto: 'Preparando revisão...', role: 'status' }));
       try { await P.carregador.carregarConceitos(conceitos.map(function (c) { return c.id; })); }
@@ -24,7 +26,7 @@ window.Plataforma = window.Plataforma || {};
       }
       if (versao !== P.roteador.versao()) return;
     }
-    const atividades = P.progresso.atividadesDeRevisao(limite, incluirHoje);
+    const atividades = P.progresso.atividadesDeRevisao(limite, incluirHoje, trilhaId);
     if (!conceitos.length || !atividades.length) {
       P.ui.layout.definirConteudo(criar('div', { classe: 'pagina' }, [
         criar('div', { classe: 'pagina-cabecalho' }, [
@@ -45,7 +47,7 @@ window.Plataforma = window.Plataforma || {};
     P.ui.runner.iniciar({
       modo: 'revisao',
       etapas: etapas,
-      titulo: 'Revisão rápida',
+      titulo: trilha ? 'Pontos fracos · ' + (trilha.curto || trilha.nome) : 'Revisão rápida',
       subtitulo: conceitos.length + ' conceitos em foco · atividades intercaladas'
     });
   }

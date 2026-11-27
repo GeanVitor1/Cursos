@@ -135,12 +135,12 @@ window.Plataforma = window.Plataforma || {};
           : 'Continuar em ' + (proxima.trilha.curto || proxima.trilha.nome) + ': ' + proxima.etapa.titulo);
       acoes.push(comp.botao(rotulo, { onclick: function () { P.roteador.ir('#/licao/' + proxima.etapa.licao); } }));
     }
-    if (resumo.aproveitamento < 90 || P.progresso.conceitosParaRevisar(true).length) {
+    if (resumo.aproveitamento < 90 || P.progresso.conceitosParaRevisar(true, licao.trilha).length) {
       acoes.push(comp.botao('Praticar os pontos fracos agora', {
         tipo: 'suave',
         onclick: function () {
           P.sessao.iniciar(10, 'revisao');
-          P.roteador.ir('#/revisao/8/hoje');
+          P.roteador.ir('#/revisao/8/hoje/' + encodeURIComponent(licao.trilha));
         }
       }));
     }

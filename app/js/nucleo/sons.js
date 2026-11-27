@@ -4,7 +4,6 @@ window.Plataforma = window.Plataforma || {};
   // eles são usados; senão, toca um som original sintetizado com Web Audio.
   const CHAVE = 'trilha-net.som';
   const ARQUIVOS = { acerto: '../assets/sons/acerto.mp3', erro: '../assets/sons/erro.mp3' };
-  const audios = {};
   let ctx = null;
 
   function ligado() {
@@ -14,15 +13,27 @@ window.Plataforma = window.Plataforma || {};
     try { window.localStorage.setItem(CHAVE, valor ? 'on' : 'off'); } catch (e) { /* sem storage */ }
   }
 
-  // Pré-carrega os arquivos; se algum não existir, marca para usar o sintetizado.
+  // Os arquivos são baixados e decodificados com Web Audio: assim toca igual no
+  // desktop e no celular (no mobile, <audio> não pré-carrega e caía no sintetizado).
+  const buffers = {};
+  const brutos = {};
   Object.keys(ARQUIVOS).forEach(function (tipo) {
-    if (typeof Audio === 'undefined') return;
-    const a = new Audio();
-    a.preload = 'auto';
-    a.addEventListener('canplaythrough', function () { audios[tipo] = a; }, { once: true });
-    a.addEventListener('error', function () { audios[tipo] = null; }, { once: true });
-    a.src = ARQUIVOS[tipo];
+    if (typeof fetch === 'undefined') return;
+    brutos[tipo] = fetch(ARQUIVOS[tipo])
+      .then(function (r) { if (!r.ok) throw new Error('sem arquivo'); return r.arrayBuffer(); })
+      .catch(function () { return null; });
   });
+  function decodificar(c, tipo) {
+    if (buffers[tipo] !== undefined || !brutos[tipo]) return Promise.resolve(buffers[tipo] || null);
+    return brutos[tipo].then(function (dados) {
+      if (!dados) { buffers[tipo] = null; return null; }
+      return new Promise(function (ok) {
+        // slice: decodeAudioData consome o ArrayBuffer.
+        c.decodeAudioData(dados.slice(0), function (buf) { buffers[tipo] = buf; ok(buf); },
+          function () { buffers[tipo] = null; ok(null); });
+      });
+    });
+  }
 
   function contexto() {
     const Ctor = window.AudioContext || window.webkitAudioContext;
@@ -31,6 +42,20 @@ window.Plataforma = window.Plataforma || {};
     if (ctx.state === 'suspended') ctx.resume();
     return ctx;
   }
+  // Destrava o áudio no primeiro toque (exigência do iOS/Android) e já decodifica.
+  function destravar() {
+    const c = contexto();
+    if (!c) return;
+    try {
+      const b = c.createBuffer(1, 1, 22050);
+      const src = c.createBufferSource();
+      src.buffer = b; src.connect(c.destination); src.start(0);
+    } catch (e) { /* ignora */ }
+    Object.keys(ARQUIVOS).forEach(function (t) { decodificar(c, t); });
+    ['touchend', 'pointerdown', 'keydown'].forEach(function (ev) { window.removeEventListener(ev, destravar, true); });
+  }
+  ['touchend', 'pointerdown', 'keydown'].forEach(function (ev) { window.addEventListener(ev, destravar, true); });
+
   function nota(c, saida, freq, inicio, duracao, tipo, volume, freqFinal) {
     const osc = c.createOscillator();
     const ganho = c.createGain();
@@ -67,17 +92,23 @@ window.Plataforma = window.Plataforma || {};
       nota(c, mestre, 117, t + 0.12, 0.3, 'sine', 0.2, 92);
     }
   }
+  function reproduzir(c, buf) {
+    const src = c.createBufferSource();
+    const ganho = c.createGain();
+    ganho.gain.value = 0.8;
+    src.buffer = buf;
+    src.connect(ganho).connect(c.destination);
+    src.start(0);
+  }
   function tocar(tipo) {
     if (!ligado()) return;
     try {
-      const arquivo = audios[tipo];
-      if (arquivo) {
-        const a = arquivo.cloneNode();
-        a.volume = 0.8;
-        a.play().catch(function () { sintetizar(tipo); });
-        return;
-      }
-      sintetizar(tipo);
+      const c = contexto();
+      if (!c) return;
+      if (buffers[tipo]) { reproduzir(c, buffers[tipo]); return; }
+      if (buffers[tipo] === null || !brutos[tipo]) { sintetizar(tipo); return; }
+      // Ainda decodificando: espera um pouco em vez de tocar um som diferente.
+      decodificar(c, tipo).then(function (buf) { if (buf) reproduzir(c, buf); else sintetizar(tipo); });
     } catch (e) { /* áudio indisponível: segue sem som */ }
   }
 

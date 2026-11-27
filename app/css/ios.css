@@ -422,3 +422,25 @@ button { -webkit-user-select: none; user-select: none; }
   color: var(--texto);
   box-shadow: 0 1px 3px rgba(0, 0, 0, .18);
 }
+
+/* ---------- 19. Runner no celular: cara de app ---------- */
+/* Barra de progresso fixa no topo e botão principal sempre no rodapé da
+   tela, sem precisar rolar até o fim de cada etapa. */
+@media (max-width: 960px) {
+  body.modo-foco .runner { min-height: calc(100dvh - 10px); }
+  body.modo-foco .runner-rodape { margin-top: auto; }
+  body.modo-foco .runner-topo {
+    position: sticky;
+    top: 0;
+    z-index: 21;
+    margin: 0 -10px;
+    padding: calc(8px + env(safe-area-inset-top)) 10px 12px;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+  }
+  body.modo-foco .runner-info { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; }
+  body.modo-foco .runner-acoes .btn { min-height: 50px; font-size: 16px; border-radius: 14px; }
+  /* Alvos de toque confortáveis nas opções */
+  .opcao, .bloco-item, .match-item, .dialogo-opcao, .tf-botao { min-height: 48px; }
+  textarea, select, input[type="text"]:not(.codigo-interativo input), input[type="search"] { font-size: max(16px, 1em); } /* evita zoom automático do iOS */
+}
